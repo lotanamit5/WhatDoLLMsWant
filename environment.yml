@@ -1,0 +1,21 @@
+name: whatdo-llms-want
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - pip
+  - scipy
+  - pip:
+      - transformers
+      - torch
+      - tqdm
+
+# Notes:
+# - The pip `torch` package corresponds to conda's `pytorch` package (installed above).
+# - If you need CUDA-enabled PyTorch, install the appropriate `pytorch`/`pytorch-cuda` build
+#   after creating the environment (see README notes below).

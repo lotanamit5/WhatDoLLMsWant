@@ -1,0 +1,1381 @@
+player_1,player_2,winner,template
+Rojo,Azul,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Rojo,Verde,Rojo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Rojo,Amarillo,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Rojo,Morado,Rojo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Azul,Rojo,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Azul,Verde,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Azul,Amarillo,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Azul,Morado,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Verde,Rojo,Verde,Opción A: {A}. Opción B: {B}. Seleccionado:
+Verde,Azul,Verde,Opción A: {A}. Opción B: {B}. Seleccionado:
+Verde,Amarillo,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Verde,Morado,Verde,Opción A: {A}. Opción B: {B}. Seleccionado:
+Amarillo,Rojo,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Amarillo,Azul,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Amarillo,Verde,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Amarillo,Morado,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Morado,Rojo,Morado,Opción A: {A}. Opción B: {B}. Seleccionado:
+Morado,Azul,Azul,Opción A: {A}. Opción B: {B}. Seleccionado:
+Morado,Verde,Verde,Opción A: {A}. Opción B: {B}. Seleccionado:
+Morado,Amarillo,Amarillo,Opción A: {A}. Opción B: {B}. Seleccionado:
+Rojo,Azul,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Rojo,Verde,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Rojo,Amarillo,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Rojo,Morado,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Azul,Rojo,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Azul,Verde,Verde,Elección: ¿{A} o {B}? Respuesta:
+Azul,Amarillo,Amarillo,Elección: ¿{A} o {B}? Respuesta:
+Azul,Morado,Azul,Elección: ¿{A} o {B}? Respuesta:
+Verde,Rojo,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Verde,Azul,Verde,Elección: ¿{A} o {B}? Respuesta:
+Verde,Amarillo,Verde,Elección: ¿{A} o {B}? Respuesta:
+Verde,Morado,Verde,Elección: ¿{A} o {B}? Respuesta:
+Amarillo,Rojo,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Amarillo,Azul,Azul,Elección: ¿{A} o {B}? Respuesta:
+Amarillo,Verde,Verde,Elección: ¿{A} o {B}? Respuesta:
+Amarillo,Morado,Morado,Elección: ¿{A} o {B}? Respuesta:
+Morado,Rojo,Rojo,Elección: ¿{A} o {B}? Respuesta:
+Morado,Azul,Azul,Elección: ¿{A} o {B}? Respuesta:
+Morado,Verde,Verde,Elección: ¿{A} o {B}? Respuesta:
+Morado,Amarillo,Amarillo,Elección: ¿{A} o {B}? Respuesta:
+Rojo,Azul,Rojo,"Elige uno: {A}, {B}. Resultado:"
+Rojo,Verde,Rojo,"Elige uno: {A}, {B}. Resultado:"
+Rojo,Amarillo,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Rojo,Morado,Rojo,"Elige uno: {A}, {B}. Resultado:"
+Azul,Rojo,Azul,"Elige uno: {A}, {B}. Resultado:"
+Azul,Verde,Azul,"Elige uno: {A}, {B}. Resultado:"
+Azul,Amarillo,Azul,"Elige uno: {A}, {B}. Resultado:"
+Azul,Morado,Azul,"Elige uno: {A}, {B}. Resultado:"
+Verde,Rojo,Verde,"Elige uno: {A}, {B}. Resultado:"
+Verde,Azul,Verde,"Elige uno: {A}, {B}. Resultado:"
+Verde,Amarillo,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Verde,Morado,Verde,"Elige uno: {A}, {B}. Resultado:"
+Amarillo,Rojo,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Amarillo,Azul,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Amarillo,Verde,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Amarillo,Morado,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Morado,Rojo,Morado,"Elige uno: {A}, {B}. Resultado:"
+Morado,Azul,Azul,"Elige uno: {A}, {B}. Resultado:"
+Morado,Verde,Morado,"Elige uno: {A}, {B}. Resultado:"
+Morado,Amarillo,Amarillo,"Elige uno: {A}, {B}. Resultado:"
+Rojo,Azul,Rojo,"Candidatos: {A}, {B}. Elegido:"
+Rojo,Verde,Rojo,"Candidatos: {A}, {B}. Elegido:"
+Rojo,Amarillo,Rojo,"Candidatos: {A}, {B}. Elegido:"
+Rojo,Morado,Rojo,"Candidatos: {A}, {B}. Elegido:"
+Azul,Rojo,Azul,"Candidatos: {A}, {B}. Elegido:"
+Azul,Verde,Azul,"Candidatos: {A}, {B}. Elegido:"
+Azul,Amarillo,Azul,"Candidatos: {A}, {B}. Elegido:"
+Azul,Morado,Azul,"Candidatos: {A}, {B}. Elegido:"
+Verde,Rojo,Verde,"Candidatos: {A}, {B}. Elegido:"
+Verde,Azul,Azul,"Candidatos: {A}, {B}. Elegido:"
+Verde,Amarillo,Verde,"Candidatos: {A}, {B}. Elegido:"
+Verde,Morado,Morado,"Candidatos: {A}, {B}. Elegido:"
+Amarillo,Rojo,Amarillo,"Candidatos: {A}, {B}. Elegido:"
+Amarillo,Azul,Azul,"Candidatos: {A}, {B}. Elegido:"
+Amarillo,Verde,Amarillo,"Candidatos: {A}, {B}. Elegido:"
+Amarillo,Morado,Morado,"Candidatos: {A}, {B}. Elegido:"
+Morado,Rojo,Morado,"Candidatos: {A}, {B}. Elegido:"
+Morado,Azul,Morado,"Candidatos: {A}, {B}. Elegido:"
+Morado,Verde,Morado,"Candidatos: {A}, {B}. Elegido:"
+Morado,Amarillo,Morado,"Candidatos: {A}, {B}. Elegido:"
+Rojo,Azul,Rojo,Tarea: Selecciona {A} o {B}. Salida:
+Rojo,Verde,Rojo,Tarea: Selecciona {A} o {B}. Salida:
+Rojo,Amarillo,Rojo,Tarea: Selecciona {A} o {B}. Salida:
+Rojo,Morado,Rojo,Tarea: Selecciona {A} o {B}. Salida:
+Azul,Rojo,Azul,Tarea: Selecciona {A} o {B}. Salida:
+Azul,Verde,Azul,Tarea: Selecciona {A} o {B}. Salida:
+Azul,Amarillo,Azul,Tarea: Selecciona {A} o {B}. Salida:
+Azul,Morado,Azul,Tarea: Selecciona {A} o {B}. Salida:
+Verde,Rojo,Verde,Tarea: Selecciona {A} o {B}. Salida:
+Verde,Azul,Verde,Tarea: Selecciona {A} o {B}. Salida:
+Verde,Amarillo,Verde,Tarea: Selecciona {A} o {B}. Salida:
+Verde,Morado,Verde,Tarea: Selecciona {A} o {B}. Salida:
+Amarillo,Rojo,Amarillo,Tarea: Selecciona {A} o {B}. Salida:
+Amarillo,Azul,Amarillo,Tarea: Selecciona {A} o {B}. Salida:
+Amarillo,Verde,Amarillo,Tarea: Selecciona {A} o {B}. Salida:
+Amarillo,Morado,Amarillo,Tarea: Selecciona {A} o {B}. Salida:
+Morado,Rojo,Morado,Tarea: Selecciona {A} o {B}. Salida:
+Morado,Azul,Morado,Tarea: Selecciona {A} o {B}. Salida:
+Morado,Verde,Morado,Tarea: Selecciona {A} o {B}. Salida:
+Morado,Amarillo,Morado,Tarea: Selecciona {A} o {B}. Salida:
+Rojo,Azul,Rojo,Por favor elige entre {A} y {B}. Elección:
+Rojo,Verde,Rojo,Por favor elige entre {A} y {B}. Elección:
+Rojo,Amarillo,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Rojo,Morado,Rojo,Por favor elige entre {A} y {B}. Elección:
+Azul,Rojo,Azul,Por favor elige entre {A} y {B}. Elección:
+Azul,Verde,Azul,Por favor elige entre {A} y {B}. Elección:
+Azul,Amarillo,Azul,Por favor elige entre {A} y {B}. Elección:
+Azul,Morado,Azul,Por favor elige entre {A} y {B}. Elección:
+Verde,Rojo,Verde,Por favor elige entre {A} y {B}. Elección:
+Verde,Azul,Verde,Por favor elige entre {A} y {B}. Elección:
+Verde,Amarillo,Verde,Por favor elige entre {A} y {B}. Elección:
+Verde,Morado,Verde,Por favor elige entre {A} y {B}. Elección:
+Amarillo,Rojo,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Amarillo,Azul,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Amarillo,Verde,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Amarillo,Morado,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Morado,Rojo,Morado,Por favor elige entre {A} y {B}. Elección:
+Morado,Azul,Azul,Por favor elige entre {A} y {B}. Elección:
+Morado,Verde,Verde,Por favor elige entre {A} y {B}. Elección:
+Morado,Amarillo,Amarillo,Por favor elige entre {A} y {B}. Elección:
+Rojo,Azul,Rojo,¿A o B? {A} vs {B} ->
+Rojo,Verde,Rojo,¿A o B? {A} vs {B} ->
+Rojo,Amarillo,Rojo,¿A o B? {A} vs {B} ->
+Rojo,Morado,Rojo,¿A o B? {A} vs {B} ->
+Azul,Rojo,Azul,¿A o B? {A} vs {B} ->
+Azul,Verde,Azul,¿A o B? {A} vs {B} ->
+Azul,Amarillo,Amarillo,¿A o B? {A} vs {B} ->
+Azul,Morado,Azul,¿A o B? {A} vs {B} ->
+Verde,Rojo,Rojo,¿A o B? {A} vs {B} ->
+Verde,Azul,Azul,¿A o B? {A} vs {B} ->
+Verde,Amarillo,Amarillo,¿A o B? {A} vs {B} ->
+Verde,Morado,Morado,¿A o B? {A} vs {B} ->
+Amarillo,Rojo,Amarillo,¿A o B? {A} vs {B} ->
+Amarillo,Azul,Amarillo,¿A o B? {A} vs {B} ->
+Amarillo,Verde,Amarillo,¿A o B? {A} vs {B} ->
+Amarillo,Morado,Amarillo,¿A o B? {A} vs {B} ->
+Morado,Rojo,Rojo,¿A o B? {A} vs {B} ->
+Morado,Azul,Azul,¿A o B? {A} vs {B} ->
+Morado,Verde,Morado,¿A o B? {A} vs {B} ->
+Morado,Amarillo,Morado,¿A o B? {A} vs {B} ->
+Rojo,Azul,Rojo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Rojo,Verde,Rojo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Rojo,Amarillo,Rojo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Rojo,Morado,Rojo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Azul,Rojo,Azul,¿Cuál es preferido: {A} o {B}? Respuesta:
+Azul,Verde,Azul,¿Cuál es preferido: {A} o {B}? Respuesta:
+Azul,Amarillo,Azul,¿Cuál es preferido: {A} o {B}? Respuesta:
+Azul,Morado,Azul,¿Cuál es preferido: {A} o {B}? Respuesta:
+Verde,Rojo,Verde,¿Cuál es preferido: {A} o {B}? Respuesta:
+Verde,Azul,Verde,¿Cuál es preferido: {A} o {B}? Respuesta:
+Verde,Amarillo,Verde,¿Cuál es preferido: {A} o {B}? Respuesta:
+Verde,Morado,Verde,¿Cuál es preferido: {A} o {B}? Respuesta:
+Amarillo,Rojo,Amarillo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Amarillo,Azul,Amarillo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Amarillo,Verde,Amarillo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Amarillo,Morado,Amarillo,¿Cuál es preferido: {A} o {B}? Respuesta:
+Morado,Rojo,Morado,¿Cuál es preferido: {A} o {B}? Respuesta:
+Morado,Azul,Morado,¿Cuál es preferido: {A} o {B}? Respuesta:
+Morado,Verde,Morado,¿Cuál es preferido: {A} o {B}? Respuesta:
+Morado,Amarillo,Morado,¿Cuál es preferido: {A} o {B}? Respuesta:
+Rojo,Azul,Rojo,Voto: {A} o {B}. Resultado:
+Rojo,Verde,Rojo,Voto: {A} o {B}. Resultado:
+Rojo,Amarillo,Rojo,Voto: {A} o {B}. Resultado:
+Rojo,Morado,Rojo,Voto: {A} o {B}. Resultado:
+Azul,Rojo,Azul,Voto: {A} o {B}. Resultado:
+Azul,Verde,Azul,Voto: {A} o {B}. Resultado:
+Azul,Amarillo,Amarillo,Voto: {A} o {B}. Resultado:
+Azul,Morado,Azul,Voto: {A} o {B}. Resultado:
+Verde,Rojo,Verde,Voto: {A} o {B}. Resultado:
+Verde,Azul,Azul,Voto: {A} o {B}. Resultado:
+Verde,Amarillo,Amarillo,Voto: {A} o {B}. Resultado:
+Verde,Morado,Morado,Voto: {A} o {B}. Resultado:
+Amarillo,Rojo,Amarillo,Voto: {A} o {B}. Resultado:
+Amarillo,Azul,Amarillo,Voto: {A} o {B}. Resultado:
+Amarillo,Verde,Amarillo,Voto: {A} o {B}. Resultado:
+Amarillo,Morado,Amarillo,Voto: {A} o {B}. Resultado:
+Morado,Rojo,Morado,Voto: {A} o {B}. Resultado:
+Morado,Azul,Morado,Voto: {A} o {B}. Resultado:
+Morado,Verde,Morado,Voto: {A} o {B}. Resultado:
+Morado,Amarillo,Morado,Voto: {A} o {B}. Resultado:
+Rojo,Azul,Azul,{A} / {B}. Selección:
+Rojo,Verde,Rojo,{A} / {B}. Selección:
+Rojo,Amarillo,Rojo,{A} / {B}. Selección:
+Rojo,Morado,Rojo,{A} / {B}. Selección:
+Azul,Rojo,Azul,{A} / {B}. Selección:
+Azul,Verde,Azul,{A} / {B}. Selección:
+Azul,Amarillo,Azul,{A} / {B}. Selección:
+Azul,Morado,Azul,{A} / {B}. Selección:
+Verde,Rojo,Rojo,{A} / {B}. Selección:
+Verde,Azul,Azul,{A} / {B}. Selección:
+Verde,Amarillo,Amarillo,{A} / {B}. Selección:
+Verde,Morado,Morado,{A} / {B}. Selección:
+Amarillo,Rojo,Amarillo,{A} / {B}. Selección:
+Amarillo,Azul,Amarillo,{A} / {B}. Selección:
+Amarillo,Verde,Amarillo,{A} / {B}. Selección:
+Amarillo,Morado,Amarillo,{A} / {B}. Selección:
+Morado,Rojo,Rojo,{A} / {B}. Selección:
+Morado,Azul,Azul,{A} / {B}. Selección:
+Morado,Verde,Morado,{A} / {B}. Selección:
+Morado,Amarillo,Morado,{A} / {B}. Selección:
+Rojo,Azul,Rojo,Nombre: {A}. Nombre: {B}. Preferido:
+Rojo,Verde,Rojo,Nombre: {A}. Nombre: {B}. Preferido:
+Rojo,Amarillo,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Rojo,Morado,Rojo,Nombre: {A}. Nombre: {B}. Preferido:
+Azul,Rojo,Azul,Nombre: {A}. Nombre: {B}. Preferido:
+Azul,Verde,Azul,Nombre: {A}. Nombre: {B}. Preferido:
+Azul,Amarillo,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Azul,Morado,Azul,Nombre: {A}. Nombre: {B}. Preferido:
+Verde,Rojo,Verde,Nombre: {A}. Nombre: {B}. Preferido:
+Verde,Azul,Verde,Nombre: {A}. Nombre: {B}. Preferido:
+Verde,Amarillo,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Verde,Morado,Verde,Nombre: {A}. Nombre: {B}. Preferido:
+Amarillo,Rojo,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Amarillo,Azul,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Amarillo,Verde,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Amarillo,Morado,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Morado,Rojo,Rojo,Nombre: {A}. Nombre: {B}. Preferido:
+Morado,Azul,Azul,Nombre: {A}. Nombre: {B}. Preferido:
+Morado,Verde,Verde,Nombre: {A}. Nombre: {B}. Preferido:
+Morado,Amarillo,Amarillo,Nombre: {A}. Nombre: {B}. Preferido:
+Rojo,Azul,Rojo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Rojo,Verde,Rojo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Rojo,Amarillo,Rojo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Rojo,Morado,Rojo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Azul,Rojo,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Azul,Verde,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Azul,Amarillo,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Azul,Morado,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Verde,Rojo,Verde,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Verde,Azul,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Verde,Amarillo,Verde,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Verde,Morado,Verde,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Amarillo,Rojo,Amarillo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Amarillo,Azul,Amarillo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Amarillo,Verde,Amarillo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Amarillo,Morado,Amarillo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Morado,Rojo,Rojo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Morado,Azul,Azul,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Morado,Verde,Morado,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Morado,Amarillo,Amarillo,"Ítem 1: {A}
+Ítem 2: {B}
+Selección:"
+Rojo,Azul,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Rojo,Verde,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Rojo,Amarillo,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Rojo,Morado,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Azul,Rojo,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Azul,Verde,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Azul,Amarillo,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Azul,Morado,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Verde,Rojo,Verde,"Entrada: [{A}, {B}]
+Salida:"
+Verde,Azul,Verde,"Entrada: [{A}, {B}]
+Salida:"
+Verde,Amarillo,Verde,"Entrada: [{A}, {B}]
+Salida:"
+Verde,Morado,Verde,"Entrada: [{A}, {B}]
+Salida:"
+Amarillo,Rojo,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Amarillo,Azul,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Amarillo,Verde,Amarillo,"Entrada: [{A}, {B}]
+Salida:"
+Amarillo,Morado,Morado,"Entrada: [{A}, {B}]
+Salida:"
+Morado,Rojo,Rojo,"Entrada: [{A}, {B}]
+Salida:"
+Morado,Azul,Azul,"Entrada: [{A}, {B}]
+Salida:"
+Morado,Verde,Verde,"Entrada: [{A}, {B}]
+Salida:"
+Morado,Amarillo,Morado,"Entrada: [{A}, {B}]
+Salida:"
+Rojo,Azul,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Rojo,Verde,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Rojo,Amarillo,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Rojo,Morado,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Azul,Rojo,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Azul,Verde,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Azul,Amarillo,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Azul,Morado,Azul,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Verde,Rojo,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Verde,Azul,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Verde,Amarillo,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Verde,Morado,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Amarillo,Rojo,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Amarillo,Azul,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Amarillo,Verde,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Amarillo,Morado,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Morado,Rojo,Rojo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Morado,Azul,Azul,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Morado,Verde,Verde,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Morado,Amarillo,Amarillo,"Color_1 = {A}
+Color_2 = {B}
+Color_Seleccionado ="
+Rojo,Azul,Rojo,"Dataset: {A}, {B}. Filtrado:"
+Rojo,Verde,Rojo,"Dataset: {A}, {B}. Filtrado:"
+Rojo,Amarillo,Rojo,"Dataset: {A}, {B}. Filtrado:"
+Rojo,Morado,Rojo,"Dataset: {A}, {B}. Filtrado:"
+Azul,Rojo,Azul,"Dataset: {A}, {B}. Filtrado:"
+Azul,Verde,Azul,"Dataset: {A}, {B}. Filtrado:"
+Azul,Amarillo,Azul,"Dataset: {A}, {B}. Filtrado:"
+Azul,Morado,Azul,"Dataset: {A}, {B}. Filtrado:"
+Verde,Rojo,Verde,"Dataset: {A}, {B}. Filtrado:"
+Verde,Azul,Verde,"Dataset: {A}, {B}. Filtrado:"
+Verde,Amarillo,Amarillo,"Dataset: {A}, {B}. Filtrado:"
+Verde,Morado,Morado,"Dataset: {A}, {B}. Filtrado:"
+Amarillo,Rojo,Amarillo,"Dataset: {A}, {B}. Filtrado:"
+Amarillo,Azul,Amarillo,"Dataset: {A}, {B}. Filtrado:"
+Amarillo,Verde,Amarillo,"Dataset: {A}, {B}. Filtrado:"
+Amarillo,Morado,Amarillo,"Dataset: {A}, {B}. Filtrado:"
+Morado,Rojo,Morado,"Dataset: {A}, {B}. Filtrado:"
+Morado,Azul,Morado,"Dataset: {A}, {B}. Filtrado:"
+Morado,Verde,Morado,"Dataset: {A}, {B}. Filtrado:"
+Morado,Amarillo,Morado,"Dataset: {A}, {B}. Filtrado:"
+Rojo,Azul,Rojo,"[ {A}, {B} ] Índice seleccionado:"
+Rojo,Verde,Rojo,"[ {A}, {B} ] Índice seleccionado:"
+Rojo,Amarillo,Rojo,"[ {A}, {B} ] Índice seleccionado:"
+Rojo,Morado,Rojo,"[ {A}, {B} ] Índice seleccionado:"
+Azul,Rojo,Azul,"[ {A}, {B} ] Índice seleccionado:"
+Azul,Verde,Azul,"[ {A}, {B} ] Índice seleccionado:"
+Azul,Amarillo,Azul,"[ {A}, {B} ] Índice seleccionado:"
+Azul,Morado,Azul,"[ {A}, {B} ] Índice seleccionado:"
+Verde,Rojo,Verde,"[ {A}, {B} ] Índice seleccionado:"
+Verde,Azul,Verde,"[ {A}, {B} ] Índice seleccionado:"
+Verde,Amarillo,Verde,"[ {A}, {B} ] Índice seleccionado:"
+Verde,Morado,Verde,"[ {A}, {B} ] Índice seleccionado:"
+Amarillo,Rojo,Amarillo,"[ {A}, {B} ] Índice seleccionado:"
+Amarillo,Azul,Amarillo,"[ {A}, {B} ] Índice seleccionado:"
+Amarillo,Verde,Amarillo,"[ {A}, {B} ] Índice seleccionado:"
+Amarillo,Morado,Amarillo,"[ {A}, {B} ] Índice seleccionado:"
+Morado,Rojo,Morado,"[ {A}, {B} ] Índice seleccionado:"
+Morado,Azul,Morado,"[ {A}, {B} ] Índice seleccionado:"
+Morado,Verde,Morado,"[ {A}, {B} ] Índice seleccionado:"
+Morado,Amarillo,Morado,"[ {A}, {B} ] Índice seleccionado:"
+Rojo,Azul,Azul,"Lista: {A}, {B}. Elemento superior:"
+Rojo,Verde,Verde,"Lista: {A}, {B}. Elemento superior:"
+Rojo,Amarillo,Rojo,"Lista: {A}, {B}. Elemento superior:"
+Rojo,Morado,Rojo,"Lista: {A}, {B}. Elemento superior:"
+Azul,Rojo,Azul,"Lista: {A}, {B}. Elemento superior:"
+Azul,Verde,Azul,"Lista: {A}, {B}. Elemento superior:"
+Azul,Amarillo,Azul,"Lista: {A}, {B}. Elemento superior:"
+Azul,Morado,Azul,"Lista: {A}, {B}. Elemento superior:"
+Verde,Rojo,Verde,"Lista: {A}, {B}. Elemento superior:"
+Verde,Azul,Verde,"Lista: {A}, {B}. Elemento superior:"
+Verde,Amarillo,Verde,"Lista: {A}, {B}. Elemento superior:"
+Verde,Morado,Verde,"Lista: {A}, {B}. Elemento superior:"
+Amarillo,Rojo,Amarillo,"Lista: {A}, {B}. Elemento superior:"
+Amarillo,Azul,Amarillo,"Lista: {A}, {B}. Elemento superior:"
+Amarillo,Verde,Amarillo,"Lista: {A}, {B}. Elemento superior:"
+Amarillo,Morado,Amarillo,"Lista: {A}, {B}. Elemento superior:"
+Morado,Rojo,Morado,"Lista: {A}, {B}. Elemento superior:"
+Morado,Azul,Azul,"Lista: {A}, {B}. Elemento superior:"
+Morado,Verde,Morado,"Lista: {A}, {B}. Elemento superior:"
+Morado,Amarillo,Morado,"Lista: {A}, {B}. Elemento superior:"
+Rojo,Azul,Rojo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Rojo,Verde,Rojo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Rojo,Amarillo,Rojo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Rojo,Morado,Rojo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Azul,Rojo,Azul,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Azul,Verde,Azul,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Azul,Amarillo,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Azul,Morado,Azul,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Verde,Rojo,Verde,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Verde,Azul,Verde,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Verde,Amarillo,Verde,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Verde,Morado,Verde,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Amarillo,Rojo,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Amarillo,Azul,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Amarillo,Verde,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Amarillo,Morado,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Morado,Rojo,Morado,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Morado,Azul,Morado,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Morado,Verde,Morado,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Morado,Amarillo,Amarillo,"Categoría: Colores.
+Opciones: {A}, {B}.
+Elegir:"
+Rojo,Azul,Rojo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Rojo,Verde,Rojo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Rojo,Amarillo,Rojo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Rojo,Morado,Rojo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Azul,Rojo,Azul,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Azul,Verde,Azul,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Azul,Amarillo,Azul,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Azul,Morado,Azul,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Verde,Rojo,Verde,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Verde,Azul,Verde,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Verde,Amarillo,Verde,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Verde,Morado,Verde,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Amarillo,Rojo,Amarillo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Amarillo,Azul,Amarillo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Amarillo,Verde,Amarillo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Amarillo,Morado,Amarillo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Morado,Rojo,Morado,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Morado,Azul,Azul,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Morado,Verde,Verde,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Morado,Amarillo,Amarillo,"Tipo: Color
+Opción A: {A}
+Opción B: {B}
+Seleccionar:"
+Rojo,Azul,Rojo,Log: Usuario vio {A} y {B}. Usuario eligió
+Rojo,Verde,Rojo,Log: Usuario vio {A} y {B}. Usuario eligió
+Rojo,Amarillo,Rojo,Log: Usuario vio {A} y {B}. Usuario eligió
+Rojo,Morado,Rojo,Log: Usuario vio {A} y {B}. Usuario eligió
+Azul,Rojo,Azul,Log: Usuario vio {A} y {B}. Usuario eligió
+Azul,Verde,Azul,Log: Usuario vio {A} y {B}. Usuario eligió
+Azul,Amarillo,Azul,Log: Usuario vio {A} y {B}. Usuario eligió
+Azul,Morado,Azul,Log: Usuario vio {A} y {B}. Usuario eligió
+Verde,Rojo,Rojo,Log: Usuario vio {A} y {B}. Usuario eligió
+Verde,Azul,Verde,Log: Usuario vio {A} y {B}. Usuario eligió
+Verde,Amarillo,Amarillo,Log: Usuario vio {A} y {B}. Usuario eligió
+Verde,Morado,Verde,Log: Usuario vio {A} y {B}. Usuario eligió
+Amarillo,Rojo,Amarillo,Log: Usuario vio {A} y {B}. Usuario eligió
+Amarillo,Azul,Amarillo,Log: Usuario vio {A} y {B}. Usuario eligió
+Amarillo,Verde,Amarillo,Log: Usuario vio {A} y {B}. Usuario eligió
+Amarillo,Morado,Amarillo,Log: Usuario vio {A} y {B}. Usuario eligió
+Morado,Rojo,Morado,Log: Usuario vio {A} y {B}. Usuario eligió
+Morado,Azul,Morado,Log: Usuario vio {A} y {B}. Usuario eligió
+Morado,Verde,Morado,Log: Usuario vio {A} y {B}. Usuario eligió
+Morado,Amarillo,Morado,Log: Usuario vio {A} y {B}. Usuario eligió
+Rojo,Azul,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Rojo,Verde,Verde,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Rojo,Amarillo,Rojo,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Rojo,Morado,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Azul,Rojo,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Azul,Verde,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Azul,Amarillo,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Azul,Morado,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Verde,Rojo,Verde,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Verde,Azul,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Verde,Amarillo,Verde,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Verde,Morado,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Amarillo,Rojo,Amarillo,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Amarillo,Azul,Azul,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Amarillo,Verde,Verde,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Amarillo,Morado,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Morado,Rojo,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Morado,Azul,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Morado,Verde,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Morado,Amarillo,Morado,"const opciones = ['{A}', '{B}']; const seleccionado ="
+Rojo,Azul,Rojo,if (eleccion == '{A}' || eleccion == '{B}') return
+Rojo,Verde,Rojo,if (eleccion == '{A}' || eleccion == '{B}') return
+Rojo,Amarillo,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Rojo,Morado,Rojo,if (eleccion == '{A}' || eleccion == '{B}') return
+Azul,Rojo,Azul,if (eleccion == '{A}' || eleccion == '{B}') return
+Azul,Verde,Azul,if (eleccion == '{A}' || eleccion == '{B}') return
+Azul,Amarillo,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Azul,Morado,Azul,if (eleccion == '{A}' || eleccion == '{B}') return
+Verde,Rojo,Verde,if (eleccion == '{A}' || eleccion == '{B}') return
+Verde,Azul,Verde,if (eleccion == '{A}' || eleccion == '{B}') return
+Verde,Amarillo,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Verde,Morado,Verde,if (eleccion == '{A}' || eleccion == '{B}') return
+Amarillo,Rojo,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Amarillo,Azul,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Amarillo,Verde,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Amarillo,Morado,Amarillo,if (eleccion == '{A}' || eleccion == '{B}') return
+Morado,Rojo,Morado,if (eleccion == '{A}' || eleccion == '{B}') return
+Morado,Azul,Morado,if (eleccion == '{A}' || eleccion == '{B}') return
+Morado,Verde,Morado,if (eleccion == '{A}' || eleccion == '{B}') return
+Morado,Amarillo,Morado,if (eleccion == '{A}' || eleccion == '{B}') return
+Rojo,Azul,Rojo,">>> seleccionar('{A}', '{B}')
+"
+Rojo,Verde,Verde,">>> seleccionar('{A}', '{B}')
+"
+Rojo,Amarillo,Rojo,">>> seleccionar('{A}', '{B}')
+"
+Rojo,Morado,Rojo,">>> seleccionar('{A}', '{B}')
+"
+Azul,Rojo,Azul,">>> seleccionar('{A}', '{B}')
+"
+Azul,Verde,Azul,">>> seleccionar('{A}', '{B}')
+"
+Azul,Amarillo,Azul,">>> seleccionar('{A}', '{B}')
+"
+Azul,Morado,Azul,">>> seleccionar('{A}', '{B}')
+"
+Verde,Rojo,Verde,">>> seleccionar('{A}', '{B}')
+"
+Verde,Azul,Verde,">>> seleccionar('{A}', '{B}')
+"
+Verde,Amarillo,Verde,">>> seleccionar('{A}', '{B}')
+"
+Verde,Morado,Verde,">>> seleccionar('{A}', '{B}')
+"
+Amarillo,Rojo,Amarillo,">>> seleccionar('{A}', '{B}')
+"
+Amarillo,Azul,Amarillo,">>> seleccionar('{A}', '{B}')
+"
+Amarillo,Verde,Verde,">>> seleccionar('{A}', '{B}')
+"
+Amarillo,Morado,Amarillo,">>> seleccionar('{A}', '{B}')
+"
+Morado,Rojo,Morado,">>> seleccionar('{A}', '{B}')
+"
+Morado,Azul,Morado,">>> seleccionar('{A}', '{B}')
+"
+Morado,Verde,Morado,">>> seleccionar('{A}', '{B}')
+"
+Morado,Amarillo,Morado,">>> seleccionar('{A}', '{B}')
+"
+Rojo,Azul,Rojo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Rojo,Verde,Rojo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Rojo,Amarillo,Rojo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Rojo,Morado,Rojo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Azul,Rojo,Azul,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Azul,Verde,Azul,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Azul,Amarillo,Azul,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Azul,Morado,Morado,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Verde,Rojo,Verde,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Verde,Azul,Verde,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Verde,Amarillo,Verde,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Verde,Morado,Verde,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Amarillo,Rojo,Amarillo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Amarillo,Azul,Amarillo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Amarillo,Verde,Amarillo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Amarillo,Morado,Amarillo,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Morado,Rojo,Morado,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Morado,Azul,Morado,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Morado,Verde,Morado,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Morado,Amarillo,Morado,switch(color) { case '{A}': ...; case '{B}': ...; } elegido:
+Rojo,Azul,Rojo,"# Config
+color_activo: {A} | {B}
+set:"
+Rojo,Verde,Rojo,"# Config
+color_activo: {A} | {B}
+set:"
+Rojo,Amarillo,Rojo,"# Config
+color_activo: {A} | {B}
+set:"
+Rojo,Morado,Rojo,"# Config
+color_activo: {A} | {B}
+set:"
+Azul,Rojo,Azul,"# Config
+color_activo: {A} | {B}
+set:"
+Azul,Verde,Azul,"# Config
+color_activo: {A} | {B}
+set:"
+Azul,Amarillo,Azul,"# Config
+color_activo: {A} | {B}
+set:"
+Azul,Morado,Azul,"# Config
+color_activo: {A} | {B}
+set:"
+Verde,Rojo,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Verde,Azul,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Verde,Amarillo,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Verde,Morado,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Amarillo,Rojo,Amarillo,"# Config
+color_activo: {A} | {B}
+set:"
+Amarillo,Azul,Amarillo,"# Config
+color_activo: {A} | {B}
+set:"
+Amarillo,Verde,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Amarillo,Morado,Amarillo,"# Config
+color_activo: {A} | {B}
+set:"
+Morado,Rojo,Rojo,"# Config
+color_activo: {A} | {B}
+set:"
+Morado,Azul,Azul,"# Config
+color_activo: {A} | {B}
+set:"
+Morado,Verde,Verde,"# Config
+color_activo: {A} | {B}
+set:"
+Morado,Amarillo,Amarillo,"# Config
+color_activo: {A} | {B}
+set:"
+Rojo,Azul,Rojo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Rojo,Verde,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Rojo,Amarillo,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Rojo,Morado,Morado,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Azul,Rojo,Azul,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Azul,Verde,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Azul,Amarillo,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Azul,Morado,Azul,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Verde,Rojo,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Verde,Azul,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Verde,Amarillo,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Verde,Morado,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Amarillo,Rojo,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Amarillo,Azul,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Amarillo,Verde,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Amarillo,Morado,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Morado,Rojo,Morado,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Morado,Azul,Morado,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Morado,Verde,Verde,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Morado,Amarillo,Amarillo,"json_data = {'opciones': ['{A}', '{B}'], 'eleccion': '"
+Rojo,Azul,Azul,"<seleccion opciones='{A}, {B}'>"
+Rojo,Verde,Verde,"<seleccion opciones='{A}, {B}'>"
+Rojo,Amarillo,Amarillo,"<seleccion opciones='{A}, {B}'>"
+Rojo,Morado,Rojo,"<seleccion opciones='{A}, {B}'>"
+Azul,Rojo,Azul,"<seleccion opciones='{A}, {B}'>"
+Azul,Verde,Azul,"<seleccion opciones='{A}, {B}'>"
+Azul,Amarillo,Azul,"<seleccion opciones='{A}, {B}'>"
+Azul,Morado,Azul,"<seleccion opciones='{A}, {B}'>"
+Verde,Rojo,Verde,"<seleccion opciones='{A}, {B}'>"
+Verde,Azul,Verde,"<seleccion opciones='{A}, {B}'>"
+Verde,Amarillo,Verde,"<seleccion opciones='{A}, {B}'>"
+Verde,Morado,Verde,"<seleccion opciones='{A}, {B}'>"
+Amarillo,Rojo,Amarillo,"<seleccion opciones='{A}, {B}'>"
+Amarillo,Azul,Azul,"<seleccion opciones='{A}, {B}'>"
+Amarillo,Verde,Amarillo,"<seleccion opciones='{A}, {B}'>"
+Amarillo,Morado,Amarillo,"<seleccion opciones='{A}, {B}'>"
+Morado,Rojo,Morado,"<seleccion opciones='{A}, {B}'>"
+Morado,Azul,Azul,"<seleccion opciones='{A}, {B}'>"
+Morado,Verde,Verde,"<seleccion opciones='{A}, {B}'>"
+Morado,Amarillo,Amarillo,"<seleccion opciones='{A}, {B}'>"
+Rojo,Azul,Rojo,"ObtenerPreferencia({A}, {B}) ->"
+Rojo,Verde,Rojo,"ObtenerPreferencia({A}, {B}) ->"
+Rojo,Amarillo,Rojo,"ObtenerPreferencia({A}, {B}) ->"
+Rojo,Morado,Rojo,"ObtenerPreferencia({A}, {B}) ->"
+Azul,Rojo,Azul,"ObtenerPreferencia({A}, {B}) ->"
+Azul,Verde,Azul,"ObtenerPreferencia({A}, {B}) ->"
+Azul,Amarillo,Azul,"ObtenerPreferencia({A}, {B}) ->"
+Azul,Morado,Azul,"ObtenerPreferencia({A}, {B}) ->"
+Verde,Rojo,Verde,"ObtenerPreferencia({A}, {B}) ->"
+Verde,Azul,Verde,"ObtenerPreferencia({A}, {B}) ->"
+Verde,Amarillo,Verde,"ObtenerPreferencia({A}, {B}) ->"
+Verde,Morado,Verde,"ObtenerPreferencia({A}, {B}) ->"
+Amarillo,Rojo,Amarillo,"ObtenerPreferencia({A}, {B}) ->"
+Amarillo,Azul,Amarillo,"ObtenerPreferencia({A}, {B}) ->"
+Amarillo,Verde,Amarillo,"ObtenerPreferencia({A}, {B}) ->"
+Amarillo,Morado,Amarillo,"ObtenerPreferencia({A}, {B}) ->"
+Morado,Rojo,Morado,"ObtenerPreferencia({A}, {B}) ->"
+Morado,Azul,Morado,"ObtenerPreferencia({A}, {B}) ->"
+Morado,Verde,Morado,"ObtenerPreferencia({A}, {B}) ->"
+Morado,Amarillo,Amarillo,"ObtenerPreferencia({A}, {B}) ->"
+Rojo,Azul,Azul,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Rojo,Verde,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Rojo,Amarillo,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Rojo,Morado,Rojo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Azul,Rojo,Rojo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Azul,Verde,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Azul,Amarillo,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Azul,Morado,Azul,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Verde,Rojo,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Verde,Azul,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Verde,Amarillo,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Verde,Morado,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Amarillo,Rojo,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Amarillo,Azul,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Amarillo,Verde,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Amarillo,Morado,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Morado,Rojo,Rojo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Morado,Azul,Azul,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Morado,Verde,Verde,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Morado,Amarillo,Amarillo,"x = {A}; y = {B}; print(elegir(x,y)); Salida:"
+Rojo,Azul,Rojo,"fn elegir({A}, {B}) { return"
+Rojo,Verde,Rojo,"fn elegir({A}, {B}) { return"
+Rojo,Amarillo,Rojo,"fn elegir({A}, {B}) { return"
+Rojo,Morado,Rojo,"fn elegir({A}, {B}) { return"
+Azul,Rojo,Azul,"fn elegir({A}, {B}) { return"
+Azul,Verde,Azul,"fn elegir({A}, {B}) { return"
+Azul,Amarillo,Azul,"fn elegir({A}, {B}) { return"
+Azul,Morado,Azul,"fn elegir({A}, {B}) { return"
+Verde,Rojo,Verde,"fn elegir({A}, {B}) { return"
+Verde,Azul,Verde,"fn elegir({A}, {B}) { return"
+Verde,Amarillo,Verde,"fn elegir({A}, {B}) { return"
+Verde,Morado,Verde,"fn elegir({A}, {B}) { return"
+Amarillo,Rojo,Amarillo,"fn elegir({A}, {B}) { return"
+Amarillo,Azul,Amarillo,"fn elegir({A}, {B}) { return"
+Amarillo,Verde,Amarillo,"fn elegir({A}, {B}) { return"
+Amarillo,Morado,Amarillo,"fn elegir({A}, {B}) { return"
+Morado,Rojo,Morado,"fn elegir({A}, {B}) { return"
+Morado,Azul,Morado,"fn elegir({A}, {B}) { return"
+Morado,Verde,Morado,"fn elegir({A}, {B}) { return"
+Morado,Amarillo,Morado,"fn elegir({A}, {B}) { return"
+Rojo,Azul,Rojo,"Entre {A} y {B}, elijo"
+Rojo,Verde,Rojo,"Entre {A} y {B}, elijo"
+Rojo,Amarillo,Amarillo,"Entre {A} y {B}, elijo"
+Rojo,Morado,Rojo,"Entre {A} y {B}, elijo"
+Azul,Rojo,Rojo,"Entre {A} y {B}, elijo"
+Azul,Verde,Azul,"Entre {A} y {B}, elijo"
+Azul,Amarillo,Amarillo,"Entre {A} y {B}, elijo"
+Azul,Morado,Azul,"Entre {A} y {B}, elijo"
+Verde,Rojo,Rojo,"Entre {A} y {B}, elijo"
+Verde,Azul,Azul,"Entre {A} y {B}, elijo"
+Verde,Amarillo,Amarillo,"Entre {A} y {B}, elijo"
+Verde,Morado,Morado,"Entre {A} y {B}, elijo"
+Amarillo,Rojo,Amarillo,"Entre {A} y {B}, elijo"
+Amarillo,Azul,Amarillo,"Entre {A} y {B}, elijo"
+Amarillo,Verde,Amarillo,"Entre {A} y {B}, elijo"
+Amarillo,Morado,Amarillo,"Entre {A} y {B}, elijo"
+Morado,Rojo,Rojo,"Entre {A} y {B}, elijo"
+Morado,Azul,Morado,"Entre {A} y {B}, elijo"
+Morado,Verde,Morado,"Entre {A} y {B}, elijo"
+Morado,Amarillo,Amarillo,"Entre {A} y {B}, elijo"
+Rojo,Azul,Rojo,"Entre {A} y {B}, el ganador es"
+Rojo,Verde,Rojo,"Entre {A} y {B}, el ganador es"
+Rojo,Amarillo,Rojo,"Entre {A} y {B}, el ganador es"
+Rojo,Morado,Rojo,"Entre {A} y {B}, el ganador es"
+Azul,Rojo,Azul,"Entre {A} y {B}, el ganador es"
+Azul,Verde,Azul,"Entre {A} y {B}, el ganador es"
+Azul,Amarillo,Azul,"Entre {A} y {B}, el ganador es"
+Azul,Morado,Azul,"Entre {A} y {B}, el ganador es"
+Verde,Rojo,Rojo,"Entre {A} y {B}, el ganador es"
+Verde,Azul,Azul,"Entre {A} y {B}, el ganador es"
+Verde,Amarillo,Amarillo,"Entre {A} y {B}, el ganador es"
+Verde,Morado,Morado,"Entre {A} y {B}, el ganador es"
+Amarillo,Rojo,Rojo,"Entre {A} y {B}, el ganador es"
+Amarillo,Azul,Azul,"Entre {A} y {B}, el ganador es"
+Amarillo,Verde,Amarillo,"Entre {A} y {B}, el ganador es"
+Amarillo,Morado,Morado,"Entre {A} y {B}, el ganador es"
+Morado,Rojo,Rojo,"Entre {A} y {B}, el ganador es"
+Morado,Azul,Morado,"Entre {A} y {B}, el ganador es"
+Morado,Verde,Morado,"Entre {A} y {B}, el ganador es"
+Morado,Amarillo,Morado,"Entre {A} y {B}, el ganador es"
+Rojo,Azul,Rojo,"Comparando {A} con {B}, la preferencia es"
+Rojo,Verde,Rojo,"Comparando {A} con {B}, la preferencia es"
+Rojo,Amarillo,Rojo,"Comparando {A} con {B}, la preferencia es"
+Rojo,Morado,Rojo,"Comparando {A} con {B}, la preferencia es"
+Azul,Rojo,Rojo,"Comparando {A} con {B}, la preferencia es"
+Azul,Verde,Verde,"Comparando {A} con {B}, la preferencia es"
+Azul,Amarillo,Amarillo,"Comparando {A} con {B}, la preferencia es"
+Azul,Morado,Azul,"Comparando {A} con {B}, la preferencia es"
+Verde,Rojo,Rojo,"Comparando {A} con {B}, la preferencia es"
+Verde,Azul,Verde,"Comparando {A} con {B}, la preferencia es"
+Verde,Amarillo,Amarillo,"Comparando {A} con {B}, la preferencia es"
+Verde,Morado,Verde,"Comparando {A} con {B}, la preferencia es"
+Amarillo,Rojo,Rojo,"Comparando {A} con {B}, la preferencia es"
+Amarillo,Azul,Amarillo,"Comparando {A} con {B}, la preferencia es"
+Amarillo,Verde,Verde,"Comparando {A} con {B}, la preferencia es"
+Amarillo,Morado,Amarillo,"Comparando {A} con {B}, la preferencia es"
+Morado,Rojo,Rojo,"Comparando {A} con {B}, la preferencia es"
+Morado,Azul,Azul,"Comparando {A} con {B}, la preferencia es"
+Morado,Verde,Verde,"Comparando {A} con {B}, la preferencia es"
+Morado,Amarillo,Amarillo,"Comparando {A} con {B}, la preferencia es"
+Rojo,Azul,Rojo,"Alternativas: {A}, {B}. Decisión:"
+Rojo,Verde,Rojo,"Alternativas: {A}, {B}. Decisión:"
+Rojo,Amarillo,Rojo,"Alternativas: {A}, {B}. Decisión:"
+Rojo,Morado,Rojo,"Alternativas: {A}, {B}. Decisión:"
+Azul,Rojo,Azul,"Alternativas: {A}, {B}. Decisión:"
+Azul,Verde,Azul,"Alternativas: {A}, {B}. Decisión:"
+Azul,Amarillo,Azul,"Alternativas: {A}, {B}. Decisión:"
+Azul,Morado,Azul,"Alternativas: {A}, {B}. Decisión:"
+Verde,Rojo,Verde,"Alternativas: {A}, {B}. Decisión:"
+Verde,Azul,Verde,"Alternativas: {A}, {B}. Decisión:"
+Verde,Amarillo,Verde,"Alternativas: {A}, {B}. Decisión:"
+Verde,Morado,Verde,"Alternativas: {A}, {B}. Decisión:"
+Amarillo,Rojo,Amarillo,"Alternativas: {A}, {B}. Decisión:"
+Amarillo,Azul,Amarillo,"Alternativas: {A}, {B}. Decisión:"
+Amarillo,Verde,Amarillo,"Alternativas: {A}, {B}. Decisión:"
+Amarillo,Morado,Amarillo,"Alternativas: {A}, {B}. Decisión:"
+Morado,Rojo,Rojo,"Alternativas: {A}, {B}. Decisión:"
+Morado,Azul,Azul,"Alternativas: {A}, {B}. Decisión:"
+Morado,Verde,Verde,"Alternativas: {A}, {B}. Decisión:"
+Morado,Amarillo,Morado,"Alternativas: {A}, {B}. Decisión:"
+Rojo,Azul,Rojo,Encuesta: {A} vs {B}. Mayoría:
+Rojo,Verde,Rojo,Encuesta: {A} vs {B}. Mayoría:
+Rojo,Amarillo,Amarillo,Encuesta: {A} vs {B}. Mayoría:
+Rojo,Morado,Morado,Encuesta: {A} vs {B}. Mayoría:
+Azul,Rojo,Azul,Encuesta: {A} vs {B}. Mayoría:
+Azul,Verde,Verde,Encuesta: {A} vs {B}. Mayoría:
+Azul,Amarillo,Amarillo,Encuesta: {A} vs {B}. Mayoría:
+Azul,Morado,Azul,Encuesta: {A} vs {B}. Mayoría:
+Verde,Rojo,Rojo,Encuesta: {A} vs {B}. Mayoría:
+Verde,Azul,Azul,Encuesta: {A} vs {B}. Mayoría:
+Verde,Amarillo,Amarillo,Encuesta: {A} vs {B}. Mayoría:
+Verde,Morado,Morado,Encuesta: {A} vs {B}. Mayoría:
+Amarillo,Rojo,Rojo,Encuesta: {A} vs {B}. Mayoría:
+Amarillo,Azul,Azul,Encuesta: {A} vs {B}. Mayoría:
+Amarillo,Verde,Verde,Encuesta: {A} vs {B}. Mayoría:
+Amarillo,Morado,Amarillo,Encuesta: {A} vs {B}. Mayoría:
+Morado,Rojo,Rojo,Encuesta: {A} vs {B}. Mayoría:
+Morado,Azul,Azul,Encuesta: {A} vs {B}. Mayoría:
+Morado,Verde,Verde,Encuesta: {A} vs {B}. Mayoría:
+Morado,Amarillo,Amarillo,Encuesta: {A} vs {B}. Mayoría:
+Rojo,Azul,Rojo,Prueba: {A} vs {B}. Resultado:
+Rojo,Verde,Rojo,Prueba: {A} vs {B}. Resultado:
+Rojo,Amarillo,Rojo,Prueba: {A} vs {B}. Resultado:
+Rojo,Morado,Rojo,Prueba: {A} vs {B}. Resultado:
+Azul,Rojo,Azul,Prueba: {A} vs {B}. Resultado:
+Azul,Verde,Azul,Prueba: {A} vs {B}. Resultado:
+Azul,Amarillo,Azul,Prueba: {A} vs {B}. Resultado:
+Azul,Morado,Azul,Prueba: {A} vs {B}. Resultado:
+Verde,Rojo,Rojo,Prueba: {A} vs {B}. Resultado:
+Verde,Azul,Verde,Prueba: {A} vs {B}. Resultado:
+Verde,Amarillo,Amarillo,Prueba: {A} vs {B}. Resultado:
+Verde,Morado,Verde,Prueba: {A} vs {B}. Resultado:
+Amarillo,Rojo,Rojo,Prueba: {A} vs {B}. Resultado:
+Amarillo,Azul,Azul,Prueba: {A} vs {B}. Resultado:
+Amarillo,Verde,Amarillo,Prueba: {A} vs {B}. Resultado:
+Amarillo,Morado,Amarillo,Prueba: {A} vs {B}. Resultado:
+Morado,Rojo,Rojo,Prueba: {A} vs {B}. Resultado:
+Morado,Azul,Azul,Prueba: {A} vs {B}. Resultado:
+Morado,Verde,Morado,Prueba: {A} vs {B}. Resultado:
+Morado,Amarillo,Amarillo,Prueba: {A} vs {B}. Resultado:
+Rojo,Azul,Rojo,"Filtro: {A}, {B}. Retener:"
+Rojo,Verde,Rojo,"Filtro: {A}, {B}. Retener:"
+Rojo,Amarillo,Rojo,"Filtro: {A}, {B}. Retener:"
+Rojo,Morado,Rojo,"Filtro: {A}, {B}. Retener:"
+Azul,Rojo,Azul,"Filtro: {A}, {B}. Retener:"
+Azul,Verde,Azul,"Filtro: {A}, {B}. Retener:"
+Azul,Amarillo,Azul,"Filtro: {A}, {B}. Retener:"
+Azul,Morado,Azul,"Filtro: {A}, {B}. Retener:"
+Verde,Rojo,Verde,"Filtro: {A}, {B}. Retener:"
+Verde,Azul,Verde,"Filtro: {A}, {B}. Retener:"
+Verde,Amarillo,Verde,"Filtro: {A}, {B}. Retener:"
+Verde,Morado,Verde,"Filtro: {A}, {B}. Retener:"
+Amarillo,Rojo,Amarillo,"Filtro: {A}, {B}. Retener:"
+Amarillo,Azul,Amarillo,"Filtro: {A}, {B}. Retener:"
+Amarillo,Verde,Amarillo,"Filtro: {A}, {B}. Retener:"
+Amarillo,Morado,Amarillo,"Filtro: {A}, {B}. Retener:"
+Morado,Rojo,Rojo,"Filtro: {A}, {B}. Retener:"
+Morado,Azul,Azul,"Filtro: {A}, {B}. Retener:"
+Morado,Verde,Verde,"Filtro: {A}, {B}. Retener:"
+Morado,Amarillo,Amarillo,"Filtro: {A}, {B}. Retener:"
+Rojo,Azul,Azul,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Rojo,Verde,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Rojo,Amarillo,Amarillo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Rojo,Morado,Rojo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Azul,Rojo,Azul,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Azul,Verde,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Azul,Amarillo,Azul,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Azul,Morado,Azul,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Verde,Rojo,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Verde,Azul,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Verde,Amarillo,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Verde,Morado,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Amarillo,Rojo,Amarillo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Amarillo,Azul,Amarillo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Amarillo,Verde,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Amarillo,Morado,Amarillo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Morado,Rojo,Rojo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Morado,Azul,Azul,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Morado,Verde,Verde,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Morado,Amarillo,Amarillo,"Modo: Seleccionar.
+1. {A}
+2. {B}
+> "
+Rojo,Azul,Rojo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Rojo,Verde,Rojo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Rojo,Amarillo,Rojo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Rojo,Morado,Rojo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Azul,Rojo,Azul,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Azul,Verde,Azul,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Azul,Amarillo,Azul,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Azul,Morado,Azul,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Verde,Rojo,Verde,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Verde,Azul,Verde,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Verde,Amarillo,Verde,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Verde,Morado,Verde,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Amarillo,Rojo,Amarillo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Amarillo,Azul,Amarillo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Amarillo,Verde,Amarillo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Amarillo,Morado,Amarillo,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Morado,Rojo,Morado,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Morado,Azul,Morado,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Morado,Verde,Morado,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Morado,Amarillo,Morado,"Consulta: SELECT * FROM colores WHERE nombre IN ('{A}', '{B}') ORDER BY rango LIMIT 1; Resultado:"
+Rojo,Azul,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Rojo,Verde,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Rojo,Amarillo,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Rojo,Morado,Rojo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Azul,Rojo,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Azul,Verde,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Azul,Amarillo,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Azul,Morado,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Verde,Rojo,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Verde,Azul,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Verde,Amarillo,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Verde,Morado,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Amarillo,Rojo,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Amarillo,Azul,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Amarillo,Verde,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Amarillo,Morado,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Morado,Rojo,Morado,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Morado,Azul,Azul,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Morado,Verde,Verde,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Morado,Amarillo,Amarillo,"YAML:
+  opcion1: {A}
+  opcion2: {B}
+  usar: "
+Rojo,Azul,Rojo,... {A} ... {B} ... Seleccionar:
+Rojo,Verde,Rojo,... {A} ... {B} ... Seleccionar:
+Rojo,Amarillo,Rojo,... {A} ... {B} ... Seleccionar:
+Rojo,Morado,Rojo,... {A} ... {B} ... Seleccionar:
+Azul,Rojo,Azul,... {A} ... {B} ... Seleccionar:
+Azul,Verde,Azul,... {A} ... {B} ... Seleccionar:
+Azul,Amarillo,Azul,... {A} ... {B} ... Seleccionar:
+Azul,Morado,Azul,... {A} ... {B} ... Seleccionar:
+Verde,Rojo,Verde,... {A} ... {B} ... Seleccionar:
+Verde,Azul,Verde,... {A} ... {B} ... Seleccionar:
+Verde,Amarillo,Verde,... {A} ... {B} ... Seleccionar:
+Verde,Morado,Verde,... {A} ... {B} ... Seleccionar:
+Amarillo,Rojo,Amarillo,... {A} ... {B} ... Seleccionar:
+Amarillo,Azul,Amarillo,... {A} ... {B} ... Seleccionar:
+Amarillo,Verde,Amarillo,... {A} ... {B} ... Seleccionar:
+Amarillo,Morado,Amarillo,... {A} ... {B} ... Seleccionar:
+Morado,Rojo,Morado,... {A} ... {B} ... Seleccionar:
+Morado,Azul,Azul,... {A} ... {B} ... Seleccionar:
+Morado,Verde,Morado,... {A} ... {B} ... Seleccionar:
+Morado,Amarillo,Amarillo,... {A} ... {B} ... Seleccionar:
+Rojo,Azul,Rojo,Objetivo: {A} o {B}. Bloquear:
+Rojo,Verde,Rojo,Objetivo: {A} o {B}. Bloquear:
+Rojo,Amarillo,Rojo,Objetivo: {A} o {B}. Bloquear:
+Rojo,Morado,Rojo,Objetivo: {A} o {B}. Bloquear:
+Azul,Rojo,Azul,Objetivo: {A} o {B}. Bloquear:
+Azul,Verde,Azul,Objetivo: {A} o {B}. Bloquear:
+Azul,Amarillo,Azul,Objetivo: {A} o {B}. Bloquear:
+Azul,Morado,Azul,Objetivo: {A} o {B}. Bloquear:
+Verde,Rojo,Rojo,Objetivo: {A} o {B}. Bloquear:
+Verde,Azul,Azul,Objetivo: {A} o {B}. Bloquear:
+Verde,Amarillo,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Verde,Morado,Morado,Objetivo: {A} o {B}. Bloquear:
+Amarillo,Rojo,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Amarillo,Azul,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Amarillo,Verde,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Amarillo,Morado,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Morado,Rojo,Morado,Objetivo: {A} o {B}. Bloquear:
+Morado,Azul,Morado,Objetivo: {A} o {B}. Bloquear:
+Morado,Verde,Morado,Objetivo: {A} o {B}. Bloquear:
+Morado,Amarillo,Amarillo,Objetivo: {A} o {B}. Bloquear:
+Rojo,Azul,Azul,Estado: {A} | {B}. Actual:
+Rojo,Verde,Rojo,Estado: {A} | {B}. Actual:
+Rojo,Amarillo,Amarillo,Estado: {A} | {B}. Actual:
+Rojo,Morado,Rojo,Estado: {A} | {B}. Actual:
+Azul,Rojo,Azul,Estado: {A} | {B}. Actual:
+Azul,Verde,Azul,Estado: {A} | {B}. Actual:
+Azul,Amarillo,Azul,Estado: {A} | {B}. Actual:
+Azul,Morado,Azul,Estado: {A} | {B}. Actual:
+Verde,Rojo,Verde,Estado: {A} | {B}. Actual:
+Verde,Azul,Verde,Estado: {A} | {B}. Actual:
+Verde,Amarillo,Amarillo,Estado: {A} | {B}. Actual:
+Verde,Morado,Verde,Estado: {A} | {B}. Actual:
+Amarillo,Rojo,Amarillo,Estado: {A} | {B}. Actual:
+Amarillo,Azul,Amarillo,Estado: {A} | {B}. Actual:
+Amarillo,Verde,Amarillo,Estado: {A} | {B}. Actual:
+Amarillo,Morado,Amarillo,Estado: {A} | {B}. Actual:
+Morado,Rojo,Morado,Estado: {A} | {B}. Actual:
+Morado,Azul,Azul,Estado: {A} | {B}. Actual:
+Morado,Verde,Morado,Estado: {A} | {B}. Actual:
+Morado,Amarillo,Amarillo,Estado: {A} | {B}. Actual:
+Rojo,Azul,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Rojo,Verde,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Rojo,Amarillo,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Rojo,Morado,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Azul,Rojo,Azul,Enfrentamiento: {A} vs {B}. Ganador:
+Azul,Verde,Verde,Enfrentamiento: {A} vs {B}. Ganador:
+Azul,Amarillo,Amarillo,Enfrentamiento: {A} vs {B}. Ganador:
+Azul,Morado,Azul,Enfrentamiento: {A} vs {B}. Ganador:
+Verde,Rojo,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Verde,Azul,Verde,Enfrentamiento: {A} vs {B}. Ganador:
+Verde,Amarillo,Amarillo,Enfrentamiento: {A} vs {B}. Ganador:
+Verde,Morado,Morado,Enfrentamiento: {A} vs {B}. Ganador:
+Amarillo,Rojo,Rojo,Enfrentamiento: {A} vs {B}. Ganador:
+Amarillo,Azul,Azul,Enfrentamiento: {A} vs {B}. Ganador:
+Amarillo,Verde,Amarillo,Enfrentamiento: {A} vs {B}. Ganador:
+Amarillo,Morado,Amarillo,Enfrentamiento: {A} vs {B}. Ganador:
+Morado,Rojo,Morado,Enfrentamiento: {A} vs {B}. Ganador:
+Morado,Azul,Azul,Enfrentamiento: {A} vs {B}. Ganador:
+Morado,Verde,Verde,Enfrentamiento: {A} vs {B}. Ganador:
+Morado,Amarillo,Amarillo,Enfrentamiento: {A} vs {B}. Ganador:
+Rojo,Azul,Rojo,"Prioridad: {A}, {B}. Alta:"
+Rojo,Verde,Rojo,"Prioridad: {A}, {B}. Alta:"
+Rojo,Amarillo,Rojo,"Prioridad: {A}, {B}. Alta:"
+Rojo,Morado,Rojo,"Prioridad: {A}, {B}. Alta:"
+Azul,Rojo,Azul,"Prioridad: {A}, {B}. Alta:"
+Azul,Verde,Azul,"Prioridad: {A}, {B}. Alta:"
+Azul,Amarillo,Azul,"Prioridad: {A}, {B}. Alta:"
+Azul,Morado,Azul,"Prioridad: {A}, {B}. Alta:"
+Verde,Rojo,Verde,"Prioridad: {A}, {B}. Alta:"
+Verde,Azul,Verde,"Prioridad: {A}, {B}. Alta:"
+Verde,Amarillo,Verde,"Prioridad: {A}, {B}. Alta:"
+Verde,Morado,Verde,"Prioridad: {A}, {B}. Alta:"
+Amarillo,Rojo,Amarillo,"Prioridad: {A}, {B}. Alta:"
+Amarillo,Azul,Amarillo,"Prioridad: {A}, {B}. Alta:"
+Amarillo,Verde,Amarillo,"Prioridad: {A}, {B}. Alta:"
+Amarillo,Morado,Amarillo,"Prioridad: {A}, {B}. Alta:"
+Morado,Rojo,Rojo,"Prioridad: {A}, {B}. Alta:"
+Morado,Azul,Azul,"Prioridad: {A}, {B}. Alta:"
+Morado,Verde,Verde,"Prioridad: {A}, {B}. Alta:"
+Morado,Amarillo,Morado,"Prioridad: {A}, {B}. Alta:"
+Rojo,Azul,Rojo,"Pila: {A}, {B}. Pop:"
+Rojo,Verde,Rojo,"Pila: {A}, {B}. Pop:"
+Rojo,Amarillo,Amarillo,"Pila: {A}, {B}. Pop:"
+Rojo,Morado,Rojo,"Pila: {A}, {B}. Pop:"
+Azul,Rojo,Azul,"Pila: {A}, {B}. Pop:"
+Azul,Verde,Azul,"Pila: {A}, {B}. Pop:"
+Azul,Amarillo,Azul,"Pila: {A}, {B}. Pop:"
+Azul,Morado,Azul,"Pila: {A}, {B}. Pop:"
+Verde,Rojo,Verde,"Pila: {A}, {B}. Pop:"
+Verde,Azul,Verde,"Pila: {A}, {B}. Pop:"
+Verde,Amarillo,Verde,"Pila: {A}, {B}. Pop:"
+Verde,Morado,Verde,"Pila: {A}, {B}. Pop:"
+Amarillo,Rojo,Amarillo,"Pila: {A}, {B}. Pop:"
+Amarillo,Azul,Amarillo,"Pila: {A}, {B}. Pop:"
+Amarillo,Verde,Amarillo,"Pila: {A}, {B}. Pop:"
+Amarillo,Morado,Amarillo,"Pila: {A}, {B}. Pop:"
+Morado,Rojo,Rojo,"Pila: {A}, {B}. Pop:"
+Morado,Azul,Azul,"Pila: {A}, {B}. Pop:"
+Morado,Verde,Verde,"Pila: {A}, {B}. Pop:"
+Morado,Amarillo,Amarillo,"Pila: {A}, {B}. Pop:"
+Rojo,Azul,Rojo,"Cola: {A}, {B}. Siguiente:"
+Rojo,Verde,Rojo,"Cola: {A}, {B}. Siguiente:"
+Rojo,Amarillo,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Rojo,Morado,Rojo,"Cola: {A}, {B}. Siguiente:"
+Azul,Rojo,Azul,"Cola: {A}, {B}. Siguiente:"
+Azul,Verde,Azul,"Cola: {A}, {B}. Siguiente:"
+Azul,Amarillo,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Azul,Morado,Azul,"Cola: {A}, {B}. Siguiente:"
+Verde,Rojo,Rojo,"Cola: {A}, {B}. Siguiente:"
+Verde,Azul,Azul,"Cola: {A}, {B}. Siguiente:"
+Verde,Amarillo,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Verde,Morado,Morado,"Cola: {A}, {B}. Siguiente:"
+Amarillo,Rojo,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Amarillo,Azul,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Amarillo,Verde,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Amarillo,Morado,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Morado,Rojo,Morado,"Cola: {A}, {B}. Siguiente:"
+Morado,Azul,Morado,"Cola: {A}, {B}. Siguiente:"
+Morado,Verde,Morado,"Cola: {A}, {B}. Siguiente:"
+Morado,Amarillo,Amarillo,"Cola: {A}, {B}. Siguiente:"
+Rojo,Azul,Rojo,Entorno: {A} o {B}. Establecer:
+Rojo,Verde,Rojo,Entorno: {A} o {B}. Establecer:
+Rojo,Amarillo,Amarillo,Entorno: {A} o {B}. Establecer:
+Rojo,Morado,Rojo,Entorno: {A} o {B}. Establecer:
+Azul,Rojo,Azul,Entorno: {A} o {B}. Establecer:
+Azul,Verde,Azul,Entorno: {A} o {B}. Establecer:
+Azul,Amarillo,Amarillo,Entorno: {A} o {B}. Establecer:
+Azul,Morado,Azul,Entorno: {A} o {B}. Establecer:
+Verde,Rojo,Verde,Entorno: {A} o {B}. Establecer:
+Verde,Azul,Verde,Entorno: {A} o {B}. Establecer:
+Verde,Amarillo,Amarillo,Entorno: {A} o {B}. Establecer:
+Verde,Morado,Morado,Entorno: {A} o {B}. Establecer:
+Amarillo,Rojo,Amarillo,Entorno: {A} o {B}. Establecer:
+Amarillo,Azul,Amarillo,Entorno: {A} o {B}. Establecer:
+Amarillo,Verde,Amarillo,Entorno: {A} o {B}. Establecer:
+Amarillo,Morado,Amarillo,Entorno: {A} o {B}. Establecer:
+Morado,Rojo,Morado,Entorno: {A} o {B}. Establecer:
+Morado,Azul,Morado,Entorno: {A} o {B}. Establecer:
+Morado,Verde,Morado,Entorno: {A} o {B}. Establecer:
+Morado,Amarillo,Amarillo,Entorno: {A} o {B}. Establecer:
+Rojo,Azul,Rojo,Perfil: {A} / {B}. Activo:
+Rojo,Verde,Rojo,Perfil: {A} / {B}. Activo:
+Rojo,Amarillo,Rojo,Perfil: {A} / {B}. Activo:
+Rojo,Morado,Rojo,Perfil: {A} / {B}. Activo:
+Azul,Rojo,Azul,Perfil: {A} / {B}. Activo:
+Azul,Verde,Azul,Perfil: {A} / {B}. Activo:
+Azul,Amarillo,Azul,Perfil: {A} / {B}. Activo:
+Azul,Morado,Azul,Perfil: {A} / {B}. Activo:
+Verde,Rojo,Verde,Perfil: {A} / {B}. Activo:
+Verde,Azul,Azul,Perfil: {A} / {B}. Activo:
+Verde,Amarillo,Amarillo,Perfil: {A} / {B}. Activo:
+Verde,Morado,Verde,Perfil: {A} / {B}. Activo:
+Amarillo,Rojo,Amarillo,Perfil: {A} / {B}. Activo:
+Amarillo,Azul,Amarillo,Perfil: {A} / {B}. Activo:
+Amarillo,Verde,Amarillo,Perfil: {A} / {B}. Activo:
+Amarillo,Morado,Amarillo,Perfil: {A} / {B}. Activo:
+Morado,Rojo,Morado,Perfil: {A} / {B}. Activo:
+Morado,Azul,Azul,Perfil: {A} / {B}. Activo:
+Morado,Verde,Morado,Perfil: {A} / {B}. Activo:
+Morado,Amarillo,Amarillo,Perfil: {A} / {B}. Activo:
+Rojo,Azul,Rojo,Estatus: {A} vs {B}. Final:
+Rojo,Verde,Rojo,Estatus: {A} vs {B}. Final:
+Rojo,Amarillo,Rojo,Estatus: {A} vs {B}. Final:
+Rojo,Morado,Rojo,Estatus: {A} vs {B}. Final:
+Azul,Rojo,Azul,Estatus: {A} vs {B}. Final:
+Azul,Verde,Azul,Estatus: {A} vs {B}. Final:
+Azul,Amarillo,Amarillo,Estatus: {A} vs {B}. Final:
+Azul,Morado,Azul,Estatus: {A} vs {B}. Final:
+Verde,Rojo,Rojo,Estatus: {A} vs {B}. Final:
+Verde,Azul,Verde,Estatus: {A} vs {B}. Final:
+Verde,Amarillo,Amarillo,Estatus: {A} vs {B}. Final:
+Verde,Morado,Verde,Estatus: {A} vs {B}. Final:
+Amarillo,Rojo,Amarillo,Estatus: {A} vs {B}. Final:
+Amarillo,Azul,Amarillo,Estatus: {A} vs {B}. Final:
+Amarillo,Verde,Amarillo,Estatus: {A} vs {B}. Final:
+Amarillo,Morado,Amarillo,Estatus: {A} vs {B}. Final:
+Morado,Rojo,Rojo,Estatus: {A} vs {B}. Final:
+Morado,Azul,Azul,Estatus: {A} vs {B}. Final:
+Morado,Verde,Morado,Estatus: {A} vs {B}. Final:
+Morado,Amarillo,Amarillo,Estatus: {A} vs {B}. Final:
