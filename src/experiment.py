@@ -29,13 +29,13 @@ def run_experiment(model, tokenizer, device, colors, template):
 
     return pd.DataFrame(results)
 
-def run_full_experiment(colors, templates, exp_name=None):
+def run_full_experiment(model_name, colors, templates, exp_name=None):
     if exp_name is None:
         exp_name = "experiment_" + datetime.now().strftime("%Y%m%d_%H%M%S")
-    model, tokenizer, device = load_model("Qwen/Qwen2.5-0.5B")
+    model, tokenizer, device = load_model(model_name)
     results = pd.DataFrame()
     rankings = []
-    for template in templates:
+    for i, template in enumerate(templates):
         df_results = run_experiment(model, tokenizer, device, colors, template)
         results = pd.concat([results, df_results], ignore_index=True)
         ranking, win_matrix = fit_bradley_terry(results, colors)

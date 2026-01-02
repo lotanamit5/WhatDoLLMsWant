@@ -1,15 +1,15 @@
 from matplotlib import pyplot as plt
 
 
-def plot_convergence(history_df, colors):
+def plot_convergence(history_df, colors, color_map=None):
     plt.figure(figsize=(12, 7))
 
     # Map for actual line colors if possible
-    color_map = {
-        'red': 'red', 'blue': 'blue', 'green': 'green',
-        'yellow': '#FFD700', 'purple': 'purple',
-        'pink': '#FFC0CB', 'black': 'black', 'white': 'grey'
-    }
+    color_map = color_map or {
+            'red': 'red', 'blue': 'blue', 'green': 'green',
+            'yellow': '#FFD700', 'purple': 'purple',
+            'pink': '#FFC0CB', 'black': 'black', 'white': 'grey'
+        }
 
     for color in colors:
         plt.plot(

@@ -1,9 +1,9 @@
 color_en_dict = {
-    "Red": "Red",
-    "Blue": "Blue",
-    "Green": "Green",
-    "Yellow": "Yellow",
-    "Purple": "Purple"
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green",
+    "yellow": "Yellow",
+    "purple": "Purple"
 }
 colors_en = [
     # --- Group 1: Direct Selection (Simple) ---
@@ -137,7 +137,7 @@ templates_es = [
     "Estatus: {A} vs {B}. Final:"
 ]
 
-color_dict_zh = {
+color_zh_dict = {
     "红色": "red",
     "蓝色": "blue",
     "绿色": "green",

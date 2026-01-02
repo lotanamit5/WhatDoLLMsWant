@@ -8,14 +8,34 @@ def load_model(model_id="Qwen/Qwen2.5-0.5B"):
     print(f"Loading {model_id}...")
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     # Use float16 or bfloat16 for efficiency if GPU is available
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    
+    if torch.cuda.is_available():
+        num_gpus = torch.cuda.device_count()
+        print(f"Found {num_gpus} GPUs.")
+        # Distribute the model across all available GPUs
+        # Reserve some memory for activations (KV cache) by limiting max_memory per GPU
+        # L4 has 24GB. Setting limit to ~20GB forces distribution across more GPUs
+        max_memory = {i: "20GB" for i in range(num_gpus)}
+        device_map = "auto"
+        device = "cuda"
+    else:
+        device_map = None
+        max_memory = None
+        device = "cpu"
+
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         torch_dtype=torch.float16 if device == "cuda" else torch.float32,
-        device_map="auto" if device == "cuda" else None
+        device_map=device_map,
+        max_memory=max_memory
     )
     model.eval() # Set to evaluation mode
-    return model, tokenizer, device
+    
+    # If device_map is auto, the model is split. We can use model.device for the first layer,
+    # but generally we just need to know we are on cuda.
+    # Returning model.device is safer than hardcoded string if we want to be precise,
+    # but for 'auto', model.device usually returns the device of the first parameter.
+    return model, tokenizer, model.device
 
 def get_winner_logits(model, tokenizer, prompt_text, option_a, option_b, device):
     """
@@ -23,7 +43,8 @@ def get_winner_logits(model, tokenizer, prompt_text, option_a, option_b, device)
     of option_a vs option_b given the prompt.
     """
     # Encode the prompt
-    inputs = tokenizer(prompt_text, return_tensors="pt").to(device)
+    # When using device_map="auto", we should move inputs to model.device
+    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
 
     # We need the token IDs for the options (e.g., " Red" vs " Blue")
     # Note: We add a leading space often required by tokenizers for the start of a word
