@@ -5,16 +5,26 @@ import os
 # Add src to sys.path to allow imports within src modules to work
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from src.experiment import run_full_experiment
+from src.experiment import run_full_experiment, measure_top5_occurrences, run_perplexity_experiment
 from src.prompts import (
-    color_en_dict, colors_en,
+    color_en_dict, templates_en, templates_en_instruct,
     color_es_dict, templates_es,
     color_zh_dict, templates_zh
 )
 
 MODEL_ALIASES = {
-    "qwen": "Qwen/Qwen2.5-7B-Instruct",
-    "qwen-0.5b": "Qwen/Qwen2.5-0.5B",
+    "qwen0_5": "Qwen/Qwen2.5-0.5B",
+    "qwen0_5I": "Qwen/Qwen2.5-0.5B-Instruct",
+    "qwen1_5": "Qwen/Qwen2.5-1.5B",
+    "qwen3": "Qwen/Qwen2.5-3B",
+    "qwen7": "Qwen/Qwen2.5-7B",
+    "qwen7I": "Qwen/Qwen2.5-7B-Instruct",
+    "qwen14": "Qwen/Qwen2.5-14B",
+    "qwen14I": "Qwen/Qwen2.5-14B-Instruct",
+    "qwen32": "Qwen/Qwen2.5-32B",
+    "qwen32I": "Qwen/Qwen2.5-32B-Instruct",
+    "qwen72": "Qwen/Qwen2.5-72B",
+    "qwen72I": "Qwen/Qwen2.5-72B-Instruct",
 }
 
 COLOR_ALIASES = {
@@ -24,7 +34,8 @@ COLOR_ALIASES = {
 }
 
 TEMPLATE_ALIASES = {
-    "en": colors_en,
+    "en": templates_en,
+    "enI": templates_en_instruct,
     "es": templates_es,
     "zh": templates_zh,
 }
@@ -57,7 +68,7 @@ def main():
     print(f"Colors: {colors}")
     print(f"Number of templates: {len(templates)}")
 
-    run_full_experiment(model_name, colors, templates, args.exp_name)
+    run_perplexity_experiment(model_name, colors, templates, args.exp_name)
 
 if __name__ == "__main__":
     main()

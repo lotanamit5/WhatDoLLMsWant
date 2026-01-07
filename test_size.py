@@ -1,25 +1,24 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,3,4,5,5,6,7"  # Adjust based on available GPUs
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "Qwen/Qwen2.5-7B-Instruct"
+from src.model import load_model
+
+model_id = "Qwen/Qwen2.5-72B-Instruct"
 
 print(f"Attempting to load: {model_id}")
 print(f"Cuda: {torch.cuda.is_available()}")
 try:
     # Load Tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_id)
-
-    # Load Model with automatic device mapping (uses all available GPUs)
-    # torch_dtype=torch.bfloat16 is recommended for newer GPUs (Ampere+), otherwise use float16
-    model = AutoModelForCausalLM.from_pretrained(
-        model_id,
-        device_map="cuda",
-        dtype=torch.bfloat16
-    )
+    model, tokenizer, device = load_model(model_id)
 
     print("\nSUCCESS: Model loaded successfully!")
     print(f"Memory footprint: {model.get_memory_footprint() / 1024**3:.2f} GB")
-    print(f"Device map: {model.hf_device_map}")
+    if hasattr(model, "hf_device_map"):
+        print(f"Device map: {model.hf_device_map}")
+    else:
+        print("Device map: Not available (likely loaded on CPU or without accelerate)")
 
     # Test Inference
     messages = [

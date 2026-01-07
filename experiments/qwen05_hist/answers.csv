@@ -1,0 +1,1381 @@
+item_a,item_b,prob_item_a,prob_item_b,winner,template
+red,blue,0.2497851848602295,0.2648387551307678,blue,Option A: {A}. Option B: {B}. Selected:
+red,green,0.25874823331832886,0.30607473850250244,green,Option A: {A}. Option B: {B}. Selected:
+red,yellow,0.2833770513534546,0.23527586460113525,red,Option A: {A}. Option B: {B}. Selected:
+red,purple,0.2830602526664734,0.26111549139022827,red,Option A: {A}. Option B: {B}. Selected:
+blue,red,0.22031229734420776,0.23571091890335083,red,Option A: {A}. Option B: {B}. Selected:
+blue,green,0.22931748628616333,0.26763296127319336,green,Option A: {A}. Option B: {B}. Selected:
+blue,yellow,0.23960286378860474,0.20295864343643188,blue,Option A: {A}. Option B: {B}. Selected:
+blue,purple,0.2348971962928772,0.25502145290374756,purple,Option A: {A}. Option B: {B}. Selected:
+green,red,0.2548191547393799,0.34352874755859375,red,Option A: {A}. Option B: {B}. Selected:
+green,blue,0.29515010118484497,0.35043853521347046,blue,Option A: {A}. Option B: {B}. Selected:
+green,yellow,0.2864941954612732,0.30035650730133057,yellow,Option A: {A}. Option B: {B}. Selected:
+green,purple,0.3059764504432678,0.35886871814727783,purple,Option A: {A}. Option B: {B}. Selected:
+yellow,red,0.29230618476867676,0.24208027124404907,yellow,Option A: {A}. Option B: {B}. Selected:
+yellow,blue,0.2785385251045227,0.24217873811721802,yellow,Option A: {A}. Option B: {B}. Selected:
+yellow,green,0.30786222219467163,0.2818353772163391,yellow,Option A: {A}. Option B: {B}. Selected:
+yellow,purple,0.2906126379966736,0.2386760711669922,yellow,Option A: {A}. Option B: {B}. Selected:
+purple,red,0.2839761972427368,0.27212899923324585,purple,Option A: {A}. Option B: {B}. Selected:
+purple,blue,0.27094554901123047,0.3624172806739807,blue,Option A: {A}. Option B: {B}. Selected:
+purple,green,0.2596920132637024,0.3214125633239746,green,Option A: {A}. Option B: {B}. Selected:
+purple,yellow,0.3056500554084778,0.21249127388000488,purple,Option A: {A}. Option B: {B}. Selected:
+red,blue,0.25407159328460693,0.35561442375183105,blue,Choice: {A} or {B}? Answer:
+red,green,0.2595352530479431,0.39631378650665283,green,Choice: {A} or {B}? Answer:
+red,yellow,0.28958725929260254,0.38552671670913696,yellow,Choice: {A} or {B}? Answer:
+red,purple,0.22192496061325073,0.5227824449539185,purple,Choice: {A} or {B}? Answer:
+blue,red,0.3383368253707886,0.22619837522506714,blue,Choice: {A} or {B}? Answer:
+blue,green,0.2606589198112488,0.29860299825668335,green,Choice: {A} or {B}? Answer:
+blue,yellow,0.31206661462783813,0.2792377471923828,blue,Choice: {A} or {B}? Answer:
+blue,purple,0.21166932582855225,0.4053160548210144,purple,Choice: {A} or {B}? Answer:
+green,red,0.32626861333847046,0.28333115577697754,green,Choice: {A} or {B}? Answer:
+green,blue,0.29292064905166626,0.28442174196243286,green,Choice: {A} or {B}? Answer:
+green,yellow,0.3494488000869751,0.3223411440849304,green,Choice: {A} or {B}? Answer:
+green,purple,0.23922526836395264,0.4559667706489563,purple,Choice: {A} or {B}? Answer:
+yellow,red,0.4225636124610901,0.22586095333099365,yellow,Choice: {A} or {B}? Answer:
+yellow,blue,0.30409717559814453,0.30197829008102417,yellow,Choice: {A} or {B}? Answer:
+yellow,green,0.33031898736953735,0.34979283809661865,green,Choice: {A} or {B}? Answer:
+yellow,purple,0.23425841331481934,0.4265536665916443,purple,Choice: {A} or {B}? Answer:
+purple,red,0.4759271740913391,0.21951550245285034,purple,Choice: {A} or {B}? Answer:
+purple,blue,0.39384907484054565,0.21644878387451172,purple,Choice: {A} or {B}? Answer:
+purple,green,0.4304826855659485,0.22747349739074707,purple,Choice: {A} or {B}? Answer:
+purple,yellow,0.4922729730606079,0.2043357491493225,purple,Choice: {A} or {B}? Answer:
+red,blue,0.3752592206001282,0.3469995856285095,red,"Pick one: {A}, {B}. Result:"
+red,green,0.3173028826713562,0.2677761912345886,red,"Pick one: {A}, {B}. Result:"
+red,yellow,0.2662215828895569,0.3463302254676819,yellow,"Pick one: {A}, {B}. Result:"
+red,purple,0.3906930088996887,0.1788821816444397,red,"Pick one: {A}, {B}. Result:"
+blue,red,0.3072572350502014,0.29889780282974243,blue,"Pick one: {A}, {B}. Result:"
+blue,green,0.2107897400856018,0.23135501146316528,green,"Pick one: {A}, {B}. Result:"
+blue,yellow,0.23731106519699097,0.36846834421157837,yellow,"Pick one: {A}, {B}. Result:"
+blue,purple,0.29440921545028687,0.19804441928863525,blue,"Pick one: {A}, {B}. Result:"
+green,red,0.2900017499923706,0.31378239393234253,red,"Pick one: {A}, {B}. Result:"
+green,blue,0.30041491985321045,0.22521042823791504,green,"Pick one: {A}, {B}. Result:"
+green,yellow,0.26422667503356934,0.3185032606124878,yellow,"Pick one: {A}, {B}. Result:"
+green,purple,0.3460719585418701,0.20737910270690918,green,"Pick one: {A}, {B}. Result:"
+yellow,red,0.4904603362083435,0.170620858669281,yellow,"Pick one: {A}, {B}. Result:"
+yellow,blue,0.40679532289505005,0.2128767967224121,yellow,"Pick one: {A}, {B}. Result:"
+yellow,green,0.3495732545852661,0.17278128862380981,yellow,"Pick one: {A}, {B}. Result:"
+yellow,purple,0.2802455425262451,0.2195146679878235,yellow,"Pick one: {A}, {B}. Result:"
+purple,red,0.3921622037887573,0.2135440707206726,purple,"Pick one: {A}, {B}. Result:"
+purple,blue,0.33502328395843506,0.25041621923446655,purple,"Pick one: {A}, {B}. Result:"
+purple,green,0.2692411541938782,0.21294844150543213,purple,"Pick one: {A}, {B}. Result:"
+purple,yellow,0.279511034488678,0.2771851420402527,purple,"Pick one: {A}, {B}. Result:"
+red,blue,0.3470842242240906,0.27814680337905884,red,"Candidates: {A}, {B}. Chosen:"
+red,green,0.2727317810058594,0.2755306363105774,green,"Candidates: {A}, {B}. Chosen:"
+red,yellow,0.24373763799667358,0.21542888879776,red,"Candidates: {A}, {B}. Chosen:"
+red,purple,0.20930814743041992,0.20355850458145142,red,"Candidates: {A}, {B}. Chosen:"
+blue,red,0.3210131525993347,0.27790164947509766,blue,"Candidates: {A}, {B}. Chosen:"
+blue,green,0.2583450675010681,0.27740478515625,green,"Candidates: {A}, {B}. Chosen:"
+blue,yellow,0.27168911695480347,0.2536422610282898,blue,"Candidates: {A}, {B}. Chosen:"
+blue,purple,0.22804737091064453,0.27174246311187744,purple,"Candidates: {A}, {B}. Chosen:"
+green,red,0.2651280164718628,0.25944703817367554,green,"Candidates: {A}, {B}. Chosen:"
+green,blue,0.2574111223220825,0.2518887519836426,green,"Candidates: {A}, {B}. Chosen:"
+green,yellow,0.2306598424911499,0.17596334218978882,green,"Candidates: {A}, {B}. Chosen:"
+green,purple,0.1806333065032959,0.23667746782302856,purple,"Candidates: {A}, {B}. Chosen:"
+yellow,red,0.28126007318496704,0.2271031141281128,yellow,"Candidates: {A}, {B}. Chosen:"
+yellow,blue,0.2730579376220703,0.20856964588165283,yellow,"Candidates: {A}, {B}. Chosen:"
+yellow,green,0.28423142433166504,0.1978079080581665,yellow,"Candidates: {A}, {B}. Chosen:"
+yellow,purple,0.1900928020477295,0.17530947923660278,yellow,"Candidates: {A}, {B}. Chosen:"
+purple,red,0.2556683421134949,0.21458441019058228,purple,"Candidates: {A}, {B}. Chosen:"
+purple,blue,0.284013032913208,0.21635973453521729,purple,"Candidates: {A}, {B}. Chosen:"
+purple,green,0.26040828227996826,0.22316241264343262,purple,"Candidates: {A}, {B}. Chosen:"
+purple,yellow,0.23293322324752808,0.1995023488998413,purple,"Candidates: {A}, {B}. Chosen:"
+red,blue,0.16594922542572021,0.037690162658691406,red,Task: Select {A} or {B}. Output:
+red,green,0.15344929695129395,0.0356026291847229,red,Task: Select {A} or {B}. Output:
+red,yellow,0.17644232511520386,0.032389938831329346,red,Task: Select {A} or {B}. Output:
+red,purple,0.1917063593864441,0.025197148323059082,red,Task: Select {A} or {B}. Output:
+blue,red,0.11391448974609375,0.07233446836471558,blue,Task: Select {A} or {B}. Output:
+blue,green,0.09921848773956299,0.0286862850189209,blue,Task: Select {A} or {B}. Output:
+blue,yellow,0.11726731061935425,0.02667820453643799,blue,Task: Select {A} or {B}. Output:
+blue,purple,0.12055432796478271,0.015984296798706055,blue,Task: Select {A} or {B}. Output:
+green,red,0.11164659261703491,0.07039707899093628,green,Task: Select {A} or {B}. Output:
+green,blue,0.10813450813293457,0.02657228708267212,green,Task: Select {A} or {B}. Output:
+green,yellow,0.12345975637435913,0.022356510162353516,green,Task: Select {A} or {B}. Output:
+green,purple,0.11882561445236206,0.017707884311676025,green,Task: Select {A} or {B}. Output:
+yellow,red,0.09825778007507324,0.07078331708908081,yellow,Task: Select {A} or {B}. Output:
+yellow,blue,0.08782744407653809,0.03709465265274048,yellow,Task: Select {A} or {B}. Output:
+yellow,green,0.09079790115356445,0.040556490421295166,yellow,Task: Select {A} or {B}. Output:
+yellow,purple,0.10166352987289429,0.0186576247215271,yellow,Task: Select {A} or {B}. Output:
+purple,red,0.12580889463424683,0.12478578090667725,purple,Task: Select {A} or {B}. Output:
+purple,blue,0.1053849458694458,0.07133424282073975,purple,Task: Select {A} or {B}. Output:
+purple,green,0.10106956958770752,0.05510258674621582,purple,Task: Select {A} or {B}. Output:
+purple,yellow,0.12703222036361694,0.06180483102798462,purple,Task: Select {A} or {B}. Output:
+red,blue,0.39391201734542847,0.13790488243103027,red,Please choose between {A} and {B}. Choice:
+red,green,0.3035605549812317,0.3367697596549988,green,Please choose between {A} and {B}. Choice:
+red,yellow,0.3373672366142273,0.11460608243942261,red,Please choose between {A} and {B}. Choice:
+red,purple,0.3449062705039978,0.09234213829040527,red,Please choose between {A} and {B}. Choice:
+blue,red,0.28611087799072266,0.08305561542510986,blue,Please choose between {A} and {B}. Choice:
+blue,green,0.28400611877441406,0.21514958143234253,blue,Please choose between {A} and {B}. Choice:
+blue,yellow,0.272868275642395,0.08564168214797974,blue,Please choose between {A} and {B}. Choice:
+blue,purple,0.31196361780166626,0.0532647967338562,blue,Please choose between {A} and {B}. Choice:
+green,red,0.6556536555290222,0.08314734697341919,green,Please choose between {A} and {B}. Choice:
+green,blue,0.5243485569953918,0.08342587947845459,green,Please choose between {A} and {B}. Choice:
+green,yellow,0.5725104212760925,0.10991591215133667,green,Please choose between {A} and {B}. Choice:
+green,purple,0.53907710313797,0.09060466289520264,green,Please choose between {A} and {B}. Choice:
+yellow,red,0.5088304281234741,0.06188589334487915,yellow,Please choose between {A} and {B}. Choice:
+yellow,blue,0.5323722958564758,0.08074963092803955,yellow,Please choose between {A} and {B}. Choice:
+yellow,green,0.48722028732299805,0.19518667459487915,yellow,Please choose between {A} and {B}. Choice:
+yellow,purple,0.5470117926597595,0.053460538387298584,yellow,Please choose between {A} and {B}. Choice:
+purple,red,0.3459612727165222,0.11388546228408813,purple,Please choose between {A} and {B}. Choice:
+purple,blue,0.3365824818611145,0.14588427543640137,purple,Please choose between {A} and {B}. Choice:
+purple,green,0.36014866828918457,0.23529189825057983,purple,Please choose between {A} and {B}. Choice:
+purple,yellow,0.4058476686477661,0.10766083002090454,purple,Please choose between {A} and {B}. Choice:
+red,blue,0.20551395416259766,0.08650577068328857,red,A or B? {A} vs {B} ->
+red,green,0.16832995414733887,0.0609513521194458,red,A or B? {A} vs {B} ->
+red,yellow,0.23376774787902832,0.08100879192352295,red,A or B? {A} vs {B} ->
+red,purple,0.25338590145111084,0.09078723192214966,red,A or B? {A} vs {B} ->
+blue,red,0.14294087886810303,0.11023694276809692,blue,A or B? {A} vs {B} ->
+blue,green,0.13184809684753418,0.07487320899963379,blue,A or B? {A} vs {B} ->
+blue,yellow,0.14647555351257324,0.07821804285049438,blue,A or B? {A} vs {B} ->
+blue,purple,0.14252638816833496,0.09850209951400757,blue,A or B? {A} vs {B} ->
+green,red,0.08176165819168091,0.08151835203170776,green,A or B? {A} vs {B} ->
+green,blue,0.09707379341125488,0.07855361700057983,green,A or B? {A} vs {B} ->
+green,yellow,0.09730762243270874,0.06557667255401611,green,A or B? {A} vs {B} ->
+green,purple,0.08290767669677734,0.07589530944824219,green,A or B? {A} vs {B} ->
+yellow,red,0.16102898120880127,0.10703599452972412,yellow,A or B? {A} vs {B} ->
+yellow,blue,0.15086960792541504,0.09140706062316895,yellow,A or B? {A} vs {B} ->
+yellow,green,0.1481134295463562,0.07621902227401733,yellow,A or B? {A} vs {B} ->
+yellow,purple,0.13236641883850098,0.09739041328430176,yellow,A or B? {A} vs {B} ->
+purple,red,0.25505149364471436,0.1251307725906372,purple,A or B? {A} vs {B} ->
+purple,blue,0.2594418525695801,0.10050618648529053,purple,A or B? {A} vs {B} ->
+purple,green,0.19484639167785645,0.07141733169555664,purple,A or B? {A} vs {B} ->
+purple,yellow,0.2405414581298828,0.08353281021118164,purple,A or B? {A} vs {B} ->
+red,blue,0.07436275482177734,0.070639967918396,red,Which is preferred: {A} or {B}? Answer:
+red,green,0.09004515409469604,0.046175241470336914,red,Which is preferred: {A} or {B}? Answer:
+red,yellow,0.1142735481262207,0.0419885516166687,red,Which is preferred: {A} or {B}? Answer:
+red,purple,0.1156499981880188,0.09935891628265381,red,Which is preferred: {A} or {B}? Answer:
+blue,red,0.1144942045211792,0.026623189449310303,blue,Which is preferred: {A} or {B}? Answer:
+blue,green,0.11909836530685425,0.027136266231536865,blue,Which is preferred: {A} or {B}? Answer:
+blue,yellow,0.140647292137146,0.035438716411590576,blue,Which is preferred: {A} or {B}? Answer:
+blue,purple,0.14133810997009277,0.05005449056625366,blue,Which is preferred: {A} or {B}? Answer:
+green,red,0.1364980936050415,0.03590470552444458,green,Which is preferred: {A} or {B}? Answer:
+green,blue,0.10735344886779785,0.04918968677520752,green,Which is preferred: {A} or {B}? Answer:
+green,yellow,0.15495163202285767,0.035774409770965576,green,Which is preferred: {A} or {B}? Answer:
+green,purple,0.13983851671218872,0.05255407094955444,green,Which is preferred: {A} or {B}? Answer:
+yellow,red,0.16349554061889648,0.04182612895965576,yellow,Which is preferred: {A} or {B}? Answer:
+yellow,blue,0.16212284564971924,0.0854729413986206,yellow,Which is preferred: {A} or {B}? Answer:
+yellow,green,0.16278809309005737,0.0531536340713501,yellow,Which is preferred: {A} or {B}? Answer:
+yellow,purple,0.16897356510162354,0.07615995407104492,yellow,Which is preferred: {A} or {B}? Answer:
+purple,red,0.23839855194091797,0.04506814479827881,purple,Which is preferred: {A} or {B}? Answer:
+purple,blue,0.1916937232017517,0.09002572298049927,purple,Which is preferred: {A} or {B}? Answer:
+purple,green,0.2146335244178772,0.04355752468109131,purple,Which is preferred: {A} or {B}? Answer:
+purple,yellow,0.24809592962265015,0.054808855056762695,purple,Which is preferred: {A} or {B}? Answer:
+red,blue,0.13267672061920166,0.17694491147994995,blue,Vote: {A} or {B}. Result:
+red,green,0.12431281805038452,0.19723808765411377,green,Vote: {A} or {B}. Result:
+red,yellow,0.17544829845428467,0.17462080717086792,red,Vote: {A} or {B}. Result:
+red,purple,0.1271396279335022,0.27297163009643555,purple,Vote: {A} or {B}. Result:
+blue,red,0.16703927516937256,0.12232637405395508,blue,Vote: {A} or {B}. Result:
+blue,green,0.16833847761154175,0.16615229845046997,blue,Vote: {A} or {B}. Result:
+blue,yellow,0.19449907541275024,0.21801644563674927,yellow,Vote: {A} or {B}. Result:
+blue,purple,0.12922704219818115,0.21472084522247314,purple,Vote: {A} or {B}. Result:
+green,red,0.11212962865829468,0.19790536165237427,red,Vote: {A} or {B}. Result:
+green,blue,0.12081217765808105,0.21715545654296875,blue,Vote: {A} or {B}. Result:
+green,yellow,0.13792115449905396,0.18025600910186768,yellow,Vote: {A} or {B}. Result:
+green,purple,0.11006724834442139,0.2987927198410034,purple,Vote: {A} or {B}. Result:
+yellow,red,0.14847952127456665,0.18350154161453247,red,Vote: {A} or {B}. Result:
+yellow,blue,0.16784262657165527,0.19270682334899902,blue,Vote: {A} or {B}. Result:
+yellow,green,0.15002506971359253,0.14820724725723267,yellow,Vote: {A} or {B}. Result:
+yellow,purple,0.14745104312896729,0.1777641773223877,purple,Vote: {A} or {B}. Result:
+purple,red,0.2525644302368164,0.1985822319984436,purple,Vote: {A} or {B}. Result:
+purple,blue,0.24314355850219727,0.16210168600082397,purple,Vote: {A} or {B}. Result:
+purple,green,0.2463914155960083,0.14240622520446777,purple,Vote: {A} or {B}. Result:
+purple,yellow,0.25826531648635864,0.17334270477294922,purple,Vote: {A} or {B}. Result:
+red,blue,0.11596870422363281,0.06869864463806152,red,{A} / {B}. Selection:
+red,green,0.10729086399078369,0.10470163822174072,red,{A} / {B}. Selection:
+red,yellow,0.0995984673500061,0.05220985412597656,red,{A} / {B}. Selection:
+red,purple,0.1403125524520874,0.11385393142700195,red,{A} / {B}. Selection:
+blue,red,0.10485315322875977,0.10352861881256104,blue,{A} / {B}. Selection:
+blue,green,0.13109815120697021,0.06627273559570312,blue,{A} / {B}. Selection:
+blue,yellow,0.14504635334014893,0.0800325870513916,blue,{A} / {B}. Selection:
+blue,purple,0.13720488548278809,0.07483410835266113,blue,{A} / {B}. Selection:
+green,red,0.12220597267150879,0.13986265659332275,red,{A} / {B}. Selection:
+green,blue,0.12730193138122559,0.0735788345336914,green,{A} / {B}. Selection:
+green,yellow,0.1131753921508789,0.07352155447006226,green,{A} / {B}. Selection:
+green,purple,0.10679399967193604,0.11821675300598145,purple,{A} / {B}. Selection:
+yellow,red,0.0773993730545044,0.08638358116149902,red,{A} / {B}. Selection:
+yellow,blue,0.0925898551940918,0.07500123977661133,yellow,{A} / {B}. Selection:
+yellow,green,0.12402582168579102,0.11542201042175293,yellow,{A} / {B}. Selection:
+yellow,purple,0.09780001640319824,0.15078234672546387,purple,{A} / {B}. Selection:
+purple,red,0.07754898071289062,0.09899532794952393,red,{A} / {B}. Selection:
+purple,blue,0.11089837551116943,0.06500029563903809,purple,{A} / {B}. Selection:
+purple,green,0.11192846298217773,0.08412683010101318,purple,{A} / {B}. Selection:
+purple,yellow,0.08696818351745605,0.09963738918304443,yellow,{A} / {B}. Selection:
+red,blue,0.10940885543823242,0.06748753786087036,red,Name: {A}. Name: {B}. Preferred:
+red,green,0.0918390154838562,0.05281013250350952,red,Name: {A}. Name: {B}. Preferred:
+red,yellow,0.08709293603897095,0.08618569374084473,red,Name: {A}. Name: {B}. Preferred:
+red,purple,0.0849115252494812,0.028626561164855957,red,Name: {A}. Name: {B}. Preferred:
+blue,red,0.10641878843307495,0.06896775960922241,blue,Name: {A}. Name: {B}. Preferred:
+blue,green,0.07238399982452393,0.04454207420349121,blue,Name: {A}. Name: {B}. Preferred:
+blue,yellow,0.08576476573944092,0.0684363842010498,blue,Name: {A}. Name: {B}. Preferred:
+blue,purple,0.0886077880859375,0.03239709138870239,blue,Name: {A}. Name: {B}. Preferred:
+green,red,0.08487540483474731,0.0693368911743164,green,Name: {A}. Name: {B}. Preferred:
+green,blue,0.06802874803543091,0.05430954694747925,green,Name: {A}. Name: {B}. Preferred:
+green,yellow,0.07738465070724487,0.07447922229766846,green,Name: {A}. Name: {B}. Preferred:
+green,purple,0.05750918388366699,0.02816164493560791,green,Name: {A}. Name: {B}. Preferred:
+yellow,red,0.11803638935089111,0.05519211292266846,yellow,Name: {A}. Name: {B}. Preferred:
+yellow,blue,0.09385693073272705,0.060722529888153076,yellow,Name: {A}. Name: {B}. Preferred:
+yellow,green,0.0923076868057251,0.04909563064575195,yellow,Name: {A}. Name: {B}. Preferred:
+yellow,purple,0.08462882041931152,0.026670634746551514,yellow,Name: {A}. Name: {B}. Preferred:
+purple,red,0.06372755765914917,0.07431095838546753,red,Name: {A}. Name: {B}. Preferred:
+purple,blue,0.05487746000289917,0.07792413234710693,blue,Name: {A}. Name: {B}. Preferred:
+purple,green,0.048295795917510986,0.05771231651306152,green,Name: {A}. Name: {B}. Preferred:
+purple,yellow,0.04964256286621094,0.087654709815979,yellow,Name: {A}. Name: {B}. Preferred:
+red,blue,0.275005578994751,0.1565442681312561,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,green,0.22092527151107788,0.17124563455581665,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,yellow,0.23878329992294312,0.11867350339889526,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,purple,0.2637791037559509,0.10340690612792969,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,red,0.2174224853515625,0.20414310693740845,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,green,0.1738094687461853,0.14392095804214478,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,yellow,0.19950032234191895,0.12794208526611328,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,purple,0.218766450881958,0.1443280577659607,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,red,0.22192758321762085,0.19802188873291016,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,blue,0.19394320249557495,0.12734830379486084,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,yellow,0.20794689655303955,0.12817144393920898,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,purple,0.20180290937423706,0.11778134107589722,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,red,0.20160633325576782,0.15881991386413574,yellow,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,blue,0.20892202854156494,0.1132347583770752,yellow,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,green,0.19759231805801392,0.13569307327270508,yellow,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,purple,0.19905799627304077,0.08085078001022339,yellow,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,red,0.19036757946014404,0.19995445013046265,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,blue,0.20455831289291382,0.1645338535308838,purple,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,green,0.1576572060585022,0.19507098197937012,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,yellow,0.17479699850082397,0.14171361923217773,purple,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,blue,0.018958985805511475,0.0025548934936523438,red,"Input: [{A}, {B}]
+Output:"
+red,green,0.02367424964904785,0.004913449287414551,red,"Input: [{A}, {B}]
+Output:"
+red,yellow,0.027373015880584717,0.00234299898147583,red,"Input: [{A}, {B}]
+Output:"
+red,purple,0.028626441955566406,0.005644798278808594,red,"Input: [{A}, {B}]
+Output:"
+blue,red,0.006404519081115723,0.005640804767608643,blue,"Input: [{A}, {B}]
+Output:"
+blue,green,0.008857250213623047,0.006574094295501709,blue,"Input: [{A}, {B}]
+Output:"
+blue,yellow,0.009231388568878174,0.0025458335876464844,blue,"Input: [{A}, {B}]
+Output:"
+blue,purple,0.009190201759338379,0.003219306468963623,blue,"Input: [{A}, {B}]
+Output:"
+green,red,0.012408971786499023,0.006564199924468994,green,"Input: [{A}, {B}]
+Output:"
+green,blue,0.017113208770751953,0.003175199031829834,green,"Input: [{A}, {B}]
+Output:"
+green,yellow,0.01698225736618042,0.0018981695175170898,green,"Input: [{A}, {B}]
+Output:"
+green,purple,0.017393171787261963,0.002288520336151123,green,"Input: [{A}, {B}]
+Output:"
+yellow,red,0.004303634166717529,0.0068624019622802734,red,"Input: [{A}, {B}]
+Output:"
+yellow,blue,0.004374146461486816,0.0034252405166625977,yellow,"Input: [{A}, {B}]
+Output:"
+yellow,green,0.005813539028167725,0.005550980567932129,yellow,"Input: [{A}, {B}]
+Output:"
+yellow,purple,0.007100045680999756,0.0031592845916748047,yellow,"Input: [{A}, {B}]
+Output:"
+purple,red,0.0053730010986328125,0.0064206719398498535,red,"Input: [{A}, {B}]
+Output:"
+purple,blue,0.005651116371154785,0.003580629825592041,purple,"Input: [{A}, {B}]
+Output:"
+purple,green,0.0048288702964782715,0.004996597766876221,green,"Input: [{A}, {B}]
+Output:"
+purple,yellow,0.006112217903137207,0.003120124340057373,purple,"Input: [{A}, {B}]
+Output:"
+red,blue,0.2836511731147766,0.06478404998779297,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,green,0.2518232464790344,0.11739623546600342,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,yellow,0.2281588315963745,0.07795101404190063,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,purple,0.2054615616798401,0.08957564830780029,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,red,0.15226131677627563,0.2936689853668213,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,green,0.1500082015991211,0.20426762104034424,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,yellow,0.15659493207931519,0.12464052438735962,blue,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,purple,0.12833625078201294,0.14264953136444092,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,red,0.2043750286102295,0.21699893474578857,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,blue,0.2270033359527588,0.07650136947631836,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,yellow,0.21253430843353271,0.08793491125106812,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,purple,0.17822837829589844,0.07506060600280762,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,red,0.1624583601951599,0.29087692499160767,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,blue,0.19758403301239014,0.1316213607788086,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,green,0.18068355321884155,0.22860699892044067,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,purple,0.14721518754959106,0.08776086568832397,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,red,0.14238160848617554,0.25759559869766235,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,blue,0.1685018539428711,0.12427020072937012,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,green,0.15726381540298462,0.1616584062576294,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,yellow,0.14622896909713745,0.11064362525939941,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,blue,0.45777565240859985,0.10608768463134766,red,"Dataset: {A}, {B}. Filtered:"
+red,green,0.369204580783844,0.12290436029434204,red,"Dataset: {A}, {B}. Filtered:"
+red,yellow,0.41662341356277466,0.06927978992462158,red,"Dataset: {A}, {B}. Filtered:"
+red,purple,0.40884941816329956,0.07117527723312378,red,"Dataset: {A}, {B}. Filtered:"
+blue,red,0.4021296501159668,0.1790391206741333,blue,"Dataset: {A}, {B}. Filtered:"
+blue,green,0.31431394815444946,0.12984967231750488,blue,"Dataset: {A}, {B}. Filtered:"
+blue,yellow,0.40880364179611206,0.06664592027664185,blue,"Dataset: {A}, {B}. Filtered:"
+blue,purple,0.3270295262336731,0.0975756049156189,blue,"Dataset: {A}, {B}. Filtered:"
+green,red,0.3735000491142273,0.16073352098464966,green,"Dataset: {A}, {B}. Filtered:"
+green,blue,0.3041972517967224,0.11692899465560913,green,"Dataset: {A}, {B}. Filtered:"
+green,yellow,0.3424193859100342,0.07658028602600098,green,"Dataset: {A}, {B}. Filtered:"
+green,purple,0.29190540313720703,0.09895068407058716,green,"Dataset: {A}, {B}. Filtered:"
+yellow,red,0.3670734167098999,0.17617732286453247,yellow,"Dataset: {A}, {B}. Filtered:"
+yellow,blue,0.35491520166397095,0.1588383913040161,yellow,"Dataset: {A}, {B}. Filtered:"
+yellow,green,0.36150556802749634,0.1588614583015442,yellow,"Dataset: {A}, {B}. Filtered:"
+yellow,purple,0.31067997217178345,0.10596823692321777,yellow,"Dataset: {A}, {B}. Filtered:"
+purple,red,0.4340686798095703,0.1606113314628601,purple,"Dataset: {A}, {B}. Filtered:"
+purple,blue,0.39443856477737427,0.14018654823303223,purple,"Dataset: {A}, {B}. Filtered:"
+purple,green,0.4065455198287964,0.11227136850357056,purple,"Dataset: {A}, {B}. Filtered:"
+purple,yellow,0.4368988871574402,0.07072901725769043,purple,"Dataset: {A}, {B}. Filtered:"
+red,blue,0.010322391986846924,0.0017986297607421875,red,"[ {A}, {B} ] Selected index:"
+red,green,0.011783778667449951,0.0030604004859924316,red,"[ {A}, {B} ] Selected index:"
+red,yellow,0.014041781425476074,0.0020061731338500977,red,"[ {A}, {B} ] Selected index:"
+red,purple,0.014582395553588867,0.002603888511657715,red,"[ {A}, {B} ] Selected index:"
+blue,red,0.01026076078414917,0.003498971462249756,blue,"[ {A}, {B} ] Selected index:"
+blue,green,0.009637296199798584,0.0021866559982299805,blue,"[ {A}, {B} ] Selected index:"
+blue,yellow,0.011113941669464111,0.0018042922019958496,blue,"[ {A}, {B} ] Selected index:"
+blue,purple,0.01177835464477539,0.002346217632293701,blue,"[ {A}, {B} ] Selected index:"
+green,red,0.016677379608154297,0.003698587417602539,green,"[ {A}, {B} ] Selected index:"
+green,blue,0.01864725351333618,0.0025429725646972656,green,"[ {A}, {B} ] Selected index:"
+green,yellow,0.018689215183258057,0.002100050449371338,green,"[ {A}, {B} ] Selected index:"
+green,purple,0.01962953805923462,0.0027551651000976562,green,"[ {A}, {B} ] Selected index:"
+yellow,red,0.01237034797668457,0.0038013458251953125,yellow,"[ {A}, {B} ] Selected index:"
+yellow,blue,0.014120101928710938,0.0036607980728149414,yellow,"[ {A}, {B} ] Selected index:"
+yellow,green,0.01165616512298584,0.003866255283355713,yellow,"[ {A}, {B} ] Selected index:"
+yellow,purple,0.01351010799407959,0.0026687979698181152,yellow,"[ {A}, {B} ] Selected index:"
+purple,red,0.019082725048065186,0.006084263324737549,purple,"[ {A}, {B} ] Selected index:"
+purple,blue,0.019513845443725586,0.006629884243011475,purple,"[ {A}, {B} ] Selected index:"
+purple,green,0.01606982946395874,0.008091330528259277,purple,"[ {A}, {B} ] Selected index:"
+purple,yellow,0.029585599899291992,0.003966391086578369,purple,"[ {A}, {B} ] Selected index:"
+red,blue,0.09226810932159424,0.05337679386138916,red,"List: {A}, {B}. Top item:"
+red,green,0.06745368242263794,0.052997589111328125,red,"List: {A}, {B}. Top item:"
+red,yellow,0.10008078813552856,0.04845303297042847,red,"List: {A}, {B}. Top item:"
+red,purple,0.09276944398880005,0.12048923969268799,purple,"List: {A}, {B}. Top item:"
+blue,red,0.12731987237930298,0.04988747835159302,blue,"List: {A}, {B}. Top item:"
+blue,green,0.0872347354888916,0.04161512851715088,blue,"List: {A}, {B}. Top item:"
+blue,yellow,0.14732563495635986,0.053002238273620605,blue,"List: {A}, {B}. Top item:"
+blue,purple,0.12550723552703857,0.10772150754928589,blue,"List: {A}, {B}. Top item:"
+green,red,0.15720319747924805,0.08760005235671997,green,"List: {A}, {B}. Top item:"
+green,blue,0.12339556217193604,0.05842667818069458,green,"List: {A}, {B}. Top item:"
+green,yellow,0.12296897172927856,0.03270089626312256,green,"List: {A}, {B}. Top item:"
+green,purple,0.11597490310668945,0.18245291709899902,purple,"List: {A}, {B}. Top item:"
+yellow,red,0.16858315467834473,0.08874291181564331,yellow,"List: {A}, {B}. Top item:"
+yellow,blue,0.14598387479782104,0.08254420757293701,yellow,"List: {A}, {B}. Top item:"
+yellow,green,0.13129651546478271,0.07264399528503418,yellow,"List: {A}, {B}. Top item:"
+yellow,purple,0.12950950860977173,0.10103052854537964,yellow,"List: {A}, {B}. Top item:"
+purple,red,0.22525638341903687,0.05979377031326294,purple,"List: {A}, {B}. Top item:"
+purple,blue,0.23075097799301147,0.07529431581497192,purple,"List: {A}, {B}. Top item:"
+purple,green,0.19255328178405762,0.054096519947052,purple,"List: {A}, {B}. Top item:"
+purple,yellow,0.24613982439041138,0.06547242403030396,purple,"List: {A}, {B}. Top item:"
+red,blue,0.08330553770065308,0.05771613121032715,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,green,0.1200745701789856,0.1545831561088562,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,yellow,0.10218292474746704,0.047558486461639404,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,purple,0.13994789123535156,0.024456918239593506,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,red,0.0833665132522583,0.07067126035690308,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,green,0.15227115154266357,0.19715112447738647,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,yellow,0.13163608312606812,0.05418628454208374,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,purple,0.10081130266189575,0.037240684032440186,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,red,0.16876542568206787,0.08979743719100952,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,blue,0.2229931354522705,0.09007233381271362,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,yellow,0.26999151706695557,0.05101430416107178,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,purple,0.3212563991546631,0.059515535831451416,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,red,0.07456880807876587,0.1034051775932312,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,blue,0.11183035373687744,0.10311776399612427,yellow,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,green,0.11629581451416016,0.2359025478363037,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,purple,0.14072000980377197,0.056617021560668945,yellow,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,red,0.049594759941101074,0.11952400207519531,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,blue,0.09221315383911133,0.09559732675552368,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,green,0.12518525123596191,0.27827972173690796,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,yellow,0.08944708108901978,0.05280405282974243,purple,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,blue,0.0023881196975708008,0.0015274882316589355,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,green,0.002353191375732422,0.0016478300094604492,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,yellow,0.0033288002014160156,0.00207364559173584,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,purple,0.0006653666496276855,0.0003369450569152832,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,red,0.0021407604217529297,0.00023043155670166016,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,green,0.002077817916870117,0.0007030963897705078,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,yellow,0.002000570297241211,0.0006828904151916504,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,purple,0.0004706382751464844,0.0001291036605834961,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,red,0.003112316131591797,0.00021344423294067383,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,blue,0.003705918788909912,0.0005805492401123047,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,yellow,0.0048561692237854,0.000868380069732666,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,purple,0.0007692575454711914,0.00013273954391479492,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,red,0.0019739270210266113,0.0007641911506652832,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,blue,0.0022371411323547363,0.0014054179191589355,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,green,0.002288997173309326,0.0020648837089538574,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,purple,0.0009511709213256836,0.000522613525390625,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,red,0.0004082322120666504,4.750490188598633e-05,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,blue,0.0005270242691040039,0.00015157461166381836,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,green,0.0005738735198974609,0.00012981891632080078,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,yellow,0.0008693933486938477,0.0002218484878540039,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,blue,0.07608026266098022,0.04322969913482666,red,Log: User viewed {A} and {B}. User chose
+red,green,0.06006377935409546,0.03356730937957764,red,Log: User viewed {A} and {B}. User chose
+red,yellow,0.030652225017547607,0.007636368274688721,red,Log: User viewed {A} and {B}. User chose
+red,purple,0.04870796203613281,0.007994890213012695,red,Log: User viewed {A} and {B}. User chose
+blue,red,0.04251515865325928,0.0352177619934082,blue,Log: User viewed {A} and {B}. User chose
+blue,green,0.04301095008850098,0.027717769145965576,blue,Log: User viewed {A} and {B}. User chose
+blue,yellow,0.03143125772476196,0.01134425401687622,blue,Log: User viewed {A} and {B}. User chose
+blue,purple,0.04197061061859131,0.010303616523742676,blue,Log: User viewed {A} and {B}. User chose
+green,red,0.039970576763153076,0.027840793132781982,green,Log: User viewed {A} and {B}. User chose
+green,blue,0.0588420033454895,0.03407251834869385,green,Log: User viewed {A} and {B}. User chose
+green,yellow,0.026262938976287842,0.006355762481689453,green,Log: User viewed {A} and {B}. User chose
+green,purple,0.04514211416244507,0.00878298282623291,green,Log: User viewed {A} and {B}. User chose
+yellow,red,0.01838630437850952,0.02719181776046753,red,Log: User viewed {A} and {B}. User chose
+yellow,blue,0.03935128450393677,0.03294926881790161,yellow,Log: User viewed {A} and {B}. User chose
+yellow,green,0.029832899570465088,0.026624202728271484,yellow,Log: User viewed {A} and {B}. User chose
+yellow,purple,0.02349001169204712,0.0071454644203186035,yellow,Log: User viewed {A} and {B}. User chose
+purple,red,0.029769599437713623,0.04136079549789429,red,Log: User viewed {A} and {B}. User chose
+purple,blue,0.04396635293960571,0.04707711935043335,blue,Log: User viewed {A} and {B}. User chose
+purple,green,0.03630942106246948,0.044422030448913574,green,Log: User viewed {A} and {B}. User chose
+purple,yellow,0.03096640110015869,0.02199643850326538,purple,Log: User viewed {A} and {B}. User chose
+red,blue,1.5079975128173828e-05,2.3603439331054688e-05,blue,"const options = ['{A}', '{B}']; const selected ="
+red,green,1.5556812286376953e-05,1.9609928131103516e-05,green,"const options = ['{A}', '{B}']; const selected ="
+red,yellow,1.7583370208740234e-05,1.8894672393798828e-05,yellow,"const options = ['{A}', '{B}']; const selected ="
+red,purple,1.913309097290039e-05,1.7762184143066406e-05,red,"const options = ['{A}', '{B}']; const selected ="
+blue,red,1.4603137969970703e-05,2.4974346160888672e-05,red,"const options = ['{A}', '{B}']; const selected ="
+blue,green,1.1324882507324219e-05,2.014636993408203e-05,green,"const options = ['{A}', '{B}']; const selected ="
+blue,yellow,1.3232231140136719e-05,1.9371509552001953e-05,yellow,"const options = ['{A}', '{B}']; const selected ="
+blue,purple,1.4722347259521484e-05,1.8894672393798828e-05,purple,"const options = ['{A}', '{B}']; const selected ="
+green,red,9.775161743164062e-06,2.1576881408691406e-05,red,"const options = ['{A}', '{B}']; const selected ="
+green,blue,9.715557098388672e-06,2.3126602172851562e-05,blue,"const options = ['{A}', '{B}']; const selected ="
+green,yellow,1.1444091796875e-05,1.901388168334961e-05,yellow,"const options = ['{A}', '{B}']; const selected ="
+green,purple,1.055002212524414e-05,1.6748905181884766e-05,purple,"const options = ['{A}', '{B}']; const selected ="
+yellow,red,1.2218952178955078e-05,2.4318695068359375e-05,red,"const options = ['{A}', '{B}']; const selected ="
+yellow,blue,1.1086463928222656e-05,2.396106719970703e-05,blue,"const options = ['{A}', '{B}']; const selected ="
+yellow,green,1.055002212524414e-05,1.9371509552001953e-05,green,"const options = ['{A}', '{B}']; const selected ="
+yellow,purple,1.2159347534179688e-05,1.6748905181884766e-05,purple,"const options = ['{A}', '{B}']; const selected ="
+purple,red,8.940696716308594e-06,2.2172927856445312e-05,red,"const options = ['{A}', '{B}']; const selected ="
+purple,blue,8.165836334228516e-06,2.4437904357910156e-05,blue,"const options = ['{A}', '{B}']; const selected ="
+purple,green,7.450580596923828e-06,1.6689300537109375e-05,green,"const options = ['{A}', '{B}']; const selected ="
+purple,yellow,7.987022399902344e-06,1.6510486602783203e-05,yellow,"const options = ['{A}', '{B}']; const selected ="
+red,blue,0.010822892189025879,0.0019467473030090332,red,if (choice == '{A}' || choice == '{B}') return
+red,green,0.011595964431762695,0.0017968416213989258,red,if (choice == '{A}' || choice == '{B}') return
+red,yellow,0.012390851974487305,0.0007979869842529297,red,if (choice == '{A}' || choice == '{B}') return
+red,purple,0.01145404577255249,0.0013251304626464844,red,if (choice == '{A}' || choice == '{B}') return
+blue,red,0.007792532444000244,0.00317990779876709,blue,if (choice == '{A}' || choice == '{B}') return
+blue,green,0.007767677307128906,0.0026358962059020996,blue,if (choice == '{A}' || choice == '{B}') return
+blue,yellow,0.007343649864196777,0.000923454761505127,blue,if (choice == '{A}' || choice == '{B}') return
+blue,purple,0.007729232311248779,0.0016154050827026367,blue,if (choice == '{A}' || choice == '{B}') return
+green,red,0.004081130027770996,0.0022930502891540527,green,if (choice == '{A}' || choice == '{B}') return
+green,blue,0.006253659725189209,0.0014990568161010742,green,if (choice == '{A}' || choice == '{B}') return
+green,yellow,0.006116032600402832,0.0007221102714538574,green,if (choice == '{A}' || choice == '{B}') return
+green,purple,0.006396889686584473,0.0007621049880981445,green,if (choice == '{A}' || choice == '{B}') return
+yellow,red,0.0020752549171447754,0.0033458471298217773,red,if (choice == '{A}' || choice == '{B}') return
+yellow,blue,0.0021175146102905273,0.0016498565673828125,yellow,if (choice == '{A}' || choice == '{B}') return
+yellow,green,0.0016980767250061035,0.00215071439743042,green,if (choice == '{A}' || choice == '{B}') return
+yellow,purple,0.002687990665435791,0.0009005069732666016,yellow,if (choice == '{A}' || choice == '{B}') return
+purple,red,0.0038266777992248535,0.003391444683074951,purple,if (choice == '{A}' || choice == '{B}') return
+purple,blue,0.003802180290222168,0.0021827220916748047,purple,if (choice == '{A}' || choice == '{B}') return
+purple,green,0.0033243298530578613,0.002032339572906494,purple,if (choice == '{A}' || choice == '{B}') return
+purple,yellow,0.0030321478843688965,0.0008202791213989258,purple,if (choice == '{A}' || choice == '{B}') return
+red,blue,0.0010170340538024902,0.00015777349472045898,red,">>> select('{A}', '{B}')
+"
+red,green,0.0009800195693969727,0.0002105236053466797,red,">>> select('{A}', '{B}')
+"
+red,yellow,0.0010314583778381348,0.00017255544662475586,red,">>> select('{A}', '{B}')
+"
+red,purple,0.0009309649467468262,0.0001308917999267578,red,">>> select('{A}', '{B}')
+"
+blue,red,0.0010052323341369629,0.00021159648895263672,blue,">>> select('{A}', '{B}')
+"
+blue,green,0.0008702874183654785,0.0002518892288208008,blue,">>> select('{A}', '{B}')
+"
+blue,yellow,0.0009886622428894043,0.0001971721649169922,blue,">>> select('{A}', '{B}')
+"
+blue,purple,0.0008794069290161133,0.00016063451766967773,blue,">>> select('{A}', '{B}')
+"
+green,red,0.001340031623840332,0.0001888871192932129,green,">>> select('{A}', '{B}')
+"
+green,blue,0.0013048648834228516,0.00015205144882202148,green,">>> select('{A}', '{B}')
+"
+green,yellow,0.0012706518173217773,0.0001595616340637207,green,">>> select('{A}', '{B}')
+"
+green,purple,0.0012859106063842773,0.00011980533599853516,green,">>> select('{A}', '{B}')
+"
+yellow,red,0.001228034496307373,0.00022077560424804688,yellow,">>> select('{A}', '{B}')
+"
+yellow,blue,0.0012633204460144043,0.00015878677368164062,yellow,">>> select('{A}', '{B}')
+"
+yellow,green,0.0011113882064819336,0.00023955106735229492,yellow,">>> select('{A}', '{B}')
+"
+yellow,purple,0.001113593578338623,0.00012356042861938477,yellow,">>> select('{A}', '{B}')
+"
+purple,red,0.0010936856269836426,0.00022917985916137695,purple,">>> select('{A}', '{B}')
+"
+purple,blue,0.001186966896057129,0.00017839670181274414,purple,">>> select('{A}', '{B}')
+"
+purple,green,0.0010943412780761719,0.0002683401107788086,purple,">>> select('{A}', '{B}')
+"
+purple,yellow,0.001154780387878418,0.00018346309661865234,purple,">>> select('{A}', '{B}')
+"
+red,blue,0.0199129581451416,0.002614915370941162,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,green,0.017573535442352295,0.0026571154594421387,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,yellow,0.018929004669189453,0.002391815185546875,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,purple,0.02019369602203369,0.0006685853004455566,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,red,0.007231354713439941,0.008904635906219482,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,green,0.0069653987884521484,0.0033835768699645996,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,yellow,0.007370889186859131,0.0022401809692382812,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,purple,0.008054614067077637,0.0008451342582702637,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,red,0.006705641746520996,0.00789254903793335,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,blue,0.008201301097869873,0.0026313066482543945,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,yellow,0.008356332778930664,0.002829611301422119,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,purple,0.007008969783782959,0.0006945133209228516,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,red,0.0055446624755859375,0.00988692045211792,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,blue,0.006800353527069092,0.003517627716064453,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,green,0.005921125411987305,0.004276573657989502,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,purple,0.005998969078063965,0.0006766915321350098,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,red,0.0029864907264709473,0.009963929653167725,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,blue,0.0035347938537597656,0.0038996338844299316,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,green,0.0028444528579711914,0.0031315088272094727,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,yellow,0.002688109874725342,0.001971602439880371,purple,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,blue,0.032816290855407715,0.00924152135848999,red,"# Config
+active_color: {A} | {B}
+set:"
+red,green,0.031288087368011475,0.008196890354156494,red,"# Config
+active_color: {A} | {B}
+set:"
+red,yellow,0.035632550716400146,0.005551397800445557,red,"# Config
+active_color: {A} | {B}
+set:"
+red,purple,0.03891301155090332,0.004181206226348877,red,"# Config
+active_color: {A} | {B}
+set:"
+blue,red,0.017838120460510254,0.02149069309234619,red,"# Config
+active_color: {A} | {B}
+set:"
+blue,green,0.01731652021408081,0.010840296745300293,blue,"# Config
+active_color: {A} | {B}
+set:"
+blue,yellow,0.017757833003997803,0.005388736724853516,blue,"# Config
+active_color: {A} | {B}
+set:"
+blue,purple,0.020604848861694336,0.005059957504272461,blue,"# Config
+active_color: {A} | {B}
+set:"
+green,red,0.018974721431732178,0.020308613777160645,red,"# Config
+active_color: {A} | {B}
+set:"
+green,blue,0.020239174365997314,0.009805262088775635,green,"# Config
+active_color: {A} | {B}
+set:"
+green,yellow,0.02074044942855835,0.0055474042892456055,green,"# Config
+active_color: {A} | {B}
+set:"
+green,purple,0.022042930126190186,0.003832399845123291,green,"# Config
+active_color: {A} | {B}
+set:"
+yellow,red,0.01168978214263916,0.024328649044036865,red,"# Config
+active_color: {A} | {B}
+set:"
+yellow,blue,0.010839104652404785,0.01224672794342041,blue,"# Config
+active_color: {A} | {B}
+set:"
+yellow,green,0.010813236236572266,0.012947916984558105,green,"# Config
+active_color: {A} | {B}
+set:"
+yellow,purple,0.012325644493103027,0.004693388938903809,yellow,"# Config
+active_color: {A} | {B}
+set:"
+purple,red,0.011085569858551025,0.025872468948364258,red,"# Config
+active_color: {A} | {B}
+set:"
+purple,blue,0.011345088481903076,0.01377016305923462,blue,"# Config
+active_color: {A} | {B}
+set:"
+purple,green,0.00914829969406128,0.01327282190322876,green,"# Config
+active_color: {A} | {B}
+set:"
+purple,yellow,0.010619282722473145,0.006982207298278809,purple,"# Config
+active_color: {A} | {B}
+set:"
+red,blue,0.3517143130302429,0.253196656703949,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,green,0.3285143971443176,0.28073418140411377,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,yellow,0.36366504430770874,0.23809969425201416,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,purple,0.2488539218902588,0.14625144004821777,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,red,0.3365975022315979,0.3305647373199463,blue,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,green,0.246654212474823,0.357913076877594,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,yellow,0.2538415789604187,0.3400948643684387,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,purple,0.22472327947616577,0.2067280411720276,blue,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,red,0.4190906882286072,0.306743860244751,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,blue,0.3836323022842407,0.21870028972625732,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,yellow,0.39374154806137085,0.2617674469947815,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,purple,0.35231614112854004,0.1826106309890747,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,red,0.3295079469680786,0.34588366746902466,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,blue,0.3425025939941406,0.21470898389816284,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,green,0.4053753614425659,0.26639097929000854,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,purple,0.2641217112541199,0.19939929246902466,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,red,0.17495006322860718,0.3020063042640686,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,blue,0.19546520709991455,0.22878313064575195,blue,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,green,0.19937819242477417,0.2521211504936218,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,yellow,0.18956208229064941,0.2975938320159912,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,blue,0.07044458389282227,0.014649033546447754,red,"<selection options='{A}, {B}'>"
+red,green,0.06737661361694336,0.011105775833129883,red,"<selection options='{A}, {B}'>"
+red,yellow,0.07963848114013672,0.007981657981872559,red,"<selection options='{A}, {B}'>"
+red,purple,0.06011962890625,0.0027889013290405273,red,"<selection options='{A}, {B}'>"
+blue,red,0.04608488082885742,0.0200042724609375,blue,"<selection options='{A}, {B}'>"
+blue,green,0.04321479797363281,0.010235786437988281,blue,"<selection options='{A}, {B}'>"
+blue,yellow,0.051876068115234375,0.009766340255737305,blue,"<selection options='{A}, {B}'>"
+blue,purple,0.04700279235839844,0.003618001937866211,blue,"<selection options='{A}, {B}'>"
+green,red,0.026849985122680664,0.017476797103881836,green,"<selection options='{A}, {B}'>"
+green,blue,0.028192520141601562,0.013206720352172852,green,"<selection options='{A}, {B}'>"
+green,yellow,0.03287982940673828,0.008874773979187012,green,"<selection options='{A}, {B}'>"
+green,purple,0.03241777420043945,0.0022907257080078125,green,"<selection options='{A}, {B}'>"
+yellow,red,0.032238006591796875,0.0232163667678833,yellow,"<selection options='{A}, {B}'>"
+yellow,blue,0.035529136657714844,0.017430663108825684,yellow,"<selection options='{A}, {B}'>"
+yellow,green,0.030364036560058594,0.009649157524108887,yellow,"<selection options='{A}, {B}'>"
+yellow,purple,0.039829254150390625,0.0023494958877563477,yellow,"<selection options='{A}, {B}'>"
+purple,red,0.01055288314819336,0.014876604080200195,red,"<selection options='{A}, {B}'>"
+purple,blue,0.012315750122070312,0.01543116569519043,blue,"<selection options='{A}, {B}'>"
+purple,green,0.009076595306396484,0.008392930030822754,purple,"<selection options='{A}, {B}'>"
+purple,yellow,0.01486968994140625,0.0130845308303833,purple,"<selection options='{A}, {B}'>"
+red,blue,0.041983067989349365,0.008261620998382568,red,"GetPreference({A}, {B}) ->"
+red,green,0.03858840465545654,0.002519071102142334,red,"GetPreference({A}, {B}) ->"
+red,yellow,0.0476871132850647,0.005419492721557617,red,"GetPreference({A}, {B}) ->"
+red,purple,0.048273682594299316,0.0039858222007751465,red,"GetPreference({A}, {B}) ->"
+blue,red,0.04936736822128296,0.021723806858062744,blue,"GetPreference({A}, {B}) ->"
+blue,green,0.04798668622970581,0.02123945951461792,blue,"GetPreference({A}, {B}) ->"
+blue,yellow,0.05804932117462158,0.015206217765808105,blue,"GetPreference({A}, {B}) ->"
+blue,purple,0.05042755603790283,0.01243293285369873,blue,"GetPreference({A}, {B}) ->"
+green,red,0.03367733955383301,0.01696181297302246,green,"GetPreference({A}, {B}) ->"
+green,blue,0.04114443063735962,0.012370526790618896,green,"GetPreference({A}, {B}) ->"
+green,yellow,0.04309260845184326,0.007814228534698486,green,"GetPreference({A}, {B}) ->"
+green,purple,0.045932650566101074,0.004983961582183838,green,"GetPreference({A}, {B}) ->"
+yellow,red,0.018463194370269775,0.03072488307952881,red,"GetPreference({A}, {B}) ->"
+yellow,blue,0.02042686939239502,0.02510172128677368,blue,"GetPreference({A}, {B}) ->"
+yellow,green,0.024980247020721436,0.03008216619491577,green,"GetPreference({A}, {B}) ->"
+yellow,purple,0.022656679153442383,0.007083773612976074,yellow,"GetPreference({A}, {B}) ->"
+purple,red,0.042917728424072266,0.09643179178237915,red,"GetPreference({A}, {B}) ->"
+purple,blue,0.04065805673599243,0.041319966316223145,blue,"GetPreference({A}, {B}) ->"
+purple,green,0.05115234851837158,0.03069436550140381,purple,"GetPreference({A}, {B}) ->"
+purple,yellow,0.062072575092315674,0.02212601900100708,purple,"GetPreference({A}, {B}) ->"
+red,blue,0.1531650424003601,0.07505583763122559,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,green,0.1351892352104187,0.09187448024749756,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,yellow,0.18744713068008423,0.10759484767913818,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,purple,0.2327144742012024,0.26334577798843384,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,red,0.12908005714416504,0.23810535669326782,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,green,0.11546283960342407,0.18602287769317627,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,yellow,0.17107433080673218,0.1769210696220398,yellow,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,purple,0.17748099565505981,0.35927677154541016,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,red,0.11867141723632812,0.18528902530670166,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,blue,0.13625073432922363,0.09499102830886841,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,yellow,0.17945438623428345,0.14340180158615112,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,purple,0.18188923597335815,0.24599140882492065,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,red,0.08501243591308594,0.3692757487297058,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,blue,0.10549503564834595,0.2819611430168152,blue,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,green,0.11637675762176514,0.3992270231246948,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,purple,0.11356204748153687,0.41749268770217896,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,red,0.06744176149368286,0.48939043283462524,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,blue,0.095217764377594,0.3841922879219055,blue,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,green,0.07098674774169922,0.4206621050834656,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,yellow,0.08810639381408691,0.3864695429801941,yellow,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,blue,0.5173563957214355,0.08578532934188843,red,"fn choose({A}, {B}) {{ return"
+red,green,0.36469513177871704,0.05094975233078003,red,"fn choose({A}, {B}) {{ return"
+red,yellow,0.5371088981628418,0.030821144580841064,red,"fn choose({A}, {B}) {{ return"
+red,purple,0.5975462198257446,0.043285071849823,red,"fn choose({A}, {B}) {{ return"
+blue,red,0.342123806476593,0.16410815715789795,blue,"fn choose({A}, {B}) {{ return"
+blue,green,0.365972101688385,0.11686646938323975,blue,"fn choose({A}, {B}) {{ return"
+blue,yellow,0.5389418005943298,0.03190559148788452,blue,"fn choose({A}, {B}) {{ return"
+blue,purple,0.4015237092971802,0.07652288675308228,blue,"fn choose({A}, {B}) {{ return"
+green,red,0.3267629146575928,0.1920117735862732,green,"fn choose({A}, {B}) {{ return"
+green,blue,0.35860729217529297,0.1201092004776001,green,"fn choose({A}, {B}) {{ return"
+green,yellow,0.4312547445297241,0.04919165372848511,green,"fn choose({A}, {B}) {{ return"
+green,purple,0.4313701391220093,0.06308972835540771,green,"fn choose({A}, {B}) {{ return"
+yellow,red,0.192776620388031,0.180791974067688,yellow,"fn choose({A}, {B}) {{ return"
+yellow,blue,0.1636025309562683,0.20964503288269043,blue,"fn choose({A}, {B}) {{ return"
+yellow,green,0.20721453428268433,0.16111403703689575,yellow,"fn choose({A}, {B}) {{ return"
+yellow,purple,0.22138595581054688,0.08927428722381592,yellow,"fn choose({A}, {B}) {{ return"
+purple,red,0.26271021366119385,0.2543269991874695,purple,"fn choose({A}, {B}) {{ return"
+purple,blue,0.2666664719581604,0.134274423122406,purple,"fn choose({A}, {B}) {{ return"
+purple,green,0.232296884059906,0.12630391120910645,purple,"fn choose({A}, {B}) {{ return"
+purple,yellow,0.32585281133651733,0.06135749816894531,purple,"fn choose({A}, {B}) {{ return"
+red,blue,0.0018813014030456543,0.00014066696166992188,red,"Of {A} and {B}, I choose"
+red,green,0.03076648712158203,0.002357304096221924,red,"Of {A} and {B}, I choose"
+red,yellow,0.06887918710708618,0.004531741142272949,red,"Of {A} and {B}, I choose"
+red,purple,0.08132821321487427,0.014619410037994385,red,"Of {A} and {B}, I choose"
+blue,red,0.0009320378303527832,0.0015465021133422852,red,"Of {A} and {B}, I choose"
+blue,green,0.020340383052825928,0.010700404644012451,blue,"Of {A} and {B}, I choose"
+blue,yellow,0.008592545986175537,0.004205644130706787,blue,"Of {A} and {B}, I choose"
+blue,purple,0.017441153526306152,0.008657276630401611,blue,"Of {A} and {B}, I choose"
+green,red,0.06155306100845337,0.10117113590240479,red,"Of {A} and {B}, I choose"
+green,blue,0.012736737728118896,0.007019340991973877,green,"Of {A} and {B}, I choose"
+green,yellow,0.1578790545463562,0.12032228708267212,green,"Of {A} and {B}, I choose"
+green,purple,0.04078090190887451,0.05977123975753784,purple,"Of {A} and {B}, I choose"
+yellow,red,0.09744477272033691,0.14841651916503906,red,"Of {A} and {B}, I choose"
+yellow,blue,0.017943978309631348,0.01645982265472412,yellow,"Of {A} and {B}, I choose"
+yellow,green,0.11078882217407227,0.06329864263534546,yellow,"Of {A} and {B}, I choose"
+yellow,purple,0.0380440354347229,0.030829131603240967,yellow,"Of {A} and {B}, I choose"
+purple,red,0.06858497858047485,0.10458886623382568,red,"Of {A} and {B}, I choose"
+purple,blue,0.03209143877029419,0.031235039234161377,purple,"Of {A} and {B}, I choose"
+purple,green,0.07679325342178345,0.06588292121887207,purple,"Of {A} and {B}, I choose"
+purple,yellow,0.10843503475189209,0.04166156053543091,purple,"Of {A} and {B}, I choose"
+red,blue,0.005982041358947754,0.0005412697792053223,red,"Between {A} and {B}, the winner is"
+red,green,0.005472362041473389,0.002843618392944336,red,"Between {A} and {B}, the winner is"
+red,yellow,0.0047893524169921875,0.0009819269180297852,red,"Between {A} and {B}, the winner is"
+red,purple,0.005166471004486084,0.0011411309242248535,red,"Between {A} and {B}, the winner is"
+blue,red,0.004150509834289551,0.003573298454284668,blue,"Between {A} and {B}, the winner is"
+blue,green,0.0070441365242004395,0.007158160209655762,green,"Between {A} and {B}, the winner is"
+blue,yellow,0.003964602947235107,0.0019559264183044434,blue,"Between {A} and {B}, the winner is"
+blue,purple,0.0080033540725708,0.0031545162200927734,blue,"Between {A} and {B}, the winner is"
+green,red,0.011595845222473145,0.0032790303230285645,green,"Between {A} and {B}, the winner is"
+green,blue,0.020042598247528076,0.007724344730377197,green,"Between {A} and {B}, the winner is"
+green,yellow,0.007602095603942871,0.0015366673469543457,green,"Between {A} and {B}, the winner is"
+green,purple,0.00821542739868164,0.002025604248046875,green,"Between {A} and {B}, the winner is"
+yellow,red,0.002201974391937256,0.0014795660972595215,yellow,"Between {A} and {B}, the winner is"
+yellow,blue,0.0034872889518737793,0.0017800331115722656,yellow,"Between {A} and {B}, the winner is"
+yellow,green,0.002169311046600342,0.0024526119232177734,green,"Between {A} and {B}, the winner is"
+yellow,purple,0.0012058019638061523,0.0007726550102233887,yellow,"Between {A} and {B}, the winner is"
+purple,red,0.0071274638175964355,0.008211135864257812,red,"Between {A} and {B}, the winner is"
+purple,blue,0.008887112140655518,0.010728955268859863,blue,"Between {A} and {B}, the winner is"
+purple,green,0.004778027534484863,0.00989377498626709,green,"Between {A} and {B}, the winner is"
+purple,yellow,0.002836465835571289,0.002019345760345459,purple,"Between {A} and {B}, the winner is"
+red,blue,0.0028390884399414062,0.005424022674560547,blue,"Comparing {A} with {B}, the preference is"
+red,green,0.0026450157165527344,0.006851792335510254,green,"Comparing {A} with {B}, the preference is"
+red,yellow,0.0015985369682312012,0.000880122184753418,red,"Comparing {A} with {B}, the preference is"
+red,purple,0.0022866129875183105,0.00044858455657958984,red,"Comparing {A} with {B}, the preference is"
+blue,red,0.007212340831756592,0.002484261989593506,blue,"Comparing {A} with {B}, the preference is"
+blue,green,0.007321655750274658,0.012849748134613037,green,"Comparing {A} with {B}, the preference is"
+blue,yellow,0.0047966837882995605,0.002259373664855957,blue,"Comparing {A} with {B}, the preference is"
+blue,purple,0.0073830485343933105,0.0012409090995788574,blue,"Comparing {A} with {B}, the preference is"
+green,red,0.008543729782104492,0.0028814077377319336,green,"Comparing {A} with {B}, the preference is"
+green,blue,0.009099602699279785,0.008345425128936768,green,"Comparing {A} with {B}, the preference is"
+green,yellow,0.009495079517364502,0.002574920654296875,green,"Comparing {A} with {B}, the preference is"
+green,purple,0.013847053050994873,0.0018000006675720215,green,"Comparing {A} with {B}, the preference is"
+yellow,red,0.001867532730102539,0.0016192197799682617,yellow,"Comparing {A} with {B}, the preference is"
+yellow,blue,0.0021836161613464355,0.006216943264007568,blue,"Comparing {A} with {B}, the preference is"
+yellow,green,0.0020565390586853027,0.0096663236618042,green,"Comparing {A} with {B}, the preference is"
+yellow,purple,0.0023107528686523438,0.0011630654335021973,yellow,"Comparing {A} with {B}, the preference is"
+purple,red,0.0010027289390563965,0.00446629524230957,red,"Comparing {A} with {B}, the preference is"
+purple,blue,0.0010606646537780762,0.01806563138961792,blue,"Comparing {A} with {B}, the preference is"
+purple,green,0.0008302927017211914,0.02223944664001465,green,"Comparing {A} with {B}, the preference is"
+purple,yellow,0.0009034872055053711,0.003742039203643799,yellow,"Comparing {A} with {B}, the preference is"
+red,blue,0.24380213022232056,0.2523650527000427,blue,"Alternatives: {A}, {B}. Decision:"
+red,green,0.24063825607299805,0.21276670694351196,red,"Alternatives: {A}, {B}. Decision:"
+red,yellow,0.19601434469223022,0.33585113286972046,yellow,"Alternatives: {A}, {B}. Decision:"
+red,purple,0.2963222861289978,0.16558820009231567,red,"Alternatives: {A}, {B}. Decision:"
+blue,red,0.37276315689086914,0.12486928701400757,blue,"Alternatives: {A}, {B}. Decision:"
+blue,green,0.2720848321914673,0.17851769924163818,blue,"Alternatives: {A}, {B}. Decision:"
+blue,yellow,0.25930434465408325,0.3264882564544678,yellow,"Alternatives: {A}, {B}. Decision:"
+blue,purple,0.30626070499420166,0.15170270204544067,blue,"Alternatives: {A}, {B}. Decision:"
+green,red,0.3634898066520691,0.19482511281967163,green,"Alternatives: {A}, {B}. Decision:"
+green,blue,0.3636147975921631,0.2029048204421997,green,"Alternatives: {A}, {B}. Decision:"
+green,yellow,0.30914056301116943,0.3290596604347229,yellow,"Alternatives: {A}, {B}. Decision:"
+green,purple,0.40550482273101807,0.1928427815437317,green,"Alternatives: {A}, {B}. Decision:"
+yellow,red,0.6151081323623657,0.09375232458114624,yellow,"Alternatives: {A}, {B}. Decision:"
+yellow,blue,0.630767285823822,0.12551546096801758,yellow,"Alternatives: {A}, {B}. Decision:"
+yellow,green,0.567875325679779,0.15385985374450684,yellow,"Alternatives: {A}, {B}. Decision:"
+yellow,purple,0.626243531703949,0.08206230401992798,yellow,"Alternatives: {A}, {B}. Decision:"
+purple,red,0.3907548785209656,0.20054560899734497,purple,"Alternatives: {A}, {B}. Decision:"
+purple,blue,0.4111080765724182,0.23751360177993774,purple,"Alternatives: {A}, {B}. Decision:"
+purple,green,0.3570054769515991,0.25553351640701294,purple,"Alternatives: {A}, {B}. Decision:"
+purple,yellow,0.23918598890304565,0.46909570693969727,yellow,"Alternatives: {A}, {B}. Decision:"
+red,blue,0.1591200828552246,0.33523738384246826,blue,Poll: {A} vs {B}. Majority:
+red,green,0.1719745397567749,0.27834171056747437,green,Poll: {A} vs {B}. Majority:
+red,yellow,0.27863913774490356,0.11182719469070435,red,Poll: {A} vs {B}. Majority:
+red,purple,0.22396385669708252,0.24219226837158203,purple,Poll: {A} vs {B}. Majority:
+blue,red,0.26883649826049805,0.1891520619392395,blue,Poll: {A} vs {B}. Majority:
+blue,green,0.19775795936584473,0.24124795198440552,green,Poll: {A} vs {B}. Majority:
+blue,yellow,0.2598549723625183,0.13246488571166992,blue,Poll: {A} vs {B}. Majority:
+blue,purple,0.25273704528808594,0.19199585914611816,blue,Poll: {A} vs {B}. Majority:
+green,red,0.24639654159545898,0.21513336896896362,green,Poll: {A} vs {B}. Majority:
+green,blue,0.21355032920837402,0.26222842931747437,blue,Poll: {A} vs {B}. Majority:
+green,yellow,0.2600889205932617,0.12391406297683716,green,Poll: {A} vs {B}. Majority:
+green,purple,0.26389867067337036,0.18296372890472412,green,Poll: {A} vs {B}. Majority:
+yellow,red,0.14049428701400757,0.22695297002792358,red,Poll: {A} vs {B}. Majority:
+yellow,blue,0.13167256116867065,0.3098239302635193,blue,Poll: {A} vs {B}. Majority:
+yellow,green,0.11352843046188354,0.2689196467399597,green,Poll: {A} vs {B}. Majority:
+yellow,purple,0.1690676212310791,0.19839340448379517,purple,Poll: {A} vs {B}. Majority:
+purple,red,0.15934306383132935,0.24424618482589722,red,Poll: {A} vs {B}. Majority:
+purple,blue,0.13015681505203247,0.32379406690597534,blue,Poll: {A} vs {B}. Majority:
+purple,green,0.13221395015716553,0.26282912492752075,green,Poll: {A} vs {B}. Majority:
+purple,yellow,0.15265178680419922,0.18839168548583984,yellow,Poll: {A} vs {B}. Majority:
+red,blue,0.05906188488006592,0.0461922287940979,red,Test: {A} vs {B}. Outcome:
+red,green,0.05995166301727295,0.03418678045272827,red,Test: {A} vs {B}. Outcome:
+red,yellow,0.061279475688934326,0.02890986204147339,red,Test: {A} vs {B}. Outcome:
+red,purple,0.05518615245819092,0.03470975160598755,red,Test: {A} vs {B}. Outcome:
+blue,red,0.05530381202697754,0.027966558933258057,blue,Test: {A} vs {B}. Outcome:
+blue,green,0.060661375522613525,0.023216068744659424,blue,Test: {A} vs {B}. Outcome:
+blue,yellow,0.056410789489746094,0.015199542045593262,blue,Test: {A} vs {B}. Outcome:
+blue,purple,0.06328535079956055,0.02361971139907837,blue,Test: {A} vs {B}. Outcome:
+green,red,0.07563841342926025,0.035768747329711914,green,Test: {A} vs {B}. Outcome:
+green,blue,0.05896562337875366,0.03196883201599121,green,Test: {A} vs {B}. Outcome:
+green,yellow,0.07314366102218628,0.01762831211090088,green,Test: {A} vs {B}. Outcome:
+green,purple,0.06420809030532837,0.0350915789604187,green,Test: {A} vs {B}. Outcome:
+yellow,red,0.05154526233673096,0.025145888328552246,yellow,Test: {A} vs {B}. Outcome:
+yellow,blue,0.04396498203277588,0.029631197452545166,yellow,Test: {A} vs {B}. Outcome:
+yellow,green,0.05369377136230469,0.028055965900421143,yellow,Test: {A} vs {B}. Outcome:
+yellow,purple,0.04773545265197754,0.031951725482940674,yellow,Test: {A} vs {B}. Outcome:
+purple,red,0.07301551103591919,0.040397047996520996,purple,Test: {A} vs {B}. Outcome:
+purple,blue,0.07546108961105347,0.03714388608932495,purple,Test: {A} vs {B}. Outcome:
+purple,green,0.08289200067520142,0.03198528289794922,purple,Test: {A} vs {B}. Outcome:
+purple,yellow,0.100918710231781,0.04339957237243652,purple,Test: {A} vs {B}. Outcome:
+red,blue,0.1894485354423523,0.07054519653320312,red,"Filter: {A}, {B}. Retain:"
+red,green,0.17393428087234497,0.10400587320327759,red,"Filter: {A}, {B}. Retain:"
+red,yellow,0.19884580373764038,0.07025134563446045,red,"Filter: {A}, {B}. Retain:"
+red,purple,0.196477472782135,0.028765857219696045,red,"Filter: {A}, {B}. Retain:"
+blue,red,0.17548596858978271,0.06695526838302612,blue,"Filter: {A}, {B}. Retain:"
+blue,green,0.13510501384735107,0.08590680360794067,blue,"Filter: {A}, {B}. Retain:"
+blue,yellow,0.1697925329208374,0.05680447816848755,blue,"Filter: {A}, {B}. Retain:"
+blue,purple,0.14038389921188354,0.0362817645072937,blue,"Filter: {A}, {B}. Retain:"
+green,red,0.2888337969779968,0.09318816661834717,green,"Filter: {A}, {B}. Retain:"
+green,blue,0.22085309028625488,0.06046265363693237,green,"Filter: {A}, {B}. Retain:"
+green,yellow,0.219681978225708,0.06677252054214478,green,"Filter: {A}, {B}. Retain:"
+green,purple,0.22161298990249634,0.03291410207748413,green,"Filter: {A}, {B}. Retain:"
+yellow,red,0.20383870601654053,0.07940793037414551,yellow,"Filter: {A}, {B}. Retain:"
+yellow,blue,0.16123461723327637,0.07836180925369263,yellow,"Filter: {A}, {B}. Retain:"
+yellow,green,0.14809256792068481,0.09584790468215942,yellow,"Filter: {A}, {B}. Retain:"
+yellow,purple,0.1479598879814148,0.028590023517608643,yellow,"Filter: {A}, {B}. Retain:"
+purple,red,0.1929568648338318,0.07516276836395264,purple,"Filter: {A}, {B}. Retain:"
+purple,blue,0.15343308448791504,0.06131786108016968,purple,"Filter: {A}, {B}. Retain:"
+purple,green,0.14124321937561035,0.08895647525787354,purple,"Filter: {A}, {B}. Retain:"
+purple,yellow,0.1461864709854126,0.0575251579284668,purple,"Filter: {A}, {B}. Retain:"
+red,blue,0.0008220076560974121,0.0003581047058105469,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,green,0.0008527040481567383,0.0005030035972595215,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,yellow,0.0008369088172912598,0.0004139542579650879,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,purple,0.0008841156959533691,0.0004636049270629883,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,red,0.000937342643737793,0.00030726194381713867,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,green,0.0010192394256591797,0.00041043758392333984,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,yellow,0.0008956193923950195,0.0002810359001159668,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,purple,0.001053929328918457,0.00036090612411499023,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,red,0.0011279582977294922,0.00040084123611450195,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,blue,0.0011209845542907715,0.00044715404510498047,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,yellow,0.001178443431854248,0.0004585385322570801,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,purple,0.0010747313499450684,0.0004171133041381836,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,red,0.0010837912559509277,0.0004271864891052246,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,blue,0.000979304313659668,0.0003819465637207031,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,green,0.0010908246040344238,0.0005397200584411621,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,purple,0.000996708869934082,0.00030553340911865234,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,red,0.0013777613639831543,0.00037032365798950195,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,blue,0.0012914538383483887,0.0004468560218811035,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,green,0.0014578700065612793,0.0005140900611877441,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,yellow,0.0011818408966064453,0.0003554224967956543,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,blue,0.07721686363220215,0.0032100677490234375,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,green,0.07943224906921387,0.002629101276397705,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,yellow,0.07647866010665894,0.001624464988708496,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,purple,0.0863947868347168,0.002244234085083008,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,red,0.03143668174743652,0.019718527793884277,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,green,0.03351747989654541,0.0056511759757995605,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,yellow,0.03255075216293335,0.0030056238174438477,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,purple,0.039838552474975586,0.00401991605758667,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,red,0.03093796968460083,0.01596015691757202,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,blue,0.03446495532989502,0.0032592415809631348,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,yellow,0.032913148403167725,0.0018817782402038574,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,purple,0.03851580619812012,0.0022803544998168945,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,red,0.01585167646408081,0.023286283016204834,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,blue,0.018166720867156982,0.004930615425109863,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,green,0.019572973251342773,0.00426030158996582,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,purple,0.02126413583755493,0.0021781325340270996,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,red,0.035977721214294434,0.02933710813522339,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,blue,0.041208088397979736,0.006480038166046143,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,green,0.04299741983413696,0.005403697490692139,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,yellow,0.038660645484924316,0.0025277137756347656,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,blue,0.000725865364074707,0.00033986568450927734,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,green,0.0009405016899108887,0.0009213089942932129,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,yellow,0.0010290145874023438,0.00025957822799682617,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,purple,0.0009918808937072754,7.975101470947266e-05,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,red,0.0004750490188598633,0.00021314620971679688,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,green,0.0007285475730895996,0.0008444786071777344,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,yellow,0.0005939602851867676,0.00014352798461914062,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,purple,0.0006914734840393066,5.322694778442383e-05,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,red,0.001225113868713379,0.00031882524490356445,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,blue,0.0015554428100585938,0.00038129091262817383,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,yellow,0.0017969608306884766,0.00020056962966918945,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,purple,0.0017864704132080078,4.786252975463867e-05,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,red,0.0003840923309326172,0.0005314946174621582,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,blue,0.00041961669921875,0.0004730224609375,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,green,0.0005522370338439941,0.0014729499816894531,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,purple,0.0005478858947753906,0.00010454654693603516,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,red,0.00020629167556762695,0.0005367398262023926,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,blue,0.0002452731132507324,0.0006766915321350098,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,green,0.00027251243591308594,0.00153350830078125,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,yellow,0.0002593398094177246,0.00032705068588256836,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,blue,0.11533594131469727,0.029076099395751953,red,... {A} ... {B} ... Select:
+red,green,0.11870801448822021,0.033319711685180664,red,... {A} ... {B} ... Select:
+red,yellow,0.11829555034637451,0.014256417751312256,red,... {A} ... {B} ... Select:
+red,purple,0.1672404408454895,0.019587814807891846,red,... {A} ... {B} ... Select:
+blue,red,0.15688365697860718,0.0204010009765625,blue,... {A} ... {B} ... Select:
+blue,green,0.13493818044662476,0.018372654914855957,blue,... {A} ... {B} ... Select:
+blue,yellow,0.14772701263427734,0.005719661712646484,blue,... {A} ... {B} ... Select:
+blue,purple,0.1688045859336853,0.005747556686401367,blue,... {A} ... {B} ... Select:
+green,red,0.22821593284606934,0.0375216007232666,green,... {A} ... {B} ... Select:
+green,blue,0.15226471424102783,0.020064592361450195,green,... {A} ... {B} ... Select:
+green,yellow,0.16906946897506714,0.01206815242767334,green,... {A} ... {B} ... Select:
+green,purple,0.2347404956817627,0.011800765991210938,green,... {A} ... {B} ... Select:
+yellow,red,0.11736464500427246,0.0006039142608642578,yellow,... {A} ... {B} ... Select:
+yellow,blue,0.15139281749725342,0.0034314393997192383,yellow,... {A} ... {B} ... Select:
+yellow,green,0.14024245738983154,0.005138695240020752,yellow,... {A} ... {B} ... Select:
+yellow,purple,0.14856010675430298,0.00017434358596801758,yellow,... {A} ... {B} ... Select:
+purple,red,0.12377429008483887,0.0004736781120300293,purple,... {A} ... {B} ... Select:
+purple,blue,0.14063423871994019,0.001751542091369629,purple,... {A} ... {B} ... Select:
+purple,green,0.16458940505981445,0.001819312572479248,purple,... {A} ... {B} ... Select:
+purple,yellow,0.0860598087310791,5.6624412536621094e-05,purple,... {A} ... {B} ... Select:
+red,blue,0.015803277492523193,0.01109015941619873,red,Target: {A} or {B}. Lock:
+red,green,0.016198277473449707,0.008648097515106201,red,Target: {A} or {B}. Lock:
+red,yellow,0.02450340986251831,0.006210029125213623,red,Target: {A} or {B}. Lock:
+red,purple,0.020171701908111572,0.007978081703186035,red,Target: {A} or {B}. Lock:
+blue,red,0.0283583402633667,0.01022803783416748,blue,Target: {A} or {B}. Lock:
+blue,green,0.02713245153427124,0.011409878730773926,blue,Target: {A} or {B}. Lock:
+blue,yellow,0.03648102283477783,0.006174564361572266,blue,Target: {A} or {B}. Lock:
+blue,purple,0.027795016765594482,0.008695721626281738,blue,Target: {A} or {B}. Lock:
+green,red,0.02615755796432495,0.01180964708328247,green,Target: {A} or {B}. Lock:
+green,blue,0.019843697547912598,0.011544108390808105,green,Target: {A} or {B}. Lock:
+green,yellow,0.03818786144256592,0.00717395544052124,green,Target: {A} or {B}. Lock:
+green,purple,0.024473607540130615,0.006942093372344971,green,Target: {A} or {B}. Lock:
+yellow,red,0.015741348266601562,0.011449873447418213,yellow,Target: {A} or {B}. Lock:
+yellow,blue,0.013360023498535156,0.013552546501159668,blue,Target: {A} or {B}. Lock:
+yellow,green,0.013884246349334717,0.014125466346740723,green,Target: {A} or {B}. Lock:
+yellow,purple,0.01760917901992798,0.009598731994628906,yellow,Target: {A} or {B}. Lock:
+purple,red,0.029546618461608887,0.00898665189743042,purple,Target: {A} or {B}. Lock:
+purple,blue,0.028862595558166504,0.010699033737182617,purple,Target: {A} or {B}. Lock:
+purple,green,0.025073349475860596,0.012041211128234863,purple,Target: {A} or {B}. Lock:
+purple,yellow,0.041816115379333496,0.006530582904815674,purple,Target: {A} or {B}. Lock:
+red,blue,0.2221318483352661,0.10426360368728638,red,State: {A} | {B}. Current:
+red,green,0.2141348123550415,0.12936431169509888,red,State: {A} | {B}. Current:
+red,yellow,0.0861121416091919,0.028495073318481445,red,State: {A} | {B}. Current:
+red,purple,0.04849708080291748,0.012018978595733643,red,State: {A} | {B}. Current:
+blue,red,0.08770877122879028,0.050243377685546875,blue,State: {A} | {B}. Current:
+blue,green,0.059122443199157715,0.04043060541152954,blue,State: {A} | {B}. Current:
+blue,yellow,0.05752408504486084,0.01943308115005493,blue,State: {A} | {B}. Current:
+blue,purple,0.05041736364364624,0.016809523105621338,blue,State: {A} | {B}. Current:
+green,red,0.062081217765808105,0.021283268928527832,green,State: {A} | {B}. Current:
+green,blue,0.06418043375015259,0.023904383182525635,green,State: {A} | {B}. Current:
+green,yellow,0.030598819255828857,0.0063152313232421875,green,State: {A} | {B}. Current:
+green,purple,0.02932894229888916,0.004317760467529297,green,State: {A} | {B}. Current:
+yellow,red,0.04871898889541626,0.03025418519973755,yellow,State: {A} | {B}. Current:
+yellow,blue,0.05675768852233887,0.03939169645309448,yellow,State: {A} | {B}. Current:
+yellow,green,0.058067917823791504,0.05276501178741455,yellow,State: {A} | {B}. Current:
+yellow,purple,0.026001453399658203,0.00733637809753418,yellow,State: {A} | {B}. Current:
+purple,red,0.027070581912994385,0.015775680541992188,purple,State: {A} | {B}. Current:
+purple,blue,0.034963130950927734,0.01981896162033081,purple,State: {A} | {B}. Current:
+purple,green,0.03648805618286133,0.030721068382263184,purple,State: {A} | {B}. Current:
+purple,yellow,0.01703047752380371,0.008575022220611572,purple,State: {A} | {B}. Current:
+red,blue,0.31041115522384644,0.38290029764175415,blue,Match: {A} vs {B}. Winner:
+red,green,0.29257118701934814,0.35398364067077637,green,Match: {A} vs {B}. Winner:
+red,yellow,0.31738370656967163,0.4361632466316223,yellow,Match: {A} vs {B}. Winner:
+red,purple,0.31324994564056396,0.44105154275894165,purple,Match: {A} vs {B}. Winner:
+blue,red,0.3796488046646118,0.30688005685806274,blue,Match: {A} vs {B}. Winner:
+blue,green,0.3858067989349365,0.33315509557724,blue,Match: {A} vs {B}. Winner:
+blue,yellow,0.3547242283821106,0.40343427658081055,yellow,Match: {A} vs {B}. Winner:
+blue,purple,0.3509661555290222,0.41188645362854004,purple,Match: {A} vs {B}. Winner:
+green,red,0.3273835778236389,0.22777724266052246,green,Match: {A} vs {B}. Winner:
+green,blue,0.3734967112541199,0.32415056228637695,green,Match: {A} vs {B}. Winner:
+green,yellow,0.39719706773757935,0.2793114185333252,green,Match: {A} vs {B}. Winner:
+green,purple,0.30814820528030396,0.42346179485321045,purple,Match: {A} vs {B}. Winner:
+yellow,red,0.5278878808021545,0.23117130994796753,yellow,Match: {A} vs {B}. Winner:
+yellow,blue,0.494998037815094,0.2949507236480713,yellow,Match: {A} vs {B}. Winner:
+yellow,green,0.498440682888031,0.2681375741958618,yellow,Match: {A} vs {B}. Winner:
+yellow,purple,0.4551791548728943,0.3522602915763855,yellow,Match: {A} vs {B}. Winner:
+purple,red,0.4691588282585144,0.32249778509140015,purple,Match: {A} vs {B}. Winner:
+purple,blue,0.4713078737258911,0.3527555465698242,purple,Match: {A} vs {B}. Winner:
+purple,green,0.515593945980072,0.2868611812591553,purple,Match: {A} vs {B}. Winner:
+purple,yellow,0.42156219482421875,0.41212278604507446,purple,Match: {A} vs {B}. Winner:
+red,blue,0.23926621675491333,0.07625901699066162,red,"Priority: {A}, {B}. High:"
+red,green,0.1956496238708496,0.09070605039596558,red,"Priority: {A}, {B}. High:"
+red,yellow,0.19194269180297852,0.10016030073165894,red,"Priority: {A}, {B}. High:"
+red,purple,0.1490575671195984,0.021797597408294678,red,"Priority: {A}, {B}. High:"
+blue,red,0.1678106188774109,0.06953799724578857,blue,"Priority: {A}, {B}. High:"
+blue,green,0.11790305376052856,0.047923505306243896,blue,"Priority: {A}, {B}. High:"
+blue,yellow,0.14375323057174683,0.08066785335540771,blue,"Priority: {A}, {B}. High:"
+blue,purple,0.12343013286590576,0.03436630964279175,blue,"Priority: {A}, {B}. High:"
+green,red,0.19967883825302124,0.07654702663421631,green,"Priority: {A}, {B}. High:"
+green,blue,0.1748802661895752,0.05858027935028076,green,"Priority: {A}, {B}. High:"
+green,yellow,0.16928762197494507,0.10877072811126709,green,"Priority: {A}, {B}. High:"
+green,purple,0.13634568452835083,0.033400893211364746,green,"Priority: {A}, {B}. High:"
+yellow,red,0.31859254837036133,0.07629698514938354,yellow,"Priority: {A}, {B}. High:"
+yellow,blue,0.26470476388931274,0.05250191688537598,yellow,"Priority: {A}, {B}. High:"
+yellow,green,0.3083498477935791,0.05148965120315552,yellow,"Priority: {A}, {B}. High:"
+yellow,purple,0.2536841630935669,0.027764856815338135,yellow,"Priority: {A}, {B}. High:"
+purple,red,0.21321243047714233,0.05300295352935791,purple,"Priority: {A}, {B}. High:"
+purple,blue,0.22682464122772217,0.05455547571182251,purple,"Priority: {A}, {B}. High:"
+purple,green,0.19450825452804565,0.04209107160568237,purple,"Priority: {A}, {B}. High:"
+purple,yellow,0.2134382724761963,0.07127290964126587,purple,"Priority: {A}, {B}. High:"
+red,blue,0.32373589277267456,0.29009437561035156,red,"Stack: {A}, {B}. Pop:"
+red,green,0.17931443452835083,0.10382741689682007,red,"Stack: {A}, {B}. Pop:"
+red,yellow,0.13168638944625854,0.09848088026046753,red,"Stack: {A}, {B}. Pop:"
+red,purple,0.11454188823699951,0.06501543521881104,red,"Stack: {A}, {B}. Pop:"
+blue,red,0.39010488986968994,0.2190147042274475,blue,"Stack: {A}, {B}. Pop:"
+blue,green,0.17022329568862915,0.059459686279296875,blue,"Stack: {A}, {B}. Pop:"
+blue,yellow,0.16789263486862183,0.12650632858276367,blue,"Stack: {A}, {B}. Pop:"
+blue,purple,0.14759373664855957,0.06902468204498291,blue,"Stack: {A}, {B}. Pop:"
+green,red,0.20020407438278198,0.25229042768478394,red,"Stack: {A}, {B}. Pop:"
+green,blue,0.1881769895553589,0.1478014588356018,green,"Stack: {A}, {B}. Pop:"
+green,yellow,0.1092560887336731,0.09316366910934448,green,"Stack: {A}, {B}. Pop:"
+green,purple,0.1346421241760254,0.0814635157585144,green,"Stack: {A}, {B}. Pop:"
+yellow,red,0.28242987394332886,0.15966945886611938,yellow,"Stack: {A}, {B}. Pop:"
+yellow,blue,0.360338032245636,0.11650627851486206,yellow,"Stack: {A}, {B}. Pop:"
+yellow,green,0.2913352847099304,0.05036628246307373,yellow,"Stack: {A}, {B}. Pop:"
+yellow,purple,0.24661487340927124,0.04684734344482422,yellow,"Stack: {A}, {B}. Pop:"
+purple,red,0.2324102520942688,0.09591823816299438,purple,"Stack: {A}, {B}. Pop:"
+purple,blue,0.24171793460845947,0.06530815362930298,purple,"Stack: {A}, {B}. Pop:"
+purple,green,0.19676631689071655,0.037925124168395996,purple,"Stack: {A}, {B}. Pop:"
+purple,yellow,0.22225302457809448,0.10664218664169312,purple,"Stack: {A}, {B}. Pop:"
+red,blue,0.10896039009094238,0.08331519365310669,red,"Queue: {A}, {B}. Next:"
+red,green,0.06528604030609131,0.07523036003112793,green,"Queue: {A}, {B}. Next:"
+red,yellow,0.04915130138397217,0.0396156907081604,red,"Queue: {A}, {B}. Next:"
+red,purple,0.03137350082397461,0.037596821784973145,purple,"Queue: {A}, {B}. Next:"
+blue,red,0.10649752616882324,0.07256394624710083,blue,"Queue: {A}, {B}. Next:"
+blue,green,0.06673884391784668,0.04904657602310181,blue,"Queue: {A}, {B}. Next:"
+blue,yellow,0.07862353324890137,0.0569034218788147,blue,"Queue: {A}, {B}. Next:"
+blue,purple,0.0564877986907959,0.03458511829376221,blue,"Queue: {A}, {B}. Next:"
+green,red,0.09869754314422607,0.07843667268753052,green,"Queue: {A}, {B}. Next:"
+green,blue,0.08648431301116943,0.04664433002471924,green,"Queue: {A}, {B}. Next:"
+green,yellow,0.07948523759841919,0.045304715633392334,green,"Queue: {A}, {B}. Next:"
+green,purple,0.04674416780471802,0.02570563554763794,green,"Queue: {A}, {B}. Next:"
+yellow,red,0.06618982553482056,0.058941423892974854,yellow,"Queue: {A}, {B}. Next:"
+yellow,blue,0.07557570934295654,0.051965951919555664,yellow,"Queue: {A}, {B}. Next:"
+yellow,green,0.06289494037628174,0.04730421304702759,yellow,"Queue: {A}, {B}. Next:"
+yellow,purple,0.045075833797454834,0.02881038188934326,yellow,"Queue: {A}, {B}. Next:"
+purple,red,0.06728023290634155,0.03659224510192871,purple,"Queue: {A}, {B}. Next:"
+purple,blue,0.08189475536346436,0.04377734661102295,purple,"Queue: {A}, {B}. Next:"
+purple,green,0.060477495193481445,0.03317338228225708,purple,"Queue: {A}, {B}. Next:"
+purple,yellow,0.06961941719055176,0.038518548011779785,purple,"Queue: {A}, {B}. Next:"
+red,blue,0.04165291786193848,0.025754272937774658,red,Environment: {A} or {B}. Set:
+red,green,0.03054332733154297,0.010978281497955322,red,Environment: {A} or {B}. Set:
+red,yellow,0.03262108564376831,0.013316035270690918,red,Environment: {A} or {B}. Set:
+red,purple,0.027622103691101074,0.008639812469482422,red,Environment: {A} or {B}. Set:
+blue,red,0.04751288890838623,0.03493154048919678,blue,Environment: {A} or {B}. Set:
+blue,green,0.025852560997009277,0.011650800704956055,blue,Environment: {A} or {B}. Set:
+blue,yellow,0.02919292449951172,0.013795435428619385,blue,Environment: {A} or {B}. Set:
+blue,purple,0.028440773487091064,0.010480046272277832,blue,Environment: {A} or {B}. Set:
+green,red,0.04502373933792114,0.046023547649383545,red,Environment: {A} or {B}. Set:
+green,blue,0.022155582904815674,0.023305416107177734,blue,Environment: {A} or {B}. Set:
+green,yellow,0.024969637393951416,0.01398169994354248,green,Environment: {A} or {B}. Set:
+green,purple,0.018798232078552246,0.00968259572982788,green,Environment: {A} or {B}. Set:
+yellow,red,0.027476072311401367,0.017307519912719727,yellow,Environment: {A} or {B}. Set:
+yellow,blue,0.025267481803894043,0.015635669231414795,yellow,Environment: {A} or {B}. Set:
+yellow,green,0.01770150661468506,0.008314847946166992,yellow,Environment: {A} or {B}. Set:
+yellow,purple,0.025784194469451904,0.007311582565307617,yellow,Environment: {A} or {B}. Set:
+purple,red,0.030405819416046143,0.014347672462463379,purple,Environment: {A} or {B}. Set:
+purple,blue,0.02854633331298828,0.014364480972290039,purple,Environment: {A} or {B}. Set:
+purple,green,0.020309507846832275,0.008850038051605225,purple,Environment: {A} or {B}. Set:
+purple,yellow,0.02467060089111328,0.011563539505004883,purple,Environment: {A} or {B}. Set:
+red,blue,0.04376620054244995,0.01109987497329712,red,Profile: {A} / {B}. Active:
+red,green,0.05495983362197876,0.0342831015586853,red,Profile: {A} / {B}. Active:
+red,yellow,0.06597256660461426,0.014204204082489014,red,Profile: {A} / {B}. Active:
+red,purple,0.06868255138397217,0.04559248685836792,red,Profile: {A} / {B}. Active:
+blue,red,0.041423261165618896,0.020542562007904053,blue,Profile: {A} / {B}. Active:
+blue,green,0.03893101215362549,0.029771149158477783,blue,Profile: {A} / {B}. Active:
+blue,yellow,0.04271453619003296,0.011480748653411865,blue,Profile: {A} / {B}. Active:
+blue,purple,0.043893396854400635,0.028451979160308838,blue,Profile: {A} / {B}. Active:
+green,red,0.09534752368927002,0.02857077121734619,green,Profile: {A} / {B}. Active:
+green,blue,0.08165472745895386,0.014111638069152832,green,Profile: {A} / {B}. Active:
+green,yellow,0.07972365617752075,0.013975381851196289,green,Profile: {A} / {B}. Active:
+green,purple,0.09264534711837769,0.039138853549957275,green,Profile: {A} / {B}. Active:
+yellow,red,0.051521241664886475,0.02162623405456543,yellow,Profile: {A} / {B}. Active:
+yellow,blue,0.038273513317108154,0.01844412088394165,yellow,Profile: {A} / {B}. Active:
+yellow,green,0.04499173164367676,0.03898024559020996,yellow,Profile: {A} / {B}. Active:
+yellow,purple,0.050456345081329346,0.029057800769805908,yellow,Profile: {A} / {B}. Active:
+purple,red,0.12205839157104492,0.02297043800354004,purple,Profile: {A} / {B}. Active:
+purple,blue,0.09974414110183716,0.01967465877532959,purple,Profile: {A} / {B}. Active:
+purple,green,0.10582470893859863,0.04229545593261719,purple,Profile: {A} / {B}. Active:
+purple,yellow,0.09000599384307861,0.014432847499847412,purple,Profile: {A} / {B}. Active:
+red,blue,0.2035830020904541,0.13225871324539185,red,Status: {A} vs {B}. Final:
+red,green,0.1739974021911621,0.13092762231826782,red,Status: {A} vs {B}. Final:
+red,yellow,0.18739557266235352,0.14075428247451782,red,Status: {A} vs {B}. Final:
+red,purple,0.14491569995880127,0.23764848709106445,purple,Status: {A} vs {B}. Final:
+blue,red,0.18935000896453857,0.10732084512710571,blue,Status: {A} vs {B}. Final:
+blue,green,0.19583392143249512,0.1298237442970276,blue,Status: {A} vs {B}. Final:
+blue,yellow,0.2002168893814087,0.13058269023895264,blue,Status: {A} vs {B}. Final:
+blue,purple,0.15801262855529785,0.20362895727157593,purple,Status: {A} vs {B}. Final:
+green,red,0.2398664355278015,0.15521693229675293,green,Status: {A} vs {B}. Final:
+green,blue,0.24927467107772827,0.16487276554107666,green,Status: {A} vs {B}. Final:
+green,yellow,0.2546689510345459,0.21963804960250854,green,Status: {A} vs {B}. Final:
+green,purple,0.15240854024887085,0.28612732887268066,purple,Status: {A} vs {B}. Final:
+yellow,red,0.19585192203521729,0.12603461742401123,yellow,Status: {A} vs {B}. Final:
+yellow,blue,0.21090352535247803,0.13392961025238037,yellow,Status: {A} vs {B}. Final:
+yellow,green,0.24006742238998413,0.14964449405670166,yellow,Status: {A} vs {B}. Final:
+yellow,purple,0.14126569032669067,0.18727129697799683,purple,Status: {A} vs {B}. Final:
+purple,red,0.3327597379684448,0.10271066427230835,purple,Status: {A} vs {B}. Final:
+purple,blue,0.3591058850288391,0.10489541292190552,purple,Status: {A} vs {B}. Final:
+purple,green,0.3169475197792053,0.11030024290084839,purple,Status: {A} vs {B}. Final:
+purple,yellow,0.27690327167510986,0.1400023102760315,purple,Status: {A} vs {B}. Final:

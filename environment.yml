@@ -14,6 +14,8 @@ dependencies:
       - transformers
       - torch
       - tqdm
+      - accelerate
+      - peft
 
 # Notes:
 # - The pip `torch` package corresponds to conda's `pytorch` package (installed above).

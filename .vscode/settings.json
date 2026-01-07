@@ -1,0 +1,4 @@
+{
+    "python.defaultInterpreterPath": "/home/lotan.amit/miniconda3/envs/whatdo-llms-want/bin/python",
+    "python.terminal.activateEnvironment": true
+}

@@ -1,0 +1,1381 @@
+player_1,player_2,winner,template
+red,blue,blue,Option A: {A}. Option B: {B}. Selected:
+red,green,green,Option A: {A}. Option B: {B}. Selected:
+red,yellow,yellow,Option A: {A}. Option B: {B}. Selected:
+red,purple,red,Option A: {A}. Option B: {B}. Selected:
+blue,red,red,Option A: {A}. Option B: {B}. Selected:
+blue,green,green,Option A: {A}. Option B: {B}. Selected:
+blue,yellow,yellow,Option A: {A}. Option B: {B}. Selected:
+blue,purple,blue,Option A: {A}. Option B: {B}. Selected:
+green,red,red,Option A: {A}. Option B: {B}. Selected:
+green,blue,blue,Option A: {A}. Option B: {B}. Selected:
+green,yellow,yellow,Option A: {A}. Option B: {B}. Selected:
+green,purple,green,Option A: {A}. Option B: {B}. Selected:
+yellow,red,red,Option A: {A}. Option B: {B}. Selected:
+yellow,blue,blue,Option A: {A}. Option B: {B}. Selected:
+yellow,green,yellow,Option A: {A}. Option B: {B}. Selected:
+yellow,purple,yellow,Option A: {A}. Option B: {B}. Selected:
+purple,red,red,Option A: {A}. Option B: {B}. Selected:
+purple,blue,blue,Option A: {A}. Option B: {B}. Selected:
+purple,green,green,Option A: {A}. Option B: {B}. Selected:
+purple,yellow,yellow,Option A: {A}. Option B: {B}. Selected:
+red,blue,red,Choice: {A} or {B}? Answer:
+red,green,green,Choice: {A} or {B}? Answer:
+red,yellow,yellow,Choice: {A} or {B}? Answer:
+red,purple,red,Choice: {A} or {B}? Answer:
+blue,red,blue,Choice: {A} or {B}? Answer:
+blue,green,green,Choice: {A} or {B}? Answer:
+blue,yellow,blue,Choice: {A} or {B}? Answer:
+blue,purple,blue,Choice: {A} or {B}? Answer:
+green,red,green,Choice: {A} or {B}? Answer:
+green,blue,green,Choice: {A} or {B}? Answer:
+green,yellow,green,Choice: {A} or {B}? Answer:
+green,purple,green,Choice: {A} or {B}? Answer:
+yellow,red,yellow,Choice: {A} or {B}? Answer:
+yellow,blue,yellow,Choice: {A} or {B}? Answer:
+yellow,green,yellow,Choice: {A} or {B}? Answer:
+yellow,purple,yellow,Choice: {A} or {B}? Answer:
+purple,red,purple,Choice: {A} or {B}? Answer:
+purple,blue,blue,Choice: {A} or {B}? Answer:
+purple,green,purple,Choice: {A} or {B}? Answer:
+purple,yellow,yellow,Choice: {A} or {B}? Answer:
+red,blue,blue,"Pick one: {A}, {B}. Result:"
+red,green,green,"Pick one: {A}, {B}. Result:"
+red,yellow,red,"Pick one: {A}, {B}. Result:"
+red,purple,purple,"Pick one: {A}, {B}. Result:"
+blue,red,blue,"Pick one: {A}, {B}. Result:"
+blue,green,blue,"Pick one: {A}, {B}. Result:"
+blue,yellow,blue,"Pick one: {A}, {B}. Result:"
+blue,purple,purple,"Pick one: {A}, {B}. Result:"
+green,red,green,"Pick one: {A}, {B}. Result:"
+green,blue,blue,"Pick one: {A}, {B}. Result:"
+green,yellow,green,"Pick one: {A}, {B}. Result:"
+green,purple,green,"Pick one: {A}, {B}. Result:"
+yellow,red,red,"Pick one: {A}, {B}. Result:"
+yellow,blue,blue,"Pick one: {A}, {B}. Result:"
+yellow,green,yellow,"Pick one: {A}, {B}. Result:"
+yellow,purple,yellow,"Pick one: {A}, {B}. Result:"
+purple,red,red,"Pick one: {A}, {B}. Result:"
+purple,blue,blue,"Pick one: {A}, {B}. Result:"
+purple,green,green,"Pick one: {A}, {B}. Result:"
+purple,yellow,yellow,"Pick one: {A}, {B}. Result:"
+red,blue,red,"Candidates: {A}, {B}. Chosen:"
+red,green,green,"Candidates: {A}, {B}. Chosen:"
+red,yellow,red,"Candidates: {A}, {B}. Chosen:"
+red,purple,red,"Candidates: {A}, {B}. Chosen:"
+blue,red,red,"Candidates: {A}, {B}. Chosen:"
+blue,green,green,"Candidates: {A}, {B}. Chosen:"
+blue,yellow,blue,"Candidates: {A}, {B}. Chosen:"
+blue,purple,purple,"Candidates: {A}, {B}. Chosen:"
+green,red,green,"Candidates: {A}, {B}. Chosen:"
+green,blue,green,"Candidates: {A}, {B}. Chosen:"
+green,yellow,green,"Candidates: {A}, {B}. Chosen:"
+green,purple,green,"Candidates: {A}, {B}. Chosen:"
+yellow,red,red,"Candidates: {A}, {B}. Chosen:"
+yellow,blue,yellow,"Candidates: {A}, {B}. Chosen:"
+yellow,green,green,"Candidates: {A}, {B}. Chosen:"
+yellow,purple,purple,"Candidates: {A}, {B}. Chosen:"
+purple,red,red,"Candidates: {A}, {B}. Chosen:"
+purple,blue,purple,"Candidates: {A}, {B}. Chosen:"
+purple,green,green,"Candidates: {A}, {B}. Chosen:"
+purple,yellow,purple,"Candidates: {A}, {B}. Chosen:"
+red,blue,red,Task: Select {A} or {B}. Output:
+red,green,red,Task: Select {A} or {B}. Output:
+red,yellow,red,Task: Select {A} or {B}. Output:
+red,purple,red,Task: Select {A} or {B}. Output:
+blue,red,blue,Task: Select {A} or {B}. Output:
+blue,green,blue,Task: Select {A} or {B}. Output:
+blue,yellow,blue,Task: Select {A} or {B}. Output:
+blue,purple,blue,Task: Select {A} or {B}. Output:
+green,red,green,Task: Select {A} or {B}. Output:
+green,blue,green,Task: Select {A} or {B}. Output:
+green,yellow,green,Task: Select {A} or {B}. Output:
+green,purple,green,Task: Select {A} or {B}. Output:
+yellow,red,yellow,Task: Select {A} or {B}. Output:
+yellow,blue,yellow,Task: Select {A} or {B}. Output:
+yellow,green,yellow,Task: Select {A} or {B}. Output:
+yellow,purple,yellow,Task: Select {A} or {B}. Output:
+purple,red,purple,Task: Select {A} or {B}. Output:
+purple,blue,blue,Task: Select {A} or {B}. Output:
+purple,green,purple,Task: Select {A} or {B}. Output:
+purple,yellow,purple,Task: Select {A} or {B}. Output:
+red,blue,red,Please choose between {A} and {B}. Choice:
+red,green,red,Please choose between {A} and {B}. Choice:
+red,yellow,red,Please choose between {A} and {B}. Choice:
+red,purple,red,Please choose between {A} and {B}. Choice:
+blue,red,blue,Please choose between {A} and {B}. Choice:
+blue,green,blue,Please choose between {A} and {B}. Choice:
+blue,yellow,blue,Please choose between {A} and {B}. Choice:
+blue,purple,blue,Please choose between {A} and {B}. Choice:
+green,red,green,Please choose between {A} and {B}. Choice:
+green,blue,green,Please choose between {A} and {B}. Choice:
+green,yellow,green,Please choose between {A} and {B}. Choice:
+green,purple,green,Please choose between {A} and {B}. Choice:
+yellow,red,yellow,Please choose between {A} and {B}. Choice:
+yellow,blue,yellow,Please choose between {A} and {B}. Choice:
+yellow,green,green,Please choose between {A} and {B}. Choice:
+yellow,purple,yellow,Please choose between {A} and {B}. Choice:
+purple,red,red,Please choose between {A} and {B}. Choice:
+purple,blue,purple,Please choose between {A} and {B}. Choice:
+purple,green,purple,Please choose between {A} and {B}. Choice:
+purple,yellow,purple,Please choose between {A} and {B}. Choice:
+red,blue,red,A or B? {A} vs {B} ->
+red,green,red,A or B? {A} vs {B} ->
+red,yellow,red,A or B? {A} vs {B} ->
+red,purple,red,A or B? {A} vs {B} ->
+blue,red,blue,A or B? {A} vs {B} ->
+blue,green,blue,A or B? {A} vs {B} ->
+blue,yellow,blue,A or B? {A} vs {B} ->
+blue,purple,blue,A or B? {A} vs {B} ->
+green,red,green,A or B? {A} vs {B} ->
+green,blue,green,A or B? {A} vs {B} ->
+green,yellow,green,A or B? {A} vs {B} ->
+green,purple,green,A or B? {A} vs {B} ->
+yellow,red,yellow,A or B? {A} vs {B} ->
+yellow,blue,yellow,A or B? {A} vs {B} ->
+yellow,green,yellow,A or B? {A} vs {B} ->
+yellow,purple,yellow,A or B? {A} vs {B} ->
+purple,red,purple,A or B? {A} vs {B} ->
+purple,blue,purple,A or B? {A} vs {B} ->
+purple,green,purple,A or B? {A} vs {B} ->
+purple,yellow,purple,A or B? {A} vs {B} ->
+red,blue,red,Which is preferred: {A} or {B}? Answer:
+red,green,red,Which is preferred: {A} or {B}? Answer:
+red,yellow,red,Which is preferred: {A} or {B}? Answer:
+red,purple,purple,Which is preferred: {A} or {B}? Answer:
+blue,red,blue,Which is preferred: {A} or {B}? Answer:
+blue,green,green,Which is preferred: {A} or {B}? Answer:
+blue,yellow,yellow,Which is preferred: {A} or {B}? Answer:
+blue,purple,purple,Which is preferred: {A} or {B}? Answer:
+green,red,red,Which is preferred: {A} or {B}? Answer:
+green,blue,green,Which is preferred: {A} or {B}? Answer:
+green,yellow,yellow,Which is preferred: {A} or {B}? Answer:
+green,purple,purple,Which is preferred: {A} or {B}? Answer:
+yellow,red,red,Which is preferred: {A} or {B}? Answer:
+yellow,blue,yellow,Which is preferred: {A} or {B}? Answer:
+yellow,green,yellow,Which is preferred: {A} or {B}? Answer:
+yellow,purple,yellow,Which is preferred: {A} or {B}? Answer:
+purple,red,purple,Which is preferred: {A} or {B}? Answer:
+purple,blue,purple,Which is preferred: {A} or {B}? Answer:
+purple,green,purple,Which is preferred: {A} or {B}? Answer:
+purple,yellow,yellow,Which is preferred: {A} or {B}? Answer:
+red,blue,red,Vote: {A} or {B}. Result:
+red,green,red,Vote: {A} or {B}. Result:
+red,yellow,red,Vote: {A} or {B}. Result:
+red,purple,red,Vote: {A} or {B}. Result:
+blue,red,blue,Vote: {A} or {B}. Result:
+blue,green,blue,Vote: {A} or {B}. Result:
+blue,yellow,blue,Vote: {A} or {B}. Result:
+blue,purple,blue,Vote: {A} or {B}. Result:
+green,red,green,Vote: {A} or {B}. Result:
+green,blue,green,Vote: {A} or {B}. Result:
+green,yellow,green,Vote: {A} or {B}. Result:
+green,purple,green,Vote: {A} or {B}. Result:
+yellow,red,yellow,Vote: {A} or {B}. Result:
+yellow,blue,yellow,Vote: {A} or {B}. Result:
+yellow,green,yellow,Vote: {A} or {B}. Result:
+yellow,purple,yellow,Vote: {A} or {B}. Result:
+purple,red,purple,Vote: {A} or {B}. Result:
+purple,blue,purple,Vote: {A} or {B}. Result:
+purple,green,purple,Vote: {A} or {B}. Result:
+purple,yellow,purple,Vote: {A} or {B}. Result:
+red,blue,red,{A} / {B}. Selection:
+red,green,red,{A} / {B}. Selection:
+red,yellow,red,{A} / {B}. Selection:
+red,purple,red,{A} / {B}. Selection:
+blue,red,blue,{A} / {B}. Selection:
+blue,green,blue,{A} / {B}. Selection:
+blue,yellow,blue,{A} / {B}. Selection:
+blue,purple,blue,{A} / {B}. Selection:
+green,red,green,{A} / {B}. Selection:
+green,blue,green,{A} / {B}. Selection:
+green,yellow,green,{A} / {B}. Selection:
+green,purple,green,{A} / {B}. Selection:
+yellow,red,yellow,{A} / {B}. Selection:
+yellow,blue,yellow,{A} / {B}. Selection:
+yellow,green,yellow,{A} / {B}. Selection:
+yellow,purple,yellow,{A} / {B}. Selection:
+purple,red,red,{A} / {B}. Selection:
+purple,blue,purple,{A} / {B}. Selection:
+purple,green,purple,{A} / {B}. Selection:
+purple,yellow,purple,{A} / {B}. Selection:
+red,blue,red,Name: {A}. Name: {B}. Preferred:
+red,green,red,Name: {A}. Name: {B}. Preferred:
+red,yellow,red,Name: {A}. Name: {B}. Preferred:
+red,purple,red,Name: {A}. Name: {B}. Preferred:
+blue,red,red,Name: {A}. Name: {B}. Preferred:
+blue,green,blue,Name: {A}. Name: {B}. Preferred:
+blue,yellow,blue,Name: {A}. Name: {B}. Preferred:
+blue,purple,blue,Name: {A}. Name: {B}. Preferred:
+green,red,red,Name: {A}. Name: {B}. Preferred:
+green,blue,green,Name: {A}. Name: {B}. Preferred:
+green,yellow,green,Name: {A}. Name: {B}. Preferred:
+green,purple,green,Name: {A}. Name: {B}. Preferred:
+yellow,red,red,Name: {A}. Name: {B}. Preferred:
+yellow,blue,blue,Name: {A}. Name: {B}. Preferred:
+yellow,green,green,Name: {A}. Name: {B}. Preferred:
+yellow,purple,purple,Name: {A}. Name: {B}. Preferred:
+purple,red,red,Name: {A}. Name: {B}. Preferred:
+purple,blue,blue,Name: {A}. Name: {B}. Preferred:
+purple,green,green,Name: {A}. Name: {B}. Preferred:
+purple,yellow,purple,Name: {A}. Name: {B}. Preferred:
+red,blue,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,green,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,yellow,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,purple,purple,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,red,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,green,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,yellow,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+blue,purple,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,red,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,blue,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,yellow,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+green,purple,purple,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,red,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,blue,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,green,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+yellow,purple,purple,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,red,red,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,blue,blue,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,green,green,"Item 1: {A}
+Item 2: {B}
+Selection:"
+purple,yellow,yellow,"Item 1: {A}
+Item 2: {B}
+Selection:"
+red,blue,red,"Input: [{A}, {B}]
+Output:"
+red,green,red,"Input: [{A}, {B}]
+Output:"
+red,yellow,red,"Input: [{A}, {B}]
+Output:"
+red,purple,red,"Input: [{A}, {B}]
+Output:"
+blue,red,red,"Input: [{A}, {B}]
+Output:"
+blue,green,blue,"Input: [{A}, {B}]
+Output:"
+blue,yellow,blue,"Input: [{A}, {B}]
+Output:"
+blue,purple,blue,"Input: [{A}, {B}]
+Output:"
+green,red,green,"Input: [{A}, {B}]
+Output:"
+green,blue,green,"Input: [{A}, {B}]
+Output:"
+green,yellow,green,"Input: [{A}, {B}]
+Output:"
+green,purple,green,"Input: [{A}, {B}]
+Output:"
+yellow,red,yellow,"Input: [{A}, {B}]
+Output:"
+yellow,blue,yellow,"Input: [{A}, {B}]
+Output:"
+yellow,green,yellow,"Input: [{A}, {B}]
+Output:"
+yellow,purple,yellow,"Input: [{A}, {B}]
+Output:"
+purple,red,purple,"Input: [{A}, {B}]
+Output:"
+purple,blue,purple,"Input: [{A}, {B}]
+Output:"
+purple,green,purple,"Input: [{A}, {B}]
+Output:"
+purple,yellow,purple,"Input: [{A}, {B}]
+Output:"
+red,blue,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,green,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,yellow,red,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,purple,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,red,blue,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,green,blue,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,yellow,blue,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+blue,purple,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,red,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,blue,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,yellow,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+green,purple,green,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,red,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,blue,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,green,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+yellow,purple,yellow,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,red,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,blue,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,green,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+purple,yellow,purple,"Color_1 = {A}
+Color_2 = {B}
+Selected_Color ="
+red,blue,red,"Dataset: {A}, {B}. Filtered:"
+red,green,red,"Dataset: {A}, {B}. Filtered:"
+red,yellow,red,"Dataset: {A}, {B}. Filtered:"
+red,purple,red,"Dataset: {A}, {B}. Filtered:"
+blue,red,red,"Dataset: {A}, {B}. Filtered:"
+blue,green,blue,"Dataset: {A}, {B}. Filtered:"
+blue,yellow,blue,"Dataset: {A}, {B}. Filtered:"
+blue,purple,blue,"Dataset: {A}, {B}. Filtered:"
+green,red,green,"Dataset: {A}, {B}. Filtered:"
+green,blue,green,"Dataset: {A}, {B}. Filtered:"
+green,yellow,green,"Dataset: {A}, {B}. Filtered:"
+green,purple,green,"Dataset: {A}, {B}. Filtered:"
+yellow,red,red,"Dataset: {A}, {B}. Filtered:"
+yellow,blue,yellow,"Dataset: {A}, {B}. Filtered:"
+yellow,green,green,"Dataset: {A}, {B}. Filtered:"
+yellow,purple,yellow,"Dataset: {A}, {B}. Filtered:"
+purple,red,red,"Dataset: {A}, {B}. Filtered:"
+purple,blue,blue,"Dataset: {A}, {B}. Filtered:"
+purple,green,green,"Dataset: {A}, {B}. Filtered:"
+purple,yellow,yellow,"Dataset: {A}, {B}. Filtered:"
+red,blue,red,"[ {A}, {B} ] Selected index:"
+red,green,red,"[ {A}, {B} ] Selected index:"
+red,yellow,red,"[ {A}, {B} ] Selected index:"
+red,purple,red,"[ {A}, {B} ] Selected index:"
+blue,red,blue,"[ {A}, {B} ] Selected index:"
+blue,green,green,"[ {A}, {B} ] Selected index:"
+blue,yellow,blue,"[ {A}, {B} ] Selected index:"
+blue,purple,blue,"[ {A}, {B} ] Selected index:"
+green,red,green,"[ {A}, {B} ] Selected index:"
+green,blue,blue,"[ {A}, {B} ] Selected index:"
+green,yellow,green,"[ {A}, {B} ] Selected index:"
+green,purple,green,"[ {A}, {B} ] Selected index:"
+yellow,red,yellow,"[ {A}, {B} ] Selected index:"
+yellow,blue,blue,"[ {A}, {B} ] Selected index:"
+yellow,green,green,"[ {A}, {B} ] Selected index:"
+yellow,purple,yellow,"[ {A}, {B} ] Selected index:"
+purple,red,red,"[ {A}, {B} ] Selected index:"
+purple,blue,blue,"[ {A}, {B} ] Selected index:"
+purple,green,purple,"[ {A}, {B} ] Selected index:"
+purple,yellow,purple,"[ {A}, {B} ] Selected index:"
+red,blue,red,"List: {A}, {B}. Top item:"
+red,green,red,"List: {A}, {B}. Top item:"
+red,yellow,red,"List: {A}, {B}. Top item:"
+red,purple,red,"List: {A}, {B}. Top item:"
+blue,red,blue,"List: {A}, {B}. Top item:"
+blue,green,blue,"List: {A}, {B}. Top item:"
+blue,yellow,blue,"List: {A}, {B}. Top item:"
+blue,purple,blue,"List: {A}, {B}. Top item:"
+green,red,green,"List: {A}, {B}. Top item:"
+green,blue,green,"List: {A}, {B}. Top item:"
+green,yellow,green,"List: {A}, {B}. Top item:"
+green,purple,green,"List: {A}, {B}. Top item:"
+yellow,red,yellow,"List: {A}, {B}. Top item:"
+yellow,blue,yellow,"List: {A}, {B}. Top item:"
+yellow,green,yellow,"List: {A}, {B}. Top item:"
+yellow,purple,yellow,"List: {A}, {B}. Top item:"
+purple,red,purple,"List: {A}, {B}. Top item:"
+purple,blue,purple,"List: {A}, {B}. Top item:"
+purple,green,purple,"List: {A}, {B}. Top item:"
+purple,yellow,purple,"List: {A}, {B}. Top item:"
+red,blue,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,green,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,yellow,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,purple,purple,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,red,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,green,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,yellow,yellow,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+blue,purple,purple,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,red,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,blue,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,yellow,yellow,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+green,purple,purple,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,red,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,blue,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,green,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+yellow,purple,purple,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,red,red,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,blue,blue,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,green,green,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+purple,yellow,yellow,"Category: Colors.
+Options: {A}, {B}.
+Pick:"
+red,blue,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,green,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,yellow,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,purple,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,red,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,green,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,yellow,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+blue,purple,blue,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,red,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,blue,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,yellow,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+green,purple,green,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,red,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,blue,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,green,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+yellow,purple,yellow,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,red,red,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,blue,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,green,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+purple,yellow,purple,"Type: Color
+Option A: {A}
+Option B: {B}
+Select:"
+red,blue,red,Log: User viewed {A} and {B}. User chose
+red,green,red,Log: User viewed {A} and {B}. User chose
+red,yellow,yellow,Log: User viewed {A} and {B}. User chose
+red,purple,purple,Log: User viewed {A} and {B}. User chose
+blue,red,blue,Log: User viewed {A} and {B}. User chose
+blue,green,blue,Log: User viewed {A} and {B}. User chose
+blue,yellow,blue,Log: User viewed {A} and {B}. User chose
+blue,purple,blue,Log: User viewed {A} and {B}. User chose
+green,red,green,Log: User viewed {A} and {B}. User chose
+green,blue,blue,Log: User viewed {A} and {B}. User chose
+green,yellow,green,Log: User viewed {A} and {B}. User chose
+green,purple,purple,Log: User viewed {A} and {B}. User chose
+yellow,red,yellow,Log: User viewed {A} and {B}. User chose
+yellow,blue,yellow,Log: User viewed {A} and {B}. User chose
+yellow,green,yellow,Log: User viewed {A} and {B}. User chose
+yellow,purple,yellow,Log: User viewed {A} and {B}. User chose
+purple,red,purple,Log: User viewed {A} and {B}. User chose
+purple,blue,purple,Log: User viewed {A} and {B}. User chose
+purple,green,purple,Log: User viewed {A} and {B}. User chose
+purple,yellow,yellow,Log: User viewed {A} and {B}. User chose
+red,blue,red,"const options = ['{A}', '{B}']; const selected ="
+red,green,red,"const options = ['{A}', '{B}']; const selected ="
+red,yellow,red,"const options = ['{A}', '{B}']; const selected ="
+red,purple,red,"const options = ['{A}', '{B}']; const selected ="
+blue,red,blue,"const options = ['{A}', '{B}']; const selected ="
+blue,green,blue,"const options = ['{A}', '{B}']; const selected ="
+blue,yellow,blue,"const options = ['{A}', '{B}']; const selected ="
+blue,purple,blue,"const options = ['{A}', '{B}']; const selected ="
+green,red,green,"const options = ['{A}', '{B}']; const selected ="
+green,blue,green,"const options = ['{A}', '{B}']; const selected ="
+green,yellow,green,"const options = ['{A}', '{B}']; const selected ="
+green,purple,green,"const options = ['{A}', '{B}']; const selected ="
+yellow,red,yellow,"const options = ['{A}', '{B}']; const selected ="
+yellow,blue,yellow,"const options = ['{A}', '{B}']; const selected ="
+yellow,green,yellow,"const options = ['{A}', '{B}']; const selected ="
+yellow,purple,yellow,"const options = ['{A}', '{B}']; const selected ="
+purple,red,red,"const options = ['{A}', '{B}']; const selected ="
+purple,blue,blue,"const options = ['{A}', '{B}']; const selected ="
+purple,green,green,"const options = ['{A}', '{B}']; const selected ="
+purple,yellow,yellow,"const options = ['{A}', '{B}']; const selected ="
+red,blue,red,if (choice == '{A}' || choice == '{B}') return
+red,green,red,if (choice == '{A}' || choice == '{B}') return
+red,yellow,red,if (choice == '{A}' || choice == '{B}') return
+red,purple,red,if (choice == '{A}' || choice == '{B}') return
+blue,red,blue,if (choice == '{A}' || choice == '{B}') return
+blue,green,blue,if (choice == '{A}' || choice == '{B}') return
+blue,yellow,blue,if (choice == '{A}' || choice == '{B}') return
+blue,purple,blue,if (choice == '{A}' || choice == '{B}') return
+green,red,green,if (choice == '{A}' || choice == '{B}') return
+green,blue,green,if (choice == '{A}' || choice == '{B}') return
+green,yellow,green,if (choice == '{A}' || choice == '{B}') return
+green,purple,green,if (choice == '{A}' || choice == '{B}') return
+yellow,red,yellow,if (choice == '{A}' || choice == '{B}') return
+yellow,blue,yellow,if (choice == '{A}' || choice == '{B}') return
+yellow,green,yellow,if (choice == '{A}' || choice == '{B}') return
+yellow,purple,yellow,if (choice == '{A}' || choice == '{B}') return
+purple,red,purple,if (choice == '{A}' || choice == '{B}') return
+purple,blue,purple,if (choice == '{A}' || choice == '{B}') return
+purple,green,purple,if (choice == '{A}' || choice == '{B}') return
+purple,yellow,purple,if (choice == '{A}' || choice == '{B}') return
+red,blue,red,">>> select('{A}', '{B}')
+"
+red,green,red,">>> select('{A}', '{B}')
+"
+red,yellow,red,">>> select('{A}', '{B}')
+"
+red,purple,red,">>> select('{A}', '{B}')
+"
+blue,red,blue,">>> select('{A}', '{B}')
+"
+blue,green,blue,">>> select('{A}', '{B}')
+"
+blue,yellow,blue,">>> select('{A}', '{B}')
+"
+blue,purple,blue,">>> select('{A}', '{B}')
+"
+green,red,green,">>> select('{A}', '{B}')
+"
+green,blue,green,">>> select('{A}', '{B}')
+"
+green,yellow,green,">>> select('{A}', '{B}')
+"
+green,purple,green,">>> select('{A}', '{B}')
+"
+yellow,red,yellow,">>> select('{A}', '{B}')
+"
+yellow,blue,yellow,">>> select('{A}', '{B}')
+"
+yellow,green,yellow,">>> select('{A}', '{B}')
+"
+yellow,purple,yellow,">>> select('{A}', '{B}')
+"
+purple,red,purple,">>> select('{A}', '{B}')
+"
+purple,blue,purple,">>> select('{A}', '{B}')
+"
+purple,green,purple,">>> select('{A}', '{B}')
+"
+purple,yellow,purple,">>> select('{A}', '{B}')
+"
+red,blue,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,green,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,yellow,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,purple,red,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,red,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,green,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,yellow,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+blue,purple,blue,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,red,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,blue,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,yellow,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+green,purple,green,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,red,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,blue,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,green,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+yellow,purple,yellow,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,red,purple,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,blue,purple,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,green,purple,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+purple,yellow,purple,switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:
+red,blue,red,"# Config
+active_color: {A} | {B}
+set:"
+red,green,red,"# Config
+active_color: {A} | {B}
+set:"
+red,yellow,red,"# Config
+active_color: {A} | {B}
+set:"
+red,purple,red,"# Config
+active_color: {A} | {B}
+set:"
+blue,red,blue,"# Config
+active_color: {A} | {B}
+set:"
+blue,green,blue,"# Config
+active_color: {A} | {B}
+set:"
+blue,yellow,blue,"# Config
+active_color: {A} | {B}
+set:"
+blue,purple,blue,"# Config
+active_color: {A} | {B}
+set:"
+green,red,red,"# Config
+active_color: {A} | {B}
+set:"
+green,blue,blue,"# Config
+active_color: {A} | {B}
+set:"
+green,yellow,green,"# Config
+active_color: {A} | {B}
+set:"
+green,purple,green,"# Config
+active_color: {A} | {B}
+set:"
+yellow,red,yellow,"# Config
+active_color: {A} | {B}
+set:"
+yellow,blue,blue,"# Config
+active_color: {A} | {B}
+set:"
+yellow,green,yellow,"# Config
+active_color: {A} | {B}
+set:"
+yellow,purple,yellow,"# Config
+active_color: {A} | {B}
+set:"
+purple,red,red,"# Config
+active_color: {A} | {B}
+set:"
+purple,blue,blue,"# Config
+active_color: {A} | {B}
+set:"
+purple,green,green,"# Config
+active_color: {A} | {B}
+set:"
+purple,yellow,yellow,"# Config
+active_color: {A} | {B}
+set:"
+red,blue,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,green,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,yellow,red,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,purple,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,red,blue,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,green,blue,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,yellow,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+blue,purple,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,red,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,blue,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,yellow,green,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+green,purple,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,red,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,blue,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,green,yellow,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+yellow,purple,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,red,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,blue,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,green,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+purple,yellow,purple,"json_data = {{'options': ['{A}', '{B}'], 'choice': '"
+red,blue,blue,"<selection options='{A}, {B}'>"
+red,green,red,"<selection options='{A}, {B}'>"
+red,yellow,red,"<selection options='{A}, {B}'>"
+red,purple,purple,"<selection options='{A}, {B}'>"
+blue,red,blue,"<selection options='{A}, {B}'>"
+blue,green,blue,"<selection options='{A}, {B}'>"
+blue,yellow,blue,"<selection options='{A}, {B}'>"
+blue,purple,blue,"<selection options='{A}, {B}'>"
+green,red,green,"<selection options='{A}, {B}'>"
+green,blue,green,"<selection options='{A}, {B}'>"
+green,yellow,green,"<selection options='{A}, {B}'>"
+green,purple,green,"<selection options='{A}, {B}'>"
+yellow,red,yellow,"<selection options='{A}, {B}'>"
+yellow,blue,blue,"<selection options='{A}, {B}'>"
+yellow,green,yellow,"<selection options='{A}, {B}'>"
+yellow,purple,yellow,"<selection options='{A}, {B}'>"
+purple,red,purple,"<selection options='{A}, {B}'>"
+purple,blue,purple,"<selection options='{A}, {B}'>"
+purple,green,purple,"<selection options='{A}, {B}'>"
+purple,yellow,purple,"<selection options='{A}, {B}'>"
+red,blue,red,"GetPreference({A}, {B}) ->"
+red,green,red,"GetPreference({A}, {B}) ->"
+red,yellow,red,"GetPreference({A}, {B}) ->"
+red,purple,red,"GetPreference({A}, {B}) ->"
+blue,red,blue,"GetPreference({A}, {B}) ->"
+blue,green,blue,"GetPreference({A}, {B}) ->"
+blue,yellow,blue,"GetPreference({A}, {B}) ->"
+blue,purple,blue,"GetPreference({A}, {B}) ->"
+green,red,green,"GetPreference({A}, {B}) ->"
+green,blue,green,"GetPreference({A}, {B}) ->"
+green,yellow,green,"GetPreference({A}, {B}) ->"
+green,purple,green,"GetPreference({A}, {B}) ->"
+yellow,red,yellow,"GetPreference({A}, {B}) ->"
+yellow,blue,yellow,"GetPreference({A}, {B}) ->"
+yellow,green,yellow,"GetPreference({A}, {B}) ->"
+yellow,purple,yellow,"GetPreference({A}, {B}) ->"
+purple,red,purple,"GetPreference({A}, {B}) ->"
+purple,blue,purple,"GetPreference({A}, {B}) ->"
+purple,green,purple,"GetPreference({A}, {B}) ->"
+purple,yellow,purple,"GetPreference({A}, {B}) ->"
+red,blue,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,green,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,yellow,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,purple,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,red,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,green,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,yellow,yellow,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+blue,purple,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,red,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,blue,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,yellow,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+green,purple,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,red,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,blue,yellow,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,green,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+yellow,purple,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,red,red,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,blue,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,green,green,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+purple,yellow,purple,"x = {A}; y = {B}; print(pick(x,y)); Output:"
+red,blue,red,"fn choose({A}, {B}) {{ return"
+red,green,red,"fn choose({A}, {B}) {{ return"
+red,yellow,red,"fn choose({A}, {B}) {{ return"
+red,purple,red,"fn choose({A}, {B}) {{ return"
+blue,red,blue,"fn choose({A}, {B}) {{ return"
+blue,green,blue,"fn choose({A}, {B}) {{ return"
+blue,yellow,blue,"fn choose({A}, {B}) {{ return"
+blue,purple,blue,"fn choose({A}, {B}) {{ return"
+green,red,green,"fn choose({A}, {B}) {{ return"
+green,blue,green,"fn choose({A}, {B}) {{ return"
+green,yellow,green,"fn choose({A}, {B}) {{ return"
+green,purple,green,"fn choose({A}, {B}) {{ return"
+yellow,red,yellow,"fn choose({A}, {B}) {{ return"
+yellow,blue,yellow,"fn choose({A}, {B}) {{ return"
+yellow,green,yellow,"fn choose({A}, {B}) {{ return"
+yellow,purple,yellow,"fn choose({A}, {B}) {{ return"
+purple,red,purple,"fn choose({A}, {B}) {{ return"
+purple,blue,purple,"fn choose({A}, {B}) {{ return"
+purple,green,purple,"fn choose({A}, {B}) {{ return"
+purple,yellow,purple,"fn choose({A}, {B}) {{ return"
+red,blue,red,"Of {A} and {B}, I choose"
+red,green,green,"Of {A} and {B}, I choose"
+red,yellow,red,"Of {A} and {B}, I choose"
+red,purple,red,"Of {A} and {B}, I choose"
+blue,red,red,"Of {A} and {B}, I choose"
+blue,green,green,"Of {A} and {B}, I choose"
+blue,yellow,blue,"Of {A} and {B}, I choose"
+blue,purple,blue,"Of {A} and {B}, I choose"
+green,red,green,"Of {A} and {B}, I choose"
+green,blue,green,"Of {A} and {B}, I choose"
+green,yellow,green,"Of {A} and {B}, I choose"
+green,purple,green,"Of {A} and {B}, I choose"
+yellow,red,red,"Of {A} and {B}, I choose"
+yellow,blue,yellow,"Of {A} and {B}, I choose"
+yellow,green,green,"Of {A} and {B}, I choose"
+yellow,purple,yellow,"Of {A} and {B}, I choose"
+purple,red,red,"Of {A} and {B}, I choose"
+purple,blue,blue,"Of {A} and {B}, I choose"
+purple,green,green,"Of {A} and {B}, I choose"
+purple,yellow,yellow,"Of {A} and {B}, I choose"
+red,blue,blue,"Between {A} and {B}, the winner is"
+red,green,green,"Between {A} and {B}, the winner is"
+red,yellow,red,"Between {A} and {B}, the winner is"
+red,purple,red,"Between {A} and {B}, the winner is"
+blue,red,red,"Between {A} and {B}, the winner is"
+blue,green,green,"Between {A} and {B}, the winner is"
+blue,yellow,yellow,"Between {A} and {B}, the winner is"
+blue,purple,purple,"Between {A} and {B}, the winner is"
+green,red,green,"Between {A} and {B}, the winner is"
+green,blue,green,"Between {A} and {B}, the winner is"
+green,yellow,green,"Between {A} and {B}, the winner is"
+green,purple,green,"Between {A} and {B}, the winner is"
+yellow,red,red,"Between {A} and {B}, the winner is"
+yellow,blue,blue,"Between {A} and {B}, the winner is"
+yellow,green,yellow,"Between {A} and {B}, the winner is"
+yellow,purple,yellow,"Between {A} and {B}, the winner is"
+purple,red,red,"Between {A} and {B}, the winner is"
+purple,blue,blue,"Between {A} and {B}, the winner is"
+purple,green,green,"Between {A} and {B}, the winner is"
+purple,yellow,yellow,"Between {A} and {B}, the winner is"
+red,blue,red,"Comparing {A} with {B}, the preference is"
+red,green,red,"Comparing {A} with {B}, the preference is"
+red,yellow,red,"Comparing {A} with {B}, the preference is"
+red,purple,red,"Comparing {A} with {B}, the preference is"
+blue,red,blue,"Comparing {A} with {B}, the preference is"
+blue,green,blue,"Comparing {A} with {B}, the preference is"
+blue,yellow,blue,"Comparing {A} with {B}, the preference is"
+blue,purple,blue,"Comparing {A} with {B}, the preference is"
+green,red,green,"Comparing {A} with {B}, the preference is"
+green,blue,green,"Comparing {A} with {B}, the preference is"
+green,yellow,green,"Comparing {A} with {B}, the preference is"
+green,purple,green,"Comparing {A} with {B}, the preference is"
+yellow,red,yellow,"Comparing {A} with {B}, the preference is"
+yellow,blue,yellow,"Comparing {A} with {B}, the preference is"
+yellow,green,yellow,"Comparing {A} with {B}, the preference is"
+yellow,purple,yellow,"Comparing {A} with {B}, the preference is"
+purple,red,purple,"Comparing {A} with {B}, the preference is"
+purple,blue,purple,"Comparing {A} with {B}, the preference is"
+purple,green,purple,"Comparing {A} with {B}, the preference is"
+purple,yellow,purple,"Comparing {A} with {B}, the preference is"
+red,blue,red,"Alternatives: {A}, {B}. Decision:"
+red,green,green,"Alternatives: {A}, {B}. Decision:"
+red,yellow,red,"Alternatives: {A}, {B}. Decision:"
+red,purple,purple,"Alternatives: {A}, {B}. Decision:"
+blue,red,red,"Alternatives: {A}, {B}. Decision:"
+blue,green,green,"Alternatives: {A}, {B}. Decision:"
+blue,yellow,blue,"Alternatives: {A}, {B}. Decision:"
+blue,purple,purple,"Alternatives: {A}, {B}. Decision:"
+green,red,green,"Alternatives: {A}, {B}. Decision:"
+green,blue,green,"Alternatives: {A}, {B}. Decision:"
+green,yellow,green,"Alternatives: {A}, {B}. Decision:"
+green,purple,green,"Alternatives: {A}, {B}. Decision:"
+yellow,red,red,"Alternatives: {A}, {B}. Decision:"
+yellow,blue,yellow,"Alternatives: {A}, {B}. Decision:"
+yellow,green,green,"Alternatives: {A}, {B}. Decision:"
+yellow,purple,yellow,"Alternatives: {A}, {B}. Decision:"
+purple,red,red,"Alternatives: {A}, {B}. Decision:"
+purple,blue,blue,"Alternatives: {A}, {B}. Decision:"
+purple,green,green,"Alternatives: {A}, {B}. Decision:"
+purple,yellow,purple,"Alternatives: {A}, {B}. Decision:"
+red,blue,red,Poll: {A} vs {B}. Majority:
+red,green,red,Poll: {A} vs {B}. Majority:
+red,yellow,red,Poll: {A} vs {B}. Majority:
+red,purple,red,Poll: {A} vs {B}. Majority:
+blue,red,blue,Poll: {A} vs {B}. Majority:
+blue,green,blue,Poll: {A} vs {B}. Majority:
+blue,yellow,blue,Poll: {A} vs {B}. Majority:
+blue,purple,blue,Poll: {A} vs {B}. Majority:
+green,red,green,Poll: {A} vs {B}. Majority:
+green,blue,green,Poll: {A} vs {B}. Majority:
+green,yellow,green,Poll: {A} vs {B}. Majority:
+green,purple,green,Poll: {A} vs {B}. Majority:
+yellow,red,yellow,Poll: {A} vs {B}. Majority:
+yellow,blue,yellow,Poll: {A} vs {B}. Majority:
+yellow,green,yellow,Poll: {A} vs {B}. Majority:
+yellow,purple,yellow,Poll: {A} vs {B}. Majority:
+purple,red,purple,Poll: {A} vs {B}. Majority:
+purple,blue,purple,Poll: {A} vs {B}. Majority:
+purple,green,purple,Poll: {A} vs {B}. Majority:
+purple,yellow,purple,Poll: {A} vs {B}. Majority:
+red,blue,red,Test: {A} vs {B}. Outcome:
+red,green,red,Test: {A} vs {B}. Outcome:
+red,yellow,red,Test: {A} vs {B}. Outcome:
+red,purple,red,Test: {A} vs {B}. Outcome:
+blue,red,blue,Test: {A} vs {B}. Outcome:
+blue,green,blue,Test: {A} vs {B}. Outcome:
+blue,yellow,blue,Test: {A} vs {B}. Outcome:
+blue,purple,blue,Test: {A} vs {B}. Outcome:
+green,red,green,Test: {A} vs {B}. Outcome:
+green,blue,green,Test: {A} vs {B}. Outcome:
+green,yellow,green,Test: {A} vs {B}. Outcome:
+green,purple,green,Test: {A} vs {B}. Outcome:
+yellow,red,yellow,Test: {A} vs {B}. Outcome:
+yellow,blue,yellow,Test: {A} vs {B}. Outcome:
+yellow,green,yellow,Test: {A} vs {B}. Outcome:
+yellow,purple,yellow,Test: {A} vs {B}. Outcome:
+purple,red,purple,Test: {A} vs {B}. Outcome:
+purple,blue,purple,Test: {A} vs {B}. Outcome:
+purple,green,purple,Test: {A} vs {B}. Outcome:
+purple,yellow,purple,Test: {A} vs {B}. Outcome:
+red,blue,red,"Filter: {A}, {B}. Retain:"
+red,green,green,"Filter: {A}, {B}. Retain:"
+red,yellow,red,"Filter: {A}, {B}. Retain:"
+red,purple,red,"Filter: {A}, {B}. Retain:"
+blue,red,red,"Filter: {A}, {B}. Retain:"
+blue,green,blue,"Filter: {A}, {B}. Retain:"
+blue,yellow,blue,"Filter: {A}, {B}. Retain:"
+blue,purple,blue,"Filter: {A}, {B}. Retain:"
+green,red,green,"Filter: {A}, {B}. Retain:"
+green,blue,green,"Filter: {A}, {B}. Retain:"
+green,yellow,green,"Filter: {A}, {B}. Retain:"
+green,purple,green,"Filter: {A}, {B}. Retain:"
+yellow,red,red,"Filter: {A}, {B}. Retain:"
+yellow,blue,blue,"Filter: {A}, {B}. Retain:"
+yellow,green,green,"Filter: {A}, {B}. Retain:"
+yellow,purple,yellow,"Filter: {A}, {B}. Retain:"
+purple,red,red,"Filter: {A}, {B}. Retain:"
+purple,blue,blue,"Filter: {A}, {B}. Retain:"
+purple,green,purple,"Filter: {A}, {B}. Retain:"
+purple,yellow,yellow,"Filter: {A}, {B}. Retain:"
+red,blue,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,green,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,yellow,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,purple,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,red,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,green,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,yellow,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+blue,purple,purple,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,red,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,blue,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,yellow,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+green,purple,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,red,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,blue,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,green,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+yellow,purple,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,red,red,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,blue,blue,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,green,green,"Mode: Select.
+1. {A}
+2. {B}
+> "
+purple,yellow,yellow,"Mode: Select.
+1. {A}
+2. {B}
+> "
+red,blue,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,green,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,yellow,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,purple,red,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,red,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,green,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,yellow,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+blue,purple,blue,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,red,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,blue,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,yellow,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+green,purple,green,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,red,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,blue,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,green,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+yellow,purple,yellow,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,red,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,blue,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,green,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+purple,yellow,purple,"Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:"
+red,blue,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,green,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,yellow,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,purple,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,red,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,green,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,yellow,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+blue,purple,blue,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,red,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,blue,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,yellow,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+green,purple,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,red,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,blue,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,green,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+yellow,purple,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,red,red,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,blue,purple,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,green,green,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+purple,yellow,yellow,"YAML:
+  opt1: {A}
+  opt2: {B}
+  use: "
+red,blue,red,... {A} ... {B} ... Select:
+red,green,red,... {A} ... {B} ... Select:
+red,yellow,red,... {A} ... {B} ... Select:
+red,purple,red,... {A} ... {B} ... Select:
+blue,red,blue,... {A} ... {B} ... Select:
+blue,green,blue,... {A} ... {B} ... Select:
+blue,yellow,blue,... {A} ... {B} ... Select:
+blue,purple,blue,... {A} ... {B} ... Select:
+green,red,green,... {A} ... {B} ... Select:
+green,blue,green,... {A} ... {B} ... Select:
+green,yellow,green,... {A} ... {B} ... Select:
+green,purple,green,... {A} ... {B} ... Select:
+yellow,red,yellow,... {A} ... {B} ... Select:
+yellow,blue,yellow,... {A} ... {B} ... Select:
+yellow,green,yellow,... {A} ... {B} ... Select:
+yellow,purple,yellow,... {A} ... {B} ... Select:
+purple,red,purple,... {A} ... {B} ... Select:
+purple,blue,purple,... {A} ... {B} ... Select:
+purple,green,purple,... {A} ... {B} ... Select:
+purple,yellow,purple,... {A} ... {B} ... Select:
+red,blue,red,Target: {A} or {B}. Lock:
+red,green,red,Target: {A} or {B}. Lock:
+red,yellow,red,Target: {A} or {B}. Lock:
+red,purple,red,Target: {A} or {B}. Lock:
+blue,red,blue,Target: {A} or {B}. Lock:
+blue,green,blue,Target: {A} or {B}. Lock:
+blue,yellow,blue,Target: {A} or {B}. Lock:
+blue,purple,blue,Target: {A} or {B}. Lock:
+green,red,green,Target: {A} or {B}. Lock:
+green,blue,green,Target: {A} or {B}. Lock:
+green,yellow,green,Target: {A} or {B}. Lock:
+green,purple,green,Target: {A} or {B}. Lock:
+yellow,red,yellow,Target: {A} or {B}. Lock:
+yellow,blue,yellow,Target: {A} or {B}. Lock:
+yellow,green,yellow,Target: {A} or {B}. Lock:
+yellow,purple,yellow,Target: {A} or {B}. Lock:
+purple,red,red,Target: {A} or {B}. Lock:
+purple,blue,blue,Target: {A} or {B}. Lock:
+purple,green,green,Target: {A} or {B}. Lock:
+purple,yellow,yellow,Target: {A} or {B}. Lock:
+red,blue,blue,State: {A} | {B}. Current:
+red,green,red,State: {A} | {B}. Current:
+red,yellow,red,State: {A} | {B}. Current:
+red,purple,red,State: {A} | {B}. Current:
+blue,red,red,State: {A} | {B}. Current:
+blue,green,blue,State: {A} | {B}. Current:
+blue,yellow,blue,State: {A} | {B}. Current:
+blue,purple,blue,State: {A} | {B}. Current:
+green,red,green,State: {A} | {B}. Current:
+green,blue,green,State: {A} | {B}. Current:
+green,yellow,green,State: {A} | {B}. Current:
+green,purple,green,State: {A} | {B}. Current:
+yellow,red,yellow,State: {A} | {B}. Current:
+yellow,blue,blue,State: {A} | {B}. Current:
+yellow,green,yellow,State: {A} | {B}. Current:
+yellow,purple,yellow,State: {A} | {B}. Current:
+purple,red,red,State: {A} | {B}. Current:
+purple,blue,blue,State: {A} | {B}. Current:
+purple,green,purple,State: {A} | {B}. Current:
+purple,yellow,purple,State: {A} | {B}. Current:
+red,blue,red,Match: {A} vs {B}. Winner:
+red,green,red,Match: {A} vs {B}. Winner:
+red,yellow,red,Match: {A} vs {B}. Winner:
+red,purple,red,Match: {A} vs {B}. Winner:
+blue,red,blue,Match: {A} vs {B}. Winner:
+blue,green,blue,Match: {A} vs {B}. Winner:
+blue,yellow,blue,Match: {A} vs {B}. Winner:
+blue,purple,blue,Match: {A} vs {B}. Winner:
+green,red,green,Match: {A} vs {B}. Winner:
+green,blue,green,Match: {A} vs {B}. Winner:
+green,yellow,green,Match: {A} vs {B}. Winner:
+green,purple,green,Match: {A} vs {B}. Winner:
+yellow,red,yellow,Match: {A} vs {B}. Winner:
+yellow,blue,yellow,Match: {A} vs {B}. Winner:
+yellow,green,yellow,Match: {A} vs {B}. Winner:
+yellow,purple,yellow,Match: {A} vs {B}. Winner:
+purple,red,red,Match: {A} vs {B}. Winner:
+purple,blue,purple,Match: {A} vs {B}. Winner:
+purple,green,purple,Match: {A} vs {B}. Winner:
+purple,yellow,purple,Match: {A} vs {B}. Winner:
+red,blue,blue,"Priority: {A}, {B}. High:"
+red,green,green,"Priority: {A}, {B}. High:"
+red,yellow,yellow,"Priority: {A}, {B}. High:"
+red,purple,red,"Priority: {A}, {B}. High:"
+blue,red,red,"Priority: {A}, {B}. High:"
+blue,green,blue,"Priority: {A}, {B}. High:"
+blue,yellow,blue,"Priority: {A}, {B}. High:"
+blue,purple,blue,"Priority: {A}, {B}. High:"
+green,red,red,"Priority: {A}, {B}. High:"
+green,blue,green,"Priority: {A}, {B}. High:"
+green,yellow,green,"Priority: {A}, {B}. High:"
+green,purple,green,"Priority: {A}, {B}. High:"
+yellow,red,red,"Priority: {A}, {B}. High:"
+yellow,blue,blue,"Priority: {A}, {B}. High:"
+yellow,green,yellow,"Priority: {A}, {B}. High:"
+yellow,purple,yellow,"Priority: {A}, {B}. High:"
+purple,red,red,"Priority: {A}, {B}. High:"
+purple,blue,blue,"Priority: {A}, {B}. High:"
+purple,green,green,"Priority: {A}, {B}. High:"
+purple,yellow,yellow,"Priority: {A}, {B}. High:"
+red,blue,red,"Stack: {A}, {B}. Pop:"
+red,green,green,"Stack: {A}, {B}. Pop:"
+red,yellow,yellow,"Stack: {A}, {B}. Pop:"
+red,purple,purple,"Stack: {A}, {B}. Pop:"
+blue,red,red,"Stack: {A}, {B}. Pop:"
+blue,green,green,"Stack: {A}, {B}. Pop:"
+blue,yellow,yellow,"Stack: {A}, {B}. Pop:"
+blue,purple,purple,"Stack: {A}, {B}. Pop:"
+green,red,red,"Stack: {A}, {B}. Pop:"
+green,blue,blue,"Stack: {A}, {B}. Pop:"
+green,yellow,yellow,"Stack: {A}, {B}. Pop:"
+green,purple,purple,"Stack: {A}, {B}. Pop:"
+yellow,red,red,"Stack: {A}, {B}. Pop:"
+yellow,blue,blue,"Stack: {A}, {B}. Pop:"
+yellow,green,green,"Stack: {A}, {B}. Pop:"
+yellow,purple,purple,"Stack: {A}, {B}. Pop:"
+purple,red,red,"Stack: {A}, {B}. Pop:"
+purple,blue,purple,"Stack: {A}, {B}. Pop:"
+purple,green,purple,"Stack: {A}, {B}. Pop:"
+purple,yellow,yellow,"Stack: {A}, {B}. Pop:"
+red,blue,red,"Queue: {A}, {B}. Next:"
+red,green,red,"Queue: {A}, {B}. Next:"
+red,yellow,red,"Queue: {A}, {B}. Next:"
+red,purple,red,"Queue: {A}, {B}. Next:"
+blue,red,red,"Queue: {A}, {B}. Next:"
+blue,green,blue,"Queue: {A}, {B}. Next:"
+blue,yellow,blue,"Queue: {A}, {B}. Next:"
+blue,purple,blue,"Queue: {A}, {B}. Next:"
+green,red,green,"Queue: {A}, {B}. Next:"
+green,blue,green,"Queue: {A}, {B}. Next:"
+green,yellow,green,"Queue: {A}, {B}. Next:"
+green,purple,purple,"Queue: {A}, {B}. Next:"
+yellow,red,red,"Queue: {A}, {B}. Next:"
+yellow,blue,yellow,"Queue: {A}, {B}. Next:"
+yellow,green,yellow,"Queue: {A}, {B}. Next:"
+yellow,purple,yellow,"Queue: {A}, {B}. Next:"
+purple,red,red,"Queue: {A}, {B}. Next:"
+purple,blue,purple,"Queue: {A}, {B}. Next:"
+purple,green,purple,"Queue: {A}, {B}. Next:"
+purple,yellow,purple,"Queue: {A}, {B}. Next:"
+red,blue,red,Environment: {A} or {B}. Set:
+red,green,red,Environment: {A} or {B}. Set:
+red,yellow,red,Environment: {A} or {B}. Set:
+red,purple,red,Environment: {A} or {B}. Set:
+blue,red,blue,Environment: {A} or {B}. Set:
+blue,green,blue,Environment: {A} or {B}. Set:
+blue,yellow,blue,Environment: {A} or {B}. Set:
+blue,purple,blue,Environment: {A} or {B}. Set:
+green,red,green,Environment: {A} or {B}. Set:
+green,blue,blue,Environment: {A} or {B}. Set:
+green,yellow,green,Environment: {A} or {B}. Set:
+green,purple,green,Environment: {A} or {B}. Set:
+yellow,red,yellow,Environment: {A} or {B}. Set:
+yellow,blue,yellow,Environment: {A} or {B}. Set:
+yellow,green,yellow,Environment: {A} or {B}. Set:
+yellow,purple,yellow,Environment: {A} or {B}. Set:
+purple,red,red,Environment: {A} or {B}. Set:
+purple,blue,purple,Environment: {A} or {B}. Set:
+purple,green,purple,Environment: {A} or {B}. Set:
+purple,yellow,purple,Environment: {A} or {B}. Set:
+red,blue,red,Profile: {A} / {B}. Active:
+red,green,red,Profile: {A} / {B}. Active:
+red,yellow,red,Profile: {A} / {B}. Active:
+red,purple,red,Profile: {A} / {B}. Active:
+blue,red,blue,Profile: {A} / {B}. Active:
+blue,green,blue,Profile: {A} / {B}. Active:
+blue,yellow,blue,Profile: {A} / {B}. Active:
+blue,purple,blue,Profile: {A} / {B}. Active:
+green,red,green,Profile: {A} / {B}. Active:
+green,blue,green,Profile: {A} / {B}. Active:
+green,yellow,green,Profile: {A} / {B}. Active:
+green,purple,green,Profile: {A} / {B}. Active:
+yellow,red,yellow,Profile: {A} / {B}. Active:
+yellow,blue,yellow,Profile: {A} / {B}. Active:
+yellow,green,yellow,Profile: {A} / {B}. Active:
+yellow,purple,yellow,Profile: {A} / {B}. Active:
+purple,red,purple,Profile: {A} / {B}. Active:
+purple,blue,purple,Profile: {A} / {B}. Active:
+purple,green,purple,Profile: {A} / {B}. Active:
+purple,yellow,yellow,Profile: {A} / {B}. Active:
+red,blue,red,Status: {A} vs {B}. Final:
+red,green,red,Status: {A} vs {B}. Final:
+red,yellow,red,Status: {A} vs {B}. Final:
+red,purple,red,Status: {A} vs {B}. Final:
+blue,red,blue,Status: {A} vs {B}. Final:
+blue,green,blue,Status: {A} vs {B}. Final:
+blue,yellow,blue,Status: {A} vs {B}. Final:
+blue,purple,blue,Status: {A} vs {B}. Final:
+green,red,green,Status: {A} vs {B}. Final:
+green,blue,green,Status: {A} vs {B}. Final:
+green,yellow,green,Status: {A} vs {B}. Final:
+green,purple,green,Status: {A} vs {B}. Final:
+yellow,red,yellow,Status: {A} vs {B}. Final:
+yellow,blue,yellow,Status: {A} vs {B}. Final:
+yellow,green,yellow,Status: {A} vs {B}. Final:
+yellow,purple,yellow,Status: {A} vs {B}. Final:
+purple,red,purple,Status: {A} vs {B}. Final:
+purple,blue,purple,Status: {A} vs {B}. Final:
+purple,green,purple,Status: {A} vs {B}. Final:
+purple,yellow,purple,Status: {A} vs {B}. Final:

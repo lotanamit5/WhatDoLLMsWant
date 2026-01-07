@@ -20,7 +20,7 @@ def fit_bradley_terry(df, items):
     for _, row in df.iterrows():
         idx_w = item_to_idx[row['winner']]
         # Identifying the loser
-        loser = row['player_2'] if row['winner'] == row['player_1'] else row['player_1']
+        loser = row['item_b'] if row['winner'] == row['item_a'] else row['item_a']
         idx_l = item_to_idx[loser]
         wins[idx_w, idx_l] += 1
 
@@ -33,7 +33,7 @@ def fit_bradley_terry(df, items):
                     # Log Prob of i beating j
                     prob_i_beats_j = np.exp(betas[i]) / (np.exp(betas[i]) + np.exp(betas[j]))
                     nll -= wins[i, j] * np.log(prob_i_beats_j + 1e-9) # small epsilon
-                    nll += 0.5 * (wins[i, j] + wins[j, i]) * np.log(np.exp(betas[i]) + np.exp(betas[j]) + 1e-9)
+                    nll += (wins[i, j] + wins[j, i]) * np.log(np.exp(betas[i]) + np.exp(betas[j]) + 1e-9)
         return nll
 
     # Constraint: Sum of betas = 0 (or beta_0 = 0) to fix scale.
