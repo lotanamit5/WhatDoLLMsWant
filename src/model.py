@@ -56,7 +56,7 @@ def get_top_k_tokens(model, tokenizer, prompt_text, k=5):
     top_tokens = [tokenizer.decode([idx]) for idx in top_indices]
     return top_tokens
 
-def get_winner(model, tokenizer, prompt_text, option_a, option_b):
+def get_scores_many_options(model, tokenizer, prompt_text, option_a, option_b):
     """
     Determines the winner by comparing the cumulative probability of valid tokens
     for option_a vs option_b.
@@ -119,12 +119,10 @@ def get_winner(model, tokenizer, prompt_text, option_a, option_b):
     prob_a = sum(probs[idx].item() for idx in ids_a_list)
     prob_b = sum(probs[idx].item() for idx in ids_b_list)
     
-    winner = option_a if prob_a > prob_b else option_b
-    
-    return winner, prob_a, prob_b
+    return prob_a, prob_b
 
 
-def get_choice_via_scoring(model, tokenizer, prompt, choice_a, choice_b):
+def get_perplexity_scores(model, tokenizer, prompt, choice_a, choice_b):
     """
     Determines winner by prefilling the answer and checking which one 
     has lower perplexity (higher likelihood).
@@ -164,7 +162,23 @@ def get_choice_via_scoring(model, tokenizer, prompt, choice_a, choice_b):
         
         scores.append(loss.item())
 
-    # Lower loss means higher probability -> Winner
-    winner = choice_a if scores[0] < scores[1] else choice_b
+    return -scores[0], -scores[1]
+
+def get_single_token_prob(model, tokenizer, prompt_text, option_a, option_b):
+    """
+    Returns the probability of a specific string (must be a single token) being the next token.
+    """
+    inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+    with torch.no_grad():
+        outputs = model(**inputs)
     
-    return winner, scores[0], scores[1]
+    next_token_logits = outputs.logits[0, -1, :]
+    probs = F.softmax(next_token_logits, dim=-1)
+    
+    def get_prob(token_str):
+        ids = tokenizer.encode(token_str, add_special_tokens=False)
+        if len(ids) == 1:
+            return probs[ids[0]].item()
+        return 0.0 # Not a single token or not found
+
+    return get_prob(option_a), get_prob(option_b)

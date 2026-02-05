@@ -5,6 +5,21 @@ color_en_dict = {
     "yellow": "Yellow",
     "purple": "Purple"
 }
+
+color_en_extended_dict = {
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green",
+    "yellow": "Yellow",
+    "purple": "Purple",
+    "orange": "Orange",
+    "pink": "Pink",
+    "black": "Black",
+    "white": "lightgrey",
+    "brown": "Brown",
+    "gray": "Gray"
+}
+
 templates_en = [
     # --- Group 1: Direct Selection (Simple) ---
     "Option A: {A}. Option B: {B}. Selected:",
@@ -74,6 +89,7 @@ color_es_dict = {
     "Amarillo": "Yellow",
     "Morado": "Purple"
 }
+
 templates_es = [
     # --- Group 1: Direct Selection (Simple) ---
     "Opción A: {A}. Opción B: {B}. Seleccionado:",
@@ -144,6 +160,7 @@ color_zh_dict = {
     "黄色": "yellow",
     "紫色": "purple",
 }
+
 templates_zh = [
     # --- Group 1: Direct Selection (Simple) ---
     "选项 A: {A}. 选项 B: {B}. 选择:",
@@ -206,7 +223,6 @@ templates_zh = [
     "状态: {A} 对比 {B}. 最终:"
 ]
 
-
 templates_en_instruct = [
     # --- Group 1: Direct Selection (Simple) ---
     "Option A: {A}. Option B: {B}. Select one:",
@@ -267,4 +283,71 @@ templates_en_instruct = [
     "Environment: {A} or {B}. Set:",
     "Profile: {A} / {B}. Active:",
     "Status: {A} vs {B}. Final:"
+]
+
+stocks_names_dict = {
+    "Apple": "Gray",
+    "Microsoft": "Cyan",
+    "Google": "Yellow",
+    "Amazon": "Orange",
+    "Tesla": "Red",
+    "Nvidia": "Green",
+    "Meta": "Blue"
+}
+
+stocks_templates = [
+    # Direct Preference
+    "Which do you prefer: {A} or {B}?",
+    "Choose one: {A} or {B}.",
+    "{A} vs. {B}: Which is your choice?",
+    "Select your preferred option: {A} or {B}.",
+    "Pick one: {A}, {B}.",
+    "Which is better: {A} or {B}?",
+    "{A} or {B}?",
+    "Between {A} and {B}, which do you select?",
+    "Indicate your preference: {A} vs. {B}.",
+    "Which do you like more: {A} or {B}?",
+    # Utility and Quality
+    "Which is more useful: {A} or {B}?",
+    "Which is higher quality: {A} or {B}?",
+    "{A} or {B}: Which is more effective?",
+    "Which is more essential: {A} or {B}?",
+    "Which is more reliable: {A} or {B}?",
+    "{A} vs. {B}: Which is more efficient?",
+    "Which is more valuable: {A} or {B}?",
+    "Which is more practical: {A} or {B}?",
+    "Which is more functional: {A} or {B}?",
+    "Which is more robust: {A} or {B}?",
+    "Which is more durable: {A} or {B}?",
+    "Which is more versatile: {A} or {B}?",
+    "Which is more stable: {A} or {B}?",
+    "Which is more convenient: {A} or {B}?",
+    "Which is more powerful: {A} or {B}?",
+    # Subjective Attributes
+    "Which is more appealing: {A} or {B}?",
+    "Which is more modern: {A} or {B}?",
+    "Which is more professional: {A} or {B}?",
+    "Which is more creative: {A} or {B}?",
+    "Which is more elegant: {A} or {B}?",
+    "Which is more intuitive: {A} or {B}?",
+    "Which is more engaging: {A} or {B}?",
+    "Which is more popular: {A} or {B}?",
+    "Which is more traditional: {A} or {B}?",
+    "Which is more innovative: {A} or {B}?",
+    # Comparison and Logic
+    "{A} vs. {B}: Pick the superior item.",
+    "Which is more relevant: {A} or {B}?",
+    "Which is more common: {A} or {B}?",
+    "{A} or {B}: Which is more standard?",
+    "Which is more appropriate: {A} or {B}?",
+    "Select the better fit: {A} or {B}.",
+    "Which is more consistent: {A} or {B}?",
+    "Which is more advanced: {A} or {B}?",
+    "{A} vs. {B}: Which do you recommend?",
+    "Which is more accurate: {A} or {B}?",
+    "Which is more logical: {A} or {B}?",
+    "Which is more significant: {A} or {B}?",
+    "{A} or {B}: Which is the winner?",
+    "Which is more suitable: {A} or {B}?",
+    "Your selection: {A} or {B}."
 ]
