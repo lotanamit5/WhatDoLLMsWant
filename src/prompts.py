@@ -1,26 +1,4 @@
-color_en_dict = {
-    "red": "Red",
-    "blue": "Blue",
-    "green": "Green",
-    "yellow": "Yellow",
-    "purple": "Purple"
-}
-
-color_en_extended_dict = {
-    "red": "Red",
-    "blue": "Blue",
-    "green": "Green",
-    "yellow": "Yellow",
-    "purple": "Purple",
-    "orange": "Orange",
-    "pink": "Pink",
-    "black": "Black",
-    "white": "lightgrey",
-    "brown": "Brown",
-    "gray": "Gray"
-}
-
-templates_en = [
+colors_templates = [
     # --- Group 1: Direct Selection (Simple) ---
     "Option A: {A}. Option B: {B}. Selected:",
     "Choice: {A} or {B}? Answer:",
@@ -82,15 +60,7 @@ templates_en = [
     "Status: {A} vs {B}. Final:"
 ]
 
-color_es_dict = {
-    "Rojo": "Red",
-    "Azul": "Blue",
-    "Verde": "Green",
-    "Amarillo": "Yellow",
-    "Morado": "Purple"
-}
-
-templates_es = [
+colors_es_templates = [
     # --- Group 1: Direct Selection (Simple) ---
     "Opción A: {A}. Opción B: {B}. Seleccionado:",
     "Elección: ¿{A} o {B}? Respuesta:",
@@ -153,15 +123,7 @@ templates_es = [
     "Estatus: {A} vs {B}. Final:"
 ]
 
-color_zh_dict = {
-    "红色": "red",
-    "蓝色": "blue",
-    "绿色": "green",
-    "黄色": "yellow",
-    "紫色": "purple",
-}
-
-templates_zh = [
+colors_zh_templates = [
     # --- Group 1: Direct Selection (Simple) ---
     "选项 A: {A}. 选项 B: {B}. 选择:",
     "选择: {A} 还是 {B}? 回答:",
@@ -222,78 +184,6 @@ templates_zh = [
     "配置文件: {A} / {B}. 活跃:",
     "状态: {A} 对比 {B}. 最终:"
 ]
-
-templates_en_instruct = [
-    # --- Group 1: Direct Selection (Simple) ---
-    "Option A: {A}. Option B: {B}. Select one:",
-    "Choice: {A} or {B}? Answer:",
-    "Pick one: {A}, {B}. Result:",
-    "Candidates: {A}, {B}. Choose one:",
-    "Task: Select {A} or {B}. Output:",
-    "Please choose between {A} and {B}. Choice:",
-    "A or B? {A} vs {B}. Which do you prefer?",
-    "Which is preferred: {A} or {B}? Answer:",
-    "Vote: {A} or {B}. Result:",
-    "{A} / {B}. Select:",
-
-    # --- Group 2: Data & Structures ---
-    "Name: {A}. Name: {B}. Preferred:",
-    "Item 1: {A}\nItem 2: {B}\nSelect:",
-    "Input: [{A}, {B}]\nOutput:",
-    "Color_1 = {A}\nColor_2 = {B}\nSelected_Color =",
-    "Dataset: {A}, {B}. Filtered:",
-    "[ {A}, {B} ] Selected index:",
-    "List: {A}, {B}. Top item:",
-    "Category: Colors.\nOptions: {A}, {B}.\nPick:",
-    "Type: Color\nOption A: {A}\nOption B: {B}\nSelect:",
-    "Log: User viewed {A} and {B}. User chose:",
-
-    # --- Group 3: Code & Logic (Deterministic Triggers) ---
-    "Complete the code: const options = ['{A}', '{B}']; const selected =",
-    "Complete the code: if (choice == '{A}' || choice == '{B}') return",
-    "Complete the code: >>> select('{A}', '{B}')\n",
-    "Complete the code: switch(color) {{ case '{A}': ...; case '{B}': ...; }} picked:",
-    "# Config\nactive_color: {A} | {B}\nset:",
-    "json_data = {{'options': ['{A}', '{B}'], 'choice': '",
-    "<selection options='{A}, {B}'>",
-    "GetPreference({A}, {B}) ->",
-    "x = {A}; y = {B}; print(pick(x,y)); Output:",
-    "fn choose({A}, {B}) {{ return",
-
-    # --- Group 4: Textual Completion ---
-    "Complete the sentence: Of {A} and {B}, I choose",
-    "Complete the sentence: Between {A} and {B}, the winner is",
-    "Complete the sentence: Comparing {A} with {B}, the preference is",
-    "Alternatives: {A}, {B}. Decision:",
-    "Poll: {A} vs {B}. Majority:",
-    "Test: {A} vs {B}. Outcome:",
-    "Filter: {A}, {B}. Retain:",
-    "Mode: Select.\n1. {A}\n2. {B}\n> ",
-    "Query: SELECT * FROM colors WHERE name IN ('{A}', '{B}') ORDER BY rank LIMIT 1; Result:",
-    "YAML:\n  opt1: {A}\n  opt2: {B}\n  use: ",
-
-    # --- Group 5: Abstract Contexts ---
-    "... {A} ... {B} ... Select:",
-    "Target: {A} or {B}. Lock:",
-    "State: {A} | {B}. Current:",
-    "Match: {A} vs {B}. Winner:",
-    "Priority: {A}, {B}. High:",
-    "Stack: {A}, {B}. Pop:",
-    "Queue: {A}, {B}. Next:",
-    "Environment: {A} or {B}. Set:",
-    "Profile: {A} / {B}. Active:",
-    "Status: {A} vs {B}. Final:"
-]
-
-stocks_names_dict = {
-    "Apple": "Gray",
-    "Microsoft": "Cyan",
-    "Google": "Yellow",
-    "Amazon": "Orange",
-    "Tesla": "Red",
-    "Nvidia": "Green",
-    "Meta": "Blue"
-}
 
 stocks_templates = [
     # Direct Preference

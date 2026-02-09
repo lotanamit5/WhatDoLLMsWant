@@ -2,6 +2,7 @@ import torch
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+
 def load_model(model_id="Qwen/Qwen2.5-0.5B"):
     """Loads the model and tokenizer."""
     
@@ -34,10 +35,6 @@ def load_model(model_id="Qwen/Qwen2.5-0.5B"):
     )
     model.eval() # Set to evaluation mode
     
-    # If device_map is auto, the model is split. We can use model.device for the first layer,
-    # but generally we just need to know we are on cuda.
-    # Returning model.device is safer than hardcoded string if we want to be precise,
-    # but for 'auto', model.device usually returns the device of the first parameter.
     return model, tokenizer
 
 def get_top_k_tokens(model, tokenizer, prompt_text, k=5):
@@ -157,7 +154,7 @@ def get_perplexity_scores(model, tokenizer, prompt, choice_a, choice_b):
         loss = F.cross_entropy(
             shift_logits.view(-1, shift_logits.size(-1)), 
             shift_labels.view(-1),
-            reduction='mean' # Use 'sum' if you prefer total probability over average
+            reduction='none'
         )
         
         scores.append(loss.item())

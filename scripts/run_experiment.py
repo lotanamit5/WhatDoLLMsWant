@@ -1,17 +1,16 @@
 import argparse
+import json
 import sys
 import os
-
+from datetime import datetime
 # Add project root to sys.path to allow imports from src
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.experiment import collect_preference_data, fit_pref_models
-from src.prompts import (
-    color_en_dict, color_en_extended_dict, templates_en, templates_en_instruct,
-    color_es_dict, templates_es,
-    color_zh_dict, templates_zh,
-    stocks_names_dict, stocks_templates
-)
+from src import prompts, alternatives
+# from src.experiment import collect_preference_data, fit_pref_models
+from agent import InstructedHFAgent, PretrainedAgent
+from src.experiment2 import run_experiment
+
 
 MODEL_ALIASES = {
     "qwen0_5": "Qwen/Qwen2.5-0.5B",
@@ -28,51 +27,81 @@ MODEL_ALIASES = {
     "qwen72I": "Qwen/Qwen2.5-72B-Instruct",
 }
 
+MODEL_PARAMS_ALIASES = {
+    "qwen0_5": (0.5, False),
+    "qwen0_5I": (0.5, True),
+    "qwen1_5": (1.5, False),
+    "qwen3": (3, False),
+    "qwen7": (7, False),
+    "qwen7I": (7, True),
+    "qwen14": (14, False),
+    "qwen14I": (14, True),
+    "qwen32": (32, False),
+    "qwen32I": (32, True),
+    "qwen72": (72, False),
+    "qwen72I": (72, True),
+}
+
 SET_ALIASES = {
-    "en": list(color_en_dict.keys()),
-    "en_X": list(color_en_extended_dict.keys()),
-    "es": list(color_es_dict.keys()),
-    "zh": list(color_zh_dict.keys()),
-    "stocks": list(stocks_names_dict.keys()),
+    "colors": alternatives.colors,
+    "colorsX": alternatives.colors_X,
+    "colors_es": alternatives.colors_es,
+    "colors_zh": alternatives.colors_zh,
+    "stocks": alternatives.stocks,
+    "tickers": alternatives.tickers,
 }
 
 TEMPLATE_ALIASES = {
-    "en": templates_en,
-    "enI": templates_en_instruct,
-    "es": templates_es,
-    "zh": templates_zh,
-    "stocks": stocks_templates,
+    "colors": prompts.colors_templates,
+    "colors_es": prompts.colors_es_templates,
+    "colors_zh": prompts.colors_zh_templates,
+    "stocks": prompts.stocks_templates,
 }
 
-def main():
-    parser = argparse.ArgumentParser(description="Run full experiment")
-    parser.add_argument("--model", type=str, required=True, help="Model name or alias")
-    parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias (en, es, zh, stocks) or comma-separated list")
-    parser.add_argument("--templates", type=str, required=True, help="Templates alias (en, es, zh, stocks)")
-    parser.add_argument("--exp_name", type=str, default=None, help="Experiment name")
+def main(
+    exp_name,
+    model,
+    alternatives,
+    templates,
+):
 
-    args = parser.parse_args()
-
-    model_name = MODEL_ALIASES.get(args.model, args.model)
-    
-    if args.alternatives in SET_ALIASES:
-        alternatives = SET_ALIASES[args.alternatives]
-    else:
-        alternatives = args.alternatives.split(",")
-
-    if args.templates in TEMPLATE_ALIASES:
-        templates = TEMPLATE_ALIASES[args.templates]
-    else:
-        if "{A}" in args.templates and "{B}" in args.templates:
-             templates = [args.templates]
-        else:
-             raise ValueError(f"Unknown template alias: {args.templates}")
+    model_name = MODEL_ALIASES.get(model, model)
+    alternatives = SET_ALIASES.get(alternatives, alternatives.split(","))
+    templates = TEMPLATE_ALIASES.get(templates, [templates])
 
     print(f"Running experiment with model: {model_name}")
     print(f"Alternatives: {alternatives}")
     print(f"Number of templates: {len(templates)}")
+    
+    dir_path = os.path.join("experiments", exp_name)
+    os.makedirs(dir_path, exist_ok=True)
+    with open(os.path.join(dir_path, "config.json"), "w") as f:
+        json.dump({
+            "model_name": model_name,
+            "alternatives": alternatives,
+            "templates": templates,
+        }, f, indent=4)
 
-    collect_preference_data(model_name, alternatives, templates, args.exp_name)
-    fit_pref_models(args.exp_name, alternatives)
+    if 'I' in model_name:
+        agent = InstructedHFAgent(model_name)
+    else:
+        agent = PretrainedAgent(model_name)
+    
+    run_experiment(agent, alternatives, templates, exp_name)
+    # collect_preference_data(model_name, alternatives, templates, exp_name)
+    # fit_pref_models(exp_name, alternatives)
+    
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Run full experiment")
+    parser.add_argument("--model", type=str, required=True, help="Model name or alias")
+    parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias (en, es, zh, stocks) or comma-separated list")
+    parser.add_argument("--templates", type=str, default="stocks", help="Templates alias (en, es, zh, stocks)")
+    parser.add_argument("--exp_name", type=str, default=datetime.now().strftime("%Y-%m-%d_%H-%M-%S"), help="Experiment name")
+
+    args = parser.parse_args()
+    main(
+        args.model,
+        args.alternatives,
+        args.templates,
+        args.exp_name
+    )

@@ -57,8 +57,8 @@ def collect_preference_data(model_name, alternatives, templates, exp_name=None):
     os.makedirs(dir_path, exist_ok=True)
     config = {
         "model_name": model_name,
-        "alternatives_alias": alternatives,
-        "templates_alias": templates,
+        "alternatives": alternatives,
+        "templates": templates,
     }
     with open(os.path.join(dir_path, "config.json"), "w") as f:
         json.dump(config, f, indent=4)
