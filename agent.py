@@ -51,35 +51,46 @@ class HFAgent(Agent):
 
 class PretrainedAgent(HFAgent):
     def query(self, prompt: str, labels: List[str]) -> List[float]:
-        input_with_answers = [prompt + " " + label for label in labels]
-        labels_tokens = self.tokenizer(labels, add_special_tokens=False)["input_ids"]
-        labels_tokens = [label[-1] for label in labels_tokens]
-        input_enc = self.tokenizer.batch_encode_plus(
-            input_with_answers,
-            return_tensors="pt",
-            padding="longest",
-        )
-        for k, v in input_enc.items():
-            input_enc[k] = v.to(self.model.device)
+        scores = []
+        for label in labels:
+            # 1. Construct the full sequence
+            # Note: We must be careful with the space. 
+            # If the prompt ends with ':', we typically want " " + label.
+            full_text = prompt + " " + label
+            
+            # 2. Tokenize inputs
+            input_ids = self.tokenizer.encode(full_text, return_tensors="pt").to(self.model.device)
+            prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.model.device)
+            
+            # 3. Find where the label starts
+            # (Simple heuristic: label starts after the prompt length)
+            # Warning: This can be tricky if tokenization boundaries shift. 
+            # A safer way is to check the length diff.
+            prompt_len = prompt_ids.shape[1]
+            
+            with torch.no_grad():
+                outputs = self.model(input_ids)
+                logits = outputs.logits
 
-        # Get model output logits
-        model_output = self.model(**input_enc)
-
-        # Compute the log probabilities associated with each of the labels
-        labels_log_probs = F.log_softmax(model_output.logits, dim=-1)
-
-        # Get the ids of the token before the last token before padding (to see the probablity of the last token given the one before the last token)
-        before_padding_ids = (
-            input_enc["input_ids"].ne(self.tokenizer.pad_token_id).sum(-1) - 2
-        )
-        # print("before_padding_ids:", before_padding_ids)
-        # Collect labels scores from the -2 token in labels_log_probs (the one that predict the last token)
-        # and collect for each line the id in labels_tokens
-        labels_scores = labels_log_probs[:, before_padding_ids, labels_tokens]
-        # # Need just the diagonal of the matrix, as it the prob of the label for each line
-        labels_scores = torch.diag(labels_scores)
-
-        return labels_scores
+            # 4. Calculate Loss (Negative Log Likelihood) for the label part only
+            # Shift logits so we predict the *next* token
+            # We want probabilities for input_ids[prompt_len:]
+            
+            # Slice logits from [prompt_len-1 : -1] -> These predict [prompt_len : end]
+            label_logits = logits[0, prompt_len-1 : -1, :] 
+            label_ids = input_ids[0, prompt_len:]
+            
+            # Cross Entropy creates an average, we usually want SUM for total probability
+            # or MEAN for perplexity. 
+            # For ranking "Red" vs "Blue", SUM is safer if lengths differ significantly,
+            # but MEAN (Perplexity) is standard if lengths are roughly equal.
+            loss = F.cross_entropy(label_logits, label_ids, reduction='sum')
+            
+            # We want a "Score" where higher is better. Loss is lower-is-better.
+            # So return negative loss (Log Probability).
+            scores.append(-loss.item())
+            
+        return scores
 
 class InstructedHFAgent(PretrainedAgent):
     SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"

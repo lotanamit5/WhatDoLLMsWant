@@ -44,7 +44,7 @@ def fit_bradley_terry(df, items):
     final_betas = res.x - np.mean(res.x)
 
     ranking = pd.DataFrame({
-        'Color': items,
+        'Item': items,
         'BT_Score': final_betas
     }).sort_values('BT_Score', ascending=False).reset_index(drop=True)
 

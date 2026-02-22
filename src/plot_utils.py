@@ -79,9 +79,6 @@ def calculate_bt_convergence(experiment_name, base_path='experiments', method='p
     
     return result_df
 
-
-
-
 def get_model_name(experiment_name):
     """
     Maps experiment folder name to a readable model name.
@@ -150,6 +147,26 @@ colors_zh_map = {
     "绿色": "Green",
     "黄色": "Yellow",
     "紫色": "Purple",
+}
+
+foods_map = {
+    "Pizza": "Orange",
+    "Sushi": "Blue",
+    "Burger": "Brown",
+    "Pasta": "Yellow",
+    "Salad": "Green",
+    "Steak": "Red",
+    "Tacos": "Purple",
+}
+
+cars_map = {
+    "Toyota": "Yellow",
+    "Honda": "Orange",
+    "Ford": "Green",
+    "BMW": "Blue",
+    "Mercedes": "Purple",
+    "Tesla": "Red",
+    "Audi": "Brown",
 }
 
 stocks_map = {

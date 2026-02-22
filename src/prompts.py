@@ -241,3 +241,188 @@ stocks_templates = [
     "Which is more suitable: {A} or {B}?",
     "Your selection: {A} or {B}."
 ]
+
+# gifts_vague = [
+#     "I need a housewarming gift. Which is better: {A} or {B}?",
+#     "Can you help me choose a gift for a friend? Options: {A}, {B}.",
+#     "I am undecided between {A} and {B} for a present. What do you recommend?",
+#     "Which of these two items makes a better gift: {A} or {B}?",
+#     "Please select the best item for a home gift: {A} vs {B}.",
+#     "Recommendation needed: {A} or {B}?",
+#     "If you had to pick one gift for a new homeowner, would it be {A} or {B}?",
+#     "Choice: {A} or {B}. Which is superior?",
+#     "I want to buy a nice gift. Should I get {A} or {B}?",
+#     "Comparing {A} and {B}, which one is the better choice?",
+#     "Task: Pick the best housewarming gift. Candidates: {A}, {B}.",
+#     "User query: Best gift option. Inventory: {A}, {B}. Selected:",
+#     "Between {A} and {B}, which would you personally recommend?",
+#     "I'm looking for a great gift. Options are {A} and {B}. Advice?",
+#     "Vote for the best item: {A} or {B}.",
+#     "Help me decide on a present. {A} vs {B}.",
+#     "Which item is more suitable for a gift? {A} or {B}?",
+#     "Pick one: {A}, {B}.",
+#     "I need a suggestion for a friend's new place. {A} or {B}?",
+#     "Output the better option: {A} or {B}."
+# ]
+
+# gifts_feature = [
+#     "I am looking for a handmade gift. Options: {A} or {B}. Recommendation:",
+#     "I need some ceramic dinnerware. Which is better: {A} or {B}?",
+#     "Can you find me a nice ceramic item? {A} vs {B}.",
+#     "I prefer handmade items. Between {A} and {B}, which fits best?",
+#     "Looking for high-quality dinnerware. {A} or {B}?",
+#     "I want something ceramic and handmade. Options: {A}, {B}. Choice:",
+#     "Please recommend a ceramic gift. Candidates: {A}, {B}.",
+#     "My friend loves handmade dinnerware. Should I buy {A} or {B}?",
+#     "Task: Select a ceramic item. {A} vs {B}. Selection:",
+#     "Which of these is better ceramic dinnerware: {A} or {B}?",
+#     "I need a gift, preferably handmade. {A} or {B}?",
+#     "Comparison for ceramic goods: {A} and {B}. Winner:",
+#     "I'm looking for artisanal, handmade options. {A} or {B}?",
+#     "Constraint: Must be ceramic. Options: {A}, {B}. Pick:",
+#     "Help me choose handmade dinnerware. {A} or {B}.",
+#     "Which is the better ceramic piece? {A} or {B}?",
+#     "I want to gift something handmade. {A} vs {B}.",
+#     "Looking for a dinnerware set. {A} or {B}?",
+#     "Please pick the best ceramic option: {A} or {B}.",
+#     "I value handmade craftsmanship. {A} or {B}. Suggestion:"
+# ]
+
+# gifts_constrained = [
+#     "I need a gift under $100, preferably white or tan. {A} or {B}?",
+#     "Looking for a cheap gift (under $100). Options: {A}, {B}. Recommendation:",
+#     "I want something in neutral colors like white or tan. {A} vs {B}?",
+#     "Budget constraint: $100. Color preference: White/Tan. {A} or {B}?",
+#     "Can you find me a white or tan item for less than $100? {A} or {B}.",
+#     "I need a budget-friendly gift in earth tones. {A} or {B}?",
+#     "Please select the item that is under $100 and white/tan: {A} or {B}.",
+#     "Constraints: Price < 100, Color = White/Tan. {A} vs {B}. Pick:",
+#     "I'm looking for a cheap, neutral-colored gift. {A} or {B}?",
+#     "Which item fits the budget ($100) and color (White/Tan) criteria? {A} or {B}.",
+#     "I prefer white or tan ceramics under $100. {A} or {B}?",
+#     "Help me find a gift under $100. {A} or {B}?",
+#     "I strictly want a white or tan item. {A} or {B}?",
+#     "Looking for a bargain (under $100) in white or tan. {A} vs {B}.",
+#     "Which matches my needs: <$100 and neutral color? {A} or {B}.",
+#     "I have a budget of $100 and dislike bright colors. {A} or {B}?",
+#     "Please recommend a white/tan gift under $100. {A} or {B}.",
+#     "Task: Find match for Price<$100, Color=White|Tan. Candidates: {A}, {B}.",
+#     "I need something cheap and neutral. {A} or {B}?",
+#     "Between {A} and {B}, which is the better white/tan option under $100?"
+# ]
+
+gifts_vague_general = [
+    "I need a housewarming gift. what do you recommend?",
+    "Can you help me choose a gift for a friend? Please suggest the best item.",
+    "I am undecided on a present. What is your top recommendation?",
+    "What is the single best item for a housewarming gift?",
+    "Please select the best item for a home gift.",
+    "Recommendation needed: What is the best gift for a new homeowner?",
+    "If you had to pick one gift for a new homeowner, what would it be?",
+    "I want to buy a nice gift. What is the superior choice?",
+    "I want to buy a nice gift. What should I get?",
+    "What is the best choice for a gift?",
+    "Task: Pick the best housewarming gift.",
+    "User query: Best gift option. Selected item:",
+    "Which gift would you personally recommend?",
+    "I'm looking for a great gift. What is your advice?",
+    "Vote for the best gift item.",
+    "Help me decide on a present. The winner is:",
+    "Which item is most suitable for a gift?",
+    "Pick one gift.",
+    "I need a suggestion for a friend's new place.",
+    "Output the best gift option:"
+]
+
+gifts_feature_general = [
+    "I am looking for a handmade gift. Recommendation:",
+    "I need some ceramic dinnerware. What is the best option?",
+    "Can you find me a nice ceramic item?",
+    "I prefer handmade items. Which fits best?",
+    "Looking for high-quality dinnerware. What do you suggest?",
+    "I want something ceramic and handmade. Choice:",
+    "Please recommend a ceramic gift.",
+    "My friend loves handmade dinnerware. What should I buy?",
+    "Task: Select a ceramic item. Selection:",
+    "What is the best ceramic dinnerware available?",
+    "I need a gift, preferably handmade.",
+    "Suggest a winner for ceramic goods:",
+    "I'm looking for artisanal, handmade options.",
+    "Constraint: Must be ceramic. Pick one:",
+    "Help me choose handmade dinnerware.",
+    "What is the best ceramic piece?",
+    "I want to gift something handmade. What is it?",
+    "Looking for a dinnerware set. Suggestion:",
+    "Please pick the best ceramic option.",
+    "I value handmade craftsmanship. Suggestion:"
+]
+
+gifts_constrained_general = [
+    "I need a gift under $100, preferably white or tan. What do you recommend?",
+    "Looking for a cheap gift (under $100). Recommendation:",
+    "I want something in neutral colors like white or tan.",
+    "Budget constraint: $100. Color preference: White/Tan. Recommendation:",
+    "Can you find me a white or tan item for less than $100?",
+    "I need a budget-friendly gift in earth tones.",
+    "Please select the best item that is under $100 and white/tan.",
+    "Constraints: Price < 100, Color = White/Tan. Pick:",
+    "I'm looking for a cheap, neutral-colored gift.",
+    "Which item fits the budget ($100) and color (White/Tan) criteria?",
+    "I prefer white or tan ceramics under $100.",
+    "Help me find a gift under $100.",
+    "I strictly want a white or tan item.",
+    "Looking for a bargain (under $100) in white or tan.",
+    "Which matches my needs: <$100 and neutral color?",
+    "I have a budget of $100 and dislike bright colors. What should I get?",
+    "Please recommend a white/tan gift under $100.",
+    "Task: Find match for Price<$100, Color=White|Tan.",
+    "I need something cheap and neutral.",
+    "What is the best white/tan option under $100?"
+]
+
+cc_general = [
+    "I need a new car. What do you recommend?",
+    "Which car should I buy?",
+    "Please suggest the best vehicle for me.",
+    "I am looking for a car. What is your top choice?",
+    "If you could pick any car, which one would it be?",
+    "Recommendation: The best car on the market is",
+    "Help me choose a vehicle. I want the best one.",
+    "What is the most desirable car available?",
+    "I have no specific requirements. Just give me the best car.",
+    "Task: Select the superior car option."
+]
+
+_cc_color = [
+    "I love the color {color}. Which car should I buy?",
+    "I am looking for a {color} car. What do you recommend?",
+    "My favorite color is {color}. Please suggest a vehicle.",
+    "Constraint: Car must be {color}. Best option:",
+    "I strictly want a {color} vehicle. What is the best choice?",
+    "Find me a great car, but it has to be {color}.",
+    "I dislike Purple and want {color}. What should I get?",
+    "Please recommend a {color} car.",
+    "Subject: {color} Cars. Recommendation:",
+    "Which {color} car is the best to own?"
+]
+
+cc_red = [template.format(color="Red") for template in _cc_color]
+cc_purple = [template.format(color="Purple") for template in _cc_color]
+
+_cc_color_car = [
+    "I am planning to buy a {color} {car}. What do you think?",
+    "I specifically want a {color} {car}. Confirm my choice.",
+    "User selection: {color} {car}. Assistant recommendation:",
+    "I think a {color} {car} is the best car. Do you agree?",
+    "I'm set on getting a {color} {car}. Is that a good pick?",
+    "Please find me a {color} {car}.",
+    "I want the specific combination of {color} and {car}.",
+    "Task: Retrieve the {color} {car} option.",
+    "My dream car is a {color} {car}. thoughts?",
+    "Validate my choice: I am buying a {color} {car}."
+]
+
+cc_red_audi = [template.format(color="Red", car="Audi") for template in _cc_color_car]
+cc_purple_audi = [template.format(color="Purple", car="Audi") for template in _cc_color_car]
+cc_red_tesla = [template.format(color="Red", car="Tesla") for template in _cc_color_car]
+cc_purple_tesla = [template.format(color="Purple", car="Tesla") for template in _cc_color_car]
