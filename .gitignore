@@ -1,6 +1,7 @@
 # server outputs
 err/
 out/
+experiments/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
