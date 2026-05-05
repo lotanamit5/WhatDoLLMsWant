@@ -54,8 +54,6 @@ class PretrainedAgent(HFAgent):
         scores = []
         for label in labels:
             # 1. Construct the full sequence
-            # Note: We must be careful with the space. 
-            # If the prompt ends with ':', we typically want " " + label.
             full_text = prompt + " " + label
             
             # 2. Tokenize inputs
@@ -63,9 +61,6 @@ class PretrainedAgent(HFAgent):
             prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.model.device)
             
             # 3. Find where the label starts
-            # (Simple heuristic: label starts after the prompt length)
-            # Warning: This can be tricky if tokenization boundaries shift. 
-            # A safer way is to check the length diff.
             prompt_len = prompt_ids.shape[1]
             
             with torch.no_grad():
@@ -73,21 +68,11 @@ class PretrainedAgent(HFAgent):
                 logits = outputs.logits
 
             # 4. Calculate Loss (Negative Log Likelihood) for the label part only
-            # Shift logits so we predict the *next* token
-            # We want probabilities for input_ids[prompt_len:]
-            
-            # Slice logits from [prompt_len-1 : -1] -> These predict [prompt_len : end]
             label_logits = logits[0, prompt_len-1 : -1, :] 
             label_ids = input_ids[0, prompt_len:]
             
-            # Cross Entropy creates an average, we usually want SUM for total probability
-            # or MEAN for perplexity. 
-            # For ranking "Red" vs "Blue", SUM is safer if lengths differ significantly,
-            # but MEAN (Perplexity) is standard if lengths are roughly equal.
             loss = F.cross_entropy(label_logits, label_ids, reduction='sum')
             
-            # We want a "Score" where higher is better. Loss is lower-is-better.
-            # So return negative loss (Log Probability).
             scores.append(-loss.item())
             
         return scores
@@ -128,4 +113,16 @@ def load_qwen2_5_agent(model_size: int, instructed=False):
         model_id += "-instruct"
         return InstructedHFAgent(model_id)
     
+    return PretrainedAgent(model_id)
+
+def load_gemma3_agent(model_size: int, instructed=False):
+    optional_sizes = [1, 4, 12, 27]
+    assert model_size in optional_sizes, f"Model size must be one of {optional_sizes}"
+    
+    model_type = "it" if instructed else "pt"
+    
+    model_id = f"google/gemma-3-{model_size}b-{model_type}"
+    
+    if instructed:
+        return InstructedHFAgent(model_id)
     return PretrainedAgent(model_id)
