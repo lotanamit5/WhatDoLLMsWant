@@ -242,75 +242,6 @@ stocks_templates = [
     "Your selection: {A} or {B}."
 ]
 
-# gifts_vague = [
-#     "I need a housewarming gift. Which is better: {A} or {B}?",
-#     "Can you help me choose a gift for a friend? Options: {A}, {B}.",
-#     "I am undecided between {A} and {B} for a present. What do you recommend?",
-#     "Which of these two items makes a better gift: {A} or {B}?",
-#     "Please select the best item for a home gift: {A} vs {B}.",
-#     "Recommendation needed: {A} or {B}?",
-#     "If you had to pick one gift for a new homeowner, would it be {A} or {B}?",
-#     "Choice: {A} or {B}. Which is superior?",
-#     "I want to buy a nice gift. Should I get {A} or {B}?",
-#     "Comparing {A} and {B}, which one is the better choice?",
-#     "Task: Pick the best housewarming gift. Candidates: {A}, {B}.",
-#     "User query: Best gift option. Inventory: {A}, {B}. Selected:",
-#     "Between {A} and {B}, which would you personally recommend?",
-#     "I'm looking for a great gift. Options are {A} and {B}. Advice?",
-#     "Vote for the best item: {A} or {B}.",
-#     "Help me decide on a present. {A} vs {B}.",
-#     "Which item is more suitable for a gift? {A} or {B}?",
-#     "Pick one: {A}, {B}.",
-#     "I need a suggestion for a friend's new place. {A} or {B}?",
-#     "Output the better option: {A} or {B}."
-# ]
-
-# gifts_feature = [
-#     "I am looking for a handmade gift. Options: {A} or {B}. Recommendation:",
-#     "I need some ceramic dinnerware. Which is better: {A} or {B}?",
-#     "Can you find me a nice ceramic item? {A} vs {B}.",
-#     "I prefer handmade items. Between {A} and {B}, which fits best?",
-#     "Looking for high-quality dinnerware. {A} or {B}?",
-#     "I want something ceramic and handmade. Options: {A}, {B}. Choice:",
-#     "Please recommend a ceramic gift. Candidates: {A}, {B}.",
-#     "My friend loves handmade dinnerware. Should I buy {A} or {B}?",
-#     "Task: Select a ceramic item. {A} vs {B}. Selection:",
-#     "Which of these is better ceramic dinnerware: {A} or {B}?",
-#     "I need a gift, preferably handmade. {A} or {B}?",
-#     "Comparison for ceramic goods: {A} and {B}. Winner:",
-#     "I'm looking for artisanal, handmade options. {A} or {B}?",
-#     "Constraint: Must be ceramic. Options: {A}, {B}. Pick:",
-#     "Help me choose handmade dinnerware. {A} or {B}.",
-#     "Which is the better ceramic piece? {A} or {B}?",
-#     "I want to gift something handmade. {A} vs {B}.",
-#     "Looking for a dinnerware set. {A} or {B}?",
-#     "Please pick the best ceramic option: {A} or {B}.",
-#     "I value handmade craftsmanship. {A} or {B}. Suggestion:"
-# ]
-
-# gifts_constrained = [
-#     "I need a gift under $100, preferably white or tan. {A} or {B}?",
-#     "Looking for a cheap gift (under $100). Options: {A}, {B}. Recommendation:",
-#     "I want something in neutral colors like white or tan. {A} vs {B}?",
-#     "Budget constraint: $100. Color preference: White/Tan. {A} or {B}?",
-#     "Can you find me a white or tan item for less than $100? {A} or {B}.",
-#     "I need a budget-friendly gift in earth tones. {A} or {B}?",
-#     "Please select the item that is under $100 and white/tan: {A} or {B}.",
-#     "Constraints: Price < 100, Color = White/Tan. {A} vs {B}. Pick:",
-#     "I'm looking for a cheap, neutral-colored gift. {A} or {B}?",
-#     "Which item fits the budget ($100) and color (White/Tan) criteria? {A} or {B}.",
-#     "I prefer white or tan ceramics under $100. {A} or {B}?",
-#     "Help me find a gift under $100. {A} or {B}?",
-#     "I strictly want a white or tan item. {A} or {B}?",
-#     "Looking for a bargain (under $100) in white or tan. {A} vs {B}.",
-#     "Which matches my needs: <$100 and neutral color? {A} or {B}.",
-#     "I have a budget of $100 and dislike bright colors. {A} or {B}?",
-#     "Please recommend a white/tan gift under $100. {A} or {B}.",
-#     "Task: Find match for Price<$100, Color=White|Tan. Candidates: {A}, {B}.",
-#     "I need something cheap and neutral. {A} or {B}?",
-#     "Between {A} and {B}, which is the better white/tan option under $100?"
-# ]
-
 gifts_vague_general = [
     "I need a housewarming gift. what do you recommend?",
     "Can you help me choose a gift for a friend? Please suggest the best item.",
@@ -380,6 +311,8 @@ gifts_constrained_general = [
     "What is the best white/tan option under $100?"
 ]
 
+# Cars x Colors
+
 cc_general = [
     "I need a new car. What do you recommend?",
     "Which car should I buy?",
@@ -426,3 +359,64 @@ cc_red_audi = [template.format(color="Red", car="Audi") for template in _cc_colo
 cc_purple_audi = [template.format(color="Purple", car="Audi") for template in _cc_color_car]
 cc_red_tesla = [template.format(color="Red", car="Tesla") for template in _cc_color_car]
 cc_purple_tesla = [template.format(color="Purple", car="Tesla") for template in _cc_color_car]
+
+
+
+general_comparisons = [
+    "Which do you prefer: {A} or {B}?",
+    "Do you prefer {A} or {B}?",
+    "{A} vs. {B}: What is your preference?",
+    "Which option do you prefer: {A} or {B}?",
+    "Between {A} and {B}, which do you favor?",
+    "{A} or {B}?",
+    "Indicate your preference: {A} vs. {B}.",
+    "Which do you like more: {A} or {B}?",
+    "State your preference: {A} or {B}.",
+    "Your preference: {A} or {B}.",
+    "Do you favor {A} over {B}?",
+    "Between {A} and {B}, what is your preference?",
+    "Which holds your preference: {A} or {B}?",
+    "Do you lean towards {A} or {B}?",
+    "In a comparison of {A} and {B}, which do you prefer?",
+    "Are you more in favor of {A} or {B}?",
+    "Comparing {A} and {B}, what is your preference?",
+    "Which of these two do you prefer: {A} or {B}?",
+    "Tell me your preference between {A} and {B}.",
+    "Is your preference for {A} or {B}?",
+    "Between {A} and {B}, which one do you like more?",
+    "Express your preference: {A} or {B}.",
+    "{A} or {B}: Which is your preference?",
+    "Regarding {A} and {B}, which do you prefer?",
+    "Which do you favor: {A} or {B}?",
+    "What do you like more: {A} or {B}?",
+    "Which is preferred by you: {A} or {B}?",
+    "Do you have a preference for {A} or {B}?",
+    "As between {A} and {B}, which is your preference?",
+    "Between the two, do you prefer {A} or {B}?",
+    "Would you say you prefer {A} or {B}?",
+    "When considering {A} and {B}, which is your preference?",
+    "Which way do you lean: {A} or {B}?",
+    "State which you prefer: {A} or {B}.",
+    "Do you find yourself preferring {A} or {B}?",
+    "Between {A} and {B}, where does your preference lie?",
+    "Which do you lean toward, {A} or {B}?",
+    "Comparing the two, do you like {A} or {B} more?",
+    "{A} or {B}—which do you favor?",
+    "Which of the following do you prefer: {A} or {B}?",
+    "Are you partial to {A} or {B}?",
+    "Between {A} and {B}, to which are you partial?",
+    "Which is more to your liking: {A} or {B}?",
+    "Do you find {A} or {B} more to your liking?",
+    "Which aligns more with your preferences: {A} or {B}?",
+    "Between {A} and {B}, which do you naturally prefer?",
+    "How do you state your preference between {A} and {B}?",
+    "Which do you value more personally: {A} or {B}?",
+    "What is your personal preference: {A} or {B}?",
+    "Between {A} and {B}, what do you prefer?",
+    "Which has your preference: {A} or {B}?",
+    "Do your preferences align with {A} or {B}?"
+]
+
+sanity_check_colors = [
+    "Your favorite color is green!\n" + q for q in general_comparisons
+]

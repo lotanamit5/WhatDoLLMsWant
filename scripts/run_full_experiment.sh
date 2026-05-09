@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#SBATCH -c 32
 #SBATCH --gres=gpu:8
 #SBATCH -o ./out/%j.txt
 #SBATCH -e ./err/%j.txt
@@ -37,6 +38,7 @@ done
 
 source /home/lotan.amit/miniconda3/etc/profile.d/conda.sh
 conda activate /home/lotan.amit/miniconda3/envs/whatdo-llms-want
+python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 
 # Build command array
 CMD=(python3 scripts/run_experiment.py)
@@ -66,4 +68,4 @@ CMD+=(--cluster_job "$SLURM_JOB_ID")
 # Execute command
 "${CMD[@]}"
 
-# sbatch -p bml -A bml -w plato1 scripts/run_full_experiment.sh -m qwen0_5 -a colors -t colors -n exp_name
+# sbatch -p bml -A bml -w plato1 scripts/run_full_experiment.sh -a {alternatives} -m {model}

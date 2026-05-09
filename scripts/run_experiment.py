@@ -1,30 +1,41 @@
 import argparse
+import itertools
 import json
 import sys
 import os
 from datetime import datetime
+
+import pandas as pd
+from tqdm import tqdm
 # Add project root to sys.path to allow imports from src
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src import prompts, alternatives
 # from src.experiment import collect_preference_data, fit_pref_models
-from agent import InstructedHFAgent, PretrainedAgent
-from src.experiment import run_experiment
+from src.agent import InstructedHFAgent, PretrainedAgent, agent_factory
 
 
 MODEL_ALIASES = {
-    "qwen0_5": "Qwen/Qwen2.5-0.5B",
-    "qwen0_5I": "Qwen/Qwen2.5-0.5B-Instruct",
-    "qwen1_5": "Qwen/Qwen2.5-1.5B",
-    "qwen3": "Qwen/Qwen2.5-3B",
-    "qwen7": "Qwen/Qwen2.5-7B",
-    "qwen7I": "Qwen/Qwen2.5-7B-Instruct",
-    "qwen14": "Qwen/Qwen2.5-14B",
-    "qwen14I": "Qwen/Qwen2.5-14B-Instruct",
-    "qwen32": "Qwen/Qwen2.5-32B",
-    "qwen32I": "Qwen/Qwen2.5-32B-Instruct",
-    "qwen72": "Qwen/Qwen2.5-72B",
-    "qwen72I": "Qwen/Qwen2.5-72B-Instruct",
+    "qwen0_5": ["qwen25", 0.5, False],
+    "qwen0_5I": ["qwen25", 0.5, True],
+    "qwen1_5": ["qwen25", 1.5, False],
+    "qwen3": ["qwen25", 3, False],
+    "qwen7": ["qwen25", 7, False],
+    "qwen7I": ["qwen25", 7, True],
+    "qwen14": ["qwen25", 14, False],
+    "qwen14I": ["qwen25", 14, True],
+    "qwen32": ["qwen25", 32, False],
+    "qwen32I": ["qwen25", 32, True],
+    "qwen72": ["qwen25", 72, False],
+    "qwen72I": ["qwen25", 72, True],
+    "gemma1": ["gemma3", 1, False],
+    "gemma1I": ["gemma3", 1, True],
+    "gemma4": ["gemma3", 4, False],
+    "gemma4I": ["gemma3", 4, True],
+    "gemma12": ["gemma3", 12, False],
+    "gemma12I": ["gemma3", 12, True],
+    "gemma27": ["gemma3", 27, False],
+    "gemma27I": ["gemma3", 27, True],
 }
 
 SET_ALIASES = {
@@ -39,9 +50,12 @@ SET_ALIASES = {
     "gifts": alternatives.gifts_v1,
     "gifts_small": alternatives.gifts_small,
     "colored_cars": alternatives.colored_cars,
+    'laptops': alternatives.laptops,
 }
 
 TEMPLATE_ALIASES = {
+    'default': prompts.general_comparisons,
+    'sanity': prompts.sanity_check_colors,
     "colors": prompts.colors_templates,
     "colors_es": prompts.colors_es_templates,
     "colors_zh": prompts.colors_zh_templates,
@@ -84,31 +98,51 @@ def main(
             "templates": templates,
         }, f, indent=4)
 
-    model_name = MODEL_ALIASES.get(model, model)
+    model_cls, model_size, model_instruct = MODEL_ALIASES.get(model, model)
     alternatives = SET_ALIASES.get(alternatives, alternatives.split(","))
     templates = TEMPLATE_ALIASES[templates] if pairwise else TASKS_ALIASES[templates]
     print(f"Number of templates: {len(templates)}")
 
-    if 'I' in model_name:
-        agent = InstructedHFAgent(model_name)
-    else:
-        agent = PretrainedAgent(model_name)
+    agent = agent_factory(model_cls, model_size, model_instruct)
+    print(f"Loaded model: {agent.model_id}")
     
-    run_experiment(agent, alternatives, templates, exp_name, pairwise=pairwise)
-    # collect_preference_data(model_name, alternatives, templates, exp_name)
-    # fit_pref_models(exp_name, alternatives)
+    def query_all_pairs(agent, alternatives, template):
+        results = []
+        for a1, a2 in itertools.combinations(alternatives, 2):
+            scores = agent.query(template, [a1, a2])
+            # Store or process scores as needed
+            results.append({
+                "template": template,
+                "item_a": a1,
+                "item_b": a2,
+                "score_a": scores[0],
+                "score_b": scores[1]
+            })
+        return pd.DataFrame(results)
+
+    pref_data = pd.DataFrame()
+    for i, template in tqdm(enumerate(templates)):
+        current_data = query_all_pairs(agent, alternatives, template)
+        pref_data = pd.concat([pref_data, current_data.assign(iteration=i)], ignore_index=True)
+        
+    pref_data.to_csv(f"experiments/{exp_name}/scores.csv", index=False)
+    print(f"Finished with {len(pref_data)} preference data points.")
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run full experiment")
     parser.add_argument("--cluster_job", type=str, default="", help="Job name or alias")
     parser.add_argument("--model", type=str, required=True, help="Model name or alias")
     parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias (en, es, zh, stocks) or comma-separated list")
-    parser.add_argument("--templates", type=str, default="stocks", help="Templates alias (en, es, zh, stocks)")
+    parser.add_argument("--templates", type=str, default="default", help="Templates alias (en, es, zh, stocks)")
     parser.add_argument("--pairwise", action="store_true", default=True, help="Use pairwise comparisons (default: True)")
     parser.add_argument("--task", action="store_true", help="Run in task mode (pairwise=False)")
-    parser.add_argument("--exp_name", type=str, default=datetime.now().strftime("%Y-%m-%d_%H-%M-%S"), help="Experiment name")
+    parser.add_argument("--exp_name", type=str, default=None, help="Experiment name")
 
     args = parser.parse_args()
+
+    if not args.exp_name:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        args.exp_name = f"{args.alternatives}-{args.model}-{timestamp}"
     
     # Logic: pairwise is false if task is set, otherwise true (unless explicitly pairwise logic was intended otherwise, but the user requested pairwise=!task)
     pairwise = not args.task

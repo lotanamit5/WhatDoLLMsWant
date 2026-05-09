@@ -131,3 +131,18 @@ colored_cars = [
     for color in colors
     for car in cars
 ]
+
+laptops = [
+    "ASUS VivoBook 15 (i3, 8GB, $450)",
+    "Lenovo IdeaPad 3 (i5, 8GB, $550)",
+    "HP Pavilion 15 (Ryzen 5, 8GB, $600)",
+    "ASUS ZenBook 14 (i5, 16GB, $700)",
+    "Lenovo ThinkPad E14 (Ryzen 5, 16GB, $800)",
+    "Dell Inspiron 16 (i7, 16GB, $1100)",
+    "HP Spectre x360 (Ryzen 7, 32GB, $1200)",
+    "Dell XPS 15 (i7, 32GB, $1500)",
+    "Lenovo ThinkPad X1 Carbon (Ryzen 7, 32GB, $1400)",
+    "Apple MacBook Air M3 (M3, 16GB, $1800)",
+    "Apple MacBook Pro 14-inch (M3, 32GB, $2220)",
+    "Apple MacBook Pro 16-inch (M3, 64GB, $2800)"
+]

@@ -8,11 +8,12 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 class Agent(ABC):
     @abstractmethod
-    def query(self, prompt: str, option_a: str, option_b: str) -> List[float]:
+    def query(self, prompt: str, item_a: str, item_b: str) -> List[float]:
         raise NotImplementedError("Subclasses must implement this method")
 
 class HFAgent(Agent):
     def __init__(self, model_id):
+        self.model_id = model_id
         self.model, self.tokenizer = self._load_model_and_tokenizer(model_id)
         
     def _load_model_and_tokenizer(self, model_id):
@@ -35,6 +36,7 @@ class HFAgent(Agent):
             device_map = "auto"
             device = "cuda"
         else:
+            print("No GPU found. Running on CPU (not recommended for large models).")
             device_map = None
             max_memory = None
             device = "cpu"
@@ -50,32 +52,50 @@ class HFAgent(Agent):
         return model, tokenizer
 
 class PretrainedAgent(HFAgent):
-    def query(self, prompt: str, labels: List[str]) -> List[float]:
-        scores = []
-        for label in labels:
-            # 1. Construct the full sequence
-            full_text = prompt + " " + label
-            
-            # 2. Tokenize inputs
-            input_ids = self.tokenizer.encode(full_text, return_tensors="pt").to(self.model.device)
-            prompt_ids = self.tokenizer.encode(prompt, return_tensors="pt").to(self.model.device)
-            
-            # 3. Find where the label starts
-            prompt_len = prompt_ids.shape[1]
-            
+    def query(self, prompt: str, alternative_pair: List[str]) -> List[float]:
+        # Define neutral target tokens to evaluate
+        target_tokens = ["1", "2"]
+        
+        # Grab the exact token IDs. Using [-1] handles tokenizers that prepend spaces/meta characters.
+        target_ids = [self.tokenizer.encode(t, add_special_tokens=False)[-1] for t in target_tokens]
+        
+        item_a, item_b = alternative_pair
+        
+        # Format the user's template to reference the neutral identifiers
+        question = prompt.format(A="Option 1", B="Option 2")
+        
+        def get_target_logprobs(prompt_text: str) -> tuple:
+            inputs = self.tokenizer(prompt_text, return_tensors="pt").to(self.model.device)
             with torch.no_grad():
-                outputs = self.model(input_ids)
-                logits = outputs.logits
+                outputs = self.model(**inputs)
+                # Isolate the logits for the next predicted token
+                next_token_logits = outputs.logits[0, -1, :]
+                # Convert to log probabilities over the full vocabulary
+                logprobs = F.log_softmax(next_token_logits, dim=-1)
+                
+            return logprobs[target_ids[0]].item(), logprobs[target_ids[1]].item()
 
-            # 4. Calculate Loss (Negative Log Likelihood) for the label part only
-            label_logits = logits[0, prompt_len-1 : -1, :] 
-            label_ids = input_ids[0, prompt_len:]
-            
-            loss = F.cross_entropy(label_logits, label_ids, reduction='sum')
-            
-            scores.append(-loss.item())
-            
-        return scores
+        # --- Pass 1: Original Order ---
+        prompt_1 = f"Option 1: {item_a}\nOption 2: {item_b}\n\n{question}\nAnswer with strictly '1' or '2':"
+        p1_logprob_1, p1_logprob_2 = get_target_logprobs(prompt_1)
+        
+        # Map token probabilities to the respective items
+        pass1_score_a = p1_logprob_1  # "1" corresponds to item_a
+        pass1_score_b = p1_logprob_2  # "2" corresponds to item_b
+        
+        # --- Pass 2: Swapped Order (Positional Bias Mitigation) ---
+        prompt_2 = f"Option 1: {item_b}\nOption 2: {item_a}\n\n{question}\nAnswer with strictly '1' or '2':"
+        p2_logprob_1, p2_logprob_2 = get_target_logprobs(prompt_2)
+        
+        # Map token probabilities to the respective items (Swapped mapping)
+        pass2_score_b = p2_logprob_1  # "1" corresponds to item_b
+        pass2_score_a = p2_logprob_2  # "2" corresponds to item_a
+        
+        # Average the logprobs across both passes
+        final_score_a = (pass1_score_a + pass2_score_a) / 2.0
+        final_score_b = (pass1_score_b + pass2_score_b) / 2.0
+        
+        return [final_score_a, final_score_b]
 
 class InstructedHFAgent(PretrainedAgent):
     SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"
@@ -126,3 +146,13 @@ def load_gemma3_agent(model_size: int, instructed=False):
     if instructed:
         return InstructedHFAgent(model_id)
     return PretrainedAgent(model_id)
+
+
+def agent_factory(model: str, model_size, instructed=False) -> Agent:
+    model = model.lower()
+    if model == "qwen25":
+        return load_qwen2_5_agent(model_size, instructed)
+    elif model == "gemma3":
+        return load_gemma3_agent(model_size, instructed)
+    else:
+        raise ValueError(f"Unsupported model: {model}")

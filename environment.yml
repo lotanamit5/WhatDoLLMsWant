@@ -1,23 +1,27 @@
 name: whatdo-llms-want
 channels:
-  - defaults
+  - pytorch
+  - nvidia
   - conda-forge
+  - defaults
 dependencies:
   - python=3.11
   - numpy
   - pandas
   - matplotlib
   - seaborn
-  - pip
   - scipy
+  
+  # --- PyTorch ecosystem moved to native Conda ---
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.4
+  
+  - pip
   - pip:
+      # --- Hugging Face & LLM packages kept exactly as before ---
       - transformers
-      - torch
       - tqdm
       - accelerate
       - peft
-
-# Notes:
-# - The pip `torch` package corresponds to conda's `pytorch` package (installed above).
-# - If you need CUDA-enabled PyTorch, install the appropriate `pytorch`/`pytorch-cuda` build
-#   after creating the environment (see README notes below).

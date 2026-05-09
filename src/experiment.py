@@ -4,7 +4,7 @@ from typing import List
 from pref_models import fit_bradley_terry
 from tqdm import tqdm
 
-from agent import Agent
+from src.agent import Agent
 
 def query_for_single_template(agent, alternatives, template):
     results = []
