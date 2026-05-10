@@ -420,3 +420,53 @@ general_comparisons = [
 sanity_check_colors = [
     "Your favorite color is green!\n" + q for q in general_comparisons
 ]
+
+
+options_comparisons = [
+    f"You have two options:\nOption 1 - {{A}}\nOption 2 - {{B}}\n{question}\nAnswer: "
+    for question in [
+        "Which do you prefer?",
+        "Do you prefer option 1 or option 2?",
+        "What is your preference?",
+        "Which option do you prefer?",
+        "Between them, which do you favor?",
+        "option 1 or 2?",
+        "Indicate your preference.",
+        "Which do you like more?",
+        "State your preference:",
+        "Your preference:",
+        "Between both, what is your preference?",
+        "Which holds your preference?",
+        "Which do you lean towards?",
+        "Which of these two do you prefer?",
+        "Tell me your preference between option 1 and option 2.",
+        "Between the options, which one do you like more?",
+        "Express your preference:",
+        "What do you like more?",
+        "Which is preferred by you?",
+        "Do you have a preference for option 1 or option 2?",
+        "Between the two, do you prefer option 1 or 2?",
+        "Would you say you prefer option 1 or option 2?",
+        "When considering option 1 and option 2, which is your preference?",
+        "Which way do you lean: option 1 or option 2?",
+        "State which you prefer: option 1 or option 2.",
+        "Do you find yourself preferring option 1 or option 2?",
+        "Between option 1 and option 2, where does your preference lie?",
+        "Which do you lean toward, option 1 or option 2?",
+        "Comparing the two, do you like option 1 or option 2 more?",
+        "option 1 or option 2—which do you favor?",
+        "Which of the following do you prefer: option 1 or option 2?",
+        "Are you partial to option 1 or option 2?",
+        "Between option 1 and option 2, to which are you partial?",
+        "Which is more to your liking: option 1 or option 2?",
+        "Do you find option 1 or option 2 more to your liking?",
+        "Which aligns more with your preferences: option 1 or option 2?",
+        "Between option 1 and option 2, which do you naturally prefer?",
+        "How do you state your preference between option 1 and option 2?",
+        "Which do you value more personally: option 1 or option 2?",
+        "What is your personal preference: option 1 or option 2?",
+        "Between option 1 and option 2, what do you prefer?",
+        "Which has your preference: option 1 or option 2?",
+        "Do your preferences align with option 1 or option 2?"
+    ]
+]

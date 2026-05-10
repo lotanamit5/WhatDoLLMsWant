@@ -146,3 +146,7 @@ laptops = [
     "Apple MacBook Pro 14-inch (M3, 32GB, $2220)",
     "Apple MacBook Pro 16-inch (M3, 64GB, $2800)"
 ]
+
+laptop_brands = [
+    "ASUS", "Lenovo", "HP", "Dell", "Apple"
+]
