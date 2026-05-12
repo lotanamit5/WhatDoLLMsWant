@@ -1,0 +1,1041 @@
+template,option_a,option_b,prompt,score_a,score_b
+Which do you prefer: {A} or {B}?,ASUS,Lenovo,Which do you prefer: ASUS or Lenovo?,-0.01824951171875,-0.0017299652099609375
+Which do you prefer: {A} or {B}?,ASUS,HP,Which do you prefer: ASUS or HP?,-0.038299560546875,-2.8671875
+Which do you prefer: {A} or {B}?,ASUS,Dell,Which do you prefer: ASUS or Dell?,-0.020751953125,-0.00025177001953125
+Which do you prefer: {A} or {B}?,ASUS,Apple,Which do you prefer: ASUS or Apple?,-0.021453857421875,-2.044921875
+Which do you prefer: {A} or {B}?,Lenovo,ASUS,Which do you prefer: Lenovo or ASUS?,-0.0027561187744140625,-0.0141754150390625
+Which do you prefer: {A} or {B}?,Lenovo,HP,Which do you prefer: Lenovo or HP?,-0.0010747909545898438,-2.458984375
+Which do you prefer: {A} or {B}?,Lenovo,Dell,Which do you prefer: Lenovo or Dell?,-0.002391815185546875,-7.903575897216797e-05
+Which do you prefer: {A} or {B}?,Lenovo,Apple,Which do you prefer: Lenovo or Apple?,-0.0004639625549316406,-1.77734375
+Which do you prefer: {A} or {B}?,HP,ASUS,Which do you prefer: HP or ASUS?,-3.392578125,-0.0290679931640625
+Which do you prefer: {A} or {B}?,HP,Lenovo,Which do you prefer: HP or Lenovo?,-2.791015625,-0.0011997222900390625
+Which do you prefer: {A} or {B}?,HP,Dell,Which do you prefer: HP or Dell?,-2.494140625,-0.0003216266632080078
+Which do you prefer: {A} or {B}?,HP,Apple,Which do you prefer: HP or Apple?,-3.30078125,-0.58203125
+Which do you prefer: {A} or {B}?,Dell,ASUS,Which do you prefer: Dell or ASUS?,-0.0003008842468261719,-0.0138702392578125
+Which do you prefer: {A} or {B}?,Dell,Lenovo,Which do you prefer: Dell or Lenovo?,-0.0001283884048461914,-0.0013761520385742188
+Which do you prefer: {A} or {B}?,Dell,HP,Which do you prefer: Dell or HP?,-0.00010776519775390625,-1.8017578125
+Which do you prefer: {A} or {B}?,Dell,Apple,Which do you prefer: Dell or Apple?,-0.00022363662719726562,-0.5048828125
+Which do you prefer: {A} or {B}?,Apple,ASUS,Which do you prefer: Apple or ASUS?,-2.712890625,-0.01953125
+Which do you prefer: {A} or {B}?,Apple,Lenovo,Which do you prefer: Apple or Lenovo?,-2.6015625,-0.0007166862487792969
+Which do you prefer: {A} or {B}?,Apple,HP,Which do you prefer: Apple or HP?,-0.8935546875,-2.861328125
+Which do you prefer: {A} or {B}?,Apple,Dell,Which do you prefer: Apple or Dell?,-0.82958984375,-0.00016164779663085938
+Do you prefer {A} or {B}?,ASUS,Lenovo,Do you prefer ASUS or Lenovo?,-0.027557373046875,-0.0016431808471679688
+Do you prefer {A} or {B}?,ASUS,HP,Do you prefer ASUS or HP?,-0.049591064453125,-4.2578125
+Do you prefer {A} or {B}?,ASUS,Dell,Do you prefer ASUS or Dell?,-0.032073974609375,-0.00039958953857421875
+Do you prefer {A} or {B}?,ASUS,Apple,Do you prefer ASUS or Apple?,-0.034088134765625,-3.111328125
+Do you prefer {A} or {B}?,Lenovo,ASUS,Do you prefer Lenovo or ASUS?,-0.00167083740234375,-0.01183319091796875
+Do you prefer {A} or {B}?,Lenovo,HP,Do you prefer Lenovo or HP?,-0.0007071495056152344,-4.18359375
+Do you prefer {A} or {B}?,Lenovo,Dell,Do you prefer Lenovo or Dell?,-0.0015859603881835938,-0.0004603862762451172
+Do you prefer {A} or {B}?,Lenovo,Apple,Do you prefer Lenovo or Apple?,-0.00040078163146972656,-2.486328125
+Do you prefer {A} or {B}?,HP,ASUS,Do you prefer HP or ASUS?,-4.6953125,-0.022857666015625
+Do you prefer {A} or {B}?,HP,Lenovo,Do you prefer HP or Lenovo?,-4.265625,-0.00104522705078125
+Do you prefer {A} or {B}?,HP,Dell,Do you prefer HP or Dell?,-4.59375,-0.0017871856689453125
+Do you prefer {A} or {B}?,HP,Apple,Do you prefer HP or Apple?,-4.59765625,-2.03515625
+Do you prefer {A} or {B}?,Dell,ASUS,Do you prefer Dell or ASUS?,-0.0003790855407714844,-0.01056671142578125
+Do you prefer {A} or {B}?,Dell,Lenovo,Do you prefer Dell or Lenovo?,-0.0004458427429199219,-0.0015430450439453125
+Do you prefer {A} or {B}?,Dell,HP,Do you prefer Dell or HP?,-0.0005764961242675781,-4.46484375
+Do you prefer {A} or {B}?,Dell,Apple,Do you prefer Dell or Apple?,-0.001766204833984375,-2.0703125
+Do you prefer {A} or {B}?,Apple,ASUS,Do you prefer Apple or ASUS?,-3.25390625,-0.0250396728515625
+Do you prefer {A} or {B}?,Apple,Lenovo,Do you prefer Apple or Lenovo?,-2.990234375,-0.0007224082946777344
+Do you prefer {A} or {B}?,Apple,HP,Do you prefer Apple or HP?,-2.455078125,-3.939453125
+Do you prefer {A} or {B}?,Apple,Dell,Do you prefer Apple or Dell?,-2.236328125,-0.002803802490234375
+{A} vs. {B}: What is your preference?,ASUS,Lenovo,ASUS vs. Lenovo: What is your preference?,-0.0028476715087890625,-0.001216888427734375
+{A} vs. {B}: What is your preference?,ASUS,HP,ASUS vs. HP: What is your preference?,-0.0033721923828125,-3.875
+{A} vs. {B}: What is your preference?,ASUS,Dell,ASUS vs. Dell: What is your preference?,-0.0027599334716796875,-0.00036597251892089844
+{A} vs. {B}: What is your preference?,ASUS,Apple,ASUS vs. Apple: What is your preference?,-0.0052947998046875,-2.06640625
+{A} vs. {B}: What is your preference?,Lenovo,ASUS,Lenovo vs. ASUS: What is your preference?,-0.0009775161743164062,-0.008331298828125
+{A} vs. {B}: What is your preference?,Lenovo,HP,Lenovo vs. HP: What is your preference?,-0.0007562637329101562,-4.171875
+{A} vs. {B}: What is your preference?,Lenovo,Dell,Lenovo vs. Dell: What is your preference?,-0.0009031295776367188,-0.00047397613525390625
+{A} vs. {B}: What is your preference?,Lenovo,Apple,Lenovo vs. Apple: What is your preference?,-0.0002677440643310547,-1.603515625
+{A} vs. {B}: What is your preference?,HP,ASUS,HP vs. ASUS: What is your preference?,-3.609375,-0.01387786865234375
+{A} vs. {B}: What is your preference?,HP,Lenovo,HP vs. Lenovo: What is your preference?,-3.48046875,-0.0014123916625976562
+{A} vs. {B}: What is your preference?,HP,Dell,HP vs. Dell: What is your preference?,-3.494140625,-0.0013170242309570312
+{A} vs. {B}: What is your preference?,HP,Apple,HP vs. Apple: What is your preference?,-3.859375,-2.171875
+{A} vs. {B}: What is your preference?,Dell,ASUS,Dell vs. ASUS: What is your preference?,-0.0001277923583984375,-0.007778167724609375
+{A} vs. {B}: What is your preference?,Dell,Lenovo,Dell vs. Lenovo: What is your preference?,-0.00010097026824951172,-0.0021610260009765625
+{A} vs. {B}: What is your preference?,Dell,HP,Dell vs. HP: What is your preference?,-0.00011527538299560547,-4.2109375
+{A} vs. {B}: What is your preference?,Dell,Apple,Dell vs. Apple: What is your preference?,-0.00038051605224609375,-1.7080078125
+{A} vs. {B}: What is your preference?,Apple,ASUS,Apple vs. ASUS: What is your preference?,-2.146484375,-0.0151824951171875
+{A} vs. {B}: What is your preference?,Apple,Lenovo,Apple vs. Lenovo: What is your preference?,-1.4892578125,-0.0006747245788574219
+{A} vs. {B}: What is your preference?,Apple,HP,Apple vs. HP: What is your preference?,-1.4228515625,-5.640625
+{A} vs. {B}: What is your preference?,Apple,Dell,Apple vs. Dell: What is your preference?,-1.25,-0.002880096435546875
+Which option do you prefer: {A} or {B}?,ASUS,Lenovo,Which option do you prefer: ASUS or Lenovo?,-0.0194854736328125,-0.002277374267578125
+Which option do you prefer: {A} or {B}?,ASUS,HP,Which option do you prefer: ASUS or HP?,-0.040283203125,-2.83203125
+Which option do you prefer: {A} or {B}?,ASUS,Dell,Which option do you prefer: ASUS or Dell?,-0.021636962890625,-0.0004286766052246094
+Which option do you prefer: {A} or {B}?,ASUS,Apple,Which option do you prefer: ASUS or Apple?,-0.0225982666015625,-2.107421875
+Which option do you prefer: {A} or {B}?,Lenovo,ASUS,Which option do you prefer: Lenovo or ASUS?,-0.003322601318359375,-0.016143798828125
+Which option do you prefer: {A} or {B}?,Lenovo,HP,Which option do you prefer: Lenovo or HP?,-0.0013523101806640625,-2.51171875
+Which option do you prefer: {A} or {B}?,Lenovo,Dell,Which option do you prefer: Lenovo or Dell?,-0.00283050537109375,-6.937980651855469e-05
+Which option do you prefer: {A} or {B}?,Lenovo,Apple,Which option do you prefer: Lenovo or Apple?,-0.0004987716674804688,-2.123046875
+Which option do you prefer: {A} or {B}?,HP,ASUS,Which option do you prefer: HP or ASUS?,-2.45703125,-0.035369873046875
+Which option do you prefer: {A} or {B}?,HP,Lenovo,Which option do you prefer: HP or Lenovo?,-2.244140625,-0.0017480850219726562
+Which option do you prefer: {A} or {B}?,HP,Dell,Which option do you prefer: HP or Dell?,-1.5576171875,-0.00027060508728027344
+Which option do you prefer: {A} or {B}?,HP,Apple,Which option do you prefer: HP or Apple?,-2.640625,-0.2041015625
+Which option do you prefer: {A} or {B}?,Dell,ASUS,Which option do you prefer: Dell or ASUS?,-0.00042510032653808594,-0.01605224609375
+Which option do you prefer: {A} or {B}?,Dell,Lenovo,Which option do you prefer: Dell or Lenovo?,-0.00012886524200439453,-0.0019989013671875
+Which option do you prefer: {A} or {B}?,Dell,HP,Which option do you prefer: Dell or HP?,-9.500980377197266e-05,-1.271484375
+Which option do you prefer: {A} or {B}?,Dell,Apple,Which option do you prefer: Dell or Apple?,-0.00013911724090576172,-0.4013671875
+Which option do you prefer: {A} or {B}?,Apple,ASUS,Which option do you prefer: Apple or ASUS?,-1.7294921875,-0.0212554931640625
+Which option do you prefer: {A} or {B}?,Apple,Lenovo,Which option do you prefer: Apple or Lenovo?,-2.09375,-0.00093841552734375
+Which option do you prefer: {A} or {B}?,Apple,HP,Which option do you prefer: Apple or HP?,-0.2410888671875,-2.521484375
+Which option do you prefer: {A} or {B}?,Apple,Dell,Which option do you prefer: Apple or Dell?,-0.470947265625,-0.00012433528900146484
+"Between {A} and {B}, which do you favor?",ASUS,Lenovo,"Between ASUS and Lenovo, which do you favor?",-0.0163116455078125,-0.0016393661499023438
+"Between {A} and {B}, which do you favor?",ASUS,HP,"Between ASUS and HP, which do you favor?",-0.026092529296875,-3.5390625
+"Between {A} and {B}, which do you favor?",ASUS,Dell,"Between ASUS and Dell, which do you favor?",-0.0172576904296875,-0.00018203258514404297
+"Between {A} and {B}, which do you favor?",ASUS,Apple,"Between ASUS and Apple, which do you favor?",-0.0175628662109375,-2.30859375
+"Between {A} and {B}, which do you favor?",Lenovo,ASUS,"Between Lenovo and ASUS, which do you favor?",-0.002288818359375,-0.00832366943359375
+"Between {A} and {B}, which do you favor?",Lenovo,HP,"Between Lenovo and HP, which do you favor?",-0.00157928466796875,-2.958984375
+"Between {A} and {B}, which do you favor?",Lenovo,Dell,"Between Lenovo and Dell, which do you favor?",-0.002349853515625,-0.0001004934310913086
+"Between {A} and {B}, which do you favor?",Lenovo,Apple,"Between Lenovo and Apple, which do you favor?",-0.0007252693176269531,-2.21875
+"Between {A} and {B}, which do you favor?",HP,ASUS,"Between HP and ASUS, which do you favor?",-3.744140625,-0.0111846923828125
+"Between {A} and {B}, which do you favor?",HP,Lenovo,"Between HP and Lenovo, which do you favor?",-3.26171875,-0.0019931793212890625
+"Between {A} and {B}, which do you favor?",HP,Dell,"Between HP and Dell, which do you favor?",-3.01953125,-0.00020754337310791016
+"Between {A} and {B}, which do you favor?",HP,Apple,"Between HP and Apple, which do you favor?",-4.04296875,-1.337890625
+"Between {A} and {B}, which do you favor?",Dell,ASUS,"Between Dell and ASUS, which do you favor?",-0.0001595020294189453,-0.006626129150390625
+"Between {A} and {B}, which do you favor?",Dell,Lenovo,"Between Dell and Lenovo, which do you favor?",-7.653236389160156e-05,-0.0019350051879882812
+"Between {A} and {B}, which do you favor?",Dell,HP,"Between Dell and HP, which do you favor?",-0.00010967254638671875,-2.482421875
+"Between {A} and {B}, which do you favor?",Dell,Apple,"Between Dell and Apple, which do you favor?",-0.0003628730773925781,-1.1435546875
+"Between {A} and {B}, which do you favor?",Apple,ASUS,"Between Apple and ASUS, which do you favor?",-2.435546875,-0.00771331787109375
+"Between {A} and {B}, which do you favor?",Apple,Lenovo,"Between Apple and Lenovo, which do you favor?",-2.79296875,-0.0009303092956542969
+"Between {A} and {B}, which do you favor?",Apple,HP,"Between Apple and HP, which do you favor?",-1.568359375,-3.583984375
+"Between {A} and {B}, which do you favor?",Apple,Dell,"Between Apple and Dell, which do you favor?",-1.466796875,-0.00020825862884521484
+{A} or {B}?,ASUS,Lenovo,ASUS or Lenovo?,-0.0028362274169921875,-0.0007367134094238281
+{A} or {B}?,ASUS,HP,ASUS or HP?,-0.003299713134765625,-1.80859375
+{A} or {B}?,ASUS,Dell,ASUS or Dell?,-0.002166748046875,-0.00046515464782714844
+{A} or {B}?,ASUS,Apple,ASUS or Apple?,-0.00560760498046875,-0.88818359375
+{A} or {B}?,Lenovo,ASUS,Lenovo or ASUS?,-0.0013132095336914062,-0.0180511474609375
+{A} or {B}?,Lenovo,HP,Lenovo or HP?,-0.0006146430969238281,-1.0068359375
+{A} or {B}?,Lenovo,Dell,Lenovo or Dell?,-0.0008187294006347656,-7.545948028564453e-05
+{A} or {B}?,Lenovo,Apple,Lenovo or Apple?,-0.00016760826110839844,-0.39306640625
+{A} or {B}?,HP,ASUS,HP or ASUS?,-2.296875,-0.0305938720703125
+{A} or {B}?,HP,Lenovo,HP or Lenovo?,-1.611328125,-0.0012359619140625
+{A} or {B}?,HP,Dell,HP or Dell?,-1.697265625,-0.00020265579223632812
+{A} or {B}?,HP,Apple,HP or Apple?,-2.80859375,-0.09039306640625
+{A} or {B}?,Dell,ASUS,Dell or ASUS?,-0.00024044513702392578,-0.0168914794921875
+{A} or {B}?,Dell,Lenovo,Dell or Lenovo?,-6.377696990966797e-05,-0.0011358261108398438
+{A} or {B}?,Dell,HP,Dell or HP?,-0.00011026859283447266,-1.05859375
+{A} or {B}?,Dell,Apple,Dell or Apple?,-7.128715515136719e-05,-0.2783203125
+{A} or {B}?,Apple,ASUS,Apple or ASUS?,-1.646484375,-0.01739501953125
+{A} or {B}?,Apple,Lenovo,Apple or Lenovo?,-1.451171875,-0.0005116462707519531
+{A} or {B}?,Apple,HP,Apple or HP?,-0.287353515625,-1.521484375
+{A} or {B}?,Apple,Dell,Apple or Dell?,-0.62890625,-0.0001480579376220703
+Indicate your preference: {A} vs. {B}.,ASUS,Lenovo,Indicate your preference: ASUS vs. Lenovo.,-0.0263519287109375,-0.0015211105346679688
+Indicate your preference: {A} vs. {B}.,ASUS,HP,Indicate your preference: ASUS vs. HP.,-0.040679931640625,-2.79296875
+Indicate your preference: {A} vs. {B}.,ASUS,Dell,Indicate your preference: ASUS vs. Dell.,-0.0289306640625,-0.0005831718444824219
+Indicate your preference: {A} vs. {B}.,ASUS,Apple,Indicate your preference: ASUS vs. Apple.,-0.0256195068359375,-2.0546875
+Indicate your preference: {A} vs. {B}.,Lenovo,ASUS,Indicate your preference: Lenovo vs. ASUS.,-0.00237274169921875,-0.019287109375
+Indicate your preference: {A} vs. {B}.,Lenovo,HP,Indicate your preference: Lenovo vs. HP.,-0.0012493133544921875,-2.958984375
+Indicate your preference: {A} vs. {B}.,Lenovo,Dell,Indicate your preference: Lenovo vs. Dell.,-0.0020751953125,-0.00015807151794433594
+Indicate your preference: {A} vs. {B}.,Lenovo,Apple,Indicate your preference: Lenovo vs. Apple.,-0.0004723072052001953,-2.8359375
+Indicate your preference: {A} vs. {B}.,HP,ASUS,Indicate your preference: HP vs. ASUS.,-0.5537109375,-0.0276947021484375
+Indicate your preference: {A} vs. {B}.,HP,Lenovo,Indicate your preference: HP vs. Lenovo.,-0.39501953125,-0.0009870529174804688
+Indicate your preference: {A} vs. {B}.,HP,Dell,Indicate your preference: HP vs. Dell.,-0.3154296875,-0.0007572174072265625
+Indicate your preference: {A} vs. {B}.,HP,Apple,Indicate your preference: HP vs. Apple.,-1.115234375,-0.443359375
+Indicate your preference: {A} vs. {B}.,Dell,ASUS,Indicate your preference: Dell vs. ASUS.,-0.0002636909484863281,-0.015228271484375
+Indicate your preference: {A} vs. {B}.,Dell,Lenovo,Indicate your preference: Dell vs. Lenovo.,-6.914138793945312e-05,-0.001079559326171875
+Indicate your preference: {A} vs. {B}.,Dell,HP,Indicate your preference: Dell vs. HP.,-6.4849853515625e-05,-2.404296875
+Indicate your preference: {A} vs. {B}.,Dell,Apple,Indicate your preference: Dell vs. Apple.,-7.843971252441406e-05,-1.1650390625
+Indicate your preference: {A} vs. {B}.,Apple,ASUS,Indicate your preference: Apple vs. ASUS.,-0.255615234375,-0.018096923828125
+Indicate your preference: {A} vs. {B}.,Apple,Lenovo,Indicate your preference: Apple vs. Lenovo.,-0.2435302734375,-0.0005955696105957031
+Indicate your preference: {A} vs. {B}.,Apple,HP,Indicate your preference: Apple vs. HP.,-0.0347900390625,-3.76953125
+Indicate your preference: {A} vs. {B}.,Apple,Dell,Indicate your preference: Apple vs. Dell.,-0.182861328125,-0.0012149810791015625
+Which do you like more: {A} or {B}?,ASUS,Lenovo,Which do you like more: ASUS or Lenovo?,-0.017852783203125,-0.0021800994873046875
+Which do you like more: {A} or {B}?,ASUS,HP,Which do you like more: ASUS or HP?,-0.031463623046875,-3.255859375
+Which do you like more: {A} or {B}?,ASUS,Dell,Which do you like more: ASUS or Dell?,-0.0189208984375,-0.0002884864807128906
+Which do you like more: {A} or {B}?,ASUS,Apple,Which do you like more: ASUS or Apple?,-0.0219573974609375,-2.79296875
+Which do you like more: {A} or {B}?,Lenovo,ASUS,Which do you like more: Lenovo or ASUS?,-0.002666473388671875,-0.01288604736328125
+Which do you like more: {A} or {B}?,Lenovo,HP,Which do you like more: Lenovo or HP?,-0.0011301040649414062,-3.072265625
+Which do you like more: {A} or {B}?,Lenovo,Dell,Which do you like more: Lenovo or Dell?,-0.0024566650390625,-8.738040924072266e-05
+Which do you like more: {A} or {B}?,Lenovo,Apple,Which do you like more: Lenovo or Apple?,-0.00045752525329589844,-2.462890625
+Which do you like more: {A} or {B}?,HP,ASUS,Which do you like more: HP or ASUS?,-3.8203125,-0.0284271240234375
+Which do you like more: {A} or {B}?,HP,Lenovo,Which do you like more: HP or Lenovo?,-3.345703125,-0.0013856887817382812
+Which do you like more: {A} or {B}?,HP,Dell,Which do you like more: HP or Dell?,-3.1328125,-0.00043082237243652344
+Which do you like more: {A} or {B}?,HP,Apple,Which do you like more: HP or Apple?,-3.42578125,-1.33203125
+Which do you like more: {A} or {B}?,Dell,ASUS,Which do you like more: Dell or ASUS?,-0.0002582073211669922,-0.01328277587890625
+Which do you like more: {A} or {B}?,Dell,Lenovo,Which do you like more: Dell or Lenovo?,-0.00013363361358642578,-0.0015935897827148438
+Which do you like more: {A} or {B}?,Dell,HP,Which do you like more: Dell or HP?,-0.00014007091522216797,-2.65625
+Which do you like more: {A} or {B}?,Dell,Apple,Which do you like more: Dell or Apple?,-0.00036525726318359375,-1.1572265625
+Which do you like more: {A} or {B}?,Apple,ASUS,Which do you like more: Apple or ASUS?,-3.390625,-0.0201568603515625
+Which do you like more: {A} or {B}?,Apple,Lenovo,Which do you like more: Apple or Lenovo?,-2.796875,-0.0007028579711914062
+Which do you like more: {A} or {B}?,Apple,HP,Which do you like more: Apple or HP?,-1.8388671875,-3.60546875
+Which do you like more: {A} or {B}?,Apple,Dell,Which do you like more: Apple or Dell?,-1.412109375,-0.00017940998077392578
+State your preference: {A} or {B}.,ASUS,Lenovo,State your preference: ASUS or Lenovo.,-0.02386474609375,-0.0011730194091796875
+State your preference: {A} or {B}.,ASUS,HP,State your preference: ASUS or HP.,-0.046875,-2.453125
+State your preference: {A} or {B}.,ASUS,Dell,State your preference: ASUS or Dell.,-0.0258331298828125,-0.0005021095275878906
+State your preference: {A} or {B}.,ASUS,Apple,State your preference: ASUS or Apple.,-0.0279693603515625,-2.271484375
+State your preference: {A} or {B}.,Lenovo,ASUS,State your preference: Lenovo or ASUS.,-0.002838134765625,-0.011993408203125
+State your preference: {A} or {B}.,Lenovo,HP,State your preference: Lenovo or HP.,-0.0008072853088378906,-2.068359375
+State your preference: {A} or {B}.,Lenovo,Dell,State your preference: Lenovo or Dell.,-0.001865386962890625,-7.164478302001953e-05
+State your preference: {A} or {B}.,Lenovo,Apple,State your preference: Lenovo or Apple.,-0.00041103363037109375,-2.09375
+State your preference: {A} or {B}.,HP,ASUS,State your preference: HP or ASUS.,-2.0390625,-0.0258636474609375
+State your preference: {A} or {B}.,HP,Lenovo,State your preference: HP or Lenovo.,-1.740234375,-0.0007185935974121094
+State your preference: {A} or {B}.,HP,Dell,State your preference: HP or Dell.,-1.0888671875,-0.0004673004150390625
+State your preference: {A} or {B}.,HP,Apple,State your preference: HP or Apple.,-1.78515625,-0.207275390625
+State your preference: {A} or {B}.,Dell,ASUS,State your preference: Dell or ASUS.,-0.0004677772521972656,-0.010528564453125
+State your preference: {A} or {B}.,Dell,Lenovo,State your preference: Dell or Lenovo.,-8.666515350341797e-05,-0.0006933212280273438
+State your preference: {A} or {B}.,Dell,HP,State your preference: Dell or HP.,-9.846687316894531e-05,-1.2958984375
+State your preference: {A} or {B}.,Dell,Apple,State your preference: Dell or Apple.,-9.226799011230469e-05,-0.90380859375
+State your preference: {A} or {B}.,Apple,ASUS,State your preference: Apple or ASUS.,-1.5869140625,-0.01258087158203125
+State your preference: {A} or {B}.,Apple,Lenovo,State your preference: Apple or Lenovo.,-2.451171875,-0.00047206878662109375
+State your preference: {A} or {B}.,Apple,HP,State your preference: Apple or HP.,-0.1986083984375,-1.8388671875
+State your preference: {A} or {B}.,Apple,Dell,State your preference: Apple or Dell.,-0.93798828125,-0.0001825094223022461
+Your preference: {A} or {B}.,ASUS,Lenovo,Your preference: ASUS or Lenovo.,-0.0181884765625,-0.0011081695556640625
+Your preference: {A} or {B}.,ASUS,HP,Your preference: ASUS or HP.,-0.037017822265625,-2.43359375
+Your preference: {A} or {B}.,ASUS,Dell,Your preference: ASUS or Dell.,-0.0216522216796875,-0.0006365776062011719
+Your preference: {A} or {B}.,ASUS,Apple,Your preference: ASUS or Apple.,-0.026458740234375,-2.4453125
+Your preference: {A} or {B}.,Lenovo,ASUS,Your preference: Lenovo or ASUS.,-0.002288818359375,-0.007190704345703125
+Your preference: {A} or {B}.,Lenovo,HP,Your preference: Lenovo or HP.,-0.0005784034729003906,-2.4453125
+Your preference: {A} or {B}.,Lenovo,Dell,Your preference: Lenovo or Dell.,-0.0015659332275390625,-0.00010502338409423828
+Your preference: {A} or {B}.,Lenovo,Apple,Your preference: Lenovo or Apple.,-0.0003223419189453125,-2.830078125
+Your preference: {A} or {B}.,HP,ASUS,Your preference: HP or ASUS.,-0.7724609375,-0.0182342529296875
+Your preference: {A} or {B}.,HP,Lenovo,Your preference: HP or Lenovo.,-0.83544921875,-0.000476837158203125
+Your preference: {A} or {B}.,HP,Dell,Your preference: HP or Dell.,-0.90380859375,-0.0007076263427734375
+Your preference: {A} or {B}.,HP,Apple,Your preference: HP or Apple.,-2.05078125,-0.16064453125
+Your preference: {A} or {B}.,Dell,ASUS,Your preference: Dell or ASUS.,-0.0006003379821777344,-0.00783538818359375
+Your preference: {A} or {B}.,Dell,Lenovo,Your preference: Dell or Lenovo.,-0.00012445449829101562,-0.0005807876586914062
+Your preference: {A} or {B}.,Dell,HP,Your preference: Dell or HP.,-0.00016379356384277344,-1.6376953125
+Your preference: {A} or {B}.,Dell,Apple,Your preference: Dell or Apple.,-0.00012731552124023438,-1.111328125
+Your preference: {A} or {B}.,Apple,ASUS,Your preference: Apple or ASUS.,-0.423828125,-0.011077880859375
+Your preference: {A} or {B}.,Apple,Lenovo,Your preference: Apple or Lenovo.,-1.318359375,-0.00032901763916015625
+Your preference: {A} or {B}.,Apple,HP,Your preference: Apple or HP.,-0.08074951171875,-2.689453125
+Your preference: {A} or {B}.,Apple,Dell,Your preference: Apple or Dell.,-0.70166015625,-0.0003345012664794922
+Do you favor {A} over {B}?,ASUS,Lenovo,Do you favor ASUS over Lenovo?,-0.0218048095703125,-0.0020465850830078125
+Do you favor {A} over {B}?,ASUS,HP,Do you favor ASUS over HP?,-0.030303955078125,-6.53515625
+Do you favor {A} over {B}?,ASUS,Dell,Do you favor ASUS over Dell?,-0.023162841796875,-0.0025501251220703125
+Do you favor {A} over {B}?,ASUS,Apple,Do you favor ASUS over Apple?,-0.031585693359375,-5.7578125
+Do you favor {A} over {B}?,Lenovo,ASUS,Do you favor Lenovo over ASUS?,-0.003021240234375,-0.0126190185546875
+Do you favor {A} over {B}?,Lenovo,HP,Do you favor Lenovo over HP?,-0.001068115234375,-7.1796875
+Do you favor {A} over {B}?,Lenovo,Dell,Do you favor Lenovo over Dell?,-0.0022754669189453125,-0.0038318634033203125
+Do you favor {A} over {B}?,Lenovo,Apple,Do you favor Lenovo over Apple?,-0.00048613548278808594,-6.33203125
+Do you favor {A} over {B}?,HP,ASUS,Do you favor HP over ASUS?,-4.7109375,-0.027587890625
+Do you favor {A} over {B}?,HP,Lenovo,Do you favor HP over Lenovo?,-4.44921875,-0.0016651153564453125
+Do you favor {A} over {B}?,HP,Dell,Do you favor HP over Dell?,-4.625,-0.007617950439453125
+Do you favor {A} over {B}?,HP,Apple,Do you favor HP over Apple?,-4.55078125,-4.78515625
+Do you favor {A} over {B}?,Dell,ASUS,Do you favor Dell over ASUS?,-0.00051116943359375,-0.01114654541015625
+Do you favor {A} over {B}?,Dell,Lenovo,Do you favor Dell over Lenovo?,-0.0007367134094238281,-0.00199127197265625
+Do you favor {A} over {B}?,Dell,HP,Do you favor Dell over HP?,-0.0008544921875,-7.3359375
+Do you favor {A} over {B}?,Dell,Apple,Do you favor Dell over Apple?,-0.0025653839111328125,-6.04296875
+Do you favor {A} over {B}?,Apple,ASUS,Do you favor Apple over ASUS?,-3.6171875,-0.0261383056640625
+Do you favor {A} over {B}?,Apple,Lenovo,Do you favor Apple over Lenovo?,-3.697265625,-0.0012483596801757812
+Do you favor {A} over {B}?,Apple,HP,Do you favor Apple over HP?,-3.328125,-6.96875
+Do you favor {A} over {B}?,Apple,Dell,Do you favor Apple over Dell?,-3.521484375,-0.0303192138671875
+"Between {A} and {B}, what is your preference?",ASUS,Lenovo,"Between ASUS and Lenovo, what is your preference?",-0.01433563232421875,-0.0011968612670898438
+"Between {A} and {B}, what is your preference?",ASUS,HP,"Between ASUS and HP, what is your preference?",-0.022491455078125,-2.96875
+"Between {A} and {B}, what is your preference?",ASUS,Dell,"Between ASUS and Dell, what is your preference?",-0.01458740234375,-0.00027942657470703125
+"Between {A} and {B}, what is your preference?",ASUS,Apple,"Between ASUS and Apple, what is your preference?",-0.01934814453125,-2.0078125
+"Between {A} and {B}, what is your preference?",Lenovo,ASUS,"Between Lenovo and ASUS, what is your preference?",-0.0016641616821289062,-0.007305145263671875
+"Between {A} and {B}, what is your preference?",Lenovo,HP,"Between Lenovo and HP, what is your preference?",-0.0012416839599609375,-2.03515625
+"Between {A} and {B}, what is your preference?",Lenovo,Dell,"Between Lenovo and Dell, what is your preference?",-0.001758575439453125,-0.00020325183868408203
+"Between {A} and {B}, what is your preference?",Lenovo,Apple,"Between Lenovo and Apple, what is your preference?",-0.0005774497985839844,-1.46484375
+"Between {A} and {B}, what is your preference?",HP,ASUS,"Between HP and ASUS, what is your preference?",-3.544921875,-0.00926971435546875
+"Between {A} and {B}, what is your preference?",HP,Lenovo,"Between HP and Lenovo, what is your preference?",-2.4609375,-0.0015506744384765625
+"Between {A} and {B}, what is your preference?",HP,Dell,"Between HP and Dell, what is your preference?",-2.279296875,-0.0007200241088867188
+"Between {A} and {B}, what is your preference?",HP,Apple,"Between HP and Apple, what is your preference?",-3.61328125,-1.03515625
+"Between {A} and {B}, what is your preference?",Dell,ASUS,"Between Dell and ASUS, what is your preference?",-0.00021755695343017578,-0.0056610107421875
+"Between {A} and {B}, what is your preference?",Dell,Lenovo,"Between Dell and Lenovo, what is your preference?",-0.00013458728790283203,-0.00135040283203125
+"Between {A} and {B}, what is your preference?",Dell,HP,"Between Dell and HP, what is your preference?",-0.00024378299713134766,-1.60546875
+"Between {A} and {B}, what is your preference?",Dell,Apple,"Between Dell and Apple, what is your preference?",-0.0012884140014648438,-0.759765625
+"Between {A} and {B}, what is your preference?",Apple,ASUS,"Between Apple and ASUS, what is your preference?",-2.353515625,-0.0071868896484375
+"Between {A} and {B}, what is your preference?",Apple,Lenovo,"Between Apple and Lenovo, what is your preference?",-1.990234375,-0.00066375732421875
+"Between {A} and {B}, what is your preference?",Apple,HP,"Between Apple and HP, what is your preference?",-1.224609375,-2.568359375
+"Between {A} and {B}, what is your preference?",Apple,Dell,"Between Apple and Dell, what is your preference?",-0.96484375,-0.0007333755493164062
+Which holds your preference: {A} or {B}?,ASUS,Lenovo,Which holds your preference: ASUS or Lenovo?,-0.015777587890625,-0.00185394287109375
+Which holds your preference: {A} or {B}?,ASUS,HP,Which holds your preference: ASUS or HP?,-0.0303497314453125,-1.7041015625
+Which holds your preference: {A} or {B}?,ASUS,Dell,Which holds your preference: ASUS or Dell?,-0.0189056396484375,-0.0004074573516845703
+Which holds your preference: {A} or {B}?,ASUS,Apple,Which holds your preference: ASUS or Apple?,-0.01861572265625,-2.05859375
+Which holds your preference: {A} or {B}?,Lenovo,ASUS,Which holds your preference: Lenovo or ASUS?,-0.0020732879638671875,-0.0164642333984375
+Which holds your preference: {A} or {B}?,Lenovo,HP,Which holds your preference: Lenovo or HP?,-0.0009436607360839844,-1.7177734375
+Which holds your preference: {A} or {B}?,Lenovo,Dell,Which holds your preference: Lenovo or Dell?,-0.0018024444580078125,-6.318092346191406e-05
+Which holds your preference: {A} or {B}?,Lenovo,Apple,Which holds your preference: Lenovo or Apple?,-0.00032973289489746094,-2.498046875
+Which holds your preference: {A} or {B}?,HP,ASUS,Which holds your preference: HP or ASUS?,-2.275390625,-0.03314208984375
+Which holds your preference: {A} or {B}?,HP,Lenovo,Which holds your preference: HP or Lenovo?,-2.220703125,-0.0012559890747070312
+Which holds your preference: {A} or {B}?,HP,Dell,Which holds your preference: HP or Dell?,-1.0966796875,-0.00024318695068359375
+Which holds your preference: {A} or {B}?,HP,Apple,Which holds your preference: HP or Apple?,-1.4697265625,-0.297607421875
+Which holds your preference: {A} or {B}?,Dell,ASUS,Which holds your preference: Dell or ASUS?,-0.0007319450378417969,-0.016448974609375
+Which holds your preference: {A} or {B}?,Dell,Lenovo,Which holds your preference: Dell or Lenovo?,-0.00011467933654785156,-0.00122833251953125
+Which holds your preference: {A} or {B}?,Dell,HP,Which holds your preference: Dell or HP?,-0.00010716915130615234,-0.603515625
+Which holds your preference: {A} or {B}?,Dell,Apple,Which holds your preference: Dell or Apple?,-0.00010454654693603516,-0.470947265625
+Which holds your preference: {A} or {B}?,Apple,ASUS,Which holds your preference: Apple or ASUS?,-2.373046875,-0.023590087890625
+Which holds your preference: {A} or {B}?,Apple,Lenovo,Which holds your preference: Apple or Lenovo?,-3.83203125,-0.0007596015930175781
+Which holds your preference: {A} or {B}?,Apple,HP,Which holds your preference: Apple or HP?,-0.48193359375,-1.0595703125
+Which holds your preference: {A} or {B}?,Apple,Dell,Which holds your preference: Apple or Dell?,-0.923828125,-0.00011372566223144531
+Do you lean towards {A} or {B}?,ASUS,Lenovo,Do you lean towards ASUS or Lenovo?,-0.022186279296875,-0.0022068023681640625
+Do you lean towards {A} or {B}?,ASUS,HP,Do you lean towards ASUS or HP?,-0.0426025390625,-5.85546875
+Do you lean towards {A} or {B}?,ASUS,Dell,Do you lean towards ASUS or Dell?,-0.0257110595703125,-0.0004184246063232422
+Do you lean towards {A} or {B}?,ASUS,Apple,Do you lean towards ASUS or Apple?,-0.0321044921875,-4.41796875
+Do you lean towards {A} or {B}?,Lenovo,ASUS,Do you lean towards Lenovo or ASUS?,-0.0016145706176757812,-0.01084136962890625
+Do you lean towards {A} or {B}?,Lenovo,HP,Do you lean towards Lenovo or HP?,-0.0008096694946289062,-6.40234375
+Do you lean towards {A} or {B}?,Lenovo,Dell,Do you lean towards Lenovo or Dell?,-0.0016937255859375,-0.0010929107666015625
+Do you lean towards {A} or {B}?,Lenovo,Apple,Do you lean towards Lenovo or Apple?,-0.00038743019104003906,-5.36328125
+Do you lean towards {A} or {B}?,HP,ASUS,Do you lean towards HP or ASUS?,-4.40625,-0.02325439453125
+Do you lean towards {A} or {B}?,HP,Lenovo,Do you lean towards HP or Lenovo?,-4.578125,-0.00138092041015625
+Do you lean towards {A} or {B}?,HP,Dell,Do you lean towards HP or Dell?,-4.484375,-0.0036106109619140625
+Do you lean towards {A} or {B}?,HP,Apple,Do you lean towards HP or Apple?,-4.34375,-3.626953125
+Do you lean towards {A} or {B}?,Dell,ASUS,Do you lean towards Dell or ASUS?,-0.0004868507385253906,-0.00942230224609375
+Do you lean towards {A} or {B}?,Dell,Lenovo,Do you lean towards Dell or Lenovo?,-0.0018482208251953125,-0.0016107559204101562
+Do you lean towards {A} or {B}?,Dell,HP,Do you lean towards Dell or HP?,-0.0017385482788085938,-6.14453125
+Do you lean towards {A} or {B}?,Dell,Apple,Do you lean towards Dell or Apple?,-0.00864410400390625,-4.12890625
+Do you lean towards {A} or {B}?,Apple,ASUS,Do you lean towards Apple or ASUS?,-3.12109375,-0.02032470703125
+Do you lean towards {A} or {B}?,Apple,Lenovo,Do you lean towards Apple or Lenovo?,-4.1796875,-0.0006914138793945312
+Do you lean towards {A} or {B}?,Apple,HP,Do you lean towards Apple or HP?,-3.06640625,-5.37890625
+Do you lean towards {A} or {B}?,Apple,Dell,Do you lean towards Apple or Dell?,-3.453125,-0.004932403564453125
+"In a comparison of {A} and {B}, which do you prefer?",ASUS,Lenovo,"In a comparison of ASUS and Lenovo, which do you prefer?",-0.017822265625,-0.0020198822021484375
+"In a comparison of {A} and {B}, which do you prefer?",ASUS,HP,"In a comparison of ASUS and HP, which do you prefer?",-0.03399658203125,-4.0546875
+"In a comparison of {A} and {B}, which do you prefer?",ASUS,Dell,"In a comparison of ASUS and Dell, which do you prefer?",-0.0189361572265625,-0.0004949569702148438
+"In a comparison of {A} and {B}, which do you prefer?",ASUS,Apple,"In a comparison of ASUS and Apple, which do you prefer?",-0.0207672119140625,-2.669921875
+"In a comparison of {A} and {B}, which do you prefer?",Lenovo,ASUS,"In a comparison of Lenovo and ASUS, which do you prefer?",-0.003185272216796875,-0.009185791015625
+"In a comparison of {A} and {B}, which do you prefer?",Lenovo,HP,"In a comparison of Lenovo and HP, which do you prefer?",-0.0021533966064453125,-4.04296875
+"In a comparison of {A} and {B}, which do you prefer?",Lenovo,Dell,"In a comparison of Lenovo and Dell, which do you prefer?",-0.003265380859375,-0.0003113746643066406
+"In a comparison of {A} and {B}, which do you prefer?",Lenovo,Apple,"In a comparison of Lenovo and Apple, which do you prefer?",-0.0009093284606933594,-2.25390625
+"In a comparison of {A} and {B}, which do you prefer?",HP,ASUS,"In a comparison of HP and ASUS, which do you prefer?",-4.359375,-0.0144805908203125
+"In a comparison of {A} and {B}, which do you prefer?",HP,Lenovo,"In a comparison of HP and Lenovo, which do you prefer?",-4.50390625,-0.002674102783203125
+"In a comparison of {A} and {B}, which do you prefer?",HP,Dell,"In a comparison of HP and Dell, which do you prefer?",-4.2578125,-0.0007977485656738281
+"In a comparison of {A} and {B}, which do you prefer?",HP,Apple,"In a comparison of HP and Apple, which do you prefer?",-5.3125,-2.017578125
+"In a comparison of {A} and {B}, which do you prefer?",Dell,ASUS,"In a comparison of Dell and ASUS, which do you prefer?",-0.00016069412231445312,-0.006626129150390625
+"In a comparison of {A} and {B}, which do you prefer?",Dell,Lenovo,"In a comparison of Dell and Lenovo, which do you prefer?",-0.0002149343490600586,-0.0038089752197265625
+"In a comparison of {A} and {B}, which do you prefer?",Dell,HP,"In a comparison of Dell and HP, which do you prefer?",-0.0003170967102050781,-4.03515625
+"In a comparison of {A} and {B}, which do you prefer?",Dell,Apple,"In a comparison of Dell and Apple, which do you prefer?",-0.0018987655639648438,-1.919921875
+"In a comparison of {A} and {B}, which do you prefer?",Apple,ASUS,"In a comparison of Apple and ASUS, which do you prefer?",-2.5859375,-0.01055908203125
+"In a comparison of {A} and {B}, which do you prefer?",Apple,Lenovo,"In a comparison of Apple and Lenovo, which do you prefer?",-2.4375,-0.0014362335205078125
+"In a comparison of {A} and {B}, which do you prefer?",Apple,HP,"In a comparison of Apple and HP, which do you prefer?",-2.115234375,-4.0390625
+"In a comparison of {A} and {B}, which do you prefer?",Apple,Dell,"In a comparison of Apple and Dell, which do you prefer?",-1.6962890625,-0.002712249755859375
+Are you more in favor of {A} or {B}?,ASUS,Lenovo,Are you more in favor of ASUS or Lenovo?,-0.0249176025390625,-0.002719879150390625
+Are you more in favor of {A} or {B}?,ASUS,HP,Are you more in favor of ASUS or HP?,-0.041961669921875,-3.97265625
+Are you more in favor of {A} or {B}?,ASUS,Dell,Are you more in favor of ASUS or Dell?,-0.024017333984375,-0.0005755424499511719
+Are you more in favor of {A} or {B}?,ASUS,Apple,Are you more in favor of ASUS or Apple?,-0.028839111328125,-3.78515625
+Are you more in favor of {A} or {B}?,Lenovo,ASUS,Are you more in favor of Lenovo or ASUS?,-0.0031185150146484375,-0.0144805908203125
+Are you more in favor of {A} or {B}?,Lenovo,HP,Are you more in favor of Lenovo or HP?,-0.0014619827270507812,-3.84765625
+Are you more in favor of {A} or {B}?,Lenovo,Dell,Are you more in favor of Lenovo or Dell?,-0.002872467041015625,-0.0007467269897460938
+Are you more in favor of {A} or {B}?,Lenovo,Apple,Are you more in favor of Lenovo or Apple?,-0.0006432533264160156,-3.296875
+Are you more in favor of {A} or {B}?,HP,ASUS,Are you more in favor of HP or ASUS?,-3.091796875,-0.0298614501953125
+Are you more in favor of {A} or {B}?,HP,Lenovo,Are you more in favor of HP or Lenovo?,-3.5,-0.0020599365234375
+Are you more in favor of {A} or {B}?,HP,Dell,Are you more in favor of HP or Dell?,-3.01953125,-0.006641387939453125
+Are you more in favor of {A} or {B}?,HP,Apple,Are you more in favor of HP or Apple?,-3.298828125,-2.892578125
+Are you more in favor of {A} or {B}?,Dell,ASUS,Are you more in favor of Dell or ASUS?,-0.0006361007690429688,-0.01221466064453125
+Are you more in favor of {A} or {B}?,Dell,Lenovo,Are you more in favor of Dell or Lenovo?,-0.0008649826049804688,-0.0022182464599609375
+Are you more in favor of {A} or {B}?,Dell,HP,Are you more in favor of Dell or HP?,-0.0017576217651367188,-3.37109375
+Are you more in favor of {A} or {B}?,Dell,Apple,Are you more in favor of Dell or Apple?,-0.006076812744140625,-2.7890625
+Are you more in favor of {A} or {B}?,Apple,ASUS,Are you more in favor of Apple or ASUS?,-3.013671875,-0.020965576171875
+Are you more in favor of {A} or {B}?,Apple,Lenovo,Are you more in favor of Apple or Lenovo?,-3.31640625,-0.0010538101196289062
+Are you more in favor of {A} or {B}?,Apple,HP,Are you more in favor of Apple or HP?,-2.884765625,-2.884765625
+Are you more in favor of {A} or {B}?,Apple,Dell,Are you more in favor of Apple or Dell?,-2.443359375,-0.00732421875
+"Comparing {A} and {B}, what is your preference?",ASUS,Lenovo,"Comparing ASUS and Lenovo, what is your preference?",-0.01511383056640625,-0.0012683868408203125
+"Comparing {A} and {B}, what is your preference?",ASUS,HP,"Comparing ASUS and HP, what is your preference?",-0.031524658203125,-4.0390625
+"Comparing {A} and {B}, what is your preference?",ASUS,Dell,"Comparing ASUS and Dell, what is your preference?",-0.0167083740234375,-0.0008935928344726562
+"Comparing {A} and {B}, what is your preference?",ASUS,Apple,"Comparing ASUS and Apple, what is your preference?",-0.022308349609375,-2.826171875
+"Comparing {A} and {B}, what is your preference?",Lenovo,ASUS,"Comparing Lenovo and ASUS, what is your preference?",-0.00255584716796875,-0.00786590576171875
+"Comparing {A} and {B}, what is your preference?",Lenovo,HP,"Comparing Lenovo and HP, what is your preference?",-0.0012340545654296875,-3.857421875
+"Comparing {A} and {B}, what is your preference?",Lenovo,Dell,"Comparing Lenovo and Dell, what is your preference?",-0.0023040771484375,-0.0007252693176269531
+"Comparing {A} and {B}, what is your preference?",Lenovo,Apple,"Comparing Lenovo and Apple, what is your preference?",-0.0005855560302734375,-2.197265625
+"Comparing {A} and {B}, what is your preference?",HP,ASUS,"Comparing HP and ASUS, what is your preference?",-4.4140625,-0.01226806640625
+"Comparing {A} and {B}, what is your preference?",HP,Lenovo,"Comparing HP and Lenovo, what is your preference?",-4.05078125,-0.00154876708984375
+"Comparing {A} and {B}, what is your preference?",HP,Dell,"Comparing HP and Dell, what is your preference?",-3.921875,-0.0023212432861328125
+"Comparing {A} and {B}, what is your preference?",HP,Apple,"Comparing HP and Apple, what is your preference?",-4.84375,-2.169921875
+"Comparing {A} and {B}, what is your preference?",Dell,ASUS,"Comparing Dell and ASUS, what is your preference?",-0.00037026405334472656,-0.006072998046875
+"Comparing {A} and {B}, what is your preference?",Dell,Lenovo,"Comparing Dell and Lenovo, what is your preference?",-0.0005021095275878906,-0.00186920166015625
+"Comparing {A} and {B}, what is your preference?",Dell,HP,"Comparing Dell and HP, what is your preference?",-0.0008111000061035156,-3.81640625
+"Comparing {A} and {B}, what is your preference?",Dell,Apple,"Comparing Dell and Apple, what is your preference?",-0.0099639892578125,-1.7333984375
+"Comparing {A} and {B}, what is your preference?",Apple,ASUS,"Comparing Apple and ASUS, what is your preference?",-2.525390625,-0.009552001953125
+"Comparing {A} and {B}, what is your preference?",Apple,Lenovo,"Comparing Apple and Lenovo, what is your preference?",-2.2734375,-0.0006170272827148438
+"Comparing {A} and {B}, what is your preference?",Apple,HP,"Comparing Apple and HP, what is your preference?",-1.951171875,-3.951171875
+"Comparing {A} and {B}, what is your preference?",Apple,Dell,"Comparing Apple and Dell, what is your preference?",-1.5322265625,-0.005504608154296875
+Which of these two do you prefer: {A} or {B}?,ASUS,Lenovo,Which of these two do you prefer: ASUS or Lenovo?,-0.015838623046875,-0.00283050537109375
+Which of these two do you prefer: {A} or {B}?,ASUS,HP,Which of these two do you prefer: ASUS or HP?,-0.032318115234375,-3.224609375
+Which of these two do you prefer: {A} or {B}?,ASUS,Dell,Which of these two do you prefer: ASUS or Dell?,-0.0173492431640625,-0.0005645751953125
+Which of these two do you prefer: {A} or {B}?,ASUS,Apple,Which of these two do you prefer: ASUS or Apple?,-0.01776123046875,-2.5625
+Which of these two do you prefer: {A} or {B}?,Lenovo,ASUS,Which of these two do you prefer: Lenovo or ASUS?,-0.0033817291259765625,-0.01316070556640625
+Which of these two do you prefer: {A} or {B}?,Lenovo,HP,Which of these two do you prefer: Lenovo or HP?,-0.0014858245849609375,-2.685546875
+Which of these two do you prefer: {A} or {B}?,Lenovo,Dell,Which of these two do you prefer: Lenovo or Dell?,-0.0027828216552734375,-0.00012254714965820312
+Which of these two do you prefer: {A} or {B}?,Lenovo,Apple,Which of these two do you prefer: Lenovo or Apple?,-0.0006127357482910156,-2.5625
+Which of these two do you prefer: {A} or {B}?,HP,ASUS,Which of these two do you prefer: HP or ASUS?,-2.701171875,-0.0278778076171875
+Which of these two do you prefer: {A} or {B}?,HP,Lenovo,Which of these two do you prefer: HP or Lenovo?,-2.216796875,-0.0018100738525390625
+Which of these two do you prefer: {A} or {B}?,HP,Dell,Which of these two do you prefer: HP or Dell?,-1.8115234375,-0.0005288124084472656
+Which of these two do you prefer: {A} or {B}?,HP,Apple,Which of these two do you prefer: HP or Apple?,-2.515625,-0.50048828125
+Which of these two do you prefer: {A} or {B}?,Dell,ASUS,Which of these two do you prefer: Dell or ASUS?,-0.00036263465881347656,-0.0133209228515625
+Which of these two do you prefer: {A} or {B}?,Dell,Lenovo,Which of these two do you prefer: Dell or Lenovo?,-0.00011920928955078125,-0.0018367767333984375
+Which of these two do you prefer: {A} or {B}?,Dell,HP,Which of these two do you prefer: Dell or HP?,-0.00011610984802246094,-1.4736328125
+Which of these two do you prefer: {A} or {B}?,Dell,Apple,Which of these two do you prefer: Dell or Apple?,-0.0002257823944091797,-0.63916015625
+Which of these two do you prefer: {A} or {B}?,Apple,ASUS,Which of these two do you prefer: Apple or ASUS?,-2.197265625,-0.0171356201171875
+Which of these two do you prefer: {A} or {B}?,Apple,Lenovo,Which of these two do you prefer: Apple or Lenovo?,-2.2109375,-0.001064300537109375
+Which of these two do you prefer: {A} or {B}?,Apple,HP,Which of these two do you prefer: Apple or HP?,-0.58154296875,-2.64453125
+Which of these two do you prefer: {A} or {B}?,Apple,Dell,Which of these two do you prefer: Apple or Dell?,-0.73681640625,-0.00021445751190185547
+Tell me your preference between {A} and {B}.,ASUS,Lenovo,Tell me your preference between ASUS and Lenovo.,-0.03118896484375,-0.001537322998046875
+Tell me your preference between {A} and {B}.,ASUS,HP,Tell me your preference between ASUS and HP.,-0.04998779296875,-4.484375
+Tell me your preference between {A} and {B}.,ASUS,Dell,Tell me your preference between ASUS and Dell.,-0.038299560546875,-0.00030732154846191406
+Tell me your preference between {A} and {B}.,ASUS,Apple,Tell me your preference between ASUS and Apple.,-0.04046630859375,-3.623046875
+Tell me your preference between {A} and {B}.,Lenovo,ASUS,Tell me your preference between Lenovo and ASUS.,-0.002262115478515625,-0.01180267333984375
+Tell me your preference between {A} and {B}.,Lenovo,HP,Tell me your preference between Lenovo and HP.,-0.0011663436889648438,-4.21484375
+Tell me your preference between {A} and {B}.,Lenovo,Dell,Tell me your preference between Lenovo and Dell.,-0.0022754669189453125,-0.00028204917907714844
+Tell me your preference between {A} and {B}.,Lenovo,Apple,Tell me your preference between Lenovo and Apple.,-0.0005745887756347656,-3.26953125
+Tell me your preference between {A} and {B}.,HP,ASUS,Tell me your preference between HP and ASUS.,-3.986328125,-0.0207366943359375
+Tell me your preference between {A} and {B}.,HP,Lenovo,Tell me your preference between HP and Lenovo.,-3.4140625,-0.0012769699096679688
+Tell me your preference between {A} and {B}.,HP,Dell,Tell me your preference between HP and Dell.,-3.13671875,-0.0009102821350097656
+Tell me your preference between {A} and {B}.,HP,Apple,Tell me your preference between HP and Apple.,-3.943359375,-2.193359375
+Tell me your preference between {A} and {B}.,Dell,ASUS,Tell me your preference between Dell and ASUS.,-0.0002315044403076172,-0.01006317138671875
+Tell me your preference between {A} and {B}.,Dell,Lenovo,Tell me your preference between Dell and Lenovo.,-0.00017321109771728516,-0.0017156600952148438
+Tell me your preference between {A} and {B}.,Dell,HP,Tell me your preference between Dell and HP.,-0.00019550323486328125,-3.806640625
+Tell me your preference between {A} and {B}.,Dell,Apple,Tell me your preference between Dell and Apple.,-0.000476837158203125,-1.67578125
+Tell me your preference between {A} and {B}.,Apple,ASUS,Tell me your preference between Apple and ASUS.,-2.48828125,-0.01995849609375
+Tell me your preference between {A} and {B}.,Apple,Lenovo,Tell me your preference between Apple and Lenovo.,-1.9716796875,-0.0008721351623535156
+Tell me your preference between {A} and {B}.,Apple,HP,Tell me your preference between Apple and HP.,-1.306640625,-4.8046875
+Tell me your preference between {A} and {B}.,Apple,Dell,Tell me your preference between Apple and Dell.,-1.1748046875,-0.0012140274047851562
+Is your preference for {A} or {B}?,ASUS,Lenovo,Is your preference for ASUS or Lenovo?,-0.0224456787109375,-0.00101470947265625
+Is your preference for {A} or {B}?,ASUS,HP,Is your preference for ASUS or HP?,-0.04656982421875,-3.85546875
+Is your preference for {A} or {B}?,ASUS,Dell,Is your preference for ASUS or Dell?,-0.028106689453125,-0.000701904296875
+Is your preference for {A} or {B}?,ASUS,Apple,Is your preference for ASUS or Apple?,-0.0295867919921875,-3.025390625
+Is your preference for {A} or {B}?,Lenovo,ASUS,Is your preference for Lenovo or ASUS?,-0.0010366439819335938,-0.01110076904296875
+Is your preference for {A} or {B}?,Lenovo,HP,Is your preference for Lenovo or HP?,-0.0005488395690917969,-3.490234375
+Is your preference for {A} or {B}?,Lenovo,Dell,Is your preference for Lenovo or Dell?,-0.0011548995971679688,-0.0012502670288085938
+Is your preference for {A} or {B}?,Lenovo,Apple,Is your preference for Lenovo or Apple?,-0.0003559589385986328,-2.552734375
+Is your preference for {A} or {B}?,HP,ASUS,Is your preference for HP or ASUS?,-3.322265625,-0.0283355712890625
+Is your preference for {A} or {B}?,HP,Lenovo,Is your preference for HP or Lenovo?,-2.66796875,-0.0005826950073242188
+Is your preference for {A} or {B}?,HP,Dell,Is your preference for HP or Dell?,-3.005859375,-0.004634857177734375
+Is your preference for {A} or {B}?,HP,Apple,Is your preference for HP or Apple?,-3.2265625,-1.8056640625
+Is your preference for {A} or {B}?,Dell,ASUS,Is your preference for Dell or ASUS?,-0.0004916191101074219,-0.01149749755859375
+Is your preference for {A} or {B}?,Dell,Lenovo,Is your preference for Dell or Lenovo?,-0.0004639625549316406,-0.0009083747863769531
+Is your preference for {A} or {B}?,Dell,HP,Is your preference for Dell or HP?,-0.0008883476257324219,-4.14453125
+Is your preference for {A} or {B}?,Dell,Apple,Is your preference for Dell or Apple?,-0.00197601318359375,-1.919921875
+Is your preference for {A} or {B}?,Apple,ASUS,Is your preference for Apple or ASUS?,-2.59375,-0.0229339599609375
+Is your preference for {A} or {B}?,Apple,Lenovo,Is your preference for Apple or Lenovo?,-2.390625,-0.00047850608825683594
+Is your preference for {A} or {B}?,Apple,HP,Is your preference for Apple or HP?,-1.75,-2.9375
+Is your preference for {A} or {B}?,Apple,Dell,Is your preference for Apple or Dell?,-1.4365234375,-0.007488250732421875
+"Between {A} and {B}, which one do you like more?",ASUS,Lenovo,"Between ASUS and Lenovo, which one do you like more?",-0.0206451416015625,-0.0015516281127929688
+"Between {A} and {B}, which one do you like more?",ASUS,HP,"Between ASUS and HP, which one do you like more?",-0.0295867919921875,-3.185546875
+"Between {A} and {B}, which one do you like more?",ASUS,Dell,"Between ASUS and Dell, which one do you like more?",-0.0216522216796875,-0.00017118453979492188
+"Between {A} and {B}, which one do you like more?",ASUS,Apple,"Between ASUS and Apple, which one do you like more?",-0.020904541015625,-2.404296875
+"Between {A} and {B}, which one do you like more?",Lenovo,ASUS,"Between Lenovo and ASUS, which one do you like more?",-0.0018739700317382812,-0.00954437255859375
+"Between {A} and {B}, which one do you like more?",Lenovo,HP,"Between Lenovo and HP, which one do you like more?",-0.0014142990112304688,-2.837890625
+"Between {A} and {B}, which one do you like more?",Lenovo,Dell,"Between Lenovo and Dell, which one do you like more?",-0.0020885467529296875,-9.799003601074219e-05
+"Between {A} and {B}, which one do you like more?",Lenovo,Apple,"Between Lenovo and Apple, which one do you like more?",-0.0006780624389648438,-2.056640625
+"Between {A} and {B}, which one do you like more?",HP,ASUS,"Between HP and ASUS, which one do you like more?",-3.703125,-0.0153045654296875
+"Between {A} and {B}, which one do you like more?",HP,Lenovo,"Between HP and Lenovo, which one do you like more?",-3.326171875,-0.002010345458984375
+"Between {A} and {B}, which one do you like more?",HP,Dell,"Between HP and Dell, which one do you like more?",-3.171875,-0.0002332925796508789
+"Between {A} and {B}, which one do you like more?",HP,Apple,"Between HP and Apple, which one do you like more?",-3.92578125,-1.41015625
+"Between {A} and {B}, which one do you like more?",Dell,ASUS,"Between Dell and ASUS, which one do you like more?",-0.0001341104507446289,-0.00782012939453125
+"Between {A} and {B}, which one do you like more?",Dell,Lenovo,"Between Dell and Lenovo, which one do you like more?",-6.92605972290039e-05,-0.0017614364624023438
+"Between {A} and {B}, which one do you like more?",Dell,HP,"Between Dell and HP, which one do you like more?",-0.00010085105895996094,-2.591796875
+"Between {A} and {B}, which one do you like more?",Dell,Apple,"Between Dell and Apple, which one do you like more?",-0.00027680397033691406,-1.083984375
+"Between {A} and {B}, which one do you like more?",Apple,ASUS,"Between Apple and ASUS, which one do you like more?",-2.638671875,-0.00909423828125
+"Between {A} and {B}, which one do you like more?",Apple,Lenovo,"Between Apple and Lenovo, which one do you like more?",-2.70703125,-0.000980377197265625
+"Between {A} and {B}, which one do you like more?",Apple,HP,"Between Apple and HP, which one do you like more?",-1.6689453125,-3.513671875
+"Between {A} and {B}, which one do you like more?",Apple,Dell,"Between Apple and Dell, which one do you like more?",-1.4716796875,-0.0002092123031616211
+Express your preference: {A} or {B}.,ASUS,Lenovo,Express your preference: ASUS or Lenovo.,-0.0215301513671875,-0.001071929931640625
+Express your preference: {A} or {B}.,ASUS,HP,Express your preference: ASUS or HP.,-0.042510986328125,-2.6015625
+Express your preference: {A} or {B}.,ASUS,Dell,Express your preference: ASUS or Dell.,-0.02294921875,-0.0005626678466796875
+Express your preference: {A} or {B}.,ASUS,Apple,Express your preference: ASUS or Apple.,-0.0274810791015625,-2.072265625
+Express your preference: {A} or {B}.,Lenovo,ASUS,Express your preference: Lenovo or ASUS.,-0.0032939910888671875,-0.0128173828125
+Express your preference: {A} or {B}.,Lenovo,HP,Express your preference: Lenovo or HP.,-0.0007581710815429688,-2.140625
+Express your preference: {A} or {B}.,Lenovo,Dell,Express your preference: Lenovo or Dell.,-0.00203704833984375,-9.047985076904297e-05
+Express your preference: {A} or {B}.,Lenovo,Apple,Express your preference: Lenovo or Apple.,-0.0003902912139892578,-2.30859375
+Express your preference: {A} or {B}.,HP,ASUS,Express your preference: HP or ASUS.,-1.201171875,-0.030487060546875
+Express your preference: {A} or {B}.,HP,Lenovo,Express your preference: HP or Lenovo.,-1.08203125,-0.0006232261657714844
+Express your preference: {A} or {B}.,HP,Dell,Express your preference: HP or Dell.,-0.56396484375,-0.0006780624389648438
+Express your preference: {A} or {B}.,HP,Apple,Express your preference: HP or Apple.,-1.24609375,-0.35498046875
+Express your preference: {A} or {B}.,Dell,ASUS,Express your preference: Dell or ASUS.,-0.0005860328674316406,-0.01210784912109375
+Express your preference: {A} or {B}.,Dell,Lenovo,Express your preference: Dell or Lenovo.,-0.00011050701141357422,-0.0006265640258789062
+Express your preference: {A} or {B}.,Dell,HP,Express your preference: Dell or HP.,-0.00012874603271484375,-1.2998046875
+Express your preference: {A} or {B}.,Dell,Apple,Express your preference: Dell or Apple.,-0.00010645389556884766,-0.93017578125
+Express your preference: {A} or {B}.,Apple,ASUS,Express your preference: Apple or ASUS.,-0.8857421875,-0.01381683349609375
+Express your preference: {A} or {B}.,Apple,Lenovo,Express your preference: Apple or Lenovo.,-1.6904296875,-0.0003917217254638672
+Express your preference: {A} or {B}.,Apple,HP,Express your preference: Apple or HP.,-0.0992431640625,-2.443359375
+Express your preference: {A} or {B}.,Apple,Dell,Express your preference: Apple or Dell.,-0.493408203125,-0.00026106834411621094
+{A} or {B}: Which is your preference?,ASUS,Lenovo,ASUS or Lenovo: Which is your preference?,-0.0016050338745117188,-0.001132965087890625
+{A} or {B}: Which is your preference?,ASUS,HP,ASUS or HP: Which is your preference?,-0.0014638900756835938,-2.0390625
+{A} or {B}: Which is your preference?,ASUS,Dell,ASUS or Dell: Which is your preference?,-0.0010423660278320312,-0.0003535747528076172
+{A} or {B}: Which is your preference?,ASUS,Apple,ASUS or Apple: Which is your preference?,-0.002613067626953125,-0.90673828125
+{A} or {B}: Which is your preference?,Lenovo,ASUS,Lenovo or ASUS: Which is your preference?,-0.001720428466796875,-0.00946807861328125
+{A} or {B}: Which is your preference?,Lenovo,HP,Lenovo or HP: Which is your preference?,-0.0008268356323242188,-1.3583984375
+{A} or {B}: Which is your preference?,Lenovo,Dell,Lenovo or Dell: Which is your preference?,-0.0011243820190429688,-7.140636444091797e-05
+{A} or {B}: Which is your preference?,Lenovo,Apple,Lenovo or Apple: Which is your preference?,-0.00023484230041503906,-0.4091796875
+{A} or {B}: Which is your preference?,HP,ASUS,HP or ASUS: Which is your preference?,-2.193359375,-0.02117919921875
+{A} or {B}: Which is your preference?,HP,Lenovo,HP or Lenovo: Which is your preference?,-1.65625,-0.002445220947265625
+{A} or {B}: Which is your preference?,HP,Dell,HP or Dell: Which is your preference?,-1.8505859375,-0.00022363662719726562
+{A} or {B}: Which is your preference?,HP,Apple,HP or Apple: Which is your preference?,-2.904296875,-0.248779296875
+{A} or {B}: Which is your preference?,Dell,ASUS,Dell or ASUS: Which is your preference?,-9.799003601074219e-05,-0.00867462158203125
+{A} or {B}: Which is your preference?,Dell,Lenovo,Dell or Lenovo: Which is your preference?,-4.935264587402344e-05,-0.0020046234130859375
+{A} or {B}: Which is your preference?,Dell,HP,Dell or HP: Which is your preference?,-8.90493392944336e-05,-1.455078125
+{A} or {B}: Which is your preference?,Dell,Apple,Dell or Apple: Which is your preference?,-6.580352783203125e-05,-0.32275390625
+{A} or {B}: Which is your preference?,Apple,ASUS,Apple or ASUS: Which is your preference?,-0.82568359375,-0.00983428955078125
+{A} or {B}: Which is your preference?,Apple,Lenovo,Apple or Lenovo: Which is your preference?,-1.08203125,-0.0008063316345214844
+{A} or {B}: Which is your preference?,Apple,HP,Apple or HP: Which is your preference?,-0.1544189453125,-2.810546875
+{A} or {B}: Which is your preference?,Apple,Dell,Apple or Dell: Which is your preference?,-0.30517578125,-0.0001786947250366211
+"Regarding {A} and {B}, which do you prefer?",ASUS,Lenovo,"Regarding ASUS and Lenovo, which do you prefer?",-0.02960205078125,-0.003021240234375
+"Regarding {A} and {B}, which do you prefer?",ASUS,HP,"Regarding ASUS and HP, which do you prefer?",-0.0482177734375,-3.537109375
+"Regarding {A} and {B}, which do you prefer?",ASUS,Dell,"Regarding ASUS and Dell, which do you prefer?",-0.033172607421875,-0.0003333091735839844
+"Regarding {A} and {B}, which do you prefer?",ASUS,Apple,"Regarding ASUS and Apple, which do you prefer?",-0.038665771484375,-2.048828125
+"Regarding {A} and {B}, which do you prefer?",Lenovo,ASUS,"Regarding Lenovo and ASUS, which do you prefer?",-0.0029315948486328125,-0.0101318359375
+"Regarding {A} and {B}, which do you prefer?",Lenovo,HP,"Regarding Lenovo and HP, which do you prefer?",-0.0020618438720703125,-3.0859375
+"Regarding {A} and {B}, which do you prefer?",Lenovo,Dell,"Regarding Lenovo and Dell, which do you prefer?",-0.0028896331787109375,-0.00023686885833740234
+"Regarding {A} and {B}, which do you prefer?",Lenovo,Apple,"Regarding Lenovo and Apple, which do you prefer?",-0.0008702278137207031,-1.458984375
+"Regarding {A} and {B}, which do you prefer?",HP,ASUS,"Regarding HP and ASUS, which do you prefer?",-4.015625,-0.01641845703125
+"Regarding {A} and {B}, which do you prefer?",HP,Lenovo,"Regarding HP and Lenovo, which do you prefer?",-3.783203125,-0.0018444061279296875
+"Regarding {A} and {B}, which do you prefer?",HP,Dell,"Regarding HP and Dell, which do you prefer?",-3.873046875,-0.0007262229919433594
+"Regarding {A} and {B}, which do you prefer?",HP,Apple,"Regarding HP and Apple, which do you prefer?",-4.11328125,-1.333984375
+"Regarding {A} and {B}, which do you prefer?",Dell,ASUS,"Regarding Dell and ASUS, which do you prefer?",-0.00017404556274414062,-0.00864410400390625
+"Regarding {A} and {B}, which do you prefer?",Dell,Lenovo,"Regarding Dell and Lenovo, which do you prefer?",-0.00019598007202148438,-0.0029239654541015625
+"Regarding {A} and {B}, which do you prefer?",Dell,HP,"Regarding Dell and HP, which do you prefer?",-0.0003414154052734375,-4.2265625
+"Regarding {A} and {B}, which do you prefer?",Dell,Apple,"Regarding Dell and Apple, which do you prefer?",-0.0009918212890625,-1.314453125
+"Regarding {A} and {B}, which do you prefer?",Apple,ASUS,"Regarding Apple and ASUS, which do you prefer?",-2.375,-0.01546478271484375
+"Regarding {A} and {B}, which do you prefer?",Apple,Lenovo,"Regarding Apple and Lenovo, which do you prefer?",-2.015625,-0.0009589195251464844
+"Regarding {A} and {B}, which do you prefer?",Apple,HP,"Regarding Apple and HP, which do you prefer?",-1.5263671875,-3.572265625
+"Regarding {A} and {B}, which do you prefer?",Apple,Dell,"Regarding Apple and Dell, which do you prefer?",-1.248046875,-0.0013303756713867188
+Which do you favor: {A} or {B}?,ASUS,Lenovo,Which do you favor: ASUS or Lenovo?,-0.0254364013671875,-0.00180816650390625
+Which do you favor: {A} or {B}?,ASUS,HP,Which do you favor: ASUS or HP?,-0.04559326171875,-3.603515625
+Which do you favor: {A} or {B}?,ASUS,Dell,Which do you favor: ASUS or Dell?,-0.02764892578125,-0.00022590160369873047
+Which do you favor: {A} or {B}?,ASUS,Apple,Which do you favor: ASUS or Apple?,-0.0286407470703125,-2.54296875
+Which do you favor: {A} or {B}?,Lenovo,ASUS,Which do you favor: Lenovo or ASUS?,-0.0029392242431640625,-0.0145263671875
+Which do you favor: {A} or {B}?,Lenovo,HP,Which do you favor: Lenovo or HP?,-0.001117706298828125,-3.080078125
+Which do you favor: {A} or {B}?,Lenovo,Dell,Which do you favor: Lenovo or Dell?,-0.0023136138916015625,-6.091594696044922e-05
+Which do you favor: {A} or {B}?,Lenovo,Apple,Which do you favor: Lenovo or Apple?,-0.00041103363037109375,-2.080078125
+Which do you favor: {A} or {B}?,HP,ASUS,Which do you favor: HP or ASUS?,-3.599609375,-0.02734375
+Which do you favor: {A} or {B}?,HP,Lenovo,Which do you favor: HP or Lenovo?,-3.0625,-0.0012798309326171875
+Which do you favor: {A} or {B}?,HP,Dell,Which do you favor: HP or Dell?,-2.876953125,-0.00021779537200927734
+Which do you favor: {A} or {B}?,HP,Apple,Which do you favor: HP or Apple?,-3.916015625,-0.806640625
+Which do you favor: {A} or {B}?,Dell,ASUS,Which do you favor: Dell or ASUS?,-0.00027108192443847656,-0.01244354248046875
+Which do you favor: {A} or {B}?,Dell,Lenovo,Which do you favor: Dell or Lenovo?,-0.0001087188720703125,-0.0013494491577148438
+Which do you favor: {A} or {B}?,Dell,HP,Which do you favor: Dell or HP?,-9.870529174804688e-05,-2.529296875
+Which do you favor: {A} or {B}?,Dell,Apple,Which do you favor: Dell or Apple?,-0.00025773048400878906,-0.6357421875
+Which do you favor: {A} or {B}?,Apple,ASUS,Which do you favor: Apple or ASUS?,-2.6796875,-0.0184478759765625
+Which do you favor: {A} or {B}?,Apple,Lenovo,Which do you favor: Apple or Lenovo?,-2.662109375,-0.0006046295166015625
+Which do you favor: {A} or {B}?,Apple,HP,Which do you favor: Apple or HP?,-1.078125,-3.421875
+Which do you favor: {A} or {B}?,Apple,Dell,Which do you favor: Apple or Dell?,-0.95556640625,-0.0001316070556640625
+What do you like more: {A} or {B}?,ASUS,Lenovo,What do you like more: ASUS or Lenovo?,-0.0180816650390625,-0.0028438568115234375
+What do you like more: {A} or {B}?,ASUS,HP,What do you like more: ASUS or HP?,-0.03179931640625,-3.494140625
+What do you like more: {A} or {B}?,ASUS,Dell,What do you like more: ASUS or Dell?,-0.0200042724609375,-0.00029397010803222656
+What do you like more: {A} or {B}?,ASUS,Apple,What do you like more: ASUS or Apple?,-0.0251922607421875,-3.28515625
+What do you like more: {A} or {B}?,Lenovo,ASUS,What do you like more: Lenovo or ASUS?,-0.0021495819091796875,-0.0124664306640625
+What do you like more: {A} or {B}?,Lenovo,HP,What do you like more: Lenovo or HP?,-0.0008831024169921875,-3.36328125
+What do you like more: {A} or {B}?,Lenovo,Dell,What do you like more: Lenovo or Dell?,-0.0019359588623046875,-0.00017404556274414062
+What do you like more: {A} or {B}?,Lenovo,Apple,What do you like more: Lenovo or Apple?,-0.00045371055603027344,-2.798828125
+What do you like more: {A} or {B}?,HP,ASUS,What do you like more: HP or ASUS?,-2.728515625,-0.0257568359375
+What do you like more: {A} or {B}?,HP,Lenovo,What do you like more: HP or Lenovo?,-2.3828125,-0.001575469970703125
+What do you like more: {A} or {B}?,HP,Dell,What do you like more: HP or Dell?,-2.236328125,-0.000629425048828125
+What do you like more: {A} or {B}?,HP,Apple,What do you like more: HP or Apple?,-2.912109375,-1.7548828125
+What do you like more: {A} or {B}?,Dell,ASUS,What do you like more: Dell or ASUS?,-0.0002770423889160156,-0.0121307373046875
+What do you like more: {A} or {B}?,Dell,Lenovo,What do you like more: Dell or Lenovo?,-0.00021398067474365234,-0.0017910003662109375
+What do you like more: {A} or {B}?,Dell,HP,What do you like more: Dell or HP?,-0.0002963542938232422,-2.685546875
+What do you like more: {A} or {B}?,Dell,Apple,What do you like more: Dell or Apple?,-0.0006136894226074219,-1.56640625
+What do you like more: {A} or {B}?,Apple,ASUS,What do you like more: Apple or ASUS?,-2.56640625,-0.0163726806640625
+What do you like more: {A} or {B}?,Apple,Lenovo,What do you like more: Apple or Lenovo?,-1.7802734375,-0.0006742477416992188
+What do you like more: {A} or {B}?,Apple,HP,What do you like more: Apple or HP?,-1.3125,-3.859375
+What do you like more: {A} or {B}?,Apple,Dell,What do you like more: Apple or Dell?,-1.166015625,-0.0004222393035888672
+Which is preferred by you: {A} or {B}?,ASUS,Lenovo,Which is preferred by you: ASUS or Lenovo?,-0.013916015625,-0.0011310577392578125
+Which is preferred by you: {A} or {B}?,ASUS,HP,Which is preferred by you: ASUS or HP?,-0.0278167724609375,-2.857421875
+Which is preferred by you: {A} or {B}?,ASUS,Dell,Which is preferred by you: ASUS or Dell?,-0.0166473388671875,-0.00017511844635009766
+Which is preferred by you: {A} or {B}?,ASUS,Apple,Which is preferred by you: ASUS or Apple?,-0.0175323486328125,-1.94921875
+Which is preferred by you: {A} or {B}?,Lenovo,ASUS,Which is preferred by you: Lenovo or ASUS?,-0.0013341903686523438,-0.01251220703125
+Which is preferred by you: {A} or {B}?,Lenovo,HP,Which is preferred by you: Lenovo or HP?,-0.0006127357482910156,-2.37109375
+Which is preferred by you: {A} or {B}?,Lenovo,Dell,Which is preferred by you: Lenovo or Dell?,-0.00135040283203125,-4.2557716369628906e-05
+Which is preferred by you: {A} or {B}?,Lenovo,Apple,Which is preferred by you: Lenovo or Apple?,-0.000213623046875,-1.7099609375
+Which is preferred by you: {A} or {B}?,HP,ASUS,Which is preferred by you: HP or ASUS?,-2.296875,-0.022796630859375
+Which is preferred by you: {A} or {B}?,HP,Lenovo,Which is preferred by you: HP or Lenovo?,-2.142578125,-0.0008530616760253906
+Which is preferred by you: {A} or {B}?,HP,Dell,Which is preferred by you: HP or Dell?,-1.69140625,-0.00013399124145507812
+Which is preferred by you: {A} or {B}?,HP,Apple,Which is preferred by you: HP or Apple?,-2.490234375,-0.458251953125
+Which is preferred by you: {A} or {B}?,Dell,ASUS,Which is preferred by you: Dell or ASUS?,-0.00021445751190185547,-0.011749267578125
+Which is preferred by you: {A} or {B}?,Dell,Lenovo,Which is preferred by you: Dell or Lenovo?,-7.903575897216797e-05,-0.0010280609130859375
+Which is preferred by you: {A} or {B}?,Dell,HP,Which is preferred by you: Dell or HP?,-7.092952728271484e-05,-1.44140625
+Which is preferred by you: {A} or {B}?,Dell,Apple,Which is preferred by you: Dell or Apple?,-0.00016486644744873047,-0.5185546875
+Which is preferred by you: {A} or {B}?,Apple,ASUS,Which is preferred by you: Apple or ASUS?,-1.75390625,-0.0142059326171875
+Which is preferred by you: {A} or {B}?,Apple,Lenovo,Which is preferred by you: Apple or Lenovo?,-1.90625,-0.00040841102600097656
+Which is preferred by you: {A} or {B}?,Apple,HP,Which is preferred by you: Apple or HP?,-0.39208984375,-2.642578125
+Which is preferred by you: {A} or {B}?,Apple,Dell,Which is preferred by you: Apple or Dell?,-0.609375,-7.224082946777344e-05
+Do you have a preference for {A} or {B}?,ASUS,Lenovo,Do you have a preference for ASUS or Lenovo?,-0.0259857177734375,-0.0014562606811523438
+Do you have a preference for {A} or {B}?,ASUS,HP,Do you have a preference for ASUS or HP?,-0.048736572265625,-6.12109375
+Do you have a preference for {A} or {B}?,ASUS,Dell,Do you have a preference for ASUS or Dell?,-0.032684326171875,-0.0004973411560058594
+Do you have a preference for {A} or {B}?,ASUS,Apple,Do you have a preference for ASUS or Apple?,-0.038482666015625,-5.1171875
+Do you have a preference for {A} or {B}?,Lenovo,ASUS,Do you have a preference for Lenovo or ASUS?,-0.0013780593872070312,-0.01111602783203125
+Do you have a preference for {A} or {B}?,Lenovo,HP,Do you have a preference for Lenovo or HP?,-0.0006875991821289062,-6.30078125
+Do you have a preference for {A} or {B}?,Lenovo,Dell,Do you have a preference for Lenovo or Dell?,-0.0014238357543945312,-0.0006074905395507812
+Do you have a preference for {A} or {B}?,Lenovo,Apple,Do you have a preference for Lenovo or Apple?,-0.0003838539123535156,-4.56640625
+Do you have a preference for {A} or {B}?,HP,ASUS,Do you have a preference for HP or ASUS?,-5.6875,-0.0287322998046875
+Do you have a preference for {A} or {B}?,HP,Lenovo,Do you have a preference for HP or Lenovo?,-5.2578125,-0.0007748603820800781
+Do you have a preference for {A} or {B}?,HP,Dell,Do you have a preference for HP or Dell?,-5.5703125,-0.0025577545166015625
+Do you have a preference for {A} or {B}?,HP,Apple,Do you have a preference for HP or Apple?,-5.484375,-4.125
+Do you have a preference for {A} or {B}?,Dell,ASUS,Do you have a preference for Dell or ASUS?,-0.00032711029052734375,-0.01212310791015625
+Do you have a preference for {A} or {B}?,Dell,Lenovo,Do you have a preference for Dell or Lenovo?,-0.0004372596740722656,-0.0012836456298828125
+Do you have a preference for {A} or {B}?,Dell,HP,Do you have a preference for Dell or HP?,-0.0007014274597167969,-6.81640625
+Do you have a preference for {A} or {B}?,Dell,Apple,Do you have a preference for Dell or Apple?,-0.0015735626220703125,-4.28515625
+Do you have a preference for {A} or {B}?,Apple,ASUS,Do you have a preference for Apple or ASUS?,-3.8359375,-0.0313720703125
+Do you have a preference for {A} or {B}?,Apple,Lenovo,Do you have a preference for Apple or Lenovo?,-3.65625,-0.0006151199340820312
+Do you have a preference for {A} or {B}?,Apple,HP,Do you have a preference for Apple or HP?,-3.427734375,-6.0078125
+Do you have a preference for {A} or {B}?,Apple,Dell,Do you have a preference for Apple or Dell?,-3.431640625,-0.0030078887939453125
+"As between {A} and {B}, which is your preference?",ASUS,Lenovo,"As between ASUS and Lenovo, which is your preference?",-0.01457977294921875,-0.0021343231201171875
+"As between {A} and {B}, which is your preference?",ASUS,HP,"As between ASUS and HP, which is your preference?",-0.0213470458984375,-2.376953125
+"As between {A} and {B}, which is your preference?",ASUS,Dell,"As between ASUS and Dell, which is your preference?",-0.01474761962890625,-0.00017905235290527344
+"As between {A} and {B}, which is your preference?",ASUS,Apple,"As between ASUS and Apple, which is your preference?",-0.0164642333984375,-1.80078125
+"As between {A} and {B}, which is your preference?",Lenovo,ASUS,"As between Lenovo and ASUS, which is your preference?",-0.0026760101318359375,-0.00888824462890625
+"As between {A} and {B}, which is your preference?",Lenovo,HP,"As between Lenovo and HP, which is your preference?",-0.0016193389892578125,-2.00390625
+"As between {A} and {B}, which is your preference?",Lenovo,Dell,"As between Lenovo and Dell, which is your preference?",-0.002582550048828125,-0.00012791156768798828
+"As between {A} and {B}, which is your preference?",Lenovo,Apple,"As between Lenovo and Apple, which is your preference?",-0.0006175041198730469,-1.5751953125
+"As between {A} and {B}, which is your preference?",HP,ASUS,"As between HP and ASUS, which is your preference?",-2.587890625,-0.010772705078125
+"As between {A} and {B}, which is your preference?",HP,Lenovo,"As between HP and Lenovo, which is your preference?",-2.43359375,-0.002201080322265625
+"As between {A} and {B}, which is your preference?",HP,Dell,"As between HP and Dell, which is your preference?",-2.279296875,-0.000354766845703125
+"As between {A} and {B}, which is your preference?",HP,Apple,"As between HP and Apple, which is your preference?",-3.197265625,-1.0576171875
+"As between {A} and {B}, which is your preference?",Dell,ASUS,"As between Dell and ASUS, which is your preference?",-0.0001779794692993164,-0.006664276123046875
+"As between {A} and {B}, which is your preference?",Dell,Lenovo,"As between Dell and Lenovo, which is your preference?",-8.511543273925781e-05,-0.002933502197265625
+"As between {A} and {B}, which is your preference?",Dell,HP,"As between Dell and HP, which is your preference?",-0.00013840198516845703,-2.0546875
+"As between {A} and {B}, which is your preference?",Dell,Apple,"As between Dell and Apple, which is your preference?",-0.0004563331604003906,-0.9521484375
+"As between {A} and {B}, which is your preference?",Apple,ASUS,"As between Apple and ASUS, which is your preference?",-2.048828125,-0.00897979736328125
+"As between {A} and {B}, which is your preference?",Apple,Lenovo,"As between Apple and Lenovo, which is your preference?",-2.421875,-0.0014781951904296875
+"As between {A} and {B}, which is your preference?",Apple,HP,"As between Apple and HP, which is your preference?",-1.3515625,-2.2109375
+"As between {A} and {B}, which is your preference?",Apple,Dell,"As between Apple and Dell, which is your preference?",-1.03515625,-0.00034737586975097656
+"Between the two, do you prefer {A} or {B}?",ASUS,Lenovo,"Between the two, do you prefer ASUS or Lenovo?",-0.0219879150390625,-0.0026493072509765625
+"Between the two, do you prefer {A} or {B}?",ASUS,HP,"Between the two, do you prefer ASUS or HP?",-0.043182373046875,-3.5234375
+"Between the two, do you prefer {A} or {B}?",ASUS,Dell,"Between the two, do you prefer ASUS or Dell?",-0.02203369140625,-0.0004978179931640625
+"Between the two, do you prefer {A} or {B}?",ASUS,Apple,"Between the two, do you prefer ASUS or Apple?",-0.0271453857421875,-2.427734375
+"Between the two, do you prefer {A} or {B}?",Lenovo,ASUS,"Between the two, do you prefer Lenovo or ASUS?",-0.0026226043701171875,-0.0111541748046875
+"Between the two, do you prefer {A} or {B}?",Lenovo,HP,"Between the two, do you prefer Lenovo or HP?",-0.0013294219970703125,-3.12109375
+"Between the two, do you prefer {A} or {B}?",Lenovo,Dell,"Between the two, do you prefer Lenovo or Dell?",-0.003040313720703125,-0.00046515464782714844
+"Between the two, do you prefer {A} or {B}?",Lenovo,Apple,"Between the two, do you prefer Lenovo or Apple?",-0.0006604194641113281,-2.044921875
+"Between the two, do you prefer {A} or {B}?",HP,ASUS,"Between the two, do you prefer HP or ASUS?",-3.216796875,-0.019744873046875
+"Between the two, do you prefer {A} or {B}?",HP,Lenovo,"Between the two, do you prefer HP or Lenovo?",-3.091796875,-0.0014801025390625
+"Between the two, do you prefer {A} or {B}?",HP,Dell,"Between the two, do you prefer HP or Dell?",-3.0546875,-0.0017747879028320312
+"Between the two, do you prefer {A} or {B}?",HP,Apple,"Between the two, do you prefer HP or Apple?",-3.703125,-1.4375
+"Between the two, do you prefer {A} or {B}?",Dell,ASUS,"Between the two, do you prefer Dell or ASUS?",-0.0003561973571777344,-0.0084686279296875
+"Between the two, do you prefer {A} or {B}?",Dell,Lenovo,"Between the two, do you prefer Dell or Lenovo?",-0.00042438507080078125,-0.002361297607421875
+"Between the two, do you prefer {A} or {B}?",Dell,HP,"Between the two, do you prefer Dell or HP?",-0.00047206878662109375,-2.94140625
+"Between the two, do you prefer {A} or {B}?",Dell,Apple,"Between the two, do you prefer Dell or Apple?",-0.0017833709716796875,-1.3603515625
+"Between the two, do you prefer {A} or {B}?",Apple,ASUS,"Between the two, do you prefer Apple or ASUS?",-2.271484375,-0.019561767578125
+"Between the two, do you prefer {A} or {B}?",Apple,Lenovo,"Between the two, do you prefer Apple or Lenovo?",-2.34765625,-0.0009083747863769531
+"Between the two, do you prefer {A} or {B}?",Apple,HP,"Between the two, do you prefer Apple or HP?",-1.484375,-2.984375
+"Between the two, do you prefer {A} or {B}?",Apple,Dell,"Between the two, do you prefer Apple or Dell?",-1.3759765625,-0.0038166046142578125
+Would you say you prefer {A} or {B}?,ASUS,Lenovo,Would you say you prefer ASUS or Lenovo?,-0.0229339599609375,-0.0024356842041015625
+Would you say you prefer {A} or {B}?,ASUS,HP,Would you say you prefer ASUS or HP?,-0.043426513671875,-4.8359375
+Would you say you prefer {A} or {B}?,ASUS,Dell,Would you say you prefer ASUS or Dell?,-0.0248260498046875,-0.0008525848388671875
+Would you say you prefer {A} or {B}?,ASUS,Apple,Would you say you prefer ASUS or Apple?,-0.026611328125,-3.921875
+Would you say you prefer {A} or {B}?,Lenovo,ASUS,Would you say you prefer Lenovo or ASUS?,-0.0025157928466796875,-0.01114654541015625
+Would you say you prefer {A} or {B}?,Lenovo,HP,Would you say you prefer Lenovo or HP?,-0.001155853271484375,-5.5
+Would you say you prefer {A} or {B}?,Lenovo,Dell,Would you say you prefer Lenovo or Dell?,-0.0025691986083984375,-0.0005970001220703125
+Would you say you prefer {A} or {B}?,Lenovo,Apple,Would you say you prefer Lenovo or Apple?,-0.0005955696105957031,-3.55859375
+Would you say you prefer {A} or {B}?,HP,ASUS,Would you say you prefer HP or ASUS?,-5.05859375,-0.022705078125
+Would you say you prefer {A} or {B}?,HP,Lenovo,Would you say you prefer HP or Lenovo?,-5.125,-0.0017490386962890625
+Would you say you prefer {A} or {B}?,HP,Dell,Would you say you prefer HP or Dell?,-4.75,-0.00206756591796875
+Would you say you prefer {A} or {B}?,HP,Apple,Would you say you prefer HP or Apple?,-4.92578125,-2.89453125
+Would you say you prefer {A} or {B}?,Dell,ASUS,Would you say you prefer Dell or ASUS?,-0.0005359649658203125,-0.00872039794921875
+Would you say you prefer {A} or {B}?,Dell,Lenovo,Would you say you prefer Dell or Lenovo?,-0.0008249282836914062,-0.002288818359375
+Would you say you prefer {A} or {B}?,Dell,HP,Would you say you prefer Dell or HP?,-0.0009455680847167969,-5.2265625
+Would you say you prefer {A} or {B}?,Dell,Apple,Would you say you prefer Dell or Apple?,-0.003139495849609375,-2.775390625
+Would you say you prefer {A} or {B}?,Apple,ASUS,Would you say you prefer Apple or ASUS?,-3.53125,-0.0199737548828125
+Would you say you prefer {A} or {B}?,Apple,Lenovo,Would you say you prefer Apple or Lenovo?,-3.498046875,-0.0010690689086914062
+Would you say you prefer {A} or {B}?,Apple,HP,Would you say you prefer Apple or HP?,-2.923828125,-5.078125
+Would you say you prefer {A} or {B}?,Apple,Dell,Would you say you prefer Apple or Dell?,-2.6015625,-0.005138397216796875
+"When considering {A} and {B}, which is your preference?",ASUS,Lenovo,"When considering ASUS and Lenovo, which is your preference?",-0.01451873779296875,-0.00328826904296875
+"When considering {A} and {B}, which is your preference?",ASUS,HP,"When considering ASUS and HP, which is your preference?",-0.025360107421875,-2.4296875
+"When considering {A} and {B}, which is your preference?",ASUS,Dell,"When considering ASUS and Dell, which is your preference?",-0.017059326171875,-0.0002415180206298828
+"When considering {A} and {B}, which is your preference?",ASUS,Apple,"When considering ASUS and Apple, which is your preference?",-0.02001953125,-2.0859375
+"When considering {A} and {B}, which is your preference?",Lenovo,ASUS,"When considering Lenovo and ASUS, which is your preference?",-0.002246856689453125,-0.00591278076171875
+"When considering {A} and {B}, which is your preference?",Lenovo,HP,"When considering Lenovo and HP, which is your preference?",-0.0015478134155273438,-1.796875
+"When considering {A} and {B}, which is your preference?",Lenovo,Dell,"When considering Lenovo and Dell, which is your preference?",-0.0021839141845703125,-0.00011539459228515625
+"When considering {A} and {B}, which is your preference?",Lenovo,Apple,"When considering Lenovo and Apple, which is your preference?",-0.0006093978881835938,-1.376953125
+"When considering {A} and {B}, which is your preference?",HP,ASUS,"When considering HP and ASUS, which is your preference?",-3.236328125,-0.0103759765625
+"When considering {A} and {B}, which is your preference?",HP,Lenovo,"When considering HP and Lenovo, which is your preference?",-2.359375,-0.0022182464599609375
+"When considering {A} and {B}, which is your preference?",HP,Dell,"When considering HP and Dell, which is your preference?",-2.216796875,-0.00037097930908203125
+"When considering {A} and {B}, which is your preference?",HP,Apple,"When considering HP and Apple, which is your preference?",-3.19921875,-1.02734375
+"When considering {A} and {B}, which is your preference?",Dell,ASUS,"When considering Dell and ASUS, which is your preference?",-0.00019419193267822266,-0.00492095947265625
+"When considering {A} and {B}, which is your preference?",Dell,Lenovo,"When considering Dell and Lenovo, which is your preference?",-0.00011324882507324219,-0.003246307373046875
+"When considering {A} and {B}, which is your preference?",Dell,HP,"When considering Dell and HP, which is your preference?",-0.0001888275146484375,-2.115234375
+"When considering {A} and {B}, which is your preference?",Dell,Apple,"When considering Dell and Apple, which is your preference?",-0.0004711151123046875,-0.7822265625
+"When considering {A} and {B}, which is your preference?",Apple,ASUS,"When considering Apple and ASUS, which is your preference?",-2.09375,-0.00983428955078125
+"When considering {A} and {B}, which is your preference?",Apple,Lenovo,"When considering Apple and Lenovo, which is your preference?",-1.62109375,-0.0009822845458984375
+"When considering {A} and {B}, which is your preference?",Apple,HP,"When considering Apple and HP, which is your preference?",-0.8701171875,-1.8388671875
+"When considering {A} and {B}, which is your preference?",Apple,Dell,"When considering Apple and Dell, which is your preference?",-0.74853515625,-0.0008945465087890625
+Which way do you lean: {A} or {B}?,ASUS,Lenovo,Which way do you lean: ASUS or Lenovo?,-0.01393890380859375,-0.0011310577392578125
+Which way do you lean: {A} or {B}?,ASUS,HP,Which way do you lean: ASUS or HP?,-0.029510498046875,-2.73828125
+Which way do you lean: {A} or {B}?,ASUS,Dell,Which way do you lean: ASUS or Dell?,-0.0176849365234375,-0.00033545494079589844
+Which way do you lean: {A} or {B}?,ASUS,Apple,Which way do you lean: ASUS or Apple?,-0.0162200927734375,-1.9345703125
+Which way do you lean: {A} or {B}?,Lenovo,ASUS,Which way do you lean: Lenovo or ASUS?,-0.0016422271728515625,-0.01021575927734375
+Which way do you lean: {A} or {B}?,Lenovo,HP,Which way do you lean: Lenovo or HP?,-0.0007724761962890625,-3.1328125
+Which way do you lean: {A} or {B}?,Lenovo,Dell,Which way do you lean: Lenovo or Dell?,-0.0014181137084960938,-0.0001652240753173828
+Which way do you lean: {A} or {B}?,Lenovo,Apple,Which way do you lean: Lenovo or Apple?,-0.00027370452880859375,-3.052734375
+Which way do you lean: {A} or {B}?,HP,ASUS,Which way do you lean: HP or ASUS?,-2.0390625,-0.0227508544921875
+Which way do you lean: {A} or {B}?,HP,Lenovo,Which way do you lean: HP or Lenovo?,-2.4921875,-0.0008492469787597656
+Which way do you lean: {A} or {B}?,HP,Dell,Which way do you lean: HP or Dell?,-1.701171875,-0.0010623931884765625
+Which way do you lean: {A} or {B}?,HP,Apple,Which way do you lean: HP or Apple?,-2.044921875,-0.59130859375
+Which way do you lean: {A} or {B}?,Dell,ASUS,Which way do you lean: Dell or ASUS?,-0.0003974437713623047,-0.00933837890625
+Which way do you lean: {A} or {B}?,Dell,Lenovo,Which way do you lean: Dell or Lenovo?,-0.000530242919921875,-0.00093841552734375
+Which way do you lean: {A} or {B}?,Dell,HP,Which way do you lean: Dell or HP?,-0.00031113624572753906,-1.96875
+Which way do you lean: {A} or {B}?,Dell,Apple,Which way do you lean: Dell or Apple?,-0.00199127197265625,-1.1103515625
+Which way do you lean: {A} or {B}?,Apple,ASUS,Which way do you lean: Apple or ASUS?,-2.4921875,-0.01324462890625
+Which way do you lean: {A} or {B}?,Apple,Lenovo,Which way do you lean: Apple or Lenovo?,-3.904296875,-0.00042748451232910156
+Which way do you lean: {A} or {B}?,Apple,HP,Which way do you lean: Apple or HP?,-1.14453125,-1.97265625
+Which way do you lean: {A} or {B}?,Apple,Dell,Which way do you lean: Apple or Dell?,-1.8896484375,-0.0006699562072753906
+State which you prefer: {A} or {B}.,ASUS,Lenovo,State which you prefer: ASUS or Lenovo.,-0.015350341796875,-0.0019130706787109375
+State which you prefer: {A} or {B}.,ASUS,HP,State which you prefer: ASUS or HP.,-0.031707763671875,-3.01171875
+State which you prefer: {A} or {B}.,ASUS,Dell,State which you prefer: ASUS or Dell.,-0.0155029296875,-0.0005464553833007812
+State which you prefer: {A} or {B}.,ASUS,Apple,State which you prefer: ASUS or Apple.,-0.01529693603515625,-2.146484375
+State which you prefer: {A} or {B}.,Lenovo,ASUS,State which you prefer: Lenovo or ASUS.,-0.0030918121337890625,-0.01084136962890625
+State which you prefer: {A} or {B}.,Lenovo,HP,State which you prefer: Lenovo or HP.,-0.0011606216430664062,-2.64453125
+State which you prefer: {A} or {B}.,Lenovo,Dell,State which you prefer: Lenovo or Dell.,-0.0019245147705078125,-7.069110870361328e-05
+State which you prefer: {A} or {B}.,Lenovo,Apple,State which you prefer: Lenovo or Apple.,-0.0005483627319335938,-2.037109375
+State which you prefer: {A} or {B}.,HP,ASUS,State which you prefer: HP or ASUS.,-2.65234375,-0.0228424072265625
+State which you prefer: {A} or {B}.,HP,Lenovo,State which you prefer: HP or Lenovo.,-2.23828125,-0.0009188652038574219
+State which you prefer: {A} or {B}.,HP,Dell,State which you prefer: HP or Dell.,-1.7314453125,-0.00033545494079589844
+State which you prefer: {A} or {B}.,HP,Apple,State which you prefer: HP or Apple.,-2.296875,-0.2025146484375
+State which you prefer: {A} or {B}.,Dell,ASUS,State which you prefer: Dell or ASUS.,-0.0006208419799804688,-0.0107269287109375
+State which you prefer: {A} or {B}.,Dell,Lenovo,State which you prefer: Dell or Lenovo.,-9.512901306152344e-05,-0.0009164810180664062
+State which you prefer: {A} or {B}.,Dell,HP,State which you prefer: Dell or HP.,-0.0001252889633178711,-1.3115234375
+State which you prefer: {A} or {B}.,Dell,Apple,State which you prefer: Dell or Apple.,-0.00011146068572998047,-0.640625
+State which you prefer: {A} or {B}.,Apple,ASUS,State which you prefer: Apple or ASUS.,-1.962890625,-0.01232147216796875
+State which you prefer: {A} or {B}.,Apple,Lenovo,State which you prefer: Apple or Lenovo.,-2.6875,-0.000591278076171875
+State which you prefer: {A} or {B}.,Apple,HP,State which you prefer: Apple or HP.,-0.252685546875,-2.236328125
+State which you prefer: {A} or {B}.,Apple,Dell,State which you prefer: Apple or Dell.,-1.119140625,-0.000118255615234375
+Do you find yourself preferring {A} or {B}?,ASUS,Lenovo,Do you find yourself preferring ASUS or Lenovo?,-0.022186279296875,-0.00206756591796875
+Do you find yourself preferring {A} or {B}?,ASUS,HP,Do you find yourself preferring ASUS or HP?,-0.040191650390625,-5.4296875
+Do you find yourself preferring {A} or {B}?,ASUS,Dell,Do you find yourself preferring ASUS or Dell?,-0.0263671875,-0.0019855499267578125
+Do you find yourself preferring {A} or {B}?,ASUS,Apple,Do you find yourself preferring ASUS or Apple?,-0.034881591796875,-4.41015625
+Do you find yourself preferring {A} or {B}?,Lenovo,ASUS,Do you find yourself preferring Lenovo or ASUS?,-0.0023059844970703125,-0.00913238525390625
+Do you find yourself preferring {A} or {B}?,Lenovo,HP,Do you find yourself preferring Lenovo or HP?,-0.0009150505065917969,-5.66015625
+Do you find yourself preferring {A} or {B}?,Lenovo,Dell,Do you find yourself preferring Lenovo or Dell?,-0.0024356842041015625,-0.0019521713256835938
+Do you find yourself preferring {A} or {B}?,Lenovo,Apple,Do you find yourself preferring Lenovo or Apple?,-0.0005393028259277344,-4.23828125
+Do you find yourself preferring {A} or {B}?,HP,ASUS,Do you find yourself preferring HP or ASUS?,-4.65234375,-0.02069091796875
+Do you find yourself preferring {A} or {B}?,HP,Lenovo,Do you find yourself preferring HP or Lenovo?,-4.30078125,-0.0013113021850585938
+Do you find yourself preferring {A} or {B}?,HP,Dell,Do you find yourself preferring HP or Dell?,-4.70703125,-0.01213836669921875
+Do you find yourself preferring {A} or {B}?,HP,Apple,Do you find yourself preferring HP or Apple?,-4.77734375,-3.763671875
+Do you find yourself preferring {A} or {B}?,Dell,ASUS,Do you find yourself preferring Dell or ASUS?,-0.0006318092346191406,-0.00742340087890625
+Do you find yourself preferring {A} or {B}?,Dell,Lenovo,Do you find yourself preferring Dell or Lenovo?,-0.0010738372802734375,-0.0021381378173828125
+Do you find yourself preferring {A} or {B}?,Dell,HP,Do you find yourself preferring Dell or HP?,-0.0020084381103515625,-6.5234375
+Do you find yourself preferring {A} or {B}?,Dell,Apple,Do you find yourself preferring Dell or Apple?,-0.005649566650390625,-4.29296875
+Do you find yourself preferring {A} or {B}?,Apple,ASUS,Do you find yourself preferring Apple or ASUS?,-3.013671875,-0.025543212890625
+Do you find yourself preferring {A} or {B}?,Apple,Lenovo,Do you find yourself preferring Apple or Lenovo?,-3.11328125,-0.0007185935974121094
+Do you find yourself preferring {A} or {B}?,Apple,HP,Do you find yourself preferring Apple or HP?,-3.0078125,-5.609375
+Do you find yourself preferring {A} or {B}?,Apple,Dell,Do you find yourself preferring Apple or Dell?,-3.0078125,-0.0241546630859375
+"Between {A} and {B}, where does your preference lie?",ASUS,Lenovo,"Between ASUS and Lenovo, where does your preference lie?",-0.01702880859375,-0.0019216537475585938
+"Between {A} and {B}, where does your preference lie?",ASUS,HP,"Between ASUS and HP, where does your preference lie?",-0.0258026123046875,-3.56640625
+"Between {A} and {B}, where does your preference lie?",ASUS,Dell,"Between ASUS and Dell, where does your preference lie?",-0.0174102783203125,-0.0005202293395996094
+"Between {A} and {B}, where does your preference lie?",ASUS,Apple,"Between ASUS and Apple, where does your preference lie?",-0.0209808349609375,-1.6455078125
+"Between {A} and {B}, where does your preference lie?",Lenovo,ASUS,"Between Lenovo and ASUS, where does your preference lie?",-0.002010345458984375,-0.00933074951171875
+"Between {A} and {B}, where does your preference lie?",Lenovo,HP,"Between Lenovo and HP, where does your preference lie?",-0.0016727447509765625,-2.337890625
+"Between {A} and {B}, where does your preference lie?",Lenovo,Dell,"Between Lenovo and Dell, where does your preference lie?",-0.0022220611572265625,-0.0005202293395996094
+"Between {A} and {B}, where does your preference lie?",Lenovo,Apple,"Between Lenovo and Apple, where does your preference lie?",-0.0007405281066894531,-1.7568359375
+"Between {A} and {B}, where does your preference lie?",HP,ASUS,"Between HP and ASUS, where does your preference lie?",-4.390625,-0.01236724853515625
+"Between {A} and {B}, where does your preference lie?",HP,Lenovo,"Between HP and Lenovo, where does your preference lie?",-2.8046875,-0.002681732177734375
+"Between {A} and {B}, where does your preference lie?",HP,Dell,"Between HP and Dell, where does your preference lie?",-2.55078125,-0.0020904541015625
+"Between {A} and {B}, where does your preference lie?",HP,Apple,"Between HP and Apple, where does your preference lie?",-3.65625,-1.1416015625
+"Between {A} and {B}, where does your preference lie?",Dell,ASUS,"Between Dell and ASUS, where does your preference lie?",-0.00036334991455078125,-0.007137298583984375
+"Between {A} and {B}, where does your preference lie?",Dell,Lenovo,"Between Dell and Lenovo, where does your preference lie?",-0.0003559589385986328,-0.002105712890625
+"Between {A} and {B}, where does your preference lie?",Dell,HP,"Between Dell and HP, where does your preference lie?",-0.000782012939453125,-1.97265625
+"Between {A} and {B}, where does your preference lie?",Dell,Apple,"Between Dell and Apple, where does your preference lie?",-0.00507354736328125,-0.71826171875
+"Between {A} and {B}, where does your preference lie?",Apple,ASUS,"Between Apple and ASUS, where does your preference lie?",-2.017578125,-0.00859832763671875
+"Between {A} and {B}, where does your preference lie?",Apple,Lenovo,"Between Apple and Lenovo, where does your preference lie?",-2.537109375,-0.0012235641479492188
+"Between {A} and {B}, where does your preference lie?",Apple,HP,"Between Apple and HP, where does your preference lie?",-1.2958984375,-2.859375
+"Between {A} and {B}, where does your preference lie?",Apple,Dell,"Between Apple and Dell, where does your preference lie?",-1.1181640625,-0.002178192138671875
+"Which do you lean toward, {A} or {B}?",ASUS,Lenovo,"Which do you lean toward, ASUS or Lenovo?",-0.019622802734375,-0.0020618438720703125
+"Which do you lean toward, {A} or {B}?",ASUS,HP,"Which do you lean toward, ASUS or HP?",-0.036834716796875,-4.9921875
+"Which do you lean toward, {A} or {B}?",ASUS,Dell,"Which do you lean toward, ASUS or Dell?",-0.021392822265625,-0.00023484230041503906
+"Which do you lean toward, {A} or {B}?",ASUS,Apple,"Which do you lean toward, ASUS or Apple?",-0.0210723876953125,-3.533203125
+"Which do you lean toward, {A} or {B}?",Lenovo,ASUS,"Which do you lean toward, Lenovo or ASUS?",-0.0021686553955078125,-0.01103973388671875
+"Which do you lean toward, {A} or {B}?",Lenovo,HP,"Which do you lean toward, Lenovo or HP?",-0.0011835098266601562,-4.54296875
+"Which do you lean toward, {A} or {B}?",Lenovo,Dell,"Which do you lean toward, Lenovo or Dell?",-0.00228118896484375,-0.00010633468627929688
+"Which do you lean toward, {A} or {B}?",Lenovo,Apple,"Which do you lean toward, Lenovo or Apple?",-0.0003521442413330078,-3.236328125
+"Which do you lean toward, {A} or {B}?",HP,ASUS,"Which do you lean toward, HP or ASUS?",-3.380859375,-0.0238800048828125
+"Which do you lean toward, {A} or {B}?",HP,Lenovo,"Which do you lean toward, HP or Lenovo?",-3.625,-0.001617431640625
+"Which do you lean toward, {A} or {B}?",HP,Dell,"Which do you lean toward, HP or Dell?",-3.521484375,-0.0006680488586425781
+"Which do you lean toward, {A} or {B}?",HP,Apple,"Which do you lean toward, HP or Apple?",-3.998046875,-2.138671875
+"Which do you lean toward, {A} or {B}?",Dell,ASUS,"Which do you lean toward, Dell or ASUS?",-0.00018513202667236328,-0.00870513916015625
+"Which do you lean toward, {A} or {B}?",Dell,Lenovo,"Which do you lean toward, Dell or Lenovo?",-0.00020313262939453125,-0.0016946792602539062
+"Which do you lean toward, {A} or {B}?",Dell,HP,"Which do you lean toward, Dell or HP?",-0.00021529197692871094,-4.22265625
+"Which do you lean toward, {A} or {B}?",Dell,Apple,"Which do you lean toward, Dell or Apple?",-0.001804351806640625,-1.7529296875
+"Which do you lean toward, {A} or {B}?",Apple,ASUS,"Which do you lean toward, Apple or ASUS?",-2.62890625,-0.0146942138671875
+"Which do you lean toward, {A} or {B}?",Apple,Lenovo,"Which do you lean toward, Apple or Lenovo?",-2.673828125,-0.0007157325744628906
+"Which do you lean toward, {A} or {B}?",Apple,HP,"Which do you lean toward, Apple or HP?",-1.6494140625,-4.8515625
+"Which do you lean toward, {A} or {B}?",Apple,Dell,"Which do you lean toward, Apple or Dell?",-1.4853515625,-0.0003104209899902344
+"Comparing the two, do you like {A} or {B} more?",ASUS,Lenovo,"Comparing the two, do you like ASUS or Lenovo more?",-0.0308380126953125,-0.0019245147705078125
+"Comparing the two, do you like {A} or {B} more?",ASUS,HP,"Comparing the two, do you like ASUS or HP more?",-0.060546875,-3.1640625
+"Comparing the two, do you like {A} or {B} more?",ASUS,Dell,"Comparing the two, do you like ASUS or Dell more?",-0.0308074951171875,-0.0007257461547851562
+"Comparing the two, do you like {A} or {B} more?",ASUS,Apple,"Comparing the two, do you like ASUS or Apple more?",-0.035308837890625,-2.23046875
+"Comparing the two, do you like {A} or {B} more?",Lenovo,ASUS,"Comparing the two, do you like Lenovo or ASUS more?",-0.0030498504638671875,-0.01418304443359375
+"Comparing the two, do you like {A} or {B} more?",Lenovo,HP,"Comparing the two, do you like Lenovo or HP more?",-0.0015659332275390625,-3.103515625
+"Comparing the two, do you like {A} or {B} more?",Lenovo,Dell,"Comparing the two, do you like Lenovo or Dell more?",-0.003032684326171875,-0.0004563331604003906
+"Comparing the two, do you like {A} or {B} more?",Lenovo,Apple,"Comparing the two, do you like Lenovo or Apple more?",-0.0007619857788085938,-1.7744140625
+"Comparing the two, do you like {A} or {B} more?",HP,ASUS,"Comparing the two, do you like HP or ASUS more?",-3.16015625,-0.0281829833984375
+"Comparing the two, do you like {A} or {B} more?",HP,Lenovo,"Comparing the two, do you like HP or Lenovo more?",-3.333984375,-0.0012063980102539062
+"Comparing the two, do you like {A} or {B} more?",HP,Dell,"Comparing the two, do you like HP or Dell more?",-3.072265625,-0.0025177001953125
+"Comparing the two, do you like {A} or {B} more?",HP,Apple,"Comparing the two, do you like HP or Apple more?",-3.384765625,-1.5712890625
+"Comparing the two, do you like {A} or {B} more?",Dell,ASUS,"Comparing the two, do you like Dell or ASUS more?",-0.0005064010620117188,-0.01184844970703125
+"Comparing the two, do you like {A} or {B} more?",Dell,Lenovo,"Comparing the two, do you like Dell or Lenovo more?",-0.0006227493286132812,-0.0018215179443359375
+"Comparing the two, do you like {A} or {B} more?",Dell,HP,"Comparing the two, do you like Dell or HP more?",-0.0009474754333496094,-2.857421875
+"Comparing the two, do you like {A} or {B} more?",Dell,Apple,"Comparing the two, do you like Dell or Apple more?",-0.005825042724609375,-1.2998046875
+"Comparing the two, do you like {A} or {B} more?",Apple,ASUS,"Comparing the two, do you like Apple or ASUS more?",-2.466796875,-0.0220947265625
+"Comparing the two, do you like {A} or {B} more?",Apple,Lenovo,"Comparing the two, do you like Apple or Lenovo more?",-2.294921875,-0.000682830810546875
+"Comparing the two, do you like {A} or {B} more?",Apple,HP,"Comparing the two, do you like Apple or HP more?",-1.724609375,-2.818359375
+"Comparing the two, do you like {A} or {B} more?",Apple,Dell,"Comparing the two, do you like Apple or Dell more?",-1.45703125,-0.005268096923828125
+{A} or {B}—which do you favor?,ASUS,Lenovo,ASUS or Lenovo—which do you favor?,-0.0015926361083984375,-0.0012378692626953125
+{A} or {B}—which do you favor?,ASUS,HP,ASUS or HP—which do you favor?,-0.002002716064453125,-2.0
+{A} or {B}—which do you favor?,ASUS,Dell,ASUS or Dell—which do you favor?,-0.0011796951293945312,-0.0003216266632080078
+{A} or {B}—which do you favor?,ASUS,Apple,ASUS or Apple—which do you favor?,-0.0028247833251953125,-0.90380859375
+{A} or {B}—which do you favor?,Lenovo,ASUS,Lenovo or ASUS—which do you favor?,-0.002162933349609375,-0.0126953125
+{A} or {B}—which do you favor?,Lenovo,HP,Lenovo or HP—which do you favor?,-0.0010280609130859375,-2.1484375
+{A} or {B}—which do you favor?,Lenovo,Dell,Lenovo or Dell—which do you favor?,-0.0015573501586914062,-6.496906280517578e-05
+{A} or {B}—which do you favor?,Lenovo,Apple,Lenovo or Apple—which do you favor?,-0.00029587745666503906,-0.69482421875
+{A} or {B}—which do you favor?,HP,ASUS,HP or ASUS—which do you favor?,-2.767578125,-0.025726318359375
+{A} or {B}—which do you favor?,HP,Lenovo,HP or Lenovo—which do you favor?,-2.671875,-0.0027561187744140625
+{A} or {B}—which do you favor?,HP,Dell,HP or Dell—which do you favor?,-2.615234375,-0.00015151500701904297
+{A} or {B}—which do you favor?,HP,Apple,HP or Apple—which do you favor?,-3.638671875,-0.388916015625
+{A} or {B}—which do you favor?,Dell,ASUS,Dell or ASUS—which do you favor?,-0.00014925003051757812,-0.01119232177734375
+{A} or {B}—which do you favor?,Dell,Lenovo,Dell or Lenovo—which do you favor?,-4.684925079345703e-05,-0.0024890899658203125
+{A} or {B}—which do you favor?,Dell,HP,Dell or HP—which do you favor?,-7.939338684082031e-05,-1.9404296875
+{A} or {B}—which do you favor?,Dell,Apple,Dell or Apple—which do you favor?,-5.91278076171875e-05,-0.4365234375
+{A} or {B}—which do you favor?,Apple,ASUS,Apple or ASUS—which do you favor?,-0.85546875,-0.0131378173828125
+{A} or {B}—which do you favor?,Apple,Lenovo,Apple or Lenovo—which do you favor?,-1.3544921875,-0.0007262229919433594
+{A} or {B}—which do you favor?,Apple,HP,Apple or HP—which do you favor?,-0.2386474609375,-3.41015625
+{A} or {B}—which do you favor?,Apple,Dell,Apple or Dell—which do you favor?,-0.45068359375,-0.00013947486877441406
+Which of the following do you prefer: {A} or {B}?,ASUS,Lenovo,Which of the following do you prefer: ASUS or Lenovo?,-0.0159149169921875,-0.002536773681640625
+Which of the following do you prefer: {A} or {B}?,ASUS,HP,Which of the following do you prefer: ASUS or HP?,-0.0316162109375,-3.326171875
+Which of the following do you prefer: {A} or {B}?,ASUS,Dell,Which of the following do you prefer: ASUS or Dell?,-0.0173187255859375,-0.0008759498596191406
+Which of the following do you prefer: {A} or {B}?,ASUS,Apple,Which of the following do you prefer: ASUS or Apple?,-0.0187225341796875,-2.61328125
+Which of the following do you prefer: {A} or {B}?,Lenovo,ASUS,Which of the following do you prefer: Lenovo or ASUS?,-0.00287628173828125,-0.010711669921875
+Which of the following do you prefer: {A} or {B}?,Lenovo,HP,Which of the following do you prefer: Lenovo or HP?,-0.0012636184692382812,-2.88671875
+Which of the following do you prefer: {A} or {B}?,Lenovo,Dell,Which of the following do you prefer: Lenovo or Dell?,-0.002197265625,-0.00019288063049316406
+Which of the following do you prefer: {A} or {B}?,Lenovo,Apple,Which of the following do you prefer: Lenovo or Apple?,-0.0005688667297363281,-2.72265625
+Which of the following do you prefer: {A} or {B}?,HP,ASUS,Which of the following do you prefer: HP or ASUS?,-2.705078125,-0.022003173828125
+Which of the following do you prefer: {A} or {B}?,HP,Lenovo,Which of the following do you prefer: HP or Lenovo?,-2.166015625,-0.0015611648559570312
+Which of the following do you prefer: {A} or {B}?,HP,Dell,Which of the following do you prefer: HP or Dell?,-2.115234375,-0.0007338523864746094
+Which of the following do you prefer: {A} or {B}?,HP,Apple,Which of the following do you prefer: HP or Apple?,-2.974609375,-0.77197265625
+Which of the following do you prefer: {A} or {B}?,Dell,ASUS,Which of the following do you prefer: Dell or ASUS?,-0.0004191398620605469,-0.0104827880859375
+Which of the following do you prefer: {A} or {B}?,Dell,Lenovo,Which of the following do you prefer: Dell or Lenovo?,-0.00014519691467285156,-0.0016689300537109375
+Which of the following do you prefer: {A} or {B}?,Dell,HP,Which of the following do you prefer: Dell or HP?,-0.0001506805419921875,-1.984375
+Which of the following do you prefer: {A} or {B}?,Dell,Apple,Which of the following do you prefer: Dell or Apple?,-0.0002925395965576172,-0.73876953125
+Which of the following do you prefer: {A} or {B}?,Apple,ASUS,Which of the following do you prefer: Apple or ASUS?,-2.16015625,-0.013885498046875
+Which of the following do you prefer: {A} or {B}?,Apple,Lenovo,Which of the following do you prefer: Apple or Lenovo?,-1.8095703125,-0.0009045600891113281
+Which of the following do you prefer: {A} or {B}?,Apple,HP,Which of the following do you prefer: Apple or HP?,-0.76318359375,-3.201171875
+Which of the following do you prefer: {A} or {B}?,Apple,Dell,Which of the following do you prefer: Apple or Dell?,-0.70947265625,-0.00034809112548828125
+Are you partial to {A} or {B}?,ASUS,Lenovo,Are you partial to ASUS or Lenovo?,-0.0124053955078125,-0.0020008087158203125
+Are you partial to {A} or {B}?,ASUS,HP,Are you partial to ASUS or HP?,-0.022613525390625,-2.646484375
+Are you partial to {A} or {B}?,ASUS,Dell,Are you partial to ASUS or Dell?,-0.01554107666015625,-0.00039577484130859375
+Are you partial to {A} or {B}?,ASUS,Apple,Are you partial to ASUS or Apple?,-0.0210113525390625,-2.27734375
+Are you partial to {A} or {B}?,Lenovo,ASUS,Are you partial to Lenovo or ASUS?,-0.00189208984375,-0.007312774658203125
+Are you partial to {A} or {B}?,Lenovo,HP,Are you partial to Lenovo or HP?,-0.0009188652038574219,-2.921875
+Are you partial to {A} or {B}?,Lenovo,Dell,Are you partial to Lenovo or Dell?,-0.00202178955078125,-0.00045609474182128906
+Are you partial to {A} or {B}?,Lenovo,Apple,Are you partial to Lenovo or Apple?,-0.0005049705505371094,-2.71484375
+Are you partial to {A} or {B}?,HP,ASUS,Are you partial to HP or ASUS?,-2.611328125,-0.01494598388671875
+Are you partial to {A} or {B}?,HP,Lenovo,Are you partial to HP or Lenovo?,-2.630859375,-0.0012950897216796875
+Are you partial to {A} or {B}?,HP,Dell,Are you partial to HP or Dell?,-2.451171875,-0.003078460693359375
+Are you partial to {A} or {B}?,HP,Apple,Are you partial to HP or Apple?,-2.78125,-2.03125
+Are you partial to {A} or {B}?,Dell,ASUS,Are you partial to Dell or ASUS?,-0.0003132820129394531,-0.00848388671875
+Are you partial to {A} or {B}?,Dell,Lenovo,Are you partial to Dell or Lenovo?,-0.0002989768981933594,-0.0018911361694335938
+Are you partial to {A} or {B}?,Dell,HP,Are you partial to Dell or HP?,-0.00048828125,-2.8359375
+Are you partial to {A} or {B}?,Dell,Apple,Are you partial to Dell or Apple?,-0.0016641616821289062,-1.5625
+Are you partial to {A} or {B}?,Apple,ASUS,Are you partial to Apple or ASUS?,-2.236328125,-0.01343536376953125
+Are you partial to {A} or {B}?,Apple,Lenovo,Are you partial to Apple or Lenovo?,-3.060546875,-0.0007715225219726562
+Are you partial to {A} or {B}?,Apple,HP,Are you partial to Apple or HP?,-2.236328125,-2.845703125
+Are you partial to {A} or {B}?,Apple,Dell,Are you partial to Apple or Dell?,-2.115234375,-0.004871368408203125
+"Between {A} and {B}, to which are you partial?",ASUS,Lenovo,"Between ASUS and Lenovo, to which are you partial?",-0.01300048828125,-0.0016613006591796875
+"Between {A} and {B}, to which are you partial?",ASUS,HP,"Between ASUS and HP, to which are you partial?",-0.0201263427734375,-2.66796875
+"Between {A} and {B}, to which are you partial?",ASUS,Dell,"Between ASUS and Dell, to which are you partial?",-0.01397705078125,-0.0002911090850830078
+"Between {A} and {B}, to which are you partial?",ASUS,Apple,"Between ASUS and Apple, to which are you partial?",-0.0184783935546875,-1.0830078125
+"Between {A} and {B}, to which are you partial?",Lenovo,ASUS,"Between Lenovo and ASUS, to which are you partial?",-0.00152587890625,-0.0077362060546875
+"Between {A} and {B}, to which are you partial?",Lenovo,HP,"Between Lenovo and HP, to which are you partial?",-0.0011854171752929688,-2.568359375
+"Between {A} and {B}, to which are you partial?",Lenovo,Dell,"Between Lenovo and Dell, to which are you partial?",-0.0016384124755859375,-0.00015044212341308594
+"Between {A} and {B}, to which are you partial?",Lenovo,Apple,"Between Lenovo and Apple, to which are you partial?",-0.0005869865417480469,-1.7529296875
+"Between {A} and {B}, to which are you partial?",HP,ASUS,"Between HP and ASUS, to which are you partial?",-2.935546875,-0.01044464111328125
+"Between {A} and {B}, to which are you partial?",HP,Lenovo,"Between HP and Lenovo, to which are you partial?",-2.458984375,-0.0020503997802734375
+"Between {A} and {B}, to which are you partial?",HP,Dell,"Between HP and Dell, to which are you partial?",-1.7998046875,-0.0004520416259765625
+"Between {A} and {B}, to which are you partial?",HP,Apple,"Between HP and Apple, to which are you partial?",-2.7734375,-0.5849609375
+"Between {A} and {B}, to which are you partial?",Dell,ASUS,"Between Dell and ASUS, to which are you partial?",-0.00022327899932861328,-0.005706787109375
+"Between {A} and {B}, to which are you partial?",Dell,Lenovo,"Between Dell and Lenovo, to which are you partial?",-9.322166442871094e-05,-0.0016374588012695312
+"Between {A} and {B}, to which are you partial?",Dell,HP,"Between Dell and HP, to which are you partial?",-0.00019824504852294922,-1.65625
+"Between {A} and {B}, to which are you partial?",Dell,Apple,"Between Dell and Apple, to which are you partial?",-0.0004467964172363281,-0.47900390625
+"Between {A} and {B}, to which are you partial?",Apple,ASUS,"Between Apple and ASUS, to which are you partial?",-0.994140625,-0.006496429443359375
+"Between {A} and {B}, to which are you partial?",Apple,Lenovo,"Between Apple and Lenovo, to which are you partial?",-1.765625,-0.0009493827819824219
+"Between {A} and {B}, to which are you partial?",Apple,HP,"Between Apple and HP, to which are you partial?",-0.6572265625,-2.703125
+"Between {A} and {B}, to which are you partial?",Apple,Dell,"Between Apple and Dell, to which are you partial?",-0.67919921875,-0.0003304481506347656
+Which is more to your liking: {A} or {B}?,ASUS,Lenovo,Which is more to your liking: ASUS or Lenovo?,-0.0185699462890625,-0.0015916824340820312
+Which is more to your liking: {A} or {B}?,ASUS,HP,Which is more to your liking: ASUS or HP?,-0.0302276611328125,-3.65234375
+Which is more to your liking: {A} or {B}?,ASUS,Dell,Which is more to your liking: ASUS or Dell?,-0.020355224609375,-0.00022983551025390625
+Which is more to your liking: {A} or {B}?,ASUS,Apple,Which is more to your liking: ASUS or Apple?,-0.023773193359375,-3.205078125
+Which is more to your liking: {A} or {B}?,Lenovo,ASUS,Which is more to your liking: Lenovo or ASUS?,-0.0018024444580078125,-0.0128631591796875
+Which is more to your liking: {A} or {B}?,Lenovo,HP,Which is more to your liking: Lenovo or HP?,-0.0008840560913085938,-3.388671875
+Which is more to your liking: {A} or {B}?,Lenovo,Dell,Which is more to your liking: Lenovo or Dell?,-0.0017528533935546875,-8.58306884765625e-05
+Which is more to your liking: {A} or {B}?,Lenovo,Apple,Which is more to your liking: Lenovo or Apple?,-0.00040984153747558594,-3.4375
+Which is more to your liking: {A} or {B}?,HP,ASUS,Which is more to your liking: HP or ASUS?,-2.4453125,-0.0225067138671875
+Which is more to your liking: {A} or {B}?,HP,Lenovo,Which is more to your liking: HP or Lenovo?,-2.236328125,-0.0010538101196289062
+Which is more to your liking: {A} or {B}?,HP,Dell,Which is more to your liking: HP or Dell?,-1.7158203125,-0.00026416778564453125
+Which is more to your liking: {A} or {B}?,HP,Apple,Which is more to your liking: HP or Apple?,-1.9287109375,-0.97509765625
+Which is more to your liking: {A} or {B}?,Dell,ASUS,Which is more to your liking: Dell or ASUS?,-0.00020802021026611328,-0.01220703125
+Which is more to your liking: {A} or {B}?,Dell,Lenovo,Which is more to your liking: Dell or Lenovo?,-0.0001093149185180664,-0.0010929107666015625
+Which is more to your liking: {A} or {B}?,Dell,HP,Which is more to your liking: Dell or HP?,-0.0001207590103149414,-2.291015625
+Which is more to your liking: {A} or {B}?,Dell,Apple,Which is more to your liking: Dell or Apple?,-0.0002644062042236328,-0.94677734375
+Which is more to your liking: {A} or {B}?,Apple,ASUS,Which is more to your liking: Apple or ASUS?,-1.9921875,-0.0202484130859375
+Which is more to your liking: {A} or {B}?,Apple,Lenovo,Which is more to your liking: Apple or Lenovo?,-1.8671875,-0.00045800209045410156
+Which is more to your liking: {A} or {B}?,Apple,HP,Which is more to your liking: Apple or HP?,-0.56982421875,-2.9921875
+Which is more to your liking: {A} or {B}?,Apple,Dell,Which is more to your liking: Apple or Dell?,-0.6455078125,-0.00015616416931152344
+Do you find {A} or {B} more to your liking?,ASUS,Lenovo,Do you find ASUS or Lenovo more to your liking?,-0.026763916015625,-0.00208282470703125
+Do you find {A} or {B} more to your liking?,ASUS,HP,Do you find ASUS or HP more to your liking?,-0.05279541015625,-2.779296875
+Do you find {A} or {B} more to your liking?,ASUS,Dell,Do you find ASUS or Dell more to your liking?,-0.02801513671875,-0.0004153251647949219
+Do you find {A} or {B} more to your liking?,ASUS,Apple,Do you find ASUS or Apple more to your liking?,-0.03631591796875,-2.97265625
+Do you find {A} or {B} more to your liking?,Lenovo,ASUS,Do you find Lenovo or ASUS more to your liking?,-0.0031604766845703125,-0.010101318359375
+Do you find {A} or {B} more to your liking?,Lenovo,HP,Do you find Lenovo or HP more to your liking?,-0.001308441162109375,-2.849609375
+Do you find {A} or {B} more to your liking?,Lenovo,Dell,Do you find Lenovo or Dell more to your liking?,-0.003086090087890625,-0.0003323554992675781
+Do you find {A} or {B} more to your liking?,Lenovo,Apple,Do you find Lenovo or Apple more to your liking?,-0.0007410049438476562,-2.314453125
+Do you find {A} or {B} more to your liking?,HP,ASUS,Do you find HP or ASUS more to your liking?,-4.19921875,-0.0237579345703125
+Do you find {A} or {B} more to your liking?,HP,Lenovo,Do you find HP or Lenovo more to your liking?,-3.8125,-0.0016088485717773438
+Do you find {A} or {B} more to your liking?,HP,Dell,Do you find HP or Dell more to your liking?,-4.109375,-0.00201416015625
+Do you find {A} or {B} more to your liking?,HP,Apple,Do you find HP or Apple more to your liking?,-4.16015625,-1.9736328125
+Do you find {A} or {B} more to your liking?,Dell,ASUS,Do you find Dell or ASUS more to your liking?,-0.0002332925796508789,-0.01023101806640625
+Do you find {A} or {B} more to your liking?,Dell,Lenovo,Do you find Dell or Lenovo more to your liking?,-0.0002658367156982422,-0.0024356842041015625
+Do you find {A} or {B} more to your liking?,Dell,HP,Do you find Dell or HP more to your liking?,-0.0004024505615234375,-3.212890625
+Do you find {A} or {B} more to your liking?,Dell,Apple,Do you find Dell or Apple more to your liking?,-0.0010347366333007812,-1.7177734375
+Do you find {A} or {B} more to your liking?,Apple,ASUS,Do you find Apple or ASUS more to your liking?,-2.4765625,-0.0166015625
+Do you find {A} or {B} more to your liking?,Apple,Lenovo,Do you find Apple or Lenovo more to your liking?,-2.7109375,-0.0006389617919921875
+Do you find {A} or {B} more to your liking?,Apple,HP,Do you find Apple or HP more to your liking?,-2.0703125,-3.1953125
+Do you find {A} or {B} more to your liking?,Apple,Dell,Do you find Apple or Dell more to your liking?,-1.91796875,-0.0024566650390625
+Which aligns more with your preferences: {A} or {B}?,ASUS,Lenovo,Which aligns more with your preferences: ASUS or Lenovo?,-0.0184478759765625,-0.0023441314697265625
+Which aligns more with your preferences: {A} or {B}?,ASUS,HP,Which aligns more with your preferences: ASUS or HP?,-0.039459228515625,-2.302734375
+Which aligns more with your preferences: {A} or {B}?,ASUS,Dell,Which aligns more with your preferences: ASUS or Dell?,-0.0211334228515625,-0.0002009868621826172
+Which aligns more with your preferences: {A} or {B}?,ASUS,Apple,Which aligns more with your preferences: ASUS or Apple?,-0.0226898193359375,-2.7890625
+Which aligns more with your preferences: {A} or {B}?,Lenovo,ASUS,Which aligns more with your preferences: Lenovo or ASUS?,-0.0023975372314453125,-0.01439666748046875
+Which aligns more with your preferences: {A} or {B}?,Lenovo,HP,Which aligns more with your preferences: Lenovo or HP?,-0.0009069442749023438,-2.14453125
+Which aligns more with your preferences: {A} or {B}?,Lenovo,Dell,Which aligns more with your preferences: Lenovo or Dell?,-0.0020580291748046875,-5.1021575927734375e-05
+Which aligns more with your preferences: {A} or {B}?,Lenovo,Apple,Which aligns more with your preferences: Lenovo or Apple?,-0.0003387928009033203,-2.84765625
+Which aligns more with your preferences: {A} or {B}?,HP,ASUS,Which aligns more with your preferences: HP or ASUS?,-2.658203125,-0.0287017822265625
+Which aligns more with your preferences: {A} or {B}?,HP,Lenovo,Which aligns more with your preferences: HP or Lenovo?,-2.447265625,-0.0015592575073242188
+Which aligns more with your preferences: {A} or {B}?,HP,Dell,Which aligns more with your preferences: HP or Dell?,-1.6123046875,-0.0001354217529296875
+Which aligns more with your preferences: {A} or {B}?,HP,Apple,Which aligns more with your preferences: HP or Apple?,-1.705078125,-0.361328125
+Which aligns more with your preferences: {A} or {B}?,Dell,ASUS,Which aligns more with your preferences: Dell or ASUS?,-0.0005006790161132812,-0.0136871337890625
+Which aligns more with your preferences: {A} or {B}?,Dell,Lenovo,Which aligns more with your preferences: Dell or Lenovo?,-0.00014889240264892578,-0.00152587890625
+Which aligns more with your preferences: {A} or {B}?,Dell,HP,Which aligns more with your preferences: Dell or HP?,-0.0001341104507446289,-1.033203125
+Which aligns more with your preferences: {A} or {B}?,Dell,Apple,Which aligns more with your preferences: Dell or Apple?,-0.000164031982421875,-0.6083984375
+Which aligns more with your preferences: {A} or {B}?,Apple,ASUS,Which aligns more with your preferences: Apple or ASUS?,-2.05859375,-0.017852783203125
+Which aligns more with your preferences: {A} or {B}?,Apple,Lenovo,Which aligns more with your preferences: Apple or Lenovo?,-3.146484375,-0.0007715225219726562
+Which aligns more with your preferences: {A} or {B}?,Apple,HP,Which aligns more with your preferences: Apple or HP?,-0.3349609375,-1.7568359375
+Which aligns more with your preferences: {A} or {B}?,Apple,Dell,Which aligns more with your preferences: Apple or Dell?,-0.7685546875,-6.413459777832031e-05
+"Between {A} and {B}, which do you naturally prefer?",ASUS,Lenovo,"Between ASUS and Lenovo, which do you naturally prefer?",-0.0187530517578125,-0.0018186569213867188
+"Between {A} and {B}, which do you naturally prefer?",ASUS,HP,"Between ASUS and HP, which do you naturally prefer?",-0.0286865234375,-3.275390625
+"Between {A} and {B}, which do you naturally prefer?",ASUS,Dell,"Between ASUS and Dell, which do you naturally prefer?",-0.0191802978515625,-0.0002467632293701172
+"Between {A} and {B}, which do you naturally prefer?",ASUS,Apple,"Between ASUS and Apple, which do you naturally prefer?",-0.0219573974609375,-2.189453125
+"Between {A} and {B}, which do you naturally prefer?",Lenovo,ASUS,"Between Lenovo and ASUS, which do you naturally prefer?",-0.002231597900390625,-0.00916290283203125
+"Between {A} and {B}, which do you naturally prefer?",Lenovo,HP,"Between Lenovo and HP, which do you naturally prefer?",-0.0015544891357421875,-2.666015625
+"Between {A} and {B}, which do you naturally prefer?",Lenovo,Dell,"Between Lenovo and Dell, which do you naturally prefer?",-0.0021877288818359375,-0.0001837015151977539
+"Between {A} and {B}, which do you naturally prefer?",Lenovo,Apple,"Between Lenovo and Apple, which do you naturally prefer?",-0.0007185935974121094,-1.787109375
+"Between {A} and {B}, which do you naturally prefer?",HP,ASUS,"Between HP and ASUS, which do you naturally prefer?",-3.587890625,-0.0122222900390625
+"Between {A} and {B}, which do you naturally prefer?",HP,Lenovo,"Between HP and Lenovo, which do you naturally prefer?",-2.92578125,-0.0023288726806640625
+"Between {A} and {B}, which do you naturally prefer?",HP,Dell,"Between HP and Dell, which do you naturally prefer?",-3.0,-0.000530242919921875
+"Between {A} and {B}, which do you naturally prefer?",HP,Apple,"Between HP and Apple, which do you naturally prefer?",-3.576171875,-1.107421875
+"Between {A} and {B}, which do you naturally prefer?",Dell,ASUS,"Between Dell and ASUS, which do you naturally prefer?",-0.0001442432403564453,-0.007183074951171875
+"Between {A} and {B}, which do you naturally prefer?",Dell,Lenovo,"Between Dell and Lenovo, which do you naturally prefer?",-0.00011646747589111328,-0.0019550323486328125
+"Between {A} and {B}, which do you naturally prefer?",Dell,HP,"Between Dell and HP, which do you naturally prefer?",-0.00019168853759765625,-2.552734375
+"Between {A} and {B}, which do you naturally prefer?",Dell,Apple,"Between Dell and Apple, which do you naturally prefer?",-0.0009765625,-1.0048828125
+"Between {A} and {B}, which do you naturally prefer?",Apple,ASUS,"Between Apple and ASUS, which do you naturally prefer?",-2.14453125,-0.0084686279296875
+"Between {A} and {B}, which do you naturally prefer?",Apple,Lenovo,"Between Apple and Lenovo, which do you naturally prefer?",-1.9345703125,-0.0010080337524414062
+"Between {A} and {B}, which do you naturally prefer?",Apple,HP,"Between Apple and HP, which do you naturally prefer?",-1.0595703125,-3.279296875
+"Between {A} and {B}, which do you naturally prefer?",Apple,Dell,"Between Apple and Dell, which do you naturally prefer?",-1.2548828125,-0.0005841255187988281
+How do you state your preference between {A} and {B}?,ASUS,Lenovo,How do you state your preference between ASUS and Lenovo?,-0.01922607421875,-0.00159454345703125
+How do you state your preference between {A} and {B}?,ASUS,HP,How do you state your preference between ASUS and HP?,-0.035675048828125,-4.171875
+How do you state your preference between {A} and {B}?,ASUS,Dell,How do you state your preference between ASUS and Dell?,-0.0233917236328125,-0.0011358261108398438
+How do you state your preference between {A} and {B}?,ASUS,Apple,How do you state your preference between ASUS and Apple?,-0.024444580078125,-4.65234375
+How do you state your preference between {A} and {B}?,Lenovo,ASUS,How do you state your preference between Lenovo and ASUS?,-0.00273895263671875,-0.00804901123046875
+How do you state your preference between {A} and {B}?,Lenovo,HP,How do you state your preference between Lenovo and HP?,-0.0012254714965820312,-3.615234375
+How do you state your preference between {A} and {B}?,Lenovo,Dell,How do you state your preference between Lenovo and Dell?,-0.0020732879638671875,-0.0022258758544921875
+How do you state your preference between {A} and {B}?,Lenovo,Apple,How do you state your preference between Lenovo and Apple?,-0.0005140304565429688,-4.234375
+How do you state your preference between {A} and {B}?,HP,ASUS,How do you state your preference between HP and ASUS?,-2.28125,-0.0162200927734375
+How do you state your preference between {A} and {B}?,HP,Lenovo,How do you state your preference between HP and Lenovo?,-1.4853515625,-0.0010862350463867188
+How do you state your preference between {A} and {B}?,HP,Dell,How do you state your preference between HP and Dell?,-1.6708984375,-0.007755279541015625
+How do you state your preference between {A} and {B}?,HP,Apple,How do you state your preference between HP and Apple?,-2.10546875,-2.33984375
+How do you state your preference between {A} and {B}?,Dell,ASUS,How do you state your preference between Dell and ASUS?,-0.0005335807800292969,-0.006351470947265625
+How do you state your preference between {A} and {B}?,Dell,Lenovo,How do you state your preference between Dell and Lenovo?,-0.0007638931274414062,-0.001468658447265625
+How do you state your preference between {A} and {B}?,Dell,HP,How do you state your preference between Dell and HP?,-0.000949859619140625,-3.609375
+How do you state your preference between {A} and {B}?,Dell,Apple,How do you state your preference between Dell and Apple?,-0.0033664703369140625,-2.703125
+How do you state your preference between {A} and {B}?,Apple,ASUS,How do you state your preference between Apple and ASUS?,-2.2109375,-0.01334381103515625
+How do you state your preference between {A} and {B}?,Apple,Lenovo,How do you state your preference between Apple and Lenovo?,-1.5595703125,-0.0007252693176269531
+How do you state your preference between {A} and {B}?,Apple,HP,How do you state your preference between Apple and HP?,-1.3056640625,-3.8671875
+How do you state your preference between {A} and {B}?,Apple,Dell,How do you state your preference between Apple and Dell?,-1.4482421875,-0.006626129150390625
+Which do you value more personally: {A} or {B}?,ASUS,Lenovo,Which do you value more personally: ASUS or Lenovo?,-0.0216064453125,-0.0035419464111328125
+Which do you value more personally: {A} or {B}?,ASUS,HP,Which do you value more personally: ASUS or HP?,-0.03802490234375,-2.6640625
+Which do you value more personally: {A} or {B}?,ASUS,Dell,Which do you value more personally: ASUS or Dell?,-0.0212554931640625,-0.0004150867462158203
+Which do you value more personally: {A} or {B}?,ASUS,Apple,Which do you value more personally: ASUS or Apple?,-0.0263519287109375,-2.333984375
+Which do you value more personally: {A} or {B}?,Lenovo,ASUS,Which do you value more personally: Lenovo or ASUS?,-0.004810333251953125,-0.01513671875
+Which do you value more personally: {A} or {B}?,Lenovo,HP,Which do you value more personally: Lenovo or HP?,-0.00208282470703125,-2.34765625
+Which do you value more personally: {A} or {B}?,Lenovo,Dell,Which do you value more personally: Lenovo or Dell?,-0.003509521484375,-0.0001957416534423828
+Which do you value more personally: {A} or {B}?,Lenovo,Apple,Which do you value more personally: Lenovo or Apple?,-0.0006747245788574219,-3.00390625
+Which do you value more personally: {A} or {B}?,HP,ASUS,Which do you value more personally: HP or ASUS?,-1.3125,-0.029052734375
+Which do you value more personally: {A} or {B}?,HP,Lenovo,Which do you value more personally: HP or Lenovo?,-1.5205078125,-0.0022945404052734375
+Which do you value more personally: {A} or {B}?,HP,Dell,Which do you value more personally: HP or Dell?,-0.74755859375,-0.0006923675537109375
+Which do you value more personally: {A} or {B}?,HP,Apple,Which do you value more personally: HP or Apple?,-1.0302734375,-1.0302734375
+Which do you value more personally: {A} or {B}?,Dell,ASUS,Which do you value more personally: Dell or ASUS?,-0.00023949146270751953,-0.01557159423828125
+Which do you value more personally: {A} or {B}?,Dell,Lenovo,Which do you value more personally: Dell or Lenovo?,-0.0002205371856689453,-0.00197601318359375
+Which do you value more personally: {A} or {B}?,Dell,HP,Which do you value more personally: Dell or HP?,-0.0002636909484863281,-0.85888671875
+Which do you value more personally: {A} or {B}?,Dell,Apple,Which do you value more personally: Dell or Apple?,-0.0009589195251464844,-0.703125
+Which do you value more personally: {A} or {B}?,Apple,ASUS,Which do you value more personally: Apple or ASUS?,-2.025390625,-0.019775390625
+Which do you value more personally: {A} or {B}?,Apple,Lenovo,Which do you value more personally: Apple or Lenovo?,-2.7890625,-0.0010366439819335938
+Which do you value more personally: {A} or {B}?,Apple,HP,Which do you value more personally: Apple or HP?,-1.03515625,-1.36328125
+Which do you value more personally: {A} or {B}?,Apple,Dell,Which do you value more personally: Apple or Dell?,-0.7265625,-0.0005617141723632812
+What is your personal preference: {A} or {B}?,ASUS,Lenovo,What is your personal preference: ASUS or Lenovo?,-0.0205078125,-0.0010976791381835938
+What is your personal preference: {A} or {B}?,ASUS,HP,What is your personal preference: ASUS or HP?,-0.03936767578125,-2.775390625
+What is your personal preference: {A} or {B}?,ASUS,Dell,What is your personal preference: ASUS or Dell?,-0.025054931640625,-0.0002799034118652344
+What is your personal preference: {A} or {B}?,ASUS,Apple,What is your personal preference: ASUS or Apple?,-0.030242919921875,-2.90234375
+What is your personal preference: {A} or {B}?,Lenovo,ASUS,What is your personal preference: Lenovo or ASUS?,-0.00101470947265625,-0.00945281982421875
+What is your personal preference: {A} or {B}?,Lenovo,HP,What is your personal preference: Lenovo or HP?,-0.00039076805114746094,-2.138671875
+What is your personal preference: {A} or {B}?,Lenovo,Dell,What is your personal preference: Lenovo or Dell?,-0.0009369850158691406,-0.00019466876983642578
+What is your personal preference: {A} or {B}?,Lenovo,Apple,What is your personal preference: Lenovo or Apple?,-0.00020229816436767578,-2.65625
+What is your personal preference: {A} or {B}?,HP,ASUS,What is your personal preference: HP or ASUS?,-2.03515625,-0.0218048095703125
+What is your personal preference: {A} or {B}?,HP,Lenovo,What is your personal preference: HP or Lenovo?,-1.1884765625,-0.0006113052368164062
+What is your personal preference: {A} or {B}?,HP,Dell,What is your personal preference: HP or Dell?,-1.0693359375,-0.0007510185241699219
+What is your personal preference: {A} or {B}?,HP,Apple,What is your personal preference: HP or Apple?,-1.9599609375,-0.63232421875
+What is your personal preference: {A} or {B}?,Dell,ASUS,What is your personal preference: Dell or ASUS?,-0.0003139972686767578,-0.00844573974609375
+What is your personal preference: {A} or {B}?,Dell,Lenovo,What is your personal preference: Dell or Lenovo?,-0.00021851062774658203,-0.0007357597351074219
+What is your personal preference: {A} or {B}?,Dell,HP,What is your personal preference: Dell or HP?,-0.0002613067626953125,-1.5458984375
+What is your personal preference: {A} or {B}?,Dell,Apple,What is your personal preference: Dell or Apple?,-0.00043082237243652344,-1.0498046875
+What is your personal preference: {A} or {B}?,Apple,ASUS,What is your personal preference: Apple or ASUS?,-1.580078125,-0.0153656005859375
+What is your personal preference: {A} or {B}?,Apple,Lenovo,What is your personal preference: Apple or Lenovo?,-1.2421875,-0.0003266334533691406
+What is your personal preference: {A} or {B}?,Apple,HP,What is your personal preference: Apple or HP?,-0.364990234375,-2.240234375
+What is your personal preference: {A} or {B}?,Apple,Dell,What is your personal preference: Apple or Dell?,-0.55078125,-0.0006761550903320312
+"Between {A} and {B}, what do you prefer?",ASUS,Lenovo,"Between ASUS and Lenovo, what do you prefer?",-0.016265869140625,-0.0013437271118164062
+"Between {A} and {B}, what do you prefer?",ASUS,HP,"Between ASUS and HP, what do you prefer?",-0.025909423828125,-3.49609375
+"Between {A} and {B}, what do you prefer?",ASUS,Dell,"Between ASUS and Dell, what do you prefer?",-0.01678466796875,-0.00022745132446289062
+"Between {A} and {B}, what do you prefer?",ASUS,Apple,"Between ASUS and Apple, what do you prefer?",-0.0201873779296875,-2.177734375
+"Between {A} and {B}, what do you prefer?",Lenovo,ASUS,"Between Lenovo and ASUS, what do you prefer?",-0.0016794204711914062,-0.00864410400390625
+"Between {A} and {B}, what do you prefer?",Lenovo,HP,"Between Lenovo and HP, what do you prefer?",-0.001190185546875,-2.5078125
+"Between {A} and {B}, what do you prefer?",Lenovo,Dell,"Between Lenovo and Dell, what do you prefer?",-0.001667022705078125,-0.00016546249389648438
+"Between {A} and {B}, what do you prefer?",Lenovo,Apple,"Between Lenovo and Apple, what do you prefer?",-0.0005598068237304688,-1.6103515625
+"Between {A} and {B}, what do you prefer?",HP,ASUS,"Between HP and ASUS, what do you prefer?",-3.267578125,-0.0114593505859375
+"Between {A} and {B}, what do you prefer?",HP,Lenovo,"Between HP and Lenovo, what do you prefer?",-2.490234375,-0.00157928466796875
+"Between {A} and {B}, what do you prefer?",HP,Dell,"Between HP and Dell, what do you prefer?",-2.53125,-0.0005631446838378906
+"Between {A} and {B}, what do you prefer?",HP,Apple,"Between HP and Apple, what do you prefer?",-3.634765625,-1.1025390625
+"Between {A} and {B}, what do you prefer?",Dell,ASUS,"Between Dell and ASUS, what do you prefer?",-0.0001819133758544922,-0.0071563720703125
+"Between {A} and {B}, what do you prefer?",Dell,Lenovo,"Between Dell and Lenovo, what do you prefer?",-0.00012755393981933594,-0.0014181137084960938
+"Between {A} and {B}, what do you prefer?",Dell,HP,"Between Dell and HP, what do you prefer?",-0.00023555755615234375,-2.408203125
+"Between {A} and {B}, what do you prefer?",Dell,Apple,"Between Dell and Apple, what do you prefer?",-0.001094818115234375,-0.80224609375
+"Between {A} and {B}, what do you prefer?",Apple,ASUS,"Between Apple and ASUS, what do you prefer?",-2.01171875,-0.00830841064453125
+"Between {A} and {B}, what do you prefer?",Apple,Lenovo,"Between Apple and Lenovo, what do you prefer?",-1.775390625,-0.0006732940673828125
+"Between {A} and {B}, what do you prefer?",Apple,HP,"Between Apple and HP, what do you prefer?",-1.08984375,-3.52734375
+"Between {A} and {B}, what do you prefer?",Apple,Dell,"Between Apple and Dell, what do you prefer?",-0.89306640625,-0.000476837158203125
+Which has your preference: {A} or {B}?,ASUS,Lenovo,Which has your preference: ASUS or Lenovo?,-0.0163421630859375,-0.001804351806640625
+Which has your preference: {A} or {B}?,ASUS,HP,Which has your preference: ASUS or HP?,-0.03375244140625,-2.271484375
+Which has your preference: {A} or {B}?,ASUS,Dell,Which has your preference: ASUS or Dell?,-0.0188751220703125,-0.0005960464477539062
+Which has your preference: {A} or {B}?,ASUS,Apple,Which has your preference: ASUS or Apple?,-0.02239990234375,-2.28515625
+Which has your preference: {A} or {B}?,Lenovo,ASUS,Which has your preference: Lenovo or ASUS?,-0.0017910003662109375,-0.0133514404296875
+Which has your preference: {A} or {B}?,Lenovo,HP,Which has your preference: Lenovo or HP?,-0.0008912086486816406,-2.041015625
+Which has your preference: {A} or {B}?,Lenovo,Dell,Which has your preference: Lenovo or Dell?,-0.0016880035400390625,-0.00011718273162841797
+Which has your preference: {A} or {B}?,Lenovo,Apple,Which has your preference: Lenovo or Apple?,-0.00038623809814453125,-2.470703125
+Which has your preference: {A} or {B}?,HP,ASUS,Which has your preference: HP or ASUS?,-2.697265625,-0.027130126953125
+Which has your preference: {A} or {B}?,HP,Lenovo,Which has your preference: HP or Lenovo?,-2.478515625,-0.000873565673828125
+Which has your preference: {A} or {B}?,HP,Dell,Which has your preference: HP or Dell?,-1.46875,-0.0006961822509765625
+Which has your preference: {A} or {B}?,HP,Apple,Which has your preference: HP or Apple?,-2.021484375,-0.2393798828125
+Which has your preference: {A} or {B}?,Dell,ASUS,Which has your preference: Dell or ASUS?,-0.00041031837463378906,-0.01407623291015625
+Which has your preference: {A} or {B}?,Dell,Lenovo,Which has your preference: Dell or Lenovo?,-0.00010514259338378906,-0.0010881423950195312
+Which has your preference: {A} or {B}?,Dell,HP,Which has your preference: Dell or HP?,-9.179115295410156e-05,-0.87060546875
+Which has your preference: {A} or {B}?,Dell,Apple,Which has your preference: Dell or Apple?,-0.00014853477478027344,-0.421875
+Which has your preference: {A} or {B}?,Apple,ASUS,Which has your preference: Apple or ASUS?,-2.08203125,-0.017669677734375
+Which has your preference: {A} or {B}?,Apple,Lenovo,Which has your preference: Apple or Lenovo?,-3.1875,-0.0006413459777832031
+Which has your preference: {A} or {B}?,Apple,HP,Which has your preference: Apple or HP?,-0.337890625,-1.712890625
+Which has your preference: {A} or {B}?,Apple,Dell,Which has your preference: Apple or Dell?,-0.73779296875,-0.00024819374084472656
+Do your preferences align with {A} or {B}?,ASUS,Lenovo,Do your preferences align with ASUS or Lenovo?,-0.0244140625,-0.00312042236328125
+Do your preferences align with {A} or {B}?,ASUS,HP,Do your preferences align with ASUS or HP?,-0.0401611328125,-5.046875
+Do your preferences align with {A} or {B}?,ASUS,Dell,Do your preferences align with ASUS or Dell?,-0.0260772705078125,-0.0006351470947265625
+Do your preferences align with {A} or {B}?,ASUS,Apple,Do your preferences align with ASUS or Apple?,-0.03802490234375,-5.1328125
+Do your preferences align with {A} or {B}?,Lenovo,ASUS,Do your preferences align with Lenovo or ASUS?,-0.0020236968994140625,-0.01395416259765625
+Do your preferences align with {A} or {B}?,Lenovo,HP,Do your preferences align with Lenovo or HP?,-0.0010986328125,-4.58203125
+Do your preferences align with {A} or {B}?,Lenovo,Dell,Do your preferences align with Lenovo or Dell?,-0.0016851425170898438,-0.0013170242309570312
+Do your preferences align with {A} or {B}?,Lenovo,Apple,Do your preferences align with Lenovo or Apple?,-0.0004680156707763672,-4.71484375
+Do your preferences align with {A} or {B}?,HP,ASUS,Do your preferences align with HP or ASUS?,-2.095703125,-0.0249176025390625
+Do your preferences align with {A} or {B}?,HP,Lenovo,Do your preferences align with HP or Lenovo?,-1.70703125,-0.0015277862548828125
+Do your preferences align with {A} or {B}?,HP,Dell,Do your preferences align with HP or Dell?,-1.8837890625,-0.0040740966796875
+Do your preferences align with {A} or {B}?,HP,Apple,Do your preferences align with HP or Apple?,-2.22265625,-3.26953125
+Do your preferences align with {A} or {B}?,Dell,ASUS,Do your preferences align with Dell or ASUS?,-0.00033092498779296875,-0.0088653564453125
+Do your preferences align with {A} or {B}?,Dell,Lenovo,Do your preferences align with Dell or Lenovo?,-0.0006051063537597656,-0.002471923828125
+Do your preferences align with {A} or {B}?,Dell,HP,Do your preferences align with Dell or HP?,-0.0005869865417480469,-4.83984375
+Do your preferences align with {A} or {B}?,Dell,Apple,Do your preferences align with Dell or Apple?,-0.0037593841552734375,-3.10546875
+Do your preferences align with {A} or {B}?,Apple,ASUS,Do your preferences align with Apple or ASUS?,-1.2060546875,-0.0181732177734375
+Do your preferences align with {A} or {B}?,Apple,Lenovo,Do your preferences align with Apple or Lenovo?,-1.17578125,-0.0007648468017578125
+Do your preferences align with {A} or {B}?,Apple,HP,Do your preferences align with Apple or HP?,-0.63818359375,-3.294921875
+Do your preferences align with {A} or {B}?,Apple,Dell,Do your preferences align with Apple or Dell?,-0.7421875,-0.0081024169921875

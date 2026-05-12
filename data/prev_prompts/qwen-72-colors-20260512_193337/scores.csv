@@ -1,0 +1,1041 @@
+template,option_a,option_b,prompt,score_a,score_b
+Which do you prefer: {A} or {B}?,red,blue,Which do you prefer: red or blue?,-0.09478759765625,-2.439453125
+Which do you prefer: {A} or {B}?,red,green,Which do you prefer: red or green?,-0.020660400390625,-4.05078125
+Which do you prefer: {A} or {B}?,red,yellow,Which do you prefer: red or yellow?,-0.00844573974609375,-6.0078125
+Which do you prefer: {A} or {B}?,red,purple,Which do you prefer: red or purple?,-1.4326171875,-0.3076171875
+Which do you prefer: {A} or {B}?,blue,red,Which do you prefer: blue or red?,-0.00322723388671875,-9.96875
+Which do you prefer: {A} or {B}?,blue,green,Which do you prefer: blue or green?,-0.0127716064453125,-4.60546875
+Which do you prefer: {A} or {B}?,blue,yellow,Which do you prefer: blue or yellow?,-0.01078033447265625,-6.94921875
+Which do you prefer: {A} or {B}?,blue,purple,Which do you prefer: blue or purple?,-0.0328369140625,-3.533203125
+Which do you prefer: {A} or {B}?,green,red,Which do you prefer: green or red?,-0.005344390869140625,-9.1640625
+Which do you prefer: {A} or {B}?,green,blue,Which do you prefer: green or blue?,-6.2265625,-0.00634765625
+Which do you prefer: {A} or {B}?,green,yellow,Which do you prefer: green or yellow?,-0.001522064208984375,-9.125
+Which do you prefer: {A} or {B}?,green,purple,Which do you prefer: green or purple?,-0.02423095703125,-3.8046875
+Which do you prefer: {A} or {B}?,yellow,red,Which do you prefer: yellow or red?,-0.212890625,-1.837890625
+Which do you prefer: {A} or {B}?,yellow,blue,Which do you prefer: yellow or blue?,-5.625,-0.0301971435546875
+Which do you prefer: {A} or {B}?,yellow,green,Which do you prefer: yellow or green?,-0.94775390625,-0.51025390625
+Which do you prefer: {A} or {B}?,yellow,purple,Which do you prefer: yellow or purple?,-2.2109375,-0.147705078125
+Which do you prefer: {A} or {B}?,purple,red,Which do you prefer: purple or red?,-0.10198974609375,-2.6640625
+Which do you prefer: {A} or {B}?,purple,blue,Which do you prefer: purple or blue?,-5.07421875,-0.0118865966796875
+Which do you prefer: {A} or {B}?,purple,green,Which do you prefer: purple or green?,-0.055694580078125,-3.994140625
+Which do you prefer: {A} or {B}?,purple,yellow,Which do you prefer: purple or yellow?,-0.0112152099609375,-7.63671875
+Do you prefer {A} or {B}?,red,blue,Do you prefer red or blue?,-0.4384765625,-1.0634765625
+Do you prefer {A} or {B}?,red,green,Do you prefer red or green?,-0.0278167724609375,-4.80859375
+Do you prefer {A} or {B}?,red,yellow,Do you prefer red or yellow?,-0.0560302734375,-4.9921875
+Do you prefer {A} or {B}?,red,purple,Do you prefer red or purple?,-3.517578125,-0.17431640625
+Do you prefer {A} or {B}?,blue,red,Do you prefer blue or red?,-0.00894927978515625,-9.8203125
+Do you prefer {A} or {B}?,blue,green,Do you prefer blue or green?,-0.034912109375,-3.75390625
+Do you prefer {A} or {B}?,blue,yellow,Do you prefer blue or yellow?,-0.055755615234375,-6.2109375
+Do you prefer {A} or {B}?,blue,purple,Do you prefer blue or purple?,-0.32373046875,-1.48046875
+Do you prefer {A} or {B}?,green,red,Do you prefer green or red?,-0.05841064453125,-9.6484375
+Do you prefer {A} or {B}?,green,blue,Do you prefer green or blue?,-6.0546875,-0.0250701904296875
+Do you prefer {A} or {B}?,green,yellow,Do you prefer green or yellow?,-0.02490234375,-8.6796875
+Do you prefer {A} or {B}?,green,purple,Do you prefer green or purple?,-0.04376220703125,-3.54296875
+Do you prefer {A} or {B}?,yellow,red,Do you prefer yellow or red?,-0.29638671875,-2.234375
+Do you prefer {A} or {B}?,yellow,blue,Do you prefer yellow or blue?,-5.5546875,-0.11773681640625
+Do you prefer {A} or {B}?,yellow,green,Do you prefer yellow or green?,-0.69482421875,-0.81982421875
+Do you prefer {A} or {B}?,yellow,purple,Do you prefer yellow or purple?,-2.52734375,-0.21533203125
+Do you prefer {A} or {B}?,purple,red,Do you prefer purple or red?,-0.26953125,-3.48828125
+Do you prefer {A} or {B}?,purple,blue,Do you prefer purple or blue?,-5.3515625,-0.072021484375
+Do you prefer {A} or {B}?,purple,green,Do you prefer purple or green?,-0.425537109375,-4.98828125
+Do you prefer {A} or {B}?,purple,yellow,Do you prefer purple or yellow?,-0.19677734375,-7.1015625
+{A} vs. {B}: What is your preference?,red,blue,red vs. blue: What is your preference?,-0.0092010498046875,-4.6953125
+{A} vs. {B}: What is your preference?,red,green,red vs. green: What is your preference?,-0.004489898681640625,-5.41015625
+{A} vs. {B}: What is your preference?,red,yellow,red vs. yellow: What is your preference?,-0.00576019287109375,-5.16015625
+{A} vs. {B}: What is your preference?,red,purple,red vs. purple: What is your preference?,-0.03472900390625,-3.37890625
+{A} vs. {B}: What is your preference?,blue,red,blue vs. red: What is your preference?,-0.00012874603271484375,-8.96875
+{A} vs. {B}: What is your preference?,blue,green,blue vs. green: What is your preference?,-0.0016508102416992188,-6.40625
+{A} vs. {B}: What is your preference?,blue,yellow,blue vs. yellow: What is your preference?,-0.0010671615600585938,-6.84375
+{A} vs. {B}: What is your preference?,blue,purple,blue vs. purple: What is your preference?,-0.01416778564453125,-4.265625
+{A} vs. {B}: What is your preference?,green,red,green vs. red: What is your preference?,-1.7404556274414062e-05,-11.03125
+{A} vs. {B}: What is your preference?,green,blue,green vs. blue: What is your preference?,-0.0357666015625,-3.34765625
+{A} vs. {B}: What is your preference?,green,yellow,green vs. yellow: What is your preference?,-8.666515350341797e-05,-9.375
+{A} vs. {B}: What is your preference?,green,purple,green vs. purple: What is your preference?,-0.001651763916015625,-6.40625
+{A} vs. {B}: What is your preference?,yellow,red,yellow vs. red: What is your preference?,-0.0005006790161132812,-7.625
+{A} vs. {B}: What is your preference?,yellow,blue,yellow vs. blue: What is your preference?,-0.014190673828125,-4.265625
+{A} vs. {B}: What is your preference?,yellow,green,yellow vs. green: What is your preference?,-0.0021953582763671875,-6.12890625
+{A} vs. {B}: What is your preference?,yellow,purple,yellow vs. purple: What is your preference?,-0.1468505859375,-1.990234375
+{A} vs. {B}: What is your preference?,purple,red,purple vs. red: What is your preference?,-0.0001226663589477539,-9.078125
+{A} vs. {B}: What is your preference?,purple,blue,purple vs. blue: What is your preference?,-0.0181884765625,-4.01953125
+{A} vs. {B}: What is your preference?,purple,green,purple vs. green: What is your preference?,-0.002216339111328125,-6.12890625
+{A} vs. {B}: What is your preference?,purple,yellow,purple vs. yellow: What is your preference?,-0.0003662109375,-7.96875
+Which option do you prefer: {A} or {B}?,red,blue,Which option do you prefer: red or blue?,-0.33056640625,-1.267578125
+Which option do you prefer: {A} or {B}?,red,green,Which option do you prefer: red or green?,-0.1346435546875,-2.072265625
+Which option do you prefer: {A} or {B}?,red,yellow,Which option do you prefer: red or yellow?,-0.004924774169921875,-5.31640625
+Which option do you prefer: {A} or {B}?,red,purple,Which option do you prefer: red or purple?,-2.6953125,-0.07012939453125
+Which option do you prefer: {A} or {B}?,blue,red,Which option do you prefer: blue or red?,-1.8596649169921875e-05,-11.21875
+Which option do you prefer: {A} or {B}?,blue,green,Which option do you prefer: blue or green?,-0.0165557861328125,-4.109375
+Which option do you prefer: {A} or {B}?,blue,yellow,Which option do you prefer: blue or yellow?,-0.0009646415710449219,-7.0
+Which option do you prefer: {A} or {B}?,blue,purple,Which option do you prefer: blue or purple?,-0.04046630859375,-3.228515625
+Which option do you prefer: {A} or {B}?,green,red,Which option do you prefer: green or red?,-1.6570091247558594e-05,-11.5625
+Which option do you prefer: {A} or {B}?,green,blue,Which option do you prefer: green or blue?,-4.9453125,-0.007160186767578125
+Which option do you prefer: {A} or {B}?,green,yellow,Which option do you prefer: green or yellow?,-2.276897430419922e-05,-11.1875
+Which option do you prefer: {A} or {B}?,green,purple,Which option do you prefer: green or purple?,-0.0076141357421875,-4.8828125
+Which option do you prefer: {A} or {B}?,yellow,red,Which option do you prefer: yellow or red?,-0.3974609375,-1.1162109375
+Which option do you prefer: {A} or {B}?,yellow,blue,Which option do you prefer: yellow or blue?,-8.09375,-0.0005245208740234375
+Which option do you prefer: {A} or {B}?,yellow,green,Which option do you prefer: yellow or green?,-2.017578125,-0.142822265625
+Which option do you prefer: {A} or {B}?,yellow,purple,Which option do you prefer: yellow or purple?,-3.8046875,-0.0228729248046875
+Which option do you prefer: {A} or {B}?,purple,red,Which option do you prefer: purple or red?,-0.029296875,-3.560546875
+Which option do you prefer: {A} or {B}?,purple,blue,Which option do you prefer: purple or blue?,-6.71875,-0.0012922286987304688
+Which option do you prefer: {A} or {B}?,purple,green,Which option do you prefer: purple or green?,-0.015167236328125,-4.265625
+Which option do you prefer: {A} or {B}?,purple,yellow,Which option do you prefer: purple or yellow?,-0.0003464221954345703,-9.4375
+"Between {A} and {B}, which do you favor?",red,blue,"Between red and blue, which do you favor?",-0.80419921875,-1.7724609375
+"Between {A} and {B}, which do you favor?",red,green,"Between red and green, which do you favor?",-0.35546875,-2.76171875
+"Between {A} and {B}, which do you favor?",red,yellow,"Between red and yellow, which do you favor?",-0.5869140625,-4.3671875
+"Between {A} and {B}, which do you favor?",red,purple,"Between red and purple, which do you favor?",-0.62353515625,-1.3427734375
+"Between {A} and {B}, which do you favor?",blue,red,"Between blue and red, which do you favor?",-0.2666015625,-8.3125
+"Between {A} and {B}, which do you favor?",blue,green,"Between blue and green, which do you favor?",-0.08160400390625,-6.11328125
+"Between {A} and {B}, which do you favor?",blue,yellow,"Between blue and yellow, which do you favor?",-0.1595458984375,-6.00390625
+"Between {A} and {B}, which do you favor?",blue,purple,"Between blue and purple, which do you favor?",-0.0380859375,-4.3203125
+"Between {A} and {B}, which do you favor?",green,red,"Between green and red, which do you favor?",-0.1650390625,-9.3203125
+"Between {A} and {B}, which do you favor?",green,blue,"Between green and blue, which do you favor?",-0.218994140625,-2.75
+"Between {A} and {B}, which do you favor?",green,yellow,"Between green and yellow, which do you favor?",-0.0640869140625,-8.59375
+"Between {A} and {B}, which do you favor?",green,purple,"Between green and purple, which do you favor?",-0.044464111328125,-4.66796875
+"Between {A} and {B}, which do you favor?",yellow,red,"Between yellow and red, which do you favor?",-1.45703125,-4.51953125
+"Between {A} and {B}, which do you favor?",yellow,blue,"Between yellow and blue, which do you favor?",-1.091796875,-2.779296875
+"Between {A} and {B}, which do you favor?",yellow,green,"Between yellow and green, which do you favor?",-0.40283203125,-4.02734375
+"Between {A} and {B}, which do you favor?",yellow,purple,"Between yellow and purple, which do you favor?",-0.79638671875,-1.734375
+"Between {A} and {B}, which do you favor?",purple,red,"Between purple and red, which do you favor?",-1.1748046875,-4.86328125
+"Between {A} and {B}, which do you favor?",purple,blue,"Between purple and blue, which do you favor?",-1.7724609375,-1.3662109375
+"Between {A} and {B}, which do you favor?",purple,green,"Between purple and green, which do you favor?",-1.916015625,-5.6640625
+"Between {A} and {B}, which do you favor?",purple,yellow,"Between purple and yellow, which do you favor?",-1.1806640625,-8.0546875
+{A} or {B}?,red,blue,red or blue?,-0.0025577545166015625,-5.97265625
+{A} or {B}?,red,green,red or green?,-0.018157958984375,-4.01953125
+{A} or {B}?,red,yellow,red or yellow?,-0.01331329345703125,-4.32421875
+{A} or {B}?,red,purple,red or purple?,-0.296875,-1.359375
+{A} or {B}?,blue,red,blue or red?,-0.0010356903076171875,-6.875
+{A} or {B}?,blue,green,blue or green?,-0.00861358642578125,-4.7578125
+{A} or {B}?,blue,yellow,blue or yellow?,-0.004344940185546875,-5.44140625
+{A} or {B}?,blue,purple,blue or purple?,-0.1512451171875,-1.9638671875
+{A} or {B}?,green,red,green or red?,-0.00022590160369873047,-8.40625
+{A} or {B}?,green,blue,green or blue?,-0.0306854248046875,-3.5
+{A} or {B}?,green,yellow,green or yellow?,-0.00041985511779785156,-7.78125
+{A} or {B}?,green,purple,green or purple?,-0.002719879150390625,-5.91015625
+{A} or {B}?,yellow,red,yellow or red?,-0.0019388198852539062,-6.25
+{A} or {B}?,yellow,blue,yellow or blue?,-0.0030975341796875,-5.78515625
+{A} or {B}?,yellow,green,yellow or green?,-0.0034999847412109375,-5.66015625
+{A} or {B}?,yellow,purple,yellow or purple?,-0.018157958984375,-4.01953125
+{A} or {B}?,purple,red,purple or red?,-0.002384185791015625,-6.05078125
+{A} or {B}?,purple,blue,purple or blue?,-0.06787109375,-2.724609375
+{A} or {B}?,purple,green,purple or green?,-0.0023899078369140625,-6.05078125
+{A} or {B}?,purple,yellow,purple or yellow?,-0.00045228004455566406,-7.734375
+Indicate your preference: {A} vs. {B}.,red,blue,Indicate your preference: red vs. blue.,-0.0057525634765625,-5.16015625
+Indicate your preference: {A} vs. {B}.,red,green,Indicate your preference: red vs. green.,-0.0017061233520507812,-6.375
+Indicate your preference: {A} vs. {B}.,red,yellow,Indicate your preference: red vs. yellow.,-0.00196075439453125,-6.25390625
+Indicate your preference: {A} vs. {B}.,red,purple,Indicate your preference: red vs. purple.,-0.2890625,-1.3828125
+Indicate your preference: {A} vs. {B}.,blue,red,Indicate your preference: blue vs. red.,-3.3855438232421875e-05,-10.34375
+Indicate your preference: {A} vs. {B}.,blue,green,Indicate your preference: blue vs. green.,-0.003082275390625,-5.78515625
+Indicate your preference: {A} vs. {B}.,blue,yellow,Indicate your preference: blue vs. yellow.,-0.0012617111206054688,-6.6875
+Indicate your preference: {A} vs. {B}.,blue,purple,Indicate your preference: blue vs. purple.,-0.045745849609375,-3.107421875
+Indicate your preference: {A} vs. {B}.,green,red,Indicate your preference: green vs. red.,-4.363059997558594e-05,-10.28125
+Indicate your preference: {A} vs. {B}.,green,blue,Indicate your preference: green vs. blue.,-2.98828125,-0.051666259765625
+Indicate your preference: {A} vs. {B}.,green,yellow,Indicate your preference: green vs. yellow.,-4.3392181396484375e-05,-10.34375
+Indicate your preference: {A} vs. {B}.,green,purple,Indicate your preference: green vs. purple.,-0.001995086669921875,-6.22265625
+Indicate your preference: {A} vs. {B}.,yellow,red,Indicate your preference: yellow vs. red.,-0.062164306640625,-2.8125
+Indicate your preference: {A} vs. {B}.,yellow,blue,Indicate your preference: yellow vs. blue.,-5.0703125,-0.00635528564453125
+Indicate your preference: {A} vs. {B}.,yellow,green,Indicate your preference: yellow vs. green.,-0.08636474609375,-2.4921875
+Indicate your preference: {A} vs. {B}.,yellow,purple,Indicate your preference: yellow vs. purple.,-1.8310546875,-0.1748046875
+Indicate your preference: {A} vs. {B}.,purple,red,Indicate your preference: purple vs. red.,-0.01531219482421875,-4.203125
+Indicate your preference: {A} vs. {B}.,purple,blue,Indicate your preference: purple vs. blue.,-3.529296875,-0.0298309326171875
+Indicate your preference: {A} vs. {B}.,purple,green,Indicate your preference: purple vs. green.,-0.01268768310546875,-4.38671875
+Indicate your preference: {A} vs. {B}.,purple,yellow,Indicate your preference: purple vs. yellow.,-0.0006542205810546875,-7.5
+Which do you like more: {A} or {B}?,red,blue,Which do you like more: red or blue?,-0.21435546875,-1.68359375
+Which do you like more: {A} or {B}?,red,green,Which do you like more: red or green?,-0.11456298828125,-2.271484375
+Which do you like more: {A} or {B}?,red,yellow,Which do you like more: red or yellow?,-0.015869140625,-4.484375
+Which do you like more: {A} or {B}?,red,purple,Which do you like more: red or purple?,-2.544921875,-0.137939453125
+Which do you like more: {A} or {B}?,blue,red,Which do you like more: blue or red?,-0.005260467529296875,-8.6328125
+Which do you like more: {A} or {B}?,blue,green,Which do you like more: blue or green?,-0.021209716796875,-4.08203125
+Which do you like more: {A} or {B}?,blue,yellow,Which do you like more: blue or yellow?,-0.011016845703125,-5.98046875
+Which do you like more: {A} or {B}?,blue,purple,Which do you like more: blue or purple?,-0.1375732421875,-2.16796875
+Which do you like more: {A} or {B}?,green,red,Which do you like more: green or red?,-0.00662994384765625,-7.6015625
+Which do you like more: {A} or {B}?,green,blue,Which do you like more: green or blue?,-5.54296875,-0.012908935546875
+Which do you like more: {A} or {B}?,green,yellow,Which do you like more: green or yellow?,-0.002666473388671875,-7.41015625
+Which do you like more: {A} or {B}?,green,purple,Which do you like more: green or purple?,-0.09613037109375,-2.470703125
+Which do you like more: {A} or {B}?,yellow,red,Which do you like more: yellow or red?,-0.425537109375,-1.14453125
+Which do you like more: {A} or {B}?,yellow,blue,Which do you like more: yellow or blue?,-5.21484375,-0.0283660888671875
+Which do you like more: {A} or {B}?,yellow,green,Which do you like more: yellow or green?,-1.15234375,-0.40234375
+Which do you like more: {A} or {B}?,yellow,purple,Which do you like more: yellow or purple?,-2.265625,-0.14013671875
+Which do you like more: {A} or {B}?,purple,red,Which do you like more: purple or red?,-0.065673828125,-3.34765625
+Which do you like more: {A} or {B}?,purple,blue,Which do you like more: purple or blue?,-3.71875,-0.0311737060546875
+Which do you like more: {A} or {B}?,purple,green,Which do you like more: purple or green?,-0.07794189453125,-3.609375
+Which do you like more: {A} or {B}?,purple,yellow,Which do you like more: purple or yellow?,-0.00841522216796875,-7.1484375
+State your preference: {A} or {B}.,red,blue,State your preference: red or blue.,-0.0211944580078125,-3.865234375
+State your preference: {A} or {B}.,red,green,State your preference: red or green.,-0.00809478759765625,-4.8203125
+State your preference: {A} or {B}.,red,yellow,State your preference: red or yellow.,-0.0005931854248046875,-7.4375
+State your preference: {A} or {B}.,red,purple,State your preference: red or purple.,-1.3134765625,-0.3134765625
+State your preference: {A} or {B}.,blue,red,State your preference: blue or red.,-1.0013580322265625e-05,-11.875
+State your preference: {A} or {B}.,blue,green,State your preference: blue or green.,-0.001705169677734375,-6.375
+State your preference: {A} or {B}.,blue,yellow,State your preference: blue or yellow.,-0.00011718273162841797,-9.15625
+State your preference: {A} or {B}.,blue,purple,State your preference: blue or purple.,-0.0263214111328125,-3.650390625
+State your preference: {A} or {B}.,green,red,State your preference: green or red.,-2.276897430419922e-05,-10.9375
+State your preference: {A} or {B}.,green,blue,State your preference: green or blue.,-3.865234375,-0.0211944580078125
+State your preference: {A} or {B}.,green,yellow,State your preference: green or yellow.,-1.7881393432617188e-05,-11.125
+State your preference: {A} or {B}.,green,purple,State your preference: green or purple.,-0.00672149658203125,-5.0078125
+State your preference: {A} or {B}.,yellow,red,State your preference: yellow or red.,-0.06805419921875,-2.724609375
+State your preference: {A} or {B}.,yellow,blue,State your preference: yellow or blue.,-6.19140625,-0.0021800994873046875
+State your preference: {A} or {B}.,yellow,green,State your preference: yellow or green.,-0.439697265625,-1.033203125
+State your preference: {A} or {B}.,yellow,purple,State your preference: yellow or purple.,-1.9375,-0.1558837890625
+State your preference: {A} or {B}.,purple,red,State your preference: purple or red.,-0.02276611328125,-3.8046875
+State your preference: {A} or {B}.,purple,blue,State your preference: purple or blue.,-6.19140625,-0.00212860107421875
+State your preference: {A} or {B}.,purple,green,State your preference: purple or green.,-0.0094757080078125,-4.6953125
+State your preference: {A} or {B}.,purple,yellow,State your preference: purple or yellow.,-0.0002589225769042969,-8.71875
+Your preference: {A} or {B}.,red,blue,Your preference: red or blue.,-0.041015625,-3.228515625
+Your preference: {A} or {B}.,red,green,Your preference: red or green.,-0.01068115234375,-4.60546875
+Your preference: {A} or {B}.,red,yellow,Your preference: red or yellow.,-0.0038738250732421875,-6.28515625
+Your preference: {A} or {B}.,red,purple,Your preference: red or purple.,-2.220703125,-0.1275634765625
+Your preference: {A} or {B}.,blue,red,Your preference: blue or red.,-0.0005741119384765625,-12.625
+Your preference: {A} or {B}.,blue,green,Your preference: blue or green.,-0.001094818115234375,-7.03125
+Your preference: {A} or {B}.,blue,yellow,Your preference: blue or yellow.,-0.002170562744140625,-9.09375
+Your preference: {A} or {B}.,blue,purple,Your preference: blue or purple.,-0.05755615234375,-2.900390625
+Your preference: {A} or {B}.,green,red,Your preference: green or red.,-0.0013341903686523438,-11.75
+Your preference: {A} or {B}.,green,blue,Your preference: green or blue.,-4.44921875,-0.01239013671875
+Your preference: {A} or {B}.,green,yellow,Your preference: green or yellow.,-0.0005440711975097656,-10.125
+Your preference: {A} or {B}.,green,purple,Your preference: green or purple.,-0.022735595703125,-3.8046875
+Your preference: {A} or {B}.,yellow,red,Your preference: yellow or red.,-0.060455322265625,-3.248046875
+Your preference: {A} or {B}.,yellow,blue,Your preference: yellow or blue.,-5.75390625,-0.035064697265625
+Your preference: {A} or {B}.,yellow,green,Your preference: yellow or green.,-0.270263671875,-1.4580078125
+Your preference: {A} or {B}.,yellow,purple,Your preference: yellow or purple.,-2.14453125,-0.144775390625
+Your preference: {A} or {B}.,purple,red,Your preference: purple or red.,-0.033416748046875,-5.97265625
+Your preference: {A} or {B}.,purple,blue,Your preference: purple or blue.,-3.662109375,-0.036773681640625
+Your preference: {A} or {B}.,purple,green,Your preference: purple or green.,-0.0260162353515625,-6.21484375
+Your preference: {A} or {B}.,purple,yellow,Your preference: purple or yellow.,-0.018829345703125,-9.234375
+Do you favor {A} over {B}?,red,blue,Do you favor red over blue?,-0.27978515625,-8.328125
+Do you favor {A} over {B}?,red,green,Do you favor red over green?,-0.2469482421875,-8.4375
+Do you favor {A} over {B}?,red,yellow,Do you favor red over yellow?,-0.1358642578125,-9.8515625
+Do you favor {A} over {B}?,red,purple,Do you favor red over purple?,-0.03363037109375,-8.359375
+Do you favor {A} over {B}?,blue,red,Do you favor blue over red?,-0.10748291015625,-11.65625
+Do you favor {A} over {B}?,blue,green,Do you favor blue over green?,-0.235595703125,-7.625
+Do you favor {A} over {B}?,blue,yellow,Do you favor blue over yellow?,-0.1004638671875,-9.2578125
+Do you favor {A} over {B}?,blue,purple,Do you favor blue over purple?,-0.051239013671875,-6.73828125
+Do you favor {A} over {B}?,green,red,Do you favor green over red?,-0.1651611328125,-14.4765625
+Do you favor {A} over {B}?,green,blue,Do you favor green over blue?,-0.5,-7.09375
+Do you favor {A} over {B}?,green,yellow,Do you favor green over yellow?,-0.1199951171875,-12.9609375
+Do you favor {A} over {B}?,green,purple,Do you favor green over purple?,-0.043060302734375,-13.984375
+Do you favor {A} over {B}?,yellow,red,Do you favor yellow over red?,-1.080078125,-7.36328125
+Do you favor {A} over {B}?,yellow,blue,Do you favor yellow over blue?,-3.06640625,-5.70703125
+Do you favor {A} over {B}?,yellow,green,Do you favor yellow over green?,-0.87060546875,-6.71484375
+Do you favor {A} over {B}?,yellow,purple,Do you favor yellow over purple?,-0.1558837890625,-6.0
+Do you favor {A} over {B}?,purple,red,Do you favor purple over red?,-0.72119140625,-7.41015625
+Do you favor {A} over {B}?,purple,blue,Do you favor purple over blue?,-2.08984375,-3.52734375
+Do you favor {A} over {B}?,purple,green,Do you favor purple over green?,-0.9580078125,-8.3515625
+Do you favor {A} over {B}?,purple,yellow,Do you favor purple over yellow?,-0.42919921875,-10.3828125
+"Between {A} and {B}, what is your preference?",red,blue,"Between red and blue, what is your preference?",-0.73193359375,-2.044921875
+"Between {A} and {B}, what is your preference?",red,green,"Between red and green, what is your preference?",-0.307373046875,-2.650390625
+"Between {A} and {B}, what is your preference?",red,yellow,"Between red and yellow, what is your preference?",-0.6669921875,-4.01171875
+"Between {A} and {B}, what is your preference?",red,purple,"Between red and purple, what is your preference?",-0.469482421875,-1.7509765625
+"Between {A} and {B}, what is your preference?",blue,red,"Between blue and red, what is your preference?",-0.28955078125,-8.2265625
+"Between {A} and {B}, what is your preference?",blue,green,"Between blue and green, what is your preference?",-0.134521484375,-5.8828125
+"Between {A} and {B}, what is your preference?",blue,yellow,"Between blue and yellow, what is your preference?",-0.365966796875,-5.4921875
+"Between {A} and {B}, what is your preference?",blue,purple,"Between blue and purple, what is your preference?",-0.07476806640625,-4.16796875
+"Between {A} and {B}, what is your preference?",green,red,"Between green and red, what is your preference?",-0.219482421875,-8.84375
+"Between {A} and {B}, what is your preference?",green,blue,"Between green and blue, what is your preference?",-0.407470703125,-2.595703125
+"Between {A} and {B}, what is your preference?",green,yellow,"Between green and yellow, what is your preference?",-0.147216796875,-8.1484375
+"Between {A} and {B}, what is your preference?",green,purple,"Between green and purple, what is your preference?",-0.071044921875,-4.6953125
+"Between {A} and {B}, what is your preference?",yellow,red,"Between yellow and red, what is your preference?",-1.5146484375,-4.609375
+"Between {A} and {B}, what is your preference?",yellow,blue,"Between yellow and blue, what is your preference?",-1.392578125,-3.517578125
+"Between {A} and {B}, what is your preference?",yellow,green,"Between yellow and green, what is your preference?",-0.451416015625,-4.296875
+"Between {A} and {B}, what is your preference?",yellow,purple,"Between yellow and purple, what is your preference?",-0.56591796875,-2.03515625
+"Between {A} and {B}, what is your preference?",purple,red,"Between purple and red, what is your preference?",-1.3056640625,-5.1796875
+"Between {A} and {B}, what is your preference?",purple,blue,"Between purple and blue, what is your preference?",-1.998046875,-1.904296875
+"Between {A} and {B}, what is your preference?",purple,green,"Between purple and green, what is your preference?",-1.5615234375,-5.0
+"Between {A} and {B}, what is your preference?",purple,yellow,"Between purple and yellow, what is your preference?",-1.2470703125,-7.51171875
+Which holds your preference: {A} or {B}?,red,blue,Which holds your preference: red or blue?,-0.01136016845703125,-4.51171875
+Which holds your preference: {A} or {B}?,red,green,Which holds your preference: red or green?,-0.004940032958984375,-5.37890625
+Which holds your preference: {A} or {B}?,red,yellow,Which holds your preference: red or yellow?,-0.0010128021240234375,-7.21875
+Which holds your preference: {A} or {B}?,red,purple,Which holds your preference: red or purple?,-1.3173828125,-0.3173828125
+Which holds your preference: {A} or {B}?,blue,red,Which holds your preference: blue or red?,-0.00017273426055908203,-11.21875
+Which holds your preference: {A} or {B}?,blue,green,Which holds your preference: blue or green?,-0.00879669189453125,-4.7578125
+Which holds your preference: {A} or {B}?,blue,yellow,Which holds your preference: blue or yellow?,-0.0009598731994628906,-7.53125
+Which holds your preference: {A} or {B}?,blue,purple,Which holds your preference: blue or purple?,-0.036285400390625,-3.349609375
+Which holds your preference: {A} or {B}?,green,red,Which holds your preference: green or red?,-0.00017452239990234375,-11.46875
+Which holds your preference: {A} or {B}?,green,blue,Which holds your preference: green or blue?,-4.109375,-0.016754150390625
+Which holds your preference: {A} or {B}?,green,yellow,Which holds your preference: green or yellow?,-6.270408630371094e-05,-10.78125
+Which holds your preference: {A} or {B}?,green,purple,Which holds your preference: green or purple?,-0.006008148193359375,-5.1328125
+Which holds your preference: {A} or {B}?,yellow,red,Which holds your preference: yellow or red?,-0.181396484375,-1.806640625
+Which holds your preference: {A} or {B}?,yellow,blue,Which holds your preference: yellow or blue?,-6.69140625,-0.0026683807373046875
+Which holds your preference: {A} or {B}?,yellow,green,Which holds your preference: yellow or green?,-0.89892578125,-0.52392578125
+Which holds your preference: {A} or {B}?,yellow,purple,Which holds your preference: yellow or purple?,-2.640625,-0.0772705078125
+Which holds your preference: {A} or {B}?,purple,red,Which holds your preference: purple or red?,-0.0177459716796875,-4.17578125
+Which holds your preference: {A} or {B}?,purple,blue,Which holds your preference: purple or blue?,-3.470703125,-0.032501220703125
+Which holds your preference: {A} or {B}?,purple,green,Which holds your preference: purple or green?,-0.0078125,-5.4765625
+Which holds your preference: {A} or {B}?,purple,yellow,Which holds your preference: purple or yellow?,-0.0009341239929199219,-8.8125
+Do you lean towards {A} or {B}?,red,blue,Do you lean towards red or blue?,-0.15673828125,-4.375
+Do you lean towards {A} or {B}?,red,green,Do you lean towards red or green?,-0.12249755859375,-6.02734375
+Do you lean towards {A} or {B}?,red,yellow,Do you lean towards red or yellow?,-0.28564453125,-5.69140625
+Do you lean towards {A} or {B}?,red,purple,Do you lean towards red or purple?,-1.271484375,-0.73974609375
+Do you lean towards {A} or {B}?,blue,red,Do you lean towards blue or red?,-0.036895751953125,-11.9296875
+Do you lean towards {A} or {B}?,blue,green,Do you lean towards blue or green?,-0.0307464599609375,-5.34375
+Do you lean towards {A} or {B}?,blue,yellow,Do you lean towards blue or yellow?,-0.0506591796875,-7.67578125
+Do you lean towards {A} or {B}?,blue,purple,Do you lean towards blue or purple?,-0.403564453125,-1.3720703125
+Do you lean towards {A} or {B}?,green,red,Do you lean towards green or red?,-0.09442138671875,-11.40625
+Do you lean towards {A} or {B}?,green,blue,Do you lean towards green or blue?,-0.248779296875,-1.9052734375
+Do you lean towards {A} or {B}?,green,yellow,Do you lean towards green or yellow?,-0.06585693359375,-10.0625
+Do you lean towards {A} or {B}?,green,purple,Do you lean towards green or purple?,-0.0169830322265625,-6.734375
+Do you lean towards {A} or {B}?,yellow,red,Do you lean towards yellow or red?,-0.2327880859375,-7.203125
+Do you lean towards {A} or {B}?,yellow,blue,Do you lean towards yellow or blue?,-0.5927734375,-1.6240234375
+Do you lean towards {A} or {B}?,yellow,green,Do you lean towards yellow or green?,-0.0849609375,-4.6171875
+Do you lean towards {A} or {B}?,yellow,purple,Do you lean towards yellow or purple?,-0.0560302734375,-3.900390625
+Do you lean towards {A} or {B}?,purple,red,Do you lean towards purple or red?,-0.23291015625,-7.15625
+Do you lean towards {A} or {B}?,purple,blue,Do you lean towards purple or blue?,-2.6875,-0.1568603515625
+Do you lean towards {A} or {B}?,purple,green,Do you lean towards purple or green?,-0.282470703125,-6.765625
+Do you lean towards {A} or {B}?,purple,yellow,Do you lean towards purple or yellow?,-0.1959228515625,-9.0390625
+"In a comparison of {A} and {B}, which do you prefer?",red,blue,"In a comparison of red and blue, which do you prefer?",-0.984375,-3.609375
+"In a comparison of {A} and {B}, which do you prefer?",red,green,"In a comparison of red and green, which do you prefer?",-0.91552734375,-2.822265625
+"In a comparison of {A} and {B}, which do you prefer?",red,yellow,"In a comparison of red and yellow, which do you prefer?",-2.767578125,-6.203125
+"In a comparison of {A} and {B}, which do you prefer?",red,purple,"In a comparison of red and purple, which do you prefer?",-0.81201171875,-2.625
+"In a comparison of {A} and {B}, which do you prefer?",blue,red,"In a comparison of blue and red, which do you prefer?",-0.1307373046875,-10.1171875
+"In a comparison of {A} and {B}, which do you prefer?",blue,green,"In a comparison of blue and green, which do you prefer?",-0.1947021484375,-5.9140625
+"In a comparison of {A} and {B}, which do you prefer?",blue,yellow,"In a comparison of blue and yellow, which do you prefer?",-0.3232421875,-7.41796875
+"In a comparison of {A} and {B}, which do you prefer?",blue,purple,"In a comparison of blue and purple, which do you prefer?",-0.12347412109375,-5.09375
+"In a comparison of {A} and {B}, which do you prefer?",green,red,"In a comparison of green and red, which do you prefer?",-0.1746826171875,-10.296875
+"In a comparison of {A} and {B}, which do you prefer?",green,blue,"In a comparison of green and blue, which do you prefer?",-0.414794921875,-4.2578125
+"In a comparison of {A} and {B}, which do you prefer?",green,yellow,"In a comparison of green and yellow, which do you prefer?",-0.33056640625,-9.078125
+"In a comparison of {A} and {B}, which do you prefer?",green,purple,"In a comparison of green and purple, which do you prefer?",-0.050933837890625,-6.11328125
+"In a comparison of {A} and {B}, which do you prefer?",yellow,red,"In a comparison of yellow and red, which do you prefer?",-2.701171875,-8.234375
+"In a comparison of {A} and {B}, which do you prefer?",yellow,blue,"In a comparison of yellow and blue, which do you prefer?",-2.169921875,-5.015625
+"In a comparison of {A} and {B}, which do you prefer?",yellow,green,"In a comparison of yellow and green, which do you prefer?",-1.5380859375,-5.0390625
+"In a comparison of {A} and {B}, which do you prefer?",yellow,purple,"In a comparison of yellow and purple, which do you prefer?",-1.1708984375,-1.8583984375
+"In a comparison of {A} and {B}, which do you prefer?",purple,red,"In a comparison of purple and red, which do you prefer?",-1.5029296875,-7.73828125
+"In a comparison of {A} and {B}, which do you prefer?",purple,blue,"In a comparison of purple and blue, which do you prefer?",-2.154296875,-3.685546875
+"In a comparison of {A} and {B}, which do you prefer?",purple,green,"In a comparison of purple and green, which do you prefer?",-1.7548828125,-6.42578125
+"In a comparison of {A} and {B}, which do you prefer?",purple,yellow,"In a comparison of purple and yellow, which do you prefer?",-1.1806640625,-7.7890625
+Are you more in favor of {A} or {B}?,red,blue,Are you more in favor of red or blue?,-1.09375,-0.499755859375
+Are you more in favor of {A} or {B}?,red,green,Are you more in favor of red or green?,-2.494140625,-0.401123046875
+Are you more in favor of {A} or {B}?,red,yellow,Are you more in favor of red or yellow?,-0.288330078125,-3.3515625
+Are you more in favor of {A} or {B}?,red,purple,Are you more in favor of red or purple?,-5.1953125,-0.25830078125
+Are you more in favor of {A} or {B}?,blue,red,Are you more in favor of blue or red?,-0.026336669921875,-10.4453125
+Are you more in favor of {A} or {B}?,blue,green,Are you more in favor of blue or green?,-1.05859375,-0.96484375
+Are you more in favor of {A} or {B}?,blue,yellow,Are you more in favor of blue or yellow?,-0.186279296875,-5.1875
+Are you more in favor of {A} or {B}?,blue,purple,Are you more in favor of blue or purple?,-2.1171875,-0.55419921875
+Are you more in favor of {A} or {B}?,green,red,Are you more in favor of green or red?,-0.1602783203125,-11.2578125
+Are you more in favor of {A} or {B}?,green,blue,Are you more in favor of green or blue?,-0.3447265625,-2.876953125
+Are you more in favor of {A} or {B}?,green,yellow,Are you more in favor of green or yellow?,-0.1512451171875,-10.8046875
+Are you more in favor of {A} or {B}?,green,purple,Are you more in favor of green or purple?,-0.030303955078125,-7.90625
+Are you more in favor of {A} or {B}?,yellow,red,Are you more in favor of yellow or red?,-0.399658203125,-6.4296875
+Are you more in favor of {A} or {B}?,yellow,blue,Are you more in favor of yellow or blue?,-4.91796875,-0.3564453125
+Are you more in favor of {A} or {B}?,yellow,green,Are you more in favor of yellow or green?,-0.9873046875,-0.9873046875
+Are you more in favor of {A} or {B}?,yellow,purple,Are you more in favor of yellow or purple?,-0.64794921875,-1.0234375
+Are you more in favor of {A} or {B}?,purple,red,Are you more in favor of purple or red?,-0.281982421875,-4.40625
+Are you more in favor of {A} or {B}?,purple,blue,Are you more in favor of purple or blue?,-7.09375,-0.12469482421875
+Are you more in favor of {A} or {B}?,purple,green,Are you more in favor of purple or green?,-0.81591796875,-5.16015625
+Are you more in favor of {A} or {B}?,purple,yellow,Are you more in favor of purple or yellow?,-0.407958984375,-7.875
+"Comparing {A} and {B}, what is your preference?",red,blue,"Comparing red and blue, what is your preference?",-2.138671875,-5.734375
+"Comparing {A} and {B}, what is your preference?",red,green,"Comparing red and green, what is your preference?",-1.740234375,-5.61328125
+"Comparing {A} and {B}, what is your preference?",red,yellow,"Comparing red and yellow, what is your preference?",-2.76171875,-6.85546875
+"Comparing {A} and {B}, what is your preference?",red,purple,"Comparing red and purple, what is your preference?",-1.0068359375,-3.8828125
+"Comparing {A} and {B}, what is your preference?",blue,red,"Comparing blue and red, what is your preference?",-0.974609375,-9.2578125
+"Comparing {A} and {B}, what is your preference?",blue,green,"Comparing blue and green, what is your preference?",-0.88916015625,-6.171875
+"Comparing {A} and {B}, what is your preference?",blue,yellow,"Comparing blue and yellow, what is your preference?",-1.0625,-6.453125
+"Comparing {A} and {B}, what is your preference?",blue,purple,"Comparing blue and purple, what is your preference?",-0.429931640625,-4.9453125
+"Comparing {A} and {B}, what is your preference?",green,red,"Comparing green and red, what is your preference?",-0.935546875,-10.78125
+"Comparing {A} and {B}, what is your preference?",green,blue,"Comparing green and blue, what is your preference?",-1.5517578125,-4.39453125
+"Comparing {A} and {B}, what is your preference?",green,yellow,"Comparing green and yellow, what is your preference?",-0.7578125,-9.4296875
+"Comparing {A} and {B}, what is your preference?",green,purple,"Comparing green and purple, what is your preference?",-0.27685546875,-6.77734375
+"Comparing {A} and {B}, what is your preference?",yellow,red,"Comparing yellow and red, what is your preference?",-3.38671875,-8.1484375
+"Comparing {A} and {B}, what is your preference?",yellow,blue,"Comparing yellow and blue, what is your preference?",-3.16015625,-6.48828125
+"Comparing {A} and {B}, what is your preference?",yellow,green,"Comparing yellow and green, what is your preference?",-2.41796875,-7.40234375
+"Comparing {A} and {B}, what is your preference?",yellow,purple,"Comparing yellow and purple, what is your preference?",-1.5595703125,-2.96484375
+"Comparing {A} and {B}, what is your preference?",purple,red,"Comparing purple and red, what is your preference?",-2.158203125,-7.234375
+"Comparing {A} and {B}, what is your preference?",purple,blue,"Comparing purple and blue, what is your preference?",-2.859375,-3.203125
+"Comparing {A} and {B}, what is your preference?",purple,green,"Comparing purple and green, what is your preference?",-2.552734375,-7.17578125
+"Comparing {A} and {B}, what is your preference?",purple,yellow,"Comparing purple and yellow, what is your preference?",-1.859375,-7.296875
+Which of these two do you prefer: {A} or {B}?,red,blue,Which of these two do you prefer: red or blue?,-0.2452392578125,-1.5263671875
+Which of these two do you prefer: {A} or {B}?,red,green,Which of these two do you prefer: red or green?,-0.0219879150390625,-3.833984375
+Which of these two do you prefer: {A} or {B}?,red,yellow,Which of these two do you prefer: red or yellow?,-0.0019025802612304688,-6.375
+Which of these two do you prefer: {A} or {B}?,red,purple,Which of these two do you prefer: red or purple?,-2.525390625,-0.0888671875
+Which of these two do you prefer: {A} or {B}?,blue,red,Which of these two do you prefer: blue or red?,-0.0005860328674316406,-10.34375
+Which of these two do you prefer: {A} or {B}?,blue,green,Which of these two do you prefer: blue or green?,-0.0098724365234375,-4.66796875
+Which of these two do you prefer: {A} or {B}?,blue,yellow,Which of these two do you prefer: blue or yellow?,-0.0031757354736328125,-6.87890625
+Which of these two do you prefer: {A} or {B}?,blue,purple,Which of these two do you prefer: blue or purple?,-0.0633544921875,-2.8125
+Which of these two do you prefer: {A} or {B}?,green,red,Which of these two do you prefer: green or red?,-0.0004897117614746094,-8.9375
+Which of these two do you prefer: {A} or {B}?,green,blue,Which of these two do you prefer: green or blue?,-7.5625,-0.0008668899536132812
+Which of these two do you prefer: {A} or {B}?,green,yellow,Which of these two do you prefer: green or yellow?,-0.0003337860107421875,-9.1875
+Which of these two do you prefer: {A} or {B}?,green,purple,Which of these two do you prefer: green or purple?,-0.0869140625,-2.494140625
+Which of these two do you prefer: {A} or {B}?,yellow,red,Which of these two do you prefer: yellow or red?,-0.578125,-0.859375
+Which of these two do you prefer: {A} or {B}?,yellow,blue,Which of these two do you prefer: yellow or blue?,-7.8515625,-0.00957489013671875
+Which of these two do you prefer: {A} or {B}?,yellow,green,Which of these two do you prefer: yellow or green?,-1.3408203125,-0.3095703125
+Which of these two do you prefer: {A} or {B}?,yellow,purple,Which of these two do you prefer: yellow or purple?,-3.205078125,-0.049468994140625
+Which of these two do you prefer: {A} or {B}?,purple,red,Which of these two do you prefer: purple or red?,-0.04681396484375,-3.359375
+Which of these two do you prefer: {A} or {B}?,purple,blue,Which of these two do you prefer: purple or blue?,-5.56640625,-0.005336761474609375
+Which of these two do you prefer: {A} or {B}?,purple,green,Which of these two do you prefer: purple or green?,-0.0309295654296875,-4.1875
+Which of these two do you prefer: {A} or {B}?,purple,yellow,Which of these two do you prefer: purple or yellow?,-0.0028133392333984375,-8.6875
+Tell me your preference between {A} and {B}.,red,blue,Tell me your preference between red and blue.,-1.7744140625,-1.3994140625
+Tell me your preference between {A} and {B}.,red,green,Tell me your preference between red and green.,-0.3271484375,-3.451171875
+Tell me your preference between {A} and {B}.,red,yellow,Tell me your preference between red and yellow.,-1.1201171875,-6.46484375
+Tell me your preference between {A} and {B}.,red,purple,Tell me your preference between red and purple.,-3.619140625,-2.087890625
+Tell me your preference between {A} and {B}.,blue,red,Tell me your preference between blue and red.,-0.462646484375,-9.2421875
+Tell me your preference between {A} and {B}.,blue,green,Tell me your preference between blue and green.,-0.354736328125,-3.63671875
+Tell me your preference between {A} and {B}.,blue,yellow,Tell me your preference between blue and yellow.,-0.94580078125,-6.0703125
+Tell me your preference between {A} and {B}.,blue,purple,Tell me your preference between blue and purple.,-0.759765625,-2.541015625
+Tell me your preference between {A} and {B}.,green,red,Tell me your preference between green and red.,-0.499267578125,-7.3125
+Tell me your preference between {A} and {B}.,green,blue,Tell me your preference between green and blue.,-8.25,-0.4404296875
+Tell me your preference between {A} and {B}.,green,yellow,Tell me your preference between green and yellow.,-0.245361328125,-8.3671875
+Tell me your preference between {A} and {B}.,green,purple,Tell me your preference between green and purple.,-0.53662109375,-2.755859375
+Tell me your preference between {A} and {B}.,yellow,red,Tell me your preference between yellow and red.,-2.01171875,-3.01171875
+Tell me your preference between {A} and {B}.,yellow,blue,Tell me your preference between yellow and blue.,-7.66796875,-1.2470703125
+Tell me your preference between {A} and {B}.,yellow,green,Tell me your preference between yellow and green.,-1.1357421875,-1.7919921875
+Tell me your preference between {A} and {B}.,yellow,purple,Tell me your preference between yellow and purple.,-3.802734375,-1.240234375
+Tell me your preference between {A} and {B}.,purple,red,Tell me your preference between purple and red.,-2.130859375,-3.880859375
+Tell me your preference between {A} and {B}.,purple,blue,Tell me your preference between purple and blue.,-6.921875,-0.77978515625
+Tell me your preference between {A} and {B}.,purple,green,Tell me your preference between purple and green.,-2.47265625,-5.97265625
+Tell me your preference between {A} and {B}.,purple,yellow,Tell me your preference between purple and yellow.,-1.8310546875,-8.515625
+Is your preference for {A} or {B}?,red,blue,Is your preference for red or blue?,-1.2099609375,-0.42822265625
+Is your preference for {A} or {B}?,red,green,Is your preference for red or green?,-0.0869140625,-3.4296875
+Is your preference for {A} or {B}?,red,yellow,Is your preference for red or yellow?,-0.0909423828125,-3.216796875
+Is your preference for {A} or {B}?,red,purple,Is your preference for red or purple?,-4.69921875,-0.2296142578125
+Is your preference for {A} or {B}?,blue,red,Is your preference for blue or red?,-0.032806396484375,-8.875
+Is your preference for {A} or {B}?,blue,green,Is your preference for blue or green?,-0.048370361328125,-4.421875
+Is your preference for {A} or {B}?,blue,yellow,Is your preference for blue or yellow?,-0.07354736328125,-5.91796875
+Is your preference for {A} or {B}?,blue,purple,Is your preference for blue or purple?,-0.55224609375,-1.2080078125
+Is your preference for {A} or {B}?,green,red,Is your preference for green or red?,-0.047271728515625,-9.046875
+Is your preference for {A} or {B}?,green,blue,Is your preference for green or blue?,-6.06640625,-0.033294677734375
+Is your preference for {A} or {B}?,green,yellow,Is your preference for green or yellow?,-0.0131072998046875,-8.546875
+Is your preference for {A} or {B}?,green,purple,Is your preference for green or purple?,-0.11932373046875,-2.369140625
+Is your preference for {A} or {B}?,yellow,red,Is your preference for yellow or red?,-0.40283203125,-1.6220703125
+Is your preference for {A} or {B}?,yellow,blue,Is your preference for yellow or blue?,-7.109375,-0.1708984375
+Is your preference for {A} or {B}?,yellow,green,Is your preference for yellow or green?,-1.060546875,-0.529296875
+Is your preference for {A} or {B}?,yellow,purple,Is your preference for yellow or purple?,-3.458984375,-0.177001953125
+Is your preference for {A} or {B}?,purple,red,Is your preference for purple or red?,-0.1680908203125,-3.85546875
+Is your preference for {A} or {B}?,purple,blue,Is your preference for purple or blue?,-5.609375,-0.10833740234375
+Is your preference for {A} or {B}?,purple,green,Is your preference for purple or green?,-0.21533203125,-6.24609375
+Is your preference for {A} or {B}?,purple,yellow,Is your preference for purple or yellow?,-0.092041015625,-8.015625
+"Between {A} and {B}, which one do you like more?",red,blue,"Between red and blue, which one do you like more?",-0.87890625,-1.00390625
+"Between {A} and {B}, which one do you like more?",red,green,"Between red and green, which one do you like more?",-0.253662109375,-2.12890625
+"Between {A} and {B}, which one do you like more?",red,yellow,"Between red and yellow, which one do you like more?",-0.317138671875,-3.00390625
+"Between {A} and {B}, which one do you like more?",red,purple,"Between red and purple, which one do you like more?",-1.14453125,-0.55078125
+"Between {A} and {B}, which one do you like more?",blue,red,"Between blue and red, which one do you like more?",-0.151611328125,-8.3359375
+"Between {A} and {B}, which one do you like more?",blue,green,"Between blue and green, which one do you like more?",-0.029052734375,-5.99609375
+"Between {A} and {B}, which one do you like more?",blue,yellow,"Between blue and yellow, which one do you like more?",-0.0845947265625,-5.4609375
+"Between {A} and {B}, which one do you like more?",blue,purple,"Between blue and purple, which one do you like more?",-0.050506591796875,-3.26953125
+"Between {A} and {B}, which one do you like more?",green,red,"Between green and red, which one do you like more?",-0.113037109375,-8.734375
+"Between {A} and {B}, which one do you like more?",green,blue,"Between green and blue, which one do you like more?",-0.44287109375,-1.3798828125
+"Between {A} and {B}, which one do you like more?",green,yellow,"Between green and yellow, which one do you like more?",-0.047576904296875,-7.828125
+"Between {A} and {B}, which one do you like more?",green,purple,"Between green and purple, which one do you like more?",-0.06585693359375,-3.12890625
+"Between {A} and {B}, which one do you like more?",yellow,red,"Between yellow and red, which one do you like more?",-1.0751953125,-2.701171875
+"Between {A} and {B}, which one do you like more?",yellow,blue,"Between yellow and blue, which one do you like more?",-1.23046875,-1.60546875
+"Between {A} and {B}, which one do you like more?",yellow,green,"Between yellow and green, which one do you like more?",-0.2626953125,-2.826171875
+"Between {A} and {B}, which one do you like more?",yellow,purple,"Between yellow and purple, which one do you like more?",-1.1376953125,-0.7939453125
+"Between {A} and {B}, which one do you like more?",purple,red,"Between purple and red, which one do you like more?",-0.5595703125,-4.02734375
+"Between {A} and {B}, which one do you like more?",purple,blue,"Between purple and blue, which one do you like more?",-1.662109375,-0.787109375
+"Between {A} and {B}, which one do you like more?",purple,green,"Between purple and green, which one do you like more?",-0.79248046875,-4.13671875
+"Between {A} and {B}, which one do you like more?",purple,yellow,"Between purple and yellow, which one do you like more?",-0.51171875,-6.94921875
+Express your preference: {A} or {B}.,red,blue,Express your preference: red or blue.,-0.00785064697265625,-4.8515625
+Express your preference: {A} or {B}.,red,green,Express your preference: red or green.,-0.002475738525390625,-6.00390625
+Express your preference: {A} or {B}.,red,yellow,Express your preference: red or yellow.,-0.0006890296936035156,-7.28125
+Express your preference: {A} or {B}.,red,purple,Express your preference: red or purple.,-1.291015625,-0.32177734375
+Express your preference: {A} or {B}.,blue,red,Express your preference: blue or red.,-8.940696716308594e-06,-11.75
+Express your preference: {A} or {B}.,blue,green,Express your preference: blue or green.,-0.0014123916625976562,-6.5625
+Express your preference: {A} or {B}.,blue,yellow,Express your preference: blue or yellow.,-9.453296661376953e-05,-9.3125
+Express your preference: {A} or {B}.,blue,purple,Express your preference: blue or purple.,-0.051666259765625,-2.98828125
+Express your preference: {A} or {B}.,green,red,Express your preference: green or red.,-1.8477439880371094e-05,-10.96875
+Express your preference: {A} or {B}.,green,blue,Express your preference: green or blue.,-3.138671875,-0.044342041015625
+Express your preference: {A} or {B}.,green,yellow,Express your preference: green or yellow.,-1.8835067749023438e-05,-10.9375
+Express your preference: {A} or {B}.,green,purple,Express your preference: green or purple.,-0.006931304931640625,-4.9765625
+Express your preference: {A} or {B}.,yellow,red,Express your preference: yellow or red.,-0.08642578125,-2.4921875
+Express your preference: {A} or {B}.,yellow,blue,Express your preference: yellow or blue.,-5.22265625,-0.0054779052734375
+Express your preference: {A} or {B}.,yellow,green,Express your preference: yellow or green.,-0.1602783203125,-1.91015625
+Express your preference: {A} or {B}.,yellow,purple,Express your preference: yellow or purple.,-1.6259765625,-0.2193603515625
+Express your preference: {A} or {B}.,purple,red,Express your preference: purple or red.,-0.00722503662109375,-4.9453125
+Express your preference: {A} or {B}.,purple,blue,Express your preference: purple or blue.,-4.54296875,-0.01073455810546875
+Express your preference: {A} or {B}.,purple,green,Express your preference: purple or green.,-0.00360870361328125,-5.66015625
+Express your preference: {A} or {B}.,purple,yellow,Express your preference: purple or yellow.,-0.0001461505889892578,-9.125
+{A} or {B}: Which is your preference?,red,blue,red or blue: Which is your preference?,-0.00760650634765625,-4.8828125
+{A} or {B}: Which is your preference?,red,green,red or green: Which is your preference?,-0.038055419921875,-3.287109375
+{A} or {B}: Which is your preference?,red,yellow,red or yellow: Which is your preference?,-0.00975799560546875,-4.6328125
+{A} or {B}: Which is your preference?,red,purple,red or purple: Which is your preference?,-0.47412109375,-0.97412109375
+{A} or {B}: Which is your preference?,blue,red,blue or red: Which is your preference?,-8.249282836914062e-05,-9.40625
+{A} or {B}: Which is your preference?,blue,green,blue or green: Which is your preference?,-0.0029850006103515625,-5.81640625
+{A} or {B}: Which is your preference?,blue,yellow,blue or yellow: Which is your preference?,-0.0007328987121582031,-7.21875
+{A} or {B}: Which is your preference?,blue,purple,blue or purple: Which is your preference?,-0.06011962890625,-2.841796875
+{A} or {B}: Which is your preference?,green,red,green or red: Which is your preference?,-2.4437904357910156e-05,-10.625
+{A} or {B}: Which is your preference?,green,blue,green or blue: Which is your preference?,-0.0288543701171875,-3.560546875
+{A} or {B}: Which is your preference?,green,yellow,green or yellow: Which is your preference?,-8.225440979003906e-05,-9.40625
+{A} or {B}: Which is your preference?,green,purple,green or purple: Which is your preference?,-0.006927490234375,-4.9765625
+{A} or {B}: Which is your preference?,yellow,red,yellow or red: Which is your preference?,-0.0005617141723632812,-7.5
+{A} or {B}: Which is your preference?,yellow,blue,yellow or blue: Which is your preference?,-0.00946807861328125,-4.6640625
+{A} or {B}: Which is your preference?,yellow,green,yellow or green: Which is your preference?,-0.0037212371826171875,-5.59765625
+{A} or {B}: Which is your preference?,yellow,purple,yellow or purple: Which is your preference?,-0.169677734375,-1.857421875
+{A} or {B}: Which is your preference?,purple,red,purple or red: Which is your preference?,-0.0003745555877685547,-7.90625
+{A} or {B}: Which is your preference?,purple,blue,purple or blue: Which is your preference?,-0.03924560546875,-3.2578125
+{A} or {B}: Which is your preference?,purple,green,purple or green: Which is your preference?,-0.0019388198852539062,-6.25
+{A} or {B}: Which is your preference?,purple,yellow,purple or yellow: Which is your preference?,-0.00022125244140625,-8.4375
+"Regarding {A} and {B}, which do you prefer?",red,blue,"Regarding red and blue, which do you prefer?",-1.677734375,-3.396484375
+"Regarding {A} and {B}, which do you prefer?",red,green,"Regarding red and green, which do you prefer?",-1.021484375,-2.521484375
+"Regarding {A} and {B}, which do you prefer?",red,yellow,"Regarding red and yellow, which do you prefer?",-2.951171875,-5.60546875
+"Regarding {A} and {B}, which do you prefer?",red,purple,"Regarding red and purple, which do you prefer?",-1.5751953125,-1.8251953125
+"Regarding {A} and {B}, which do you prefer?",blue,red,"Regarding blue and red, which do you prefer?",-0.21337890625,-8.6953125
+"Regarding {A} and {B}, which do you prefer?",blue,green,"Regarding blue and green, which do you prefer?",-0.2376708984375,-3.42578125
+"Regarding {A} and {B}, which do you prefer?",blue,yellow,"Regarding blue and yellow, which do you prefer?",-0.344970703125,-6.0
+"Regarding {A} and {B}, which do you prefer?",blue,purple,"Regarding blue and purple, which do you prefer?",-0.1884765625,-3.095703125
+"Regarding {A} and {B}, which do you prefer?",green,red,"Regarding green and red, which do you prefer?",-0.6181640625,-9.7421875
+"Regarding {A} and {B}, which do you prefer?",green,blue,"Regarding green and blue, which do you prefer?",-1.1240234375,-3.873046875
+"Regarding {A} and {B}, which do you prefer?",green,yellow,"Regarding green and yellow, which do you prefer?",-0.994140625,-8.1640625
+"Regarding {A} and {B}, which do you prefer?",green,purple,"Regarding green and purple, which do you prefer?",-0.27294921875,-4.3359375
+"Regarding {A} and {B}, which do you prefer?",yellow,red,"Regarding yellow and red, which do you prefer?",-2.44921875,-6.26171875
+"Regarding {A} and {B}, which do you prefer?",yellow,blue,"Regarding yellow and blue, which do you prefer?",-1.56640625,-2.91015625
+"Regarding {A} and {B}, which do you prefer?",yellow,green,"Regarding yellow and green, which do you prefer?",-1.3759765625,-2.126953125
+"Regarding {A} and {B}, which do you prefer?",yellow,purple,"Regarding yellow and purple, which do you prefer?",-1.50390625,-1.16015625
+"Regarding {A} and {B}, which do you prefer?",purple,red,"Regarding purple and red, which do you prefer?",-0.9951171875,-7.51171875
+"Regarding {A} and {B}, which do you prefer?",purple,blue,"Regarding purple and blue, which do you prefer?",-2.353515625,-3.228515625
+"Regarding {A} and {B}, which do you prefer?",purple,green,"Regarding purple and green, which do you prefer?",-1.41015625,-5.95703125
+"Regarding {A} and {B}, which do you prefer?",purple,yellow,"Regarding purple and yellow, which do you prefer?",-0.6630859375,-7.6484375
+Which do you favor: {A} or {B}?,red,blue,Which do you favor: red or blue?,-0.1578369140625,-1.970703125
+Which do you favor: {A} or {B}?,red,green,Which do you favor: red or green?,-0.048126220703125,-3.173828125
+Which do you favor: {A} or {B}?,red,yellow,Which do you favor: red or yellow?,-0.01059722900390625,-5.69921875
+Which do you favor: {A} or {B}?,red,purple,Which do you favor: red or purple?,-1.396484375,-0.334228515625
+Which do you favor: {A} or {B}?,blue,red,Which do you favor: blue or red?,-0.0038204193115234375,-9.1875
+Which do you favor: {A} or {B}?,blue,green,Which do you favor: blue or green?,-0.03485107421875,-3.47265625
+Which do you favor: {A} or {B}?,blue,yellow,Which do you favor: blue or yellow?,-0.007717132568359375,-6.1953125
+Which do you favor: {A} or {B}?,blue,purple,Which do you favor: blue or purple?,-0.08233642578125,-2.58203125
+Which do you favor: {A} or {B}?,green,red,Which do you favor: green or red?,-0.003978729248046875,-10.6953125
+Which do you favor: {A} or {B}?,green,blue,Which do you favor: green or blue?,-3.6875,-0.031707763671875
+Which do you favor: {A} or {B}?,green,yellow,Which do you favor: green or yellow?,-0.0015468597412109375,-10.0625
+Which do you favor: {A} or {B}?,green,purple,Which do you favor: green or purple?,-0.00386810302734375,-5.78515625
+Which do you favor: {A} or {B}?,yellow,red,Which do you favor: yellow or red?,-0.15673828125,-2.15625
+Which do you favor: {A} or {B}?,yellow,blue,Which do you favor: yellow or blue?,-5.1796875,-0.0235595703125
+Which do you favor: {A} or {B}?,yellow,green,Which do you favor: yellow or green?,-0.59912109375,-0.81787109375
+Which do you favor: {A} or {B}?,yellow,purple,Which do you favor: yellow or purple?,-1.9033203125,-0.1846923828125
+Which do you favor: {A} or {B}?,purple,red,Which do you favor: purple or red?,-0.08270263671875,-3.11328125
+Which do you favor: {A} or {B}?,purple,blue,Which do you favor: purple or blue?,-4.94921875,-0.01166534423828125
+Which do you favor: {A} or {B}?,purple,green,Which do you favor: purple or green?,-0.058319091796875,-4.65234375
+Which do you favor: {A} or {B}?,purple,yellow,Which do you favor: purple or yellow?,-0.016998291015625,-7.71875
+What do you like more: {A} or {B}?,red,blue,What do you like more: red or blue?,-0.062347412109375,-3.0
+What do you like more: {A} or {B}?,red,green,What do you like more: red or green?,-0.057830810546875,-3.05859375
+What do you like more: {A} or {B}?,red,yellow,What do you like more: red or yellow?,-0.016571044921875,-5.546875
+What do you like more: {A} or {B}?,red,purple,What do you like more: red or purple?,-2.4296875,-0.2115478515625
+What do you like more: {A} or {B}?,blue,red,What do you like more: blue or red?,-0.00882720947265625,-8.5078125
+What do you like more: {A} or {B}?,blue,green,What do you like more: blue or green?,-0.0232391357421875,-4.3046875
+What do you like more: {A} or {B}?,blue,yellow,What do you like more: blue or yellow?,-0.0186767578125,-6.92578125
+What do you like more: {A} or {B}?,blue,purple,What do you like more: blue or purple?,-0.1302490234375,-2.380859375
+What do you like more: {A} or {B}?,green,red,What do you like more: green or red?,-0.01175689697265625,-7.98046875
+What do you like more: {A} or {B}?,green,blue,What do you like more: green or blue?,-5.64453125,-0.018310546875
+What do you like more: {A} or {B}?,green,yellow,What do you like more: green or yellow?,-0.00876617431640625,-7.8203125
+What do you like more: {A} or {B}?,green,purple,What do you like more: green or purple?,-0.0323486328125,-3.783203125
+What do you like more: {A} or {B}?,yellow,red,What do you like more: yellow or red?,-0.630859375,-0.880859375
+What do you like more: {A} or {B}?,yellow,blue,What do you like more: yellow or blue?,-5.39453125,-0.050811767578125
+What do you like more: {A} or {B}?,yellow,green,What do you like more: yellow or green?,-1.1767578125,-0.427001953125
+What do you like more: {A} or {B}?,yellow,purple,What do you like more: yellow or purple?,-1.708984375,-0.271728515625
+What do you like more: {A} or {B}?,purple,red,What do you like more: purple or red?,-0.112060546875,-2.830078125
+What do you like more: {A} or {B}?,purple,blue,What do you like more: purple or blue?,-4.3984375,-0.0225677490234375
+What do you like more: {A} or {B}?,purple,green,What do you like more: purple or green?,-0.12225341796875,-3.623046875
+What do you like more: {A} or {B}?,purple,yellow,What do you like more: purple or yellow?,-0.0146942138671875,-7.59375
+Which is preferred by you: {A} or {B}?,red,blue,Which is preferred by you: red or blue?,-1.337890625,-0.306884765625
+Which is preferred by you: {A} or {B}?,red,green,Which is preferred by you: red or green?,-0.728515625,-0.666015625
+Which is preferred by you: {A} or {B}?,red,yellow,Which is preferred by you: red or yellow?,-0.026824951171875,-3.80859375
+Which is preferred by you: {A} or {B}?,red,purple,Which is preferred by you: red or purple?,-3.58984375,-0.058929443359375
+Which is preferred by you: {A} or {B}?,blue,red,Which is preferred by you: blue or red?,-0.0016202926635742188,-9.09375
+Which is preferred by you: {A} or {B}?,blue,green,Which is preferred by you: blue or green?,-0.0791015625,-2.671875
+Which is preferred by you: {A} or {B}?,blue,yellow,Which is preferred by you: blue or yellow?,-0.007354736328125,-6.1328125
+Which is preferred by you: {A} or {B}?,blue,purple,Which is preferred by you: blue or purple?,-0.1715087890625,-1.921875
+Which is preferred by you: {A} or {B}?,green,red,Which is preferred by you: green or red?,-0.0028095245361328125,-9.375
+Which is preferred by you: {A} or {B}?,green,blue,Which is preferred by you: green or blue?,-6.5703125,-0.0077362060546875
+Which is preferred by you: {A} or {B}?,green,yellow,Which is preferred by you: green or yellow?,-0.0017881393432617188,-9.40625
+Which is preferred by you: {A} or {B}?,green,purple,Which is preferred by you: green or purple?,-0.03692626953125,-3.412109375
+Which is preferred by you: {A} or {B}?,yellow,red,Which is preferred by you: yellow or red?,-1.251953125,-0.37744140625
+Which is preferred by you: {A} or {B}?,yellow,blue,Which is preferred by you: yellow or blue?,-7.171875,-0.0149688720703125
+Which is preferred by you: {A} or {B}?,yellow,green,Which is preferred by you: yellow or green?,-2.0078125,-0.1640625
+Which is preferred by you: {A} or {B}?,yellow,purple,Which is preferred by you: yellow or purple?,-4.625,-0.029327392578125
+Which is preferred by you: {A} or {B}?,purple,red,Which is preferred by you: purple or red?,-0.07769775390625,-2.921875
+Which is preferred by you: {A} or {B}?,purple,blue,Which is preferred by you: purple or blue?,-5.35546875,-0.01097869873046875
+Which is preferred by you: {A} or {B}?,purple,green,Which is preferred by you: purple or green?,-0.066162109375,-3.59765625
+Which is preferred by you: {A} or {B}?,purple,yellow,Which is preferred by you: purple or yellow?,-0.00650787353515625,-7.8828125
+Do you have a preference for {A} or {B}?,red,blue,Do you have a preference for red or blue?,-0.5576171875,-1.0888671875
+Do you have a preference for {A} or {B}?,red,green,Do you have a preference for red or green?,-0.2266845703125,-3.6015625
+Do you have a preference for {A} or {B}?,red,yellow,Do you have a preference for red or yellow?,-0.44091796875,-4.91015625
+Do you have a preference for {A} or {B}?,red,purple,Do you have a preference for red or purple?,-3.357421875,-0.481689453125
+Do you have a preference for {A} or {B}?,blue,red,Do you have a preference for blue or red?,-0.041717529296875,-11.2890625
+Do you have a preference for {A} or {B}?,blue,green,Do you have a preference for blue or green?,-0.1087646484375,-4.140625
+Do you have a preference for {A} or {B}?,blue,yellow,Do you have a preference for blue or yellow?,-0.210205078125,-6.5234375
+Do you have a preference for {A} or {B}?,blue,purple,Do you have a preference for blue or purple?,-0.2239990234375,-2.287109375
+Do you have a preference for {A} or {B}?,green,red,Do you have a preference for green or red?,-0.304931640625,-10.4921875
+Do you have a preference for {A} or {B}?,green,blue,Do you have a preference for green or blue?,-6.3671875,-0.1190185546875
+Do you have a preference for {A} or {B}?,green,yellow,Do you have a preference for green or yellow?,-0.1197509765625,-10.0234375
+Do you have a preference for {A} or {B}?,green,purple,Do you have a preference for green or purple?,-0.053131103515625,-5.1484375
+Do you have a preference for {A} or {B}?,yellow,red,Do you have a preference for yellow or red?,-0.54833984375,-4.203125
+Do you have a preference for {A} or {B}?,yellow,blue,Do you have a preference for yellow or blue?,-5.5625,-0.4052734375
+Do you have a preference for {A} or {B}?,yellow,green,Do you have a preference for yellow or green?,-0.5087890625,-1.6962890625
+Do you have a preference for {A} or {B}?,yellow,purple,Do you have a preference for yellow or purple?,-2.255859375,-0.6005859375
+Do you have a preference for {A} or {B}?,purple,red,Do you have a preference for purple or red?,-0.431884765625,-4.68359375
+Do you have a preference for {A} or {B}?,purple,blue,Do you have a preference for purple or blue?,-5.1640625,-0.25732421875
+Do you have a preference for {A} or {B}?,purple,green,Do you have a preference for purple or green?,-0.69482421875,-6.8203125
+Do you have a preference for {A} or {B}?,purple,yellow,Do you have a preference for purple or yellow?,-0.358642578125,-7.375
+"As between {A} and {B}, which is your preference?",red,blue,"As between red and blue, which is your preference?",-0.421142578125,-3.421875
+"As between {A} and {B}, which is your preference?",red,green,"As between red and green, which is your preference?",-0.12017822265625,-5.02734375
+"As between {A} and {B}, which is your preference?",red,yellow,"As between red and yellow, which is your preference?",-0.36669921875,-5.1171875
+"As between {A} and {B}, which is your preference?",red,purple,"As between red and purple, which is your preference?",-0.3203125,-1.9453125
+"As between {A} and {B}, which is your preference?",blue,red,"As between blue and red, which is your preference?",-0.09735107421875,-9.90625
+"As between {A} and {B}, which is your preference?",blue,green,"As between blue and green, which is your preference?",-0.057098388671875,-6.30859375
+"As between {A} and {B}, which is your preference?",blue,yellow,"As between blue and yellow, which is your preference?",-0.1278076171875,-5.78515625
+"As between {A} and {B}, which is your preference?",blue,purple,"As between blue and purple, which is your preference?",-0.0311126708984375,-4.59375
+"As between {A} and {B}, which is your preference?",green,red,"As between green and red, which is your preference?",-0.061981201171875,-10.84375
+"As between {A} and {B}, which is your preference?",green,blue,"As between green and blue, which is your preference?",-0.12060546875,-3.99609375
+"As between {A} and {B}, which is your preference?",green,yellow,"As between green and yellow, which is your preference?",-0.03814697265625,-9.2890625
+"As between {A} and {B}, which is your preference?",green,purple,"As between green and purple, which is your preference?",-0.00960540771484375,-6.3515625
+"As between {A} and {B}, which is your preference?",yellow,red,"As between yellow and red, which is your preference?",-0.69140625,-5.37890625
+"As between {A} and {B}, which is your preference?",yellow,blue,"As between yellow and blue, which is your preference?",-0.861328125,-2.330078125
+"As between {A} and {B}, which is your preference?",yellow,green,"As between yellow and green, which is your preference?",-0.12432861328125,-5.0
+"As between {A} and {B}, which is your preference?",yellow,purple,"As between yellow and purple, which is your preference?",-0.410888671875,-1.6611328125
+"As between {A} and {B}, which is your preference?",purple,red,"As between purple and red, which is your preference?",-0.74267578125,-7.3671875
+"As between {A} and {B}, which is your preference?",purple,blue,"As between purple and blue, which is your preference?",-1.3076171875,-1.9638671875
+"As between {A} and {B}, which is your preference?",purple,green,"As between purple and green, which is your preference?",-1.0576171875,-5.71484375
+"As between {A} and {B}, which is your preference?",purple,yellow,"As between purple and yellow, which is your preference?",-0.397705078125,-7.3984375
+"Between the two, do you prefer {A} or {B}?",red,blue,"Between the two, do you prefer red or blue?",-1.8271484375,-0.26513671875
+"Between the two, do you prefer {A} or {B}?",red,green,"Between the two, do you prefer red or green?",-0.353271484375,-1.572265625
+"Between the two, do you prefer {A} or {B}?",red,yellow,"Between the two, do you prefer red or yellow?",-0.087890625,-4.0546875
+"Between the two, do you prefer {A} or {B}?",red,purple,"Between the two, do you prefer red or purple?",-4.69140625,-0.315185546875
+"Between the two, do you prefer {A} or {B}?",blue,red,"Between the two, do you prefer blue or red?",-0.0182037353515625,-10.015625
+"Between the two, do you prefer {A} or {B}?",blue,green,"Between the two, do you prefer blue or green?",-0.06597900390625,-3.41015625
+"Between the two, do you prefer {A} or {B}?",blue,yellow,"Between the two, do you prefer blue or yellow?",-0.09918212890625,-6.66015625
+"Between the two, do you prefer {A} or {B}?",blue,purple,"Between the two, do you prefer blue or purple?",-0.412109375,-1.412109375
+"Between the two, do you prefer {A} or {B}?",green,red,"Between the two, do you prefer green or red?",-0.0753173828125,-7.01171875
+"Between the two, do you prefer {A} or {B}?",green,blue,"Between the two, do you prefer green or blue?",-9.9140625,-0.03582763671875
+"Between the two, do you prefer {A} or {B}?",green,yellow,"Between the two, do you prefer green or yellow?",-0.0160980224609375,-7.546875
+"Between the two, do you prefer {A} or {B}?",green,purple,"Between the two, do you prefer green or purple?",-0.291748046875,-1.5732421875
+"Between the two, do you prefer {A} or {B}?",yellow,red,"Between the two, do you prefer yellow or red?",-1.2646484375,-1.6083984375
+"Between the two, do you prefer {A} or {B}?",yellow,blue,"Between the two, do you prefer yellow or blue?",-7.7109375,-0.6337890625
+"Between the two, do you prefer {A} or {B}?",yellow,green,"Between the two, do you prefer yellow or green?",-1.185546875,-0.873046875
+"Between the two, do you prefer {A} or {B}?",yellow,purple,"Between the two, do you prefer yellow or purple?",-2.720703125,-0.50146484375
+"Between the two, do you prefer {A} or {B}?",purple,red,"Between the two, do you prefer purple or red?",-0.466552734375,-3.935546875
+"Between the two, do you prefer {A} or {B}?",purple,blue,"Between the two, do you prefer purple or blue?",-6.33984375,-0.12249755859375
+"Between the two, do you prefer {A} or {B}?",purple,green,"Between the two, do you prefer purple or green?",-0.7509765625,-4.84375
+"Between the two, do you prefer {A} or {B}?",purple,yellow,"Between the two, do you prefer purple or yellow?",-0.170166015625,-7.84375
+Would you say you prefer {A} or {B}?,red,blue,Would you say you prefer red or blue?,-3.056640625,-0.05645751953125
+Would you say you prefer {A} or {B}?,red,green,Would you say you prefer red or green?,-0.106201171875,-2.54296875
+Would you say you prefer {A} or {B}?,red,yellow,Would you say you prefer red or yellow?,-0.037200927734375,-4.7578125
+Would you say you prefer {A} or {B}?,red,purple,Would you say you prefer red or purple?,-4.96875,-0.123779296875
+Would you say you prefer {A} or {B}?,blue,red,Would you say you prefer blue or red?,-0.00328826904296875,-11.84375
+Would you say you prefer {A} or {B}?,blue,green,Would you say you prefer blue or green?,-0.0254669189453125,-4.12109375
+Would you say you prefer {A} or {B}?,blue,yellow,Would you say you prefer blue or yellow?,-0.015838623046875,-8.296875
+Would you say you prefer {A} or {B}?,blue,purple,Would you say you prefer blue or purple?,-0.4638671875,-1.1513671875
+Would you say you prefer {A} or {B}?,green,red,Would you say you prefer green or red?,-0.036956787109375,-10.1015625
+Would you say you prefer {A} or {B}?,green,blue,Would you say you prefer green or blue?,-8.8515625,-0.0108642578125
+Would you say you prefer {A} or {B}?,green,yellow,Would you say you prefer green or yellow?,-0.0107574462890625,-10.1328125
+Would you say you prefer {A} or {B}?,green,purple,Would you say you prefer green or purple?,-0.0860595703125,-2.7734375
+Would you say you prefer {A} or {B}?,yellow,red,Would you say you prefer yellow or red?,-1.0712890625,-0.60205078125
+Would you say you prefer {A} or {B}?,yellow,blue,Would you say you prefer yellow or blue?,-9.765625,-0.047210693359375
+Would you say you prefer {A} or {B}?,yellow,green,Would you say you prefer yellow or green?,-1.7900390625,-0.2587890625
+Would you say you prefer {A} or {B}?,yellow,purple,Would you say you prefer yellow or purple?,-3.94921875,-0.1046142578125
+Would you say you prefer {A} or {B}?,purple,red,Would you say you prefer purple or red?,-0.19677734375,-4.2578125
+Would you say you prefer {A} or {B}?,purple,blue,Would you say you prefer purple or blue?,-6.484375,-0.046142578125
+Would you say you prefer {A} or {B}?,purple,green,Would you say you prefer purple or green?,-0.393310546875,-5.20703125
+Would you say you prefer {A} or {B}?,purple,yellow,Would you say you prefer purple or yellow?,-0.074462890625,-9.046875
+"When considering {A} and {B}, which is your preference?",red,blue,"When considering red and blue, which is your preference?",-2.228515625,-5.1328125
+"When considering {A} and {B}, which is your preference?",red,green,"When considering red and green, which is your preference?",-1.591796875,-4.12109375
+"When considering {A} and {B}, which is your preference?",red,yellow,"When considering red and yellow, which is your preference?",-2.4453125,-6.0703125
+"When considering {A} and {B}, which is your preference?",red,purple,"When considering red and purple, which is your preference?",-0.54345703125,-2.85546875
+"When considering {A} and {B}, which is your preference?",blue,red,"When considering blue and red, which is your preference?",-0.418212890625,-9.046875
+"When considering {A} and {B}, which is your preference?",blue,green,"When considering blue and green, which is your preference?",-0.265869140625,-5.453125
+"When considering {A} and {B}, which is your preference?",blue,yellow,"When considering blue and yellow, which is your preference?",-0.226318359375,-7.7578125
+"When considering {A} and {B}, which is your preference?",blue,purple,"When considering blue and purple, which is your preference?",-0.094970703125,-5.0625
+"When considering {A} and {B}, which is your preference?",green,red,"When considering green and red, which is your preference?",-2.017578125,-10.65625
+"When considering {A} and {B}, which is your preference?",green,blue,"When considering green and blue, which is your preference?",-0.97607421875,-6.4140625
+"When considering {A} and {B}, which is your preference?",green,yellow,"When considering green and yellow, which is your preference?",-1.1796875,-10.5390625
+"When considering {A} and {B}, which is your preference?",green,purple,"When considering green and purple, which is your preference?",-0.31201171875,-5.78125
+"When considering {A} and {B}, which is your preference?",yellow,red,"When considering yellow and red, which is your preference?",-2.923828125,-6.984375
+"When considering {A} and {B}, which is your preference?",yellow,blue,"When considering yellow and blue, which is your preference?",-1.8544921875,-4.85546875
+"When considering {A} and {B}, which is your preference?",yellow,green,"When considering yellow and green, which is your preference?",-1.5146484375,-4.703125
+"When considering {A} and {B}, which is your preference?",yellow,purple,"When considering yellow and purple, which is your preference?",-0.53955078125,-2.5078125
+"When considering {A} and {B}, which is your preference?",purple,red,"When considering purple and red, which is your preference?",-0.91748046875,-8.5234375
+"When considering {A} and {B}, which is your preference?",purple,blue,"When considering purple and blue, which is your preference?",-2.2109375,-3.8359375
+"When considering {A} and {B}, which is your preference?",purple,green,"When considering purple and green, which is your preference?",-0.9560546875,-6.95703125
+"When considering {A} and {B}, which is your preference?",purple,yellow,"When considering purple and yellow, which is your preference?",-0.322021484375,-9.2578125
+Which way do you lean: {A} or {B}?,red,blue,Which way do you lean: red or blue?,-1.734375,-0.2032470703125
+Which way do you lean: {A} or {B}?,red,green,Which way do you lean: red or green?,-2.052734375,-0.1466064453125
+Which way do you lean: {A} or {B}?,red,yellow,Which way do you lean: red or yellow?,-0.0369873046875,-3.412109375
+Which way do you lean: {A} or {B}?,red,purple,Which way do you lean: red or purple?,-2.23046875,-0.168701171875
+Which way do you lean: {A} or {B}?,blue,red,Which way do you lean: blue or red?,-0.0024738311767578125,-9.203125
+Which way do you lean: {A} or {B}?,blue,green,Which way do you lean: blue or green?,-0.005535125732421875,-5.25390625
+Which way do you lean: {A} or {B}?,blue,yellow,Which way do you lean: blue or yellow?,-0.004787445068359375,-5.59765625
+Which way do you lean: {A} or {B}?,blue,purple,Which way do you lean: blue or purple?,-0.541015625,-0.916015625
+Which way do you lean: {A} or {B}?,green,red,Which way do you lean: green or red?,-0.0019931793212890625,-13.515625
+Which way do you lean: {A} or {B}?,green,blue,Which way do you lean: green or blue?,-0.002643585205078125,-6.25390625
+Which way do you lean: {A} or {B}?,green,yellow,Which way do you lean: green or yellow?,-0.0026531219482421875,-11.09375
+Which way do you lean: {A} or {B}?,green,purple,Which way do you lean: green or purple?,-0.0009927749633789062,-9.9375
+Which way do you lean: {A} or {B}?,yellow,red,Which way do you lean: yellow or red?,-0.0075225830078125,-5.6640625
+Which way do you lean: {A} or {B}?,yellow,blue,Which way do you lean: yellow or blue?,-0.416748046875,-1.1044921875
+Which way do you lean: {A} or {B}?,yellow,green,Which way do you lean: yellow or green?,-0.270751953125,-1.4580078125
+Which way do you lean: {A} or {B}?,yellow,purple,Which way do you lean: yellow or purple?,-0.31396484375,-1.3447265625
+Which way do you lean: {A} or {B}?,purple,red,Which way do you lean: purple or red?,-0.007099151611328125,-7.5078125
+Which way do you lean: {A} or {B}?,purple,blue,Which way do you lean: purple or blue?,-6.5625,-0.0016984939575195312
+Which way do you lean: {A} or {B}?,purple,green,Which way do you lean: purple or green?,-0.0094146728515625,-5.5703125
+Which way do you lean: {A} or {B}?,purple,yellow,Which way do you lean: purple or yellow?,-0.01024627685546875,-5.79296875
+State which you prefer: {A} or {B}.,red,blue,State which you prefer: red or blue.,-0.296875,-1.359375
+State which you prefer: {A} or {B}.,red,green,State which you prefer: red or green.,-0.042999267578125,-3.16796875
+State which you prefer: {A} or {B}.,red,yellow,State which you prefer: red or yellow.,-0.0011186599731445312,-6.8125
+State which you prefer: {A} or {B}.,red,purple,State which you prefer: red or purple.,-2.044921875,-0.1395263671875
+State which you prefer: {A} or {B}.,blue,red,State which you prefer: blue or red.,-4.684925079345703e-05,-10.625
+State which you prefer: {A} or {B}.,blue,green,State which you prefer: blue or green.,-0.01177215576171875,-4.44921875
+State which you prefer: {A} or {B}.,blue,yellow,State which you prefer: blue or yellow.,-0.00044846534729003906,-7.875
+State which you prefer: {A} or {B}.,blue,purple,State which you prefer: blue or purple.,-0.0640869140625,-2.783203125
+State which you prefer: {A} or {B}.,green,red,State which you prefer: green or red.,-8.928775787353516e-05,-9.59375
+State which you prefer: {A} or {B}.,green,blue,State which you prefer: green or blue.,-8.1875,-0.0003173351287841797
+State which you prefer: {A} or {B}.,green,yellow,State which you prefer: green or yellow.,-3.230571746826172e-05,-11.0
+State which you prefer: {A} or {B}.,green,purple,State which you prefer: green or purple.,-0.024810791015625,-3.712890625
+State which you prefer: {A} or {B}.,yellow,red,State which you prefer: yellow or red.,-1.224609375,-0.349365234375
+State which you prefer: {A} or {B}.,yellow,blue,State which you prefer: yellow or blue.,-10.125,-0.00044655799865722656
+State which you prefer: {A} or {B}.,yellow,green,State which you prefer: yellow or green.,-2.87109375,-0.05853271484375
+State which you prefer: {A} or {B}.,yellow,purple,State which you prefer: yellow or purple.,-3.8671875,-0.022613525390625
+State which you prefer: {A} or {B}.,purple,red,State which you prefer: purple or red.,-0.8623046875,-0.5498046875
+State which you prefer: {A} or {B}.,purple,blue,State which you prefer: purple or blue.,-8.78125,-0.0002994537353515625
+State which you prefer: {A} or {B}.,purple,green,State which you prefer: purple or green.,-0.1923828125,-1.7548828125
+State which you prefer: {A} or {B}.,purple,yellow,State which you prefer: purple or yellow.,-0.0013942718505859375,-6.96875
+Do you find yourself preferring {A} or {B}?,red,blue,Do you find yourself preferring red or blue?,-1.220703125,-0.377197265625
+Do you find yourself preferring {A} or {B}?,red,green,Do you find yourself preferring red or green?,-0.026702880859375,-5.40234375
+Do you find yourself preferring {A} or {B}?,red,yellow,Do you find yourself preferring red or yellow?,-0.0175628662109375,-5.890625
+Do you find yourself preferring {A} or {B}?,red,purple,Do you find yourself preferring red or purple?,-4.3359375,-0.1790771484375
+Do you find yourself preferring {A} or {B}?,blue,red,Do you find yourself preferring blue or red?,-0.0013723373413085938,-13.9375
+Do you find yourself preferring {A} or {B}?,blue,green,Do you find yourself preferring blue or green?,-0.005237579345703125,-6.91015625
+Do you find yourself preferring {A} or {B}?,blue,yellow,Do you find yourself preferring blue or yellow?,-0.0029296875,-10.46875
+Do you find yourself preferring {A} or {B}?,blue,purple,Do you find yourself preferring blue or purple?,-0.066650390625,-2.94140625
+Do you find yourself preferring {A} or {B}?,green,red,Do you find yourself preferring green or red?,-0.0288543701171875,-12.90625
+Do you find yourself preferring {A} or {B}?,green,blue,Do you find yourself preferring green or blue?,-6.54296875,-0.01224517822265625
+Do you find yourself preferring {A} or {B}?,green,yellow,Do you find yourself preferring green or yellow?,-0.006122589111328125,-12.5703125
+Do you find yourself preferring {A} or {B}?,green,purple,Do you find yourself preferring green or purple?,-0.005687713623046875,-6.78515625
+Do you find yourself preferring {A} or {B}?,yellow,red,Do you find yourself preferring yellow or red?,-0.07061767578125,-5.1640625
+Do you find yourself preferring {A} or {B}?,yellow,blue,Do you find yourself preferring yellow or blue?,-7.31640625,-0.034423828125
+Do you find yourself preferring {A} or {B}?,yellow,green,Do you find yourself preferring yellow or green?,-0.14208984375,-2.736328125
+Do you find yourself preferring {A} or {B}?,yellow,purple,Do you find yourself preferring yellow or purple?,-1.0947265625,-0.469482421875
+Do you find yourself preferring {A} or {B}?,purple,red,Do you find yourself preferring purple or red?,-0.02923583984375,-8.09375
+Do you find yourself preferring {A} or {B}?,purple,blue,Do you find yourself preferring purple or blue?,-5.4609375,-0.0239105224609375
+Do you find yourself preferring {A} or {B}?,purple,green,Do you find yourself preferring purple or green?,-0.07928466796875,-8.046875
+Do you find yourself preferring {A} or {B}?,purple,yellow,Do you find yourself preferring purple or yellow?,-0.009490966796875,-11.3046875
+"Between {A} and {B}, where does your preference lie?",red,blue,"Between red and blue, where does your preference lie?",-0.17578125,-2.05078125
+"Between {A} and {B}, where does your preference lie?",red,green,"Between red and green, where does your preference lie?",-0.04583740234375,-3.263671875
+"Between {A} and {B}, where does your preference lie?",red,yellow,"Between red and yellow, where does your preference lie?",-0.047637939453125,-3.921875
+"Between {A} and {B}, where does your preference lie?",red,purple,"Between red and purple, where does your preference lie?",-0.1439208984375,-2.42578125
+"Between {A} and {B}, where does your preference lie?",blue,red,"Between blue and red, where does your preference lie?",-0.018218994140625,-9.734375
+"Between {A} and {B}, where does your preference lie?",blue,green,"Between blue and green, where does your preference lie?",-0.005199432373046875,-7.25390625
+"Between {A} and {B}, where does your preference lie?",blue,yellow,"Between blue and yellow, where does your preference lie?",-0.015869140625,-5.765625
+"Between {A} and {B}, where does your preference lie?",blue,purple,"Between blue and purple, where does your preference lie?",-0.0198822021484375,-5.20703125
+"Between {A} and {B}, where does your preference lie?",green,red,"Between green and red, where does your preference lie?",-0.007198333740234375,-9.9453125
+"Between {A} and {B}, where does your preference lie?",green,blue,"Between green and blue, where does your preference lie?",-0.138427734375,-2.201171875
+"Between {A} and {B}, where does your preference lie?",green,yellow,"Between green and yellow, where does your preference lie?",-0.003849029541015625,-8.9375
+"Between {A} and {B}, where does your preference lie?",green,purple,"Between green and purple, where does your preference lie?",-0.00933837890625,-6.2578125
+"Between {A} and {B}, where does your preference lie?",yellow,red,"Between yellow and red, where does your preference lie?",-0.459228515625,-3.083984375
+"Between {A} and {B}, where does your preference lie?",yellow,blue,"Between yellow and blue, where does your preference lie?",-0.34423828125,-1.9697265625
+"Between {A} and {B}, where does your preference lie?",yellow,green,"Between yellow and green, where does your preference lie?",-0.047882080078125,-4.296875
+"Between {A} and {B}, where does your preference lie?",yellow,purple,"Between yellow and purple, where does your preference lie?",-0.147216796875,-2.740234375
+"Between {A} and {B}, where does your preference lie?",purple,red,"Between purple and red, where does your preference lie?",-0.5751953125,-3.98046875
+"Between {A} and {B}, where does your preference lie?",purple,blue,"Between purple and blue, where does your preference lie?",-1.294921875,-0.73291015625
+"Between {A} and {B}, where does your preference lie?",purple,green,"Between purple and green, where does your preference lie?",-0.419189453125,-4.51171875
+"Between {A} and {B}, where does your preference lie?",purple,yellow,"Between purple and yellow, where does your preference lie?",-0.28955078125,-7.6328125
+"Which do you lean toward, {A} or {B}?",red,blue,"Which do you lean toward, red or blue?",-0.1397705078125,-2.859375
+"Which do you lean toward, {A} or {B}?",red,green,"Which do you lean toward, red or green?",-0.04730224609375,-4.640625
+"Which do you lean toward, {A} or {B}?",red,yellow,"Which do you lean toward, red or yellow?",-0.09454345703125,-5.96875
+"Which do you lean toward, {A} or {B}?",red,purple,"Which do you lean toward, red or purple?",-1.76953125,-0.58154296875
+"Which do you lean toward, {A} or {B}?",blue,red,"Which do you lean toward, blue or red?",-0.03265380859375,-10.625
+"Which do you lean toward, {A} or {B}?",blue,green,"Which do you lean toward, blue or green?",-0.05316162109375,-3.802734375
+"Which do you lean toward, {A} or {B}?",blue,yellow,"Which do you lean toward, blue or yellow?",-0.08599853515625,-5.5859375
+"Which do you lean toward, {A} or {B}?",blue,purple,"Which do you lean toward, blue or purple?",-0.32958984375,-1.611328125
+"Which do you lean toward, {A} or {B}?",green,red,"Which do you lean toward, green or red?",-0.0247344970703125,-11.8046875
+"Which do you lean toward, {A} or {B}?",green,blue,"Which do you lean toward, green or blue?",-0.4462890625,-1.1337890625
+"Which do you lean toward, {A} or {B}?",green,yellow,"Which do you lean toward, green or yellow?",-0.02801513671875,-10.125
+"Which do you lean toward, {A} or {B}?",green,purple,"Which do you lean toward, green or purple?",-0.00614166259765625,-7.9765625
+"Which do you lean toward, {A} or {B}?",yellow,red,"Which do you lean toward, yellow or red?",-0.2132568359375,-3.962890625
+"Which do you lean toward, {A} or {B}?",yellow,blue,"Which do you lean toward, yellow or blue?",-3.0,-0.1561279296875
+"Which do you lean toward, {A} or {B}?",yellow,green,"Which do you lean toward, yellow or green?",-0.227783203125,-1.9462890625
+"Which do you lean toward, {A} or {B}?",yellow,purple,"Which do you lean toward, yellow or purple?",-0.66064453125,-1.0361328125
+"Which do you lean toward, {A} or {B}?",purple,red,"Which do you lean toward, purple or red?",-0.275146484375,-4.8984375
+"Which do you lean toward, {A} or {B}?",purple,blue,"Which do you lean toward, purple or blue?",-5.32421875,-0.042999267578125
+"Which do you lean toward, {A} or {B}?",purple,green,"Which do you lean toward, purple or green?",-0.350341796875,-4.5703125
+"Which do you lean toward, {A} or {B}?",purple,yellow,"Which do you lean toward, purple or yellow?",-0.2457275390625,-7.54296875
+"Comparing the two, do you like {A} or {B} more?",red,blue,"Comparing the two, do you like red or blue more?",-3.080078125,-0.36083984375
+"Comparing the two, do you like {A} or {B} more?",red,green,"Comparing the two, do you like red or green more?",-1.2314453125,-1.0126953125
+"Comparing the two, do you like {A} or {B} more?",red,yellow,"Comparing the two, do you like red or yellow more?",-0.1251220703125,-2.59375
+"Comparing the two, do you like {A} or {B} more?",red,purple,"Comparing the two, do you like red or purple more?",-3.8984375,-0.2117919921875
+"Comparing the two, do you like {A} or {B} more?",blue,red,"Comparing the two, do you like blue or red more?",-0.0271453857421875,-10.9609375
+"Comparing the two, do you like {A} or {B} more?",blue,green,"Comparing the two, do you like blue or green more?",-0.098388671875,-3.87890625
+"Comparing the two, do you like {A} or {B} more?",blue,yellow,"Comparing the two, do you like blue or yellow more?",-0.050018310546875,-6.14453125
+"Comparing the two, do you like {A} or {B} more?",blue,purple,"Comparing the two, do you like blue or purple more?",-0.330810546875,-1.6748046875
+"Comparing the two, do you like {A} or {B} more?",green,red,"Comparing the two, do you like green or red more?",-0.266845703125,-7.828125
+"Comparing the two, do you like {A} or {B} more?",green,blue,"Comparing the two, do you like green or blue more?",-10.515625,-0.10638427734375
+"Comparing the two, do you like {A} or {B} more?",green,yellow,"Comparing the two, do you like green or yellow more?",-0.03375244140625,-6.87890625
+"Comparing the two, do you like {A} or {B} more?",green,purple,"Comparing the two, do you like green or purple more?",-0.1734619140625,-2.361328125
+"Comparing the two, do you like {A} or {B} more?",yellow,red,"Comparing the two, do you like yellow or red more?",-1.5205078125,-0.67724609375
+"Comparing the two, do you like {A} or {B} more?",yellow,blue,"Comparing the two, do you like yellow or blue more?",-7.5859375,-0.6787109375
+"Comparing the two, do you like {A} or {B} more?",yellow,green,"Comparing the two, do you like yellow or green more?",-3.244140625,-1.0888671875
+"Comparing the two, do you like {A} or {B} more?",yellow,purple,"Comparing the two, do you like yellow or purple more?",-3.291015625,-0.51025390625
+"Comparing the two, do you like {A} or {B} more?",purple,red,"Comparing the two, do you like purple or red more?",-0.244140625,-5.37109375
+"Comparing the two, do you like {A} or {B} more?",purple,blue,"Comparing the two, do you like purple or blue more?",-6.84765625,-0.283447265625
+"Comparing the two, do you like {A} or {B} more?",purple,green,"Comparing the two, do you like purple or green more?",-1.041015625,-5.2890625
+"Comparing the two, do you like {A} or {B} more?",purple,yellow,"Comparing the two, do you like purple or yellow more?",-0.1099853515625,-7.9375
+{A} or {B}—which do you favor?,red,blue,red or blue—which do you favor?,-0.00975799560546875,-4.6328125
+{A} or {B}—which do you favor?,red,green,red or green—which do you favor?,-0.11968994140625,-2.181640625
+{A} or {B}—which do you favor?,red,yellow,red or yellow—which do you favor?,-0.005748748779296875,-5.16015625
+{A} or {B}—which do you favor?,red,purple,red or purple—which do you favor?,-0.708984375,-0.677734375
+{A} or {B}—which do you favor?,blue,red,blue or red—which do you favor?,-3.147125244140625e-05,-10.375
+{A} or {B}—which do you favor?,blue,green,blue or green—which do you favor?,-0.0030803680419921875,-5.78515625
+{A} or {B}—which do you favor?,blue,yellow,blue or yellow—which do you favor?,-0.00038051605224609375,-7.875
+{A} or {B}—which do you favor?,blue,purple,blue or purple—which do you favor?,-0.07427978515625,-2.63671875
+{A} or {B}—which do you favor?,green,red,green or red—which do you favor?,-5.0067901611328125e-06,-12.21875
+{A} or {B}—which do you favor?,green,blue,green or blue—which do you favor?,-0.0357666015625,-3.34765625
+{A} or {B}—which do you favor?,green,yellow,green or yellow—which do you favor?,-1.430511474609375e-05,-11.15625
+{A} or {B}—which do you favor?,green,purple,green or purple—which do you favor?,-0.00205230712890625,-6.19140625
+{A} or {B}—which do you favor?,yellow,red,yellow or red—which do you favor?,-0.00034427642822265625,-8.0
+{A} or {B}—which do you favor?,yellow,blue,yellow or blue—which do you favor?,-0.01605224609375,-4.140625
+{A} or {B}—which do you favor?,yellow,green,yellow or green—which do you favor?,-0.0043487548828125,-5.44140625
+{A} or {B}—which do you favor?,yellow,purple,yellow or purple—which do you favor?,-0.11285400390625,-2.23828125
+{A} or {B}—which do you favor?,purple,red,purple or red—which do you favor?,-0.0002429485321044922,-8.34375
+{A} or {B}—which do you favor?,purple,blue,purple or blue—which do you favor?,-0.05657958984375,-2.900390625
+{A} or {B}—which do you favor?,purple,green,purple or green—which do you favor?,-0.0021953582763671875,-6.12890625
+{A} or {B}—which do you favor?,purple,yellow,purple or yellow—which do you favor?,-0.00011360645294189453,-9.125
+Which of the following do you prefer: {A} or {B}?,red,blue,Which of the following do you prefer: red or blue?,-0.07208251953125,-2.666015625
+Which of the following do you prefer: {A} or {B}?,red,green,Which of the following do you prefer: red or green?,-0.00614166259765625,-5.1015625
+Which of the following do you prefer: {A} or {B}?,red,yellow,Which of the following do you prefer: red or yellow?,-0.0010614395141601562,-6.96875
+Which of the following do you prefer: {A} or {B}?,red,purple,Which of the following do you prefer: red or purple?,-0.84521484375,-0.56396484375
+Which of the following do you prefer: {A} or {B}?,blue,red,Which of the following do you prefer: blue or red?,-4.839897155761719e-05,-11.1875
+Which of the following do you prefer: {A} or {B}?,blue,green,Which of the following do you prefer: blue or green?,-0.0031337738037109375,-5.78515625
+Which of the following do you prefer: {A} or {B}?,blue,yellow,Which of the following do you prefer: blue or yellow?,-0.0006113052368164062,-7.78125
+Which of the following do you prefer: {A} or {B}?,blue,purple,Which of the following do you prefer: blue or purple?,-0.00989532470703125,-4.63671875
+Which of the following do you prefer: {A} or {B}?,green,red,Which of the following do you prefer: green or red?,-0.00013840198516845703,-9.84375
+Which of the following do you prefer: {A} or {B}?,green,blue,Which of the following do you prefer: green or blue?,-5.50390625,-0.0041961669921875
+Which of the following do you prefer: {A} or {B}?,green,yellow,Which of the following do you prefer: green or yellow?,-0.00020003318786621094,-9.4375
+Which of the following do you prefer: {A} or {B}?,green,purple,Which of the following do you prefer: green or purple?,-0.006786346435546875,-5.0078125
+Which of the following do you prefer: {A} or {B}?,yellow,red,Which of the following do you prefer: yellow or red?,-0.1253662109375,-2.15625
+Which of the following do you prefer: {A} or {B}?,yellow,blue,Which of the following do you prefer: yellow or blue?,-6.00390625,-0.003948211669921875
+Which of the following do you prefer: {A} or {B}?,yellow,green,Which of the following do you prefer: yellow or green?,-0.4873046875,-0.9560546875
+Which of the following do you prefer: {A} or {B}?,yellow,purple,Which of the following do you prefer: yellow or purple?,-1.626953125,-0.2210693359375
+Which of the following do you prefer: {A} or {B}?,purple,red,Which of the following do you prefer: purple or red?,-0.0186920166015625,-4.08203125
+Which of the following do you prefer: {A} or {B}?,purple,blue,Which of the following do you prefer: purple or blue?,-4.9765625,-0.007381439208984375
+Which of the following do you prefer: {A} or {B}?,purple,green,Which of the following do you prefer: purple or green?,-0.0125579833984375,-4.63671875
+Which of the following do you prefer: {A} or {B}?,purple,yellow,Which of the following do you prefer: purple or yellow?,-0.0006122589111328125,-8.8125
+Are you partial to {A} or {B}?,red,blue,Are you partial to red or blue?,-0.10931396484375,-3.046875
+Are you partial to {A} or {B}?,red,green,Are you partial to red or green?,-0.1229248046875,-5.33984375
+Are you partial to {A} or {B}?,red,yellow,Are you partial to red or yellow?,-0.11810302734375,-4.6796875
+Are you partial to {A} or {B}?,red,purple,Are you partial to red or purple?,-4.37109375,-0.80810546875
+Are you partial to {A} or {B}?,blue,red,Are you partial to blue or red?,-0.0307464599609375,-9.78125
+Are you partial to {A} or {B}?,blue,green,Are you partial to blue or green?,-0.06353759765625,-4.9375
+Are you partial to {A} or {B}?,blue,yellow,Are you partial to blue or yellow?,-0.06982421875,-6.6015625
+Are you partial to {A} or {B}?,blue,purple,Are you partial to blue or purple?,-0.73486328125,-1.3916015625
+Are you partial to {A} or {B}?,green,red,Are you partial to green or red?,-0.11651611328125,-8.3046875
+Are you partial to {A} or {B}?,green,blue,Are you partial to green or blue?,-4.26953125,-0.1436767578125
+Are you partial to {A} or {B}?,green,yellow,Are you partial to green or yellow?,-0.0767822265625,-8.484375
+Are you partial to {A} or {B}?,green,purple,Are you partial to green or purple?,-0.180908203125,-2.931640625
+Are you partial to {A} or {B}?,yellow,red,Are you partial to yellow or red?,-0.1943359375,-3.693359375
+Are you partial to {A} or {B}?,yellow,blue,Are you partial to yellow or blue?,-3.373046875,-0.342529296875
+Are you partial to {A} or {B}?,yellow,green,Are you partial to yellow or green?,-0.29931640625,-2.361328125
+Are you partial to {A} or {B}?,yellow,purple,Are you partial to yellow or purple?,-1.7900390625,-0.6650390625
+Are you partial to {A} or {B}?,purple,red,Are you partial to purple or red?,-0.376220703125,-5.0
+Are you partial to {A} or {B}?,purple,blue,Are you partial to purple or blue?,-3.154296875,-0.466064453125
+Are you partial to {A} or {B}?,purple,green,Are you partial to purple or green?,-0.80908203125,-8.21875
+Are you partial to {A} or {B}?,purple,yellow,Are you partial to purple or yellow?,-0.36767578125,-8.3515625
+"Between {A} and {B}, to which are you partial?",red,blue,"Between red and blue, to which are you partial?",-0.1519775390625,-2.40234375
+"Between {A} and {B}, to which are you partial?",red,green,"Between red and green, to which are you partial?",-0.07958984375,-3.142578125
+"Between {A} and {B}, to which are you partial?",red,yellow,"Between red and yellow, to which are you partial?",-0.056976318359375,-4.62109375
+"Between {A} and {B}, to which are you partial?",red,purple,"Between red and purple, to which are you partial?",-0.1895751953125,-2.033203125
+"Between {A} and {B}, to which are you partial?",blue,red,"Between blue and red, to which are you partial?",-0.03558349609375,-7.12890625
+"Between {A} and {B}, to which are you partial?",blue,green,"Between blue and green, to which are you partial?",-0.0148468017578125,-5.515625
+"Between {A} and {B}, to which are you partial?",blue,yellow,"Between blue and yellow, to which are you partial?",-0.023345947265625,-5.2421875
+"Between {A} and {B}, to which are you partial?",blue,purple,"Between blue and purple, to which are you partial?",-0.02294921875,-4.1796875
+"Between {A} and {B}, to which are you partial?",green,red,"Between green and red, to which are you partial?",-0.02032470703125,-7.89453125
+"Between {A} and {B}, to which are you partial?",green,blue,"Between green and blue, to which are you partial?",-0.07708740234375,-2.888671875
+"Between {A} and {B}, to which are you partial?",green,yellow,"Between green and yellow, to which are you partial?",-0.0092010498046875,-8.1015625
+"Between {A} and {B}, to which are you partial?",green,purple,"Between green and purple, to which are you partial?",-0.01366424560546875,-4.91796875
+"Between {A} and {B}, to which are you partial?",yellow,red,"Between yellow and red, to which are you partial?",-0.2978515625,-2.703125
+"Between {A} and {B}, to which are you partial?",yellow,blue,"Between yellow and blue, to which are you partial?",-0.2440185546875,-2.369140625
+"Between {A} and {B}, to which are you partial?",yellow,green,"Between yellow and green, to which are you partial?",-0.0712890625,-3.5703125
+"Between {A} and {B}, to which are you partial?",yellow,purple,"Between yellow and purple, to which are you partial?",-0.2215576171875,-1.8779296875
+"Between {A} and {B}, to which are you partial?",purple,red,"Between purple and red, to which are you partial?",-0.338134765625,-3.556640625
+"Between {A} and {B}, to which are you partial?",purple,blue,"Between purple and blue, to which are you partial?",-0.6962890625,-1.0712890625
+"Between {A} and {B}, to which are you partial?",purple,green,"Between purple and green, to which are you partial?",-0.455078125,-3.705078125
+"Between {A} and {B}, to which are you partial?",purple,yellow,"Between purple and yellow, to which are you partial?",-0.1661376953125,-6.83984375
+Which is more to your liking: {A} or {B}?,red,blue,Which is more to your liking: red or blue?,-0.1744384765625,-1.9248046875
+Which is more to your liking: {A} or {B}?,red,green,Which is more to your liking: red or green?,-0.028228759765625,-3.80859375
+Which is more to your liking: {A} or {B}?,red,yellow,Which is more to your liking: red or yellow?,-0.01172637939453125,-6.26171875
+Which is more to your liking: {A} or {B}?,red,purple,Which is more to your liking: red or purple?,-2.34765625,-0.1602783203125
+Which is more to your liking: {A} or {B}?,blue,red,Which is more to your liking: blue or red?,-0.004932403564453125,-11.2265625
+Which is more to your liking: {A} or {B}?,blue,green,Which is more to your liking: blue or green?,-0.01457977294921875,-4.578125
+Which is more to your liking: {A} or {B}?,blue,yellow,Which is more to your liking: blue or yellow?,-0.00879669189453125,-7.7890625
+Which is more to your liking: {A} or {B}?,blue,purple,Which is more to your liking: blue or purple?,-0.031585693359375,-3.65625
+Which is more to your liking: {A} or {B}?,green,red,Which is more to your liking: green or red?,-0.003635406494140625,-10.3125
+Which is more to your liking: {A} or {B}?,green,blue,Which is more to your liking: green or blue?,-7.4453125,-0.006717681884765625
+Which is more to your liking: {A} or {B}?,green,yellow,Which is more to your liking: green or yellow?,-0.001064300537109375,-9.6875
+Which is more to your liking: {A} or {B}?,green,purple,Which is more to your liking: green or purple?,-0.006641387939453125,-5.1328125
+Which is more to your liking: {A} or {B}?,yellow,red,Which is more to your liking: yellow or red?,-0.1795654296875,-2.1484375
+Which is more to your liking: {A} or {B}?,yellow,blue,Which is more to your liking: yellow or blue?,-6.8984375,-0.0236358642578125
+Which is more to your liking: {A} or {B}?,yellow,green,Which is more to your liking: yellow or green?,-1.16796875,-0.386474609375
+Which is more to your liking: {A} or {B}?,yellow,purple,Which is more to your liking: yellow or purple?,-2.455078125,-0.11181640625
+Which is more to your liking: {A} or {B}?,purple,red,Which is more to your liking: purple or red?,-0.0511474609375,-4.70703125
+Which is more to your liking: {A} or {B}?,purple,blue,Which is more to your liking: purple or blue?,-5.9140625,-0.00676727294921875
+Which is more to your liking: {A} or {B}?,purple,green,Which is more to your liking: purple or green?,-0.043487548828125,-5.48046875
+Which is more to your liking: {A} or {B}?,purple,yellow,Which is more to your liking: purple or yellow?,-0.00566864013671875,-9.3515625
+Do you find {A} or {B} more to your liking?,red,blue,Do you find red or blue more to your liking?,-0.474365234375,-1.724609375
+Do you find {A} or {B} more to your liking?,red,green,Do you find red or green more to your liking?,-0.10577392578125,-3.44921875
+Do you find {A} or {B} more to your liking?,red,yellow,Do you find red or yellow more to your liking?,-0.211181640625,-4.8046875
+Do you find {A} or {B} more to your liking?,red,purple,Do you find red or purple more to your liking?,-1.634765625,-0.728515625
+Do you find {A} or {B} more to your liking?,blue,red,Do you find blue or red more to your liking?,-0.042999267578125,-12.328125
+Do you find {A} or {B} more to your liking?,blue,green,Do you find blue or green more to your liking?,-0.039764404296875,-7.6640625
+Do you find {A} or {B} more to your liking?,blue,yellow,Do you find blue or yellow more to your liking?,-0.1309814453125,-8.4765625
+Do you find {A} or {B} more to your liking?,blue,purple,Do you find blue or purple more to your liking?,-0.064453125,-4.53515625
+Do you find {A} or {B} more to your liking?,green,red,Do you find green or red more to your liking?,-0.0516357421875,-13.0234375
+Do you find {A} or {B} more to your liking?,green,blue,Do you find green or blue more to your liking?,-1.3974609375,-1.0537109375
+Do you find {A} or {B} more to your liking?,green,yellow,Do you find green or yellow more to your liking?,-0.017608642578125,-12.703125
+Do you find {A} or {B} more to your liking?,green,purple,Do you find green or purple more to your liking?,-0.030853271484375,-8.96875
+Do you find {A} or {B} more to your liking?,yellow,red,Do you find yellow or red more to your liking?,-1.224609375,-4.2578125
+Do you find {A} or {B} more to your liking?,yellow,blue,Do you find yellow or blue more to your liking?,-3.748046875,-0.873046875
+Do you find {A} or {B} more to your liking?,yellow,green,Do you find yellow or green more to your liking?,-0.33447265625,-4.6796875
+Do you find {A} or {B} more to your liking?,yellow,purple,Do you find yellow or purple more to your liking?,-1.3828125,-1.1640625
+Do you find {A} or {B} more to your liking?,purple,red,Do you find purple or red more to your liking?,-2.18359375,-9.3359375
+Do you find {A} or {B} more to your liking?,purple,blue,Do you find purple or blue more to your liking?,-4.53125,-1.4072265625
+Do you find {A} or {B} more to your liking?,purple,green,Do you find purple or green more to your liking?,-1.5263671875,-8.8671875
+Do you find {A} or {B} more to your liking?,purple,yellow,Do you find purple or yellow more to your liking?,-0.8798828125,-10.9453125
+Which aligns more with your preferences: {A} or {B}?,red,blue,Which aligns more with your preferences: red or blue?,-9.3125,-9.226799011230469e-05
+Which aligns more with your preferences: {A} or {B}?,red,green,Which aligns more with your preferences: red or green?,-9.53125,-7.355213165283203e-05
+Which aligns more with your preferences: {A} or {B}?,red,yellow,Which aligns more with your preferences: red or yellow?,-1.40625,-0.28125
+Which aligns more with your preferences: {A} or {B}?,red,purple,Which aligns more with your preferences: red or purple?,-10.21875,-9.441375732421875e-05
+Which aligns more with your preferences: {A} or {B}?,blue,red,Which aligns more with your preferences: blue or red?,-7.152557373046875e-07,-17.34375
+Which aligns more with your preferences: {A} or {B}?,blue,green,Which aligns more with your preferences: blue or green?,-0.042999267578125,-3.16796875
+Which aligns more with your preferences: {A} or {B}?,blue,yellow,Which aligns more with your preferences: blue or yellow?,-0.00011587142944335938,-9.09375
+Which aligns more with your preferences: {A} or {B}?,blue,purple,Which aligns more with your preferences: blue or purple?,-0.0721435546875,-2.666015625
+Which aligns more with your preferences: {A} or {B}?,green,red,Which aligns more with your preferences: green or red?,-4.76837158203125e-07,-15.96875
+Which aligns more with your preferences: {A} or {B}?,green,blue,Which aligns more with your preferences: green or blue?,-10.8125,-2.1457672119140625e-05
+Which aligns more with your preferences: {A} or {B}?,green,yellow,Which aligns more with your preferences: green or yellow?,-3.4570693969726562e-06,-12.84375
+Which aligns more with your preferences: {A} or {B}?,green,purple,Which aligns more with your preferences: green or purple?,-0.027130126953125,-3.62109375
+Which aligns more with your preferences: {A} or {B}?,yellow,red,Which aligns more with your preferences: yellow or red?,-0.23193359375,-1.576171875
+Which aligns more with your preferences: {A} or {B}?,yellow,blue,Which aligns more with your preferences: yellow or blue?,-14.25,-7.987022399902344e-06
+Which aligns more with your preferences: {A} or {B}?,yellow,green,Which aligns more with your preferences: yellow or green?,-6.84375,-0.0010700225830078125
+Which aligns more with your preferences: {A} or {B}?,yellow,purple,Which aligns more with your preferences: yellow or purple?,-5.87890625,-0.002841949462890625
+Which aligns more with your preferences: {A} or {B}?,purple,red,Which aligns more with your preferences: purple or red?,-0.0014476776123046875,-6.59375
+Which aligns more with your preferences: {A} or {B}?,purple,blue,Which aligns more with your preferences: purple or blue?,-8.84375,-0.00015497207641601562
+Which aligns more with your preferences: {A} or {B}?,purple,green,Which aligns more with your preferences: purple or green?,-0.0458984375,-3.109375
+Which aligns more with your preferences: {A} or {B}?,purple,yellow,Which aligns more with your preferences: purple or yellow?,-9.512901306152344e-05,-9.5625
+"Between {A} and {B}, which do you naturally prefer?",red,blue,"Between red and blue, which do you naturally prefer?",-0.5146484375,-1.0146484375
+"Between {A} and {B}, which do you naturally prefer?",red,green,"Between red and green, which do you naturally prefer?",-0.1220703125,-2.310546875
+"Between {A} and {B}, which do you naturally prefer?",red,yellow,"Between red and yellow, which do you naturally prefer?",-0.06964111328125,-4.2265625
+"Between {A} and {B}, which do you naturally prefer?",red,purple,"Between red and purple, which do you naturally prefer?",-0.446533203125,-1.1337890625
+"Between {A} and {B}, which do you naturally prefer?",blue,red,"Between blue and red, which do you naturally prefer?",-0.00839996337890625,-10.1328125
+"Between {A} and {B}, which do you naturally prefer?",blue,green,"Between blue and green, which do you naturally prefer?",-0.0035114288330078125,-6.81640625
+"Between {A} and {B}, which do you naturally prefer?",blue,yellow,"Between blue and yellow, which do you naturally prefer?",-0.006679534912109375,-7.2578125
+"Between {A} and {B}, which do you naturally prefer?",blue,purple,"Between blue and purple, which do you naturally prefer?",-0.009124755859375,-4.9140625
+"Between {A} and {B}, which do you naturally prefer?",green,red,"Between green and red, which do you naturally prefer?",-0.00576019287109375,-11.3515625
+"Between {A} and {B}, which do you naturally prefer?",green,blue,"Between green and blue, which do you naturally prefer?",-0.097900390625,-2.44140625
+"Between {A} and {B}, which do you naturally prefer?",green,yellow,"Between green and yellow, which do you naturally prefer?",-0.0014848709106445312,-10.5
+"Between {A} and {B}, which do you naturally prefer?",green,purple,"Between green and purple, which do you naturally prefer?",-0.00530242919921875,-5.81640625
+"Between {A} and {B}, which do you naturally prefer?",yellow,red,"Between yellow and red, which do you naturally prefer?",-0.413330078125,-4.6015625
+"Between {A} and {B}, which do you naturally prefer?",yellow,blue,"Between yellow and blue, which do you naturally prefer?",-0.45751953125,-1.48828125
+"Between {A} and {B}, which do you naturally prefer?",yellow,green,"Between yellow and green, which do you naturally prefer?",-0.07452392578125,-3.32421875
+"Between {A} and {B}, which do you naturally prefer?",yellow,purple,"Between yellow and purple, which do you naturally prefer?",-0.259033203125,-1.8525390625
+"Between {A} and {B}, which do you naturally prefer?",purple,red,"Between purple and red, which do you naturally prefer?",-0.330078125,-5.05078125
+"Between {A} and {B}, which do you naturally prefer?",purple,blue,"Between purple and blue, which do you naturally prefer?",-1.1494140625,-0.55615234375
+"Between {A} and {B}, which do you naturally prefer?",purple,green,"Between purple and green, which do you naturally prefer?",-0.36865234375,-4.5859375
+"Between {A} and {B}, which do you naturally prefer?",purple,yellow,"Between purple and yellow, which do you naturally prefer?",-0.1348876953125,-8.2890625
+How do you state your preference between {A} and {B}?,red,blue,How do you state your preference between red and blue?,-12.4453125,-17.921875
+How do you state your preference between {A} and {B}?,red,green,How do you state your preference between red and green?,-13.0703125,-19.421875
+How do you state your preference between {A} and {B}?,red,yellow,How do you state your preference between red and yellow?,-14.8203125,-19.265625
+How do you state your preference between {A} and {B}?,red,purple,How do you state your preference between red and purple?,-15.421875,-15.734375
+How do you state your preference between {A} and {B}?,blue,red,How do you state your preference between blue and red?,-14.484375,-20.375
+How do you state your preference between {A} and {B}?,blue,green,How do you state your preference between blue and green?,-18.234375,-23.34375
+How do you state your preference between {A} and {B}?,blue,yellow,How do you state your preference between blue and yellow?,-15.5625,-21.015625
+How do you state your preference between {A} and {B}?,blue,purple,How do you state your preference between blue and purple?,-18.640625,-17.984375
+How do you state your preference between {A} and {B}?,green,red,How do you state your preference between green and red?,-16.390625,-19.140625
+How do you state your preference between {A} and {B}?,green,blue,How do you state your preference between green and blue?,-20.46875,-18.75
+How do you state your preference between {A} and {B}?,green,yellow,How do you state your preference between green and yellow?,-16.09375,-20.546875
+How do you state your preference between {A} and {B}?,green,purple,How do you state your preference between green and purple?,-17.046875,-17.09375
+How do you state your preference between {A} and {B}?,yellow,red,How do you state your preference between yellow and red?,-16.390625,-18.015625
+How do you state your preference between {A} and {B}?,yellow,blue,How do you state your preference between yellow and blue?,-16.890625,-16.828125
+How do you state your preference between {A} and {B}?,yellow,green,How do you state your preference between yellow and green?,-15.5,-20.828125
+How do you state your preference between {A} and {B}?,yellow,purple,How do you state your preference between yellow and purple?,-15.6875,-13.25
+How do you state your preference between {A} and {B}?,purple,red,How do you state your preference between purple and red?,-13.765625,-17.875
+How do you state your preference between {A} and {B}?,purple,blue,How do you state your preference between purple and blue?,-16.25,-16.71875
+How do you state your preference between {A} and {B}?,purple,green,How do you state your preference between purple and green?,-11.859375,-19.96875
+How do you state your preference between {A} and {B}?,purple,yellow,How do you state your preference between purple and yellow?,-10.0,-18.921875
+Which do you value more personally: {A} or {B}?,red,blue,Which do you value more personally: red or blue?,-5.0078125,-0.0087890625
+Which do you value more personally: {A} or {B}?,red,green,Which do you value more personally: red or green?,-6.50390625,-0.0045928955078125
+Which do you value more personally: {A} or {B}?,red,yellow,Which do you value more personally: red or yellow?,-0.251220703125,-1.5322265625
+Which do you value more personally: {A} or {B}?,red,purple,Which do you value more personally: red or purple?,-6.26171875,-0.01084136962890625
+Which do you value more personally: {A} or {B}?,blue,red,Which do you value more personally: blue or red?,-0.0012950897216796875,-8.5625
+Which do you value more personally: {A} or {B}?,blue,green,Which do you value more personally: blue or green?,-3.119140625,-0.056854248046875
+Which do you value more personally: {A} or {B}?,blue,yellow,Which do you value more personally: blue or yellow?,-0.01256561279296875,-4.57421875
+Which do you value more personally: {A} or {B}?,blue,purple,Which do you value more personally: blue or purple?,-0.69091796875,-0.72216796875
+Which do you value more personally: {A} or {B}?,green,red,Which do you value more personally: green or red?,-0.0007648468017578125,-9.84375
+Which do you value more personally: {A} or {B}?,green,blue,Which do you value more personally: green or blue?,-7.22265625,-0.00249481201171875
+Which do you value more personally: {A} or {B}?,green,yellow,Which do you value more personally: green or yellow?,-0.0004513263702392578,-10.34375
+Which do you value more personally: {A} or {B}?,green,purple,Which do you value more personally: green or purple?,-0.0217437744140625,-3.896484375
+Which do you value more personally: {A} or {B}?,yellow,red,Which do you value more personally: yellow or red?,-1.9267578125,-0.1766357421875
+Which do you value more personally: {A} or {B}?,yellow,blue,Which do you value more personally: yellow or blue?,-11.09375,-0.0030040740966796875
+Which do you value more personally: {A} or {B}?,yellow,green,Which do you value more personally: yellow or green?,-6.66796875,-0.011077880859375
+Which do you value more personally: {A} or {B}?,yellow,purple,Which do you value more personally: yellow or purple?,-5.26171875,-0.01155853271484375
+Which do you value more personally: {A} or {B}?,purple,red,Which do you value more personally: purple or red?,-0.39501953125,-1.14453125
+Which do you value more personally: {A} or {B}?,purple,blue,Which do you value more personally: purple or blue?,-11.125,-0.0017728805541992188
+Which do you value more personally: {A} or {B}?,purple,green,Which do you value more personally: purple or green?,-1.5595703125,-0.2474365234375
+Which do you value more personally: {A} or {B}?,purple,yellow,Which do you value more personally: purple or yellow?,-0.003871917724609375,-6.28515625
+What is your personal preference: {A} or {B}?,red,blue,What is your personal preference: red or blue?,-0.9033203125,-0.5283203125
+What is your personal preference: {A} or {B}?,red,green,What is your personal preference: red or green?,-0.089111328125,-2.49609375
+What is your personal preference: {A} or {B}?,red,yellow,What is your personal preference: red or yellow?,-0.00582122802734375,-5.81640625
+What is your personal preference: {A} or {B}?,red,purple,What is your personal preference: red or purple?,-3.158203125,-0.06365966796875
+What is your personal preference: {A} or {B}?,blue,red,What is your personal preference: blue or red?,-0.0006318092346191406,-12.375
+What is your personal preference: {A} or {B}?,blue,green,What is your personal preference: blue or green?,-0.003627777099609375,-5.78515625
+What is your personal preference: {A} or {B}?,blue,yellow,What is your personal preference: blue or yellow?,-0.0030670166015625,-8.0
+What is your personal preference: {A} or {B}?,blue,purple,What is your personal preference: blue or purple?,-0.0343017578125,-3.44140625
+What is your personal preference: {A} or {B}?,green,red,What is your personal preference: green or red?,-0.0013427734375,-11.15625
+What is your personal preference: {A} or {B}?,green,blue,What is your personal preference: green or blue?,-7.75390625,-0.0027618408203125
+What is your personal preference: {A} or {B}?,green,yellow,What is your personal preference: green or yellow?,-0.000598907470703125,-10.03125
+What is your personal preference: {A} or {B}?,green,purple,What is your personal preference: green or purple?,-0.035430908203125,-3.37890625
+What is your personal preference: {A} or {B}?,yellow,red,What is your personal preference: yellow or red?,-0.07391357421875,-2.76171875
+What is your personal preference: {A} or {B}?,yellow,blue,What is your personal preference: yellow or blue?,-7.11328125,-0.0214080810546875
+What is your personal preference: {A} or {B}?,yellow,green,What is your personal preference: yellow or green?,-0.9970703125,-0.4658203125
+What is your personal preference: {A} or {B}?,yellow,purple,What is your personal preference: yellow or purple?,-3.0078125,-0.071044921875
+What is your personal preference: {A} or {B}?,purple,red,What is your personal preference: purple or red?,-0.03125,-3.8125
+What is your personal preference: {A} or {B}?,purple,blue,What is your personal preference: purple or blue?,-5.7578125,-0.009765625
+What is your personal preference: {A} or {B}?,purple,green,What is your personal preference: purple or green?,-0.01739501953125,-5.515625
+What is your personal preference: {A} or {B}?,purple,yellow,What is your personal preference: purple or yellow?,-0.007785797119140625,-8.7265625
+"Between {A} and {B}, what do you prefer?",red,blue,"Between red and blue, what do you prefer?",-0.5517578125,-1.8017578125
+"Between {A} and {B}, what do you prefer?",red,green,"Between red and green, what do you prefer?",-0.3095703125,-2.43359375
+"Between {A} and {B}, what do you prefer?",red,yellow,"Between red and yellow, what do you prefer?",-0.66357421875,-3.7578125
+"Between {A} and {B}, what do you prefer?",red,purple,"Between red and purple, what do you prefer?",-0.591796875,-1.654296875
+"Between {A} and {B}, what do you prefer?",blue,red,"Between blue and red, what do you prefer?",-0.2261962890625,-7.6640625
+"Between {A} and {B}, what do you prefer?",blue,green,"Between blue and green, what do you prefer?",-0.103515625,-5.2890625
+"Between {A} and {B}, what do you prefer?",blue,yellow,"Between blue and yellow, what do you prefer?",-0.326416015625,-4.96875
+"Between {A} and {B}, what do you prefer?",blue,purple,"Between blue and purple, what do you prefer?",-0.09197998046875,-3.904296875
+"Between {A} and {B}, what do you prefer?",green,red,"Between green and red, what do you prefer?",-0.190673828125,-8.40625
+"Between {A} and {B}, what do you prefer?",green,blue,"Between green and blue, what do you prefer?",-0.35888671875,-2.421875
+"Between {A} and {B}, what do you prefer?",green,yellow,"Between green and yellow, what do you prefer?",-0.15185546875,-7.54296875
+"Between {A} and {B}, what do you prefer?",green,purple,"Between green and purple, what do you prefer?",-0.072509765625,-4.57421875
+"Between {A} and {B}, what do you prefer?",yellow,red,"Between yellow and red, what do you prefer?",-1.453125,-4.171875
+"Between {A} and {B}, what do you prefer?",yellow,blue,"Between yellow and blue, what do you prefer?",-1.2880859375,-2.724609375
+"Between {A} and {B}, what do you prefer?",yellow,green,"Between yellow and green, what do you prefer?",-0.468994140625,-3.65625
+"Between {A} and {B}, what do you prefer?",yellow,purple,"Between yellow and purple, what do you prefer?",-0.568359375,-2.099609375
+"Between {A} and {B}, what do you prefer?",purple,red,"Between purple and red, what do you prefer?",-1.2919921875,-4.62109375
+"Between {A} and {B}, what do you prefer?",purple,blue,"Between purple and blue, what do you prefer?",-1.962890625,-1.681640625
+"Between {A} and {B}, what do you prefer?",purple,green,"Between purple and green, what do you prefer?",-1.4951171875,-4.46484375
+"Between {A} and {B}, what do you prefer?",purple,yellow,"Between purple and yellow, what do you prefer?",-1.2470703125,-7.26171875
+Which has your preference: {A} or {B}?,red,blue,Which has your preference: red or blue?,-0.01108551025390625,-4.57421875
+Which has your preference: {A} or {B}?,red,green,Which has your preference: red or green?,-0.0041656494140625,-5.59765625
+Which has your preference: {A} or {B}?,red,yellow,Which has your preference: red or yellow?,-0.0014057159423828125,-7.5625
+Which has your preference: {A} or {B}?,red,purple,Which has your preference: red or purple?,-0.6220703125,-0.7783203125
+Which has your preference: {A} or {B}?,blue,red,Which has your preference: blue or red?,-0.0004420280456542969,-11.46875
+Which has your preference: {A} or {B}?,blue,green,Which has your preference: blue or green?,-0.0045623779296875,-5.47265625
+Which has your preference: {A} or {B}?,blue,yellow,Which has your preference: blue or yellow?,-0.0013246536254882812,-8.28125
+Which has your preference: {A} or {B}?,blue,purple,Which has your preference: blue or purple?,-0.01366424560546875,-4.32421875
+Which has your preference: {A} or {B}?,green,red,Which has your preference: green or red?,-0.0005083084106445312,-10.84375
+Which has your preference: {A} or {B}?,green,blue,Which has your preference: green or blue?,-6.03515625,-0.0028076171875
+Which has your preference: {A} or {B}?,green,yellow,Which has your preference: green or yellow?,-0.00016927719116210938,-10.625
+Which has your preference: {A} or {B}?,green,purple,Which has your preference: green or purple?,-0.005023956298828125,-5.31640625
+Which has your preference: {A} or {B}?,yellow,red,Which has your preference: yellow or red?,-0.2364501953125,-1.580078125
+Which has your preference: {A} or {B}?,yellow,blue,Which has your preference: yellow or blue?,-6.72265625,-0.00440216064453125
+Which has your preference: {A} or {B}?,yellow,green,Which has your preference: yellow or green?,-0.95654296875,-0.487548828125
+Which has your preference: {A} or {B}?,yellow,purple,Which has your preference: yellow or purple?,-2.49609375,-0.0904541015625
+Which has your preference: {A} or {B}?,purple,red,Which has your preference: purple or red?,-0.060089111328125,-2.966796875
+Which has your preference: {A} or {B}?,purple,blue,Which has your preference: purple or blue?,-5.66015625,-0.004199981689453125
+Which has your preference: {A} or {B}?,purple,green,Which has your preference: purple or green?,-0.0204925537109375,-4.70703125
+Which has your preference: {A} or {B}?,purple,yellow,Which has your preference: purple or yellow?,-0.0024814605712890625,-8.8125
+Do your preferences align with {A} or {B}?,red,blue,Do your preferences align with red or blue?,-2.68359375,-0.308837890625
+Do your preferences align with {A} or {B}?,red,green,Do your preferences align with red or green?,-8.3125,-0.56298828125
+Do your preferences align with {A} or {B}?,red,yellow,Do your preferences align with red or yellow?,-1.0869140625,-0.7744140625
+Do your preferences align with {A} or {B}?,red,purple,Do your preferences align with red or purple?,-8.8828125,-0.61865234375
+Do your preferences align with {A} or {B}?,blue,red,Do your preferences align with blue or red?,-0.1234130859375,-13.03125
+Do your preferences align with {A} or {B}?,blue,green,Do your preferences align with blue or green?,-1.203125,-0.984375
+Do your preferences align with {A} or {B}?,blue,yellow,Do your preferences align with blue or yellow?,-0.12139892578125,-5.24609375
+Do your preferences align with {A} or {B}?,blue,purple,Do your preferences align with blue or purple?,-4.66015625,-0.9111328125
+Do your preferences align with {A} or {B}?,green,red,Do your preferences align with green or red?,-0.1307373046875,-12.5234375
+Do your preferences align with {A} or {B}?,green,blue,Do your preferences align with green or blue?,-2.130859375,-0.31787109375
+Do your preferences align with {A} or {B}?,green,yellow,Do your preferences align with green or yellow?,-0.11297607421875,-8.890625
+Do your preferences align with {A} or {B}?,green,purple,Do your preferences align with green or purple?,-0.0863037109375,-4.9296875
+Do your preferences align with {A} or {B}?,yellow,red,Do your preferences align with yellow or red?,-0.5849609375,-1.3037109375
+Do your preferences align with {A} or {B}?,yellow,blue,Do your preferences align with yellow or blue?,-6.453125,-0.360595703125
+Do your preferences align with {A} or {B}?,yellow,green,Do your preferences align with yellow or green?,-4.734375,-0.10760498046875
+Do your preferences align with {A} or {B}?,yellow,purple,Do your preferences align with yellow or purple?,-5.28125,-0.1253662109375
+Do your preferences align with {A} or {B}?,purple,red,Do your preferences align with purple or red?,-0.326171875,-5.79296875
+Do your preferences align with {A} or {B}?,purple,blue,Do your preferences align with purple or blue?,-8.109375,-0.5498046875
+Do your preferences align with {A} or {B}?,purple,green,Do your preferences align with purple or green?,-1.171875,-4.828125
+Do your preferences align with {A} or {B}?,purple,yellow,Do your preferences align with purple or yellow?,-0.39794921875,-7.2734375

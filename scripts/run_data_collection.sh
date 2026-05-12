@@ -7,10 +7,15 @@
 
 while [[ $# -gt 0 ]]; do
   case $1 in
-    -m|--model)
+    -m|--models)
       MODEL="$2"
       shift 2
       ;;
+    -s|--size)
+      SIZE="$2"
+      shift 2
+      ;;
+    
     -a|--alternatives)
       ALTERNATIVES="$2"
       shift 2
@@ -24,22 +29,23 @@ done
 
 source /home/lotan.amit/miniconda3/etc/profile.d/conda.sh
 conda activate /home/lotan.amit/miniconda3/envs/whatdo-llms-want
-python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 
 # Build command array
 CMD=(python3 scripts/data_collection.py)
 
 if [ -n "$MODEL" ]; then
-    CMD+=(--model "$MODEL")
+    CMD+=(--model_family "$MODEL")
+fi
+
+if [ -n "$SIZE" ]; then
+    CMD+=(--model_size "$SIZE")
 fi
 
 if [ -n "$ALTERNATIVES" ]; then
     CMD+=(--alternatives "$ALTERNATIVES")
 fi
 
-CMD+=(--cluster_job "$SLURM_JOB_ID")
-
 # Execute command
 "${CMD[@]}"
 
-# sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -a {alternatives} -m {model}
+# sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -a {alternatives} -m {model} -s {size}

@@ -10,54 +10,69 @@ from tqdm.auto import tqdm
 # Add project root to sys.path to allow imports from src
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','src')))
-from src import prompts, alternatives
-from src.agent import InstructedHFAgent
+import src.alternatives
+import src.prompts
+from src.agent import InstructedHFAgent, load_gemma3_agent, load_qwen2_5_agent
 
-def collect_data():
+MODEL_FAMILY_ALIASES = {
+    'qwen': load_qwen2_5_agent,
+    'gemma': load_gemma3_agent,
+}
+
+ALTERNATIVES_ALIASES = {
+    'colors': src.alternatives.colors,
+    'foods': src.alternatives.foods,
+    'cars': src.alternatives.cars,
+    'stocks': src.alternatives.stocks,
+    'laptops': src.alternatives.laptops,
+    'laptop_brands': src.alternatives.laptop_brands,
+}
+
+def collect_data(model_family, model_size, alternatives_alias):
     # Parameters
-    items = alternatives.colors
-    model_id = 'qwen/qwen2.5-0.5B-instruct'
-    templates = prompts.options_comparisons
-    agent = InstructedHFAgent(model_id)
+    items = ALTERNATIVES_ALIASES[alternatives_alias]
+    templates = src.prompts.general_comparisons
+    agent_loader = MODEL_FAMILY_ALIASES[model_family]
+    agent = agent_loader(model_size)
     labels = ['Option 1', 'Option 2']
-    print({
-        'items': items,
-        'model_id': model_id,
-        'templates': templates,
-        'labels': labels,
-    })
+    print('model_id:', agent.tokenizer.name_or_path)
+    print('labels:', labels)
+    print('items:')
+    for item in items:
+        print('-', item)
+    print('templates:')
+    for template in templates:
+        print('-', template)
 
     # Experiment directory
-    exp_name = 'qwen0_5I-colors'
-    exp_dir = os.path.join("data", exp_name)
-    os.makedirs(exp_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    file_path = os.path.join(exp_dir, f"{timestamp}.csv")
-
+    exp_name = f'{model_family}-{model_size}-{alternatives_alias}-{timestamp}'
+    exp_dir = os.path.join("data",'prev_prompts', exp_name)
+    os.makedirs(exp_dir, exist_ok=True)
 
     records = []
     for template in tqdm(templates):
         for option_a, option_b in itertools.permutations(items, 2):
             prompt = template.format(A=option_a, B=option_b)
-            score_a, score_b = agent.query(prompt, labels)
+            score_a, score_b = agent.query(prompt, labels=[option_a, option_b])
             records.append({
-                'template': template,
+                'template': rf'{template}',
                 'option_a': option_a,
                 'option_b': option_b,
-                'prompt': prompt,
-                'score_a': score_a,
-                'score_b': score_b,
+                'prompt': rf'{prompt}',
+                'score_a': score_a.item(),
+                'score_b': score_b.item(),
             })
             
     df = pd.DataFrame(records)
-    df.to_csv(file_path)
+    df.to_csv(os.path.join(exp_dir, f"scores.csv"), index=False)
     print("Finished!")
 
 if __name__ == "__main__":
-    # parser = argparse.ArgumentParser(description="Run Data")
-    # parser.add_argument("--cluster_job", type=str, default="", help="Job name")
-    # parser.add_argument("--model", type=str, required=True, help="Model alias")
-    # parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias")
+    parser = argparse.ArgumentParser(description="Run Data")
+    parser.add_argument("--model_family", type=str, required=True, help="Model family")
+    parser.add_argument("--model_size", type=str, required=True, help="Model size")
+    parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias")
 
-    # args = parser.parse_args()
-    collect_data()
+    args = parser.parse_args()
+    collect_data(args.model_family, args.model_size, args.alternatives)
