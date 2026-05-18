@@ -1,11 +1,12 @@
 import os
 import torch
+import huggingface_hub
 import torch.nn.functional as F
 
+from dotenv import load_dotenv
 from typing import List
 from abc import ABC, abstractmethod
 from transformers import AutoModelForCausalLM, AutoTokenizer
-
 class Agent(ABC):
     @abstractmethod
     def query(self, prompt: str, labels: List[str]) -> List[float]:
@@ -15,6 +16,8 @@ class HFAgent(Agent):
     SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"
     
     def __init__(self, model_id):
+        load_dotenv()
+        huggingface_hub.login(token=os.getenv("HF_TOKEN"))
         self.model_id = model_id
         self.system_prompt = self.SYSTEM_MESSAGE
         self.model, self.tokenizer = self._load_model_and_tokenizer(model_id)
@@ -130,18 +133,18 @@ class InstructedHFAgent(HFAgent):
 
         return labels_scores #, metadata
 
+qwen2_5_sizes = ['0.5', '7', '32', '72']
+gemma3_sizes = ['1', '4', '12', '27']
 
 def load_qwen2_5_agent(model_size: float):
-    optional_sizes = ['0.5', '7', '32', '72']
-    assert model_size in optional_sizes, f"Model size must be one of {optional_sizes}"
+    assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
     
     model_id = f"Qwen/Qwen2.5-{model_size}B-instruct"
 
     return InstructedHFAgent(model_id)
 
 def load_gemma3_agent(model_size: float):
-    optional_sizes = ['1', '4', '12', '27']
-    assert model_size in optional_sizes, f"Model size must be one of {optional_sizes}"
+    assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
     
     model_id = f"google/gemma-3-{model_size}b-it"
     

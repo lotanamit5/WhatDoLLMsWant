@@ -2,6 +2,7 @@ import os
 import sys
 import argparse
 import itertools
+import huggingface
 import pandas as pd
 
 from datetime import datetime
@@ -12,7 +13,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','src')))
 import src.alternatives
 import src.prompts
-from src.agent import InstructedHFAgent, load_gemma3_agent, load_qwen2_5_agent
+from src.agent import load_gemma3_agent, load_qwen2_5_agent
 
 MODEL_FAMILY_ALIASES = {
     'qwen': load_qwen2_5_agent,
@@ -31,7 +32,7 @@ ALTERNATIVES_ALIASES = {
 def collect_data(model_family, model_size, alternatives_alias):
     # Parameters
     items = ALTERNATIVES_ALIASES[alternatives_alias]
-    templates = src.prompts.general_comparisons
+    templates = src.prompts.options_comparisons
     agent_loader = MODEL_FAMILY_ALIASES[model_family]
     agent = agent_loader(model_size)
     labels = ['Option 1', 'Option 2']
