@@ -48,7 +48,7 @@ def collect_data(model_family, model_size, alternatives_alias):
     # Experiment directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     exp_name = f'{model_family}-{model_size}-{alternatives_alias}-{timestamp}'
-    exp_dir = os.path.join("data",'prev_prompts', exp_name)
+    exp_dir = os.path.join("data", exp_name)
     os.makedirs(exp_dir, exist_ok=True)
 
     records = []
