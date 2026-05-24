@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from typing import List
 from abc import ABC, abstractmethod
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+
 class Agent(ABC):
     @abstractmethod
     def query(self, prompt: str, labels: List[str]) -> List[float]:
@@ -15,10 +17,14 @@ class Agent(ABC):
 class HFAgent(Agent):
     SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"
     
-    def __init__(self, model_id):
+    def __init__(self, model_id,
+                 normalize_pmi: bool = True,
+                 pmi_base_context: str = "Answer: "):
         load_dotenv()
         huggingface_hub.login(token=os.getenv("HF_TOKEN"))
         self.model_id = model_id
+        self.normalize_pmi = normalize_pmi
+        self.pmi_base_context = pmi_base_context
         self.system_prompt = self.SYSTEM_MESSAGE
         self.model, self.tokenizer = self._load_model_and_tokenizer(model_id)
     
@@ -86,52 +92,80 @@ class HFAgent(Agent):
 
 class InstructedHFAgent(HFAgent):
     def query(self, prompts, labels):
-        if not isinstance(prompts, list):
+        is_single = isinstance(prompts, str)
+        if is_single:
             prompts = [prompts]
-        prompts = [self._convert_to_chat_template(p) for p in prompts]
-        # concat labels to the corrposnded input text
-        input_with_answers = [i + label for label in labels for i in prompts]
-        # get labels tokens ids
+            
+        formatted_prompts = [self._convert_to_chat_template(p) for p in prompts]
+
+        # Get raw conditional logprobs: log P(label | prompt)
+        prompt_scores = self._get_logprobs(formatted_prompts, labels)
+        
+        if not self.normalize_pmi:
+            scores_list = prompt_scores.tolist()
+            return scores_list[0] if is_single else scores_list
+        
+        # PMI Normalization: get base logprobs: log P(label | empty_template)
+        base_context = self._convert_to_chat_template(self.pmi_base_context)
+        base_scores = self._get_logprobs([base_context], labels)
+
+        # Subtract base from prompt to isolate the prompt's informational gain
+        pmi_scores = prompt_scores - base_scores
+
+        scores_list = pmi_scores.tolist()
+
+        scores_list[0] if is_single else scores_list
+
+    
+    def _get_logprobs(self, contexts: List[str], labels: List[str]) -> torch.Tensor:
+        """Helper to extract the logprobs of the final label tokens across a batch."""
+        # 1. Group combinations: C1+L1, C1+L2, C2+L1, C2+L2...
+        input_with_answers = [c + l for c in contexts for l in labels]
+        
+        # 2. Extract target token IDs (using the last token of each label)
         labels_tokens = self.tokenizer(labels, add_special_tokens=False)["input_ids"]
-        # get the last token id of each label
-        labels_tokens = [label[-1] for label in labels_tokens]
-        # Ensure pad token exists before padding
+        last_label_tokens = [toks[-1] for toks in labels_tokens]
+        
+        # 3. Expand target tokens to match the flat batch dimension
+        # e.g., if labels are [L1, L2], repeated for N contexts -> [L1, L2, L1, L2...]
+        num_contexts = len(contexts)
+        num_labels = len(labels)
+        batch_target_tokens = last_label_tokens * num_contexts
+        
+        # Force right padding so length calculations perfectly map to indices
+        original_padding = self.tokenizer.padding_side
+        self.tokenizer.padding_side = "right"
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
-        # Get encodings for each input text using direct call instead of batch_encode_plus
+            
         input_enc = self.tokenizer(
             input_with_answers,
             return_tensors="pt",
             padding="longest",
-        )
-        for k, v in input_enc.items():
-            input_enc[k] = v.to(self.model.device)
+        ).to(self.model.device)
+        
+        self.tokenizer.padding_side = original_padding
+        print(input_enc)
 
-        # Get model output logits
         with torch.no_grad():
-            model_output = self.model(**input_enc)
+            logits = self.model(**input_enc).logits
+            
+        log_probs = F.log_softmax(logits, dim=-1)
+        
+        # 4. Calculate indices safely (attention mask sums give exact sequence lengths)
+        seq_lengths = input_enc["attention_mask"].sum(-1)
+        # The target is at length - 1. The token predicting the target is at length - 2.
+        predictor_indices = seq_lengths - 2
+        
+        # 5. Extract scores using advanced indexing (Fixes the matrix/diag crash)
+        batch_indices = torch.arange(len(input_with_answers), device=self.model.device)
+        target_token_indices = torch.tensor(batch_target_tokens, device=self.model.device)
+        
+        scores = log_probs[batch_indices, predictor_indices, target_token_indices]
+        
+        # 6. Reshape back to (Batch Size, Num Labels)
+        return scores.view(num_contexts, num_labels)
 
-        # Compute the log probabilities associated with each of the labels
-        labels_log_probs = F.log_softmax(model_output.logits, dim=-1)
-
-        # Get the ids of the token before the last token before padding (to see the probablity of the last token given the one before the last token)
-        before_padding_ids = (
-            input_enc["input_ids"].ne(self.tokenizer.pad_token_id).sum(-1) - 2
-        )
-
-        # Collect labels scores from the -2 token in labels_log_probs (the one that predict the last token)
-        # and collect for each line the id in labels_tokens
-        labels_scores = labels_log_probs[:, before_padding_ids, labels_tokens]
-
-        # Need just the diagonal of the matrix, as it the prob of the label for each line
-        labels_scores = torch.diag(labels_scores)
-
-        # metadata = {
-        #     'input_ids': input_enc.input_ids,
-        #     'logits': model_output.logits,
-        # }
-
-        return labels_scores #, metadata
 
 qwen2_5_sizes = ['0.5', '7', '32', '72']
 gemma3_sizes = ['1', '4', '12', '27']
