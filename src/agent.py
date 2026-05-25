@@ -18,8 +18,8 @@ class HFAgent(Agent):
     SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"
     
     def __init__(self, model_id,
-                 normalize_pmi: bool = True,
-                 pmi_base_context: str = "Answer: "):
+                 normalize_pmi: bool = False,
+                 pmi_base_context: str = None):
         load_dotenv()
         huggingface_hub.login(token=os.getenv("HF_TOKEN"))
         self.model_id = model_id
@@ -91,36 +91,30 @@ class HFAgent(Agent):
         return model, tokenizer
 
 class InstructedHFAgent(HFAgent):
-    def query(self, prompts, labels):
-        is_single = isinstance(prompts, str)
-        if is_single:
-            prompts = [prompts]
+    def query(self, prompt: str, labels: List[str]):
             
-        formatted_prompts = [self._convert_to_chat_template(p) for p in prompts]
+        formatted_prompt = self._convert_to_chat_template(prompt)
 
         # Get raw conditional logprobs: log P(label | prompt)
-        prompt_scores = self._get_logprobs(formatted_prompts, labels)
+        prompt_scores = self._get_logprobs(formatted_prompt, labels)
         
         if not self.normalize_pmi:
-            scores_list = prompt_scores.tolist()
-            return scores_list[0] if is_single else scores_list
+            return prompt_scores
         
         # PMI Normalization: get base logprobs: log P(label | empty_template)
-        base_context = self._convert_to_chat_template(self.pmi_base_context)
-        base_scores = self._get_logprobs([base_context], labels)
+        base_prompt = self.pmi_base_context if self.pmi_base_context else prompt.split('\n')[-1]
+        base_context = self._convert_to_chat_template(base_prompt)
+        base_scores = self._get_logprobs(base_context, labels)
 
         # Subtract base from prompt to isolate the prompt's informational gain
         pmi_scores = prompt_scores - base_scores
 
-        scores_list = pmi_scores.tolist()
+        return pmi_scores
 
-        scores_list[0] if is_single else scores_list
-
-    
-    def _get_logprobs(self, contexts: List[str], labels: List[str]) -> torch.Tensor:
+    def _get_logprobs(self, prompt: List[str], labels: List[str]) -> torch.Tensor:
         """Helper to extract the logprobs of the final label tokens across a batch."""
         # 1. Group combinations: C1+L1, C1+L2, C2+L1, C2+L2...
-        input_with_answers = [c + l for c in contexts for l in labels]
+        input_with_answers = [prompt + label for label in labels]
         
         # 2. Extract target token IDs (using the last token of each label)
         labels_tokens = self.tokenizer(labels, add_special_tokens=False)["input_ids"]
@@ -128,9 +122,7 @@ class InstructedHFAgent(HFAgent):
         
         # 3. Expand target tokens to match the flat batch dimension
         # e.g., if labels are [L1, L2], repeated for N contexts -> [L1, L2, L1, L2...]
-        num_contexts = len(contexts)
-        num_labels = len(labels)
-        batch_target_tokens = last_label_tokens * num_contexts
+        batch_target_tokens = last_label_tokens
         
         # Force right padding so length calculations perfectly map to indices
         original_padding = self.tokenizer.padding_side
@@ -145,7 +137,6 @@ class InstructedHFAgent(HFAgent):
         ).to(self.model.device)
         
         self.tokenizer.padding_side = original_padding
-        print(input_enc)
 
         with torch.no_grad():
             logits = self.model(**input_enc).logits
@@ -163,8 +154,9 @@ class InstructedHFAgent(HFAgent):
         
         scores = log_probs[batch_indices, predictor_indices, target_token_indices]
         
-        # 6. Reshape back to (Batch Size, Num Labels)
-        return scores.view(num_contexts, num_labels)
+        # 6. Reshape back to (Num Labels)
+        logits_per_label = scores.squeeze(-1)
+        return logits_per_label
 
 
 qwen2_5_sizes = ['0.5', '7', '32', '72']
