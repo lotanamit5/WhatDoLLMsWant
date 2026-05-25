@@ -1,24 +1,6 @@
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 1 -a colors
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 1 -a foods
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 1 -a cars
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 1 -a stocks
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 1 -a laptops
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 1 -a laptop_brands
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 4 -a colors
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 4 -a foods
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 4 -a cars
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 4 -a stocks
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 4 -a laptops
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 4 -a laptop_brands
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 12 -a colors
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 12 -a foods
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 12 -a cars
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 12 -a stocks
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 12 -a laptops
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 12 -a laptop_brands
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 27 -a colors
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 27 -a foods
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m gemma -s 27 -a cars
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m gemma -s 27 -a stocks
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m gemma -s 27 -a laptops
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m gemma -s 27 -a laptop_brands
+sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m qwen -s 72 -a colors -n pmi_qwen
+sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m qwen -s 72 -a foods -n pmi_qwen
+sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m qwen -s 72 -a cars -n pmi_qwen
+sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m qwen -s 72 -a stocks -n pmi_qwen
+sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m qwen -s 72 -a laptops -n pmi_qwen
+sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m qwen -s 72 -a laptop_brands -n pmi_qwen
