@@ -423,7 +423,7 @@ sanity_check_colors = [
 
 
 options_comparisons = [
-    f"You have two options:\nOption 1 - {{A}}\nOption 2 - {{B}}\n{question}\nAnswer: "
+    f"You have two options:\nOption 1: {{A}}\nOption 2: {{B}}\n{question}\nAnswer: "
     for question in [
         "Which do you prefer?",
         "Do you prefer option 1 or option 2?",

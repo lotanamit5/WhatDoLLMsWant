@@ -15,16 +15,14 @@ class Agent(ABC):
         raise NotImplementedError("Subclasses must implement this method")
 
 class HFAgent(Agent):
-    SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation.\n\n"
+    SYSTEM_MESSAGE = "You are a helpful assistant. Answer shortly with only your choice with no explanation."
     
     def __init__(self, model_id,
-                 normalize_pmi: bool = False,
-                 pmi_base_context: str = None):
+                 normalize_pmi: bool = True):
         load_dotenv()
         huggingface_hub.login(token=os.getenv("HF_TOKEN"))
         self.model_id = model_id
         self.normalize_pmi = normalize_pmi
-        self.pmi_base_context = pmi_base_context
         self.system_prompt = self.SYSTEM_MESSAGE
         self.model, self.tokenizer = self._load_model_and_tokenizer(model_id)
     
@@ -92,39 +90,30 @@ class HFAgent(Agent):
 
 class InstructedHFAgent(HFAgent):
     def query(self, prompt: str, labels: List[str]):
-            
         formatted_prompt = self._convert_to_chat_template(prompt)
-
-        # Get raw conditional logprobs: log P(label | prompt)
         prompt_scores = self._get_logprobs(formatted_prompt, labels)
         
-        if not self.normalize_pmi:
-            return prompt_scores
-        
-        # PMI Normalization: get base logprobs: log P(label | empty_template)
-        base_prompt = self.pmi_base_context if self.pmi_base_context else prompt.split('\n')[-1]
-        base_context = self._convert_to_chat_template(base_prompt)
-        base_scores = self._get_logprobs(base_context, labels)
+        if self.normalize_pmi:
+            base_prompt = prompt.split('\n')[-1]
+            base_context = self._convert_to_chat_template(base_prompt)
+            base_scores = self._get_logprobs(base_context, labels)
+            return (prompt_scores - base_scores).tolist()
 
-        # Subtract base from prompt to isolate the prompt's informational gain
-        pmi_scores = prompt_scores - base_scores
+        return prompt_scores.tolist()
 
-        return pmi_scores
-
-    def _get_logprobs(self, prompt: List[str], labels: List[str]) -> torch.Tensor:
-        """Helper to extract the logprobs of the final label tokens across a batch."""
-        # 1. Group combinations: C1+L1, C1+L2, C2+L1, C2+L2...
+    def _get_logprobs(self, prompt: str, labels: List[str]) -> torch.Tensor:
+        assert prompt.endswith((" ", "\n"))
+        print(f"Getting log probabilities for prompt:\n{prompt}\nwith labels: {labels}\n")
         input_with_answers = [prompt + label for label in labels]
+        print(f"Input with answers:")
+        for i, inp in enumerate(input_with_answers):
+            print(i)
+            print(inp)
         
-        # 2. Extract target token IDs (using the last token of each label)
         labels_tokens = self.tokenizer(labels, add_special_tokens=False)["input_ids"]
-        last_label_tokens = [toks[-1] for toks in labels_tokens]
+        target_tokens = [toks[-1] for toks in labels_tokens]
+        print(f"Target tokens: {target_tokens} (decoded: {[self.tokenizer.decode([t]) for t in target_tokens]})\n")
         
-        # 3. Expand target tokens to match the flat batch dimension
-        # e.g., if labels are [L1, L2], repeated for N contexts -> [L1, L2, L1, L2...]
-        batch_target_tokens = last_label_tokens
-        
-        # Force right padding so length calculations perfectly map to indices
         original_padding = self.tokenizer.padding_side
         self.tokenizer.padding_side = "right"
         if self.tokenizer.pad_token is None:
@@ -134,6 +123,7 @@ class InstructedHFAgent(HFAgent):
             input_with_answers,
             return_tensors="pt",
             padding="longest",
+            add_special_tokens=False 
         ).to(self.model.device)
         
         self.tokenizer.padding_side = original_padding
@@ -143,20 +133,17 @@ class InstructedHFAgent(HFAgent):
             
         log_probs = F.log_softmax(logits, dim=-1)
         
-        # 4. Calculate indices safely (attention mask sums give exact sequence lengths)
         seq_lengths = input_enc["attention_mask"].sum(-1)
-        # The target is at length - 1. The token predicting the target is at length - 2.
         predictor_indices = seq_lengths - 2
         
-        # 5. Extract scores using advanced indexing (Fixes the matrix/diag crash)
         batch_indices = torch.arange(len(input_with_answers), device=self.model.device)
-        target_token_indices = torch.tensor(batch_target_tokens, device=self.model.device)
+        target_token_indices = torch.tensor(target_tokens, device=self.model.device)
         
         scores = log_probs[batch_indices, predictor_indices, target_token_indices]
         
-        # 6. Reshape back to (Num Labels)
-        logits_per_label = scores.squeeze(-1)
-        return logits_per_label
+        print(f"Log probabilities for each label: {scores}\n")
+        
+        return scores
 
 
 qwen2_5_sizes = ['0.5', '7', '32', '72']
@@ -175,3 +162,11 @@ def load_gemma3_agent(model_size: float):
     model_id = f"google/gemma-3-{model_size}b-it"
     
     return InstructedHFAgent(model_id)
+
+if __name__ == "__main__":
+    # Example usage
+    agent = load_qwen2_5_agent('0.5')
+    prompt = "You have two options:\nOption 1: Apple\nOption 2: Orange\nWhich do you prefer?"
+    labels = ["Option 1", "Option 2"]
+    scores = agent.query(prompt, labels)
+    print(scores)
