@@ -88,19 +88,6 @@ class HFAgent(Agent):
         
         return model, tokenizer
 
-class InstructedHFAgent(HFAgent):
-    def query(self, prompt: str, labels: List[str]):
-        formatted_prompt = self._convert_to_chat_template(prompt)
-        prompt_scores = self._get_logprobs(formatted_prompt, labels)
-        
-        if self.normalize_pmi:
-            base_prompt = prompt.split('\n')[-1]
-            base_context = self._convert_to_chat_template(base_prompt)
-            base_scores = self._get_logprobs(base_context, labels)
-            return (prompt_scores - base_scores).tolist()
-
-        return prompt_scores.tolist()
-
     def _get_logprobs(self, prompt: str, labels: List[str]) -> torch.Tensor:
         assert prompt.endswith((" ", "\n"))
         print(f"Getting log probabilities for prompt:\n{prompt}\nwith labels: {labels}\n")
@@ -144,6 +131,43 @@ class InstructedHFAgent(HFAgent):
         print(f"Log probabilities for each label: {scores}\n")
         
         return scores
+class InstructedHFAgent(HFAgent):
+    def __init__(self, model_id, normalize_pmi: bool = True,
+                 labels: list = None):
+        super().__init__(model_id, normalize_pmi)
+        self.labels = labels if labels else ["Option 1", "Option 2"]
+            
+    def query(self, prompt: str, labels: List[str] = None):
+        labels = labels if labels else self.labels
+        formatted_prompt = self._convert_to_chat_template(prompt)
+        prompt_scores = self._get_logprobs(formatted_prompt, labels)
+        
+        if self.normalize_pmi:
+            base_prompt = prompt.split('\n')[-1]
+            base_context = self._convert_to_chat_template(base_prompt)
+            base_scores = self._get_logprobs(base_context, labels)
+            return (prompt_scores - base_scores).tolist()
+
+        return prompt_scores.tolist()
+
+class PretrainedHFAgent(HFAgent):
+    def __init__(self, model_id, normalize_pmi: bool = True,
+                 labels: list = None):
+        super().__init__(model_id, normalize_pmi)
+        self.labels = labels if labels else [" 1", " 2"]
+    
+    def query(self, prompt: str, labels: List[str] = None):
+        labels = labels if labels else self.labels
+        prompt_scores = self._get_logprobs(prompt, labels)
+        
+        # if self.normalize_pmi:
+
+        #     base_prompt = prompt.split('\n')[-1]
+        #     base_scores = self._get_logprobs(base_prompt, labels)
+
+        #     return (prompt_scores - base_scores).tolist()
+
+        return prompt_scores.tolist()    
 
 
 qwen2_5_sizes = ['0.5', '7', '32', '72']
@@ -162,6 +186,23 @@ def load_gemma3_agent(model_size: float):
     model_id = f"google/gemma-3-{model_size}b-it"
     
     return InstructedHFAgent(model_id)
+
+def load_qwen2_5_pt_agent(model_size: float):
+    assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
+    
+    model_id = f"Qwen/Qwen2.5-{model_size}B"
+
+    return PretrainedHFAgent(model_id)
+
+def agent_factory(model_family: str, model_size: str):
+    if model_family == 'qwen':
+        return load_qwen2_5_agent(model_size)
+    elif model_family == 'gemma':
+        return load_gemma3_agent(model_size)
+    elif model_family == 'qwen-pt':
+        return load_qwen2_5_pt_agent(model_size)
+    else:
+        raise ValueError(f"Unsupported model family: {model_family}")
 
 if __name__ == "__main__":
     # Example usage

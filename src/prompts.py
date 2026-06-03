@@ -470,3 +470,34 @@ options_comparisons = [
         "Do your preferences align with option 1 or option 2?"
     ]
 ]
+
+pretrained_options_comparisons = [
+    f"Option 1: {{A}}\nOption 2: {{B}}\n{continuation}"
+    for continuation in [
+        "My preference between these two is Option",
+        "When asked to choose, I selected Option",
+        "Between the two, I prefer Option",
+        "The better choice among these is definitely Option",
+        "If I had to pick one, I would go with Option",
+        "Between them, I strongly favor Option",
+        "The superior alternative here is Option",
+        "Looking at both, my favorite is Option",
+        "When deciding between them, I lean towards Option",
+        "The most appealing choice to me is Option",
+        "Ultimately, I decided to purchase Option",
+        "Between Option 1 and Option 2, I select Option",
+        "My personal preference lies with Option",
+        "If forced to choose, my preference is Option",
+        "Comparing them, I definitely like Option",
+        "The option that stands out more to me is Option",
+        "I find that I am more partial to Option",
+        "Given the two choices, I will take Option",
+        "Without a doubt, I prefer Option",
+        "My preferred alternative is Option",
+        "In a direct comparison, I favor Option",
+        "The one that is more to my liking is Option",
+        "I find myself naturally leaning toward Option",
+        "The choice that aligns better with my needs is Option",
+        "If I were to recommend one, it would be Option"
+    ]
+]

@@ -14,12 +14,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','src')))
 import src.alternatives
 import src.prompts
-from src.agent import load_gemma3_agent, load_qwen2_5_agent
+from src.agent import agent_factory
 
-MODEL_FAMILY_ALIASES = {
-    'qwen': load_qwen2_5_agent,
-    'gemma': load_gemma3_agent,
-}
 
 ALTERNATIVES_ALIASES = {
     'colors': src.alternatives.colors,
@@ -35,11 +31,8 @@ def collect_data(model_family, model_size, alternatives_alias,
     # Parameters
     items = ALTERNATIVES_ALIASES[alternatives_alias]
     templates = src.prompts.options_comparisons
-    agent_loader = MODEL_FAMILY_ALIASES[model_family]
-    agent = agent_loader(model_size)
-    labels = ['Option 1', 'Option 2']
+    agent = agent_factory(model_family, model_size)
     print('model_id:', agent.tokenizer.name_or_path)
-    print('labels:', labels)
     print('items:')
     for item in items:
         print('-', item)
@@ -65,7 +58,7 @@ def collect_data(model_family, model_size, alternatives_alias,
     for idx, template in tqdm(enumerate(templates)):
         for option_a, option_b in itertools.permutations(items, 2):
             prompt = template.format(A=option_a, B=option_b)
-            score_a, score_b = agent.query(prompt, labels=['Option 1', 'Option 2'])
+            score_a, score_b = agent.query(prompt)
             records.append({
                 'template_idx': idx,
                 'option_a': option_a,
