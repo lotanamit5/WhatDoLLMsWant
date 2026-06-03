@@ -43,6 +43,15 @@ exec >"$OUTPUT_PATH" 2>&1
 source /home/lotan.amit/miniconda3/etc/profile.d/conda.sh
 conda activate /home/lotan.amit/miniconda3/envs/whatdo-llms-want
 
+# Use per-job Hugging Face cache to avoid parallel download collisions on SLURM.
+if [ -n "${SLURM_JOB_ID}" ]; then
+  CACHE_ROOT="${SLURM_TMPDIR:-/tmp}/hf_${SLURM_JOB_ID}"
+  mkdir -p "$CACHE_ROOT"
+  export HF_HOME="$CACHE_ROOT"
+  export HF_HUB_CACHE="$CACHE_ROOT/hub"
+  export TRANSFORMERS_CACHE="$CACHE_ROOT/transformers"
+fi
+
 # Build command array
 CMD=(python3 scripts/data_collection.py)
 
