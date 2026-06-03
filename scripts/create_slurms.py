@@ -4,15 +4,25 @@ import itertools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.agent import qwen2_5_sizes, gemma3_sizes
-
-exp_name = "pmi_qwen" # CHANGE WHEN RUNNING
-nodes = ['plotinus1', 'plotinus2']
+exp_name = "qwen_pt" # CHANGE WHEN RUNNING
+nodes = [
+    'plato1', 
+    'plato2',
+    # 'plotinus1', 
+    # 'plotinus2'
+]
 
 parameters = {
-    'm': ['qwen'],
-    's':  ['72'],
-    'a': ['colors', 'foods', 'cars', 'stocks', 'laptops', 'laptop_brands'],
+    'm': ['qwen-pt'],
+    's':  [
+        '0.5',
+        '7','32',
+        # '72'
+        ],
+    'a': ['colors',
+          'foods', 'cars', 'stocks', 'laptops', 
+          'laptop_brands'
+          ],
 }
 
 dst_path = "scripts/slurms.sh"
