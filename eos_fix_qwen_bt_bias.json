@@ -1,0 +1,426 @@
+{
+    "stocks": {
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "Amazon": -0.20010014784296484,
+                    "Apple": 0.12235800530823371,
+                    "Google": 0.06688508955743228,
+                    "Meta": 0.07181012986902402,
+                    "Microsoft": -0.06482275142226113,
+                    "Nvidia": -0.17956360471605073,
+                    "Tesla": 0.1834332792465869
+                },
+                "positional_bias_gamma": -0.0052113200342932126,
+                "gamma_pvalue": 0.7870534031354763,
+                "model_r_squared": 0.062882440324594,
+                "f_stat_pvalue": 7.057016492412698e-23
+            }
+        },
+        "72": {
+            "results": {
+                "item_scores": {
+                    "Amazon": -2.83400047261057,
+                    "Apple": 0.9488276930346455,
+                    "Google": 3.3983317007654152,
+                    "Meta": -8.379979858762804,
+                    "Microsoft": 3.4294939383715874,
+                    "Nvidia": 1.6498500793875253,
+                    "Tesla": 1.7874769198142009
+                },
+                "positional_bias_gamma": 3.4253988372923128,
+                "gamma_pvalue": 3.346418130534414e-229,
+                "model_r_squared": 0.7080471716400856,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "7": {
+            "results": {
+                "item_scores": {
+                    "Amazon": -0.7702886321615909,
+                    "Apple": 0.9740228522259544,
+                    "Google": 0.856900864463314,
+                    "Meta": -4.065137274637573,
+                    "Microsoft": -1.043577529465245,
+                    "Nvidia": 1.726778154555349,
+                    "Tesla": 2.3213015650197915
+                },
+                "positional_bias_gamma": 3.8952726296676214,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.6222941596229885,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "32": {
+            "results": {
+                "item_scores": {
+                    "Amazon": -2.5165385281128714,
+                    "Apple": -2.616125479093026,
+                    "Google": 2.2841929510186287,
+                    "Meta": -4.768337145200201,
+                    "Microsoft": -2.970467606058161,
+                    "Nvidia": 5.648482968442858,
+                    "Tesla": 4.938792839002767
+                },
+                "positional_bias_gamma": 6.991964948467767,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.4957396257567088,
+                "f_stat_pvalue": 3.450945171639116e-263
+            }
+        }
+    },
+    "foods": {
+        "72": {
+            "results": {
+                "item_scores": {
+                    "Burger": -2.458184920276117,
+                    "Pasta": -1.333772671777151,
+                    "Pizza": 4.869032598215084,
+                    "Salad": -8.864928599607904,
+                    "Steak": 1.44725877125794,
+                    "Sushi": 0.414912170547975,
+                    "Tacos": 5.925682651640167
+                },
+                "positional_bias_gamma": 1.0405422191683238,
+                "gamma_pvalue": 2.6410516154474207e-55,
+                "model_r_squared": 0.8690740001138031,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "7": {
+            "results": {
+                "item_scores": {
+                    "Burger": -0.423063719193403,
+                    "Pasta": -1.0948422067981238,
+                    "Pizza": 0.5568391734183447,
+                    "Salad": -3.478985647030447,
+                    "Steak": 1.1564630899714488,
+                    "Sushi": 0.6315605377041984,
+                    "Tacos": 2.6520287719279776
+                },
+                "positional_bias_gamma": 5.016950376934123,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.5613156621500869,
+                "f_stat_pvalue": 1.6726844e-317
+            }
+        },
+        "32": {
+            "results": {
+                "item_scores": {
+                    "Burger": -6.618568049316776,
+                    "Pasta": -6.101285266915825,
+                    "Pizza": 8.600600313506652,
+                    "Salad": -12.374123488549776,
+                    "Steak": -0.755428410447708,
+                    "Sushi": 7.299663221519246,
+                    "Tacos": 9.949141680204187
+                },
+                "positional_bias_gamma": 3.147485423985773,
+                "gamma_pvalue": 1.423931699910752e-104,
+                "model_r_squared": 0.8230178030084953,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "Burger": -0.14058272149475695,
+                    "Pasta": 0.06364425709873334,
+                    "Pizza": -0.01272005100186871,
+                    "Salad": 0.09391211829708265,
+                    "Steak": -0.24872748796329938,
+                    "Sushi": 0.07303697959925244,
+                    "Tacos": 0.17143690546485665
+                },
+                "positional_bias_gamma": -0.0250582098300803,
+                "gamma_pvalue": 0.1308411745443228,
+                "model_r_squared": 0.08022706017504866,
+                "f_stat_pvalue": 5.739094306463381e-30
+            }
+        }
+    },
+    "laptops": {
+        "32": {
+            "results": {
+                "item_scores": {
+                    "ASUS VivoBook 15 (i3, 8GB, $450)": -9.540177766782335,
+                    "ASUS ZenBook 14 (i5, 16GB, $700)": 5.6730666306129365,
+                    "Apple MacBook Air M3 (M3, 16GB, $1800)": -2.56060304417627,
+                    "Apple MacBook Pro 14-inch (M3, 32GB, $2220)": 1.0620043050180037,
+                    "Apple MacBook Pro 16-inch (M3, 64GB, $2800)": -0.8060757375733818,
+                    "Dell Inspiron 16 (i7, 16GB, $1100)": -3.439906787618188,
+                    "Dell XPS 15 (i7, 32GB, $1500)": 2.731716830947592,
+                    "HP Pavilion 15 (Ryzen 5, 8GB, $600)": -5.922920532697864,
+                    "HP Spectre x360 (Ryzen 7, 32GB, $1200)": 5.11007179908974,
+                    "Lenovo IdeaPad 3 (i5, 8GB, $550)": -3.417955809900917,
+                    "Lenovo ThinkPad E14 (Ryzen 5, 16GB, $800)": 4.255768194101584,
+                    "Lenovo ThinkPad X1 Carbon (Ryzen 7, 32GB, $1400)": 6.855011918979102
+                },
+                "positional_bias_gamma": 7.358777814574273,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.39551714636403346,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "72": {
+            "results": {
+                "item_scores": {
+                    "ASUS VivoBook 15 (i3, 8GB, $450)": -8.835233750038348,
+                    "ASUS ZenBook 14 (i5, 16GB, $700)": 3.618073972851703,
+                    "Apple MacBook Air M3 (M3, 16GB, $1800)": -4.240263813687824,
+                    "Apple MacBook Pro 14-inch (M3, 32GB, $2220)": 3.324309501537048,
+                    "Apple MacBook Pro 16-inch (M3, 64GB, $2800)": 2.965372557903442,
+                    "Dell Inspiron 16 (i7, 16GB, $1100)": -2.5389198532631214,
+                    "Dell XPS 15 (i7, 32GB, $1500)": 3.7864696868630294,
+                    "HP Pavilion 15 (Ryzen 5, 8GB, $600)": -5.252458196624311,
+                    "HP Spectre x360 (Ryzen 7, 32GB, $1200)": 6.240217776146045,
+                    "Lenovo IdeaPad 3 (i5, 8GB, $550)": -5.5969181879777254,
+                    "Lenovo ThinkPad E14 (Ryzen 5, 16GB, $800)": 1.3438763931509143,
+                    "Lenovo ThinkPad X1 Carbon (Ryzen 7, 32GB, $1400)": 5.1854739131391545
+                },
+                "positional_bias_gamma": 3.5487330792402196,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.6628417416699773,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "ASUS VivoBook 15 (i3, 8GB, $450)": -0.1118990875953845,
+                    "ASUS ZenBook 14 (i5, 16GB, $700)": 0.045143304869184914,
+                    "Apple MacBook Air M3 (M3, 16GB, $1800)": 0.0282177592432776,
+                    "Apple MacBook Pro 14-inch (M3, 32GB, $2220)": 0.13421086747516922,
+                    "Apple MacBook Pro 16-inch (M3, 64GB, $2800)": 0.0845986299736555,
+                    "Dell Inspiron 16 (i7, 16GB, $1100)": -0.13494015479272656,
+                    "Dell XPS 15 (i7, 32GB, $1500)": 0.021197651707848986,
+                    "HP Pavilion 15 (Ryzen 5, 8GB, $600)": -0.1994365130284038,
+                    "HP Spectre x360 (Ryzen 7, 32GB, $1200)": 0.11095682779947924,
+                    "Lenovo IdeaPad 3 (i5, 8GB, $550)": -0.17661669827246826,
+                    "Lenovo ThinkPad E14 (Ryzen 5, 16GB, $800)": 0.005248668581940535,
+                    "Lenovo ThinkPad X1 Carbon (Ryzen 7, 32GB, $1400)": 0.1933187440384271
+                },
+                "positional_bias_gamma": -0.5026679653950021,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.06610477457405084,
+                "f_stat_pvalue": 2.5274857535207373e-76
+            }
+        },
+        "7": {
+            "results": {
+                "item_scores": {
+                    "ASUS VivoBook 15 (i3, 8GB, $450)": -3.2977893262408378,
+                    "ASUS ZenBook 14 (i5, 16GB, $700)": 3.358658720934096,
+                    "Apple MacBook Air M3 (M3, 16GB, $1800)": -3.161073116253495,
+                    "Apple MacBook Pro 14-inch (M3, 32GB, $2220)": 0.36220763947150125,
+                    "Apple MacBook Pro 16-inch (M3, 64GB, $2800)": -1.5553206803724802,
+                    "Dell Inspiron 16 (i7, 16GB, $1100)": -1.8930660714936822,
+                    "Dell XPS 15 (i7, 32GB, $1500)": -0.45912386973699526,
+                    "HP Pavilion 15 (Ryzen 5, 8GB, $600)": -2.4498039010421326,
+                    "HP Spectre x360 (Ryzen 7, 32GB, $1200)": 2.2837375504101893,
+                    "Lenovo IdeaPad 3 (i5, 8GB, $550)": -0.6610128636970005,
+                    "Lenovo ThinkPad E14 (Ryzen 5, 16GB, $800)": 4.220474586583852,
+                    "Lenovo ThinkPad X1 Carbon (Ryzen 7, 32GB, $1400)": 3.2521113314369874
+                },
+                "positional_bias_gamma": 8.90643944342931,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.36979972674570305,
+                "f_stat_pvalue": 0.0
+            }
+        }
+    },
+    "laptop_brands": {
+        "7": {
+            "results": {
+                "item_scores": {
+                    "ASUS": 1.018801231162492,
+                    "Apple": 1.3699356500492543,
+                    "Dell": -1.0570670274801035,
+                    "HP": -0.22216766324154147,
+                    "Lenovo": -1.109502190490102
+                },
+                "positional_bias_gamma": 3.7284777174162316,
+                "gamma_pvalue": 3.9175038529401313e-246,
+                "model_r_squared": 0.34198940591920646,
+                "f_stat_pvalue": 2.900466910065915e-76
+            }
+        },
+        "72": {
+            "results": {
+                "item_scores": {
+                    "ASUS": 1.135143703083663,
+                    "Apple": 7.27035472642544,
+                    "Dell": -1.820851194581321,
+                    "HP": -4.265910388979802,
+                    "Lenovo": -2.318736845947979
+                },
+                "positional_bias_gamma": 2.0271045804023746,
+                "gamma_pvalue": 3.1380066710336953e-86,
+                "model_r_squared": 0.8497312375865054,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "32": {
+            "results": {
+                "item_scores": {
+                    "ASUS": 4.970363458090049,
+                    "Apple": 8.911315008928614,
+                    "Dell": -4.328604921074806,
+                    "HP": -7.006794866018519,
+                    "Lenovo": -2.546278679925339
+                },
+                "positional_bias_gamma": 4.566181718055596,
+                "gamma_pvalue": 4.3667961519758314e-101,
+                "model_r_squared": 0.7508525334002398,
+                "f_stat_pvalue": 3.1116083678770075e-256
+            }
+        },
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "ASUS": 0.07453867002975123,
+                    "Apple": 0.2665739369946858,
+                    "Dell": -0.07606488604878282,
+                    "HP": -0.19502141198446596,
+                    "Lenovo": -0.07002630899118831
+                },
+                "positional_bias_gamma": 0.05986740644588029,
+                "gamma_pvalue": 0.019399833977328865,
+                "model_r_squared": 0.10087364376915042,
+                "f_stat_pvalue": 7.998916674287242e-19
+            }
+        }
+    },
+    "colors": {
+        "72": {
+            "results": {
+                "item_scores": {
+                    "blue": 2.8277218574701353,
+                    "green": 1.8533496008362877,
+                    "purple": -1.509545483145604,
+                    "red": -1.8270664608755791,
+                    "yellow": -1.34445951428524
+                },
+                "positional_bias_gamma": 3.5739708197671316,
+                "gamma_pvalue": 8.453154681970737e-173,
+                "model_r_squared": 0.5265359013344215,
+                "f_stat_pvalue": 3.4634150438078765e-137
+            }
+        },
+        "32": {
+            "results": {
+                "item_scores": {
+                    "blue": 2.241658321369526,
+                    "green": 2.5204890187396565,
+                    "purple": 4.950183817674944,
+                    "red": -2.9266531813976364,
+                    "yellow": -6.785677976386488
+                },
+                "positional_bias_gamma": 7.110488542429237,
+                "gamma_pvalue": 8.897546012546209e-177,
+                "model_r_squared": 0.5828046395714954,
+                "f_stat_pvalue": 1.2397159531328915e-160
+            }
+        },
+        "7": {
+            "results": {
+                "item_scores": {
+                    "blue": 0.9906354801599382,
+                    "green": 1.8882623669713055,
+                    "purple": -2.199851807328157,
+                    "red": -0.2656417292217901,
+                    "yellow": -0.41340431058129656
+                },
+                "positional_bias_gamma": 4.559441444485688,
+                "gamma_pvalue": 6.203518599690175e-191,
+                "model_r_squared": 0.2899839120555281,
+                "f_stat_pvalue": 3.265503690297448e-62
+            }
+        },
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "blue": -0.015591927461845956,
+                    "green": 0.388742065429687,
+                    "purple": 0.04194974677507257,
+                    "red": -0.18050977130268858,
+                    "yellow": -0.23459011344022512
+                },
+                "positional_bias_gamma": -0.6641764441201855,
+                "gamma_pvalue": 1.983643047382885e-124,
+                "model_r_squared": 0.20280066182114254,
+                "f_stat_pvalue": 7.292030774724055e-41
+            }
+        }
+    },
+    "cars": {
+        "7": {
+            "results": {
+                "item_scores": {
+                    "Audi": -1.3623991165050215,
+                    "BMW": 0.47656750916643037,
+                    "Ford": -5.270809880522797,
+                    "Honda": -1.5150299494052604,
+                    "Mercedes": -0.3712732748335762,
+                    "Tesla": 7.679747347419844,
+                    "Toyota": 0.36319736468038133
+                },
+                "positional_bias_gamma": 2.624772035534332,
+                "gamma_pvalue": 1.0098647569601823e-177,
+                "model_r_squared": 0.7149447814367729,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "72": {
+            "results": {
+                "item_scores": {
+                    "Audi": -2.1061807653040563,
+                    "BMW": 0.3525397777557407,
+                    "Ford": -4.8841499014946335,
+                    "Honda": -3.28028732181783,
+                    "Mercedes": 0.6373411842754901,
+                    "Tesla": 9.034321189718785,
+                    "Toyota": 0.2464158368665052
+                },
+                "positional_bias_gamma": 4.582608230486265,
+                "gamma_pvalue": 0.0,
+                "model_r_squared": 0.8349993245006626,
+                "f_stat_pvalue": 0.0
+            }
+        },
+        "0.5": {
+            "results": {
+                "item_scores": {
+                    "Audi": 0.0143681523015728,
+                    "BMW": -0.21464248353064655,
+                    "Ford": -0.05769003427701949,
+                    "Honda": -0.036384405091751504,
+                    "Mercedes": 0.010808469449166701,
+                    "Tesla": 0.267660742978321,
+                    "Toyota": 0.01587955817035699
+                },
+                "positional_bias_gamma": 0.10497813261756594,
+                "gamma_pvalue": 2.2997526144326036e-08,
+                "model_r_squared": 0.061139802420586364,
+                "f_stat_pvalue": 3.551491524421386e-22
+            }
+        },
+        "32": {
+            "results": {
+                "item_scores": {
+                    "Audi": -3.5830346850857793,
+                    "BMW": 1.458864891251859,
+                    "Ford": -14.262551065101196,
+                    "Honda": -4.704208838979271,
+                    "Mercedes": 2.7659759572970115,
+                    "Tesla": 15.618143937318429,
+                    "Toyota": 2.706809803298946
+                },
+                "positional_bias_gamma": 2.504755735067301,
+                "gamma_pvalue": 1.859319123509626e-61,
+                "model_r_squared": 0.8134299815794933,
+                "f_stat_pvalue": 0.0
+            }
+        }
+    }
+}
