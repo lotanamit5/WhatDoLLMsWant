@@ -24,7 +24,11 @@ ALTERNATIVES_ALIASES = {
     'stocks': src.alternatives.stocks,
     'laptops': src.alternatives.laptops,
     'laptop_brands': src.alternatives.laptop_brands,
+    'laptops_num_vs_txt': src.alternatives.laptops_num_vs_txt
 }
+
+def format_features_to_text(item_dict):
+    return f"{item_dict.get('screen', '')} {item_dict.get('brand', '')} laptop for {item_dict.get('price', '')}".strip()
 
 def collect_data(model_family, model_size, alternatives_alias,
                  exp_dir):
@@ -51,32 +55,42 @@ def collect_data(model_family, model_size, alternatives_alias,
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
         'templates': {i:item for i, item in enumerate(templates)},
     }
+    exp_dir = os.path.join("experiment", exp_dir)
+    os.makedirs(exp_dir, exist_ok=True)
     with open(os.path.join(exp_dir, "config.json"), "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2, sort_keys=True)
 
     records = []
     for idx, template in tqdm(enumerate(templates)):
         for option_a, option_b in itertools.permutations(items, 2):
-            prompt = template.format(A=option_a, B=option_b)
+            text_a = format_features_to_text(option_a)
+            text_b = format_features_to_text(option_b)
+            prompt = template.format(A=text_a, B=text_b)
             score_a, score_b = agent.query(prompt)
-            records.append({
+            record = {
                 'template_idx': idx,
-                'option_a': option_a,
-                'option_b': option_b,
+                # **{f'{k}_a':v for k,v in option_a.items},
+                # **{f'{k}_b':v for k,v in option_b.items},
                 'score_a': score_a,
                 'score_b': score_b,
-            })
+            }
+            record.update({f"a_{k}": v for k, v in option_a.items()})
+            record.update({f"b_{k}": v for k, v in option_b.items()})
+            records.append(record)
             
     df = pd.DataFrame(records)
     df.to_csv(os.path.join(exp_dir, "scores.csv"), index=False)
     print("Finished!")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run Data")
-    parser.add_argument("--model_family", type=str, required=True, help="Model family")
-    parser.add_argument("--model_size", type=str, required=True, help="Model size")
-    parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias")
-    parser.add_argument("--exp_dir", type=str, required=False, help="Experiment name (optional)")
+    collect_data('qwen', '0.5', 'laptops_num_vs_txt', 'dummy')
     
-    args = parser.parse_args()
-    collect_data(args.model_family, args.model_size, args.alternatives, args.exp_dir)
+    
+    
+    # parser = argparse.ArgumentParser(description="Run Data")
+    # parser.add_argument("--model_family", type=str, required=True, help="Model family")
+    # parser.add_argument("--model_size", type=str, required=True, help="Model size")
+    # parser.add_argument("--alternatives", type=str, required=True, help="Alternatives alias")
+    # parser.add_argument("--exp_dir", type=str, required=False, help="Experiment name (optional)")
+    
+    # args = parser.parse_args()

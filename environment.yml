@@ -25,3 +25,5 @@ dependencies:
       - tqdm
       - accelerate
       - peft
+      - huggingface
+      - dotenv

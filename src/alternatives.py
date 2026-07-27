@@ -150,3 +150,14 @@ laptops = [
 laptop_brands = [
     "ASUS", "Lenovo", "HP", "Dell", "Apple"
 ]
+
+laptops_num_vs_txt = [
+    {
+        'brand': brand,
+        'screen': screen,
+        'price': price
+    }
+    for brand in ['Apple','Lenovo','Dell']
+    for screen in ['13-inch','16-inch']
+    for price in ['500$','1500$']
+]
