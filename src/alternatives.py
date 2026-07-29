@@ -158,6 +158,38 @@ laptops_num_vs_txt = [
         'price': price
     }
     for brand in ['Apple','Lenovo','Dell']
+    for screen in ['small screen', 'large screen'] #'13-inch','16-inch']
+    for price in ['cheap', 'expensive'] #'500$','1500$']
+]
+
+laptops_num_ram_screen = [
+    {
+        'brand': brand,
+        'screen': screen,
+        'ram': ram
+    }
+    for brand in ['Apple','Lenovo','Dell']
     for screen in ['13-inch','16-inch']
-    for price in ['500$','1500$']
+    for ram in ['4GB', '16GB']
+]
+laptops_txt_ram_screen = [
+    {
+        'brand': brand,
+        'screen': screen,
+        'ram': ram
+    }
+    for brand in ['Apple','Lenovo','Dell']
+    for screen in ['small screen', 'large screen']
+    for ram in ['low','high']
+]
+
+laptops_robustness = [
+    {
+        'brand': brand,
+        'screen': screen,
+        'ram': ram
+    }
+    for brand in laptop_brands
+    for screen in ['13-inch','14-inch','16-inch']
+    for ram in ['4GB', '8GB', '16GB']
 ]

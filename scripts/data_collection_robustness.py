@@ -24,9 +24,7 @@ ALTERNATIVES_ALIASES = {
     'stocks': src.alternatives.stocks,
     'laptops': src.alternatives.laptops,
     'laptop_brands': src.alternatives.laptop_brands,
-    'laptops_num_vs_txt': src.alternatives.laptops_num_vs_txt,
-    'laptops_txt_ram_screen': src.alternatives.laptops_txt_ram_screen,
-    'laptops_num_ram_screen': src.alternatives.laptops_num_ram_screen,
+    'laptops_robustness': src.alternatives.laptops_robustness
 }
 
 def format_features_to_text(item_dict):
@@ -36,7 +34,7 @@ def collect_data(model_family, model_size, alternatives_alias,
                  exp_dir):
     # Parameters
     items = ALTERNATIVES_ALIASES[alternatives_alias]
-    templates = src.prompts.options_comparisons
+    templates = src.prompts.options_comparisons[:5]
     agent = agent_factory(model_family, model_size)
     print('model_id:', agent.tokenizer.name_or_path)
     print('items:')
@@ -62,7 +60,9 @@ def collect_data(model_family, model_size, alternatives_alias,
         json.dump(config, f, indent=2, sort_keys=True)
 
     records = []
+    constraint = "I am looking to buy a laptop. I prefer a 14-inch screen.\n"
     for idx, template in tqdm(enumerate(templates)):
+        template = constraint + template
         for option_a, option_b in itertools.permutations(items, 2):
             text_a = format_features_to_text(option_a)
             text_b = format_features_to_text(option_b)
@@ -70,8 +70,6 @@ def collect_data(model_family, model_size, alternatives_alias,
             score_a, score_b = agent.query(prompt)
             record = {
                 'template_idx': idx,
-                # **{f'{k}_a':v for k,v in option_a.items},
-                # **{f'{k}_b':v for k,v in option_b.items},
                 'score_a': score_a,
                 'score_b': score_b,
             }

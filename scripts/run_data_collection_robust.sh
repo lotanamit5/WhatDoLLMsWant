@@ -54,7 +54,7 @@ if [ -n "${SLURM_JOB_ID}" ]; then
 fi
 
 # Build command array
-CMD=(python3 scripts/data_collection.py)
+CMD=(python3 scripts/data_collection_robustness.py)
 
 if [ -n "$MODEL" ]; then
     CMD+=(--model_family "$MODEL")
