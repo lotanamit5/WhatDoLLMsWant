@@ -4,21 +4,21 @@ import itertools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-exp_name = "laptops_num_vs_txt" # CHANGE WHEN RUNNING
+exp_name = "laptops_robustness" # CHANGE WHEN RUNNING
 nodes = [
     # 'plato1', 
     # 'plato2',
-    # 'plotinus1', 
+    'plotinus1', 
     'plotinus2'
 ]
 
 parameters = {
     'm': ['qwen'],
     's':  [
-        '0.5',
-        # '7',
+        # '0.5',
+        '7',
         '32',
-        '72'
+        # '72'
         ],
     'a': [
         # 'colors',

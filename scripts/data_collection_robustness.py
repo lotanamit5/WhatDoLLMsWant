@@ -47,6 +47,10 @@ def collect_data(model_family, model_size, alternatives_alias,
     # Experiment directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
+    constraint = "I am looking to buy a laptop.\n"
+    # constraint = "I am looking to buy a laptop. I prefer a 14-inch screen.\n"
+    # constraint = "I am looking to buy a laptop. I prefer a 14-inch screen and 8 GB ram.\n"
+    
     config = {
         "model_family": model_family,
         "model_size": model_size,
@@ -54,13 +58,13 @@ def collect_data(model_family, model_size, alternatives_alias,
         "timestamp": timestamp,
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
         'templates': {i:item for i, item in enumerate(templates)},
+        'constraint': constraint,
     }
     os.makedirs(exp_dir, exist_ok=True)
     with open(os.path.join(exp_dir, "config.json"), "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2, sort_keys=True)
 
     records = []
-    constraint = "I am looking to buy a laptop. I prefer a 14-inch screen.\n"
     for idx, template in tqdm(enumerate(templates)):
         template = constraint + template
         for option_a, option_b in itertools.permutations(items, 2):
