@@ -21,6 +21,10 @@ while [[ $# -gt 0 ]]; do
       ALTERNATIVES="$2"
       shift 2
       ;;
+    -c|--constraints)
+      CONSTRAINTS="$2"
+      shift 2
+      ;;
     -n|--exp_name)
       EXP_NAME="$2"
       shift 2
@@ -66,6 +70,10 @@ fi
 
 if [ -n "$ALTERNATIVES" ]; then
     CMD+=(--alternatives "$ALTERNATIVES")
+fi
+
+if [ -n "$CONSTRAINTS" ]; then
+    CMD+=(--constraints "$CONSTRAINTS")
 fi
 
 CMD+=(--exp_dir "$EXP_DIR")

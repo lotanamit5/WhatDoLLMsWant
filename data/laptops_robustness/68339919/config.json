@@ -10,5 +10,7 @@
     "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
     "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
   },
-  "timestamp": "20260728_183215"
+  "timestamp": "20260728_183215",
+  "constraints": "14",
+  "constraints_text": "I am looking to buy a laptop. I prefer a 14-inch screen."
 }

@@ -6,10 +6,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 exp_name = "laptops_robustness" # CHANGE WHEN RUNNING
 nodes = [
-    # 'plato1', 
-    # 'plato2',
-    'plotinus1', 
-    'plotinus2'
+    'plato1', 
+    'plato2',
+    'plotinus1',
+    'plotinus2',
 ]
 
 parameters = {
@@ -27,6 +27,7 @@ parameters = {
         'laptops_robustness',
         # 'laptops_txt_ram_screen','laptops_num_ram_screen',
           ],
+    'c': ['8', '14_8'],
 }
 
 dst_path = "scripts/slurms.sh"
