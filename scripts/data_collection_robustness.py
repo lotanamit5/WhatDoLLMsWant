@@ -104,6 +104,6 @@ if __name__ == "__main__":
         args.model_family,
         args.model_size,
         args.alternatives,
-        args.constrinst,
+        args.constraints,
         args.exp_dir
     )

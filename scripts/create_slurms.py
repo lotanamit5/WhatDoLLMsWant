@@ -14,11 +14,13 @@ nodes = [
 
 parameters = {
     'm': ['qwen'],
-    's':  [
-        # '0.5',
-        '7',
-        '32',
-        # '72'
+    's': 
+        # ['1','4','12','27'],
+        [
+        '0.5',
+        # # '7',
+        # # '32',
+        '72'
         ],
     'a': [
         # 'colors',
@@ -27,7 +29,7 @@ parameters = {
         'laptops_robustness',
         # 'laptops_txt_ram_screen','laptops_num_ram_screen',
           ],
-    'c': ['8', '14_8'],
+    'c': [''],
 }
 
 dst_path = "scripts/slurms.sh"
