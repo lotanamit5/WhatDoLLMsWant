@@ -8,8 +8,11 @@ def load_model(model_id="Qwen/Qwen2.5-0.5B"):
     
     print(f"Loading {model_id}...")
     tokenizer = AutoTokenizer.from_pretrained(model_id)
-    # Use float16 or bfloat16 for efficiency if GPU is available
-    
+    # bfloat16 (not float16) for GPU: these models are trained/released in
+    # bfloat16, and float16's narrower exponent range overflows to inf/nan on
+    # larger models (e.g. Gemma-3 4B+) - bfloat16 has float32's exponent
+    # range so it doesn't overflow.
+
     if torch.cuda.is_available():
         num_gpus = torch.cuda.device_count()
         print(f"Found {num_gpus} GPUs.")
@@ -29,7 +32,7 @@ def load_model(model_id="Qwen/Qwen2.5-0.5B"):
 
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        dtype=torch.float16 if device == "cuda" else torch.float32,
+        dtype=torch.bfloat16 if device == "cuda" else torch.float32,
         device_map=device_map,
         max_memory=max_memory
     )

@@ -1,0 +1,16 @@
+{
+  "alternatives": "laptops_robustness",
+  "constraints": "14_8",
+  "constraints_text": "I am looking to buy a laptop. I prefer a 14-inch screen and 8 GB ram.",
+  "model_family": "gemma",
+  "model_size": "12",
+  "slurm_job_id": "68378311",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
+    "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
+  },
+  "timestamp": "20260805_214920"
+}
