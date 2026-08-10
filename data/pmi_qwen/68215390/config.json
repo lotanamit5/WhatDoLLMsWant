@@ -1,19 +1,19 @@
 {
   "alternatives": "laptop_brands",
+  "constraints": {},
+  "constraints_id": "none",
+  "constraints_text": "",
+  "frame": {
+    "name": "bare",
+    "text": ""
+  },
   "model_family": "qwen",
   "model_size": "7",
+  "prompt_prefix": "",
   "slurm_job_id": "68215390",
   "templates": {
     "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
     "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
-    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
-    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
-    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: ",
-    "5": "You have two options:\nOption 1: {A}\nOption 2: {B}\noption 1 or 2?\nAnswer: ",
-    "6": "You have two options:\nOption 1: {A}\nOption 2: {B}\nIndicate your preference.\nAnswer: ",
-    "7": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you like more?\nAnswer: ",
-    "8": "You have two options:\nOption 1: {A}\nOption 2: {B}\nState your preference:\nAnswer: ",
-    "9": "You have two options:\nOption 1: {A}\nOption 2: {B}\nYour preference:\nAnswer: ",
     "10": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween both, what is your preference?\nAnswer: ",
     "11": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich holds your preference?\nAnswer: ",
     "12": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you lean towards?\nAnswer: ",
@@ -24,6 +24,7 @@
     "17": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat do you like more?\nAnswer: ",
     "18": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich is preferred by you?\nAnswer: ",
     "19": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you have a preference for option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
     "20": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween the two, do you prefer option 1 or 2?\nAnswer: ",
     "21": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWould you say you prefer option 1 or option 2?\nAnswer: ",
     "22": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhen considering option 1 and option 2, which is your preference?\nAnswer: ",
@@ -34,6 +35,7 @@
     "27": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you lean toward, option 1 or option 2?\nAnswer: ",
     "28": "You have two options:\nOption 1: {A}\nOption 2: {B}\nComparing the two, do you like option 1 or option 2 more?\nAnswer: ",
     "29": "You have two options:\nOption 1: {A}\nOption 2: {B}\noption 1 or option 2\u2014which do you favor?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
     "30": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich of the following do you prefer: option 1 or option 2?\nAnswer: ",
     "31": "You have two options:\nOption 1: {A}\nOption 2: {B}\nAre you partial to option 1 or option 2?\nAnswer: ",
     "32": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween option 1 and option 2, to which are you partial?\nAnswer: ",
@@ -44,9 +46,15 @@
     "37": "You have two options:\nOption 1: {A}\nOption 2: {B}\nHow do you state your preference between option 1 and option 2?\nAnswer: ",
     "38": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you value more personally: option 1 or option 2?\nAnswer: ",
     "39": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your personal preference: option 1 or option 2?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: ",
     "40": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween option 1 and option 2, what do you prefer?\nAnswer: ",
     "41": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich has your preference: option 1 or option 2?\nAnswer: ",
-    "42": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo your preferences align with option 1 or option 2?\nAnswer: "
+    "42": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo your preferences align with option 1 or option 2?\nAnswer: ",
+    "5": "You have two options:\nOption 1: {A}\nOption 2: {B}\noption 1 or 2?\nAnswer: ",
+    "6": "You have two options:\nOption 1: {A}\nOption 2: {B}\nIndicate your preference.\nAnswer: ",
+    "7": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you like more?\nAnswer: ",
+    "8": "You have two options:\nOption 1: {A}\nOption 2: {B}\nState your preference:\nAnswer: ",
+    "9": "You have two options:\nOption 1: {A}\nOption 2: {B}\nYour preference:\nAnswer: "
   },
   "timestamp": "20260525_115512"
 }

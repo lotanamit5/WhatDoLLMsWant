@@ -1,7 +1,17 @@
 {
   "alternatives": "laptops_robustness",
+  "constraints": {
+    "screen": "14-inch"
+  },
+  "constraints_id": "screen=14-inch",
+  "constraints_text": "I prefer a 14-inch screen.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop."
+  },
   "model_family": "qwen",
   "model_size": "0.5",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a 14-inch screen.",
   "slurm_job_id": "68339918",
   "templates": {
     "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
@@ -10,7 +20,5 @@
     "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
     "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
   },
-  "timestamp": "20260728_183108",
-  "constraints": "14",
-  "constraints_text": "I am looking to buy a laptop. I prefer a 14-inch screen."
+  "timestamp": "20260728_183108"
 }

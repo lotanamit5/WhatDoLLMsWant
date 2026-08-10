@@ -1,9 +1,18 @@
 {
   "alternatives": "laptops_robustness",
-  "constraints": "14_8",
-  "constraints_text": "I am looking to buy a laptop. I prefer a 14-inch screen and 8 GB ram.",
+  "constraints": {
+    "ram": "8GB",
+    "screen": "14-inch"
+  },
+  "constraints_id": "ram=8GB+screen=14-inch",
+  "constraints_text": "I prefer a 14-inch screen and 8 GB ram.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop."
+  },
   "model_family": "gemma",
   "model_size": "27",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a 14-inch screen and 8 GB ram.",
   "slurm_job_id": "68378315",
   "templates": {
     "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",

@@ -6,6 +6,7 @@
 #SBATCH --error=err/%j.txt
 echo "Starting"
 
+# Merged 2026-08-10 with run_data_collection_robust.sh, which was the same file plus -c.
 while [[ $# -gt 0 ]]; do
   case $1 in
     -m|--models)
@@ -16,9 +17,21 @@ while [[ $# -gt 0 ]]; do
       SIZE="$2"
       shift 2
       ;;
-    
     -a|--alternatives)
       ALTERNATIVES="$2"
+      shift 2
+      ;;
+    -c|--constraints)
+      # "screen=14-inch,ram=8GB"; empty string means no constraint
+      CONSTRAINTS="$2"
+      shift 2
+      ;;
+    -f|--frame)
+      FRAME="$2"
+      shift 2
+      ;;
+    -t|--n_templates)
+      N_TEMPLATES="$2"
       shift 2
       ;;
     -n|--exp_name)
@@ -66,6 +79,18 @@ fi
 
 if [ -n "$ALTERNATIVES" ]; then
     CMD+=(--alternatives "$ALTERNATIVES")
+fi
+
+# Always pass --constraints, even when empty: "" is a meaningful value (no constraint)
+# and the script's default is already "".
+CMD+=(--constraints "$CONSTRAINTS")
+
+if [ -n "$FRAME" ]; then
+    CMD+=(--frame "$FRAME")
+fi
+
+if [ -n "$N_TEMPLATES" ]; then
+    CMD+=(--n_templates "$N_TEMPLATES")
 fi
 
 CMD+=(--exp_dir "$EXP_DIR")

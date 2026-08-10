@@ -1,9 +1,15 @@
 {
   "alternatives": "laptops_robustness",
-  "constraints": null,
-  "constraints_text": "I am looking to buy a laptop.",
+  "constraints": {},
+  "constraints_id": "none",
+  "constraints_text": "",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop."
+  },
   "model_family": "qwen",
   "model_size": "0.5",
+  "prompt_prefix": "I am looking to buy a laptop.",
   "slurm_job_id": "68378734",
   "templates": {
     "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",

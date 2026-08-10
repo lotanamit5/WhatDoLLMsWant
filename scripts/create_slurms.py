@@ -4,7 +4,7 @@ import itertools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-exp_name = "laptops_robustness_gemma" # CHANGE WHEN RUNNING
+exp_name = "laptops_robustness_gemma"  # CHANGE WHEN RUNNING
 nodes = [
     'plato2',
     'plotinus1',
@@ -21,12 +21,25 @@ parameters = {
         'laptops_robustness',
         # 'laptops_txt_ram_screen','laptops_num_ram_screen',
           ],
-    'c': [''],
+    # Constraints are now "feature=level" using the exact level strings from
+    # alternatives.py. "" means no constraint. This replaces the old slugs
+    # ("14", "8", "14_8"), which could not express a 16-inch screen and 16GB ram
+    # separately - both would have been "16".
+    'c': [
+        '',
+        # 'screen=14-inch',
+        # 'ram=8GB',
+        # 'screen=14-inch,ram=8GB',
+        # --- the next runs (2026-08-10): top level of each feature, one at a time ---
+        # 'screen=16-inch',
+        # 'ram=16GB',
+    ],
+    # 'f': ['shopping'],   # bare | shopping | self | third_person
 }
 
 dst_path = "scripts/slurms.sh"
 prefix = "sbatch -p bml -A bml"
-script_path = "scripts/run_data_collection_robust.sh"
+script_path = "scripts/run_data_collection.sh"
 
 with open(dst_path, 'w') as f:
     for i, combo in enumerate(itertools.product(*parameters.values())):

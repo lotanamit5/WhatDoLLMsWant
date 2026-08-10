@@ -213,3 +213,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .vscode/settings.json
+
+# thesis notes vault (symlink, lives outside the repo)
+obsidian_symlink
