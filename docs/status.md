@@ -50,12 +50,31 @@ survives a contract?
    it is (scalar) × (−δ). The model generalizes to a contract it never saw in *direction*,
    not in magnitude.
 5. **Positional bias decides 15–30% of all comparisons** — bigger than most preferences we
-   measure.
-6. **Naive p-values overstate confidence ~3×.** Use clustered SEs.
-7. **PMI normalization is currently a no-op.**
-8. The margin is a genuine log-odds, but **saturated in 88–99% of comparisons**.
-9. **qwen-0.5B has no measurable preference** on anything.
-10. Colors: violate WST, but satisfy RUM. Alignment shifts colors toward purple, away from red.
+   measure. **But γ is currently computed wrong** (see 11).
+6. **Naive p-values overstate confidence ~3×.** Use clustered SEs. Confirmed 2026-08-12:
+   clustering the bootstrap on item-pairs widens CIs by a median 2.28×.
+7. **PMI normalization is a no-op for the weights** — but *not* for γ.
+8. The **winner** token is saturated in 88–99% of comparisons, but the margin is **not
+   censored**: the loser has full dynamic range and tobit equals OLS to 2 decimals.
+9. Colors: violate WST, but satisfy RUM. Alignment shifts colors toward purple, away from red.
+10. **The BT weight scale is a nuisance parameter, not preference strength** (2026-08-12).
+    The log-odds does not depend on how big the difference is — a 4× RAM gap gets the same
+    log-odds as a 2× gap (additivity ratio 0.5 in all 8 models, including the one with zero
+    saturation). Rank-1 explains 99.64% of the variance across weight vectors: bigger models
+    are **louder, not different** (max angle 9.1°, length changes up to 113%). There is **no
+    significant size trend**, and weight spread has correlation −0.04 with held-out accuracy.
+11. **Two measurement bugs found 2026-08-12, not yet fixed in the pipeline:**
+    γ needs `−max(score_a) + max(score_b)` subtracted (qwen-7: −9.05 → −3.05; gemma-1: −6.94 →
+    **+3.31**, sign flips); and the pooled OLS shrinks brand 3–5×, so the "RAM dominates" gap
+    is partly an artifact of pooling.
+12. **qwen-0.5B has a real but tiny preference** — *corrected 2026-08-12*, it was previously
+    listed here as having none. Template-FE R² = 0.920 (pooled 0.085); weights 33 SD above a
+    permutation null. But its signal never beats its own noise (`spread/resid_SD` = 0.80 vs
+    4.5–5.3) and it is inconsistent per-choice (order agreement 0.6%). Different scale regime,
+    not a broken measurement.
+13. **Five templates is enough.** Subsampling 5 of 43 gives SE ≈ 1.0 on total spread, unbiased,
+    against a between-model range of 22.8. Template FE change the weights by exactly 0.000
+    (the design is perfectly balanced).
 
 ---
 
@@ -110,6 +129,14 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 7. **Gibberish-feature control group** (Nir 08-04; Itay 05-20 "think hard about your control
    group"). Same request twice, never done. Needs a new item set in `alternatives.py`.
 8. GRUM Phases B/C/D — doubles, triples, held-out contracts.
+9. **A wider feature ladder** — RAM 4 / 8 / 64 / 256 GB, or a price ladder (new item set in
+   `alternatives.py`). *Created by the 2026-08-12 finding:* the log-odds is currently flat in
+   the size of the difference (a 4× RAM gap scores the same as a 2× gap), but the tested range
+   is narrow. If `L(4→256) ≈ 2 × L(4→16)`, the magnitude *does* carry cardinal information and
+   the categorical reading fails. Cheap, and it settles whether any BT weight we report can be
+   read as a magnitude at all. **Arguably the highest-value run in this list.**
+10. **A repeat run of one model at fixed size** (e.g. qwen-32B twice). There is no within-model
+    replicate anywhere in the data, so run-to-run noise is currently unmeasurable.
 
 ### B. Analysis with data we already have — Track 2, start here
 
@@ -125,11 +152,16 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     Nir 08-04, untouched. Also move `fit_full_item_bradley_terry` out of the notebook.
 12. **Report Exp 1's number**: corr(β_num, β_txt), Spearman/Kendall. Data exists for 7B; 72B
     is queued (A4), so report 7B now and add 72B when it lands.
-13. **Variance decomposition**: how much variance from order (γ), from template, from persona.
-    Template is currently pooled — make it a random effect.
-14. **Does the weight scale grow with model size for a real reason, or is it an optimization
-    artifact?** Asked twice (06-10, 06-18), never answered.
-15. **Rational-choice axioms on laptops** — WST/MST/SST, Block–Marschak. Done on colors only.
+13. **Variance decomposition**: how much variance from order (γ), from persona. *Template part
+    done 2026-08-12: template FE change the weights by exactly 0.000.*
+14. ~~**Does the weight scale grow with model size for a real reason?**~~ **Answered
+    2026-08-12** — no, and there is no significant trend to explain. See `progress.md` and
+    [Notebooks/weight_scale_vs_model_size.ipynb](../Notebooks/weight_scale_vs_model_size.ipynb).
+    Three follow-ups it created: fix γ, decide on design-cell estimation for brand, and the
+    **wider feature ladder** run (below, A9).
+15. ~~**Rational-choice axioms on laptops**~~ — **done 2026-08-12** as part of the above.
+    Above 0.5B, transitivity is essentially perfect (WST/MST/SST violations ≤0.6%, 1–45
+    3-cycles of 14190). qwen-0.5B violates badly (SST 0.158, 453 3-cycles).
 16. **Define a user utility `u` for laptops** so ΔW can be computed. Without it, Aim #2 has
     no metric and every number we report is about `v` alone. **Blocking.**
 

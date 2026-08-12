@@ -8,6 +8,173 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-12 — The weight scale is a nuisance parameter. The question's premise was wrong.
+
+Open since 2026-06-10 / 06-18: *is the trend in the scale of the weights an optimization
+artifact or real signal?* Five conjectures tested in parallel.
+Notebook: [Notebooks/weight_scale_vs_model_size.ipynb](../Notebooks/weight_scale_vs_model_size.ipynb).
+
+**Answer: neither — there is no trend to explain, and the scale does not measure preference.**
+
+### Finding: there is no monotonic trend
+
+Spearman(size, total spread) never reaches significance: ρ=0.67 p=0.083 (all 8), ρ=0.50 p=0.267
+(drop qwen-0.5B), ρ=0.20 p=0.714 (also drop gemma-1B). Among the top 6 models **6 of 15
+size-ordered pairs go the wrong way**. The linear-in-log slope is carried entirely by
+qwen-0.5B: 13.81 (p=0.014) with it, 7.09 (p=0.073) without; dropping any *other* model moves
+the slope by less than 4.
+
+The number that settles it — within-model SD across the 4 constraint conditions vs
+between-model SD:
+
+| set | within | between | ratio |
+|---|---|---|---|
+| all 8 | 3.40 | 12.59 | 3.70 |
+| drop qwen-0.5B | 3.63 | 5.97 | 1.64 |
+| **drop qwen-0.5B + gemma-1B** | **3.90** | **4.00** | **1.03** |
+
+**Among the top 6 models, "which model" is no bigger a lever on the weight scale than "which
+prompt".** qwen-72B (32.5) below qwen-32B (43.7) is real: pair-clustered bootstrap CIs are 8
+points apart and do not touch.
+
+**Design flaw to remember:** with 4 sizes per family the smallest possible two-sided Spearman p
+is **0.083**. A within-family scaling claim can never be significant with this design. Future
+scaling work needs more sizes, not more rows.
+
+### Finding: the log-odds does not depend on how big the difference is
+
+The decisive result. Position-free median log-odds:
+
+| swap | qwen-7 | qwen-32 | qwen-72 | gemma-1 | gemma-4 | gemma-12 | gemma-27 |
+|---|---|---|---|---|---|---|---|
+| ram 4 vs 8 (2×) | 22.53 | 29.13 | 22.77 | 13.52 | 20.05 | 20.30 | 24.27 |
+| **ram 4 vs 16 (4×)** | **21.70** | **29.04** | **22.49** | **14.07** | **21.73** | **20.80** | **23.75** |
+
+Additivity ratio `L(4→16) / [L(4→8)+L(8→16)]` = **0.49–0.54 for all 8 models**, where a cardinal
+utility predicts 1.0. Reproduced independently in the notebook (0.50–0.54).
+
+This is a **categorical response**: the model emits one fixed magnitude whenever "more RAM wins",
+so direct = S, two-step = 2S, ratio 0.5. It holds for qwen-0.5B too, which has **zero
+saturation** — so it is not squashing against a ceiling.
+
+**Consequence:** the dummy fit reports `ram_4GB = −26.5, ram_8GB = −12.6, ram_16GB = 0`, making
+4GB look twice as bad as 8GB. The data says 4-vs-8 and 4-vs-16 are equally decided. **The ladder
+comes from the design — how often each level wins — not from preference strength.**
+
+### Finding: bigger models are louder, not different
+
+- SVD of the 7 weight vectors: **rank-1 explains 99.64%** of the variance.
+- Weight vectors never turn more than **9.1°** (median 5.2°) while length changes up to **113%**.
+- Spearman of the 45-laptop ranking across models: **0.971–0.995**. Where two models disagree on
+  a winner, those pairs have mean |margin| only **18%** of average — noise on near-ties.
+- Correlation of weight spread with held-out accuracy, excluding qwen-0.5B: **−0.04**. With
+  template-agreement error: −0.22. Size does slightly better (−0.46, −0.58) but that is almost
+  all gemma, which starts below the ceiling.
+- **qwen-7B is the best of all 8 on held-out accuracy (0.990)**, while 32B and 72B are worse with
+  equal or larger spreads.
+- RAM veto rate is exactly **1.000** for six of seven working models — lexicographic structure is
+  already complete at 4B and cannot increase.
+
+### Rejected: saturation, and the circularity trap that nearly hid it
+
+There is **no logprob floor**. The loser's logprob is smooth over 30 log units; only 0.06–0.18%
+of rows sit within 0.5 of a run's minimum. What saturates is the **winner** token (exactly 0.0
+for 82–98.5% of rows), which costs no information because p₁+p₂=1. **Tobit equals OLS to 2
+decimals** for all 7 models; only 0.02–0.05% of rows are at a limit.
+
+`frac(|margin|>10)` predicts total spread with r=0.96 — but both are computed from the *same*
+margins. Measured on **disjoint rows** (saturation on the 900 brand-only rows, spread on the
+other 9000) it drops to r=0.268 (p=0.17, n.s.) and does not beat size. Neither variable is
+causal: there is one latent decisiveness scalar T per model, spread ≈ T × shape and
+saturation ≈ P(T·shape > 10).
+
+### Rejected: template pooling — but it overturns qwen-0.5B
+
+The design is perfectly balanced (1980 rows per template), so template dummies are **exactly
+orthogonal** to the differenced feature dummies. Template FE change every weight by **0.000**.
+*This closes the open item "make template a random effect and see if the leakage slopes move" —
+they do not move.*
+
+What pooling does break is the residual SD, and only for the two smallest models. **qwen-0.5B's
+R² goes 0.085 → 0.920** with template intercepts. Its per-template γ ranges over 1.0, which is
+3× its entire feature spread of 0.33.
+
+Also: **5 templates is enough.** Subsampling 5 of the 43 in the `screen=14-inch` run gives
+SE ≈ 1.0 on total spread, unbiased, against a between-model range of 22.8.
+
+### Two measurement bugs
+
+1. **γ is reported wrong.** The base prompt is `prompt.split('\n')[-1]` and every prompt ends
+   with a newline, so the base context is the **empty string** — one constant per run. The PMI
+   part of the intercept is `−max(score_a) + max(score_b)` and must be subtracted.
+   qwen-7: −9.05 → **−3.05**. gemma-1: −6.94 → **+3.31**, the sign flips.
+2. **The pooled OLS shrinks small effects 3–5×.** Fitting on design cells where only one feature
+   differs: qwen-7 brand 0.86 → 4.81 (5.6×), gemma-27 brand 4.88 → 20.11 (4.1×). Wherever RAM
+   differs the answer is pinned regardless of brand, so brand gets no leverage and OLS averages
+   it away. **The "RAM dominates" gap is partly manufactured by the pooled fit.** The
+   lexicographic ordering survives; the size of the gap is overstated.
+
+### Corrections to earlier entries
+
+- **2026-08-09, "qwen-0.5B has no measurable preference on anything" — wrong.** Its weights sit
+  33 SD above a permutation null and its template-FE R² is 0.920. It has a real, reproducible,
+  *tiny* preference. What is true: its signal never beats its own noise (`spread/resid_SD` =
+  0.80 vs 4.5–5.3) and it is genuinely inconsistent per-choice (order agreement 0.6%, 453
+  3-cycles of 14190). Both hold; they are not in conflict. Treat it as a different scale regime,
+  not a broken measurement.
+- **2026-08-10, "the measurement is saturated in 88–99% of comparisons"** — true of the winner
+  token, but it is **not** censoring the margin. The loser has full dynamic range. The open item
+  "a tobit is the honest response model" is now closed: tobit changes nothing.
+- **2026-08-10, "PMI is a no-op"** — correct for the weights, but it is *not* a no-op for γ.
+
+### Decisions
+
+- Stop reporting raw weight scale as a preference magnitude. Report the **shape** (cosine 0.99
+  across all models) plus **one decisiveness number** per model — which is not monotone in size.
+- Normalize by **`margin_SD`**, not `resid_SD`. `resid_SD` is worse than not normalizing at all
+  (CV 0.19 vs 0.095 over 28 runs). The "spread/resid_SD ≈ 5" pattern was a coincidence of the 7
+  unconstrained runs.
+- `total_spread / margin_SD` is monotone in size in 6/8 family × constraint cells (raw: 0/8) —
+  but **no individual block is monotone** (ram is the worst, mean ρ = −0.26), so treat it as a
+  composite statistic, not evidence that one thing grows.
+- `ram_spread / margin_SD` = **1.514, CV 0.053** across a 72× parameter range. On the dominant
+  axis the scale is pure nuisance.
+
+### Spin-off worth its own analysis
+
+Under `screen=14-inch`, in margin-SD units, bigger models shift weight **off** their own RAM
+preference **onto** the stated contract:
+
+| | gemma-1 | gemma-4 | gemma-12 | gemma-27 | qwen-7 | qwen-32 | qwen-72 |
+|---|---|---|---|---|---|---|---|
+| screen (contract) | 0.286 | 0.372 | 1.135 | **1.324** | 0.552 | 1.199 | 1.152 |
+| ram (own preference) | 1.366 | 1.472 | 0.963 | **0.713** | 1.403 | 0.870 | 0.984 |
+
+This is the scale-free version of "contract adherence scales with model size" — and unlike the
+weight scale, it is a genuine preference result.
+
+Separately, C5 found that **template wording moves the contract-vs-preference balance**. Same
+model, same items, same contract: template 35 *"Which aligns more with your preferences…"* gives
+ram 12.8 / screen 15.0 (contract wins); template 20 *"Between the two, do you prefer…"* gives
+ram 27.0 / screen 9.0 (own preference wins 3×). Early evidence for the instruction-strength
+experiment. All 43 current templates are paraphrases of "which do you prefer" — that experiment
+needs new templates.
+
+### Open
+
+- [ ] **Next experiment this points to: a wider feature ladder** (RAM 4/8/64/256GB, or a price
+      ladder). Everything above says the response is categorical, but the tested range is narrow.
+      If `L(4→256) ≈ 2 × L(4→16)`, the magnitude *does* carry cardinal information and the
+      categorical reading fails. Cheap, and it settles the question.
+- [ ] Fix γ in the reported outputs (subtract the PMI part).
+- [ ] Decide whether to report brand/screen from design cells instead of the pooled fit.
+- [ ] No within-model replicate at fixed size exists, so we cannot say how much of the length
+      variation is run-to-run noise. Two qwen-32B runs with different seeds would settle it.
+- [ ] Every scale-free quality measure ceilings above ~4B. A harder item set (no single feature
+      decides) is needed to tell whether that ceiling is real.
+
+---
+
 ## 2026-08-11 — Notes reorganized: `status.md` for state, this file for history
 
 `progress.md` had become both the log and the to-do list — ~35 open checkboxes spread over 8
