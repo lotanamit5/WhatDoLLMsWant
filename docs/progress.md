@@ -104,10 +104,35 @@ SE ≈ 1.0 on total spread, unbiased, against a between-model range of 22.8.
 
 ### Two measurement bugs
 
-1. **γ is reported wrong.** The base prompt is `prompt.split('\n')[-1]` and every prompt ends
-   with a newline, so the base context is the **empty string** — one constant per run. The PMI
-   part of the intercept is `−max(score_a) + max(score_b)` and must be subtracted.
-   qwen-7: −9.05 → **−3.05**. gemma-1: −6.94 → **+3.31**, the sign flips.
+1. **γ is reported wrong.** The base context is `prompt.split('\n')[-1]`, which for every
+   template and every item pair is the literal string **`"Answer: "`** — so it is **one constant
+   `C` for the whole run**. (Checked directly: all 5 templates end in `"Answer: "`, not in a
+   newline. An earlier draft of this entry said the base context was the empty string; that was
+   wrong, but it does not change the conclusion, because all that matters is that `C` is
+   constant.)
+
+   Since `margin = true_logit − C`, the OLS intercept estimates `γ_true − C`. Recover `C` from
+   the saturated rows: where `p(1) → 1` we have `logP(1|prompt) → 0`, so
+   `max(score_a) ≈ −logP(1|base)`. Hence `C = −max(score_a) + max(score_b)` and
+   `γ_true = γ_reported + C`. Verified in the notebook:
+
+   | model | γ reported | C | **γ corrected** |
+   |---|---|---|---|
+   | gemma-1 | −6.94 | +10.25 | **+3.31** ← sign flips |
+   | gemma-4 | −8.51 | +10.50 | **+1.99** ← sign flips |
+   | gemma-12 | −10.52 | +9.75 | −0.77 |
+   | gemma-27 | −7.83 | +4.99 | −2.84 |
+   | qwen-7 | −9.05 | +6.00 | −3.05 |
+   | qwen-32 | −6.98 | +2.25 | −4.73 |
+   | qwen-72 | −9.44 | +5.49 | −3.95 |
+
+   **This is not a small correction: two of the eight change sign, and the rest shrink by
+   2–3×.** So "positional bias decides 15–30% of comparisons" needs re-deriving.
+
+   The recovery is only valid where the run saturates. Validity check `exp(la)+exp(lb) ≤ 1`
+   (the two answer tokens hold all the mass): median **1.000** for all 7 signal models, but
+   **1.369** for qwen-0.5B — impossible, because it never saturates. **γ cannot be corrected
+   this way for qwen-0.5B.** For that model the base context must be measured directly.
 2. **The pooled OLS shrinks small effects 3–5×.** Fitting on design cells where only one feature
    differs: qwen-7 brand 0.86 → 4.81 (5.6×), gemma-27 brand 4.88 → 20.11 (4.1×). Wherever RAM
    differs the answer is pinned regardless of brand, so brand gets no leverage and OLS averages

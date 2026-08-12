@@ -64,9 +64,10 @@ survives a contract?
     are **louder, not different** (max angle 9.1°, length changes up to 113%). There is **no
     significant size trend**, and weight spread has correlation −0.04 with held-out accuracy.
 11. **Two measurement bugs found 2026-08-12, not yet fixed in the pipeline:**
-    γ needs `−max(score_a) + max(score_b)` subtracted (qwen-7: −9.05 → −3.05; gemma-1: −6.94 →
-    **+3.31**, sign flips); and the pooled OLS shrinks brand 3–5×, so the "RAM dominates" gap
-    is partly an artifact of pooling.
+    γ is off by the constant `C = −max(score_a) + max(score_b)` and needs `C` **added**
+    (gemma-1: −6.94 → **+3.31** and gemma-4: −8.51 → **+1.99**, both flip sign; the rest shrink
+    2–3×). Does **not** work for qwen-0.5B, which never saturates. And the pooled OLS shrinks
+    brand 3–5×, so the "RAM dominates" gap is partly an artifact of pooling.
 12. **qwen-0.5B has a real but tiny preference** — *corrected 2026-08-12*, it was previously
     listed here as having none. Template-FE R² = 0.920 (pooled 0.085); weights 33 SD above a
     permutation null. But its signal never beats its own noise (`spread/resid_SD` = 0.80 vs
