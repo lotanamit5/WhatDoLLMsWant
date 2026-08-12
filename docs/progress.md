@@ -8,11 +8,737 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-11 — Notes reorganized: `status.md` for state, this file for history
+
+`progress.md` had become both the log and the to-do list — ~35 open checkboxes spread over 8
+`### Open` sections, with two conflicting "next runs" lists. Decision:
+
+- **`docs/status.md`** — where we are, what we know, what is next. Rewritten in place.
+- **`docs/progress.md`** (this file) — append-only history. Never rewritten. `### Open`
+  sections stay as the record of what was open *at the time*; the live list is `status.md`.
+
+Processed all 22 meeting notes + the thesis proposal into `status.md`. What that turned up:
+
+- **Nir's asks are not tracked anywhere.** Three from 2026-08-04 are untouched: full vs
+  feature parametrization (likelihood), the "I prefer"/"I must" instruction-strength ladder,
+  and a gibberish-feature control group. The control group was also asked for by Itay on
+  05-20 — the same request twice, ten weeks apart.
+- **Experiment 1 (num vs txt) is half-collected**: `laptops_num_vs_txt` has qwen-7B only,
+  the plan called for 7B *and* 72B. No correlation number has ever been reported.
+- **Nir's Experiment 4 was never done** — when a contract makes both laptops bad, is
+  positional bias very strong? It is the cleanest test of the "bias = indifference" reading,
+  and it needs no new data.
+- **Four questions have gone unanswered across two or more meetings**: the weight-scale/model-size
+  trend (06-10, 06-18), GPT commerce for domain feel (05-12, 07-22), choices vs induced order
+  (07-22), and the domain-requirements checklist (02-26, two open checkboxes).
+- **Drift from the proposal**, now recorded: we score the answer token, not perplexity; we use
+  a fixed template set, not runtime LLM-generated prompts; we swapped Qwen-3 for Gemma-3.
+
+Also: `Meeting Notes/26-07-22` had ~79 lines of an unrelated project pasted into it, burying
+Nir's four numbered experiments. Removed (133 → 54 lines).
+
+### Decisions taken
+
+- **"soft-robustness" means graded compliance, not weak wording.** Under a `14-inch`
+  contract, a 13-inch is a near miss and a 16-inch is a bigger one: score adherence by
+  **distance from the requested level**, not pass/fail. Both screen and ram are ordered, so
+  this needs no new data. Open question it answers: does the hard 2%–87% "will it pay?" gap
+  soften into a gradient? The *"I prefer"* vs *"I must"* ladder is a separate experiment.
+- **Two tracks in parallel.** Track 1: collect the missing runs on the cluster. Track 2:
+  analyse existing data meanwhile. `scripts/create_slurms.py` now emits **40 jobs** — GRUM
+  Phase A (`screen=13-inch`, `screen=16-inch`, `ram=4GB`, `ram=16GB` × 8 models) plus the
+  never-run `--frame bare`. All into `data/laptops_robustness/`, gemma included: runs are
+  found by filtering `config.json`, so one folder beats two.
+- **Qwen-3 later, not now.** Two families (Qwen-2.5, Gemma-3) carry the size-scaling claim.
+  The proposal promised Qwen-3; revisit after Phase A.
+- **`CLAUDE.md` now holds only static rules.** Everything time-varying moved to `status.md` —
+  it had been claiming `num_vs_txt.ipynb` was the active notebook long after work moved on.
+- `config_schema_proposal.md` → `config_schema.md`. It has been the applied spec since 08-10,
+  not a proposal.
+
+`create_slurms.py` takes a **list** of parameter dicts now, not one dict, because model family
+and size do not cross (qwen has no 1B, gemma has no 0.5B) and the bare-frame batch varies a
+different flag. Later batches (brand contracts, `num_vs_txt` on 72B) are sitting commented out
+in the same list.
+
+---
+
+## 2026-08-10 — Adherence splits cleanly into "did it hear?" and "will it pay?"
+
+Comparing the two adherence figures in `figs4deck5.ipynb` (5.5 vs 10b.3) showed they measure
+different pair sets, and the difference is the interesting part.
+
+Every contract creates two kinds of comparison:
+
+- **agree direction** — the contract and the model's own order want the same laptop
+  (`ram=8GB`: 8GB vs 4GB). Costs nothing to obey.
+- **conflict direction** — they want different laptops (`ram=8GB`: 8GB vs 16GB). Obeying
+  means giving up something the model wants.
+
+Ceteris paribus, under `ram=8GB`:
+
+| model | agree (8 vs 4) | conflict (8 vs 16) | Fig 5.5 (the average) |
+|---|---|---|---|
+| qwen-0.5B | 96.0 | 93.3 | 94.7 |
+| qwen-7B | **100.0** | 65.3 | 82.7 |
+| qwen-32B | **100.0** | 50.0 | 75.0 |
+| qwen-72B | **100.0** | 86.7 | 93.3 |
+| gemma-1B | 99.3 | **10.0** | 54.7 |
+| gemma-4B | **100.0** | **2.0** | 51.0 |
+| gemma-12B | **100.0** | 50.0 | 75.0 |
+| gemma-27B | **100.0** | 84.7 | 92.3 |
+
+**Every model with real signal is at 100% on the agree direction.** They all hear the
+instruction. What varies — from 2% to 87% — is whether they will *pay* for it. Fig 5.5's
+single number is exactly the mean of the two columns (verified: 77.3 = 77.3), so it is
+diluted by a direction on which everyone scores full marks.
+
+This corrects the reading of gemma-1B/4B as "failing to follow the contract". gemma-4B obeys
+**100%** when obeying is free and **2%** when it costs a RAM step. That is not a
+comprehension failure — it is an unwillingness to trade.
+
+Same split under `screen=14-inch`: agree 73-100, conflict 17-100. Smaller gap, because
+screen was only a tendency to begin with.
+
+**Consequence for the deck:** report the two directions separately, not their average.
+"Does it hear the instruction?" and "will it give something up for it?" are different
+questions and only the second one discriminates between models.
+
+Secondary note: Fig 10b.3 lets brand and screen vary inside the conflict pairs (2250 rows vs
+150 ceteris paribus). On average that barely matters (ram 58.7 vs 55.3; screen 82.0 vs 79.1)
+but per-model it moves by up to 14-20 points (gemma-4B ram: 15.9 vs 2.0), so the
+ceteris-paribus version is the one to quote.
+
+---
+
+## 2026-08-10 — Correction: a ram contract is NOT targeted, and "cancels" was too strong
+
+Prompted by a fair objection to `s05_override`: it conditions only on RAM, so it cannot tell
+"the contract promoted the feature it named" apart from "the contract changed everything".
+New figure `s05_what_moves` measures all three features **ceteris paribus** — pairs that
+differ in one feature and are tied on the other two (90 ordered pairs x 5 templates = 450
+rows per cell).
+
+### Finding: the screen contract is surgical, the ram contract is global
+
+Mean change in "% won by the preferred level", over the 7 models:
+
+| contract | ram | screen | brand |
+|---|---|---|---|
+| `14in` | **−2** | **−30** (named) | −4 |
+| `8GB` | **−17** (named) | **−17** | **−17** |
+| `14in+8GB` | −16 (named) | −30 (named) | −11 |
+
+Naming the **screen** moves the screen by 30 points and leaves ram (−2) and brand (−4)
+essentially alone. Naming the **ram** moves its own target *less* (−17) and drags screen and
+brand down by exactly as much. So a ram contract is not a targeted instruction — it flattens
+the whole preference structure.
+
+### Correction: "the contract cancels the brand preference" overstated it
+
+The GRUM leakage slope of −0.94 was read as cancellation. But **pure shrinkage toward zero
+also gives a slope of −1**, so that number cannot separate the two. Checking directly on the
+spec-tied stratum:
+
+| | brand spread | correlation with the no-contract brand vector |
+|---|---|---|
+| no contract | 10.4 | — |
+| `14in` | 5.2 | **+0.74** (1 of 7 negative) |
+| `8GB` | 3.7 | **+0.19** (3 of 7 negative) |
+| `14in+8GB` | 4.2 | **−0.00** (4 of 7 negative) |
+
+So the dominant effect is **flattening** (spread falls 2-3x), with genuine re-ordering on top
+only under the ram and double contracts. Under the screen contract it is almost pure
+shrinkage. The honest phrasing is "the contract **flattens** the brand preference, and under
+a ram contract also scrambles what is left" — not "cancels", and not a clean sign flip.
+
+Supporting detail: median |margin| in the brand stratum falls 11.2 → 5.8 under `ram=8GB`
+(the model becomes genuinely less decisive about brand), while Apple's ceteris-paribus win
+rate crosses **below** 50% in 3 of 7 models — so it is compression *plus* inversion, not
+either alone.
+
+This does not disturb the priority-order result (that is measured on win rates), nor the
+C5/C6 ram-vs-screen asymmetry. It sharpens what the asymmetry *is*: naming ram is a blunt
+instrument, naming screen is a precise one.
+
+---
+
+## 2026-08-10 — Deck 5 figures updated and distilled
+
+[Notebooks/figs4deck5.ipynb](../Notebooks/figs4deck5.ipynb) now carries a **running order**
+at the top: 13 figures to present, the other 18 marked backup. Re-runs clean, 31 figures.
+
+**Added** (all model-free or gauge-safe, per the magnitudes caveat):
+
+- `s05_override` — adherence as the **override rate**, not as a log-odds weight. Replaces
+  `s05_adherence_scale` as the headline for "does it listen".
+- `s10b_priority` — the priority order measured: RAM veto / screen tendency / brand
+  tie-breaker, with the veto / tendency / no-effect bands drawn.
+- `s10b_additivity_broken` — the 8x brand-spread split. The one figure that justifies
+  dropping the additive reading.
+- `s10b_contract_power` — a contract beats a tendency completely, a veto only partly.
+- `s11_leakage` — the GRUM cancellation slope (ram −0.94, screen −0.54) as a deck figure.
+  Computed directly as `(w_contract − w_none)·w_none / (w_none·w_none)` on the spec-tied
+  stratum: for a saturated `x` this **is** the GRUM `B` row, and it reproduces
+  `grum.ipynb` to 2 dp. No need to port the pooled fit into the deck notebook.
+
+**Corrected two stale figures:**
+
+- `s12_additivity` was titled "additivity holds, except under two constraints". That claim
+  is wrong-headed: the full-vs-feature R² gap is dominated by ram, so it cannot see the
+  brand-level failure at all. Retitled and captioned as a diagnostic with a blind spot.
+- `s14_next_runs` was built around "ram=16GB is the sharpest test". Rewritten around the
+  GRUM identification argument — the 4 missing single contracts (`screen=13-inch`,
+  `screen=16-inch`, `ram=4GB`, `ram=16GB`), which take the contract space from rank 3 to 7.
+  The old ram=16GB argument is kept as a secondary reason on the same slide.
+
+Two standing warnings recorded at the top of the notebook: never put a BT magnitude on a
+slide as if it were a trade-off, and `s05_adherence_scale` / `s12_additivity` are superseded.
+
+---
+
+## 2026-08-10 — GRUM: contracts as "agents". The leakage block *is* the Apple collapse.
+
+Moving from "one Bradley-Terry fit per phase" to **one model across phases**, so that the
+interaction between contracts and features is a parameter instead of a comparison of tables.
+
+> **Formalization:** [docs/grum_formalization.md](grum_formalization.md).
+> **Numbers:** [Notebooks/grum.ipynb](../Notebooks/grum.ipynb).
+
+The mapping: a **contract is a GRUM agent**. `U_ij = delta_j + x_i' B z_j + eps_ij`, with
+`i` = experiment condition, `j` = laptop, `x` = the contract, `z` = item features. Because `x`
+and `z` are over the *same* feature space, `B` splits into two halves that mean different
+things — **diagonal blocks = compliance** (did it do what it was told), **off-diagonal blocks
+= leakage** (did
+it change a preference it was never asked about). Statement 2 of the thesis conjecture is then
+one Wald test on a block.
+
+### The MC-EM machinery is not needed — this is one OLS
+
+With `delta_j = a' z_j`, the observation equation is `y = gamma_i + (a + B' x_i)' dz + noise`.
+So **the per-condition BT weight vector is exactly `w_i = a + B' x_i`**, and the whole GRUM is
+an OLS of the margin on `[condition dummies | dz | dz (x) x]`.
+
+**Verified: the pooled fit reproduces the per-condition BT weights to ~1e-14** for all 8 models
+once `x` is saturated. It is a reparameterization, not a new estimator — so nothing already
+established is put at risk by adopting it.
+
+The paper needs Gibbs/MC-EM because it sees only *rankings*, so utilities are latent. We see a
+continuous cardinal margin per pair; that problem does not exist for us. **Most of `grum4llm/`
+solves a problem we do not have** — only its experimental-design half is worth reusing.
+
+### Finding: a ram contract cancels the brand preference; a screen contract cancels half
+
+Slope of the leakage row on `delta` over the whole 5-brand block (both sum-to-zero, so the slope
+is gauge-safe and scale-free). `-1.0` = the contract exactly cancels the brand preference:
+
+| | mean over the 7 models with real signal |
+|---|---|
+| contract on **ram** | **-0.94** |
+| contract on **screen** | **-0.54** |
+
+Apple, on the spec-tied stratum: `delta` +7.31 and `B[ram=8GB]` **-6.07** for qwen-32B; +10.79
+and **-11.25** for gemma-27B. The leakage is negative in **8/8** models for both contracts.
+
+So C6 and the C5 ram/screen asymmetry are now **two coefficients** instead of a table of
+correlations — and the reading sharpens: the contract does not *shrink* the brand premium, it
+**cancels** it (`delta + B` sits near zero for every capable model). Consistent with the
+lexicographic entry below: naming ram installs an absolute veto above brand, naming screen only
+a partial one.
+
+`delta` on the spec-tied stratum reproduces the "same ram + same screen" column of the entry
+below exactly (7.31, 10.79). Same measurement, new parameterization.
+
+### Decisions taken
+
+- **`x` encodes "no constraint" as zero**, not as a reference level. Then `x = 0` gives
+  `U = delta`, so **`delta` is literally the contract-free preference**. No constant column in
+  `x` — it would be confounded with `delta`.
+- **Compound contracts get one shared saturation scalar, not a free conjunction vector.**
+  See the generalization section below — this corrects an earlier draft of this entry that
+  treated the conjunction as a free parameter per double.
+- **Fit each block in the stratum where it is operative.** Given the lexicographic finding
+  below, the brand block is fitted on **spec-tied** pairs only (900 rows/condition). Under a
+  priority rule a lower-priority utility is identified *only* inside ties on the higher-priority
+  ones. Pooling all 9900 pairs averages a live regime with a dead one.
+- **The GRUM does not carry the priority-order claim.** Priority order stays model-free (win
+  rates, override rates). GRUM's job is the interaction structure, measured where the preference
+  is real. Response stays the continuous margin, not hard wins — with hard wins the RAM veto
+  perfectly separates and the MLE diverges (Ford's condition / Thm 2 in the GRUM paper).
+- SEs clustered by unordered pair throughout. Note the p-values are useless here anyway: with
+  ~990 clusters, qwen-0.5B's 0.04 coefficient still prints `<1e-16`. Judge by effect size
+  relative to `delta`.
+
+### Finding: the model GENERALIZES to a contract it never saw — direction yes, magnitude no
+
+This is the part that makes it a model and not a description, and it is what a saturated `x`
+cannot do. The only held-out test the data supports: fit on `{none, screen=14, ram=8}`, predict
+`screen=14+8`. Additivity forces `w_hat(14+8) = w(14) + w(8) - w(none)`, no free parameters.
+
+Writing `S = w(contract) - w(none)` for the shift, and `gen R² = 1 - ||S-Ŝ||²/||S||²`:
+
+| | gen R² | slope |
+|---|---|---|
+| all features, all pairs | 0.745 | 0.762 |
+| brand block, spec-tied | 0.773 | 0.704 |
+
+- **Direction generalizes**: ~0.75 with nothing fitted on the held-out contract.
+- **Magnitude over-shoots**: slope < 1 in 7/8 models, `||Ŝ|| > ||S||` almost everywhere.
+  **Two contracts together do LESS than the sum of what each does alone** — sub-additive, the
+  opposite of the "conjunction bonus" reading.
+
+### Finding: one shared scalar λ ≈ 0.7 fixes it — 0.77 → 0.97
+
+Shrink the shift by `λ^(q-1)` where `q` = how many features the contract names. One λ fitted
+**across all models**:
+
+| | λ | additive | with λ | ceiling |
+|---|---|---|---|---|
+| all features | 0.676 | 0.745 | 0.893 | 0.924 |
+| brand, spec-tied | 0.710 | 0.773 | **0.971** | 0.982 |
+
+One parameter, essentially at the ceiling. A free conjunction vector per double would cost 312
+parameters and transfer to nothing; λ costs one and transfers to all 39 doubles.
+
+**Caveat:** we only see `q ∈ {1,2}`, so the functional form is *not* identified — `λ^(q-1)` and
+`q^(-α)` fit identically and diverge at `q=3` (0.50 vs 0.58). **One triple contract settles it.**
+
+### Finding: leakage has no shape of its own — it is (scalar) × (−δ)
+
+Cosine between the two fitted leakage rows on the brand block: **0.92 mean, ≥0.97 in six of
+seven models**; each vs `−δ`: 0.86 (screen), 0.94 (ram). So every contract shrinks the brand
+preference *along its own direction*, and contracts differ only in how much.
+
+That licenses the structured form — for a feature `g` the contract does **not** name:
+
+```
+w_g(x) = (1 - κ_g(x))·a_g ,   κ_g(x) = λ^(q-1) · Σ_{f named} κ_{f→g}
+```
+
+with `κ_ram→brand = 0.94`, `κ_screen→brand = 0.54`. Check: `0.71 × (0.94+0.54) = 1.05` — the
+double cancels the brand preference and slightly reverses it, matching the observed net.
+
+**Load-bearing and untested:** that `κ_{f→g}` depends on the *feature*, not the *level*. Every
+constrained feature has so far been run at exactly one level. If it holds, 11 rows of `B`
+collapse to 6 scalars and unseen contract levels become predictable.
+
+### Why this matters: contract space is exponential, parameters need not be
+
+96 possible contracts (`6×4×4`) = 1 none + 11 singles + 39 doubles + 45 triples. **We have run
+4 — 4%.** Adding one 4-level feature takes it to 480.
+
+| model | params for all 96 | |
+|---|---|---|
+| saturated, one `w` per contract | 1056 | hopeless |
+| GRUM, free `B` main effects | 88 | ok |
+| + free conjunction per double | +312 | does not generalize |
+| **structured `B` + λ** | **18** | = a(8)+ρ(3)+κ(6)+λ(1) |
+
+Structured params grow as `F²` (features), the space as `∏(L_f+1)`. With a 4th feature: 18 → 28
+while the space goes 96 → 480. **Run the singles exhaustively (linear, 11); sample the
+combinations (exponential, 84) — predicting those is the model's job.**
+
+### Next runs, in priority order
+
+| phase | contracts | conditions | runs (×8) | buys |
+|---|---|---|---|---|
+| **A** | `screen=13`, `screen=16`, `ram=4`, `ram=16` | 4 | 32 | **tests whether κ is level-independent** |
+| **B** | `brand=Apple` + 2-3 others | 3-4 | 24-32 | does a *brand* contract leak into specs? |
+| **C** | 4-6 doubles over all 3 feature-pairs + 2 triples | 6-8 | 48-64 | fits λ, identifies its form at `q=3` |
+| **D** | ~8 random contracts, never fitted | 8 | 64 | honest held-out number |
+
+**Phase A first** — cheapest, and if κ is level-dependent the 18-parameter model collapses and
+everything downstream changes. It also supersedes the older open items (covers `ram=16GB` and
+`screen=16-inch` anyway).
+
+Caution when picking by D-optimality: ridged log-det *looks* like it prefers doubles (4.62 vs
+3.21), but the 4 best doubles are **rank 6, not 7** —
+`(13in+4GB)+(16in+16GB) = (13in+16GB)+(16in+4GB)` once the conjunction indicator is on. The ridge
+hid it. **Check the rank, not just the score.**
+
+**Prediction to check when Phase A lands:** if the mechanism is "naming a feature promotes it
+above brand", the ram slopes stay near -0.94 and the screen slopes near -0.54 *regardless of
+level*. If instead the slope tracks *how much the model has to give up*, `ram=16GB` (contract and
+preference agree) comes out much closer to 0.
+
+### Open
+
+- [ ] **Is κ level-independent?** The 18-parameter model rests on it. Phase A.
+- [ ] **Functional form of the saturation** — `λ^(q-1)` vs `q^(-α)`. Phase C.
+- [ ] Put **model covariates** (family, log size) into `x` too, so one GRUM covers all 8 models
+      and the size-scaling of compliance is an interaction coefficient.
+- [ ] The margin is censored at the logprob floor in 88-99% of rows; a tobit is the honest
+      response model. Winsorizing already showed directions are stable, so this is a robustness
+      check, not a blocker.
+- [ ] Template is pooled; make it a random effect and see if the leakage slopes move.
+- [ ] gemma-1B breaks the parallel-leakage pattern (cosine 0.54 vs ≥0.97 elsewhere). Small-model
+      artifact, or a real difference in how weak models handle contracts?
+- [ ] GRUM gives us a better-shaped `v`. It still does **not** give `ΔW` — that needs a user
+      utility `u`, which the laptops set does not have.
+
+---
+
+## 2026-08-10 — The models are LEXICOGRAPHIC, not additive. RAM is a veto, not a weight.
+
+Chasing the "OLS loss function" worry from the entry below. That worry was wrong, and what
+replaced it is much more important: **the additive utility model is the wrong model.**
+
+> **Walkthrough:** [Notebooks/explainer_lexicographic.ipynb](../Notebooks/explainer_lexicographic.ipynb)
+> defines every term used here (veto / tendency / tie-breaker / exchange rate / compliance /
+> conflict set / override rate), writes the two competing models in LaTeX, and explains what
+> each figure is measured from. Read that first; the results notebook is
+> [lexicographic.ipynb](../Notebooks/lexicographic.ipynb).
+>
+> It also contains the cleanest single falsification of additivity, which is worth
+> restating here: fit the brand weights **twice on the same run**, once on the 6750 pairs
+> where RAM differs and once on the 3150 where RAM is tied. Additivity says the two must
+> match. Mean brand spread is **0.88 vs 7.39 — 8.4x apart**. A "part" whose size depends on
+> the company it keeps is not a separate part.
+>
+> And the reason the additive fit still looked fine: for **every** model, the largest
+> possible brand swing plus the largest possible screen swing is smaller than the smallest
+> RAM step (e.g. qwen-32B: 3.82 + 4.65 = 8.47 < 15.70). The fitted additive model already
+> behaves lexicographically. It is not wrong about *who wins* — it is wrong about what its
+> own numbers mean.
+
+### The loss-function worry does not survive checking
+
+- **Not heteroscedastic.** Residual SD by |fitted| bucket: 9.12 (0-5), 9.39 (5-10),
+  7.91 (10-20), 7.54 (20+). Only 1.2x, and *smaller* at the extremes, not larger.
+- **Extreme rows do not flip anything.** Dropping every row with |margin| > 20 (keeps 46-74%
+  of the data): Apple's rank unchanged in **7/7** models, brand block correlation 0.971.
+- Leverage in OLS depends on the design matrix, not on `y`, and our design is a balanced
+  full factorial — so large-margin rows never had extra pull in the first place.
+
+What is true is that the residual is huge in absolute terms: **SD ~8 log-odds**, against
+brand effects of 1-3. We only resolve brand at all because n = 9900.
+
+### Finding: RAM is an absolute veto
+
+When the two laptops differ in RAM, **the one with more RAM wins 6750 out of 6750
+comparisons — 100.0%**, for qwen-7B/32B/72B and gemma-4B/12B/27B. Not 99%. Every single one.
+
+Split by step, so this is not "4GB is absurd":
+
+| model | 4 vs 8 | 8 vs 16 | 4 vs 16 | screen, ram tied |
+|---|---|---|---|---|
+| qwen-7B | 100.0 | 100.0 | 100.0 | 58.8 |
+| qwen-32B | 100.0 | 100.0 | 100.0 | 74.6 |
+| qwen-72B | 100.0 | 100.0 | 100.0 | 69.0 |
+| gemma-4B | 99.8 | 100.0 | 100.0 | 69.9 |
+| gemma-12B | 100.0 | 100.0 | 100.0 | 77.9 |
+| gemma-27B | 100.0 | 100.0 | 100.0 | 88.9 |
+| gemma-1B | 82.4 | 91.6 | 99.7 | 57.7 |
+
+Apple wins **0.0%** of the comparisons where it has less RAM (mean 2.89% including the noisy
+gemma-1B), and **100%** where it has more.
+
+So the priority order is **ram (absolute) > screen (partial, 58-89%) > brand (only when both
+are tied)**. Screen is compensatory — brand can sometimes beat it. RAM never loses.
+
+Not a string-position artifact: the item text is `"{screen} {brand} laptop with {ram} RAM"`,
+so the order in the string is screen, brand, ram — which is not the priority order.
+
+### What this breaks
+
+An additive utility says features trade off: enough brand advantage beats a RAM
+disadvantage. **There is no such trade-off.** So `brand_Apple = +2.21` against a ram spread
+of 25 implies an exchange rate that does not exist at any price.
+
+And the single brand weight is an average over two regimes that have nothing in common:
+
+| comparison set used | qwen-32B | gemma-27B | Apple's rank |
+|---|---|---|---|
+| all 990 pairs | +2.21 | +2.74 | 1 |
+| same ram | +5.16 | +7.98 | 1 |
+| same ram + same screen | +7.31 | +10.79 | 1 |
+
+Brand and ram are exactly orthogonal in the design (max |r| = 0.0000), so this is not a
+collinearity artifact — brand genuinely has **no** effect when ram differs and a large one
+when it does not. Apple's win rate makes the same point with no model: **50.0%** when ram
+differs, **67-87%** when ram is tied.
+
+**Apple's rank is 1 in all three sets for all 7 models.** Ranks are invariant; magnitudes
+are not even approximately meaningful.
+
+### Consequences
+
+- **Never quote a brand weight without the comparison set it came from.** It can triple.
+- The additive R² of ~0.85 is not evidence that the additive model is right. It is high
+  because ram and screen dominate; the additive form gets the big things right and the
+  brand block is a rounding error inside it.
+- This reinforces C6 rather than undermining it. Under a contract, "satisfies the contract"
+  slots in at the top of the priority list, pushing brand further down — which is exactly
+  the gradient (1.16 → 2.29 → 3.46) measured in the entry below.
+- It also explains the near-total saturation: a lexicographic rule produces certainty, so
+  the log-odds go to ±25 whenever the top-priority feature differs.
+
+### Answered the same day: does the contract change the order?
+
+Tested in [Notebooks/lexicographic.ipynb](../Notebooks/lexicographic.ipynb). **Prediction was
+half right.** The contract does take the top slot — but only when it is not fighting a veto.
+
+The test is a direct conflict. Under `ram=8GB`, the contract and the model's own order point
+at different laptops in exactly the 8GB-vs-16GB pairs (contract says 8GB, the model's own
+rule says 16GB). Under `screen=14-inch` with ram tied, the same conflict is 14in vs 16in.
+
+% of conflicts won by the **compliant** laptop:
+
+| model | 8GB vs 16GB, no contract → under `ram=8GB` | 14in vs 16in, no contract → under `screen=14-inch` |
+|---|---|---|
+| qwen-7B | 0.0 → **60.0** | 39.3 → **96.4** |
+| qwen-32B | 0.0 → **59.1** | 29.2 → **100.0** |
+| qwen-72B | 0.0 → **84.8** | 34.0 → **100.0** |
+| gemma-1B | 8.4 → 10.0 | 45.5 → 37.1 |
+| gemma-4B | 0.0 → 15.9 | 24.8 → 49.7 |
+| gemma-12B | 0.0 → **54.5** | 20.5 → **100.0** |
+| gemma-27B | 0.0 → **93.2** | 11.2 → **100.0** |
+
+- **Against the screen *tendency*** (58-89% unconstrained), the contract installs a **new
+  absolute veto** — 96-100% for the five capable models. The order genuinely changes.
+- **Against the RAM *veto***, the contract does not take the top slot. It **breaks** the veto
+  (0% → 54-93%) but nothing replaces it: RAM and compliance now genuinely trade off. The
+  model becomes *more* compensatory under a contract, not differently lexicographic.
+- **Control:** where the contract is silent (4GB vs 16GB, neither complies) the RAM veto is
+  untouched, 97-100%. And where contract and preference agree (8 vs 4), 100%. So the contract
+  acts only in the conflict region — it does not make the model generally erratic.
+
+**Reading: a contract's power depends on what it is fighting.** Asking for something the
+agent was flexible about is obeyed completely; asking it to give up the thing it always wants
+is obeyed only partly. This is the mechanism behind the C5/C6 ram-vs-screen asymmetry.
+
+### Finding: "contract override rate" is a better adherence metric than the weight
+
+The % of genuine conflicts the contract wins. Model-free, a percentage, immune to the scale
+problem. On `ram=8GB` it scales sharply with size:
+
+- **gemma: 1B 10% → 4B 16% → 12B 54% → 27B 93%** (monotonic)
+- qwen: 7B 60% → 32B 59% → 72B 85%
+
+The small models are not vaguely "less obedient" — they fail at exactly one thing:
+**overruling their own strongest preference on request.** Where nothing has to be given up,
+even gemma-1B complies at 97-100%.
+
+### Open
+
+- [ ] Refit with a model that can express this — fit brand **within** spec-tied comparisons
+      only, and report ram/screen as an order rather than as weights. The additive fit stays
+      useful for ranking, not for exchange rates.
+- [ ] **`ram=16GB` is now the sharpest missing run for a second reason**: it is the case
+      where the contract and the model's own order **agree**. Prediction: near-100%
+      compliance for every model including gemma-1B, because nothing has to be sacrificed.
+      That separates "obeying" from "giving something up".
+- [ ] Does the override rate keep rising above 72B, or saturate?
+- [ ] Check it on the earlier colors/foods/cars sets — is lexicographic behaviour general,
+      or an artifact of these three very legible laptop features?
+
+---
+
+## 2026-08-10 — C6 in ranks only: even the *compliant* Apple loses its place
+
+Fig 10.4 in [Notebooks/figs4deck5.ipynb](../Notebooks/figs4deck5.ipynb). Motivated by the
+scale note below — magnitudes are not trustworthy, rankings are — so C6 was redone with no
+magnitudes at all.
+
+### The C6 ordering survives ordinally
+
+Apple's rank among the 5 brands inside a fixed `(screen, ram)` cell, 7 models x 9 cells:
+
+| | mean rank | median | Apple is rank 1 |
+|---|---|---|---|
+| no contract | 1.16 | 1 | 89% |
+| contract, cell **satisfies** | 2.29 | 2 | 49% |
+| contract, cell **violates** | 3.46 | 4.5 | 25% |
+
+So C6 does not depend on the log-odds scale. Good.
+
+### But the pooled split hides which contract did it
+
+Splitting by phase (Fig 10.4 is now one panel per phase — the phases contribute very
+unequal numbers of cells: 3, 3 and **1** satisfying cell respectively):
+
+| phase | satisfies: mean rank / % rank 1 | violates: mean rank / % rank 1 |
+|---|---|---|
+| `14in` | **1.62 / 67%** | 2.67 / 40% |
+| `8GB` | 2.71 / 38% | 3.67 / 21% |
+| `14in+8GB` | 3.00 / 29% (n = 7) | 3.91 / 16% |
+| (no contract) | 1.16 / 89% | — |
+
+**Under the screen contract the premium largely does survive on compliant items**
+(1.16 → 1.62, still top brand in 2 of 3 cells). Under the ram contract it does not
+(→ 2.71, top in 38%). The pooled "2.29 / 49%" was an average of these two very different
+regimes.
+
+This is the same asymmetry as C5 (ram disrupts brand more than screen at equal instruction
+strength) and it now has an obvious explanation from the lexicographic entry above: **ram is
+a veto, screen is only partial.** Naming ram promotes an absolute filter above brand; naming
+screen promotes a feature that brand can still sometimes beat.
+
+So the honest one-line version of C6 is: *stating a spec pushes brand down the priority
+order, and how far depends on how absolute that spec already was.*
+
+### But "the premium survives where the contract is met" was too generous
+
+The earlier entry read `satisfy +2.06` as the premium surviving. Ordinally it does not:
+Apple is top brand in only **49%** of satisfying cells, down from 89%. A positive
+sum-to-zero weight does not mean rank 1.
+
+The sharp test: take the feasible set `C` (the laptops that satisfy the contract) and ask
+where Apple's best compliant laptop sits **among the compliant laptops only** — so
+non-compliant items cannot contribute at all.
+
+| model | 14in (\|C\|=15) | 8GB (\|C\|=15) | 14in+8GB (\|C\|=5) |
+|---|---|---|---|
+| qwen-7B | 5 | 9 | 5 |
+| qwen-32B | 2 | 9 | 5 |
+| qwen-72B | 5 | 13 | 5 |
+| gemma-1B | 2 | 6 | 3 |
+| gemma-4B | 4 | 5 | 5 |
+| gemma-12B | 3 | 11 | 5 |
+| gemma-27B | 4 | 11 | 5 |
+
+**Before the contract it is rank 1 in 21/21.** After, mean rank 3.6 / 9.1 / 4.7. Under the
+double contract `14in+8GB`, `C` is 5 laptops differing only in brand, and Apple is **last in
+6 of 7 models**.
+
+**Revised reading of C6:** the contract does not merely strip Apple's premium from
+non-compliant items. It demotes Apple *everywhere*, just much harder where the contract is
+missed. The compliance split is a gradient (1.16 → 2.29 → 3.46), not "premium kept vs
+premium lost". The contract-theory sentence should be "the agent's preference is
+**re-weighted, and conditioned on compliance**", not "preserved on compliant items".
+
+This does not change any verdict in the 08-10 conjecture table — C1-C5 are still rejected,
+C6 is still the surviving explanation — but it changes what C6 claims.
+
+### Open
+
+- [ ] Is the demotion of the *compliant* Apple a brand effect or a spec effect? Under `8GB`,
+      `C` still varies in screen, so screen weights contribute. `14in+8GB` is the clean case
+      (\|C\|=5, brand only) and it is the worst one — which argues brand, not spec. Worth
+      confirming on `screen=16-inch,ram=16GB` when it is collected.
+
+---
+
+## 2026-08-10 — The scores ARE log-odds (correcting the saturation caveat), and PMI is a no-op
+
+### Correction: the margin is a genuine log-odds
+
+The earlier saturation note said our "log-odds" are not calibrated log-odds. **That was
+wrong.** Checked on `laptops_robustness/68373841` (qwen-32B, unconstrained):
+
+- `P("Option 1") + P("Option 2") = 1.000` in every row (median and 5th percentile both
+  1.000). The two labels absorb the whole distribution, so conditioning on them loses
+  nothing.
+- `score_a - score_b = (lp1 - lp2) - (base_1 - base_2)`, and `lp1 - lp2` is exactly the
+  log-odds of choosing option 1. The base term is a **single global constant** (+2.2505),
+  identical in all 5 templates, so `gamma` absorbs it completely.
+
+So the margin is a real log-odds of the binary choice, shifted by a constant. Nothing to fix.
+
+### Finding: PMI normalization currently does nothing
+
+The null context is `prompt.split('\n')[-1]`, and every prompt ends `"Answer: "` — the same
+string regardless of template, items, model or constraint. So the PMI base is one constant
+per label per run: `base_1 = -0.9312`, `base_2 = -3.1816`, difference +2.2505 in **all five
+templates**. Subtracting it shifts every margin by that constant, which the intercept eats.
+
+**PMI is a no-op for every feature weight we report.** Its only effect is to move `gamma` by
+2.25. This raises the priority of the open question "which null context for PMI?" — right
+now the answer is "it does not matter, because it is not doing any work".
+
+Worth noting what it *does* say: with no content at all the model answers "Option 1" with
+p = 0.39 and "Option 2" with p = 0.04 — a strong prior for **option 1**. Yet `gamma` is
+about **-7**, favouring option 2. So the positional bias is not a label prior; it survives
+removing one, and points the other way.
+
+### The real remaining problem, stated properly
+
+Not the scale — the **loss function**. 59-87% of rows have `|margin| > 10` (P > 0.99995),
+and up to 44% exceed 20. Behaviourally, log-odds 15 and 30 are the same event ("always").
+But OLS treats that 15-unit gap as exactly as important as 0 → 15, which is the difference
+between a coin flip and near-certainty. So the fit spends most of its effort in the region
+where nothing is happening.
+
+How much does it matter? Winsorizing the margin at ±10 and refitting:
+
+- every weight shrinks by roughly half (expected — smaller range)
+- brand block correlates **0.967** with the uncapped fit
+- **Apple's rank is unchanged in 23/28 runs**; the 5 changes are all near-ties in qwen-7B
+  and gemma-1B, the two models with the smallest brand effects
+
+**So: directions are safe, magnitudes are not.** Do not quote a brand weight as if its size
+were meaningful. Rankings, signs and win rates are the trustworthy outputs.
+
+### Can we calibrate the scale?
+
+Not in the usual sense. Calibration needs a ground truth, and for a *preference* there is
+no fact of the matter — nothing says whether the model "really" prefers Apple at 99% or
+99.99%. Classical temperature/Platt scaling has nothing to fit against. Three things are
+genuinely available instead:
+
+1. **Calibrate the zero point** — the identical-options test (already on the list below).
+   Compare an item with *itself*; the true preference is exactly 0, so any margin is pure
+   bias. Measures `gamma` + label bias directly instead of inferring it. 45 items x 5
+   templates = 225 prompts, minutes of GPU.
+2. **Fix the loss, not the data** — logistic BT on who-won, or winsorize. Both tested, both
+   agree with the current fit on direction.
+3. **External validity** — the only real answer. Does the elicited preference predict what
+   the model *does* when actually asked to recommend a laptop? That is Phase 2 (active
+   delegation), and it validates the elicitation regardless of what the number 25 means.
+
+---
+
+## 2026-08-10 — Figures for deck 5, and the first measurement of deck 3's "robustness"
+
+New notebook: [Notebooks/figs4deck5.ipynb](../Notebooks/figs4deck5.ipynb). One header per
+planned slide, 24 figures, all written to `figs/deck5/*.png` for dropping into PowerPoint.
+It re-derives everything from `data/` off the new config schema — no numbers are copied
+from the other notebooks.
+
+### Finding: contract robustness is all-or-nothing, and it is not about size
+
+Deck 3 defined **robustness** as `{i : x*_i = y_i}` — does the agent's own top choice obey
+the contract? Never computed until now. Taking `x* = argmax` of the fitted additive utility
+over all 45 laptops:
+
+| model | 14in | 8GB | 14in+8GB | rank of best compliant laptop (8GB) |
+|---|---|---|---|---|
+| qwen-0.5B / 7B / 32B / 72B | 100% | 100% | 100% | 1 |
+| gemma-12B / 27B | 100% | 100% | 100% | 1 |
+| **gemma-1B** | 0% | **0%** | 0% | **16** |
+| **gemma-4B** | 100% | **0%** | 0% | **16** |
+
+(`top1` compliance; the top-5 numbers tell the same story.) Six of eight models put a
+compliant laptop first **and** fill their whole top-5 with compliant ones. The two small
+Gemmas fail outright — gemma-1B's best compliant laptop sits at rank 16 of 45 under `8GB`
+and rank 18 under `14in+8GB`, i.e. it would hand the user something that ignores the request.
+
+Two cautions before this goes on a slide:
+
+- **qwen-0.5B "passing" is not adherence.** Its constrained-feature weight is only +0.30,
+  but its brand spread is ~0.1, so a tiny push is enough to decide the argmax. It complies
+  because it has no competing preference, not because it listened. This is the opposite
+  failure mode from gemma-1B and should be labelled as such.
+- Robustness is measured on the **fitted utility**, so it inherits the saturation caveat.
+  It is a statement about the elicited `v`, not about a generated recommendation.
+
+**Reading:** adherence measured as a *weight* (0.5B +0.30 → 32B +13.78) looks like a smooth
+scaling curve. Measured as a *choice* it is a step function — you either get a compliant
+argmax or you do not, and the two small Gemmas are the only failures. Worth saying out loud
+that the two metrics disagree about what "the model listens" means.
+
+### Still not ΔW
+
+This is only half of deck 3's Aim-2 metric. The welfare gap still needs a user utility `u`,
+which does not exist for this item set. Open item from the previous entry stands.
+
+---
+
 ## 2026-08-10 — Config schema changed, collection scripts merged
 
 ### Config: constraints are now a dict, not a slug
 
-Schema written up in [docs/config_schema_proposal.md](config_schema_proposal.md) and
+Schema written up in [docs/config_schema.md](config_schema.md) and
 **applied to all 108 existing runs** with `scripts/migrate_configs.py` (config.json only;
 `scores.csv` untouched and verified untouched; everything is in git if it needs undoing).
 

@@ -9,17 +9,25 @@ Full proposal: `obsidian_symlink/Thesis Proposal.pdf` (February 2026), plus the 
 - Give one recommendation, not a list of options.
 - When you change analysis code, show the new numbers, not just the code.
 
-## Keep the progress log updated
+## Read this first, every session
 
-`docs/progress.md` is the running log of the project. **Update it as part of the work, without being asked**, whenever:
+**This file holds only the rules that do not change.** Anything about the current state of the
+project lives in `docs/` — do not add status, findings, or "what's next" here.
 
-- a finding comes out of an analysis (what we learned, with the numbers),
-- a method or decision changes (and why),
-- something is left open or unfinished.
+| File | What it is | How it is written |
+|---|---|---|
+| [docs/status.md](docs/status.md) | **Where we are, what we know, what is next.** Read it first. | Rewritten in place. Keep it current. |
+| [docs/progress.md](docs/progress.md) | History of findings, newest on top. | Append-only. Never rewrite an old entry — correct it in a new one. |
+| [docs/grum_formalization.md](docs/grum_formalization.md) | The method (GRUM, contracts as agents). | Rewritten as the method changes. |
+| [docs/config_schema.md](docs/config_schema.md) | The `config.json` schema. | Rewritten when the schema changes. |
 
-Newest entry on top, with a date. Keep entries short. This is what stops us re-arguing settled points in a later session.
+**Update these as part of the work, without being asked:**
 
-Do **not** put method descriptions in this file. Methods are still changing — they belong in `docs/progress.md`.
+- a finding comes out of an analysis → new dated entry in `progress.md`, **with the numbers**
+- a decision or method changes → `progress.md` (why), and `grum_formalization.md` if it is the method
+- anything finished, started, or newly open → move the line in `status.md`
+
+Keep entries short. This is what stops us re-arguing settled points in a later session.
 
 ## Research purpose
 
@@ -38,16 +46,6 @@ Task complexity grows in this order:
 2. **Conditional** — preferences under a stated condition, put in the prompt (the `--constraints` flag of [scripts/data_collection.py](scripts/data_collection.py)).
 3. **Conflicting** — items are feature vectors with trade-offs (the laptops sets: brand + screen + ram).
 
-## Current status (August 2026)
-
-Phase I. The active question is **consistency and robustness**: does the model have a stable preference, or does it change with prompt wording, option order, and constraints?
-
-The working dataset is the synthetic laptops set (`laptops_robustness` in [src/alternatives.py](src/alternatives.py)): 5 brands x 3 screen sizes x 3 ram sizes = 45 items, full factorial.
-Models: Qwen-2.5 (0.5B / 7B / 32B / 72B) and Gemma-3 (1B / 4B / 12B / 27B).
-
-**For the live status, the current method, and everything still open, read [docs/progress.md](docs/progress.md) first.** The method is under review — do not treat it as settled.
-Older Hebrew notes are in `obsidian_symlink/Progress Notes/` (you can read them).
-
 ## Repo layout
 
 | Path | What it is |
@@ -57,15 +55,17 @@ Older Hebrew notes are in `obsidian_symlink/Progress Notes/` (you can read them)
 | `data/` | **Results. Never modify or delete.** One folder per experiment set. |
 | `experiments/` | Older results (Feb 2026, colors/foods/cars/stocks). Read-only, and gitignored. |
 | `Notebooks/` | Analysis notebooks. Messy on purpose. |
-| `docs/` | `progress.md` — the running project log. |
-| `obsidian_symlink/` | Thesis notes, papers, meeting notes (Obsidian vault, mostly Hebrew). Not tracked by git. |
+| `docs/` | The four files above. AI-written; safe to rewrite. |
+| `obsidian_symlink/` | Lotan's own notes, in Obsidian, mostly Hebrew. Not tracked by git. **Do not rewrite these** — they are his, and under-processed on purpose. Read them, and only edit when asked. |
+
+Inside the vault: `Meeting Notes/` (with Nir — this is where tasks come from), `Notes/` (concepts), `Papers/`, `INBOX/` (unfiled), `Future Ideas/`, `Archive/`, `Presentations/`.
+`Progress Notes/` is the old Hebrew log; it stopped 2026-06-04 and continues in `docs/progress.md`.
 
 **One notebook per analysis.** When we start a new analysis, make a new notebook in `Notebooks/` — do not grow an old one.
 
 Notebooks run from the repo root, not from `Notebooks/`. Every notebook starts with a cell that walks up to the root, so `data/...` paths and `import src...` both work. Copy that cell into any new notebook.
 
-Active notebook: [Notebooks/num_vs_txt.ipynb](Notebooks/num_vs_txt.ipynb) (laptops robustness).
-The other notebooks are **not in use**. They belong to the earlier colors experiments and use the older `src/experiment.py` path. Do not assume they still run, and do not update them.
+Which notebooks are live changes often — `docs/status.md` says. Older ones belong to the colors experiments and use the removed `src/experiment.py` path: do not assume they run, and do not update them.
 
 ## Workflow
 
@@ -96,7 +96,7 @@ data/<exp_name>/<slurm_job_id>/
 
 Analysis code finds runs by **filtering `config.json`** (`load_scores_by_run` in [src/auxiliary.py](src/auxiliary.py)). Keep this contract and new runs appear in the notebooks automatically, with no code change.
 
-`config.json` follows the schema in [docs/config_schema_proposal.md](docs/config_schema_proposal.md) (applied 2026-08-10). The part that matters for analysis:
+`config.json` follows the schema in [docs/config_schema.md](docs/config_schema.md) (applied 2026-08-10). The part that matters for analysis:
 
 - **`constraints` is a dict `{feature: level}`**, with level strings copied exactly from `src/alternatives.py` — the same strings that appear in `scores.csv`. So "does this item satisfy the contract?" is `all(row[f"a_{f}"] == lvl for f, lvl in constraints.items())`, with no hard-coded mapping.
 - `{}` means no constraint. Never `null`, never `"None"`.

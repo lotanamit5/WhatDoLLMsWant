@@ -216,3 +216,6 @@ __marimo__/
 
 # thesis notes vault (symlink, lives outside the repo)
 obsidian_symlink
+
+# separate repo, symlinked in (would be a broken link on the cluster)
+grum4llm

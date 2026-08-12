@@ -4,7 +4,7 @@ Merged 2026-08-10 from the old `data_collection.py` and `data_collection_robustn
 which had drifted apart (one had constraints, the other had all templates and all item sets).
 
 Writes `<exp_dir>/config.json` and `<exp_dir>/scores.csv`. See
-`docs/config_schema_proposal.md` for what goes in the config and why.
+`docs/config_schema.md` for what goes in the config and why.
 
 The prompt sent to the model is:
 

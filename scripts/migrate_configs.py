@@ -1,4 +1,4 @@
-"""Rewrite every data/*/*/config.json into the schema in docs/config_schema_proposal.md.
+"""Rewrite every data/*/*/config.json into the schema in docs/config_schema.md.
 
 Dry run by default. `--apply` writes.
 
