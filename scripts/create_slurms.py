@@ -4,50 +4,75 @@ import itertools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-exp_name = "laptops_robustness_gemma"  # CHANGE WHEN RUNNING
+exp_name = "laptops_robustness"  # CHANGE WHEN RUNNING
 nodes = [
     'plato2',
     'plotinus1',
     'plotinus2',
 ]
 
-parameters = {
-    'm': ['gemma'],
-    's': ['1'],
-    'a': [
-        # 'colors',
-        #   'foods', 'cars', 'stocks', 'laptops',
-        #   'laptop_brands'
-        'laptops_robustness',
-        # 'laptops_txt_ram_screen','laptops_num_ram_screen',
-          ],
-    # Constraints are now "feature=level" using the exact level strings from
-    # alternatives.py. "" means no constraint. This replaces the old slugs
-    # ("14", "8", "14_8"), which could not express a 16-inch screen and 16GB ram
-    # separately - both would have been "16".
-    'c': [
-        '',
-        # 'screen=14-inch',
-        # 'ram=8GB',
-        # 'screen=14-inch,ram=8GB',
-        # --- the next runs (2026-08-10): top level of each feature, one at a time ---
-        # 'screen=16-inch',
-        # 'ram=16GB',
-    ],
-    # 'f': ['shopping'],   # bare | shopping | self | third_person
-}
+QWEN = ['0.5', '7', '32', '72']
+GEMMA = ['1', '4', '12', '27']
+
+# Constraints are "feature=level" using the exact level strings from alternatives.py
+# ('13-inch'/'14-inch'/'16-inch', '4GB'/'8GB'/'16GB', and the brand names).
+# "" means no constraint.
+#
+# Already collected on laptops_robustness (all 8 models):
+#     '', 'screen=14-inch', 'ram=8GB', 'screen=14-inch,ram=8GB'
+# Every one of those asks for a MID or LOW level - that is the hole this batch fills.
+PHASE_A = [
+    'screen=13-inch',
+    'screen=16-inch',
+    'ram=4GB',
+    'ram=16GB',
+]
+
+# One parameter dict per batch. Kept as a list because model family and size do not
+# cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
+# a different flag. Everything is a plain product inside each dict.
+parameter_sets = [
+    # --- GRUM Phase A: top and bottom level of each feature, one at a time. 32 runs.
+    # Tests whether kappa is level-independent; the 18-parameter GRUM rests on this.
+    # Also completes the 2x2 against the 14-inch / 8GB runs we already have.
+    {'m': ['qwen'],  's': QWEN,  'a': ['laptops_robustness'], 'c': PHASE_A},
+    {'m': ['gemma'], 's': GEMMA, 'a': ['laptops_robustness'], 'c': PHASE_A},
+
+    # --- The genuinely unframed prompt. 8 runs.
+    # Every run we have ever done - including the ones we call "unconstrained" - carries
+    # "I am looking to buy a laptop." We have never measured brand preference without it,
+    # so we cannot say whether the Apple premium is the model's own or the frame's.
+    {'m': ['qwen'],  's': QWEN,  'a': ['laptops_robustness'], 'c': [''], 'f': ['bare']},
+    {'m': ['gemma'], 's': GEMMA, 'a': ['laptops_robustness'], 'c': [''], 'f': ['bare']},
+
+    # --- Next after this batch (uncomment when Phase A lands):
+    # brand contract - does naming a brand leak into the specs?
+    # {'m': ['qwen'],  's': QWEN,  'a': ['laptops_robustness'],
+    #  'c': ['brand=Apple', 'brand=Dell', 'brand=ASUS']},
+    # {'m': ['gemma'], 's': GEMMA, 'a': ['laptops_robustness'],
+    #  'c': ['brand=Apple', 'brand=Dell', 'brand=ASUS']},
+    #
+    # finishes Nir's Experiment 1 - only qwen-7B was ever collected, the plan said 7B and 72B
+    # {'m': ['qwen'], 's': ['72'],
+    #  'a': ['laptops_num_ram_screen', 'laptops_txt_ram_screen'], 'c': ['']},
+]
 
 dst_path = "scripts/slurms.sh"
 prefix = "sbatch -p bml -A bml"
 script_path = "scripts/run_data_collection.sh"
 
+i = 0
 with open(dst_path, 'w') as f:
-    for i, combo in enumerate(itertools.product(*parameters.values())):
-        # Quote each value - an empty string (the no-constraint case) must
-        # still produce a real, non-empty shell token ("" not nothing), or
-        # the flag before it silently swallows the NEXT flag's value once
-        # this line is word-split by the shell.
-        flags = " ".join(f'-{k} "{v}"' for k, v in zip(parameters.keys(), combo))
-        node = nodes[i % len(nodes)]
-        cmd = f"{prefix} -w {node} {script_path} {flags} -n {exp_name}"
-        f.write(cmd + "\n")
+    for parameters in parameter_sets:
+        for combo in itertools.product(*parameters.values()):
+            # Quote each value - an empty string (the no-constraint case) must
+            # still produce a real, non-empty shell token ("" not nothing), or
+            # the flag before it silently swallows the NEXT flag's value once
+            # this line is word-split by the shell.
+            flags = " ".join(f'-{k} "{v}"' for k, v in zip(parameters.keys(), combo))
+            node = nodes[i % len(nodes)]
+            cmd = f"{prefix} -w {node} {script_path} {flags} -n {exp_name}"
+            f.write(cmd + "\n")
+            i += 1
+
+print(f"wrote {i} jobs to {dst_path}")
