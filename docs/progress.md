@@ -8,6 +8,83 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-12 — Drop PMI. It corrupts γ and it moved the adherence numbers by up to 33 points.
+
+Follow-up to the γ bug. **PMI is on for every qwen and gemma run** — `load_qwen2_5_agent` and
+`load_gemma3_agent` build `InstructedHFAgent(model_id)` with the default `normalize_pmi=True`.
+Only `qwen-pt` escapes it (its PMI block is commented out).
+
+### What PMI does: subtracts one constant, nothing more
+
+The base context is `prompt.split('\n')[-1]`, which is always the literal `"Answer: "`. So:
+
+```
+margin_PMI = raw_logit − C,     C = logP("1"|base) − logP("2"|base)
+```
+
+`C` is large and positive — the model strongly expects `"1"` after a bare `"Answer: "`:
+gemma-1B +10.25, gemma-4B +10.50, gemma-12B +9.75, qwen-7B +6.00, qwen-72B +5.49,
+gemma-27B +4.99, qwen-32B +2.25.
+
+| what | affected? | why |
+|---|---|---|
+| BT feature weights | **no** | a constant lands entirely in the intercept |
+| γ | **yes** | γ *is* the intercept |
+| anything using `sign(margin)` | **yes** | the decision threshold becomes `C`, not 0 |
+| position-corrected `D = (m(x,y) − m(y,x))/2` | **no** | `C` cancels exactly |
+
+`sign(margin)` flips for 0.7%–16% of rows (gemma-1B worst).
+
+### This already bit us: the adherence numbers are wrong
+
+`wins()` in `lexicographic.ipynb` — behind every adherence number in the 08-10 entry — uses
+`m > 0`. Recomputing the `ram=8GB` ceteris-paribus table position-corrected (75 pairs each):
+
+| model | conflict, reported 08-10 | **position-corrected** |
+|---|---|---|
+| qwen-0.5 | 93.3 | **100.0** |
+| qwen-7 | 65.3 | **98.7** |
+| qwen-32 | 50.0 | **17.3** |
+| qwen-72 | 86.7 | **100.0** |
+| gemma-1 | 10.0 | **0.0** |
+| gemma-4 | 2.0 | **0.0** |
+| gemma-12 | 50.0 | **22.7** |
+| gemma-27 | 84.7 | **100.0** |
+
+**The "did it hear / will it pay" split survives and gets sharper.** The agree direction is now
+exactly **100.0 for all eight models** (was 96–100). But:
+
+- The conflict behaviour is **near-binary**: a model either fully pays (98.7–100) or fully
+  refuses (0–22.7). The intermediate 50s and 65s were position bias and the PMI offset leaking
+  into `sign(margin)`.
+- **The size story breaks for qwen.** Position-corrected, qwen-32B is at **17.3%**, between
+  qwen-7B at 98.7% and qwen-72B at 100%. Not monotone. Gemma still is (0 → 0 → 22.7 → 100).
+- qwen-0.5B is at 100% on both directions — but it has essentially no RAM preference to give
+  up, so this is not obedience in the same sense.
+
+**"Contract adherence scales hard with model size" (2026-08-09) does not survive for qwen and
+must be re-derived** across all constraints before it is used again.
+
+### Decisions
+
+- **Drop PMI.** It only ever subtracts a constant, which γ already absorbs. It costs a second
+  forward pass per prompt to recompute the *same* base string 9900 times, it corrupts γ, and it
+  moves every `sign(margin)` threshold off zero. Set `normalize_pmi=False` in the loaders.
+- **Use position-corrected `D` for every "who wins" question.** Immune to PMI, to γ, and to any
+  other constant. Then the PMI choice stops mattering at all.
+- **No re-collection needed.** `C` is recoverable from existing data for the seven saturating
+  models. Not for qwen-0.5B, which never saturates — its `C` must be measured directly.
+
+### Open
+
+- [ ] Re-derive every adherence / override / violation number position-corrected. This touches
+      `lexicographic.ipynb`, `figs4deck5.ipynb` and deck 5 figures 5.5, 10b.3.
+- [ ] `wins()` should be replaced by a position-corrected version wherever it is used.
+- [ ] Why is qwen-32B the outlier (17.3%)? It also has the largest weight spread and the most
+      saturation. Worth one look.
+
+---
+
 ## 2026-08-12 — The weight scale is a nuisance parameter. The question's premise was wrong.
 
 Open since 2026-06-10 / 06-18: *is the trend in the scale of the weights an optimization

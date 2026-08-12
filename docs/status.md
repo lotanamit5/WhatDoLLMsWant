@@ -40,9 +40,14 @@ survives a contract?
 
 1. **The models are lexicographic, not additive.** RAM acts as a veto, not a weight. The
    additive fit is fine for ranking, not for exchange rates.
-2. **Adherence splits in two.** Every model with real signal is at ~100% when obeying the
-   contract is *free* (agree direction). What varies from 2% to 87% is whether it will *pay*
-   for it (conflict direction). "Did it hear?" and "will it pay?" are different questions.
+2. **Adherence splits in two** — *numbers revised 2026-08-12, the old ones used `sign(margin)`
+   and were corrupted by PMI + position bias.* Position-corrected, the agree direction is
+   **exactly 100.0 for all 8 models**, and the conflict direction is **near-binary**: a model
+   either fully pays (98.7–100: qwen-7, qwen-72, gemma-27, qwen-0.5) or fully refuses
+   (0–22.7: gemma-1, gemma-4, gemma-12, **qwen-32**). "Did it hear?" and "will it pay?" are
+   different questions, and only the second discriminates.
+   **Adherence is NOT monotone in size for qwen** (qwen-32B at 17.3% sits between qwen-7B at
+   98.7% and qwen-72B at 100%); it still is for gemma.
 3. **Apple's brand premium is conditional on compliance.** Under a contract, even the
    *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand preference in
    general.
@@ -53,7 +58,11 @@ survives a contract?
    measure. **But γ is currently computed wrong** (see 11).
 6. **Naive p-values overstate confidence ~3×.** Use clustered SEs. Confirmed 2026-08-12:
    clustering the bootstrap on item-pairs widens CIs by a median 2.28×.
-7. **PMI normalization is a no-op for the weights** — but *not* for γ.
+7. **PMI is a no-op for the weights, but not for γ and not for `sign(margin)`.** It subtracts
+   one constant `C` per run (`C` = +2.25 to +10.50), which γ already absorbs. `sign(margin)`
+   flips for 0.7–16% of rows. **Decision 2026-08-12: drop PMI** (`normalize_pmi=False`), and use
+   position-corrected `D = (m(x,y) − m(y,x))/2` for every "who wins" question — `D` is immune to
+   any constant. No re-collection needed; `C` is recoverable for the 7 saturating models.
 8. The **winner** token is saturated in 88–99% of comparisons, but the margin is **not
    censored**: the loser has full dynamic range and tobit equals OLS to 2 decimals.
 9. Colors: violate WST, but satisfy RUM. Alignment shifts colors toward purple, away from red.
@@ -167,6 +176,13 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     no metric and every number we report is about `v` alone. **Blocking.**
 
 ### C. Method fixes (small, known)
+
+0. **Highest priority, found 2026-08-12:** re-derive every adherence / override / violation
+   number **position-corrected**. The published ones use `sign(margin)` and are off by up to
+   33 points; "adherence scales with model size" does not survive for qwen. Touches
+   `lexicographic.ipynb`, `figs4deck5.ipynb`, and deck 5 figures 5.5 and 10b.3. Replace
+   `wins()` with a position-corrected version. **Also set `normalize_pmi=False`** in
+   `load_qwen2_5_agent` / `load_gemma3_agent` for future runs (a `src/` change — ask first).
 17. Explicit sum-to-zero coding in `fit_feature_based_bradley_terry`; pin references with
     `pd.Categorical` (today ram's reference is `16GB` by string sort — fragile).
 18. Clustered SEs as the default.
