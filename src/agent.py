@@ -176,19 +176,24 @@ class PretrainedHFAgent(HFAgent):
 qwen2_5_sizes = ['0.5', '7', '32', '72']
 gemma3_sizes = ['1', '4', '12', '27']
 
+# PMI off since 2026-08-12. The base context is `prompt.split('\n')[-1]`, which is always
+# the literal "Answer: " - so PMI subtracted one constant C per run (+2.25 to +10.50).
+# A constant cannot touch the feature weights (it lands in the intercept), but it IS the
+# intercept, so it corrupted gamma; and it moved the threshold for sign(margin) off zero,
+# which silently changed every adherence number. See docs/progress.md 2026-08-12.
 def load_qwen2_5_agent(model_size: float):
     assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
-    
+
     model_id = f"Qwen/Qwen2.5-{model_size}B-instruct"
 
-    return InstructedHFAgent(model_id)
+    return InstructedHFAgent(model_id, normalize_pmi=False)
 
 def load_gemma3_agent(model_size: float):
     assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
-    
+
     model_id = f"google/gemma-3-{model_size}b-it"
-    
-    return InstructedHFAgent(model_id)
+
+    return InstructedHFAgent(model_id, normalize_pmi=False)
 
 def load_qwen2_5_pt_agent(model_size: float):
     assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"

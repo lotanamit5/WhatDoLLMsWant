@@ -75,13 +75,54 @@ must be re-derived** across all constraints before it is used again.
 - **No re-collection needed.** `C` is recoverable from existing data for the seven saturating
   models. Not for qwen-0.5B, which never saturates — its `C` must be measured directly.
 
+### Applied same day
+
+- **`normalize_pmi=False`** in `load_qwen2_5_agent` and `load_gemma3_agent`
+  ([src/agent.py](../src/agent.py)) — authorised by Lotan. Affects future runs only.
+- **`figs4deck5.ipynb`: `winrate()` is now position-corrected.** One shared function feeds
+  Figs 5.3, 5.4, all four 5.5 variants and 10b.3, so one change fixes every adherence figure.
+  Post-processing only — **`scores.csv` files are untouched** (pending Lotan's confirmation).
+  All 37 deck-5 figures regenerated.
+
+Verified six ways before changing anything: (1) the base context is provably the single string
+`"Answer: "`; (2) the old `wins()` reproduces all 8 published numbers exactly; (3) the two "50.0"
+models pick option 1 in **0.0%** of rows — they always answered "option 2" whatever the content,
+which is what a 50.0 was made of; (4) the two-order merge is exact, 75 pairs, no rows lost;
+(5) adding an arbitrary constant to `score_a` leaves the corrected number unchanged, so it does
+not depend on recovering `C`; (6) an independent BT fit with a position intercept reproduces
+`mean_D` exactly and agrees in sign for all 8 models.
+
+Corrected override rate (Fig 5.3, conflict set):
+
+| model | screen=14-inch | ram=8GB | both |
+|---|---|---|---|
+| qwen-7B | 7.0 | 78.1 | 80.3 |
+| qwen-32B | 92.5 | 77.2 | 69.6 |
+| qwen-72B | 89.5 | 100.0 | 84.3 |
+| gemma-1B | 0.5 | 1.1 | 11.7 |
+| gemma-4B | 0.0 | 3.8 | 65.3 |
+| gemma-12B | 70.9 | 58.0 | 98.7 |
+| gemma-27B | 92.1 | 99.4 | 87.7 |
+
+The deck-5 headline changes from *"gemma goes 10% → 16% → 54% → 93%"* to
+**"gemma goes 1% → 4% → 58% → 99%"** — a sharper story, and gemma's size trend survives.
+qwen does not: 78% → 77% → 100%. Also note **qwen-7B obeys a screen contract only 7% of the
+time** while obeying a ram contract 78% — the reverse of every other model.
+
+Baseline sanity after the fix: the "contract did nothing" line is still 50 (measured 50.5 screen,
+50.6 ram, vs 51.2 / 50.3 before), and the silent-contract control (4GB vs 16GB) is **100.0 for
+all 7 models** — the RAM veto is untouched where the contract says nothing.
+
 ### Open
 
-- [ ] Re-derive every adherence / override / violation number position-corrected. This touches
-      `lexicographic.ipynb`, `figs4deck5.ipynb` and deck 5 figures 5.5, 10b.3.
-- [ ] `wins()` should be replaced by a position-corrected version wherever it is used.
-- [ ] Why is qwen-32B the outlier (17.3%)? It also has the largest weight spread and the most
-      saturation. Worth one look.
+- [ ] Same fix still needed in `lexicographic.ipynb` (its own `wins()`) and anywhere else
+      `sign(margin)` is used as "the model chose this one".
+- [ ] **Pending Lotan's confirmation:** rewrite the `scores.csv` files to remove the PMI offset,
+      so the stored data needs no post-processing. `C` is recoverable for the 7 saturating
+      models; **not** for qwen-0.5B, which never saturates — its `C` must be measured directly.
+- [ ] Why is qwen-32B the outlier on the ceteris-paribus conflict (17.3%)? It also has the
+      largest weight spread and the most saturation. Worth one look.
+- [ ] qwen-7B's screen contract at 7.0% is strange enough to check separately.
 
 ---
 
