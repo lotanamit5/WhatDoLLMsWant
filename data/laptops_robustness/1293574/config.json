@@ -1,0 +1,24 @@
+{
+  "alternatives": "laptops_robustness",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {},
+  "constraints_id": "none",
+  "constraints_text": "",
+  "frame": {
+    "name": "bare",
+    "text": ""
+  },
+  "git_commit": "dd00ea3",
+  "model_family": "gemma",
+  "model_size": "12",
+  "prompt_prefix": "",
+  "slurm_job_id": "1293574",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
+    "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
+  },
+  "timestamp": "20260812_203913"
+}
