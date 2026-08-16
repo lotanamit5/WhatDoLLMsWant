@@ -110,6 +110,11 @@ unframed prompt. This is the single biggest hole in the data.
 
 Also: `laptops_num_vs_txt` — **qwen-7B only**, num + txt. The plan called for 7B *and* 72B.
 Earlier sets: `pmi_qwen`, `qwen_pt` (colors/foods/cars/stocks/laptops/laptop_brands, 4 sizes each).
+Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) — checked in
+`data/qwen_pt/68220852/config.json` — so they are not comparable to the new base-model runs.
+
+**Base models, new 2026-08-16.** `laptops_robustness_pt` — qwen-7B base, four contracts,
+`pretrained` templates. Queued, not yet collected.
 
 ---
 
@@ -117,8 +122,15 @@ Earlier sets: `pmi_qwen`, `qwen_pt` (colors/foods/cars/stocks/laptops/laptop_bra
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued now in `scripts/slurms.sh`, 40 jobs.** Both batches go to `data/laptops_robustness/`
-(gemma included — analysis filters on `config.json`, so one folder is simpler than two):
+**Queued now in `scripts/slurms.sh`: 4 jobs — qwen-7B *base* (`qwen-pt`) on the four
+contracts**, into `data/laptops_robustness_pt/`. First use of the `pretrained` template set.
+
+⚠️ **This replaced the 40-job Phase A + bare-frame batch in `slurms.sh`** (2026-08-16). Those
+two batches are still in `create_slurms.py`, commented out — uncomment them and set
+`exp_name` back to `laptops_robustness` to regenerate. They are items 1 and 2 below.
+
+The 40 jobs, when regenerated, go to `data/laptops_robustness/` (gemma included — analysis
+filters on `config.json`, so one folder is simpler than two):
 
 1. **GRUM Phase A** — `screen=13-inch`, `screen=16-inch`, `ram=4GB`, `ram=16GB`, all 8 models
    (32 runs). Tests whether κ is level-independent; the 18-parameter GRUM rests on it. Also

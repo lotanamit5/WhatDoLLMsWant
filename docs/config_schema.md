@@ -42,6 +42,7 @@ Status: **proposal, not applied.** Written 2026-08-10 after a mislabelled run
 
   "model_family": "qwen", "model_size": "32", "slurm_job_id": "68374115",
   "git_commit": "8801df4", "collection_script": "scripts/data_collection_robustness.py",
+  "template_set": "options",
   "templates": { "0": "..." }, "timestamp": "20260804_142927"
 }
 ```
@@ -72,6 +73,7 @@ written by hand in the notebook and has to be rewritten for every new constraint
 | `prompt_prefix` | the exact string prepended, verbatim. Settles any future provenance doubt on its own. |
 | `constraints_id` | derived slug for folder names and filtering. **Built from the dict, never typed by hand**, so it cannot drift from the truth or collide (`screen=16-inch` vs `ram=16GB`). |
 | `git_commit`, `collection_script` | one `git rev-parse HEAD`; would have answered the 68337011 question instantly. |
+| `template_set` | **added 2026-08-16.** Which set in `src/prompts.py` the templates came from: `"options"` (asks a question, ends `"Answer: "` — instruct models) or `"pretrained"` (ends mid-sentence, `"...I prefer Option "` — base models). The strings themselves are already in `templates`, so this is only so a run can be *filtered* by prompt style. Runs written before this date have no such key: treat a missing `template_set` as `"options"`, which is what they all used. |
 
 ### Building the text from the dict
 

@@ -34,6 +34,11 @@ while [[ $# -gt 0 ]]; do
       N_TEMPLATES="$2"
       shift 2
       ;;
+    -p|--template_set)
+      # "options" (instruct) or "pretrained" (base models)
+      TEMPLATE_SET="$2"
+      shift 2
+      ;;
     -n|--exp_name)
       EXP_NAME="$2"
       shift 2
@@ -91,6 +96,10 @@ fi
 
 if [ -n "$N_TEMPLATES" ]; then
     CMD+=(--n_templates "$N_TEMPLATES")
+fi
+
+if [ -n "$TEMPLATE_SET" ]; then
+    CMD+=(--template_set "$TEMPLATE_SET")
 fi
 
 CMD+=(--exp_dir "$EXP_DIR")

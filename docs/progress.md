@@ -8,6 +8,61 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-16 — Base-model pipeline wired up. qwen-7B base queued on the four contracts.
+
+To test whether the preferences we measure survive instruction tuning, we need the base
+(non-instruct) models. The scaffolding already existed — `PretrainedHFAgent`, `qwen-pt` in
+`agent_factory`, and a `pretrained_options_comparisons` template set — but the template set
+**had never been reachable**: `data_collection.py` hard-coded `options_comparisons`, and the
+June `qwen_pt` runs used the instruct templates (checked in `data/qwen_pt/68220852/config.json`).
+
+### What changed
+
+| file | change |
+|---|---|
+| `src/prompts.py` | `pretrained_options_comparisons` now ends with a **trailing space** (`"...I prefer Option "`). Without it `_get_logprobs`' `assert prompt.endswith((" ", "\n"))` fired, which is why the set had never run. |
+| `src/agent.py` | `PretrainedHFAgent` labels `[" 1", " 2"]` → `["1", "2"]` (the space is now in the template, not the label). Added `load_gemma3_pt_agent` (`google/gemma-3-{size}b-pt`) and `gemma-pt` to `agent_factory`. `load_qwen2_5_pt_agent` now passes `normalize_pmi=False` explicitly. |
+| `scripts/data_collection.py` | `TEMPLATE_SETS = {options, pretrained}` + `--template_set` (default `options`, so every existing run is unaffected). Records `template_set` in `config.json`. |
+| `scripts/run_data_collection.sh` | forwards `-p/--template_set`. |
+| `docs/config_schema.md` | `template_set` documented; **missing key = `"options"`** for every run before today. |
+
+### Verified before queueing (no GPU needed)
+
+On the cached `Qwen/Qwen2.5-0.5B` tokenizer, for all three contract shapes:
+
+- the prompt ends on the space, so the assert passes;
+- the scored token is the bare digit — `last_tok` equals `target_tokens` for both labels
+  (`1`→16, `2`→17), the same digit tokens the instruct path scores;
+- prompt and label do not merge across the boundary (48 tokens + 1 = 49);
+- both labels give equal-length sequences, so no padding is involved;
+- 9900 rows per run, identical to the instruct runs.
+
+The prompt now reads as a continuation rather than a question, which is what a base model is
+trained on:
+
+```
+I am looking to buy a laptop. I prefer a 14-inch screen.
+Option 1: 13-inch ASUS laptop with 4GB RAM
+Option 2: 16-inch ASUS laptop with 8GB RAM
+My preference between these two is Option
+```
+
+### Queued
+
+4 jobs: **qwen-7B base × {none, screen=14-inch, ram=8GB, both}** → `data/laptops_robustness_pt/`.
+Own folder because the template set differs — these are **not** drop-in comparable to
+`laptops_robustness`. This replaced the 40-job Phase A + bare-frame batch in `slurms.sh`; both
+are commented out in `create_slurms.py`, ready to regenerate.
+
+### The confound to state in the writeup
+
+Instruct vs base differs in **four** things at once, not one: instruction tuning, the chat
+template, the system message (*"You are a helpful assistant…"*, absent for base models), and now
+the template wording. A base model has no chat template, so the first three cannot be separated.
+Any difference we find is "instruct pipeline vs base pipeline", not "instruction tuning".
+
+---
+
 ## 2026-08-16 — Deck-5 figures rebuilt with the corrected γ. The slide-12 headline does not survive.
 
 New notebook: [Notebooks/figs4deck5_fix.ipynb](../Notebooks/figs4deck5_fix.ipynb) — Figs 5.5 D,

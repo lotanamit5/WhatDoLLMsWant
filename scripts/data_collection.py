@@ -45,6 +45,15 @@ ALTERNATIVES_ALIASES = {
     'laptops_robustness': src.alternatives.laptops_robustness,
 }
 
+# Which prompt templates to use. "options" is what every run up to 2026-08-16 used and
+# stays the default. "pretrained" is for base (non-instruct) models: it ends mid-sentence
+# ("...I prefer Option ") instead of asking a question, because a base model completes
+# text rather than answering. Pick it with --template_set for the -pt families.
+TEMPLATE_SETS = {
+    'options': src.prompts.options_comparisons,
+    'pretrained': src.prompts.pretrained_options_comparisons,
+}
+
 # The sentence that sets the scene, before any spec is named. "shopping" is what every
 # run up to 2026-08-10 used. The others exist to measure how much the frame itself moves
 # the answer - we have never run without one.
@@ -132,12 +141,13 @@ def format_features_to_text(item_dict):
 
 
 def collect_data(model_family, model_size, alternatives_alias, exp_dir,
-                 constraints=None, frame='shopping', n_templates=5):
+                 constraints=None, frame='shopping', n_templates=5,
+                 template_set='options'):
     items = ALTERNATIVES_ALIASES[alternatives_alias]
     constraints = constraints or {}
     validate_constraints(constraints, items)
 
-    templates = src.prompts.options_comparisons
+    templates = TEMPLATE_SETS[template_set]
     if n_templates:
         templates = templates[:n_templates]
 
@@ -171,6 +181,7 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
         "git_commit": git_commit(),
         "collection_script": "scripts/data_collection.py",
+        "template_set": template_set,
         "templates": {i: t for i, t in enumerate(templates)},
     }
     os.makedirs(exp_dir, exist_ok=True)
@@ -205,6 +216,9 @@ if __name__ == "__main__":
                         help="the scene-setting sentence before any spec")
     parser.add_argument("--n_templates", type=int, default=5,
                         help="use the first N prompt templates; 0 means all")
+    parser.add_argument("--template_set", type=str, default="options",
+                        choices=sorted(TEMPLATE_SETS),
+                        help="'options' for instruct models, 'pretrained' for base models")
 
     args = parser.parse_args()
     collect_data(
@@ -215,4 +229,5 @@ if __name__ == "__main__":
         constraints=parse_constraints(args.constraints),
         frame=args.frame,
         n_templates=args.n_templates,
+        template_set=args.template_set,
     )

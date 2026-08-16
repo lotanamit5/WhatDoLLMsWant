@@ -155,10 +155,13 @@ class InstructedHFAgent(HFAgent):
         return prompt_scores.tolist()
 
 class PretrainedHFAgent(HFAgent):
+    # "1"/"2", not " 1"/" 2": the pretrained templates already end with a space, so the
+    # label must not carry one too. Either way only the last token is scored and it is
+    # the bare digit - the space is context. See src/prompts.py.
     def __init__(self, model_id, normalize_pmi: bool = True,
                  labels: list = None):
         super().__init__(model_id, normalize_pmi)
-        self.labels = labels if labels else [" 1", " 2"]
+        self.labels = labels if labels else ["1", "2"]
     
     def query(self, prompt: str, labels: List[str] = None):
         labels = labels if labels else self.labels
@@ -196,12 +199,23 @@ def load_gemma3_agent(model_size: float):
 
     return InstructedHFAgent(model_id, normalize_pmi=False)
 
+# The base models. normalize_pmi=False is passed explicitly even though the PMI block in
+# PretrainedHFAgent is commented out - so that uncommenting it cannot silently turn PMI
+# back on for these runs. Base models take the raw prompt: no chat template, no system
+# message, and the `pretrained` template set from prompts.py.
 def load_qwen2_5_pt_agent(model_size: float):
     assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
-    
+
     model_id = f"Qwen/Qwen2.5-{model_size}B"
 
-    return PretrainedHFAgent(model_id)
+    return PretrainedHFAgent(model_id, normalize_pmi=False)
+
+def load_gemma3_pt_agent(model_size: float):
+    assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
+
+    model_id = f"google/gemma-3-{model_size}b-pt"
+
+    return PretrainedHFAgent(model_id, normalize_pmi=False)
 
 def agent_factory(model_family: str, model_size: str):
     if model_family == 'qwen':
@@ -210,6 +224,8 @@ def agent_factory(model_family: str, model_size: str):
         return load_gemma3_agent(model_size)
     elif model_family == 'qwen-pt':
         return load_qwen2_5_pt_agent(model_size)
+    elif model_family == 'gemma-pt':
+        return load_gemma3_pt_agent(model_size)
     else:
         raise ValueError(f"Unsupported model family: {model_family}")
 

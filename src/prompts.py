@@ -471,8 +471,16 @@ options_comparisons = [
     ]
 ]
 
+# For base (non-instruct) models: no question, no "Answer:", just a sentence the model
+# continues with "1" or "2". A base model has never been trained to answer a question,
+# but it has always been trained to finish a sentence.
+#
+# The trailing space is load-bearing. The prompt must end on the space so the scored
+# token is the bare digit, exactly as in the instruct path (where "Option 1" tokenizes
+# to ["Option", " ", "1"] and only the last token is read). Keep the labels as "1"/"2"
+# in PretrainedHFAgent - putting the space in the label instead would double it here.
 pretrained_options_comparisons = [
-    f"Option 1: {{A}}\nOption 2: {{B}}\n{continuation}"
+    f"Option 1: {{A}}\nOption 2: {{B}}\n{continuation} "
     for continuation in [
         "My preference between these two is Option",
         "When asked to choose, I selected Option",
