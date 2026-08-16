@@ -199,11 +199,43 @@ has already stated a preference, and the base model is completing it coherently.
 out loud, because it means our adherence measure does not require an instruction-following model
 — which weakens "the model obeys the contract" as an interpretation of the aligned numbers too.
 
+### Brand on its own (Fig PT-5, added later the same day)
+
+The `r = 0.990` headline is carried by ram. Pooling the 20 (brand, contract) points separately:
+
+| feature | r | n |
+|---|---|---|
+| **brand** | **0.790** (p = 3.4e-05), ρ = 0.767 | 20 |
+| screen | 0.976 | 12 |
+| ram | 0.995 | 12 |
+| all 11 | 0.990 | 44 |
+
+Brand agrees, but clearly least — it is the smallest feature (range 0.13–0.22 base vs 2.1–2.7 for
+ram) and so closest to the noise floor. **Per-contract** brand correlations use only 5 points each
+and 3 of 4 are not significant (none 0.645 p=0.24; 14in 0.842 p=0.074; 8GB 0.772 p=0.126;
+14in+8GB 0.932 p=0.021) — they should not be ranked or quoted individually.
+
+**A real qualification of the "louder, not different" story.** The brand points sit *inside* the
+diagonal: fitted slope **0.43**. Brand takes a **smaller share of the aligned model's range than
+of the base model's** —
+
+| contract | brand share, base | brand share, aligned | ratio |
+|---|---|---|---|
+| none | 0.075 | 0.027 | 2.7× |
+| 14in | 0.061 | 0.040 | 1.5× |
+| 8GB | 0.046 | 0.023 | 2.0× |
+| 14in+8GB | 0.055 | 0.038 | 1.5× |
+
+So alignment is **not a uniform volume knob**. On the unconstrained run it multiplies *screen*'s
+share (0.028 → 0.125) while *shrinking* brand's (0.075 → 0.027); ram's share barely moves
+(0.897 → 0.848). The pattern across brands is preserved — hence r = 0.79 — but brand matters
+relatively **less** to the aligned model. "Same preferences, ~9× louder" holds for the overall
+vector; for brand specifically it is "same ordering, smaller share".
+
 ### Caveats
 
 - Base fits are noisier: R² 0.61–0.74 vs 0.80–0.91 aligned.
-- Brand is the weakest agreement (r 0.65–0.93) — it is also the smallest feature and so the
-  noisiest; the `none` contract is the worst case.
+- Brand is the weakest agreement — see Fig PT-5 above.
 - **Four things differ at once** between the two pipelines: instruction tuning, the chat template,
   the system message, and the prompt wording (base uses the `pretrained` template set). A base
   model has no chat template, so these cannot be separated. Everything above is *base pipeline vs
