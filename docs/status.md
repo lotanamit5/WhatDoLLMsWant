@@ -51,6 +51,14 @@ survives a contract?
 3. **Apple's brand premium is conditional on compliance.** Under a contract, even the
    *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand preference in
    general.
+   **Sharpened 2026-08-16.** The decay is *not* a fitting artifact — it survives a model-free,
+   within-spec-cell measurement (+7.45 → −0.88 under `ram=8GB`) — and it is *not* about the
+   contract asking for a modest level: Apple falls under **every** constraint, including
+   `ram=16GB` and `screen=16-inch`. What does predict it is **prompt specificity**: removing the
+   frame sentence entirely (`bare`, no constraint) *raises* Apple by +1.35 on average, 7/8 models.
+   Working hypothesis: Apple is the **default answer to an underspecified question**, and any
+   added specificity moves the model off it. The off-dimension-constraint control (A6) would
+   settle it and has never been run.
 4. **The contract effect is one shared scalar**, λ ≈ 0.7. Leakage has no shape of its own —
    it is (scalar) × (−δ). The model generalizes to a contract it never saw in *direction*,
    not in magnitude.
@@ -206,6 +214,15 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     no metric and every number we report is about `v` alone. **Blocking.**
 
 ### C. Method fixes (small, known)
+
+00. **BLOCKING, found 2026-08-16:** `(model_family, model_size, constraints_id)` is **no longer a
+    unique run key** — the bare-frame runs collide with the shopping runs on `constraints_id ==
+    "none"`, 8 collisions, one per model. Every loader silently keeps the last one read; re-running
+    `figs4deck5_fix.ipynb` today would use the **bare** run as qwen-72B's baseline and **shopping**
+    for the other seven. Add `frame` to the key (data contract in `CLAUDE.md`, and
+    `load_scores_by_run` in `src/auxiliary.py`). **Needs a decision first: is the canonical
+    unconstrained baseline `shopping` or `bare`?** Not cosmetic — the frame alone moves Apple by up
+    to 4.6 log-odds (progress.md 2026-08-16).
 
 0. **Highest priority, found 2026-08-12, partly done:** re-derive every adherence / override /
    violation number **position-corrected**. The published ones use `sign(margin)` and are off by

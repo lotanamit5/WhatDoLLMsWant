@@ -8,6 +8,116 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-16 — The Apple decay is not a fitting artifact, and not about budget. It looks like prompt specificity.
+
+Three tests of "is the Apple decay an outer variable?", all on data already collected.
+Scratch analysis, not yet a notebook.
+
+### Test 1 — is it "the contract reveals a modest shopper"? **No.**
+
+Apple's normalised weight changes vs the unconstrained run, mean over 7 models:
+
+| contract | mean Δ vs none | models negative |
+|---|---|---|
+| screen=13-inch | −0.026 | 6/6 |
+| screen=14-inch | −0.057 | 7/7 |
+| **screen=16-inch** | **−0.052** | **7/7** |
+| ram=4GB | −0.195 | 7/7 |
+| ram=8GB | −0.090 | 7/7 |
+| **ram=16GB** | **−0.058** | **6/6** |
+| 14in+8GB | −0.088 | 7/7 |
+
+Apple falls under **every** constraint, including the two that ask for the *top* level. So it is
+not "asking for 8GB marks you as budget-minded, and Apple is premium". There is a level gradient
+on top (4GB −0.195 > 8GB −0.090 > 16GB −0.058), so the level modulates the size — but any
+constraint at all produces the decay.
+
+### Test 2 — is it an artifact of the pooled additive fit? **No.**
+
+Inside a fixed (screen, ram) cell the 5 laptops differ *only* in brand, so screen and ram cannot
+be misspecified. Apple vs the other four, position-corrected, raw log-odds, mean over 7 models:
+
+| none | 13in | 14in | 16in | 4GB | 8GB | 16GB | 14in+8GB |
+|---|---|---|---|---|---|---|---|
+| **+7.45** | +5.20 | +2.54 | +2.92 | **−2.24** | −0.88 | +0.33 | −1.80 |
+
+The sign flips with no model fitted at all. This closes the `status.md` item 11 worry that "the
+pooled OLS shrinks brand 3–5×, so the gap is partly an artifact of pooling" — the decay is not.
+
+### Test 3 — does prompt text that mentions neither brand nor spec move Apple? **Yes.**
+
+The `--frame bare` runs have landed (8, all unconstrained). Comparing them to the `shopping`
+runs — both with **no constraint**, differing only by the sentence *"I am looking to buy a
+laptop."* — Apple's within-cell advantage:
+
+| model | shopping | bare | Δ |
+|---|---|---|---|
+| qwen-0.5B | −0.11 | −0.02 | +0.08 |
+| qwen-7B | 4.05 | 5.17 | +1.12 |
+| qwen-32B | 9.14 | 13.77 | **+4.63** |
+| qwen-72B | 6.36 | 9.10 | +2.74 |
+| gemma-1B | 4.55 | 2.14 | −2.41 |
+| gemma-4B | 7.53 | 7.55 | +0.02 |
+| gemma-12B | 4.26 | 6.58 | +2.32 |
+| gemma-27B | 13.49 | 15.80 | +2.31 |
+
+Mean **+1.35**, up in **7 of 8** models. One sentence naming no brand and no spec moves the brand
+weight, and in the *opposite* direction to a contract: the barer the prompt, the stronger Apple.
+
+### What this adds up to
+
+The surviving hypothesis is **prompt specificity, not contract content**. Apple's unconstrained
+advantage looks like a *default answer to an underspecified question* — the archetypal laptop
+brand — and anything that makes the prompt more specific moves the model off that default. The
+frame moves it one way (removing the frame → Apple +1.35), any constraint moves it the other
+(→ Apple −0.03 to −0.20 normalised), and the effect does not depend on which feature or which
+level the constraint names.
+
+If that is right, slide 6/7 is a finding about **prompt specificity**, not about contracts
+completing preferences, and it needs rewording. It also sits well with the base-model result the
+same day: the default-brand prior is pretrained, not aligned in.
+
+**The test that would settle it has still never been run:** an **off-dimension constraint**
+(e.g. *"I prefer a lightweight laptop"*) that names nothing in the item set. If Apple falls there
+too, the cause is "a requirement was stated", full stop. This is `status.md` A6 and it is now the
+highest-value cheap run we have.
+
+### Caveat on Test 2's `none` column
+
+It was loaded by the `(family, size, constraints_id)` key, which since the bare-frame runs landed
+is **no longer unique** (see the collision bug below) — qwen-72B's `none` there is the *bare* run,
+not `shopping`. The sign flips are far too large for that to matter, but the exact numbers in
+that one column will shift slightly once the key is fixed.
+
+---
+
+## 2026-08-16 — Bug: `(family, size, constraints_id)` is no longer a unique run key
+
+The bare-frame runs give **8 colliding keys** — one per model. `constraints_id` is `"none"` for
+both the `shopping` and the `bare` unconstrained run, so every loader that keys on
+`(model_family, model_size, constraints_id)` silently keeps whichever it reads last:
+
+```
+('qwen','72','none') -> laptops_robustness/1271581 (shopping)
+                     -> laptops_robustness/1293571 (bare)      <- this one wins
+```
+
+**Impact today.** Re-running [figs4deck5_fix.ipynb](../Notebooks/figs4deck5_fix.ipynb) now picks
+`shopping` for seven models and **`bare` for qwen-72B** — an inconsistent baseline across the
+panel. It was correct when executed (the bare runs had not landed yet), so the committed outputs
+are fine; it breaks on the next re-run.
+[pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb) is unaffected — both its
+picks are `shopping` — but by sort-order luck, not by design.
+
+**Fix:** the key must include the frame, `(model_family, model_size, frame, constraints_id)`, or
+the loader must filter `frame` explicitly. This is a change to the data contract in `CLAUDE.md`
+and to `load_scores_by_run` in `src/auxiliary.py`. **Not applied yet** — it needs a decision
+first: which run is the canonical unconstrained baseline, `shopping` (what every published number
+uses) or `bare` (the genuinely unframed one)? Given Test 3, that choice is not cosmetic — it
+moves Apple by up to 4.6 log-odds.
+
+---
+
 ## 2026-08-16 — The preferences are already in the base model. Alignment makes them ~9× louder, not different.
 
 qwen-7B **base** (`Qwen/Qwen2.5-7B`) vs qwen-7B **aligned** (`-instruct`), same 45 laptops, same
