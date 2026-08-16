@@ -8,6 +8,116 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-16 — Deck-5 figures rebuilt with the corrected γ. The slide-12 headline does not survive.
+
+New notebook: [Notebooks/figs4deck5_fix.ipynb](../Notebooks/figs4deck5_fix.ipynb) — Figs 5.5 D,
+6.2 and 12.1, with the notation and the pair definitions written next to each one. Everything is
+post-processing; **`scores.csv` is read and never written**. Figures go to `figs/deck5_fix/`, so
+the original deck-5 PNGs are untouched.
+
+### γ corrected: the positional bias is 2–13× smaller than we reported
+
+`C` recovered per model as `max(score_b) − max(score_a)`, pooled over that model's 4 runs
+(tighter than one run: gemma-1B gets 10.47 vs the 10.25 quoted on 08-12). Then `γ = γ_fit + C`.
+
+| model | γ fitted | C | **γ corrected** | brand range | γ > brand? |
+|---|---|---|---|---|---|
+| qwen-7B | −9.05 | 6.00 | **−3.05** | 0.86 | yes |
+| qwen-32B | −6.98 | 2.25 | **−4.73** | 3.82 | yes |
+| qwen-72B | −9.44 | 5.62 | **−3.81** | 2.84 | yes |
+| gemma-1B | −6.94 | 10.47 | **+3.53** | 2.76 | yes |
+| gemma-4B | −8.51 | 10.50 | **+1.99** | 3.41 | **no** |
+| gemma-12B | −10.52 | 9.75 | **−0.77** | 2.47 | **no** |
+| gemma-27B | −7.83 | 5.24 | **−2.59** | 4.88 | **no** |
+| qwen-0.5B | −0.22 | — | **unknown** | 0.12 | — |
+
+Two things change for slide 12:
+
+1. **"The positional bias is bigger than every brand effect" holds for 4 of 7 models, not all 7.**
+   For gemma-4B/12B/27B the brand range is now the bigger of the two.
+2. **The bias does not point the same way for everyone.** gemma-1B and gemma-4B favour slot A
+   (γ > 0); the other five favour slot B. Uncorrected, all eight looked negative — the sign was
+   the PMI constant, not the model.
+
+qwen-0.5B never saturates (share of rows at the max: **0.000**, vs 0.34–0.50 for the other
+seven), so its `C` is not recoverable from stored scores and its γ is reported as unknown.
+
+### The direct-pairs gap settles the metric question from 08-15
+
+Measuring `g` as the mean position-corrected `D` **on the conflict pairs themselves** — instead of
+reading it off the pooled additive fit — removes both problems found yesterday:
+
+| qwen-32B | additive-fit g (08-15) | direct-pairs g (today) | behaviour A |
+|---|---|---|---|
+| ram | g₀ −15.70 → g₁ +4.87, κ=1.31 "flipped" | g₀ −27.35 → g₁ −2.56, **κ=0.91** | 17.3% — agrees |
+| screen | g₀ −1.85, κ=13.59 (exploding) | g₀ −10.07 → g₁ +26.02, **κ=3.58** | 100% — agrees |
+
+Across all 16 model × feature cells, **κ > 1 ⟺ A > 50%, with no exceptions**. The additive fit
+was inflating κ exactly where the contract fights a strong preference (the slide-10b additivity
+failure). **Decision: `g` is measured on the conflict pairs directly.** κ still explodes only for
+qwen-0.5B (g₀ = −0.04) — no preference to cancel, which is the documented caveat and now the
+only case of it.
+
+### Fig 5.5 D, position-corrected
+
+- **`before` = 0.0 for all 7 real models, on both features.** Before any contract, the asked-for
+  level never wins a single conflict pair. The split is cleaner than the old figure showed.
+- **`agree` = 100.0 everywhere** except gemma-1B on screen (88.0).
+- **`conflict`, mean over the 7:** screen **85.0**, ram **48.4**. Screen is obeyed; ram is a
+  coin flip, and it splits near-binary per model (0/0/17/23 vs 99/100/100/100).
+
+### Fig 6.2 is unchanged — which is the check
+
+Feature weights are immune to `C` (it lands in the intercept), so this figure was predicted to
+come out identical to the original, and it does. Apple's swing across the four phases:
+qwen-32B 3.38, qwen-72B 3.68, gemma-4B 3.13, gemma-12B 3.09, **gemma-27B 4.60** (from +2.74
+unconstrained to −1.87 under the double contract). Reproducing it from the rebuilt code path is
+the evidence that nothing else drifted.
+
+### Open
+
+- [ ] Apply the same rebuild to the remaining deck-5 adherence figures (5.3, 5.4, 10b.3) — they
+      are position-corrected already but still quote the additive-fit gap where they use one.
+- [ ] qwen-0.5B's `C` needs one direct measurement (one forward pass on `"Answer: "`) if its γ
+      is ever needed.
+
+---
+
+## 2026-08-15 — Two adherence metrics compared on qwen-32B: they disagree, and the fitted one overstates obedience
+
+Testbed in `Notebooks/sandbox.ipynb` (new `FeatureBT` class: fit/utility/predict, zero-mean
+weights per feature, γ separate, warnings on low R²/high p-values). Two candidate metrics for
+Fig 5.5 D, defined there with notation:
+
+- **Compliance C** (behaviour): % of ceteris-paribus conflict pairs where the asked-for level
+  wins; winner by de-biased margin `Y − γ̂`.
+- **Cancellation κ** (preference): `κ = 1 − g₁/g₀` with `g = w(asked) − w(rival)` from the
+  additive BT fit; κ=0 no effect, κ=1 indifferent, κ>1 sign flipped. Scale-free.
+
+qwen-32B, conflict pairs only (150 rows each):
+
+| contract | C before → after | g₀ → g₁ | κ |
+|---|---|---|---|
+| screen=14-inch (vs 16-inch) | 9.3 → **100.0** | −1.85 → +23.26 | 13.59 |
+| ram=8GB (vs 16GB) | 0.0 → **36.7** | −15.70 → +4.87 | 1.31 |
+
+Two lessons, both anticipated but now with numbers:
+
+1. **κ blows up when g₀ ≈ 0.** Screen κ=13.6 is meaningless as a magnitude (baseline gap was
+   only −1.85); only the flip is real.
+2. **The metrics contradict on ram: κ says flipped (g₁=+4.87), behaviour says the model still
+   picks 16GB 63% of the time.** The additive fit pools all pairs, so 8GB's easy wins over 4GB
+   inflate `w(8GB)`; the direct 8GB-vs-16GB pairs still go to 16GB. This is the slide-10b
+   additivity failure leaking into the metric — κ from the additive fit **overstates
+   adherence** exactly where the contract fights a strong preference.
+
+Open: pick the Fig 5.5 D metric. C is honest about behaviour but saturates (screen hit 100%);
+κ is scale-free but inherits the additivity assumption where it is most wrong. A direct-pairs
+version of g (fit only on the conflict pairs, or just the mean de-biased margin) may combine
+both. Not decided yet.
+
+---
+
 ## 2026-08-12 — Drop PMI. It corrupts γ and it moved the adherence numbers by up to 33 points.
 
 Follow-up to the γ bug. **PMI is on for every qwen and gemma run** — `load_qwen2_5_agent` and

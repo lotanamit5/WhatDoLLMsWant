@@ -134,6 +134,7 @@ class HFAgent(Agent):
         print(f"Log probabilities for each label: {scores}\n")
         
         return scores
+
 class InstructedHFAgent(HFAgent):
     def __init__(self, model_id, normalize_pmi: bool = True,
                  labels: list = None):

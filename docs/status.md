@@ -54,8 +54,12 @@ survives a contract?
 4. **The contract effect is one shared scalar**, λ ≈ 0.7. Leakage has no shape of its own —
    it is (scalar) × (−δ). The model generalizes to a contract it never saw in *direction*,
    not in magnitude.
-5. **Positional bias decides 15–30% of all comparisons** — bigger than most preferences we
-   measure. **But γ is currently computed wrong** (see 11).
+5. **Positional bias decides 15–30% of all comparisons.** γ is now **corrected** (2026-08-16,
+   `figs4deck5_fix.ipynb`): γ = γ_fit + C. Corrected, it runs −4.73 … +3.53 instead of −10.5 …
+   −0.2. It still beats the whole brand range for 4 of 7 models, but **not for gemma-4B/12B/27B**,
+   and **its sign is not universal** — gemma-1B and gemma-4B favour slot A, the rest slot B. The
+   old all-negative picture was the PMI constant, not the model. qwen-0.5B's γ is **unknown**
+   (never saturates).
 6. **Naive p-values overstate confidence ~3×.** Use clustered SEs. Confirmed 2026-08-12:
    clustering the bootstrap on item-pairs widens CIs by a median 2.28×.
 7. **PMI is a no-op for the weights, but not for γ and not for `sign(margin)`.** It subtracts
@@ -72,11 +76,14 @@ survives a contract?
     saturation). Rank-1 explains 99.64% of the variance across weight vectors: bigger models
     are **louder, not different** (max angle 9.1°, length changes up to 113%). There is **no
     significant size trend**, and weight spread has correlation −0.04 with held-out accuracy.
-11. **Two measurement bugs found 2026-08-12, not yet fixed in the pipeline:**
-    γ is off by the constant `C = −max(score_a) + max(score_b)` and needs `C` **added**
-    (gemma-1: −6.94 → **+3.31** and gemma-4: −8.51 → **+1.99**, both flip sign; the rest shrink
-    2–3×). Does **not** work for qwen-0.5B, which never saturates. And the pooled OLS shrinks
-    brand 3–5×, so the "RAM dominates" gap is partly an artifact of pooling.
+11. **Of the two measurement bugs found 2026-08-12, the γ one is fixed** (2026-08-16, in
+    post-processing — see 5 and `figs4deck5_fix.ipynb`). `C` is pooled over each model's 4 runs,
+    slightly tighter than the 08-12 single-run figures (gemma-1B → +3.53, not +3.31).
+    **Still open:** the pooled OLS shrinks brand 3–5×, so the "RAM dominates" gap is partly an
+    artifact of pooling.
+    **Also settled 2026-08-16:** the preference gap `g` behind κ must be measured **on the
+    conflict pairs directly**, not read off the additive fit — the fit inflates κ exactly where
+    the contract fights a strong preference. Direct, κ > 1 ⟺ win rate > 50% in all 16 cells.
 12. **qwen-0.5B has a real but tiny preference** — *corrected 2026-08-12*, it was previously
     listed here as having none. Template-FE R² = 0.920 (pooled 0.085); weights 33 SD above a
     permutation null. But its signal never beats its own noise (`spread/resid_SD` = 0.80 vs
@@ -177,12 +184,13 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 
 ### C. Method fixes (small, known)
 
-0. **Highest priority, found 2026-08-12:** re-derive every adherence / override / violation
-   number **position-corrected**. The published ones use `sign(margin)` and are off by up to
-   33 points; "adherence scales with model size" does not survive for qwen. Touches
-   `lexicographic.ipynb`, `figs4deck5.ipynb`, and deck 5 figures 5.5 and 10b.3. Replace
-   `wins()` with a position-corrected version. **Also set `normalize_pmi=False`** in
-   `load_qwen2_5_agent` / `load_gemma3_agent` for future runs (a `src/` change — ask first).
+0. **Highest priority, found 2026-08-12, partly done:** re-derive every adherence / override /
+   violation number **position-corrected**. The published ones use `sign(margin)` and are off by
+   up to 33 points; "adherence scales with model size" does not survive for qwen.
+   **Done:** `figs4deck5.ipynb`'s shared `winrate()` (08-12), and Figs 5.5 D / 6.2 / 12.1 rebuilt
+   from scratch in [figs4deck5_fix.ipynb](../Notebooks/figs4deck5_fix.ipynb) (08-16) with the
+   corrected γ and the direct-pairs gap. `normalize_pmi=False` is set in `src/agent.py`.
+   **Left:** `lexicographic.ipynb`'s own `wins()`, and deck-5 Figs 5.3 / 5.4 / 10b.3.
 17. Explicit sum-to-zero coding in `fit_feature_based_bradley_terry`; pin references with
     `pd.Categorical` (today ram's reference is `16GB` by string sort — fragile).
 18. Clustered SEs as the default.
