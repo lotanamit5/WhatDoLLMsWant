@@ -8,6 +8,94 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-16 — The preferences are already in the base model. Alignment makes them ~9× louder, not different.
+
+qwen-7B **base** (`Qwen/Qwen2.5-7B`) vs qwen-7B **aligned** (`-instruct`), same 45 laptops, same
+four contracts. Notebook: [Notebooks/pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb).
+Figures in `figs/pt_vs_instruct/`.
+
+**PMI regimes differ and had to be handled first.** The aligned runs predate 2026-08-12 and carry
+the PMI constant (`C = 6.001`, recovered); the base runs were collected with PMI off, so `C = 0`
+**exactly**, not estimated. Verified rather than assumed: with PMI off every stored score is a bare
+log-probability, and the base runs max out at `score_a = -0.0026`, `score_b = -0.0007`, both ≤ 0.
+
+### The headline: same preferences, different volume
+
+Normalised weight `w̃ = w / S`, where `S` is that run's total spread. Over all 11 levels × 4
+contracts = 44 weights:
+
+| contract | r(base, aligned) over 11 weights | r on brand only | S base | S aligned | loudness |
+|---|---|---|---|---|---|
+| none | **0.990** | 0.645 | 2.63 | 31.28 | 11.9× |
+| 14in | **0.997** | 0.842 | 3.59 | 31.73 | 8.8× |
+| 8GB | **0.989** | 0.772 | 2.94 | 24.11 | 8.2× |
+| 14in+8GB | **0.989** | 0.932 | 3.45 | 30.20 | 8.8× |
+
+**Overall r = 0.990.** The scale-free preference vectors are nearly identical; the entire
+difference between the two models is `S`. This is the 2026-08-12 "louder, not different" finding
+again, now across the *alignment* boundary rather than across model size.
+
+### The Apple decay is pretrained
+
+Apple's weight as a share of total spread, across the contract sequence:
+
+| | none | 14in | 8GB | 14in+8GB | swing |
+|---|---|---|---|---|---|
+| base | +0.0067 | −0.0274 | −0.0103 | −0.0296 | **0.0362** |
+| aligned | +0.0148 | −0.0244 | −0.0112 | −0.0232 | **0.0392** |
+
+Same shape, same size. Slide 6/7's "a contract that never mentions brand still reorders the
+brands" **is not a product of instruction tuning** — the base model does it too, and by the same
+proportion. Brand order under the double contract is identical in both:
+`ASUS > Lenovo > Dell > HP > Apple`. Unconstrained they differ only in the top two
+(base `ASUS > Apple > …`, aligned `Apple > ASUS > …`).
+
+### Positional bias is proportionally the same, not smaller
+
+Raw, the base model looks almost free of it (γ = −0.17 to −0.45, vs −2.11 to −3.40 aligned) — but
+its whole scale is 9× smaller. Relative to each model's own preferences:
+
+**|γ|/S = 0.088 (base) vs 0.098 (aligned).** The slot artefact is ~9–10% of the model's total
+preference range either way. Instruction tuning does **not** introduce the positional bias.
+
+### The base model "adheres" too — but that word is wrong for it
+
+Position-corrected, direct conflict pairs (75 per cell):
+
+| | conflict win % | κ | agree |
+|---|---|---|---|
+| base, screen | **100.0** | 6.19 (g₀ = −0.29, inflated) | 100.0 |
+| base, ram | **78.7** | 1.10 | 100.0 |
+| aligned, screen | 100.0 | 2.57 | 100.0 |
+| aligned, ram | 98.7 | 1.42 | 100.0 |
+
+A model that was never instruction-tuned gives up a RAM step 79% of the time when the prompt says
+*"I prefer 8 GB ram"*. This is **not obedience**: the prompt is a document in which the speaker
+has already stated a preference, and the base model is completing it coherently. Worth saying
+out loud, because it means our adherence measure does not require an instruction-following model
+— which weakens "the model obeys the contract" as an interpretation of the aligned numbers too.
+
+### Caveats
+
+- Base fits are noisier: R² 0.61–0.74 vs 0.80–0.91 aligned.
+- Brand is the weakest agreement (r 0.65–0.93) — it is also the smallest feature and so the
+  noisiest; the `none` contract is the worst case.
+- **Four things differ at once** between the two pipelines: instruction tuning, the chat template,
+  the system message, and the prompt wording (base uses the `pretrained` template set). A base
+  model has no chat template, so these cannot be separated. Everything above is *base pipeline vs
+  aligned pipeline*.
+- One model, one size. qwen-7B only.
+
+### Open
+
+- [ ] Repeat on the other three qwen sizes and on gemma-pt — is r ≈ 0.99 a property of 7B or of
+      the method? The loudness ratio in particular needs more than one point.
+- [ ] If the preferences are pretrained, the **frame** and the **contract wording** matter more
+      than we assumed: they are what selects which pretrained preference gets expressed. The
+      `--frame bare` runs speak to this directly.
+
+---
+
 ## 2026-08-16 — Base-model pipeline wired up. qwen-7B base queued on the four contracts.
 
 To test whether the preferences we measure survive instruction tuning, we need the base

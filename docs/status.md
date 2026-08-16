@@ -92,6 +92,13 @@ survives a contract?
 13. **Five templates is enough.** Subsampling 5 of 43 gives SE ≈ 1.0 on total spread, unbiased,
     against a between-model range of 22.8. Template FE change the weights by exactly 0.000
     (the design is perfectly balanced).
+14. **The preferences are pretrained, not aligned in** (2026-08-16, qwen-7B base vs instruct).
+    Scale-free weight vectors correlate at **r = 0.990** over 44 weights; alignment is **~9×
+    louder** and nothing else. The Apple decay is in the base model at the *same* normalised
+    size (swing 0.036 vs 0.039), and the positional bias is proportionally the same
+    (|γ|/S = 0.088 vs 0.098). The base model also "adheres" (79% on the ram conflict) — but for
+    it that is **text coherence, not obedience**, which weakens "the model obeys" as a reading
+    of the aligned numbers too. One model, one size; needs the other sizes and gemma-pt.
 
 ---
 
@@ -114,7 +121,11 @@ Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) �
 `data/qwen_pt/68220852/config.json` — so they are not comparable to the new base-model runs.
 
 **Base models, new 2026-08-16.** `laptops_robustness_pt` — qwen-7B base, four contracts,
-`pretrained` templates. Queued, not yet collected.
+`pretrained` templates. **Collected** (jobs 1305867–70). Analysed in
+[pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb).
+
+**GRUM Phase A has landed** for 7 of 8 models — every model now has all 8 constraint conditions
+**except qwen-72B**, which is missing `screen=13-inch` and `ram=16GB` (6 of 8). Re-run those two.
 
 ---
 
