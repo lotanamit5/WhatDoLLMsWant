@@ -102,6 +102,8 @@ Analysis code finds runs by **filtering `config.json`** (`load_scores_by_run` in
 - `{}` means no constraint. Never `null`, never `"None"`.
 - `constraints_id` is the derived slug used for filtering (`"none"`, `"screen=14-inch"`, `"ram=8GB+screen=14-inch"`).
 - `frame` is the scene-setting sentence, kept separate from the constraint. Everything up to 2026-08-10 used `shopping` ("I am looking to buy a laptop.").
+- **`frame` is part of a run's identity, not a detail** (2026-08-16). `constraints_id` alone is **not** a unique key: an unconstrained run is `"none"` whether its frame is `shopping` or `bare`. Every loader must key on **`(model_family, model_size, frame, constraints_id)`**, or filter `frame` explicitly and assert the rest is unique.
+- **Hold the frame fixed inside any comparison.** All constrained runs use `shopping`; `bare` exists only unconstrained. So a contract comparison pins `frame="shopping"`, and a frame comparison pins `constraints={}`. Never vary both — the frame sentence alone moves brand weights by up to 4.6 log-odds.
 - `prompt_prefix` records verbatim what was prepended to the template.
 
 ### Where the analysis code lives

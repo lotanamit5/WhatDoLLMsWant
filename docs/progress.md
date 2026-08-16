@@ -109,12 +109,26 @@ are fine; it breaks on the next re-run.
 [pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb) is unaffected — both its
 picks are `shopping` — but by sort-order luck, not by design.
 
-**Fix:** the key must include the frame, `(model_family, model_size, frame, constraints_id)`, or
-the loader must filter `frame` explicitly. This is a change to the data contract in `CLAUDE.md`
-and to `load_scores_by_run` in `src/auxiliary.py`. **Not applied yet** — it needs a decision
-first: which run is the canonical unconstrained baseline, `shopping` (what every published number
-uses) or `bare` (the genuinely unframed one)? Given Test 3, that choice is not cosmetic — it
-moves Apple by up to 4.6 log-odds.
+**Resolved the same day, and the resolution is a rule, not a choice.** There is no global
+"canonical baseline". The frame is a **dimension of the experiment and must be held fixed inside
+any comparison** — and that fully determines which run to use:
+
+- a **contract** comparison pins `frame="shopping"`, because every constrained run is `shopping`;
+- a **frame** comparison pins `constraints={}`, because `bare` only exists unconstrained.
+
+A `bare` baseline against `shopping` contracts would vary two things at once, which is exactly
+the confound Test 3 shows is real.
+
+**Applied:** both `figs4deck5_fix.ipynb` and `pretrained_vs_instruct.ipynb` now filter
+`frame == "shopping"` in their loader and **assert** the remaining key is unique, so a future
+collision is loud instead of silent. Re-executed: **every number is unchanged** — the committed
+outputs had been produced before the bare runs landed, so the bug was latent, and the fix is
+preventive. `CLAUDE.md`'s data contract now states that `frame` is part of a run's identity.
+
+**Still open in `src/`:** `load_scores_by_run` cannot filter on frame as written — `filters`
+compares `config.get(key) != value`, but `frame` is a nested dict `{"name":…, "text":…}`, so a
+plain `{"frame": "shopping"}` never matches. It needs either dotted-key support or a `frame=`
+argument. `src/` is read-only, so **not changed** — see status.md C00.
 
 ---
 

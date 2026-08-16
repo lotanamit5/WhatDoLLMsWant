@@ -215,14 +215,18 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 
 ### C. Method fixes (small, known)
 
-00. **BLOCKING, found 2026-08-16:** `(model_family, model_size, constraints_id)` is **no longer a
-    unique run key** — the bare-frame runs collide with the shopping runs on `constraints_id ==
-    "none"`, 8 collisions, one per model. Every loader silently keeps the last one read; re-running
-    `figs4deck5_fix.ipynb` today would use the **bare** run as qwen-72B's baseline and **shopping**
-    for the other seven. Add `frame` to the key (data contract in `CLAUDE.md`, and
-    `load_scores_by_run` in `src/auxiliary.py`). **Needs a decision first: is the canonical
-    unconstrained baseline `shopping` or `bare`?** Not cosmetic — the frame alone moves Apple by up
-    to 4.6 log-odds (progress.md 2026-08-16).
+00. **Found and mostly fixed 2026-08-16.** `(model_family, model_size, constraints_id)` is **no
+    longer a unique run key** — the bare-frame runs collide with the shopping runs on
+    `constraints_id == "none"`, 8 collisions, one per model.
+    **The rule** (now in `CLAUDE.md`): the frame is a dimension of the experiment and is held
+    **fixed inside any comparison** — a contract comparison pins `frame="shopping"` (every
+    constrained run is shopping), a frame comparison pins `constraints={}` (bare exists only
+    unconstrained). There is no global "canonical baseline".
+    **Done:** both `figs4deck5_fix.ipynb` and `pretrained_vs_instruct.ipynb` filter on frame and
+    assert uniqueness; re-executed with every number unchanged (the bug was latent, not active).
+    **Left:** `load_scores_by_run` in `src/auxiliary.py` cannot filter on frame — `frame` is a
+    nested dict, so `{"frame": "shopping"}` never matches. Needs dotted-key support or a `frame=`
+    argument. A `src/` change, so it needs the go-ahead.
 
 0. **Highest priority, found 2026-08-12, partly done:** re-derive every adherence / override /
    violation number **position-corrected**. The published ones use `sign(margin)` and are off by
