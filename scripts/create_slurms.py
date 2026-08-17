@@ -41,20 +41,26 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- Base (non-instruct) qwen-7B, the four contracts we already have for instruct.
-    # 4 runs. First use of the `pretrained` template set: it ends mid-sentence
-    # ("...I prefer Option ") rather than asking a question, which is what a base model
-    # is trained to continue. Goes to its OWN exp_name - the template set differs, so
-    # these are not drop-in comparable to the laptops_robustness folder.
-    {'m': ['qwen-pt'], 's': ['7'], 'a': ['laptops_robustness'],
+    # --- The rest of the base (non-instruct) models: 3 qwen sizes + all 4 gemma. 28 runs.
+    # Completes the base-vs-aligned comparison, which so far rests on qwen-7B alone
+    # (r = 0.990 on scale-free weights, ~9x louder aligned - one point is not a trend).
+    # Uses the `pretrained` template set: it ends mid-sentence ("...I prefer Option ")
+    # rather than asking a question, which is what a base model is trained to continue.
+    # Same exp_name as the qwen-7B base runs; the template set differs from
+    # laptops_robustness, so base runs live in their own folder.
+    {'m': ['qwen-pt'],  's': ['0.5', '32', '72'], 'a': ['laptops_robustness'],
+     'c': BASELINE_FOUR, 'p': ['pretrained']},
+    {'m': ['gemma-pt'], 's': GEMMA,              'a': ['laptops_robustness'],
      'c': BASELINE_FOUR, 'p': ['pretrained']},
 
-    # --- Next after this batch (uncomment when the qwen-7B base runs land):
-    # the other three qwen sizes, then gemma-pt (google/gemma-3-{1,4,12,27}b-pt)
-    # {'m': ['qwen-pt'],  's': ['0.5', '32', '72'], 'a': ['laptops_robustness'],
+    # --- DONE 2026-08-16, jobs 1305867-70. Do not re-run; it would duplicate the folder.
+    # {'m': ['qwen-pt'], 's': ['7'], 'a': ['laptops_robustness'],
     #  'c': BASELINE_FOUR, 'p': ['pretrained']},
-    # {'m': ['gemma-pt'], 's': GEMMA, 'a': ['laptops_robustness'],
-    #  'c': BASELINE_FOUR, 'p': ['pretrained']},
+    #
+    # --- Also still missing: the two qwen-72B INSTRUCT Phase A runs that never landed.
+    # NOTE: exp_name must go back to "laptops_robustness" for these.
+    # {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
+    #  'c': ['screen=13-inch', 'ram=16GB']},
     #
     # --- GRUM Phase A: top and bottom level of each feature, one at a time. 32 runs.
     # Tests whether kappa is level-independent; the 18-parameter GRUM rests on this.

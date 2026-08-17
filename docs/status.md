@@ -141,15 +141,19 @@ Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) �
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued now in `scripts/slurms.sh`: 4 jobs — qwen-7B *base* (`qwen-pt`) on the four
-contracts**, into `data/laptops_robustness_pt/`. First use of the `pretrained` template set.
+**Queued now in `scripts/slurms.sh`: 28 jobs — the remaining base models**, into
+`data/laptops_robustness_pt/`: `qwen-pt` at 0.5/32/72 and `gemma-pt` at 1/4/12/27, each on the
+same four contracts. Completes the base-vs-aligned comparison, which currently rests on qwen-7B
+alone. All 7 model IDs verified to exist on the Hub; `agent_factory` verified to resolve all 7.
+⚠️ **The four `gemma-3-*-pt` repos are gated (`gated=manual`)** — the HF token must have accepted
+each one, separately from the `-it` repos, or those 16 jobs die at download.
 
-⚠️ **This replaced the 40-job Phase A + bare-frame batch in `slurms.sh`** (2026-08-16). Those
-two batches are still in `create_slurms.py`, commented out — uncomment them and set
-`exp_name` back to `laptops_robustness` to regenerate. They are items 1 and 2 below.
+qwen-7B base is **done** (jobs 1305867–70) and is commented out in `create_slurms.py` so it is
+not collected twice.
 
-The 40 jobs, when regenerated, go to `data/laptops_robustness/` (gemma included — analysis
-filters on `config.json`, so one folder is simpler than two):
+Phase A and the bare-frame batch have **landed** (see section 3). Still commented out in
+`create_slurms.py`, ready to regenerate with `exp_name` back to `laptops_robustness`:
+the 2 missing qwen-72B Phase A runs, plus items 1 and 2 below if they are ever re-needed.
 
 1. **GRUM Phase A** — `screen=13-inch`, `screen=16-inch`, `ram=4GB`, `ram=16GB`, all 8 models
    (32 runs). Tests whether κ is level-independent; the 18-parameter GRUM rests on it. Also
