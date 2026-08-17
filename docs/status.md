@@ -7,6 +7,12 @@
 `scripts/slurms.sh` (40 jobs), Lotan launches them on the cluster. Track 2 — while they run,
 analyse the data we already have (section 4B).
 
+**Lost in the notation?** [Notebooks/explainer_metrics.ipynb](../Notebooks/explainer_metrics.ipynb)
+(2026-08-16) defines every symbol — $u$, $w$, $\gamma$, $C$, $D$, $g$, $A$, $\kappa$, $S$,
+$\tilde{w}$ — on a 840-row synthetic run where the ground truth is chosen in advance, so each
+formula is checked rather than asserted. It also demonstrates the three traps: the shift, $A$
+saturating, and scale-vs-preference.
+
 This file = where we are and what is next. It is rewritten in place, not appended to.
 - History of findings → [progress.md](progress.md) (append-only, never rewritten)
 - Method → [grum_formalization.md](grum_formalization.md)
