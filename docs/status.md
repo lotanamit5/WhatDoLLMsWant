@@ -48,6 +48,13 @@ survives a contract?
    different questions, and only the second discriminates.
    **Adherence is NOT monotone in size for qwen** (qwen-32B at 17.3% sits between qwen-7B at
    98.7% and qwen-72B at 100%); it still is for gemma.
+   **Explained 2026-08-16 — qwen-32B is a near-miss, not a refusal.** It has the strongest
+   baseline RAM preference (g₀ = −27.35 vs −21.4 / −20.4) and gets the smallest contract push
+   (+24.8 vs +30.4 / +33.3), so it lands at g₁ = −2.56 — just on the wrong side of zero,
+   κ = 0.91 (it gave up 91% of its preference). 28 of its 75 pairs are within ±2 of zero and its
+   per-template adherence swings 0–33%, so the 17.3% is a **step-function artifact of a binary
+   metric**, not a categorical difference. Non-monotonicity survives (κ 1.42 → 0.91 → 1.64), the
+   "broken outlier" reading does not. **Always report κ beside the win rate.**
 3. **Apple's brand premium is conditional on compliance.** Under a contract, even the
    *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand preference in
    general.

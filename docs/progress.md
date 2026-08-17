@@ -8,6 +8,65 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-16 — Answered: qwen-32B's 17% RAM adherence is a near-miss, not a refusal
+
+Closes the question left open on 2026-08-12 ("why is qwen-32B the outlier on the ceteris-paribus
+conflict?"). All numbers are the `ram=8GB` contract, conflict pairs (8GB vs 16GB), 75 pairs each,
+position-corrected.
+
+| model | γ (corrected) | ram range | g₀ | g₁ | **push** g₁−g₀ | κ | A |
+|---|---|---|---|---|---|---|---|
+| qwen-7B | −2.11 | 22.27 | −21.38 | **+9.02** | +30.39 | 1.42 | 98.7% |
+| **qwen-32B** | **−6.07** | **27.39** | **−27.35** | **−2.56** | **+24.78** | **0.91** | **17.3%** |
+| qwen-72B | −2.97 | 26.04 | −20.35 | **+12.99** | +33.34 | 1.64 | 100% |
+
+### Two things stack against qwen-32B, and neither is special
+
+1. **It starts with the strongest RAM preference** — g₀ = −27.35, against −21.4 and −20.4. It has
+   the most to give up. (Consistent with it having the largest ram range and the largest weight
+   spread of any qwen.)
+2. **The contract pushes it the least** — +24.78, against +30.4 and +33.3.
+
+Since 27.35 > 24.78 it lands at g₁ = −2.56: **still on the 16GB side, but only just.** κ = 0.91
+means the contract cancelled **91%** of its RAM preference. The other two cancelled *more* than
+100% and flipped sign. qwen-32B is ~9% short of a flip; it is not doing something different in
+kind.
+
+### The 17% is real but fragile — the win rate is a step function
+
+- qwen-32B: D mean −2.56, **sd 3.14**, median −2.15, and **28 of 75 pairs sit within ±2 of zero**.
+  Per-template adherence swings **0 / 0 / 20 / 33 / 33 %** — the instability you get when the
+  signal sits on the decision boundary.
+- qwen-7B: D mean +9.02, sd 2.48, and **0 of 75 pairs within ±2 of zero**. Decisively compliant.
+
+So `A` turns a 9% shortfall on a continuous quantity into "17% vs 99%". **This is the strongest
+argument yet for reporting κ beside A**: κ = 1.42 / 0.91 / 1.64 is a smooth, comparable ordering,
+where A looks like one model is broken.
+
+### Why the pre-fix numbers moved at all, and why 32B moved most
+
+The old test was `sign(score_a − score_b)` on each ordered row, whose threshold is displaced by
+γ **and** the PMI constant C. qwen-32B has the **largest corrected |γ| of any qwen** (6.07 on this
+run) and the **smallest C** (2.25), so its decision threshold was the most displaced relative to
+its content signal — which is why it moved furthest (50.0 → 17.3, the 33-point swing recorded on
+08-12). Its old "50.0" was not a measurement at all: inside the conflict set it always picked the
+same slot, so exactly half the rows scored as compliant by construction.
+
+### What this does and does not rescue
+
+It does **not** restore "adherence scales with model size" for qwen: κ is non-monotone too
+(1.42 → 0.91 → 1.64). What it removes is the *appearance* of a categorical outlier. The honest
+statement is that qwen's adherence is not ordered by size, and qwen-32B is the one model whose
+pre-existing RAM preference is larger than what the contract adds.
+
+**A hypothesis worth testing:** the contract's push is roughly constant across models
+(+24.8 to +33.3 log-odds, mean ≈ 29.5) while g₀ varies more. If that holds on more models,
+adherence is predictable as `push > |g₀|` — i.e. it is about the strength of the pre-existing
+preference, not about how well the model "follows instructions". n = 3 here, so this is a
+hypothesis, not a result; the 28 queued base-model runs and the Phase A levels can test it.
+
+---
+
 ## 2026-08-16 — The Apple decay is not a fitting artifact, and not about budget. It looks like prompt specificity.
 
 Three tests of "is the Apple decay an outer variable?", all on data already collected.
