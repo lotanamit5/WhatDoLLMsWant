@@ -110,7 +110,8 @@ Analysis code finds runs by **filtering `config.json`** (`load_scores_by_run` in
 
 | Module | What goes in it |
 |---|---|
-| [src/pref_models.py](src/pref_models.py) | Bradley-Terry fitting |
+| [src/bt.py](src/bt.py) | **`FeatureBT`** — the feature Bradley-Terry fit used by the current laptop notebooks. One definition, imported everywhere; do not paste a copy into a notebook. |
+| [src/pref_models.py](src/pref_models.py) | Older BT fitting functions (`fit_feature_based_bradley_terry`, `fit_item_bradley_terry`). Still used by the colour-era notebooks. |
 | [src/plots.py](src/plots.py) | All plotting |
 | [src/auxiliary.py](src/auxiliary.py) | Finding and loading runs from `data/` |
 | [src/metrics.py](src/metrics.py) | Comparing runs (correlations, shift decomposition) |

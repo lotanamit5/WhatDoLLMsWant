@@ -8,6 +8,30 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — `FeatureBT` extracted to `src/bt.py`
+
+It had been copy-pasted into four notebooks and had drifted: different constructor arguments
+(`r2_warn` 0.7 vs 0.5 vs absent, `pvalue_warn` present in two), different `fit` signatures, and
+**two different names for the same number** — `gamma_fit_` in two notebooks, `beta0_` in another.
+
+[src/bt.py](../src/bt.py) is the union of those copies. `beta0_` is canonical (it is the OLS
+intercept, and calling it a gamma is exactly the confusion that hid the PMI bug for months);
+`gamma_fit_` stays as a property alias so nothing breaks. Methods: `fit`, `utility`, `predict`,
+`range`, `total_spread`, `normalised`.
+
+All four notebooks — `sandbox`, `figs4deck5_fix`, `pretrained_vs_instruct`,
+`base_vs_aligned_all_models` — now import it and were re-executed. **Every numeric output is
+byte-identical**, which is the check that the merge was faithful.
+
+`explainer_metrics.ipynb` deliberately keeps its own `fit_bt`: it exists to show the OLS
+step by step, so importing the finished class would defeat the point.
+
+**Still duplicated, same problem waiting to happen:** `paired_D` / `only_one` / `pair_of` (the
+position-corrected pair helpers) are pasted into three notebooks, and `pmi_offset` into two.
+They are the obvious next extraction.
+
+---
+
 ## 2026-08-18 — All 8 base models in. The finding replicates for qwen; gemma cannot be measured.
 
 The remaining base runs landed (31 of 32 — **qwen-pt 72B is missing `screen=14-inch`**).
