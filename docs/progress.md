@@ -8,6 +8,54 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — Format probe queued, and a scoring bug found while building it
+
+10 jobs in `scripts/slurms.sh`, unconstrained only, to find a prompt format that gets a usable
+signal out of the gemma base models before spending a full 4-contract batch:
+
+| exp_name | format | models | jobs |
+|---|---|---|---|
+| `laptops_pt_fmt_options` | instruct (`"Answer: "`, digits) | gemma-pt 1/4/12/27 + qwen-pt 7 | 5 |
+| `laptops_pt_fmt_ab` | continuation, **lettered options scored on A/B** | gemma-pt 1/4/12/27 + qwen-pt 7 | 5 |
+
+`options` is the **negative** control — base qwen was run this way in June and came out
+slot-locked, so it is expected to fail and exists to close that loop on gemma directly.
+`pretrained_ab` is the real candidate. qwen-pt 7B rides along in both as the **positive**
+control: it already works on the digit format, so a format that breaks it is a bad format
+rather than evidence about gemma. One folder per format, so runs cannot collide on
+`(family, size, constraints_id)` the way the frame runs did.
+
+Unconstrained is enough to gate: `|gamma|/S` needs only the `none` run, and the content check
+becomes "does more RAM win?" rather than the contract's free-lunch pairs.
+
+### Scoring bug found before launching (would have silently corrupted every A/B run)
+
+`_get_logprobs` built its target token by tokenising the label **on its own**, then read the
+score at that id. Tokenizers merge across the prompt/label boundary, and the merge is
+label-dependent:
+
+| label | prompt ends `"... Option "` | last token of `prompt + label` | isolated label token | agree? |
+|---|---|---|---|---|
+| `"1"` | space stays separate | `'1'` | `'1'` | yes |
+| `"A"` | space **merges** into the letter | `' A'` | `'A'` | **no** |
+
+So with letter labels the score would have been read off the wrong token entirely. The target
+token is now taken from the **encoded sequence**, which is correct for any label and
+**bit-identical for the digit labels** used in every run so far (verified on both tokenizers).
+Sequence lengths also match across labels in all four combinations, so padding cannot shift the
+predictor index.
+
+### Also changed
+
+- `labels` are now bound to the template set in `TEMPLATE_SETS` rather than being a separate
+  flag — a template ending `"...I prefer Option "` needs `["1","2"]` or `["A","B"]`, never a
+  free combination — and `agent_factory` takes them through.
+- `config.json` records `labels` (see `docs/config_schema.md`).
+- `create_slurms.py`: a parameter set can carry its own `'n'`, so one batch can write to
+  several exp_names.
+
+---
+
 ## 2026-08-18 — Correction: the instruct template does NOT rescue base models. It is the answer token.
 
 The 08-18 entry above proposed re-running `gemma-pt` with `--template_set options` to test

@@ -100,10 +100,6 @@ class HFAgent(Agent):
             print(i)
             print(inp)
         
-        labels_tokens = self.tokenizer(labels, add_special_tokens=False)["input_ids"]
-        target_tokens = [toks[-1] for toks in labels_tokens]
-        print(f"Target tokens: {target_tokens} (decoded: {[self.tokenizer.decode([t]) for t in target_tokens]})\n")
-        
         original_padding = self.tokenizer.padding_side
         self.tokenizer.padding_side = "right"
         if self.tokenizer.pad_token is None:
@@ -125,10 +121,18 @@ class HFAgent(Agent):
         
         seq_lengths = input_enc["attention_mask"].sum(-1)
         predictor_indices = seq_lengths - 2
-        
+
         batch_indices = torch.arange(len(input_with_answers), device=self.model.device)
-        target_token_indices = torch.tensor(target_tokens, device=self.model.device)
-        
+        # Take the target token from the ENCODED sequence, not by re-tokenising the label on
+        # its own. Tokenizers merge across the prompt/label boundary: with a prompt ending in
+        # a space, " A" becomes a single token while " " + "1" stays two. So a label tokenised
+        # in isolation can be a different id from the one that actually ends the sequence,
+        # and the score would be read off the wrong token entirely. Identical for the digit
+        # labels used so far (verified); required for any letter label.
+        target_token_indices = input_enc["input_ids"][batch_indices, seq_lengths - 1]
+        print(f"Target tokens: {target_token_indices.tolist()} "
+              f"(decoded: {[self.tokenizer.decode([t]) for t in target_token_indices.tolist()]})\n")
+
         scores = log_probs[batch_indices, predictor_indices, target_token_indices]
         
         print(f"Log probabilities for each label: {scores}\n")
@@ -185,47 +189,51 @@ gemma3_sizes = ['1', '4', '12', '27']
 # A constant cannot touch the feature weights (it lands in the intercept), but it IS the
 # intercept, so it corrupted gamma; and it moved the threshold for sign(margin) off zero,
 # which silently changed every adherence number. See docs/progress.md 2026-08-12.
-def load_qwen2_5_agent(model_size: float):
+def load_qwen2_5_agent(model_size: float, labels: list = None):
     assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
 
     model_id = f"Qwen/Qwen2.5-{model_size}B-instruct"
 
-    return InstructedHFAgent(model_id, normalize_pmi=False)
+    return InstructedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
-def load_gemma3_agent(model_size: float):
+def load_gemma3_agent(model_size: float, labels: list = None):
     assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
 
     model_id = f"google/gemma-3-{model_size}b-it"
 
-    return InstructedHFAgent(model_id, normalize_pmi=False)
+    return InstructedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
 # The base models. normalize_pmi=False is passed explicitly even though the PMI block in
 # PretrainedHFAgent is commented out - so that uncommenting it cannot silently turn PMI
 # back on for these runs. Base models take the raw prompt: no chat template, no system
 # message, and the `pretrained` template set from prompts.py.
-def load_qwen2_5_pt_agent(model_size: float):
+def load_qwen2_5_pt_agent(model_size: float, labels: list = None):
     assert model_size in qwen2_5_sizes, f"Model size must be one of {qwen2_5_sizes}"
 
     model_id = f"Qwen/Qwen2.5-{model_size}B"
 
-    return PretrainedHFAgent(model_id, normalize_pmi=False)
+    return PretrainedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
-def load_gemma3_pt_agent(model_size: float):
+def load_gemma3_pt_agent(model_size: float, labels: list = None):
     assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
 
     model_id = f"google/gemma-3-{model_size}b-pt"
 
-    return PretrainedHFAgent(model_id, normalize_pmi=False)
+    return PretrainedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
-def agent_factory(model_family: str, model_size: str):
+# `labels` are the answer strings whose last token is scored. They must match the prompt
+# template - a template ending "...I prefer Option " wants ["1", "2"] or ["A", "B"], never
+# both - so the template set decides them (see TEMPLATE_SETS in data_collection.py) rather
+# than being a separate free-floating flag. None keeps each agent class's own default.
+def agent_factory(model_family: str, model_size: str, labels: list = None):
     if model_family == 'qwen':
-        return load_qwen2_5_agent(model_size)
+        return load_qwen2_5_agent(model_size, labels)
     elif model_family == 'gemma':
-        return load_gemma3_agent(model_size)
+        return load_gemma3_agent(model_size, labels)
     elif model_family == 'qwen-pt':
-        return load_qwen2_5_pt_agent(model_size)
+        return load_qwen2_5_pt_agent(model_size, labels)
     elif model_family == 'gemma-pt':
-        return load_gemma3_pt_agent(model_size)
+        return load_gemma3_pt_agent(model_size, labels)
     else:
         raise ValueError(f"Unsupported model family: {model_family}")
 

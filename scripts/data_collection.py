@@ -45,13 +45,25 @@ ALTERNATIVES_ALIASES = {
     'laptops_robustness': src.alternatives.laptops_robustness,
 }
 
-# Which prompt templates to use. "options" is what every run up to 2026-08-16 used and
-# stays the default. "pretrained" is for base (non-instruct) models: it ends mid-sentence
-# ("...I prefer Option ") instead of asking a question, because a base model completes
-# text rather than answering. Pick it with --template_set for the -pt families.
+# Which prompt templates to use, and the answer strings whose last token gets scored.
+# The two are bound together because they have to agree: a template ending
+# "...I prefer Option " needs ["1", "2"] or ["A", "B"], and "Answer: " needs whatever the
+# agent's default is. `labels: None` keeps the agent class default.
+#
+#   options       what every run up to 2026-08-16 used; asks a question, ends "Answer: ".
+#   pretrained    for base models: ends mid-sentence so the model completes rather than
+#                 answers. Digits as the answer.
+#   pretrained_ab same, but the options are lettered and the scored tokens are A/B. Exists
+#                 to test whether the answer-token prior is what slot-locks base models -
+#                 with "1"/"2" that prior is inseparable from the positional bias, because
+#                 option 1 is always in slot A. See docs/progress.md 2026-08-18.
 TEMPLATE_SETS = {
-    'options': src.prompts.options_comparisons,
-    'pretrained': src.prompts.pretrained_options_comparisons,
+    'options':       {'templates': src.prompts.options_comparisons,
+                      'labels': None},
+    'pretrained':    {'templates': src.prompts.pretrained_options_comparisons,
+                      'labels': ['1', '2']},
+    'pretrained_ab': {'templates': src.prompts.pretrained_options_comparisons_ab,
+                      'labels': ['A', 'B']},
 }
 
 # The sentence that sets the scene, before any spec is named. "shopping" is what every
@@ -147,7 +159,8 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
     constraints = constraints or {}
     validate_constraints(constraints, items)
 
-    templates = TEMPLATE_SETS[template_set]
+    templates = TEMPLATE_SETS[template_set]['templates']
+    labels = TEMPLATE_SETS[template_set]['labels']
     if n_templates:
         templates = templates[:n_templates]
 
@@ -155,8 +168,9 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
     con_text = constraints_text(constraints)
     prompt_prefix = " ".join(p for p in (frame_text, con_text) if p)
 
-    agent = agent_factory(model_family, model_size)
+    agent = agent_factory(model_family, model_size, labels)
     print('model_id:', agent.tokenizer.name_or_path)
+    print('template_set:', template_set, '| labels:', labels or agent.labels)
     print('prompt_prefix:', repr(prompt_prefix))
     print('constraints:', constraints)
     print('items:')
@@ -182,6 +196,7 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
         "git_commit": git_commit(),
         "collection_script": "scripts/data_collection.py",
         "template_set": template_set,
+        "labels": labels if labels is not None else agent.labels,
         "templates": {i: t for i, t in enumerate(templates)},
     }
     os.makedirs(exp_dir, exist_ok=True)

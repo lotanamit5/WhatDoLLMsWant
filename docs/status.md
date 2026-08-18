@@ -169,6 +169,11 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
+**Queued now in `scripts/slurms.sh`: the 10-job format probe** — `laptops_pt_fmt_options` and
+`laptops_pt_fmt_ab`, unconstrained only, gemma-pt 1/4/12/27 plus qwen-pt 7B as a positive
+control. Gate each format on `|γ|/S < 1` and "more RAM wins ≥ 90%" before committing to a full
+4-contract batch.
+
 **Next run — a cheap format probe for `gemma-pt`, NOT the full instruct-template batch.**
 ~~Re-run gemma-pt with `--template_set options`~~ — **withdrawn 2026-08-18**: the June
 `data/qwen_pt/` runs already did exactly that with base qwen, and it slot-locks them
