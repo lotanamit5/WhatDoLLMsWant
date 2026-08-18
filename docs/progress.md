@@ -8,6 +8,55 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — Correction: the instruct template does NOT rescue base models. It is the answer token.
+
+The 08-18 entry above proposed re-running `gemma-pt` with `--template_set options` to test
+whether gemma base "cannot use the prompt format". **That recommendation was wrong**, and Lotan
+was right to question it. Direct evidence was already on disk.
+
+### The test
+
+`data/qwen_pt/` (June) ran **base qwen with the instruct `options` template**, which ends in
+`"Answer: "`. Item-level fits on its `laptops` runs:
+
+| template | slot-A share | \|gamma\|/S | R^2 |
+|---|---|---|---|
+| base qwen + `options` (June) | 91.3 / 99.6 / 94.1 / 99.4 % | 2.26 / 4.06 / 1.87 / 1.39 | 0.07 / 0.13 / 0.15 / 0.59 |
+| base qwen + `pretrained` (Aug) | 59.0 / 41.8 / 60.3 / 59.2 % | 0.34 / 0.06 / 0.06 / 0.12 | 0.22 / 0.61 / 0.53 / 0.72 |
+
+Same four models. With the instruct template they are **slot-locked and content-blind — the exact
+failure mode gemma-pt shows**. With the continuation template they are fine. So the instruct
+format *causes* this failure in base models rather than curing it.
+
+*Caveats:* the June runs use the older flat `laptops` item set (12 strings, not 45 feature
+vectors), the `bare` frame, and predate the label fix, so their prompts carried a double space
+(`"Answer: "` + `" 1"`). Suggestive, not conclusive.
+
+### The mechanism, and a design flaw it exposes
+
+**With labels `"1"`/`"2"` and option 1 always in slot A, positional bias and the prior over the
+answer token are perfectly confounded** — "picks slot A" *is* "prefers the token 1". `gamma`
+measures their sum and cannot separate them by design.
+
+The PMI constant is exactly that token prior measured in isolation, `C = logP("1"|base) -
+logP("2"|base)`, and it is **large and positive in every aligned model** (+2.25 to +10.50): after
+a bare `"Answer: "` these models strongly expect `"1"`. That is why a template ending in
+`"Answer: "` slot-locks a base model, and why `"...I prefer Option "` does not — it leaves the
+two labels roughly balanced.
+
+gemma-pt's lock is **bimodal by size** — 1B and 4B fix on `"1"` (92%, 99.8%), 12B and 27B on
+`"2"` (12%, 0.6%) — which is the signature of a token prior, not of a preference for a position.
+
+### Revised recommendation
+
+Do **not** spend 16 jobs on `--template_set options`. Instead run a cheap probe: unconstrained
+only, 4 gemma sizes, 2-3 candidate formats (8-12 jobs), gated on the two Step-1 checks before
+committing to a full batch. The lever most likely to matter is the **label scheme** — `A`/`B`, or
+scoring the item text instead of a digit — which attacks the token prior directly. That is
+already `status.md` method-fix item 20, now with a concrete reason to prioritise it.
+
+---
+
 ## 2026-08-18 — `FeatureBT` extracted to `src/bt.py`
 
 It had been copy-pasted into four notebooks and had drifted: different constructor arguments

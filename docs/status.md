@@ -169,13 +169,13 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Next run, highest value — re-run the four `gemma-pt` models with `--template_set options`**
-(16 jobs, `exp_name` something like `laptops_robustness_pt_options`). Every gemma base model is
-content-blind as collected (section 2, point 14): it answers by slot position, and its positional
-bias is ~2x its entire preference range. qwen works fine with the `pretrained` continuation
-format, so this may be a gemma-specific prompt-format problem rather than a fact about gemma.
-This is the control that separates the two, and it rescues half the base-vs-aligned experiment.
-Cheap: the `--template_set` flag already exists and the models are already downloaded.
+**Next run — a cheap format probe for `gemma-pt`, NOT the full instruct-template batch.**
+~~Re-run gemma-pt with `--template_set options`~~ — **withdrawn 2026-08-18**: the June
+`data/qwen_pt/` runs already did exactly that with base qwen, and it slot-locks them
+(91-99.6% one slot, |γ|/S = 1.4-4.1). The instruct format *causes* this failure in base models.
+Instead: unconstrained only, 4 gemma sizes, 2-3 candidate formats (8-12 jobs), gated on the two
+checks in Step 1 of `base_vs_aligned_all_models.ipynb` before committing to a full batch. The
+lever most likely to work is the **label scheme** (item 20 below), not the instruction wording.
 
 Also outstanding, both small:
 - **qwen-pt 72B `screen=14-inch`** never landed — that model has no screen adherence number.
@@ -274,8 +274,14 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 18. Clustered SEs as the default.
 19. PMI null-context calibration test: compare two *identical* options, pick the null context
     that gives a zero margin.
-20. Label scheme: `A/B`, `1st/2nd`; add a third "equal / don't care" option; check the option
-    tokens are actually in top-k.
+20. **Label scheme — promoted 2026-08-18, this now blocks the base-model experiment.** `A/B`,
+    `1st/2nd`; add a third "equal / don't care" option; check the option tokens are in top-k.
+    **Why it matters:** with `"1"`/`"2"` and option 1 always in slot A, the positional bias and
+    the prior over the answer token are **perfectly confounded** — "picks slot A" *is* "prefers
+    the token 1", and γ measures only their sum. The prior is large: the PMI constant (that prior
+    in isolation) is +2.25 to +10.50 in every aligned model. It is what slot-locks base models
+    on any template ending in `"Answer: "`, and it is the best explanation for gemma-pt's
+    content-blindness (bimodal by size: 1B/4B lock on `"1"`, 12B/27B on `"2"`).
 21. PriDe-style prior correction ([arxiv 2309.03882](https://arxiv.org/abs/2309.03882)).
 22. Tournament-graph connectivity check.
 23. Move `fit_full_item_bradley_terry` from the notebook into `src/pref_models.py`.
