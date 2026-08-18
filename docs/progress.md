@@ -8,6 +8,84 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — All 8 base models in. The finding replicates for qwen; gemma cannot be measured.
+
+The remaining base runs landed (31 of 32 — **qwen-pt 72B is missing `screen=14-inch`**).
+Notebook: [Notebooks/base_vs_aligned_all_models.ipynb](../Notebooks/base_vs_aligned_all_models.ipynb),
+figures in `figs/base_vs_aligned/`. PMI verified off for all 32 base runs (every stored score
+<= 0); frame pinned to `shopping`.
+
+### The gate: every gemma base model is content-blind
+
+Before correlating anything, two checks on whether a base model responds to the laptops at all:
+
+| model | free-lunch check (AGREE %) | \|gamma\|/S | picks slot A | verdict |
+|---|---|---|---|---|
+| qwen-0.5B | 100 | 0.34 | 59.0% | pass |
+| qwen-7B | 100 | 0.06 | 41.8% | pass |
+| qwen-32B | 100 | 0.06 | 60.3% | pass |
+| qwen-72B | 100 | 0.12 | 59.2% | pass |
+| gemma-1B | **8.7** | **2.50** | **92.3%** | fail |
+| gemma-4B | 100 | **2.27** | **99.8%** | fail |
+| gemma-12B | **59.3** | **1.87** | **12.4%** | fail |
+| gemma-27B | **12.7** | **2.43** | **0.6%** | fail |
+
+The AGREE pairs are 8GB vs 4GB under an `8GB` contract — contract and any sensible RAM preference
+want the same laptop, so obeying is free. Every *aligned* model scores 100. Three gemma base
+models score 8.7 / 59.3 / 12.7: they pick the **worse** laptop when nothing is at stake.
+
+And for all four gemma base models the positional bias is **~2x their entire preference range**.
+They answer the question *format*, not the question: 92%, 99.8%, 12%, 0.6% of rows go to slot A
+regardless of content. Base fit R^2 is 0.04-0.22, against 0.53-0.72 for qwen base.
+
+**This is a measurement failure, not a negative result.** Nothing can be concluded about gemma's
+pretrained preferences from these runs.
+
+### qwen: the finding replicates
+
+Scale-free weight vectors, base vs aligned (44 points each; 33 for 72B):
+
+| model | r (all 11 levels) | r (brand only) | S base | S aligned | loudness |
+|---|---|---|---|---|---|
+| qwen-0.5B | 0.833 | 0.709 | 0.34 | 0.65 | 1.9x |
+| qwen-7B | **0.990** | 0.790 | 3.15 | 29.33 | **9.3x** |
+| qwen-32B | **0.985** | 0.867 | 2.75 | 38.96 | **14.2x** |
+| qwen-72B | **0.982** | 0.672 | 3.26 | 32.58 | **10.0x** |
+
+The `r = 0.990` from the single-model notebook was not a fluke: 7B/32B/72B all land at 0.98-0.99.
+qwen-0.5B is lower (0.833) but both sides of that pair sit at the noise floor (S = 0.34 and 0.65),
+so it is a weak test either way. Loudness is **9-14x with no size trend**, and the gemma ratios
+(29x-125x) are artefacts of dividing by a noise-sized base S.
+
+### The Apple decay is pretrained in every qwen model
+
+Apple's normalised swing across the four contracts, base vs aligned:
+0.102/0.182 (0.5B), 0.036/0.039 (7B), 0.081/0.080 (32B), 0.066/0.119 (72B).
+Correlation across the four pairs **+0.870**. The base models do it too, at comparable size.
+
+### Adherence: base models respond, and qwen-32B misses in both
+
+Position-corrected, `ram=8GB` conflict pairs. kappa base vs aligned:
+1.69/16.33 (0.5B), 1.10/1.42 (7B), **0.96/0.91** (32B), 1.10/1.64 (72B).
+
+Note qwen-32B: **kappa is just under 1 in the base model too** (0.96), the same near-miss as its
+aligned counterpart (0.91). The 2026-08-16 explanation — strongest starting preference, smallest
+push — is a property the model already had before alignment.
+
+Base g0 is ~10x smaller than aligned (-1.78 to -2.01 vs -20 to -27), consistent with loudness.
+
+### Open
+
+- [ ] **Re-run the four `gemma-pt` models with `--template_set options`** (16 jobs). When we chose
+      the prompt format I flagged that if base models came out looking like noise, the instruct
+      template was the control. qwen works with the `pretrained` continuation format; gemma may
+      simply not. This is the only way to separate *"gemma base has no preferences"* from
+      *"gemma base cannot use this prompt format"*, and it rescues half the experiment.
+- [ ] Re-run the missing **qwen-pt 72B `screen=14-inch`**; without it that model has no screen
+      adherence number and its correlation uses 33 points instead of 44.
+
+---
+
 ## 2026-08-16 — Answered: qwen-32B's 17% RAM adherence is a near-miss, not a refusal
 
 Closes the question left open on 2026-08-12 ("why is qwen-32B the outlier on the ceteris-paribus

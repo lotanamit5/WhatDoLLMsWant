@@ -113,13 +113,23 @@ survives a contract?
 13. **Five templates is enough.** Subsampling 5 of 43 gives SE ≈ 1.0 on total spread, unbiased,
     against a between-model range of 22.8. Template FE change the weights by exactly 0.000
     (the design is perfectly balanced).
-14. **The preferences are pretrained, not aligned in** (2026-08-16, qwen-7B base vs instruct).
+14. **The preferences are pretrained, not aligned in — for qwen** (2026-08-16, extended
+    2026-08-18 to all 8 pairs).
     Scale-free weight vectors correlate at **r = 0.990** over 44 weights; alignment is **~9×
     louder** and nothing else. The Apple decay is in the base model at the *same* normalised
     size (swing 0.036 vs 0.039), and the positional bias is proportionally the same
     (|γ|/S = 0.088 vs 0.098). The base model also "adheres" (79% on the ram conflict) — but for
     it that is **text coherence, not obedience**, which weakens "the model obeys" as a reading
-    of the aligned numbers too. One model, one size; needs the other sizes and gemma-pt.
+    of the aligned numbers too.
+    **Replicated 2026-08-18** on qwen-7B/32B/72B: r = 0.990 / 0.985 / 0.982, loudness 9.3x /
+    14.2x / 10.0x with no size trend, and the Apple decay present in every qwen base model
+    (swing correlation +0.87 across the 4 pairs). qwen-0.5B is weaker (r = 0.833) with both
+    sides at the noise floor.
+    **Gemma cannot be tested with these runs.** Every gemma base model is content-blind: its
+    positional bias is ~2x its entire preference range and it answers by slot (92 / 99.8 / 12 /
+    0.6 % of rows go to slot A), failing the free-lunch sanity check that every aligned model
+    passes at 100%. That is a measurement failure, not evidence against the finding. The fix is
+    a re-run with `--template_set options` (section A).
 
 ---
 
@@ -141,9 +151,11 @@ Earlier sets: `pmi_qwen`, `qwen_pt` (colors/foods/cars/stocks/laptops/laptop_bra
 Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) — checked in
 `data/qwen_pt/68220852/config.json` — so they are not comparable to the new base-model runs.
 
-**Base models, new 2026-08-16.** `laptops_robustness_pt` — qwen-7B base, four contracts,
-`pretrained` templates. **Collected** (jobs 1305867–70). Analysed in
-[pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb).
+**Base models.** `laptops_robustness_pt` — all 8 models x 4 contracts, `pretrained`
+templates, **31 of 32 runs collected** (qwen-pt 72B is missing `screen=14-inch`). Analysed in
+[base_vs_aligned_all_models.ipynb](../Notebooks/base_vs_aligned_all_models.ipynb);
+[pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb) is the earlier
+qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — see point 14.
 
 **GRUM Phase A has landed** for 7 of 8 models — every model now has all 8 constraint conditions
 **except qwen-72B**, which is missing `screen=13-inch` and `ram=16GB` (6 of 8). Re-run those two.
@@ -154,19 +166,24 @@ Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) �
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued now in `scripts/slurms.sh`: 28 jobs — the remaining base models**, into
-`data/laptops_robustness_pt/`: `qwen-pt` at 0.5/32/72 and `gemma-pt` at 1/4/12/27, each on the
-same four contracts. Completes the base-vs-aligned comparison, which currently rests on qwen-7B
-alone. All 7 model IDs verified to exist on the Hub; `agent_factory` verified to resolve all 7.
-⚠️ **The four `gemma-3-*-pt` repos are gated (`gated=manual`)** — the HF token must have accepted
-each one, separately from the `-it` repos, or those 16 jobs die at download.
+**The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
+should be regenerated before the next launch.
 
-qwen-7B base is **done** (jobs 1305867–70) and is commented out in `create_slurms.py` so it is
-not collected twice.
+**Next run, highest value — re-run the four `gemma-pt` models with `--template_set options`**
+(16 jobs, `exp_name` something like `laptops_robustness_pt_options`). Every gemma base model is
+content-blind as collected (section 2, point 14): it answers by slot position, and its positional
+bias is ~2x its entire preference range. qwen works fine with the `pretrained` continuation
+format, so this may be a gemma-specific prompt-format problem rather than a fact about gemma.
+This is the control that separates the two, and it rescues half the base-vs-aligned experiment.
+Cheap: the `--template_set` flag already exists and the models are already downloaded.
 
-Phase A and the bare-frame batch have **landed** (see section 3). Still commented out in
-`create_slurms.py`, ready to regenerate with `exp_name` back to `laptops_robustness`:
-the 2 missing qwen-72B Phase A runs, plus items 1 and 2 below if they are ever re-needed.
+Also outstanding, both small:
+- **qwen-pt 72B `screen=14-inch`** never landed — that model has no screen adherence number.
+- **qwen-72B instruct** is still missing Phase A's `screen=13-inch` and `ram=16GB`
+  (`exp_name` must go back to `laptops_robustness` for those).
+
+Phase A and the bare-frame batch have landed (see section 3); their blocks stay commented out in
+`create_slurms.py` in case they are ever re-needed.
 
 1. **GRUM Phase A** — `screen=13-inch`, `screen=16-inch`, `ram=4GB`, `ram=16GB`, all 8 models
    (32 runs). Tests whether κ is level-independent; the 18-parameter GRUM rests on it. Also
