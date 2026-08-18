@@ -8,6 +8,52 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — Third family: OLMo 2, base and instruct. 8 jobs queued.
+
+Change of direction, Lotan's call: rather than keep probing gemma's prompt format, run the
+**ordinary experiment on a third family**. The gemma format question stays open but is no longer
+the priority; its probe batch is commented out in `create_slurms.py`.
+
+### Why OLMo 2
+
+Checked base+instruct availability for four candidates — all complete pairs; Llama 3.x is gated
+(manual), OLMo 2 / Mistral / Falcon 3 are not.
+
+**OLMo 2 (allenai), sizes 1 / 7 / 13 / 32B.** The deciding reason is not convenience: the claim
+under test is that these preferences come from **pretraining**, and OLMo 2 is the only family we
+checked whose pretraining corpus and full training pipeline are public. A positive result there
+is traceable back to data instead of being a black box — which is worth more to the thesis than a
+more familiar third family. It is also ungated (no license-approval risk) and has four sizes,
+matching the ladder we have for qwen and gemma.
+
+Runner-up: Llama 3.x (1/3/8/70B, wider range, the most standard third family) — gated on 8
+repos, so it needs license acceptance first.
+
+### Staged, on the gemma lesson
+
+**Stage 1, queued now: 8 unconstrained runs** — 4 sizes x {`olmo` instruct, `olmo-pt` base} into
+`laptops_olmo` / `laptops_olmo_pt`. Enough to gate the base models (`|gamma|/S`, "does more RAM
+win?") *and* already a complete base-vs-aligned comparison: r on the scale-free weights, plus the
+loudness ratio.
+
+**Stage 2, commented out: the other three contracts, 24 jobs** — only worth launching if the base
+models pass the gate. Spending a full 4-contract batch before that check is exactly what wasted
+16 gemma runs.
+
+### Verified before queueing (no GPU)
+
+- All 8 repo ids exist and are ungated; `agent_factory` resolves `olmo` / `olmo-pt` at all four
+  sizes to the right ids with `normalize_pmi=False`, and rejects sizes the family does not have.
+- OLMo 2 stamps a release date into the repo name and it **differs per size**
+  (`OLMo-2-0425-1B`, `OLMo-2-1124-7B`, `OLMo-2-1124-13B`, `OLMo-2-0325-32B`), so the loader uses
+  a lookup, not an f-string. The instruct repo is always base + `-Instruct`.
+- Tokenizer path checked on the 1B pair: **Instruct has a chat template, base does not** (which
+  is what the two agent classes expect); both prompts satisfy the `endswith((" ", "\n"))` assert;
+  and the scored tokens come out distinct (`'1'`/`'2'`) with equal sequence lengths, so padding
+  cannot shift the predictor index.
+
+---
+
 ## 2026-08-18 — Format probe queued, and a scoring bug found while building it
 
 10 jobs in `scripts/slurms.sh`, unconstrained only, to find a prompt format that gets a usable

@@ -169,12 +169,19 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh`: the 10-job format probe** — `laptops_pt_fmt_options` and
-`laptops_pt_fmt_ab`, unconstrained only, gemma-pt 1/4/12/27 plus qwen-pt 7B as a positive
-control. Gate each format on `|γ|/S < 1` and "more RAM wins ≥ 90%" before committing to a full
-4-contract batch.
+**Queued now in `scripts/slurms.sh`: 8 jobs — the third family, OLMo 2** (`olmo` +
+`olmo-pt`, sizes 1/7/13/32, unconstrained only) into `laptops_olmo` / `laptops_olmo_pt`.
+Chosen because its pretraining corpus is public, so a "preferences are pretrained" result there
+is traceable to data; also ungated, four sizes. **Staged**: gate the base models on `|γ|/S < 1`
+and "more RAM wins ≥ 90%" first; stage 2 (the other three contracts, 24 jobs) is commented out
+in `create_slurms.py` and only worth launching if they pass.
 
-**Next run — a cheap format probe for `gemma-pt`, NOT the full instruct-template batch.**
+**Deprioritised 2026-08-18 — the gemma format probe** (`laptops_pt_fmt_options` /
+`laptops_pt_fmt_ab`, 10 jobs). Still a live question, still built and commented out in
+`create_slurms.py`, but superseded by trying a family that works rather than fixing one that
+does not.
+
+**Background on that probe — a cheap format probe for `gemma-pt`, NOT the full instruct-template batch.**
 ~~Re-run gemma-pt with `--template_set options`~~ — **withdrawn 2026-08-18**: the June
 `data/qwen_pt/` runs already did exactly that with base qwen, and it slot-locks them
 (91-99.6% one slot, |γ|/S = 1.4-4.1). The instruct format *causes* this failure in base models.

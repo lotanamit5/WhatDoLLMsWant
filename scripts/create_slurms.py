@@ -13,6 +13,7 @@ nodes = [
 
 QWEN = ['0.5', '7', '32', '72']
 GEMMA = ['1', '4', '12', '27']
+OLMO = ['1', '7', '13', '32']
 
 # Constraints are "feature=level" using the exact level strings from alternatives.py
 # ('13-inch'/'14-inch'/'16-inch', '4GB'/'8GB'/'16GB', and the brand names).
@@ -41,6 +42,38 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- THIRD FAMILY: OLMo 2, base and instruct. Stage 1 = unconstrained only, 8 jobs.
+    #
+    # qwen replicated the "preferences are pretrained, alignment is ~9x louder" result;
+    # gemma could not be measured at all. Rather than keep probing gemma's prompt format,
+    # this runs the ordinary experiment on a third family.
+    #
+    # Why OLMo 2: the claim under test is that these preferences come from PRETRAINING, and
+    # OLMo 2 is the only family we checked whose pretraining corpus and full training
+    # pipeline are public - so a positive result is traceable to data rather than a black
+    # box. It is also ungated (no license-approval risk) and has four sizes: 1/7/13/32B.
+    #
+    # STAGED on the gemma lesson: do not spend a 4-contract batch before knowing the base
+    # model produces a usable signal. These 8 unconstrained runs are enough to gate
+    # (|gamma|/S, "does more RAM win?") AND already give a complete base-vs-aligned
+    # comparison - r on the scale-free weights, and the loudness ratio. Stage 2 below adds
+    # the three contracts, and is only worth launching if the base models pass.
+    #
+    # One folder per side, matching the template split: instruct uses `options`, base uses
+    # `pretrained`, exactly as for qwen.
+    {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': [''],
+     'p': ['options'],    'n': ['laptops_olmo']},
+    {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': [''],
+     'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
+
+    # --- Stage 2, uncomment once stage 1 passes the gate: the other three contracts. 24 jobs.
+    # {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
+    #  'p': ['options'],    'n': ['laptops_olmo']},
+    # {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
+    #  'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
+
+    # --- SUPERSEDED 2026-08-18 by the OLMo runs above: the gemma format probe.
+    # Kept because the question it asks is still open, just no longer the priority.
     # --- FORMAT PROBE for the base models. Unconstrained only, 10 jobs.
     #
     # Why: every gemma base model came out content-blind on the `pretrained` format - it
@@ -64,14 +97,14 @@ parameter_sets = [
     # Unconstrained is enough to gate: |gamma|/S needs only the `none` run, and the content
     # check becomes "does more RAM win?" instead of the contract's free-lunch pairs. Run
     # the full 4-contract batch only for a format that passes.
-    {'m': ['gemma-pt'], 's': GEMMA,   'a': ['laptops_robustness'], 'c': [''],
-     'p': ['options'],       'n': ['laptops_pt_fmt_options']},
-    {'m': ['qwen-pt'],  's': ['7'],   'a': ['laptops_robustness'], 'c': [''],
-     'p': ['options'],       'n': ['laptops_pt_fmt_options']},
-    {'m': ['gemma-pt'], 's': GEMMA,   'a': ['laptops_robustness'], 'c': [''],
-     'p': ['pretrained_ab'], 'n': ['laptops_pt_fmt_ab']},
-    {'m': ['qwen-pt'],  's': ['7'],   'a': ['laptops_robustness'], 'c': [''],
-     'p': ['pretrained_ab'], 'n': ['laptops_pt_fmt_ab']},
+    # {'m': ['gemma-pt'], 's': GEMMA,   'a': ['laptops_robustness'], 'c': [''],
+    #  'p': ['options'],       'n': ['laptops_pt_fmt_options']},
+    # {'m': ['qwen-pt'],  's': ['7'],   'a': ['laptops_robustness'], 'c': [''],
+    #  'p': ['options'],       'n': ['laptops_pt_fmt_options']},
+    # {'m': ['gemma-pt'], 's': GEMMA,   'a': ['laptops_robustness'], 'c': [''],
+    #  'p': ['pretrained_ab'], 'n': ['laptops_pt_fmt_ab']},
+    # {'m': ['qwen-pt'],  's': ['7'],   'a': ['laptops_robustness'], 'c': [''],
+    #  'p': ['pretrained_ab'], 'n': ['laptops_pt_fmt_ab']},
 
     # --- DONE 2026-08-18: the 28-job base-model batch (31 of 32 runs landed).
     # {'m': ['qwen-pt'],  's': ['0.5', '32', '72'], 'a': ['laptops_robustness'],

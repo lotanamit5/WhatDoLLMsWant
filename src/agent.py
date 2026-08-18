@@ -183,6 +183,21 @@ class PretrainedHFAgent(HFAgent):
 
 qwen2_5_sizes = ['0.5', '7', '32', '72']
 gemma3_sizes = ['1', '4', '12', '27']
+olmo2_sizes = ['1', '7', '13', '32']
+
+# OLMo 2 stamps a release date into the repo name and it differs per size, so the id is a
+# lookup rather than an f-string. The instruct repo is always the base repo + "-Instruct".
+#
+# Chosen as the third family (2026-08-18) because the claim under test is that these
+# preferences come from PRETRAINING: OLMo 2 is the only family we checked whose pretraining
+# corpus and full training pipeline are public, so a positive result there is traceable back
+# to data rather than being a black box. It is also ungated, and has four sizes.
+OLMO2_BASE_IDS = {
+    '1':  'allenai/OLMo-2-0425-1B',
+    '7':  'allenai/OLMo-2-1124-7B',
+    '13': 'allenai/OLMo-2-1124-13B',
+    '32': 'allenai/OLMo-2-0325-32B',
+}
 
 # PMI off since 2026-08-12. The base context is `prompt.split('\n')[-1]`, which is always
 # the literal "Answer: " - so PMI subtracted one constant C per run (+2.25 to +10.50).
@@ -200,6 +215,13 @@ def load_gemma3_agent(model_size: float, labels: list = None):
     assert model_size in gemma3_sizes, f"Model size must be one of {gemma3_sizes}"
 
     model_id = f"google/gemma-3-{model_size}b-it"
+
+    return InstructedHFAgent(model_id, normalize_pmi=False, labels=labels)
+
+def load_olmo2_agent(model_size: str, labels: list = None):
+    assert model_size in olmo2_sizes, f"Model size must be one of {olmo2_sizes}"
+
+    model_id = OLMO2_BASE_IDS[model_size] + "-Instruct"
 
     return InstructedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
@@ -221,6 +243,13 @@ def load_gemma3_pt_agent(model_size: float, labels: list = None):
 
     return PretrainedHFAgent(model_id, normalize_pmi=False, labels=labels)
 
+def load_olmo2_pt_agent(model_size: str, labels: list = None):
+    assert model_size in olmo2_sizes, f"Model size must be one of {olmo2_sizes}"
+
+    model_id = OLMO2_BASE_IDS[model_size]
+
+    return PretrainedHFAgent(model_id, normalize_pmi=False, labels=labels)
+
 # `labels` are the answer strings whose last token is scored. They must match the prompt
 # template - a template ending "...I prefer Option " wants ["1", "2"] or ["A", "B"], never
 # both - so the template set decides them (see TEMPLATE_SETS in data_collection.py) rather
@@ -234,6 +263,10 @@ def agent_factory(model_family: str, model_size: str, labels: list = None):
         return load_qwen2_5_pt_agent(model_size, labels)
     elif model_family == 'gemma-pt':
         return load_gemma3_pt_agent(model_size, labels)
+    elif model_family == 'olmo':
+        return load_olmo2_agent(model_size, labels)
+    elif model_family == 'olmo-pt':
+        return load_olmo2_pt_agent(model_size, labels)
     else:
         raise ValueError(f"Unsupported model family: {model_family}")
 
