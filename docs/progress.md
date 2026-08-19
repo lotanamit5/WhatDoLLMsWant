@@ -8,6 +8,64 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — OLMo 2 is measurable and the result replicates. gemma is now the outlier, not base models.
+
+Rerun landed: **7 of 8 complete** (`olmo` 1/7/13/32B instruct, `olmo-pt` 1/7/13B base).
+**`olmo-pt 32B` still missing** — lost to the disk-full failure and it did not come back.
+Notebook: [Notebooks/olmo_base_vs_aligned.ipynb](../Notebooks/olmo_base_vs_aligned.ipynb),
+figures in `figs/olmo/`. Unconstrained only (stage 1), so **no adherence, no κ, no Apple decay**.
+
+The loader skipped 3 dead directories (`config.json`, no `scores.csv`) — two of which share a key
+with a good rerun. Without the guard added to the data contract this analysis would have crashed
+or silently used the wrong run.
+
+### The gate: every OLMo base model passes
+
+| family | base `\|gamma\|/S` | base models passing |
+|---|---|---|
+| qwen | 0.057 – 0.336 | 4 / 4 |
+| **olmo** | **0.502 – 0.588** | **3 / 3** |
+| gemma | 1.869 – 2.499 | 0 / 4 |
+
+"Does more RAM win?" is **100.0% for all 7 OLMo runs**, base and aligned. OLMo base sits between
+qwen and gemma — usable, but the slot artefact is about half of everything it prefers, so expect
+noisier numbers than qwen. **gemma is the outlier, not base models in general.**
+
+PMI was off on both sides here (all stored scores ≤ 0, checked), so `beta0` **is** gamma — no
+recovery needed. Cleaner than qwen/gemma, whose aligned runs predate the change.
+
+### The replication
+
+| pair | r (11 levels) | r (brand) | S base | S aligned | loudness |
+|---|---|---|---|---|---|
+| olmo-1B | 0.857 | +0.761 | 0.27 | 1.00 | 3.8x |
+| olmo-7B | 0.895 | −0.310 | 1.24 | 13.12 | 10.6x |
+| **olmo-13B** | **0.993** | +0.519 | 2.14 | 17.47 | **8.2x** |
+
+13B matches qwen's 0.98–0.99, and loudness (3.8–10.6x) sits in qwen's range (9.3–14.2x). So
+**"the preferences are pretrained, alignment is ~10x louder" now holds on two independent
+families.**
+
+### Three caveats, all real
+
+1. **`r` is leveraged by RAM.** With 11 points the two RAM extremes sit near ±0.45 while brand and
+   screen cluster near 0, so they carry most of the correlation. `r` says the *dominant*
+   preference is shared, not that every feature is — `r_brand` is +0.76 / −0.31 / +0.52, i.e.
+   unstable, exactly as in qwen.
+2. **The size trend is not a trend.** 0.857 → 0.895 → 0.993 is tempting, but the 1B base fit has
+   **R² = 0.066** — near noise, so a low `r` there is expected whatever the truth is. Three
+   points, one weak.
+3. **No 32B pair.** That is where qwen's effect was clearest.
+
+### Next
+
+- Re-run **`olmo-pt 32B`** (1 job).
+- **Stage 2**: the three contract runs, 24 jobs, commented out in `create_slurms.py`. The gate is
+  passed, so this is now worth launching — it is the only way to get adherence, κ and the Apple
+  decay for a third family.
+
+---
+
 ## 2026-08-18 — OLMo stage 1 lost 7 of 8 jobs to a full disk. Cause found, launcher fixed, rerun queued.
 
 ### What landed

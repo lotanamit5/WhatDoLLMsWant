@@ -113,8 +113,8 @@ survives a contract?
 13. **Five templates is enough.** Subsampling 5 of 43 gives SE ≈ 1.0 on total spread, unbiased,
     against a between-model range of 22.8. Template FE change the weights by exactly 0.000
     (the design is perfectly balanced).
-14. **The preferences are pretrained, not aligned in — for qwen** (2026-08-16, extended
-    2026-08-18 to all 8 pairs).
+14. **The preferences are pretrained, not aligned in — for qwen and OLMo** (2026-08-16,
+    extended 2026-08-18 to all 8 qwen/gemma pairs and then to OLMo 2).
     Scale-free weight vectors correlate at **r = 0.990** over 44 weights; alignment is **~9×
     louder** and nothing else. The Apple decay is in the base model at the *same* normalised
     size (swing 0.036 vs 0.039), and the positional bias is proportionally the same
@@ -130,6 +130,12 @@ survives a contract?
     0.6 % of rows go to slot A), failing the free-lunch sanity check that every aligned model
     passes at 100%. That is a measurement failure, not evidence against the finding. The fix is
     a re-run with `--template_set options` (section A).
+    **Replicated on OLMo 2 (2026-08-18), which settles the "can base models be measured" doubt.**
+    All 3 OLMo base models pass the gate (|γ|/S 0.50–0.59, "more RAM wins" 100%), r = 0.857 /
+    0.895 / **0.993**, loudness 3.8–10.6x. Two of three families work, so **gemma is the outlier,
+    not base models in general**. Caveats: r is leveraged by the two RAM extremes (r_brand is
+    unstable at +0.76 / −0.31 / +0.52), the 1B base fit is near noise (R² = 0.066), and the 32B
+    pair is missing.
 
 ---
 
@@ -150,6 +156,12 @@ Also: `laptops_num_vs_txt` — **qwen-7B only**, num + txt. The plan called for 
 Earlier sets: `pmi_qwen`, `qwen_pt` (colors/foods/cars/stocks/laptops/laptop_brands, 4 sizes each).
 Note the old `qwen_pt` runs used the **instruct** templates (`"...Answer: "`) — checked in
 `data/qwen_pt/68220852/config.json` — so they are not comparable to the new base-model runs.
+
+**OLMo 2 (third family), 2026-08-18.** `laptops_olmo` (instruct, 4 sizes) and
+`laptops_olmo_pt` (base, 1/7/13B — **32B missing**), unconstrained only. All base models pass the
+gate; r = 0.857 / 0.895 / 0.993 and loudness 3.8–10.6x. Analysed in
+[olmo_base_vs_aligned.ipynb](../Notebooks/olmo_base_vs_aligned.ipynb). Three dead run dirs from
+the disk-full failure remain in both folders — loaders must skip runs without `scores.csv`.
 
 **Base models.** `laptops_robustness_pt` — all 8 models x 4 contracts, `pretrained`
 templates, **31 of 32 runs collected** (qwen-pt 72B is missing `screen=14-inch`). Analysed in
