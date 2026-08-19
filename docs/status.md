@@ -186,10 +186,16 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh`: 1 job — `olmo-pt 32B`**, the last missing stage-1 run
-(the 32B pair has an aligned run but no base run). Stage 2 for OLMo — the three contract runs,
-24 jobs — has **passed its gate** and is ready to uncomment in `create_slurms.py`; it is the only
-route to adherence, κ and the Apple decay for a third family.
+**Queued now in `scripts/slurms.sh`: 27 jobs.**
+
+- **OLMo stage 2, 24 jobs** — `olmo` and `olmo-pt`, all 4 sizes x the 3 contracts. The batch that
+  matters: the only route to adherence, κ and a brand decay for a third family.
+- **3 gap-fillers** — `qwen-pt 72B screen=14-inch` (so that model finally has all 4 contracts),
+  and `qwen-72B` instruct `screen=13-inch` + `ram=16GB` (the last two Phase A holes).
+
+`olmo-pt 32B` **unconstrained** is running separately (launched by hand 2026-08-18) and is
+deliberately **not** in this batch. Verified before queueing: 0 of the 27 duplicate any of the
+112 complete runs already on disk.
 
 *Previously (completed): 7 jobs — RERUN of OLMo 2 stage 1* after a full disk
 killed 7 of 8 on the first attempt (`olmo` 1/7/13/32 + `olmo-pt` 7/13/32; olmo-pt 1B already

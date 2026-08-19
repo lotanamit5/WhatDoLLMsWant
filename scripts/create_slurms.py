@@ -42,21 +42,26 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- OLMo 2 stage 1: the last missing run. 1 job.
-    # olmo-pt 32B died in the disk-full failure and did not come back in the rerun, so 32B
-    # has an aligned run but no base run - the largest pair, and the one where qwen's effect
-    # was clearest. Everything else in stage 1 is complete; do NOT re-add it, a second run
-    # under the same key is exactly the collision the data contract warns about.
-    {'m': ['olmo-pt'], 's': ['32'], 'a': ['laptops_robustness'], 'c': [''],
+    # --- OLMo 2 STAGE 2: the three contracts. 24 jobs. Gate passed 2026-08-18.
+    # This is the batch that matters: it is the only route to adherence, kappa and a brand
+    # decay for a third family. Sizes ascend so the cheap models finish first.
+    #
+    # NOTE olmo-pt 32B UNCONSTRAINED is running separately (launched by hand) and is
+    # deliberately absent here - a second run under the same key is the collision the data
+    # contract warns about. Its CONTRACT runs below are a different key and are fine.
+    {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
+     'p': ['options'],    'n': ['laptops_olmo']},
+    {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
      'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
 
-    # --- Stage 2: the other three contracts, 24 jobs. GATE PASSED 2026-08-18 - all three
-    # OLMo base models are content-responsive, so this is now worth launching. It is the only
-    # route to adherence, kappa and the Apple decay for a third family. Uncomment to queue.
-    # {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
-    #  'p': ['options'],    'n': ['laptops_olmo']},
-    # {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
-    #  'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
+    # --- Known holes in the existing families, worth filling while the GPUs are busy. 3 jobs.
+    # qwen-pt 72B never got its screen contract, so that model has no screen adherence number
+    # and its base-vs-aligned correlation uses 33 points instead of 44.
+    {'m': ['qwen-pt'], 's': ['72'], 'a': ['laptops_robustness'], 'c': ['screen=14-inch'],
+     'p': ['pretrained'], 'n': ['laptops_robustness_pt']},
+    # qwen-72B instruct is the only model missing two of the eight Phase A conditions.
+    {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
+     'c': ['screen=13-inch', 'ram=16GB'], 'n': ['laptops_robustness']},
 
     # --- SUPERSEDED 2026-08-18 by the OLMo runs above: the gemma format probe.
     # Kept because the question it asks is still open, just no longer the priority.
