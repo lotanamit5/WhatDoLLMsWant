@@ -8,6 +8,12 @@ Full proposal: `obsidian_symlink/Thesis Proposal.pdf` (February 2026), plus the 
 - **Keep answers short and simple.** English is not the user's first language. Use plain words, not academic or technical jargon. If a term is needed, explain it in one line.
 - Give one recommendation, not a list of options.
 - When you change analysis code, show the new numbers, not just the code.
+- **Report work in a few lines, not essays.** When the answer is "what did you change / do /
+  fix", say what changed, the numbers, and anything that needs a decision. Nothing else. No
+  restating the reasoning, no re-explaining a method already in `docs/`.
+- **Use tables and bullet lists**, not paragraphs. Numbers belong in a table.
+- **Go deep only when brainstorming, or when asked to elaborate.** Choosing a design, weighing
+  an experiment, or debating a finding is worth the detail. Reporting finished work is not.
 
 ## Read this first, every session
 
