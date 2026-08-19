@@ -8,6 +8,65 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — OLMo stage 1 lost 7 of 8 jobs to a full disk. Cause found, launcher fixed, rerun queued.
+
+### What landed
+
+| run | status |
+|---|---|
+| olmo-pt 1B (job 1317055) | **complete**, 9900 rows |
+| olmo 7B (1317052), olmo 13B (1317053), olmo-pt 7B (1317056) | `config.json` written, **no scores.csv** — died mid-run |
+| olmo 1B, olmo 32B, olmo-pt 13B, olmo-pt 32B | **no run directory** — never started |
+
+### Cause: the launcher's per-job cache was being overridden
+
+`run_data_collection.sh` exports `HF_HOME` / `HF_HUB_CACHE` to node-local scratch, but
+`_load_model_and_tokenizer` in `src/agent.py` **hardcodes**
+
+```python
+cache_dir = os.getcwd() + "/huggingface/.cache"
+```
+
+and passes it to `AutoModelForCausalLM.from_pretrained`, which overrides all of it. Jobs run
+from the repo, so every model's weights downloaded into the **shared repo filesystem**. This
+batch alone is OLMo 1+7+13+32B in both base and instruct = 106B params ≈ **212 GB at bf16**.
+(The tokenizer honours `HF_HOME`; only the model ignores it, which is why this never showed up
+on small tests.)
+
+### Fix, without touching read-only `src/`
+
+`run_data_collection.sh` now **`cd`s to node-local scratch before running the collector**, which
+redirects that hardcoded path onto scratch where it is cleaned up with the job. Safe because
+`--exp_dir` is now absolute and is the only path the collector resolves relative to anything —
+its imports go through `__file__` and `git_commit()` cds itself (checked).
+
+Also added: a **pre-flight free-space check** that aborts before writing `config.json` instead of
+dying halfway; free space and cache size logged; row count of the written `scores.csv` logged;
+and the collector's **exit status is propagated**, so a failed run shows as FAILED in `sacct`
+rather than COMPLETED. That last one is why the failures looked silent.
+
+The cleaner long-term fix is a one-liner in `src/agent.py` — respect `HF_HUB_CACHE` instead of
+hardcoding `getcwd()`. Not done, `src/` needs the go-ahead.
+
+### Rerun queued: 7 jobs
+
+`olmo` 1/7/13/32B and `olmo-pt` 7/13/32B, unconstrained. **olmo-pt 1B is excluded** — it
+completed, and rerunning it would create a second run under the same key. The two 32B jobs are
+deliberately placed on different nodes (`-w` pins the node and it is assigned round-robin by
+position; two 32B downloads on one node's scratch is ~128 GB).
+
+### Data-contract consequence, now in `CLAUDE.md`
+
+The three dead directories stay in `data/` — we never delete it. They hold a `config.json` and no
+`scores.csv`, so after the rerun there will be **two directories per key**. Every loader must
+skip runs without `scores.csv`, or it will crash on the missing file or trip the uniqueness
+assert. This is the same class of bug as the `frame` collision.
+
+Side note: `output.log` never reached this machine because `*.log` is gitignored — the failure
+logs are on the cluster only.
+
+---
+
 ## 2026-08-18 — Third family: OLMo 2, base and instruct. 8 jobs queued.
 
 Change of direction, Lotan's call: rather than keep probing gemma's prompt format, run the

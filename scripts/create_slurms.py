@@ -42,28 +42,38 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- THIRD FAMILY: OLMo 2, base and instruct. Stage 1 = unconstrained only, 8 jobs.
+    # --- THIRD FAMILY: OLMo 2. RERUN of stage 1 after the 2026-08-18 disk-full failure.
     #
-    # qwen replicated the "preferences are pretrained, alignment is ~9x louder" result;
-    # gemma could not be measured at all. Rather than keep probing gemma's prompt format,
-    # this runs the ordinary experiment on a third family.
+    # What happened: src/agent.py hardcodes its model cache to "$(pwd)/huggingface/.cache",
+    # overriding the per-job HF_HOME the launcher exports, so ~212 GB of OLMo weights went
+    # onto the shared repo filesystem. 1 of 8 jobs finished. run_data_collection.sh now runs
+    # from node-local scratch, so that hardcoded path lands on scratch instead, and it
+    # pre-flights the repo free space rather than dying halfway.
     #
-    # Why OLMo 2: the claim under test is that these preferences come from PRETRAINING, and
-    # OLMo 2 is the only family we checked whose pretraining corpus and full training
-    # pipeline are public - so a positive result is traceable to data rather than a black
-    # box. It is also ungated (no license-approval risk) and has four sizes: 1/7/13/32B.
+    # Redoing 7 of the 8. olmo-pt 1B is NOT here - it completed (9900 rows, job 1317055) and
+    # rerunning it would put two runs under the same (family, size, constraints_id) key.
+    #   olmo    1B   never started (no run dir)
+    #   olmo    7B   died after config.json, no scores      (job 1317052)
+    #   olmo   13B   died after config.json, no scores      (job 1317053)
+    #   olmo   32B   never started
+    #   olmo-pt 7B   died after config.json, no scores      (job 1317056)
+    #   olmo-pt 13B  never started
+    #   olmo-pt 32B  never started
     #
-    # STAGED on the gemma lesson: do not spend a 4-contract batch before knowing the base
-    # model produces a usable signal. These 8 unconstrained runs are enough to gate
-    # (|gamma|/S, "does more RAM win?") AND already give a complete base-vs-aligned
-    # comparison - r on the scale-free weights, and the loudness ratio. Stage 2 below adds
-    # the three contracts, and is only worth launching if the base models pass.
+    # NOTE the three dead run dirs stay in data/ (we never delete data). They hold a
+    # config.json and no scores.csv, so after this rerun there will be two dirs per key.
+    # Loaders must skip any run without scores.csv - see the data contract in CLAUDE.md.
     #
-    # One folder per side, matching the template split: instruct uses `options`, base uses
-    # `pretrained`, exactly as for qwen.
-    {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': [''],
+    # Split so the two 32B jobs land on DIFFERENT nodes: the node is pinned with -w and
+    # assigned round-robin by position, and two 32B downloads on one node's scratch is
+    # ~128 GB. Order below gives plotinus2 and plato2.
+    {'m': ['olmo'],    's': ['1', '7', '13'], 'a': ['laptops_robustness'], 'c': [''],
      'p': ['options'],    'n': ['laptops_olmo']},
-    {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': [''],
+    {'m': ['olmo-pt'], 's': ['7', '13'],      'a': ['laptops_robustness'], 'c': [''],
+     'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
+    {'m': ['olmo'],    's': ['32'],           'a': ['laptops_robustness'], 'c': [''],
+     'p': ['options'],    'n': ['laptops_olmo']},
+    {'m': ['olmo-pt'], 's': ['32'],           'a': ['laptops_robustness'], 'c': [''],
      'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
 
     # --- Stage 2, uncomment once stage 1 passes the gate: the other three contracts. 24 jobs.

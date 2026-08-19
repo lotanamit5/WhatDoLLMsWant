@@ -169,7 +169,15 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh`: 8 jobs — the third family, OLMo 2** (`olmo` +
+**Queued now in `scripts/slurms.sh`: 7 jobs — RERUN of OLMo 2 stage 1** after a full disk
+killed 7 of 8 on the first attempt (`olmo` 1/7/13/32 + `olmo-pt` 7/13/32; olmo-pt 1B already
+completed and is excluded). The cause was `src/agent.py` hardcoding its model cache to
+`$(pwd)/huggingface/.cache`, overriding the launcher's per-job `HF_HOME` and putting ~212 GB in
+the repo; `run_data_collection.sh` now runs from node-local scratch and pre-flights free space.
+⚠️ Three dead run dirs (config, no scores) remain in `data/` — **loaders must skip runs without
+`scores.csv`** (see the data contract in `CLAUDE.md`).
+
+Originally: **8 jobs — the third family, OLMo 2** (`olmo` +
 `olmo-pt`, sizes 1/7/13/32, unconstrained only) into `laptops_olmo` / `laptops_olmo_pt`.
 Chosen because its pretraining corpus is public, so a "preferences are pretrained" result there
 is traceable to data; also ungated, four sizes. **Staged**: gate the base models on `|γ|/S < 1`

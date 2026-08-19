@@ -96,6 +96,8 @@ data/<exp_name>/<slurm_job_id>/
 
 Analysis code finds runs by **filtering `config.json`** (`load_scores_by_run` in [src/auxiliary.py](src/auxiliary.py)). Keep this contract and new runs appear in the notebooks automatically, with no code change.
 
+- **A run directory with `config.json` but no `scores.csv` is an INCOMPLETE run — every loader must skip it.** `config.json` is written *before* the scoring loop, so a job that dies (disk full, OOM, timeout) leaves the folder behind. Those dirs are never deleted (`data/` is append-only), so after a rerun there are two folders for the same key: the dead one and the good one. A loader that only checks `config.json` will either crash on the missing `scores.csv` or trip the uniqueness assert. Check both files exist, and ideally that the row count is the expected one.
+
 `config.json` follows the schema in [docs/config_schema.md](docs/config_schema.md) (applied 2026-08-10). The part that matters for analysis:
 
 - **`constraints` is a dict `{feature: level}`**, with level strings copied exactly from `src/alternatives.py` — the same strings that appear in `scores.csv`. So "does this item satisfy the contract?" is `all(row[f"a_{f}"] == lvl for f, lvl in constraints.items())`, with no hard-coded mapping.
