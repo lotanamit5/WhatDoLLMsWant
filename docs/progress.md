@@ -8,6 +8,50 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-18 — OLMo has **no Apple premium**. The deck-5 Apple story is qwen+gemma, not "LLMs".
+
+Asked whether OLMo shows the Apple decay. **The decay itself is not measurable** — it is a change
+*across contracts* and OLMo has only unconstrained runs. But its **premise** can be tested now,
+and that is the half that fails: the decay only means anything if Apple starts above the other
+brands.
+
+Measured model-free, inside a fixed (screen, ram) cell where the five laptops differ *only* in
+brand, position-corrected, divided by `S`, with a 95% bootstrap CI over 180 pairs.
+Added as Step 4 of [olmo_base_vs_aligned.ipynb](../Notebooks/olmo_base_vs_aligned.ipynb).
+
+### Aligned models: Apple's advantage / S, and its rank among the 5 brands
+
+| family | Apple rank 1st | CI excludes 0 upward | mean adv/S | ranks |
+|---|---|---|---|---|
+| qwen | 3 / 4 | 3 / 4 | **+0.054** | 5, 1, 1, 1 |
+| gemma | **4 / 4** | 4 / 4 | **+0.217** | 1, 1, 1, 1 |
+| **olmo** | **0 / 4** | 1 / 4 | **−0.005** | 2, 5, 5, 4 |
+
+Apple is rank 1 in **7 of the 8** qwen/gemma aligned models (the exception is qwen-0.5B, the
+noise model, where it is rank 5 at −0.318). In OLMo it is **never** rank 1, and in **olmo-7B and
+olmo-13B it is significantly *below* the other brands** (−0.064 and −0.061, CIs excluding 0).
+
+gemma has the strongest premium of all (+0.217 mean), which is worth noting given its base models
+are unmeasurable — we cannot say whether gemma's premium is pretrained.
+
+### What this changes
+
+**The Apple result must be stated as a property of qwen and gemma, not of LLMs.** Two families
+have it, one does not, and OLMo's absence is not weak evidence — it is significantly negative in
+half its models. Slide 6/7 needs that qualification.
+
+It does **not** settle whether OLMo shows *a* brand decay: some other brand may move under a
+contract. That question cannot even be posed until stage 2 lands, because there are no contract
+runs.
+
+### Base models, for completeness
+
+qwen base carries a weak Apple premium (adv/S +0.007 / +0.038 / +0.171 / +0.089, positive in
+4/4) — consistent with "the preference is pretrained". OLMo base is mixed (−0.103 / +0.234 /
++0.057) and gemma base is not interpretable at all (it fails the gate).
+
+---
+
 ## 2026-08-18 — OLMo 2 is measurable and the result replicates. gemma is now the outlier, not base models.
 
 Rerun landed: **7 of 8 complete** (`olmo` 1/7/13/32B instruct, `olmo-pt` 1/7/13B base).

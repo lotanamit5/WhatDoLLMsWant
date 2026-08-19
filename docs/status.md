@@ -61,9 +61,14 @@ survives a contract?
    per-template adherence swings 0–33%, so the 17.3% is a **step-function artifact of a binary
    metric**, not a categorical difference. Non-monotonicity survives (κ 1.42 → 0.91 → 1.64), the
    "broken outlier" reading does not. **Always report κ beside the win rate.**
-3. **Apple's brand premium is conditional on compliance.** Under a contract, even the
-   *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand preference in
-   general.
+3. **Apple's brand premium is conditional on compliance — in qwen and gemma.** Under a
+   contract, even the *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand
+   preference in general.
+   **Not universal across families (2026-08-18).** Apple is rank 1 in **7 of 8** qwen/gemma
+   aligned models, but in **0 of 4** OLMo models — rank 2/5/5/4, and *significantly below* the
+   other brands in olmo-7B and olmo-13B. **OLMo has no Apple premium to lose**, so the whole
+   Apple story must be stated as qwen+gemma, not "LLMs". Whether OLMo shows *some other* brand
+   decay is untestable until its contract runs land.
    **Sharpened 2026-08-16.** The decay is *not* a fitting artifact — it survives a model-free,
    within-spec-cell measurement (+7.45 → −0.88 under `ram=8GB`) — and it is *not* about the
    contract asking for a modest level: Apple falls under **every** constraint, including
