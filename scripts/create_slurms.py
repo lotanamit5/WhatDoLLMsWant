@@ -42,41 +42,17 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- THIRD FAMILY: OLMo 2. RERUN of stage 1 after the 2026-08-18 disk-full failure.
-    #
-    # What happened: src/agent.py hardcodes its model cache to "$(pwd)/huggingface/.cache",
-    # overriding the per-job HF_HOME the launcher exports, so ~212 GB of OLMo weights went
-    # onto the shared repo filesystem. 1 of 8 jobs finished. run_data_collection.sh now runs
-    # from node-local scratch, so that hardcoded path lands on scratch instead, and it
-    # pre-flights the repo free space rather than dying halfway.
-    #
-    # Redoing 7 of the 8. olmo-pt 1B is NOT here - it completed (9900 rows, job 1317055) and
-    # rerunning it would put two runs under the same (family, size, constraints_id) key.
-    #   olmo    1B   never started (no run dir)
-    #   olmo    7B   died after config.json, no scores      (job 1317052)
-    #   olmo   13B   died after config.json, no scores      (job 1317053)
-    #   olmo   32B   never started
-    #   olmo-pt 7B   died after config.json, no scores      (job 1317056)
-    #   olmo-pt 13B  never started
-    #   olmo-pt 32B  never started
-    #
-    # NOTE the three dead run dirs stay in data/ (we never delete data). They hold a
-    # config.json and no scores.csv, so after this rerun there will be two dirs per key.
-    # Loaders must skip any run without scores.csv - see the data contract in CLAUDE.md.
-    #
-    # Split so the two 32B jobs land on DIFFERENT nodes: the node is pinned with -w and
-    # assigned round-robin by position, and two 32B downloads on one node's scratch is
-    # ~128 GB. Order below gives plotinus2 and plato2.
-    {'m': ['olmo'],    's': ['1', '7', '13'], 'a': ['laptops_robustness'], 'c': [''],
-     'p': ['options'],    'n': ['laptops_olmo']},
-    {'m': ['olmo-pt'], 's': ['7', '13'],      'a': ['laptops_robustness'], 'c': [''],
-     'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
-    {'m': ['olmo'],    's': ['32'],           'a': ['laptops_robustness'], 'c': [''],
-     'p': ['options'],    'n': ['laptops_olmo']},
-    {'m': ['olmo-pt'], 's': ['32'],           'a': ['laptops_robustness'], 'c': [''],
+    # --- OLMo 2 stage 1: the last missing run. 1 job.
+    # olmo-pt 32B died in the disk-full failure and did not come back in the rerun, so 32B
+    # has an aligned run but no base run - the largest pair, and the one where qwen's effect
+    # was clearest. Everything else in stage 1 is complete; do NOT re-add it, a second run
+    # under the same key is exactly the collision the data contract warns about.
+    {'m': ['olmo-pt'], 's': ['32'], 'a': ['laptops_robustness'], 'c': [''],
      'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
 
-    # --- Stage 2, uncomment once stage 1 passes the gate: the other three contracts. 24 jobs.
+    # --- Stage 2: the other three contracts, 24 jobs. GATE PASSED 2026-08-18 - all three
+    # OLMo base models are content-responsive, so this is now worth launching. It is the only
+    # route to adherence, kappa and the Apple decay for a third family. Uncomment to queue.
     # {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
     #  'p': ['options'],    'n': ['laptops_olmo']},
     # {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
@@ -165,8 +141,14 @@ dst_path = "scripts/slurms.sh"
 prefix = "sbatch -p bml -A bml"
 script_path = "scripts/run_data_collection.sh"
 
+lines = []
 i = 0
 with open(dst_path, 'w') as f:
+    f.write("#!/usr/bin/env bash\n")
+    f.write("# GENERATED FILE - do not edit by hand.\n")
+    f.write("# Edit scripts/create_slurms.py and re-run it, then commit BOTH files together.\n")
+    f.write("# (No timestamp on purpose: identical params must produce an identical file,\n")
+    f.write("#  so `git diff` shows a changed batch and nothing else.)\n")
     for parameters in parameter_sets:
         for combo in itertools.product(*parameters.values()):
             # Quote each value - an empty string (the no-constraint case) must
@@ -181,6 +163,12 @@ with open(dst_path, 'w') as f:
             node = nodes[i % len(nodes)]
             cmd = f"{prefix} -w {node} {script_path} {flags} -n {name}"
             f.write(cmd + "\n")
+            lines.append((name, f"{kv['m']}-{kv['s']}B", kv.get('p', '-'), kv.get('c', '') or 'none'))
             i += 1
 
 print(f"wrote {i} jobs to {dst_path}")
+for name in sorted({l[0] for l in lines}):
+    rows = [l for l in lines if l[0] == name]
+    print(f"  data/{name}/  ({len(rows)} jobs)")
+    for _, model, tmpl, con in rows:
+        print(f"      {model:14} [{tmpl}] c={con}")

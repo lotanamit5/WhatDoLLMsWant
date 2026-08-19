@@ -74,6 +74,15 @@ Two machines. Do not mix them up.
 **Cluster (SLURM)** — data collection, needs GPUs. Paths there are `/home/lotan.amit/...`.
 Params are edited by hand in [scripts/create_slurms.py](scripts/create_slurms.py) (`exp_name`, model, size, alternatives, constraints), which writes `scripts/slurms.sh`. That calls [scripts/run_data_collection.sh](scripts/run_data_collection.sh) → [scripts/data_collection.py](scripts/data_collection.py) (one script for every run since the 2026-08-10 merge; the `*_robust*` duplicates are gone).
 
+**`scripts/slurms.sh` is a GENERATED file.** Never hand-edit it. Change the params in
+`create_slurms.py`, re-run it, and **commit both files in the same commit** — the checked-in
+`slurms.sh` must always be exactly what the generator produces. Its output is deterministic (no
+timestamp), so `git diff` shows a changed batch and nothing else.
+
+**Regenerate it whenever a batch finishes.** A stale `slurms.sh` still holds jobs that already
+ran; re-running it creates a second run under the same key, which is the collision the data
+contract warns about.
+
 **The user launches the jobs from the server. Never try to run them from here** — no GPUs, no SLURM, wrong paths.
 
 **Local (this WSL machine)** — analysis only, no GPU. Paths are `/home/lotanamit/...`.

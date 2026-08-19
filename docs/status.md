@@ -181,7 +181,12 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh`: 7 jobs — RERUN of OLMo 2 stage 1** after a full disk
+**Queued now in `scripts/slurms.sh`: 1 job — `olmo-pt 32B`**, the last missing stage-1 run
+(the 32B pair has an aligned run but no base run). Stage 2 for OLMo — the three contract runs,
+24 jobs — has **passed its gate** and is ready to uncomment in `create_slurms.py`; it is the only
+route to adherence, κ and the Apple decay for a third family.
+
+*Previously (completed): 7 jobs — RERUN of OLMo 2 stage 1* after a full disk
 killed 7 of 8 on the first attempt (`olmo` 1/7/13/32 + `olmo-pt` 7/13/32; olmo-pt 1B already
 completed and is excluded). The cause was `src/agent.py` hardcoding its model cache to
 `$(pwd)/huggingface/.cache`, overriding the launcher's per-job `HF_HOME` and putting ~212 GB in
