@@ -8,6 +8,46 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-20 — Verified: the Apple decay is not an artifact of the modelling
+
+Lotan's worry: the decay could come from our method rather than the models. Checked. It does not.
+Now a reproducible section (Step 4) of `olmo_contracts.ipynb`.
+
+Three suspects, all bypassed by measuring **inside a fixed (screen, ram) cell**, where the five
+laptops differ *only* in brand — no fit, no centring, no `/S`, no additivity, position-corrected,
+raw log-odds. Compliance is constant within a cell, so it is controlled too.
+
+| suspect | verdict |
+|---|---|
+| zero-mean centring | bypassed — decay survives |
+| `/S` normalisation | bypassed — decay survives in raw log-odds |
+| additive misspecification | bypassed — within-cell needs no additivity |
+| saturation changing under contract | ruled out: near-max rows 45.4→47.1% (olmo-32B), 51.0→49.2% (qwen-72B); margin sd barely moves |
+
+**Apple's advantage falls in 11 of 11 models** measured this way. olmo-32B: +0.009 → −1.642.
+qwen-72B: +6.359 → −2.069. gemma-27B: +13.492 → −3.730.
+
+**Stability** (olmo-32B, `none` → double contract): Apple falls against **each** rival separately
+with bootstrap CIs excluding zero — ASUS −1.642 [−1.851, −1.435], Dell −1.477, HP −1.813,
+Lenovo −1.671 — and on **all five templates** (−1.41 to −1.94). Not a few noisy pairs.
+
+**Apple is the only brand that moves down** in olmo-32B, qwen-72B and gemma-27B; the other four
+each move up.
+
+### One honest limit, now written into the notebook
+
+The within-cell measure **sums to zero across the five brands** — verified, `+0.000000`. Pairwise
+data can only ever give *relative* standing, so "Apple falls" and "the other four rise" are the
+same fact, and nothing in this design can say whether Apple's *absolute* utility dropped. The
+claim to make is: **a contract reorders the brands, and Apple is the one that loses ground.**
+
+Related: an earlier draft reported "Apple carries 50% of all brand movement". That number is
+**mechanical** — whenever one brand moves alone against the other four in a zero-sum measure, its
+share is exactly 50%. Dropped; the meaningful statement is that Apple is the lone brand moving
+down.
+
+---
+
 ## 2026-08-20 — OLMo under contracts: Apple decays **without ever having been on top**
 
 Stage 2 landed (all contracts for olmo 1/7/13/32 and olmo-pt 1/7/13; olmo-pt 32B is missing

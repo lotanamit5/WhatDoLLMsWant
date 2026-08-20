@@ -73,6 +73,11 @@ survives a contract?
    starting point; a stated requirement pushes Apple down specifically in all three families,
    wherever it starts. Mean move under the double contract: qwen −0.031, gemma −0.090,
    olmo −0.042.
+   **Verified not to be a modelling artifact (2026-08-20).** Measured inside a fixed (screen, ram)
+   cell — no fit, no centring, no `/S`, no additivity — Apple's advantage falls in **11 of 11**
+   models, against each rival separately with CIs excluding zero, on all five templates, with
+   saturation unchanged. **Limit:** the measure is zero-sum across brands, so only *relative*
+   standing is ever measurable; say "Apple loses ground", not "Apple's utility fell".
    **Sharpened 2026-08-16.** The decay is *not* a fitting artifact — it survives a model-free,
    within-spec-cell measurement (+7.45 → −0.88 under `ram=8GB`) — and it is *not* about the
    contract asking for a modest level: Apple falls under **every** constraint, including
