@@ -1,0 +1,31 @@
+{
+  "alternatives": "laptops_robustness",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "screen": "14-inch"
+  },
+  "constraints_id": "screen=14-inch",
+  "constraints_text": "I prefer a 14-inch screen.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop."
+  },
+  "git_commit": "ce0ef8f",
+  "labels": [
+    "1",
+    "2"
+  ],
+  "model_family": "olmo-pt",
+  "model_size": "7",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a 14-inch screen.",
+  "slurm_job_id": "1320485",
+  "template_set": "pretrained",
+  "templates": {
+    "0": "Option 1: {A}\nOption 2: {B}\nMy preference between these two is Option ",
+    "1": "Option 1: {A}\nOption 2: {B}\nWhen asked to choose, I selected Option ",
+    "2": "Option 1: {A}\nOption 2: {B}\nBetween the two, I prefer Option ",
+    "3": "Option 1: {A}\nOption 2: {B}\nThe better choice among these is definitely Option ",
+    "4": "Option 1: {A}\nOption 2: {B}\nIf I had to pick one, I would go with Option "
+  },
+  "timestamp": "20260820_075412"
+}
