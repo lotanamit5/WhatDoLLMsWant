@@ -8,6 +8,45 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-20 — Drop Apple: adherence and the base/aligned result survive, the brand decay is ~all Apple
+
+Repeated the main measurements on the subset where **neither laptop is an Apple** (9900 → 6300
+rows, 4 brand levels instead of 5), across all 11 aligned models and 6 base/aligned pairs.
+Notebook: [Notebooks/brands_without_apple.ipynb](../Notebooks/brands_without_apple.ipynb).
+
+| | with Apple | without Apple |
+|---|---|---|
+| adherence κ (ram) | — | **unchanged** — largest shift 0.045, mean 0.015 |
+| base vs aligned r | 0.857 – 0.995 | **same or better** — 0.911 – 0.999, higher in 6/6 |
+| biggest brand swing | 0.079 | **0.020** — 4× smaller |
+
+**Q1, Q2 pass as controls.** Adherence is about screen/ram and does not move when Apple leaves
+(n per cell drops 75 → 60). The base/aligned correlation is *higher* without Apple in all six
+pairs (mean +0.022) — Apple is the noisiest brand, so dropping it cleans the estimate. **"The
+preferences are pretrained" is not an Apple artefact.**
+
+**Q3: the brand effect is almost entirely Apple.** Apple is the biggest mover in **10 of 11**
+models when it is in the fit. Remove it and the largest remaining brand swing is 0.020.
+
+**And ~45% of what the other four appeared to do was Apple leaking through the centring.** Their
+total swing is 0.096 in the 5-brand fit but 0.053 when fitted on their own — because zero-mean
+centring makes Apple's fall push the others up mechanically. This is the same relative-measure
+caveat recorded earlier today, now quantified.
+
+**Residual, not zero.** The four still reorder in 8 of 11 models, but by small amounts and with no
+consistent direction across families — too small to interpret with this data.
+
+Statement to use:
+
+> A contract reorders the brands almost entirely by pushing **Apple** down. There is a small
+> residual movement among the other brands, too small and too inconsistent to interpret.
+
+Confirms the old `brand_consistency.ipynb` result ("drop Apple and the other four are stable") on
+all three families, and quantifies how much of the leftover motion was an artefact of having
+Apple in the fit.
+
+---
+
 ## 2026-08-20 — Verified: the Apple decay is not an artifact of the modelling
 
 Lotan's worry: the decay could come from our method rather than the models. Checked. It does not.

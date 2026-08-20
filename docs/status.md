@@ -78,6 +78,12 @@ survives a contract?
    models, against each rival separately with CIs excluding zero, on all five templates, with
    saturation unchanged. **Limit:** the measure is zero-sum across brands, so only *relative*
    standing is ever measurable; say "Apple loses ground", not "Apple's utility fell".
+   **It is also almost entirely Apple (2026-08-20).** Dropping every comparison containing an
+   Apple (9900→6300 rows, 4-brand fit): adherence κ is unchanged (largest shift 0.045), the
+   base/aligned r is unchanged or **higher** in 6/6 pairs, but the biggest brand swing falls
+   0.079 → **0.020**. About **45%** of the other four brands' apparent movement was Apple leaking
+   through the zero-mean centring. A small residual reordering remains in 8/11 models, too small
+   and inconsistent to interpret.
    **Sharpened 2026-08-16.** The decay is *not* a fitting artifact — it survives a model-free,
    within-spec-cell measurement (+7.45 → −0.88 under `ram=8GB`) — and it is *not* about the
    contract asking for a modest level: Apple falls under **every** constraint, including
