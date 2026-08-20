@@ -64,11 +64,15 @@ survives a contract?
 3. **Apple's brand premium is conditional on compliance — in qwen and gemma.** Under a
    contract, even the *compliant* Apple loses its rank (rank 1 → 5). It is one brand, not brand
    preference in general.
-   **Not universal across families (2026-08-18).** Apple is rank 1 in **7 of 8** qwen/gemma
+   **The premium is not universal (2026-08-18).** Apple is rank 1 in **7 of 8** qwen/gemma
    aligned models, but in **0 of 4** OLMo models — rank 2/5/5/4, and *significantly below* the
-   other brands in olmo-7B and olmo-13B. **OLMo has no Apple premium to lose**, so the whole
-   Apple story must be stated as qwen+gemma, not "LLMs". Whether OLMo shows *some other* brand
-   decay is untestable until its contract runs land.
+   other brands in olmo-7B and olmo-13B.
+   **But the DECAY is universal (2026-08-20, corrects the above).** With OLMo's contract runs in,
+   Apple is the biggest-moving brand in **7 of 8** OLMo cells and moves **down** in **4/4** aligned
+   models — from a start already below average. So the decay is **not** regression from a high
+   starting point; a stated requirement pushes Apple down specifically in all three families,
+   wherever it starts. Mean move under the double contract: qwen −0.031, gemma −0.090,
+   olmo −0.042.
    **Sharpened 2026-08-16.** The decay is *not* a fitting artifact — it survives a model-free,
    within-spec-cell measurement (+7.45 → −0.88 under `ram=8GB`) — and it is *not* about the
    contract asking for a modest level: Apple falls under **every** constraint, including

@@ -8,6 +8,56 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-08-20 — OLMo under contracts: Apple decays **without ever having been on top**
+
+Stage 2 landed (all contracts for olmo 1/7/13/32 and olmo-pt 1/7/13; olmo-pt 32B is missing
+`screen=14-inch`). Notebook: [Notebooks/olmo_contracts.ipynb](../Notebooks/olmo_contracts.ipynb).
+
+### This corrects the 2026-08-18 entry
+
+That entry found OLMo has no Apple premium (rank 2/4/5/5) and concluded there was "no premium to
+lose". **Wrong conclusion — Apple falls anyway.**
+
+Apple is the **biggest-moving brand in 7 of 8** OLMo model × kind cells, and it moves **down**
+from a start that is already below average:
+
+| aligned model | Apple `none` → `14in+8GB` |
+|---|---|
+| olmo-7B | −0.055 → −0.098 |
+| olmo-13B | −0.072 → −0.096 |
+| olmo-32B | −0.014 → −0.099 |
+
+Across families, Apple's move under the double contract:
+
+| family | moves down | mean move | mean swing |
+|---|---|---|---|
+| qwen | 3 / 4 | −0.031 | 0.105 |
+| gemma | 4 / 4 | −0.090 | 0.098 |
+| **olmo** | **4 / 4** | **−0.042** | 0.057 |
+
+(qwen's exception is qwen-0.5B, the noise model.)
+
+**What it kills:** the reading that Apple is high unconstrained and any specificity pulls it back
+toward the pack. OLMo's Apple starts *below* the pack and still falls. So this is not regression
+to the mean — **a stated requirement pushes Apple down specifically, in all three families,
+independent of where it started.** Consistent with the 2026-08-16 prompt-specificity result
+(removing the frame *raises* Apple), but no longer explainable as regression.
+
+### Adherence
+
+OLMo aligned behaves like qwen: agree 100% everywhere, `before` 0%, κ = 1.11 / 1.73 / 1.30 / 1.79
+on ram. Its **base** models obey much less on ram — κ = 0.10 / 1.18 / 0.75 / 0.57, conflict win
+rate 0 / 69 / 0 / 32% — where qwen base sat at κ ≈ 1.1 across the board.
+
+### Caveats
+
+- `olmo-pt 32B screen=14-inch` never ran; that cell is blank.
+- Screen κ is inflated for the larger models (9.9, 15.9) because `g0` is tiny (−0.38 to −0.92) —
+  the small-denominator problem from 2026-08-15. Read as "flipped", not as a magnitude.
+- OLMo base `|γ|/S` ≈ 0.5, so its numbers are noisier than qwen's throughout.
+
+---
+
 ## 2026-08-18 — OLMo has **no Apple premium**. The deck-5 Apple story is qwen+gemma, not "LLMs".
 
 Asked whether OLMo shows the Apple decay. **The decay itself is not measurable** — it is a change
