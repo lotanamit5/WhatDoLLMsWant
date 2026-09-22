@@ -219,3 +219,4 @@ obsidian_symlink
 
 # separate repo, symlinked in (would be a broken link on the cluster)
 grum4llm
+Thesis
