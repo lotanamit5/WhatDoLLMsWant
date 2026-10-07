@@ -8,6 +8,278 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-07 — The no contract → `4GB` path (figs4nir Graph 6: F14–F17)
+
+`ram=4GB` asks for the RAM level every model likes least, so every RAM comparison it touches is a
+conflict. Runs exist for the 8 qwen/gemma models (Phase A, 08-12); OLMo has none.
+
+| model | 4GB beats 8GB (% of 75 pairs) | 4GB beats 16GB | κ vs 8GB / vs 16GB |
+|---|---|---|---|
+| qwen-0.5B | 100 | 100 | (no preference to start with) |
+| qwen-7B | 69 | 96 | 1.13 / 1.39 |
+| qwen-32B | **0** | 79 | **0.52** / 1.06 |
+| qwen-72B | 100 | 100 | 1.35 / 1.55 |
+| gemma-1B | 0 | 0 | 0.32 / 0.13 |
+| gemma-4B | 0 | 13 | 0.38 / 0.73 |
+| gemma-12B | 0 | 1 | 0.50 / 0.65 |
+| gemma-27B | 79 | 100 | 1.25 / 1.46 |
+
+- Only **qwen-72B and gemma-27B** fully pay (and qwen-0.5B, which had nothing to pay). The same
+  two paid fully for `8GB`.
+- **qwen-32B lands in the middle:** under `4GB` the 8GB laptops take ranks 1–10 and 4GB still
+  loses every direct match to 8GB, while it does beat 16GB (79%). It gives up "16GB", not "more
+  RAM". Same for qwen-7B, more weakly.
+- Read off F14/F16, not counted: under `4GB` the **16-inch 4GB laptops fall** in qwen-32B (the
+  13/14-inch 4GB ones rise) — the low-RAM request seems to pull toward small laptops too. Worth
+  a count before claiming it.
+- Mean rank of the 4GB laptops (no contract → `4GB`): qwen-72B 38.0 → 9.2, gemma-27B 38.0 → 8.0,
+  qwen-32B 38.0 → 30.5, gemma-4B 38.0 → 38.0.
+
+---
+
+## 2026-10-07 — Deck-5 figures rebuilt with all 12 models (figs4nir Graph 5: F11–F13)
+
+Three old-deck figures recreated in their original style, numbers from the corrected
+`figs4deck5_fix` method, now including OLMo. PMI constant C recovered from saturation for
+qwen/gemma (2.25–10.50; qwen-0.5B unknown); **OLMo was collected with PMI off, so C = 0**. The 8
+qwen/gemma models reproduce the `figs4deck5_fix` numbers exactly (e.g. qwen-32B RAM conflict
+17.33%, γ −4.73…+3.53).
+
+- **F11 adherence (conflict win rate, % of 75 pairs):** screen — all 4 OLMo pay except olmo-1B
+  (32%); RAM — olmo-7/13/32B pay 100%, olmo-1B 66.7% (near-indifferent, g0 −0.86). With OLMo,
+  RAM conflicts fail in 4 of 12 models (qwen-32B, gemma-1B/4B/12B), screen in 2 (gemma-1B,
+  olmo-1B).
+- **F12 feature scales (no contract):** RAM range dominates everywhere (OLMo 0.7–15.2, smaller
+  than qwen/gemma 15.6–35.2). Corrected |γ| beats the whole brand range in 6 of 11 models with
+  a known γ (qwen-7/32/72B, gemma-1B, olmo-7B, olmo-32B).
+- **F13 Apple decay:** Apple is rank 1 with no contract in 7 of 8 qwen/gemma models and in 0 of 4
+  OLMo; it falls under every contract in 11 of 12 (olmo-1B flat, swing 0.04). Same as the 08-20
+  finding, now in one figure.
+
+**Trimmed the same day (Lotan):** F11 now shows only the conflict bars (free bars and no-contract
+ticks removed; still in the table) for the two largest models per family; F12 and F13 show only
+qwen-72B; new **F12b** = the qwen-72B level weights with γ as a signed bar. qwen-72B, no
+contract: effect brand 2.84, screen 4.26, RAM 25.39; γ = −3.81 (fitted −9.44 + C 5.62), so the
+slot effect beats the whole brand range and is ~90% of the screen range.
+Then: OLMo dropped from F11 (now qwen-32/72B, gemma-12/27B); the F12 effect-bars figure removed
+and the weights figure renamed F12b → **F12** (its text now explains that a feature's effect is
+the distance between its highest and lowest bar).
+
+---
+
+## 2026-10-06 — Figures for Nir: laptop rank along the contract path (new notebook)
+
+New notebook for the figures we show Nir, kept small: each figure is one cell, and a table at the
+top lists what is in use and what was left out on purpose.
+Notebook: [Notebooks/figs4nir.ipynb](../Notebooks/figs4nir.ipynb), figures in `figs/nir/`.
+Replaces the old bump chart in `num_vs_txt.ipynb` (old fit, no frame filter).
+
+**Figures.** Rank 1–45 from `FeatureBT` utilities, frame `shopping`, path none → `14-inch` →
+`14-inch + 8GB`, 12 aligned models. F1/F2: all 45 laptops (qwen-7B labelled; grid). F3/F4: the 5
+laptops of each (screen, ram) spec grouped into one line at their **mean rank** (45 lines → 9).
+
+**Mean rank of the target spec (14-inch, 8GB).** 3.0 = its 5 laptops hold ranks 1–5.
+
+| model | none | 14-inch | 14-inch + 8GB |
+|---|---|---|---|
+| qwen-0.5B / 7B / 32B / 72B | 12.6 / 23.0 / 22.6 / 23.0 | 6.6 / 16.0 / 8.0 / 8.0 | 3.0 / 3.0 / 3.0 / 3.0 |
+| gemma-1B / 4B / 12B / 27B | 22.6 / 24.4 / 23.0 / 23.2 | 22.0 / 18.0 / 8.0 / 8.0 | **23.0** / **8.0** / 3.0 / 3.0 |
+| olmo-1B / 7B / 13B / 32B | 26.2 / 26.0 / 21.4 / 21.8 | 17.2 / 8.0 / 9.4 / 8.0 | **6.6** / 3.0 / 3.2 / 3.0 |
+
+- 9 of 12 models put all 5 compliant laptops on top under the full contract. gemma-1B does not
+  move at all. gemma-4B and olmo-1B keep the 14-inch 16GB above 8GB.
+- Under `14-inch` alone, 6 of 12 models rank the target spec at 8.0 = right after the five 14-inch
+  16GB laptops: the screen request is met, the RAM preference is kept.
+- Without a contract, the #1 laptop is Apple 16in 16GB in 7 of 12 models (none of the OLMo).
+
+**Added F1b/F2b** (same day): the same charts coloured by **rank change** from no contract to the
+full contract (blue = up, red = down, gray = stayed; width grows with the change; one shared scale
+of ±40 across panels). Right labels carry the change, e.g. qwen-7B: Apple 16in 16GB **−29**
+(rank 1 → 30), the five compliant laptops +16 to +23. Contract-status colouring (F1/F2) is kept
+until Nir picks one.
+
+**Replaced the same day:** colouring by rank change answered the wrong question (how much a laptop
+moved, not which laptop it is). F1b/F2b now mark each feature: **colour = RAM, line style =
+screen, marker = brand** (mapping in `ENC`, swappable). Visible right away in the grid: RAM forms
+three colour bands. Under `14-inch`, the 14-inch 4GB laptops (solid green) rise above every
+13- and 16-inch 8GB laptop in qwen-32/72B, gemma-12/27B and olmo-7/32B, then drop back part of
+the way under `14-inch + 8GB` (read off the figure, not counted).
+Then changed on Lotan's request: RAM = **one blue, light 4GB → dark 16GB** (ramp steps
+250/450/650), screen = **dotted 13 / dashed 14 / solid 16**. Brand stays on the marker.
+Then: RAM back to **three distinct colours** (green 4GB, orange 8GB, blue 16GB; palette slots
+3/2/1), and **F3/F4 (grouped by spec) now use the same style** with a plain dot marker. Only F1/F2
+still use the contract-status colouring.
+Then (Lotan's idea): **the channels follow the contract order**, derived from `PATH` in code —
+1st constrained feature → colour (screen: orange 13, blue 14, green 16), 2nd → line style (RAM:
+dotted 4GB, dashed 8GB, solid 16GB), never constrained → marker (brand). A different path remaps
+itself. Reads well: under `14-inch` all blue lines go up; under `14-inch + 8GB` the blue dashed
+ones take the top.
+**Final set (same day):** the contract-status versions are gone. The notebook now holds **F1–F4,
+all in the feature style** (F1 = 45 laptops qwen-7B, F2 = grid, F3 = by spec qwen-7B, F4 = grid),
+with the setup cells under a collapsed `## Setup` heading. Old PNGs in `figs/nir/` replaced.
+**Style changed again (Lotan's spec):** each requirement has a colour (14-inch red, 8GB blue,
+both purple, none gray; validated all-pairs). A **segment** is coloured by which requirements of
+the contract it leads into the laptop meets, so a laptop's colour changes when the contract adds a
+requirement. **Apple = larger star.** The feature style (colour = screen, etc.) moved to "left
+out". With the stars visible, qwen-7B shows Apple 14in 8GB as the *last* of the five compliant
+laptops (rank 5) — the Apple decay, visible directly in the figure.
+**Added F1s:** F1 on a sample — one laptop per (screen, RAM) spec (9 of 45), brands spread so each
+appears, full 1–45 ranks kept (no re-ranking), `SEED = 0`. Sample: Dell 16in 16GB, Lenovo 13in
+16GB, HP 16in 8GB, ASUS 14in 8GB, Apple 14in 16GB, Dell 13in 8GB, Lenovo 13in 4GB, HP 14in 4GB,
+ASUS 16in 4GB.
+Then: requirement colours lightened (14-inch **pink** `#e87ba4`, 8GB **light blue** `#6da7ec`,
+purple kept; all pairs pass, contrast below 3:1 so labels/legend are required), and **Apple is now a
+dashed line** instead of a star. All five figures grouped under a `# Graph 1` heading.
+
+**Graph 2 added (F5, F6):** utility bars with the spread across prompt templates, qwen-7B, no
+contract. `FeatureBT` fitted on each of the 5 templates separately (each is a full 1980-pair
+design); each template rescaled to the mean spread S before comparing, because templates differ
+mainly in loudness. Bar = mean, error bar = min–max over the 5 templates.
+
+| | median half-range | max half-range | range of the values |
+|---|---|---|---|
+| weights (11 levels) | 0.12 | 0.28 | 26.55 |
+| utilities (45 laptops) | 0.24 | 0.49 | 31.28 |
+
+Raw S per template 27.67–34.57 (ratio 1.25); lowest correlation between two templates 0.999.
+**The template barely matters once scale is removed** — the error bars are ~1% of the range.
+
+**Single-model figures switched to qwen-32B** (`HEADLINE`). Graph 2 for qwen-32B: raw S 41.76–48.06
+(ratio 1.15), weight half-range median 0.14 / max 0.39 vs range 35.22, utility half-range median
+0.29 / max 0.91 vs range 43.66, lowest template correlation 0.999. Same conclusion.
+
+**Caveat found while checking F1 for qwen-32B: "rank" ≠ "who wins head-to-head".** Under the full
+contract, F1 puts the five 14in 8GB laptops at ranks 1–5 and 14in 16GB at 6–10. But head-to-head
+(same brand + screen, RAM 8 vs 16, position-corrected D), qwen-32B still prefers **16GB in 100%**
+of the 14-inch pairs (D = −12.45). This is **not** an additive-fit artifact: a model-free rank
+(each laptop's mean margin against all 44 others) gives the same ranks 1–5 / 6–10 (Spearman with
+the additive ranks 0.977; qwen-7B 0.978). The 8GB laptops rank higher because they beat the
+*rest of the field* by more, while losing the direct match. So F1's rank means "standing against
+all laptops", and must not be read as "the model picks 8GB over 16GB".
+w(8GB) − w(16GB) for qwen-32B by contract: none −15.70, `14-inch` −6.40, `ram=8GB` +4.87, full
++2.70.
+
+**Added F1w: rank by head-to-head wins** (number of the 44 others a laptop beats, D > 0 averaged
+over templates; ties by mean margin). qwen-32B, mean wins out of 44:
+
+| contract | 14in 8GB | 14in 16GB | Spearman(utility rank, win rank) |
+|---|---|---|---|
+| none | 21.8 | 37.0 | 0.992 |
+| 14-inch | 37.0 | 42.0 | 0.985 |
+| 14-inch + 8GB | 37.4 | 41.6 | 0.925 |
+
+Under the full contract F1w puts **14in 16GB at ranks 1–5 and 14in 8GB at 6–10** — the reverse of
+F1. The contract lifts 14in 8GB by +15.6 wins (21.8 → 37.4), but never above its 16GB twin.
+
+**Is the qwen-32B rank/head-to-head split general? Checked on all 12 models (no new figures;
+script in the session scratchpad, logic = `duel()` in figs4nir).** Full contract, 14in 8GB vs its
+14in 16GB twin (mean ranks of the 5 brands; D = head-to-head, > 0 = 8GB wins):
+
+| model | utility rank 8 / 16 | win rank 8 / 16 | head-to-head D (8GB wins of 5) | pattern |
+|---|---|---|---|---|
+| qwen-0.5B | 3.0 / 8.8 | 3.8 / 8.6 | +0.20 (5) | agree, pays |
+| qwen-7B | 3.0 / 8.0 | 5.6 / 5.6 | +4.79 (4) | pays; wins tie |
+| **qwen-32B** | 3.0 / 8.0 | 8.0 / 3.0 | **−12.45 (0)** | **split** |
+| qwen-72B | 3.0 / 8.0 | 6.0 / 5.0 | +2.27 (5) | pays; wins lean 16 |
+| gemma-1B | 23.0 / 8.0 | 21.0 / 6.2 | −11.08 (0) | agree, refuses |
+| gemma-4B | 8.0 / 3.2 | 8.0 / 3.0 | −12.37 (0) | agree, refuses |
+| gemma-12B | 3.0 / 8.0 | 3.0 / 8.0 | +2.25 (5) | agree, pays |
+| **gemma-27B** | 3.0 / 8.0 | 4.8 / 6.2 | **−10.34 (0)** | **split, even by wins** |
+| olmo-1B | 6.6 / 4.6 | 3.8 / 11.0 | +0.11 (5) | utility disagrees (tiny D) |
+| olmo-7B / 13B / 32B | 3.0 / 17.2, 3.2 / 8.6, 3.0 / 12.6 | agree | +6.74 / +2.02 / +3.31 (5) | agree, pays |
+
+So the split (top by utility, but loses the direct match to the 16GB twin) appears in **2 of 12:
+qwen-32B and gemma-27B**. In gemma-27B even the win count puts 8GB first (40.0 vs 39.0 wins)
+while it loses all 5 direct matches — a 16GB laptop must lose to some rival that its 8GB twin
+beats (not yet traced).
+
+General measure, % of the 990 laptop pairs where the utility order contradicts a **clear**
+head-to-head winner (|D| > 2): none 0.0–1.6%, `14-inch` 0.0–4.4%, full contract 0.0–**8.6%**
+(qwen-32B highest; olmo-1B/7B/32B and qwen-0.5B 0.0). **Contracts make one-number-per-laptop fit
+worse**, consistent with a contract bonus that depends on the rival.
+
+**Open: these head-to-head results disagree with status §2 point 2 for gemma.** There (under
+`ram=8GB` alone) gemma-27B pays and gemma-12B refuses; here (under `14-inch + 8GB`) gemma-27B
+refuses (D −10.34) and gemma-12B pays (+2.25). Different contract, so not a contradiction yet —
+but adding the screen requirement may flip RAM payment. Worth checking.
+
+**Correction to the "pays / refuses" labels above:** they used only the sign of D. κ = 1 − D_after/D_before
+(14-inch, 8GB vs 16GB, no contract → full contract):
+
+| model | D before | D after | κ | 8GB wins (25 brand × template cells) |
+|---|---|---|---|---|
+| qwen-0.5B | −0.07 | +0.20 | undefined (no preference to start with) | 100% |
+| qwen-7B / 32B / 72B | −21.62 / −27.21 / −20.11 | +4.79 / −12.45 / +2.27 | 1.22 / **0.54** / 1.11 | 88 / 0 / 80% |
+| gemma-1B / 4B / 12B / 27B | −13.06 / −20.31 / −19.67 / −22.45 | −11.08 / −12.37 / +2.25 / −10.34 | **0.15** / 0.39 / 1.11 / **0.54** | 0 / 0 / 92 / 16% |
+| olmo-1B | −0.74 | +0.11 | undefined (near-indifferent) | 84% |
+| olmo-7B / 13B / 32B | −9.26 / −11.47 / −5.03 | +6.74 / +2.02 / +3.31 | 1.73 / 1.18 / 1.66 | 100 / 80 / 100% |
+
+qwen-0.5B and olmo-1B do not "pay" — they had nothing to pay. qwen-32B and gemma-27B give up 54%
+of the preference without crossing zero; only gemma-1B (κ 0.15) truly does not move.
+
+**Graph 1B added: the six Graph-1 figures on path B** (no contract → `8GB` → `8GB + 14-inch`;
+same end point). The notebook now takes the path as a parameter (`make_path`, `PA`, `PB`); all 4
+contracts are loaded. Path A numbers unchanged after the refactor (checked).
+qwen-32B wins out of 44 on path B: 14in 8GB 21.8 → **33.8** → 37.4; 14in 16GB 37.0 → **25.0** →
+41.6. So under `8GB` alone the 8GB laptops do out-win their 16GB twins, and **adding the 14-inch
+requirement brings the 16GB twin back on top** (head-to-head D on 14-inch pairs: −3.12 under
+`8GB` alone vs −12.45 under both). The second requirement weakens the first one — the open
+gemma-12B/27B question above is likely the same effect.
+Mean rank of the (14in, 8GB) spec under `8GB` alone: 4.4–8.0 in 10 models; gemma-1B 23.0 and
+gemma-4B 25.0 do not move.
+Graph 2 (F5, F6) switched to **one neutral colour, no Apple hatch**: the Graph-1 contract colours
+do not apply to a single unconstrained run.
+
+**Graph 3 added (F7): theoretical vs empirical utility.** Theoretical = additive `FeatureBT`
+utility; empirical = BT with one free utility per laptop (45 params, OLS on the same margins,
+centred). qwen-32B on the 4 contracts, plus a table for all 12 models. R² of empirical on
+theoretical, range over the 12 models:
+
+| contract | R² | largest gap (log-odds) |
+|---|---|---|
+| none | 0.981–0.999 | 0.02–3.35 |
+| 14-inch | 0.965–0.997 | 0.02–4.10 |
+| 8GB | 0.959–0.999 | 0.06–3.68 |
+| 14-inch + 8GB | **0.922–0.983** | 0.07–**4.93** |
+
+Additivity is near-perfect without a contract and **worst under the double contract in all 12
+models** (olmo-32B only barely: 0.963 vs 0.965 under 14-inch). qwen-32B: 0.996 / 0.984 / 0.996 / 0.970.
+In qwen-32B, **6 of the 12 labelled largest gaps (3 per panel) are Apple laptops**, all *below*
+the diagonal (Apple 16in 4GB, Apple 16in 8GB, Apple 14in 4GB ...): Apple's premium does not
+spread evenly over specs. Not yet checked in other models.
+
+**F8 added: the F7 scatter for every model × contract** (3 grids, one per family, rows = models,
+columns = contracts, largest gap labelled). **The Apple pattern is general** (counted, not read
+off the figure; script in the session scratchpad):
+
+| measure | value | chance level |
+|---|---|---|
+| the single largest gap is an Apple laptop | **37 of 48** panels (qwen 0.88, gemma 0.94, olmo 0.50) | 20% |
+| Apple laptops among the top-3 gaps | 79 of 144 | 20% |
+| Apple's share of the total squared gap | median **0.34** (0.18–0.74) | 0.20 |
+| of the 37 Apple top gaps, below the diagonal | 27 | — |
+
+So most of what the additive model gets wrong is **Apple**: its brand premium depends on the
+spec (large with 16GB, near zero with 4GB — qwen-32B, no contract: Apple's head-to-head edge
+over same-spec rivals is +15.1 at 13in 16GB but +1.2 at 16in 4GB). This is an Apple × RAM
+interaction, and it ties the "Apple decay" thread to the additivity question. Weaker in OLMo,
+where Apple was never on top.
+F7/F8 points now coloured as in Graph 1 (by which requirements of that panel's contract the
+laptop meets; no-contract panel all gray), Apple = thick dark outline. Read off the figures, not
+counted: under `14-inch + 8GB` the pink points that are 14in **4GB** tend to sit *below* the
+diagonal (qwen-32B, gemma-12B/27B) — the additive model gives them the full 14-inch bonus, the
+model does not.
+
+**Graph 2 extended (F5g, F6f, F6a):** the F5/F6 bars for all 12 models × 4 contracts, one grid per
+family (rows = models, columns = contracts, y shared along a row), each template fitted separately
+and rescaled to the mean spread, error bar = min–max. F5g = feature weights; F6f = **full
+parametrization** (one utility per laptop, `per_template_item`); F6a = **additive** utility. F6f and
+F6a share a fixed laptop order (RAM 16→8→4, then screen, then brand) so they compare bar by bar.
+Read off the figures: the two look nearly identical, consistent with F7/F8; the error bars stay
+small in every model and contract.
+
+---
+
 ## 2026-10-03 — Indifference hypothesis: the slot effect spikes on indifferent pairs (gemma, qwen-32B), not on "both bad" pairs
 
 Nir's Experiment 4 (07-22), tested in its **strong reading**: the *size* of the slot effect grows

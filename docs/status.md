@@ -301,7 +301,9 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     Left open: separate "doesn't care" from "looks alike" more cleanly; why OLMo spikes only
     pair-matched under contracts.
 11. **Full-item vs feature parametrization** — how *similar* and how *good* (likelihood).
-    Nir 08-04, untouched. Also move `fit_full_item_bradley_terry` out of the notebook.
+    Nir 08-04. **"Similar" half done 2026-10-06** (figs4nir F7, `item_utility`): R² of per-laptop
+    on additive utility is 0.98–1.00 without a contract, 0.92–0.98 under `14-inch + 8GB`.
+    Still open: the likelihood comparison. Also move `fit_full_item_bradley_terry` out of the notebook.
 12. **Report Exp 1's number**: corr(β_num, β_txt), Spearman/Kendall. Data exists for 7B; 72B
     is queued (A4), so report 7B now and add 72B when it lands.
 13. **Variance decomposition**: how much variance from order (γ), from persona. *Template part
@@ -316,6 +318,12 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     3-cycles of 14190). qwen-0.5B violates badly (SST 0.158, 453 3-cycles).
 16. **Define a user utility `u` for laptops** so ΔW can be computed. Without it, Aim #2 has
     no metric and every number we report is about `v` alone. **Blocking.**
+
+17. **Figures for Nir** — started 2026-10-06 in
+    [figs4nir.ipynb](../Notebooks/figs4nir.ipynb): rank along the contract path (F1–F4, segments coloured by which requirements are met, Apple dashed; Graph 1B = same on the `8GB`-first path, 45
+    laptops and grouped by spec) and Graph 2 (F5/F6: weights and utilities with the min–max
+    across templates) and Graph 3 (F7: additive vs per-laptop utility), Graph 4 (Borda vs BT), Graph 5 (deck-5 adherence, feature scales, Apple decay), Graph 6 (no contract → 4GB path, 8 qwen/gemma models). Add new figures there, and keep its "in use / left out" table
+    current.
 
 ### C. Method fixes (small, known)
 
