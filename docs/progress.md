@@ -8,6 +8,53 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-03 — Indifference hypothesis: the slot effect spikes on indifferent pairs (gemma, qwen-32B), not on "both bad" pairs
+
+Nir's Experiment 4 (07-22), tested in its **strong reading**: the *size* of the slot effect grows
+when the model does not care. (The weak reading — the slot decides more winners when the model is
+indifferent — is automatic under BT and was not tested.) No new data.
+Notebook: [Notebooks/indifference_positional_bias.ipynb](../Notebooks/indifference_positional_bias.ipynb),
+figures in `figs/indifference/`.
+
+**Measure.** Per (pair, template): `P = (m(x,y) + m(y,x))/2 + C` is the slot effect, the mirror of
+`D`. BT says `P = γ` for every pair. **Spike** = mean |P| in the bottom |D| decile ÷ deciles 3–8
+(deciles 9–10 sit within 1.6–3.6 log-odds of the margin cap, so they are excluded).
+
+| | spike (95% CI) | cross-template | same-look |
+|---|---|---|---|
+| gemma-1B / 4B / 12B / 27B | 3.6 / 3.8 / 4.5 / **5.8** (all CI > 3.3) | 2.3 – 5.4 | 3.9 / 1.6 / 1.8 / 2.4 |
+| qwen-32B | **2.5** [2.3, 2.7] | 2.4 | 1.8 |
+| qwen-7B / 72B | 1.4 / 1.5 | 1.5 / 1.5 | **0.9 / 0.8** |
+| olmo-1B / 7B / 13B / 32B | 0.9 / 1.1 / 0.9 / 1.2 | — | — |
+| base qwen-pt, olmo-pt (7 models) | 0.85 – 1.33 | — | — |
+
+- **Large where it holds.** gemma-27B: |P| = 11.5 on the most indifferent 10% vs ~2 elsewhere —
+  more than its brand range (4.9) and screen range (6.8). Spike > 1.5 on 5/5 templates for
+  qwen-32B and gemma-4/12/27B.
+- **Same slot, harder.** Signed P in decile 1 keeps γ's sign: qwen-32B −11.0 vs −4.3, gemma-27B
+  −10.9 vs −1.7. gemma-4B is the exception — its indifferent pairs go to different slots on
+  different templates.
+- **About half is "look-alike".** Taking deciles within pairs that differ in the same features
+  halves the spike and kills it in qwen-7B/72B. But inside brand-only pairs, ρ(|D|, |P|) = −0.71 to
+  −0.95 in gemma and qwen-32B, so a real indifference part remains.
+- **Not in base models.** Unlike the preferences themselves, this looks added by alignment.
+
+**Nir's framing fails, the hypothesis survives.** Under a contract, *both violate* pairs do not
+get a bigger slot effect than *one complies* (Δ|P| +0.31/+0.76/+0.55 vs +0.93/+0.97/+0.71, means
+over 11 models) — among bad laptops the model still has preferences. The jump is in **both
+comply** pairs under `14in+8GB` (brand-only, |D| 3.9 → 2.4, |P| 3.3 → **6.2**). Pair-matched,
+ρ(Δ|D|, Δ|P|) is negative in **26 of 33** model × contract cells, including olmo-13B/32B.
+
+**Method consequence.** BT's single γ is wrong for gemma and qwen-32B. `D` is unaffected (it
+cancels any slot effect, constant or not). Anything quoting the fitted γ as *the* bias (deck-5
+Fig 12.1) understates it on indifferent pairs.
+
+**Open:** same-look over-controls slightly (brand-only pairs are also the most indifferent); OLMo
+spikes nowhere unconstrained but agrees pair-matched; slot A vs token "1" is still confounded
+(status C.20).
+
+---
+
 ## 2026-08-20 — Drop Apple: adherence and the base/aligned result survive, the brand decay is ~all Apple
 
 Repeated the main measurements on the subset where **neither laptop is an Apple** (9900 → 6300

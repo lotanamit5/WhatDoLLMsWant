@@ -156,6 +156,12 @@ survives a contract?
     not base models in general**. Caveats: r is leveraged by the two RAM extremes (r_brand is
     unstable at +0.76 / −0.31 / +0.52), the 1B base fit is near noise (R² = 0.066), and the 32B
     pair is missing.
+15. **Positional bias is partly how a model says "I don't care" — in gemma and qwen-32B**
+    (2026-10-03). The slot effect |P| on the 10% most indifferent pairs is **2.5–5.8×** the
+    middle (gemma all sizes, qwen-32B); 1.4–1.5× in qwen-7B/72B; none in OLMo or any base model.
+    About half is "the two laptops look alike"; the rest survives within brand-only pairs. Nir's
+    "both bad → strong bias" does **not** hold: what matters is indifference, not violation.
+    So BT's single γ is wrong for these models; `D` is unaffected.
 
 ---
 
@@ -290,9 +296,10 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
    **distance from the requested level**, not by a binary violation. Redo the adherence
    numbers this way and see whether the hard "did it pay?" gap (2%–87%) softens into a
    gradient. Needs no new data; screen and ram are both ordered.
-10. **Nir's Experiment 4** (positional bias): when a contract makes *both* laptops bad, is the
-    bias very strong? When one is clearly better, is it weak? Never done, needs no new data,
-    and it is the cleanest test of "positional bias = the model's way to express indifference".
+10. ~~**Nir's Experiment 4** (positional bias)~~ — **done 2026-10-03**, see section 2 point 15
+    and [indifference_positional_bias.ipynb](../Notebooks/indifference_positional_bias.ipynb).
+    Left open: separate "doesn't care" from "looks alike" more cleanly; why OLMo spikes only
+    pair-matched under contracts.
 11. **Full-item vs feature parametrization** — how *similar* and how *good* (likelihood).
     Nir 08-04, untouched. Also move `fit_full_item_bradley_terry` out of the notebook.
 12. **Report Exp 1's number**: corr(β_num, β_txt), Spearman/Kendall. Data exists for 7B; 72B
@@ -350,6 +357,12 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 23. Move `fit_full_item_bradley_terry` from the notebook into `src/pref_models.py`.
 
 ### D. Phase II groundwork
+23b. **Proposed 2026-10-03, not decided: a realistic laptops set** (`laptops_realistic`) — 6
+    features incl. price (1,944 items), a fixed list of 1,000 designed pairs (10,000 rows/run),
+    8 contracts incl. budget, a triple and an off-topic control, plus a ~30-item real-catalog
+    check set. Gives a user utility in dollars (item 16), the indifference pairs, and the
+    control group (A7). Proposal:
+    https://claude.ai/code/artifact/3768e07d-2f7f-4692-966b-c9f3a797036d — waits on Nir.
 24. **Play with GPT commerce** to get a feel for domains. Nir asked twice (05-12, 07-22, the
     second time in bold with "think about this a lot"). Never done.
 25. **Personal taste vs generic product** — books vs laptops.
