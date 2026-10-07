@@ -67,6 +67,185 @@ the distance between its highest and lowest bar).
 
 ---
 
+## 2026-10-07 — Slot bias lives where the model is indifferent; position-corrected Borda fixes the stacks
+
+**T1 (figs4nir): % won by slot B among same-RAM pairs**, mean over 12 models (50 = no bias):
+
+| contract | 4GB vs 4GB | 8GB vs 8GB | 16GB vs 16GB | different RAM | 4GB pairs where the slot decides |
+|---|---|---|---|---|---|
+| none | **75.0** | 64.9 | 51.9 | 50.7 | 83.0% |
+| 14-inch | 60.0 | 55.5 | 53.2 | 52.9 | 51.2% |
+| 8GB | 55.4 | 43.5 | **72.6** | 51.5 | 79.8% |
+| 14-inch + 8GB | 62.8 | 51.3 | 62.6 | 56.9 | 58.6% |
+
+(Last column corrected same day: the first notebook version of T1 had a pandas index misalignment
+in the pair key and showed ~50% everywhere; fixed by using `.values`. The scratchpad check and
+the fixed notebook agree except qwen-0.5B / olmo-1B, where exact score ties are broken
+differently — the notebook counts a tie as a win for neither slot.)
+
+- The bias is strongest among laptops the model **does not want**: 4GB with no contract; under
+  `8GB` it moves to **16GB vs 16GB** — the level the contract made unwanted. Between laptops of
+  different RAM the slot hardly matters (~51%). Same pattern as the 10-03 indifference finding.
+- The **direction differs by model**: olmo-1B and olmo-7B favour slot A (B wins 0.3–22%),
+  qwen-7B, olmo-32B favour B (up to 100%). Extreme cells: qwen-7B `8GB` 100%, olmo-32B none 100%,
+  olmo-7B `8GB` 0.3%, olmo-1B `8GB` 2.2%.
+
+**Position-corrected Borda (F9c, F10c):** wins = rivals beaten with D > 0 (D = mean over the two
+orders and 5 templates). Spearman with BT, mean over 12 models:
+
+| contract | full: raw → corrected | additive: raw → corrected |
+|---|---|---|
+| none | 0.980 → **0.990** | 0.978 → **0.989** |
+| 14-inch | 0.975 → 0.980 | 0.965 → 0.973 |
+| 8GB | 0.960 → 0.971 | 0.947 → 0.957 |
+| 14-inch + 8GB | 0.972 → **0.986** | 0.970 → 0.969 |
+
+The big stacks are gone: largest tied group 15 → 5 (raw had two 15-laptop stacks, qwen-7B `8GB`
+and olmo-32B none, both pure slot bias). There are slightly *more* ties overall (mean 6.9 vs 4.9
+groups), but small ones: the corrected score is a count out of 44, so it is coarser than the raw
+count out of 440. Correction makes the full BT agree better in every contract; the additive BT
+gains everywhere except the double contract, where its gap to the full BT widens (0.986 vs 0.969)
+— the additivity failure from Graph 3, now seen against a model-free ranking.
+
+**F9 / F10 now use the position-corrected Borda** (raw Borda figures removed; raw-vs-corrected
+numbers kept in T1). In qwen-32B under the double contract the corrected Borda's top 5 are the
+14in **16GB** laptops while both BT fits put 14in 8GB on top — the F1/F1w split, now visible in F9.
+Added **F10s**: one F10 panel on its own, qwen-72B, no contract. Spearman with Borda: full 0.995,
+additive 0.993; the misses are scattered and small, no group of laptops leaves the diagonal.
+
+---
+
+## 2026-10-07 — Borda as ground truth: on this design it IS the per-laptop Bradley-Terry ranking
+
+Lotan's idea: aggregate the raw pairwise matrix with Borda and compare the ordinal ranking against
+the two BT fits (full vs features). Literature + a check on our data:
+
+- **Exact, finite-sample (balanced design).** In the BT model the win totals are a sufficient
+  statistic (Bühlmann & Huber 1963), and when every pair is compared equally often the MLE ranking
+  coincides with the ranking by number of wins — i.e. Borda. Stated plainly in "The many routes to
+  the ubiquitous Bradley-Terry model" (arXiv 2312.13619). Our design is exactly balanced: every
+  unordered pair, both orders, 5 templates.
+- **Limit / consistency.** Rajkumar & Agarwal (ICML 2014): Borda count and the BTL MLE both converge
+  to the optimal ranking under a "low-noise" condition strictly more general than BTL. Shah &
+  Wainwright (JMLR 2018): the counting (Borda) algorithm is minimax-optimal and needs no BTL
+  assumption at all.
+- **Our data, 48 runs:** Borda (raw 0/1 wins, both slots) vs classical logistic BT with one
+  parameter per laptop + position intercept: Spearman median **0.9999**, min 0.981; Kendall τ
+  median 0.998. The gap is Borda's ties (1–20 tied laptops per run, mostly pairs the slot decides).
+  Borda vs the OLS per-laptop fit (mean margin): median 0.982; vs the additive fit: median 0.973,
+  min 0.885. Borda vs the position-corrected win count used in F1w: median 0.979.
+
+**So Borda is not an independent ground truth for the full BT — it is the same ranking.** It is a
+model-free ground truth only for the *additive* BT, where it shows the same 1–11% disagreement as
+F7/F8. The two genuinely model-free rankings we have are Borda (counts) and the mean margin (F1);
+they disagree exactly where the contract bonus depends on the rival (F1 vs F1w).
+
+**Graph 4 added (F9, F10): Borda rank (x) vs BT rank (y), full and additive, every model and
+contract.** Borda = raw win count over both slots, ties share an average rank; BT = the OLS fits.
+Spearman(Borda score, BT utility), range over 12 models:
+
+| contract | full | additive |
+|---|---|---|
+| none | 0.928–1.000 | 0.915–0.998 |
+| 14-inch | 0.929–0.996 | 0.928–0.994 |
+| 8GB | **0.868–0.992** | **0.885–0.994** |
+| 14-inch + 8GB | 0.934–0.993 | 0.933–0.990 |
+
+Agreement is highest with no contract and lowest under `8GB` (qwen-32B 0.925 / 0.885, gemma-12B
+0.906 / 0.886, olmo-7B 0.868 / 0.921). The full fit is closer to Borda than the additive one in
+most cells, but not all. Visible in F10: vertical stacks of points at one Borda rank = many
+laptops tied on wins that the margin still orders. **Corrected same day:** in qwen-7B under `8GB`
+the 15 4GB laptops do NOT lose everything. They lose all 4500 rows against 8GB/16GB laptops, and
+among themselves **slot B wins all 1050 rows** — so each 4GB laptop wins exactly the 70 rows where
+it sat in slot B, whatever its brand or screen. The tie is position bias, not equal preference.
+Raw Borda counts these; a position-corrected Borda (count of D > 0, as in F1w) would not.
+
+---
+
+## 2026-10-07 — OLS BT fit statistics, no contract vs contract (12 models × 4 contracts)
+
+`FeatureBT` is OLS on the margins, so it comes with R², residual SD and p-values. Computed for all
+48 runs (script `bt_stats.py` in the session scratchpad, CSV beside it). Cluster-robust SEs are
+clustered on the unordered laptop pair (990 clusters), as status §2.6 requires.
+
+| mean over 12 models | none | `14-inch` | `8GB` | `14-inch + 8GB` |
+|---|---|---|---|---|
+| R² additive (11 weights) | 0.726 | 0.707 | 0.788 | 0.722 |
+| R² per-laptop (45 weights) | 0.729 | 0.718 | 0.794 | 0.754 |
+| residual SD (log-odds) | 5.06 | 5.20 | 4.32 | 4.81 |
+| slopes significant at 5%, naive / clustered (of 8) | 7.2 / 6.3 | 6.8 / 6.2 | 7.0 / 6.8 | 7.3 / 6.6 |
+| clustered SE ÷ naive SE (median) | 2.21 | 2.09 | 1.46 | 1.96 |
+| F, additive vs per-laptop (34 extra params) | **4.2** | 17.3 | 10.2 | **59.2** |
+
+- **R² does not fall under a contract.** The 10 models with a real preference sit at 0.65–0.94 in
+  every contract; qwen-0.5B (0.09–0.59) and olmo-1B (0.20–0.29) are mostly noise + position. The
+  `8GB` contract even fits *better* (residual SD 4.3 vs 5.1).
+- **Significance is the same with or without a contract**, and uninformative: n = 9900, so 6–7 of
+  the 8 slopes clear 5% either way. The clustered SE is ~2.1× the naive one (docs said 2.28×). γ
+  is significant in 47 of 48 runs.
+- **What does change is the additivity test.** The nested F-test rejects additivity in 45 of 48
+  runs (n is huge), but its size grows from F ≈ 4 with no contract to F ≈ 59 under the double
+  contract, and the R² gap additive → per-laptop grows from 0.003 to 0.032. The contract does not
+  make BT fit worse; it makes the *additive* BT fit worse than the per-laptop one. (F uses naive
+  residuals, so its absolute level is overstated; the trend across contracts is the point.)
+
+---
+
+## 2026-10-07 — Is "RAM is harder to obey" visible in the FeatureBT weights? Yes, but the weights overstate RAM compliance
+
+Gap = w(asked) − w(model's favourite) from `FeatureBT`, single-requirement runs (`14-inch`, `8GB`),
+12 aligned models, `shopping`. Means over the 10 models with a real preference (qwen-0.5B and
+olmo-1B out):
+
+| | gap before | gap after | gap / S before | gap / S after | weights say "pays" | head-to-head says "pays" |
+|---|---|---|---|---|---|---|
+| screen (14 vs 16) | −1.71 | **+11.65** | −0.05 | **+0.40** | 9 / 10 | 9 / 10 |
+| RAM (8 vs 16) | **−10.55** | +4.02 | **−0.37** | +0.21 | 8 / 10 | **6 / 10** |
+
+- **Visible:** the RAM preference to overcome is ~6× the screen one, and after the contract the
+  asked screen ends far more clearly ahead (+0.40 vs +0.21 of the spread).
+- **Overstated:** in **qwen-32B and gemma-12B** the weights put 8GB *above* 16GB (+4.87, +2.59)
+  while the direct 8-vs-16 match is won by 8GB in only 17% / 23% of pairs. Same mechanism as the
+  F1/F1w split: the additive weight averages over all pairs, and the 8GB laptops gain mostly
+  against rivals that do not meet the contract. The weights match the head-to-head sign in 18 of
+  20 (model, feature) cells; these two are the misses.
+- **κ from weights is unreliable for screen**: the before-gap is near 0 (−0.16 to −3.94, positive in
+  olmo-13B), so κ blows up (up to 41.9). Correlation with the head-to-head κ: 0.48. Use the gap
+  normalised by S, not κ, when reading weights.
+
+---
+
+## 2026-10-07 — Re-verified the 08-12 adherence fix (deck-5 fig 5.5D): correct, and RAM is still harder
+
+Lotan found an old deck slide (pre-`bf9e77e` version of `s05_adherence_D_split`) and asked whether
+the fix was right, since the "RAM is harder to obey" pattern looked gone in the fixed figure.
+Independent recomputation from the raw `scores.csv` (no notebook code reused; script in the session
+scratchpad), 8 qwen/gemma models, conflict pairs (same brand + other feature, asked vs the model's
+favourite), `shopping` frame:
+
+- **Old numbers reproduced exactly** by scoring every row on its own with `sign(m)`; **fixed
+  numbers reproduced exactly** with `D = mean of the two slot orders > 0`.
+- A third position-free measure (mean win probability over the two orders > 0.5) gives **the same
+  numbers as D in all 16 cells**. Adding a constant to every `score_a` leaves D unchanged (16/16).
+- **Why the old ones were wrong:** the old "50.0" cells (qwen-32B RAM, gemma-12B RAM, gemma-4B
+  screen) are pairs where **the slot decides 100% of the time** — the candidate wins in one order
+  and loses in the other, so a per-row count gives exactly 50 whatever the model thinks.
+
+| mean over 7 models (qwen-0.5B out) | old (rows) | fixed (D) | wins in BOTH orders | slot decides | κ |
+|---|---|---|---|---|---|
+| screen conflict | 80.4 | **85.0** | 70.3 | 20.2% | 2.3 |
+| RAM conflict | 49.8 | **48.4** | 24.8 | 50.1% | 1.0 |
+
+**The pattern survives the fix.** RAM conflicts are obeyed in 48% of pairs vs 85% for screen; 4 of
+8 models fail RAM (≤ 23%: qwen-32B, gemma-1B/4B/12B) vs 1 of 8 for screen (gemma-1B). What changed
+is the *shape*: the fix turns the old smeared middle values into near-binary pass/fail, so the
+RAM panel *looks* fuller (qwen-7B/72B, gemma-27B jump to ~100). Reason RAM is harder: the
+preference to overcome is bigger (no-contract D on the RAM conflict −19.8 to −27.4 vs −4.9 to −17.1
+for screen), and κ shows screen contracts push past indifference (2.3) while RAM ones just reach it
+(1.0).
+
+---
+
 ## 2026-10-06 — Figures for Nir: laptop rank along the contract path (new notebook)
 
 New notebook for the figures we show Nir, kept small: each figure is one cell, and a table at the
