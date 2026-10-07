@@ -37,6 +37,55 @@ conflict. Runs exist for the 8 qwen/gemma models (Phase A, 08-12); OLMo has none
 
 ---
 
+## 2026-10-07 — Audit of the existing qwen-32B/72B runs: all valid; PMI regime is mixed; C is per batch, not per model
+
+Before relying on the existing `ram=4GB` runs (instead of re-queuing them), audited all 16
+`shopping` runs of qwen-32B and qwen-72B in `laptops_robustness` against every collection bug in
+the git history. Scripts in the session scratchpad (`audit_4gb.py`, `audit_behav.py`, `c_per_run.py`).
+
+- **Integrity — all 16 pass:** 9900 rows, every (ordered pair, template) exactly once, all 45
+  laptops in both slots, no self-pairs, no NaN/inf, templates identical to the `none` run,
+  `prompt_prefix` matches the contract.
+- **Bugs that do not apply:** disk-fill (08-19) only leaves incomplete runs — none here; label
+  scoring fix (08-18) was verified bit-identical for digit labels; EOS / Gemma fixes predate or
+  do not touch qwen instruct.
+- **Each run carries the contract it claims:** in all 16 the asked level gains weight vs no
+  contract (e.g. `ram=4GB`: w(4GB) −18.23 → −1.71 in qwen-32B, −13.10 → +5.83 in qwen-72B).
+  Under `ram=4GB`, qwen-72B prefers 4GB over both 8GB and 16GB in 100% of pairs (κ 1.35 / 1.55);
+  qwen-32B beats 16GB in 78.7% but **loses to 8GB in 100%** (κ 0.52) — it moves toward the middle.
+- **PMI regime is mixed (fingerprint: PMI off ⇒ every stored score ≤ 0).** PMI ON: all 4 path
+  runs (Jul–Aug 4), the 08-12 Phase-A batch incl. both `ram=4GB` runs (commit `dd00ea3`, 2.5 h
+  before PMI was turned off), qwen-72B `none`. PMI OFF: qwen-72B `screen=13-inch` and `ram=16GB`
+  (08-20). **The two newly queued `ram=4GB+screen=14-inch` runs will be PMI OFF.** Harmless for D,
+  weights and rankings (a constant); it matters only for γ and raw `sign(m)`.
+- **C is per batch, not per model.** Within a batch it is identical; between batches it differs
+  by up to 0.25 (qwen-32B 2.25 vs 2.50; qwen-72B 5.625 vs 5.492; gemma-1B, -12B, -27B 0.125–0.25).
+  Pooling a model's runs (as `figs4deck5_fix` and figs4nir Graph 5 did) gave 9 of 28 runs a γ
+  off by up to **0.25**. Fixed in figs4nir Graph 5 (C per run): qwen-72B γ (none) −3.81 → **−3.95**.
+  `figs4deck5_fix` still pools; its γ for qwen-72B / gemma-1B / gemma-27B `none` are off by
+  0.13 / 0.22 / 0.25 — not edited (old notebook).
+
+Corrected no-contract γ (per-run C), the 3 that moved: qwen-72B −3.95, gemma-1B **+3.31**
+(was +3.53), gemma-27B −2.84 (was −2.59). Range now −4.73 … +3.31.
+
+---
+
+## 2026-10-07 — Queued: `screen=14-inch,ram=4GB` for qwen-32B and qwen-72B (2 jobs)
+
+Lotan asked for `4GB` and `4GB + 14-inch` contracts for qwen-32B/72B. **`ram=4GB` alone already
+exists** for both (Phase A, jobs 1293546 / 1293550, 9900 rows, `shopping`) and was not re-queued:
+a second run would collide on the run key. Queued only `screen=14-inch,ram=4GB` →
+constraints_id `ram=4GB+screen=14-inch`, prompt "I prefer a 14-inch screen and 4 GB ram." (same
+wording as the 8GB double contract). Purpose: the 4GB cell of the {RAM level} × {screen added or
+not} 2×2, to test whether adding the screen requirement weakens the RAM request the way it did
+for 8GB in qwen-32B.
+
+Retired the previous batch (OLMo stage 2 + gap-fillers, `ce0ef8f`): all landed except
+**olmo-pt 32B `screen=14-inch`** and **qwen-pt 72B `screen=14-inch`**, which have no complete
+run on disk. Not re-queued — they may still be running; check `squeue` / `out/` first.
+
+---
+
 ## 2026-10-07 — Deck-5 figures rebuilt with all 12 models (figs4nir Graph 5: F11–F13)
 
 Three old-deck figures recreated in their original style, numbers from the corrected

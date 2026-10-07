@@ -96,7 +96,7 @@ survives a contract?
    it is (scalar) × (−δ). The model generalizes to a contract it never saw in *direction*,
    not in magnitude.
 5. **Positional bias decides 15–30% of all comparisons.** γ is now **corrected** (2026-08-16,
-   `figs4deck5_fix.ipynb`): γ = γ_fit + C. Corrected, it runs −4.73 … +3.53 instead of −10.5 …
+   `figs4deck5_fix.ipynb`): γ = γ_fit + C. Corrected, it runs −4.73 … +3.31 (per-run C, 2026-10-07; +3.53 with C pooled per model) instead of −10.5 …
    −0.2. It still beats the whole brand range for 4 of 7 models, but **not for gemma-4B/12B/27B**,
    and **its sign is not universal** — gemma-1B and gemma-4B favour slot A, the rest slot B. The
    old all-negative picture was the PMI constant, not the model. qwen-0.5B's γ is **unknown**
@@ -203,6 +203,10 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 ## 4. Next — ordered
 
 ### A. Runs to collect (cluster) — Track 1
+
+**Queued 2026-10-07 in `scripts/slurms.sh` (2 jobs):** qwen-32B and qwen-72B,
+`screen=14-inch,ram=4GB` — will be collected with PMI **off**, unlike the existing `ram=4GB` and `ram=8GB+screen=14-inch` runs (PMI on); use D / weights, not raw sign(m) or pooled C, when comparing. **Not landed and not queued:** olmo-pt 32B and qwen-pt 72B
+`screen=14-inch` — check whether they are still running before re-adding them.
 
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
