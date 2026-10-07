@@ -42,6 +42,25 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-07: the double contract with the LOW RAM level, qwen 32B and 72B. 2 jobs.
+    # We have `screen=14-inch,ram=8GB` (asks for the MIDDLE RAM level) for every model, and
+    # `ram=4GB` alone (Phase A) for every qwen. This adds the missing cell of that 2x2: does a
+    # screen requirement next to a 4GB request change what the model does with RAM, the way
+    # adding 14-inch to 8GB brought the 16GB twin back on top for qwen-32B (progress.md
+    # 2026-10-07)? Writes constraints_id "ram=4GB+screen=14-inch", next to the 8GB run.
+    #
+    # NOT queued: `ram=4GB` alone. It already exists for both models in laptops_robustness
+    # (qwen-32B job 1293546, qwen-72B job 1293550, 9900 rows each) - a second run would
+    # collide on (family, size, frame, constraints_id).
+    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'],
+     'c': ['screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
+
+    # --- DONE 2026-10-07 check: the OLMo stage-2 batch and gap-fillers (27 jobs, ce0ef8f).
+    # All landed EXCEPT two, which have no complete run on disk as of 2026-10-07:
+    #     olmo-pt 32B  screen=14-inch   (laptops_olmo_pt)
+    #     qwen-pt 72B  screen=14-inch   (laptops_robustness_pt)
+    # They may still be running or may have died - check squeue / out/ before re-adding
+    # them, or a live job and a re-queued one will write two runs under the same key.
     # --- OLMo 2 STAGE 2: the three contracts. 24 jobs. Gate passed 2026-08-18.
     # This is the batch that matters: it is the only route to adherence, kappa and a brand
     # decay for a third family. Sizes ascend so the cheap models finish first.
@@ -49,19 +68,19 @@ parameter_sets = [
     # NOTE olmo-pt 32B UNCONSTRAINED is running separately (launched by hand) and is
     # deliberately absent here - a second run under the same key is the collision the data
     # contract warns about. Its CONTRACT runs below are a different key and are fine.
-    {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
-     'p': ['options'],    'n': ['laptops_olmo']},
-    {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
-     'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
+    # {'m': ['olmo'],    's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
+    #  'p': ['options'],    'n': ['laptops_olmo']},
+    # {'m': ['olmo-pt'], 's': OLMO, 'a': ['laptops_robustness'], 'c': BASELINE_FOUR[1:],
+    #  'p': ['pretrained'], 'n': ['laptops_olmo_pt']},
 
     # --- Known holes in the existing families, worth filling while the GPUs are busy. 3 jobs.
     # qwen-pt 72B never got its screen contract, so that model has no screen adherence number
     # and its base-vs-aligned correlation uses 33 points instead of 44.
-    {'m': ['qwen-pt'], 's': ['72'], 'a': ['laptops_robustness'], 'c': ['screen=14-inch'],
-     'p': ['pretrained'], 'n': ['laptops_robustness_pt']},
+    # {'m': ['qwen-pt'], 's': ['72'], 'a': ['laptops_robustness'], 'c': ['screen=14-inch'],
+    #  'p': ['pretrained'], 'n': ['laptops_robustness_pt']},
     # qwen-72B instruct is the only model missing two of the eight Phase A conditions.
-    {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
-     'c': ['screen=13-inch', 'ram=16GB'], 'n': ['laptops_robustness']},
+    # {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
+    #  'c': ['screen=13-inch', 'ram=16GB'], 'n': ['laptops_robustness']},
 
     # --- SUPERSEDED 2026-08-18 by the OLMo runs above: the gemma format probe.
     # Kept because the question it asks is still open, just no longer the priority.
