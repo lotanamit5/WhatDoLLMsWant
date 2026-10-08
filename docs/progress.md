@@ -63,6 +63,12 @@ All colours are now one `COLORS` argument (feature colours, both/none, γ, the t
 non-Apple brands); missing keys fall back to `DEFAULT_COLORS`. Note: a stale VS Code buffer of an
 older version re-saved `figs/summary/summary_qwen-32B.png` at 14:10 — revert the tab before
 running, or saving it will overwrite the current notebook.
+Then (Lotan's notes): **four panels in one grid row** (axes aligned top and bottom; sub-figures
+dropped). Panels 2 and 3 **merged**: one plot with `default` in the middle, the 4GB path to the
+left and the 14" path to the right, one legend ("meets 8GB / 4GB"). Every y-axis has only its two
+end ticks with the label between them; numeric ends are rounded outward (`ends_only`). Panel 1:
+`high`/`low` on both axes, both labels between the ticks, legend lower left. `WIDTHS`, `SUBTITLES`,
+`XLABELS`, `YLABELS` now have 4 entries; `PAIR_GAP` removed.
 
 **Local Python env:** `.vscode/settings.json` points at the cluster's conda path, which does not
 exist on the WSL machine, and the system Python has no pip/ipykernel. Created `.venv/` in the
