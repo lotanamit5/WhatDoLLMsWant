@@ -8,6 +8,94 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-08 — Queued: second persona batch, 8 jobs (split `student`, two brand stereotypes), + 4 voice jobs
+
+New `FRAMES` in `data_collection.py`, each = persona sentence + the unchanged `shopping` sentence:
+
+| frame | persona sentence | question |
+|---|---|---|
+| `student_only` | I am a student. | which half of `student` carries its effect — identity… |
+| `no_money` | I do not have much money. | …or money |
+| `windows` | My company only supports Windows. | does brand move with no price in the prompt? away from Apple |
+| `designer` | I am a graphic designer. | the same, toward Apple |
+
+No contract, qwen-32B and qwen-72B, `data/laptops_persona/`. `create_slurms.py` now pins nodes by
+model size (`NODES_BY_SIZE`): qwen-32B → plato1/plato2, qwen-72B → plotinus1/plotinus2. The first
+batch's qwen-72B `editor` went to plato2 and never landed; it is **not** re-queued (left as a
+commented line until the cluster confirms the old job is not still running).
+
+**Also queued: persona voice, 4 jobs** — "I am a poor student" vs "Act as a poor student". New
+frames `role_none` ("Act as a person who is looking to buy a laptop.") and `role_student` ("Act
+as a student who does not have much money and is looking to buy a laptop."), qwen-32B/72B. With
+the existing `shopping` and `student` runs this is a 2×2, voice {user, role} × persona {none,
+student}, so the effect of the "Act as" wording itself is separable from the persona. New config
+field **`frame.voice`** (`user` / `role` / `model` / `third_person` / `none`), derived from the
+frame name (`FRAME_VOICE`), documented in `config_schema.md`. Note: the system message ("You are
+a helpful assistant…") stays; the role instruction sits in the user turn, like the user-voice
+persona. Total in `slurms.sh`: 12 jobs.
+
+---
+
+## 2026-10-08 — Persona vs explicit contract: "poor student" mostly says "not Apple", not "less RAM"
+
+Persona runs landed: qwen-32B `student` (1442267) and `editor` (1442268), qwen-72B `student`
+(1442269); qwen-72B `editor` missing. Compared with `none`, `ram=4GB`, `ram=8GB`, `ram=16GB`
+(same model, `shopping`). Notebook [persona_vs_contracts.ipynb](../Notebooks/persona_vs_contracts.ipynb),
+figures in `figs/persona/`. Persona runs are PMI off, the rest PMI on: only weights, ranks and D
+are used.
+
+| weight change vs `none` | qwen-32B student | ram=4GB | ram=8GB | qwen-72B student | ram=4GB | ram=8GB |
+|---|---|---|---|---|---|---|
+| Apple | **−22.4** | −4.1 | −3.0 | **−10.2** | −5.7 | −3.7 |
+| 16GB | −16.3 | −18.3 | −11.1 | −5.0 | −19.3 | −11.8 |
+| 4GB | +12.0 | +16.5 | +1.6 | +3.4 | +18.9 | −0.2 |
+| 16-inch | −11.3 | −4.9 | −1.5 | −4.3 | −3.6 | −2.3 |
+
+Head to head (% of 75 *ceteris paribus* pairs): qwen-32B `student`: 8GB beats 16GB **100%**
+(explicit `ram=8GB`: 17%), 4GB beats 16GB 41%, 4GB beats 8GB 0%. qwen-72B `student`: 8GB beats
+16GB 4%, 4GB beats anything 0%.
+
+- **The persona's largest effect is on brand, which it never mentions.** "Poor student" drops
+  Apple by 22 log-odds in qwen-32B (5× the explicit 4GB request) and 10 in qwen-72B — the model
+  reads "no money" as "not the expensive brand". It also moves to smaller screens (16-inch −11.3
+  in qwen-32B).
+- **On RAM it lands in the middle:** qwen-32B moves to 8GB (8GB > 16GB in 100% of pairs — more
+  than the explicit `ram=8GB` contract ever got), never to 4GB. qwen-72B barely moves RAM.
+- Laptop-utility Spearman with each run: qwen-32B `student` ~ `ram=4GB` 0.79, `none` −0.04;
+  qwen-72B `student` ~ `none` 0.70, `ram=16GB` 0.79, `ram=4GB` −0.59.
+- **`editor` does nothing** in qwen-32B: Spearman 0.994 with `none` (16GB is already on top).
+
+This is the main conjecture in its cleanest form: given an incomplete contract ("I don't have much
+money"), the model completes it with its own prior (price = brand), on a feature the user never
+named.
+
+**Added P4, rank flow default → persona** (colour = RAM, Apple dashed; `figs/persona/P4_rank_flow.png`).
+qwen-32B `student`: #1 moves from Apple 16in 16GB to **Lenovo 13in 8GB**; all fourteen 8GB/16GB
+non-Apple 13–14in laptops rise, every Apple laptop falls (Apple 16in 16GB −43 places, to rank 44).
+qwen-72B `student`: #1 becomes ASUS 14in 16GB; 16GB stays on top, Apple falls (−22 to −26).
+qwen-32B `editor`: ranks move by at most 3 places.
+
+**Added P5: the persona's change is tied to the model's own defaults** (`figs/persona/P5_link_to_default.png`).
+Per laptop, utility change vs default utility: qwen-32B `student` r = −0.71 (slope −0.89), qwen-72B
+r = −0.61 (−0.40); the top-10 default laptops fall 23 / 7 places on average, the bottom 10 rise
+16 / 5. So "no money" = "move away from what I would have recommended" — the model's default
+favourite is its notion of expensive. **But not evenly by feature** (slope of student weights on
+default weights; 1 = unchanged, 0 = flattened, −1 = mirrored):
+
+| | brand | screen | RAM |
+|---|---|---|---|
+| qwen-32B student | **−6.16** (range 3.8 → 26.6) | **−2.98** (4.7 → 14.8) | +0.21 (35.2 → 11.8) |
+| qwen-72B student | **−3.61** (2.8 → 10.9) | −0.64 | +0.68 |
+| qwen-32B `ram=4GB` (contract) | −0.36 | −0.82 | +0.02 |
+
+The persona **reverses and amplifies the small features** (brand, screen) far past the default,
+but only **shrinks RAM** (16GB still above 4GB). The brand reversal is Apple alone: the other four
+brands all rise together. The explicit 4GB contract does the opposite — flattens RAM, barely
+touches brand. Variance share of the student's utility change: qwen-32B brand 37 / screen 20 /
+RAM 42 %, qwen-72B 54 / 19 / 27 %; for `ram=4GB` RAM is 92–94 %.
+
+---
+
 ## 2026-10-08 — Queued: two personas, `student` and `editor` (4 jobs)
 
 Does saying *who* the user is move the model to a spec it was never asked for? Added as two new

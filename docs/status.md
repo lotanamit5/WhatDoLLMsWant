@@ -204,7 +204,9 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-08 (`slurms.sh`, 4 jobs):** personas — `--frame student` / `--frame editor`, no contract, qwen-32B and 72B, in `data/laptops_persona/`. Question: does "I am a student and I do not have much money" pull toward 4GB (and "video editor" toward 16GB) with no spec asked?
+**Queued 2026-10-08 (`slurms.sh`, 12 jobs):** second persona batch — `student_only`, `no_money`, `windows`, `designer` — plus persona voice — `role_none`, `role_student` ("Act as …") — qwen-32B (plato1/2) and qwen-72B (plotinus1/2), `data/laptops_persona/`.
+
+**Landed 2026-10-08: 3 of the 4 persona jobs** (qwen-72B `editor` missing — check the cluster); analysed in [persona_vs_contracts.ipynb](../Notebooks/persona_vs_contracts.ipynb). Was queued: — `--frame student` / `--frame editor`, no contract, qwen-32B and 72B, in `data/laptops_persona/`. Question: does "I am a student and I do not have much money" pull toward 4GB (and "video editor" toward 16GB) with no spec asked?
 
 **Landed 2026-10-07 and in figs4nir Graph 6:** qwen-32B and qwen-72B `screen=14-inch,ram=4GB` (PMI off). **Not landed and not queued:** olmo-pt 32B and qwen-pt 72B
 `screen=14-inch` — check whether they are still running before re-adding them.
