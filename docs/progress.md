@@ -8,6 +8,45 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-08 — `4GB + 14-inch` landed for qwen-32B/72B: adding the screen weakens the RAM request, in all 6 cells
+
+Jobs 1441002 (32B) and 1441003 (72B), `ram=4GB+screen=14-inch`. Audit: 9900 unique rows, all 45
+laptops, same templates, correct prompt, no NaN; **PMI off** (max score 0.000), unlike the PMI-on
+runs they are compared with — irrelevant for D, weights and ranks. Both requirements are heard
+(w(4GB) and w(14-inch) rise in both models; 14-inch beats 13 and 16 inch in 100% of pairs).
+
+Added to figs4nir Graph 6: F14/F14w (qwen-32B) now run none → 4GB → 4GB+14in; new F15b, F16b
+(qwen-32B/72B on the full path) and **F17b, the RAM 2×2**:
+
+| | qwen-32B win % (κ) alone → + 14-inch | qwen-72B win % (κ) alone → + 14-inch |
+|---|---|---|
+| asks 8GB: 8GB vs 16GB | 17 (0.91) → 33 (0.83) | 100 (1.64) → 91 (1.15) |
+| asks 4GB: 4GB vs 16GB | 79 (1.06) → 33 (0.84) | 100 (1.55) → 85 (1.10) |
+| asks 4GB: 4GB vs 8GB | 0 (0.52) → 12 (0.48) | 100 (1.35) → **5** (0.90) |
+
+- **κ falls in all 6 cells**: a second requirement weakens the RAM request, for both RAM levels.
+  Strongest: qwen-72B 4GB vs 8GB, from always picking 4GB to almost never.
+- Win % disagrees with κ in qwen-32B 8GB vs 16GB (17 → 33 while κ falls): the win % pools all
+  three screens, and the 14-inch pairs alone go the other way (0%, see 10-07). Read κ.
+- Under `4GB + 14-inch` both models rank by **screen first**: in qwen-32B the 14-inch 8GB/16GB
+  laptops take ranks 1–10 and the compliant 14-inch 4GB laptops sit at 11–15.
+
+`slurms.sh` regenerated with the batch retired (0 jobs).
+
+**Added path D, screen first (F18–F20):** no contract → `14-inch` → `14-inch + 4GB` for qwen-32B
+and qwen-72B (same end run as path C). Mean rank of the 14-inch specs:
+
+| | 14in 4GB: none → 14in → 14in+4GB | 14in 8GB | 14in 16GB |
+|---|---|---|---|
+| qwen-32B | 37.6 → 13.2 → **13.0** | 22.6 → 8.0 → 4.2 | 7.6 → 3.0 → 6.8 |
+| qwen-72B | 38.0 → 17.2 → 8.0 | 23.0 → 8.0 → 4.6 | 8.0 → 3.0 → 11.4 |
+
+Adding 4GB on top of 14-inch does **nothing** for the 4GB laptops in qwen-32B (13.2 → 13.0) and
+lifts 14-inch **8GB**, not 4GB, to the top in both models (#1: ASUS 14in 8GB, Dell 14in 8GB).
+The 4GB request is read as "less than 16GB", i.e. pulls toward the middle level.
+
+---
+
 ## 2026-10-07 — The no contract → `4GB` path (figs4nir Graph 6: F14–F17)
 
 `ram=4GB` asks for the RAM level every model likes least, so every RAM comparison it touches is a

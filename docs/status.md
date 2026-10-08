@@ -204,8 +204,7 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-07 in `scripts/slurms.sh` (2 jobs):** qwen-32B and qwen-72B,
-`screen=14-inch,ram=4GB` — will be collected with PMI **off**, unlike the existing `ram=4GB` and `ram=8GB+screen=14-inch` runs (PMI on); use D / weights, not raw sign(m) or pooled C, when comparing. **Not landed and not queued:** olmo-pt 32B and qwen-pt 72B
+**Landed 2026-10-07 and in figs4nir Graph 6:** qwen-32B and qwen-72B `screen=14-inch,ram=4GB` (PMI off). **Not landed and not queued:** olmo-pt 32B and qwen-pt 72B
 `screen=14-inch` — check whether they are still running before re-adding them.
 
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
@@ -326,7 +325,7 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
 17. **Figures for Nir** — started 2026-10-06 in
     [figs4nir.ipynb](../Notebooks/figs4nir.ipynb): rank along the contract path (F1–F4, segments coloured by which requirements are met, Apple dashed; Graph 1B = same on the `8GB`-first path, 45
     laptops and grouped by spec) and Graph 2 (F5/F6: weights and utilities with the min–max
-    across templates) and Graph 3 (F7: additive vs per-laptop utility), Graph 4 (Borda vs BT), Graph 5 (deck-5 adherence, feature scales, Apple decay), Graph 6 (no contract → 4GB path, 8 qwen/gemma models). Add new figures there, and keep its "in use / left out" table
+    across templates) and Graph 3 (F7: additive vs per-laptop utility), Graph 4 (Borda vs BT), Graph 5 (deck-5 adherence, feature scales, Apple decay), Graph 6 (no contract → 4GB → 4GB + 14-inch path, the RAM 2×2 in F17b, and path D: 14-inch → 14-inch + 4GB in F18–F20). Add new figures there, and keep its "in use / left out" table
     current.
 
 ### C. Method fixes (small, known)
