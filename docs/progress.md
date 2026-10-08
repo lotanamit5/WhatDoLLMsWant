@@ -8,6 +8,49 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-08 — New notebook: one five-panel summary figure per model
+
+[Notebooks/model_summary.ipynb](../Notebooks/model_summary.ipynb) generalises the figs4nir
+figures into one figure per model: building functions first, then an **arguments cell** (model,
+contracts, paths, `rank_by` utility/wins, γ on/off, labels), then one call that draws it. Saves to
+`figs/summary/summary_<model>.png`.
+
+Panels, left to right: (1) position-corrected Borda vs full and additive BT rank, (2) ranks along
+none → 14-inch → 14-inch + 8GB, (3) ranks along none → 4GB, (4) no-contract feature weights + γ,
+(5) brand weights across the four contracts (Apple bold).
+
+- **One colour per feature everywhere:** screen pink, RAM light blue, brand **yellow** `#eda100`
+  (validated as a set; green failed the colour-blind check next to pink).
+- **γ uses the per-run C** (10-07 audit); a PMI-off run (all scores ≤ 0) gets C = 0
+  automatically, so OLMo and the new 08-20/10-07 runs need no special case.
+- A missing run shows "no run for …" instead of failing (OLMo has no `4GB` run). Tested on all
+  12 aligned models and on a variant (qwen-72B, path B extended to 4GB + 14-inch, ranked by wins).
+
+**Revised the same day (Lotan's 13 notes):** no main title; subtitles, axis labels, legend texts,
+panel widths (%), x-axis contract names (`default`, `14"`, `14"+8GB`), base font size, bar values
+and the non-Apple brand colour are all arguments. Panel 1 legend "Fully param." / "Linear BT";
+rank-panel legends inside the plot bottom; panel 5 labels above the line ends; feature names
+below the tick labels. **Colours set by Lotan** (screen `#e87ba4`, RAM `#7BA4E8`, brand
+`#A4E87B`) — his edit had `##` (invalid hex) and left `YELLOW` references, both fixed without
+changing the values. At his 8×2-inch size the figure needs `FONT_SIZE = 5` (now the default;
+line widths scale with it).
+Then: four sub-figures (panel 1 | panels 2+3 | 4 | 5) under constrained layout, each with one
+subtitle centred on its plot area; panels 2–3 share the "COMPLIANCE" subtitle and the y-axis
+(labelled `high` / `low`, `RANK_TICKS`); `GAP` and `PAIR_GAP` control the spacing; default widths
+21/24/17/20/18 %. Panel 4: vertical tick labels and a bracket under each feature's ticks with
+its name (brand 5, screen 3, RAM 3, position 1).
+All colours are now one `COLORS` argument (feature colours, both/none, γ, the two BT fits, the
+non-Apple brands); missing keys fall back to `DEFAULT_COLORS`. Note: a stale VS Code buffer of an
+older version re-saved `figs/summary/summary_qwen-32B.png` at 14:10 — revert the tab before
+running, or saving it will overwrite the current notebook.
+
+**Local Python env:** `.vscode/settings.json` points at the cluster's conda path, which does not
+exist on the WSL machine, and the system Python has no pip/ipykernel. Created `.venv/` in the
+repo (gitignored) with numpy, pandas, matplotlib, statsmodels, scipy, seaborn, ipykernel,
+nbformat, nbclient. Select it as the notebook kernel.
+
+---
+
 ## 2026-10-08 — `4GB + 14-inch` landed for qwen-32B/72B: adding the screen weakens the RAM request, in all 6 cells
 
 Jobs 1441002 (32B) and 1441003 (72B), `ram=4GB+screen=14-inch`. Audit: 9900 unique rows, all 45

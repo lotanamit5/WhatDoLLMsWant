@@ -328,6 +328,10 @@ Queued behind it (commented in `create_slurms.py`, uncomment when Phase A lands)
     across templates) and Graph 3 (F7: additive vs per-laptop utility), Graph 4 (Borda vs BT), Graph 5 (deck-5 adherence, feature scales, Apple decay), Graph 6 (no contract → 4GB → 4GB + 14-inch path, the RAM 2×2 in F17b, and path D: 14-inch → 14-inch + 4GB in F18–F20). Add new figures there, and keep its "in use / left out" table
     current.
 
+18. **One-figure model summary** — done 2026-10-08 in
+    [model_summary.ipynb](../Notebooks/model_summary.ipynb): five panels per model (Borda vs BT,
+    two rank paths, feature weights, Apple decay), driven by an arguments cell.
+
 ### C. Method fixes (small, known)
 
 00. **Found and mostly fixed 2026-08-16.** `(model_family, model_size, constraints_id)` is **no
