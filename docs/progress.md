@@ -8,6 +8,26 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-08 — Queued: two personas, `student` and `editor` (4 jobs)
+
+Does saying *who* the user is move the model to a spec it was never asked for? Added as two new
+`FRAMES` in `data_collection.py`: the persona sentence, then the `shopping` sentence unchanged, so
+against the `shopping` runs the persona is the only difference.
+
+| frame | prompt prefix | expected pull |
+|---|---|---|
+| `student` | I am a student and I do not have much money. I am looking to buy a laptop. | toward 4GB (cheap) |
+| `editor` | I am a professional video editor. I am looking to buy a laptop. | toward 16GB (opposite control) |
+
+- No contract, qwen-32B and qwen-72B, PMI off. Own folder `data/laptops_persona/`; the run key
+  `(family, size, frame, constraints_id)` is unique anyway, since `frame` differs.
+- Compare against `shopping` `none` (no persona) and `ram=4GB` (the explicit request) in
+  `laptops_robustness`. Those are PMI on — harmless for weights and ranks, not for γ.
+- Neither persona names a spec. The items have no price, so "poor" has to be read into RAM,
+  screen or brand.
+
+---
+
 ## 2026-10-08 — New notebook: one five-panel summary figure per model
 
 [Notebooks/model_summary.ipynb](../Notebooks/model_summary.ipynb) generalises the figs4nir

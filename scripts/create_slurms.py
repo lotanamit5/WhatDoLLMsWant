@@ -42,6 +42,14 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-08: personas, qwen 32B and 72B, no contract. 4 jobs.
+    # Does saying who the user is move the model to a spec it was never asked for? `student`
+    # ("...I do not have much money.") should pull toward 4GB, `editor` (video editor) toward
+    # 16GB. Compare against the `shopping` none run and the `ram=4GB` run in
+    # laptops_robustness. Own folder, so these can never collide with those runs.
+    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+     'f': ['student', 'editor'], 'n': ['laptops_persona']},
+
     # --- 2026-10-07: the double contract with the LOW RAM level, qwen 32B and 72B. 2 jobs.
     # We have `screen=14-inch,ram=8GB` (asks for the MIDDLE RAM level) for every model, and
     # `ram=4GB` alone (Phase A) for every qwen. This adds the missing cell of that 2x2: does a
@@ -189,12 +197,13 @@ with open(dst_path, 'w') as f:
             node = nodes[i % len(nodes)]
             cmd = f"{prefix} -w {node} {script_path} {flags} -n {name}"
             f.write(cmd + "\n")
-            lines.append((name, f"{kv['m']}-{kv['s']}B", kv.get('p', '-'), kv.get('c', '') or 'none'))
+            lines.append((name, f"{kv['m']}-{kv['s']}B", kv.get('p', '-'), kv.get('f', 'shopping'),
+                          kv.get('c', '') or 'none'))
             i += 1
 
 print(f"wrote {i} jobs to {dst_path}")
 for name in sorted({l[0] for l in lines}):
     rows = [l for l in lines if l[0] == name]
     print(f"  data/{name}/  ({len(rows)} jobs)")
-    for _, model, tmpl, con in rows:
-        print(f"      {model:14} [{tmpl}] c={con}")
+    for _, model, tmpl, frame, con in rows:
+        print(f"      {model:14} [{tmpl}] f={frame:10} c={con}")

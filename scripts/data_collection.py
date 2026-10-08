@@ -74,6 +74,11 @@ FRAMES = {
     'shopping': "I am looking to buy a laptop.",
     'self': "You are choosing a laptop for yourself.",
     'third_person': "A person is looking to buy a laptop.",
+    # Personas (2026-10-08): a sentence about who the user is, then the `shopping` sentence
+    # unchanged - so against `shopping` the persona is the only difference. Neither names a
+    # spec: the model has to infer one (student -> cheap -> 4GB? editor -> 16GB?).
+    'student': "I am a student and I do not have much money. I am looking to buy a laptop.",
+    'editor': "I am a professional video editor. I am looking to buy a laptop.",
 }
 
 # level string (exactly as it appears in alternatives.py / scores.csv) -> prose
