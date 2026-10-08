@@ -79,6 +79,13 @@ FRAMES = {
     # spec: the model has to infer one (student -> cheap -> 4GB? editor -> 16GB?).
     'student': "I am a student and I do not have much money. I am looking to buy a laptop.",
     'editor': "I am a professional video editor. I am looking to buy a laptop.",
+    # 2026-10-08, second persona batch. The two halves of `student`, to see which one carries its
+    # effect (identity or money), and two brand stereotypes with no price in them: one should
+    # push away from Apple (`windows`), one toward it (`designer`).
+    'student_only': "I am a student. I am looking to buy a laptop.",
+    'no_money': "I do not have much money. I am looking to buy a laptop.",
+    'windows': "My company only supports Windows. I am looking to buy a laptop.",
+    'designer': "I am a graphic designer. I am looking to buy a laptop.",
 }
 
 # level string (exactly as it appears in alternatives.py / scores.csv) -> prose

@@ -10,6 +10,13 @@ nodes = [
     'plotinus1',
     'plotinus2',
 ]
+# Model sizes pinned to node pools (round-robin inside a pool). qwen-72B needs a plotinus node:
+# the 72B editor run of the first persona batch was sent to plato2 and never landed.
+# Sizes not listed here use `nodes` above.
+NODES_BY_SIZE = {
+    '32': ['plato1', 'plato2'],
+    '72': ['plotinus1', 'plotinus2'],
+}
 
 QWEN = ['0.5', '7', '32', '72']
 GEMMA = ['1', '4', '12', '27']
@@ -42,13 +49,28 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-08, second persona batch: qwen 32B and 72B, no contract. 8 jobs.
+    # The first batch showed `student` ("...and I do not have much money.") moves brand and screen
+    # far more than RAM, and drops Apple by up to 22 log-odds (progress.md 2026-10-08). This asks
+    # (1) which half of that sentence does it: `student_only` vs `no_money`, and (2) whether brand
+    # moves from a stereotype with no price in it, in both directions: `windows` (away from
+    # Apple), `designer` (toward Apple). Same folder as the first batch; frame names are new, so
+    # the run key (family, size, frame, constraints_id) cannot collide.
+    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+     'f': ['student_only', 'no_money', 'windows', 'designer'], 'n': ['laptops_persona']},
+
+    # --- DONE 2026-10-08: first persona batch. Landed: qwen-32B student (1442267), qwen-32B
+    # editor (1442268), qwen-72B student (1442269). NOT landed: qwen-72B editor - it was sent to
+    # plato2. To re-run it, add {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
+    # 'c': [''], 'f': ['editor'], 'n': ['laptops_persona']} - but first check on the cluster that
+    # the old job is not still running, or two runs land under the same key.
     # --- 2026-10-08: personas, qwen 32B and 72B, no contract. 4 jobs.
     # Does saying who the user is move the model to a spec it was never asked for? `student`
     # ("...I do not have much money.") should pull toward 4GB, `editor` (video editor) toward
     # 16GB. Compare against the `shopping` none run and the `ram=4GB` run in
     # laptops_robustness. Own folder, so these can never collide with those runs.
-    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
-     'f': ['student', 'editor'], 'n': ['laptops_persona']},
+    # {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+    #  'f': ['student', 'editor'], 'n': ['laptops_persona']},
 
     # --- 2026-10-07: the double contract with the LOW RAM level, qwen 32B and 72B. 2 jobs.
     # We have `screen=14-inch,ram=8GB` (asks for the MIDDLE RAM level) for every model, and
@@ -177,6 +199,7 @@ script_path = "scripts/run_data_collection.sh"
 
 lines = []
 i = 0
+pool_i = {}           # round-robin position inside each node pool
 with open(dst_path, 'w') as f:
     f.write("#!/usr/bin/env bash\n")
     f.write("# GENERATED FILE - do not edit by hand.\n")
@@ -194,16 +217,19 @@ with open(dst_path, 'w') as f:
             # parameter set can override the global with its own 'n'
             name = kv.pop('n', exp_name)
             flags = " ".join(f'-{k} "{v}"' for k, v in kv.items())
-            node = nodes[i % len(nodes)]
+            pool = NODES_BY_SIZE.get(kv['s'], nodes)
+            k = pool_i.get(tuple(pool), 0)
+            node = pool[k % len(pool)]
+            pool_i[tuple(pool)] = k + 1
             cmd = f"{prefix} -w {node} {script_path} {flags} -n {name}"
             f.write(cmd + "\n")
             lines.append((name, f"{kv['m']}-{kv['s']}B", kv.get('p', '-'), kv.get('f', 'shopping'),
-                          kv.get('c', '') or 'none'))
+                          kv.get('c', '') or 'none', node))
             i += 1
 
 print(f"wrote {i} jobs to {dst_path}")
 for name in sorted({l[0] for l in lines}):
     rows = [l for l in lines if l[0] == name]
     print(f"  data/{name}/  ({len(rows)} jobs)")
-    for _, model, tmpl, frame, con in rows:
-        print(f"      {model:14} [{tmpl}] f={frame:10} c={con}")
+    for _, model, tmpl, frame, con, node in rows:
+        print(f"      {model:14} [{tmpl}] f={frame:12} c={con:10} -> {node}")
