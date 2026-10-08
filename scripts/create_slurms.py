@@ -52,8 +52,10 @@ parameter_sets = [
     # NOT queued: `ram=4GB` alone. It already exists for both models in laptops_robustness
     # (qwen-32B job 1293546, qwen-72B job 1293550, 9900 rows each) - a second run would
     # collide on (family, size, frame, constraints_id).
-    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'],
-     'c': ['screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
+    # DONE 2026-10-07: landed as jobs 1441002 (32B) and 1441003 (72B), audited 2026-10-08
+    # (9900 rows, PMI off). Do not re-run; it would duplicate the key.
+    # {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'],
+    #  'c': ['screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
 
     # --- DONE 2026-10-07 check: the OLMo stage-2 batch and gap-fillers (27 jobs, ce0ef8f).
     # All landed EXCEPT two, which have no complete run on disk as of 2026-10-07:
