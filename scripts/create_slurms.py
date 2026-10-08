@@ -59,6 +59,15 @@ parameter_sets = [
     {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
      'f': ['student_only', 'no_money', 'windows', 'designer'], 'n': ['laptops_persona']},
 
+    # --- 2026-10-08: persona VOICE - "I am a poor student" vs "Act as a poor student". 4 jobs.
+    # Role voice for the baseline and for the student, so the comparison is a 2x2:
+    #     user voice: shopping (exists) vs student (exists)
+    #     role voice: role_none         vs role_student      <- these 4 jobs
+    # Does telling the model to BE the person move it as much as the user describing
+    # themselves? config.json records frame.voice = "role".
+    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+     'f': ['role_none', 'role_student'], 'n': ['laptops_persona']},
+
     # --- DONE 2026-10-08: first persona batch. Landed: qwen-32B student (1442267), qwen-32B
     # editor (1442268), qwen-72B student (1442269). NOT landed: qwen-72B editor - it was sent to
     # plato2. To re-run it, add {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],

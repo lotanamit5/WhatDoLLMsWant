@@ -86,7 +86,29 @@ FRAMES = {
     'no_money': "I do not have much money. I am looking to buy a laptop.",
     'windows': "My company only supports Windows. I am looking to buy a laptop.",
     'designer': "I am a graphic designer. I am looking to buy a laptop.",
+    # 2026-10-08, ROLE voice: the same content, but the model is told to BE the person instead
+    # of the user describing themselves. The template still ends "Which do you prefer?", so the
+    # model answers as that person. `role_none` is the role-voice baseline, so a role-vs-user
+    # difference can be split into "the Act-as wording itself" and "the persona inside it":
+    #     user voice:  shopping   vs  student        (both exist)
+    #     role voice:  role_none  vs  role_student
+    'role_none': "Act as a person who is looking to buy a laptop.",
+    'role_student': "Act as a student who does not have much money and is looking to buy a laptop.",
 }
+
+# Who the frame sentence speaks as - recorded in config.json as frame.voice, so runs can be
+# filtered by phrasing without parsing the text. The frame NAME stays the unique key.
+#   user          the user describes themselves ("I am a student ...")
+#   role          the model is told to act as someone ("Act as a student ...")
+#   model         the model chooses for itself ("You are choosing a laptop for yourself.")
+#   third_person  someone else is buying
+#   none          no frame sentence at all
+FRAME_VOICE = {'bare': 'none', 'self': 'model', 'third_person': 'third_person',
+               'role_none': 'role', 'role_student': 'role'}           # anything else: 'user'
+
+
+def frame_voice(frame):
+    return FRAME_VOICE.get(frame, 'user')
 
 # level string (exactly as it appears in alternatives.py / scores.csv) -> prose
 CONSTRAINT_PHRASE = {
@@ -183,7 +205,7 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
     agent = agent_factory(model_family, model_size, labels)
     print('model_id:', agent.tokenizer.name_or_path)
     print('template_set:', template_set, '| labels:', labels or agent.labels)
-    print('prompt_prefix:', repr(prompt_prefix))
+    print('prompt_prefix:', repr(prompt_prefix), '| voice:', frame_voice(frame))
     print('constraints:', constraints)
     print('items:')
     for item in items:
@@ -197,7 +219,7 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
         "model_size": model_size,
         "alternatives": alternatives_alias,
 
-        "frame": {"name": frame, "text": frame_text},
+        "frame": {"name": frame, "text": frame_text, "voice": frame_voice(frame)},
         "constraints": constraints,
         "constraints_text": con_text,
         "constraints_id": constraints_id(constraints),

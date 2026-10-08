@@ -70,6 +70,7 @@ written by hand in the notebook and has to be rewritten for every new constraint
 |---|---|
 | `constraints: {}` | the **only** encoding of "no constraint". Never `null`, never `"None"`. |
 | `frame` | separated from the constraint, so the frame ladder (bare / shopping / self / third-person) is expressible. `{"name": "bare", "text": ""}` is the no-frame condition. |
+| `frame.voice` | **added 2026-10-08.** Who the frame sentence speaks as: `user` ("I am a student…"), `role` ("Act as a student…"), `model` ("You are choosing a laptop for yourself."), `third_person`, or `none` (bare). Derived from the frame name in `data_collection.py` (`FRAME_VOICE`), never typed by hand. `frame.name` stays the unique key. Runs before this date have no `voice`: read it as `FRAME_VOICE.get(name, "user")`. |
 | `prompt_prefix` | the exact string prepended, verbatim. Settles any future provenance doubt on its own. |
 | `constraints_id` | derived slug for folder names and filtering. **Built from the dict, never typed by hand**, so it cannot drift from the truth or collide (`screen=16-inch` vs `ram=16GB`). |
 | `git_commit`, `collection_script` | one `git rev-parse HEAD`; would have answered the 68337011 question instantly. |
