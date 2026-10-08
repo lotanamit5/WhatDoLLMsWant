@@ -1,0 +1,32 @@
+{
+  "alternatives": "laptops_robustness",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "ram": "4GB",
+    "screen": "14-inch"
+  },
+  "constraints_id": "ram=4GB+screen=14-inch",
+  "constraints_text": "I prefer a 14-inch screen and 4 GB ram.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop."
+  },
+  "git_commit": "a485ff6",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "qwen",
+  "model_size": "72",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a 14-inch screen and 4 GB ram.",
+  "slurm_job_id": "1441003",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
+    "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
+  },
+  "timestamp": "20261007_201006"
+}
