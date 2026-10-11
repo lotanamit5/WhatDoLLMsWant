@@ -49,6 +49,19 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-11: the contract PATH to one target laptop, qwen-32B first. 4 jobs.
+    # Target (the user's ideal) = Dell 14-inch 8GB: all three features disagree with the model's
+    # default (Apple 16-inch 16GB). The 8 subsets of {brand, screen, ram} give every path from no
+    # contract to the full spec. The four without brand already exist in laptops_robustness
+    # (none, screen=14-inch, ram=8GB, screen=14-inch+ram=8GB); these are the four with brand.
+    # Plot: x = number of requirements, y = rank of Dell 14in 8GB among the 45 laptops.
+    # 'w' = node pool for this batch only: one job per server, so all four run at once.
+    # Next, if it works: the same four on qwen-72B, gemma-27B, olmo-32B.
+    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+     'c': ['brand=Dell', 'brand=Dell,screen=14-inch', 'brand=Dell,ram=8GB',
+           'brand=Dell,screen=14-inch,ram=8GB'],
+     'n': ['laptops_robustness'], 'w': [['plato1', 'plato2', 'plotinus1', 'plotinus2']]},
+
     # --- 2026-10-08, second persona batch: qwen 32B and 72B, no contract. 8 jobs.
     # The first batch showed `student` ("...and I do not have much money.") moves brand and screen
     # far more than RAM, and drops Apple by up to 22 log-odds (progress.md 2026-10-08). This asks
@@ -56,8 +69,9 @@ parameter_sets = [
     # moves from a stereotype with no price in it, in both directions: `windows` (away from
     # Apple), `designer` (toward Apple). Same folder as the first batch; frame names are new, so
     # the run key (family, size, frame, constraints_id) cannot collide.
-    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
-     'f': ['student_only', 'no_money', 'windows', 'designer'], 'n': ['laptops_persona']},
+    # DONE 2026-10-10: landed as jobs 1442603-1442610 (9900 rows each). Do not re-run.
+    # {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+    #  'f': ['student_only', 'no_money', 'windows', 'designer'], 'n': ['laptops_persona']},
 
     # --- 2026-10-08: persona VOICE - "I am a poor student" vs "Act as a poor student". 4 jobs.
     # Role voice for the baseline and for the student, so the comparison is a 2x2:
@@ -65,14 +79,12 @@ parameter_sets = [
     #     role voice: role_none         vs role_student      <- these 4 jobs
     # Does telling the model to BE the person move it as much as the user describing
     # themselves? config.json records frame.voice = "role".
-    {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
-     'f': ['role_none', 'role_student'], 'n': ['laptops_persona']},
+    # DONE 2026-10-10: landed as jobs 1442611-1442614. Do not re-run.
+    # {'m': ['qwen'], 's': ['32', '72'], 'a': ['laptops_robustness'], 'c': [''],
+    #  'f': ['role_none', 'role_student'], 'n': ['laptops_persona']},
 
     # --- DONE 2026-10-08: first persona batch. Landed: qwen-32B student (1442267), qwen-32B
-    # editor (1442268), qwen-72B student (1442269). NOT landed: qwen-72B editor - it was sent to
-    # plato2. To re-run it, add {'m': ['qwen'], 's': ['72'], 'a': ['laptops_robustness'],
-    # 'c': [''], 'f': ['editor'], 'n': ['laptops_persona']} - but first check on the cluster that
-    # the old job is not still running, or two runs land under the same key.
+    # editor (1442268), qwen-72B student (1442269); qwen-72B editor landed later as 1442581.
     # --- 2026-10-08: personas, qwen 32B and 72B, no contract. 4 jobs.
     # Does saying who the user is move the model to a spec it was never asked for? `student`
     # ("...I do not have much money.") should pull toward 4GB, `editor` (video editor) toward
@@ -216,6 +228,9 @@ with open(dst_path, 'w') as f:
     f.write("# (No timestamp on purpose: identical params must produce an identical file,\n")
     f.write("#  so `git diff` shows a changed batch and nothing else.)\n")
     for parameters in parameter_sets:
+        # optional per-batch node pool, overrides NODES_BY_SIZE; not a product dimension
+        batch_pool = parameters.get('w', [None])[0]
+        parameters = {k: v for k, v in parameters.items() if k != 'w'}
         for combo in itertools.product(*parameters.values()):
             # Quote each value - an empty string (the no-constraint case) must
             # still produce a real, non-empty shell token ("" not nothing), or
@@ -226,7 +241,7 @@ with open(dst_path, 'w') as f:
             # parameter set can override the global with its own 'n'
             name = kv.pop('n', exp_name)
             flags = " ".join(f'-{k} "{v}"' for k, v in kv.items())
-            pool = NODES_BY_SIZE.get(kv['s'], nodes)
+            pool = batch_pool or NODES_BY_SIZE.get(kv['s'], nodes)
             k = pool_i.get(tuple(pool), 0)
             node = pool[k % len(pool)]
             pool_i[tuple(pool)] = k + 1

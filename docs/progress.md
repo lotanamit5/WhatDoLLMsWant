@@ -8,6 +8,69 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-11 — Queued: the contract path to one target laptop, qwen-32B (4 jobs)
+
+Question (for the proposal): how many requirements does the user have to state before the model's
+choice matches theirs? x = number of requirements (0–3), y = how close the model gets to the user.
+
+- **Target** = Dell 14-inch 8GB. All three features disagree with the model's default (Apple
+  16in 16GB), so every requirement has something to win. Screen and RAM levels match the runs
+  that already exist.
+- **All 8 subsets of {brand, screen, ram}** = all 6 orders of adding them. The 4 without brand
+  exist (`none`, `14-inch`, `8GB`, `14-inch + 8GB`); queued the 4 with brand: `brand=Dell`,
+  `brand=Dell+screen=14-inch`, `brand=Dell+ram=8GB`, `brand=Dell+ram=8GB+screen=14-inch`. First
+  brand contracts ever collected. No code change (`CONSTRAINT_PHRASE` already had brand).
+- **qwen-32B only**, to see the result fast; then qwen-72B, gemma-27B, olmo-32B.
+- **Speed:** `create_slurms.py` now takes an optional per-batch node pool `'w'` (overrides
+  `NODES_BY_SIZE`), used here to put one job on each of plato1/2 and plotinus1/2.
+- **Planned y:** rank of Dell 14in 8GB among the 45 laptops (1 = aligned). Each subset is its
+  own point at its k, so the spread at k = 1 and k = 2 shows *which* requirements are worth
+  stating (Nir's question 5).
+
+---
+
+## 2026-10-10 — Persona batch 2 landed: "no money" is the whole effect, "Windows" moves only Apple, "Act as" adds nothing
+
+All 12 jobs landed (1442603–1442614), plus the missing qwen-72B `editor` (1442581). 9900 rows each.
+New notebook [persona_batch2.ipynb](../Notebooks/persona_batch2.ipynb), figures
+`figs/persona/P6_batch2_weights.png`, `P7_batch2_apple_and_ram.png`. `slurms.sh` regenerated (0 jobs).
+
+Weight change vs `none` (log-odds) and head-to-head (% of 75 pairs):
+
+| frame | Apple 32B / 72B | 16GB 32B / 72B | 8GB>16GB % 32B / 72B | Spearman with `none` 32B / 72B | Spearman with `student` |
+|---|---|---|---|---|---|
+| `student` (batch 1) | −22.4 / −10.2 | −16.3 / −5.0 | 100 / 4 | −0.04 / 0.70 | 1 / 1 |
+| `student_only` | −2.7 / −1.0 | −1.0 / 0.0 | 0 / 0 | **0.96 / 1.00** | 0.16 / 0.72 |
+| `no_money` | **−22.0 / −11.7** | −18.0 / −6.8 | 100 / 21 | −0.08 / 0.50 | **1.00 / 0.95** |
+| `editor` | −0.3 / +0.5 | +0.9 / +2.0 | 0 / 0 | 0.99 / 1.00 | — |
+| `windows` | **−15.4 / −17.7** | −3.0 / −2.1 | 0 / 0 | 0.82 / 0.70 | 0.35 / 0.88 |
+| `designer` | +0.4 / +1.3 | +0.7 / +1.4 | 0 / 0 | 1.00 / 1.00 | — |
+| `role_none` | −0.7 / 0.0 | −1.1 / −0.7 | 0 / 0 | **1.00 / 1.00** | — |
+| `role_student` | −23.5 / −13.5 | −18.7 / −8.3 | 100 / **84** | −0.16 / 0.37 | 0.99 / 0.90 |
+
+- **The money half is the whole `student` effect.** `no_money` reproduces `student` (Spearman 1.00 /
+  0.95, Apple −22 / −12), `student_only` is the default (0.96 / 1.00 with `none`, Apple −2.7 / −1.0).
+  "I am a student" alone does not change what the model recommends.
+- **`windows` moves Apple and nothing else.** Apple −15.4 / −17.7 and loses every brand pair (0%);
+  screen and RAM weights change by at most 3. #1 becomes Lenovo / Dell 16-inch 16GB — the same spec
+  as the default, minus the brand. A brand stereotype with no price in it moves brand only; "no
+  money" moves brand *and* RAM *and* screen.
+- **`designer` and `editor` do nothing** (Spearman 1.00 / 0.99 with `none`). Both point toward the
+  model's own default (Apple, 16GB), which is already at the ceiling: Apple wins 91–100% of brand
+  pairs with no persona. A persona can only be seen when it pulls *against* the default.
+- **Voice: the "Act as" wording alone is a no-op** (`role_none` = `none`, Spearman 1.00 in both,
+  Apple −0.7 / 0.0). `role_student` = `student` in direction (0.99 / 0.90) and slightly stronger:
+  qwen-72B 8GB beats 16GB in 84% of pairs vs 4% in user voice, Apple −13.5 vs −10.2. So the role
+  framing lets the model commit further, but it does not change *what* it infers.
+- qwen-72B is again the milder model: every persona moves it less than qwen-32B, and no persona
+  gets it off 16GB except `role_student`.
+
+Still the main conjecture in one table: a sentence that names no feature ("I do not have much
+money") is completed by the model into "not Apple, smaller screen, 8GB" — and *which* features it
+fills in depends on the stereotype, not on anything the user said.
+
+---
+
 ## 2026-10-08 — Queued: second persona batch, 8 jobs (split `student`, two brand stereotypes), + 4 voice jobs
 
 New `FRAMES` in `data_collection.py`, each = persona sentence + the unchanged `shopping` sentence:

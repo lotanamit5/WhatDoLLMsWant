@@ -195,8 +195,11 @@ templates, **31 of 32 runs collected** (qwen-pt 72B is missing `screen=14-inch`)
 [pretrained_vs_instruct.ipynb](../Notebooks/pretrained_vs_instruct.ipynb) is the earlier
 qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — see point 14.
 
-**GRUM Phase A has landed** for 7 of 8 models — every model now has all 8 constraint conditions
-**except qwen-72B**, which is missing `screen=13-inch` and `ram=16GB` (6 of 8). Re-run those two.
+**GRUM Phase A has landed for all 8 qwen/gemma models** — every one has all 8 constraint
+conditions (`none`, 3 screen levels, 3 RAM levels, `14-inch + 8GB`). *Corrected 2026-10-10:* the
+qwen-72B `screen=13-inch` and `ram=16GB` runs exist (jobs 1293546 / 1293550, PMI off, verified in
+the 10-07 audit); the old "missing" note here was stale. Doubles beyond `14-inch + 8GB`: only
+`14-inch + 4GB`, qwen-32B/72B. OLMo has `none`, `14-inch`, `8GB`, `14-inch + 8GB` only.
 
 ---
 
@@ -204,9 +207,22 @@ qwen-7B-only version. **The four gemma-pt runs are unusable as collected** — s
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-08 (`slurms.sh`, 12 jobs):** second persona batch — `student_only`, `no_money`, `windows`, `designer` — plus persona voice — `role_none`, `role_student` ("Act as …") — qwen-32B (plato1/2) and qwen-72B (plotinus1/2), `data/laptops_persona/`.
+**Queued 2026-10-11 (`slurms.sh`, 4 jobs): the contract path to one target laptop, qwen-32B.**
+Target = Dell 14-inch 8GB (all three features disagree with the default, Apple 16in 16GB).
+Jobs: `brand=Dell`, `Dell + 14-inch`, `Dell + 8GB`, `Dell + 14-inch + 8GB`, one per node
+(plato1/2, plotinus1/2), into `laptops_robustness`. With the four existing no-brand runs this gives
+all 8 subsets = all 6 paths. Plot: x = number of requirements, y = rank of Dell 14in 8GB of 45.
+**Next:** the same 4 on qwen-72B, gemma-27B, olmo-32B (12 jobs) once qwen-32B looks right.
 
-**Landed 2026-10-08: 3 of the 4 persona jobs** (qwen-72B `editor` missing — check the cluster); analysed in [persona_vs_contracts.ipynb](../Notebooks/persona_vs_contracts.ipynb). Was queued: — `--frame student` / `--frame editor`, no contract, qwen-32B and 72B, in `data/laptops_persona/`. Question: does "I am a student and I do not have much money" pull toward 4GB (and "video editor" toward 16GB) with no spec asked?
+**Landed 2026-10-10: the whole persona set, 16 runs** in `data/laptops_persona/` — qwen-32B and
+qwen-72B × {`student`, `editor`, `student_only`, `no_money`, `windows`, `designer`, `role_none`,
+`role_student`}, no contract. Batch 1 analysed in
+[persona_vs_contracts.ipynb](../Notebooks/persona_vs_contracts.ipynb), batch 2 in
+[persona_batch2.ipynb](../Notebooks/persona_batch2.ipynb). Headline (progress 10-10): `no_money`
+*is* the `student` effect (`student_only` = default); `windows` moves Apple only (−15 / −18);
+`designer` / `editor` do nothing (they point at the default, which is at the ceiling); "Act as" alone
+is a no-op, `role_student` = `student`, a bit stronger. **Next, if Nir wants it:** the same two
+personas (`no_money`, `windows`) on gemma-27B and olmo-32B, 4 jobs, so it is not one family's result.
 
 **Landed 2026-10-07 and in figs4nir Graph 6:** qwen-32B and qwen-72B `screen=14-inch,ram=4GB` (PMI off). **Not landed and not queued:** olmo-pt 32B and qwen-pt 72B
 `screen=14-inch` — check whether they are still running before re-adding them.
