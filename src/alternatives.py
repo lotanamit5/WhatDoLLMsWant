@@ -237,3 +237,41 @@ beverages = [
     "Beer",
     "Soda",
 ]
+
+# --- 2026-10-12: BOOKS, the second feature domain (next to the laptops). ---
+# 48 famous Goodreads books. The prompt shows only "<title> by <author> (<year>)"; the 8 genre
+# tags are HIDDEN features ("yes"/"no"), used by the analysis and by contracts
+# (--constraints fantasy=yes -> "I prefer fantasy."). The list is src/books/books.csv, built by
+# src/books/make_books.py (reproducible); design in Notebooks/books_domain_design.ipynb.
+import csv as _csv
+import os as _os
+
+book_tags = ["fantasy", "science-fiction", "romance", "mystery-thriller",
+             "young-adult", "classics", "historical-fiction", "nonfiction"]
+
+
+def _load_books():
+    path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "books", "books.csv")
+    with open(path, encoding="utf-8") as f:
+        rows = list(_csv.DictReader(f))
+    return [
+        {"title": r["title"], "author": r["author"], "year": r["year"],
+         **{t: ("yes" if r[t] == "1" else "no") for t in book_tags}}
+        for r in rows
+    ]
+
+
+books = _load_books()
+
+# Pilot subset (2026-10-12): the 2 most famous books of each tag (the CSV is sorted by ratings
+# count), without repeats. For a quick run on a small model before the full 48.
+def _books_small():
+    out = []
+    for t in book_tags:
+        for b in [b for b in books if b[t] == "yes"][:2]:
+            if b not in out:
+                out.append(b)
+    return out
+
+
+books_small = _books_small()

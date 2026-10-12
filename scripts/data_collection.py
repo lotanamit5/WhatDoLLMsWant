@@ -48,6 +48,9 @@ ALTERNATIVES_ALIASES = {
     'ai_companies': src.alternatives.ai_companies,
     'travel_destinations': src.alternatives.travel_destinations,
     'beverages': src.alternatives.beverages,
+    # 2026-10-12: second feature domain. Dicts with title/author/year + 8 hidden genre tags.
+    'books': src.alternatives.books,
+    'books_small': src.alternatives.books_small,
 }
 
 # Which prompt templates to use, and the answer strings whose last token gets scored.
@@ -79,6 +82,8 @@ FRAMES = {
     'shopping': "I am looking to buy a laptop.",
     'self': "You are choosing a laptop for yourself.",
     'third_person': "A person is looking to buy a laptop.",
+    # 2026-10-12: the books domain's counterpart of `shopping`. Same voice, same shape.
+    'reading': "I am looking for a book to read.",
     # Personas (2026-10-08): a sentence about who the user is, then the `shopping` sentence
     # unchanged - so against `shopping` the persona is the only difference. Neither names a
     # spec: the model has to infer one (student -> cheap -> 4GB? editor -> 16GB?).
@@ -122,11 +127,34 @@ CONSTRAINT_PHRASE = {
     'brand': lambda v: f"a {v} laptop",
 }
 
+# Books (2026-10-12): each tag is a yes/no feature; a contract names the tag, level "yes" only
+# ("I prefer fantasy." / "I prefer fantasy and classics."). The noun is what a reader would say.
+BOOK_TAG_NOUN = {
+    'fantasy': "fantasy",
+    'science-fiction': "science fiction",
+    'romance': "romance",
+    'mystery-thriller': "mysteries and thrillers",
+    'young-adult': "young adult books",
+    'classics': "classics",
+    'historical-fiction': "historical fiction",
+    'nonfiction': "nonfiction",
+}
+
+
+def _book_tag_phrase(tag):
+    def phrase(v):
+        assert v == "yes", f"books: only {tag}=yes has a sentence, got {tag}={v!r}"
+        return BOOK_TAG_NOUN[tag]
+    return phrase
+
+
+CONSTRAINT_PHRASE.update({tag: _book_tag_phrase(tag) for tag in BOOK_TAG_NOUN})
+
 # Word order of the generated sentence. Fixed here rather than taken from the dict's
 # insertion order, because json.dump(sort_keys=True) reorders the dict on the way to disk -
 # so insertion order does not survive a round trip and must not be load-bearing.
 # This order reproduces the historical strings ("a 14-inch screen and 8 GB ram").
-FEATURE_ORDER = ['brand', 'screen', 'ram']
+FEATURE_ORDER = ['brand', 'screen', 'ram'] + list(BOOK_TAG_NOUN)
 
 
 def parse_constraints(spec):
@@ -191,10 +219,18 @@ def format_features_to_text(item_dict):
             f"laptop with {item_dict.get('ram', '')} RAM").strip()
 
 
+def format_book_to_text(item_dict):
+    """Title, author, year - and nothing else. The tags stay out of the prompt on purpose:
+    the choice should come from what the model knows about the book (Lotan, 2026-10-12)."""
+    return f"{item_dict['title']} by {item_dict['author']} ({item_dict['year']})"
+
+
 def item_text(item):
-    """What goes into the prompt: a plain string item (colors, foods, ...) as is, a laptop dict
-    through format_features_to_text."""
-    return item if isinstance(item, str) else format_features_to_text(item)
+    """What goes into the prompt: a plain string item (colors, foods, ...) as is, a book dict
+    through format_book_to_text, a laptop dict through format_features_to_text."""
+    if isinstance(item, str):
+        return item
+    return format_book_to_text(item) if 'title' in item else format_features_to_text(item)
 
 
 def item_columns(prefix, item):

@@ -8,6 +8,43 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-12 — Simple domains landed (240 runs) and analysed; qwen-72B Dell path complete
+
+**Simple domains.** [simple_domains.ipynb](../Notebooks/simple_domains.ipynb), all 240 runs complete
+(10 domains × 24 models). Utility = position-corrected Borda. Table: `figs/simple_domains/simple_domains_table.csv`
+(one row per model × domain); figures S1–S3 (heatmaps), `R_<domain>` (rank of every item per model).
+
+| mean | template agreement (Kendall W) | position-driven % (same slot wins both orders) | Spearman BT vs Borda |
+|---|---|---|---|
+| instruct (120) | 0.88 | 55 | 0.96 (median 1.00) |
+| base (120) | 0.64 | 80 | 0.97 (median 1.00) |
+| gemma base | **0.41** | **91** | |
+
+- **Instruct models have stable orders on feature-less items** (W ≥ 0.8 in almost every cell; outliers:
+  qwen-0.5B travel 0.37, gemma-1B colors 0.49). Base models less so, **gemma base almost
+  content-blind** — as predicted from the laptops (2026-08-18).
+- **BT and Borda give the same order** (median ρ = 1.00), so reporting Borda is enough.
+- **Bug check passed.** The 6 old domains vs `eos_fix_qwen` (qwen instruct, same 43 templates): raw
+  scores r ≥ 0.995, order ρ ≥ 0.96 in all 24 cells. Base models vs `qwen_pt`: ρ −0.04 … 1.00, but those
+  used different templates (43 instruct vs 25 pretrained), so not a bug signal.
+- **No own-maker preference.** Rank of the maker among 7 AI companies (instruct): qwen → Alibaba 6–7,
+  gemma → Google 3–7, olmo → Allen Institute 3–5. OpenAI is the top pick for 6 of 12 instruct models.
+- Shared tastes (instruct, top pick): Tesla 11/12, Tacos 11/12, Apple (laptop brands) 10/12, Water 7/12,
+  Science fiction 7/12, Barcelona 7/12. Soda and Beer are at the bottom for nearly every instruct model.
+
+**qwen-72B Dell 14" 8GB path** (jobs 1445296/98, 1445303/04, all 9900 rows) added to
+[contract_path.ipynb](../Notebooks/contract_path.ipynb) (now loops over both models; `T1_target_rank.csv`).
+
+| rank of Dell 14" 8GB | default | Dell | 14" | 8GB | Dell+14" | Dell+8GB | 14"+8GB | all 3 |
+|---|---|---|---|---|---|---|---|---|
+| qwen-32B | 25 | 4 | 9 | 10 | 2 | 2 | 3 | 1 |
+| qwen-72B | 23 | 4 | 6 | **1** | 2 | 1 | 1 | 1 |
+
+qwen-72B reaches #1 from `8GB` alone; qwen-32B needs the full spec. Metrics notebook and contract tables
+re-run with these runs (compliance gain 0.95–1.00 for the four Dell contracts on qwen-72B).
+
+---
+
 ## 2026-10-12 — Two more contract paths queued (Apple 14" 8GB, Dell 14" 4GB); contract tables as CSV
 
 **Decision.** Two new user types next to the Dell 14" 8GB path, on qwen-32B. Each target differs from
@@ -55,9 +92,22 @@ with the title only, the choice comes from what the model knows about the book, 
 say what that knowledge amounts to. Goodreads also gives a human baseline (average rating, ratings
 count) the laptops never had.
 
-**Still open:** add `books` to `src/alternatives.py` (read-only, needs Lotan's go), a `reading` frame
-and a tag `CONSTRAINT_PHRASE` in `data_collection.py`, then a first batch (no contract) on the big
-models. A tags-only variant (same books, no title) can be added later to split identity from features.
+**In code (same day, Lotan's go):** `src/books/make_books.py` builds `src/books/books.csv`
+(reproducible; `alternatives.books` loads it, tags as `"yes"`/`"no"`). `data_collection.py`: alias
+`books`, frame `reading` ("I am looking for a book to read."), item text `"<title> by <author> (<year>)"`,
+contract phrase per tag (`fantasy=yes` → "I prefer fantasy.", two tags → "I prefer fantasy and classics.";
+only `yes` has a sentence). Dry-run with a stub model: `scores.csv` has `a_title/a_author/a_year` + 8
+`a_<tag>` columns. **Queued:** 4 no-contract jobs (qwen-32B/72B, gemma-27B, olmo-32B) into `data/books/`.
+A tags-only variant (same books, no title) can be added later to split identity from features.
+
+**Pilot first (Lotan):** `books_small` = 14 books (2 most famous per tag), qwen-7B, `none` + `fantasy=yes`,
+2 jobs into `data/books_pilot/`; the 4 big-model jobs wait. [books_pilot.ipynb](../Notebooks/books_pilot.ipynb)
+is ready: sanity, position-corrected Borda per book, template agreement, Spearman vs Goodreads rating /
+ratings count / year, tag `FeatureBT`, contract Δ per book and adherence on mixed pairs. Tested on
+synthetic runs with known weights (classics +2, fantasy +1, romance −1, contract +3 on fantasy, slot A
+−1.5): recovered the contract (+3.06), γ (−1.53), template agreement 0.99, adherence 56% → 99%. With
+14 books the 8 tag weights are confounded (mystery-thriller came out −1.7, true 0): read tag weights
+only from the full 48.
 
 ---
 

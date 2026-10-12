@@ -54,17 +54,38 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-12: BOOKS PILOT. 2 jobs, qwen-7B, 14 books (2 most famous per tag), no contract
+    # and `fantasy=yes`. A quick end-to-end check of the new domain (items, frame, contract sentence,
+    # scores.csv columns) before spending the big models. 14 x 13 x 5 = 910 rows per run.
+    # Analysis: Notebooks/books_pilot.ipynb.
+    # Nodes: plotinus1/2 only (Lotan, 2026-10-12 evening - the plato nodes are not available).
+    {'m': ['qwen'], 's': ['7'], 'a': ['books_small'], 'c': ['', 'fantasy=yes'], 'f': ['reading'],
+     'n': ['books_pilot'], 'w': [['plotinus1', 'plotinus2']]},
+
+    # --- 2026-10-12: BOOKS, the second feature domain. First real batch: no contract, big models. 4 jobs.
+    # 48 famous Goodreads books, prompt = "<title> by <author> (<year>)", 8 hidden genre tags as
+    # features (src/books/books.csv, Notebooks/books_domain_design.ipynb). Frame `reading` is the
+    # books counterpart of `shopping`. 48 x 47 x 5 templates = 11,280 rows per run.
+    # Contracts come after this lands: -c "fantasy=yes" -> "I prefer fantasy."
+    # WAITING for the pilot above to come back clean.
+    # {'m': ['qwen'],  's': ['32', '72'], 'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
+    # {'m': ['gemma'], 's': ['27'],       'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
+    # {'m': ['olmo'],  's': ['32'],       'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
+
     # --- 2026-10-12: two more contract PATHS on qwen-32B, next to the Dell 14in 8GB path. 6 jobs.
     # Each new target differs from Dell 14in 8GB in ONE feature, so half of each path exists already:
     #   Apple 14in 8GB (brand the model likes)  - has none, 14in, 8GB, 14in+8GB      -> 4 new
     #   Dell 14in 4GB  (RAM the model dislikes) - has none, Dell, 14in, 4GB,
     #                                             Dell+14in, 14in+4GB               -> 2 new
     # Contract-path analysis: contract_path.ipynb; metrics: compliance_consistency_metrics.ipynb.
-    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
-     'c': ['brand=Apple', 'brand=Apple,screen=14-inch', 'brand=Apple,ram=8GB',
-           'brand=Apple,screen=14-inch,ram=8GB',
-           'brand=Dell,ram=4GB', 'brand=Dell,screen=14-inch,ram=4GB'],
-     'n': ['laptops_robustness']},
+    # Commented out 2026-10-12 (evening) so that `slurms.sh` holds ONLY the books pilot: none of these
+    # 6 runs is on disk yet, so they are either running or never launched - check squeue / out/ and
+    # un-comment if they still need to go.
+    # {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Apple', 'brand=Apple,screen=14-inch', 'brand=Apple,ram=8GB',
+    #        'brand=Apple,screen=14-inch,ram=8GB',
+    #        'brand=Dell,ram=4GB', 'brand=Dell,screen=14-inch,ram=4GB'],
+    #  'n': ['laptops_robustness']},
 
     # --- 2026-10-12: SIMPLE DOMAINS (no features), every model, base and instruct. 24 jobs.
     # 6 old domains (re-run, to check the old results for bugs) + 4 new ones. ONE job per model:
