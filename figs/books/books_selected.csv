@@ -1,0 +1,49 @@
+goodreads_book_id,title,author,year,average_rating,ratings_count,pop_rank_all,fantasy,science-fiction,romance,mystery-thriller,young-adult,classics,historical-fiction,nonfiction
+2767052,The Hunger Games,Suzanne Collins,2008,4.34,4780653,1,0,1,0,0,1,0,0,0
+3,Harry Potter and the Sorcerer's Stone,J.K. Rowling,1997,4.44,4602479,2,1,0,0,0,1,0,0,0
+41865,Twilight,Stephenie Meyer,2005,3.57,3866839,3,1,0,0,0,1,0,0,0
+2657,To Kill a Mockingbird,Harper Lee,1960,4.25,3198671,4,0,0,0,0,0,1,0,0
+4671,The Great Gatsby,F. Scott Fitzgerald,1925,3.89,2683664,5,0,0,0,0,0,1,0,0
+11870085,The Fault in Our Stars,John Green,2012,4.26,2346404,6,0,0,1,0,1,0,0,0
+5907,The Hobbit,J.R.R. Tolkien,1937,4.25,2071616,7,1,0,0,0,0,1,0,0
+5107,The Catcher in the Rye,J.D. Salinger,1951,3.79,2044241,8,0,0,0,0,1,1,0,0
+1885,Pride and Prejudice,Jane Austen,1813,4.24,2035490,9,0,0,1,0,0,1,0,0
+960,Angels & Demons,Dan Brown,2000,3.85,2001311,10,0,0,0,1,0,0,0,0
+48855,The Diary of a Young Girl,Anne Frank,1947,4.1,1972666,11,0,0,0,0,0,1,0,1
+5470,1984,George Orwell,1949,4.14,1956832,12,0,1,0,0,0,1,0,0
+13335037,Divergent,Veronica Roth,2011,4.24,1903563,13,0,1,0,0,1,0,0,0
+7613,Animal Farm,George Orwell,1945,3.87,1881700,14,0,1,0,0,0,1,0,0
+77203,The Kite Runner,Khaled Hosseini,2003,4.26,1813044,17,0,0,0,0,0,1,1,0
+2429135,The Girl with the Dragon Tattoo,Stieg Larsson,2005,4.11,1808403,18,0,0,0,1,0,0,0,0
+34,The Fellowship of the Ring,J.R.R. Tolkien,1954,4.34,1766803,20,1,0,0,0,0,1,0,0
+18135,Romeo and Juliet,William Shakespeare,1595,3.73,1628519,26,0,0,1,0,0,1,0,0
+12232938,The Lovely Bones,Alice Sebold,2002,3.77,1605173,27,1,0,0,1,1,0,0,0
+7624,Lord of the Flies,William Golding,1954,3.64,1605019,28,0,0,0,0,0,1,0,0
+100915,"The Lion, the Witch, and the Wardrobe",C.S. Lewis,1950,4.19,1531800,29,1,0,0,0,1,1,0,0
+4667024,The Help,Kathryn Stockett,2009,4.45,1531753,30,0,0,0,0,0,0,1,0
+890,Of Mice and Men,John Steinbeck,1937,3.84,1467496,31,0,0,0,0,0,1,0,0
+28187,The Lightning Thief,Rick Riordan,2005,4.23,1366265,33,1,0,0,0,1,0,0,0
+10818853,Fifty Shades of Grey,E.L. James,2011,3.67,1338493,34,0,0,1,0,0,0,0,0
+13496,A Game of Thrones,George R.R. Martin,1996,4.45,1319204,35,1,1,0,0,0,0,0,0
+930,Memoirs of a Geisha,Arthur Golden,1997,4.08,1300209,36,0,0,1,0,0,1,1,0
+865,The Alchemist,Paulo Coelho,1988,3.82,1299566,37,1,0,0,0,0,1,0,1
+3636,The Giver,Lois Lowry,1993,4.12,1296825,38,0,1,0,0,1,1,0,0
+1934,Little Women,Louisa May Alcott,1868,4.04,1257121,39,0,0,0,0,0,1,0,0
+10210,Jane Eyre,Charlotte Brontë,1847,4.1,1198557,40,0,0,0,0,0,1,1,0
+19501,"Eat, Pray, Love",Elizabeth Gilbert,2006,3.51,1181647,41,0,0,1,0,0,0,0,1
+19063,The Book Thief,Markus Zusak,2005,4.36,1159741,42,0,0,0,0,1,0,1,0
+43641,Water for Elephants,Sara Gruen,2006,4.07,1068146,48,0,0,1,0,0,0,1,0
+5129,Brave New World,Aldous Huxley,1932,3.97,1022601,51,0,1,0,0,0,1,0,0
+22557272,The Girl on the Train,Paula Hawkins,2015,3.88,1008778,53,0,0,0,1,0,0,0,0
+11,The Hitchhiker's Guide to the Galaxy,Douglas Adams,1979,4.2,936782,57,0,1,0,0,0,1,0,0
+37435,The Secret Life of Bees,Sue Monk Kidd,2001,4.01,916189,58,0,0,0,0,1,1,1,0
+18405,Gone with the Wind,Margaret Mitchell,1936,4.28,873981,61,0,0,1,0,0,1,1,0
+1618,The Curious Incident of the Dog in the Night-Time,Mark Haddon,2003,3.85,867553,62,0,0,0,1,1,1,0,0
+11588,The Shining,Stephen King,1977,4.17,791850,69,1,0,0,1,0,1,0,0
+1617,Night,Elie Wiesel,1958,4.3,691231,79,0,0,0,0,0,1,0,1
+1845,Into the Wild,Jon Krakauer,1996,3.94,647684,83,0,0,0,0,0,0,0,1
+7445,The Glass Castle,Jeannette Walls,2005,4.24,621099,87,0,0,0,0,0,0,0,1
+32542,A Time to Kill,John Grisham,1989,4.03,597775,93,0,0,0,1,0,0,0,0
+11084145,Steve Jobs,Walter Isaacson,2011,4.09,560715,100,0,0,0,0,0,0,0,1
+6900,Tuesdays with Morrie,Mitch Albom,1997,4.06,556518,101,0,0,0,0,0,0,0,1
+8442457,Gone Girl,Gillian Flynn,2012,4.03,512475,119,0,0,0,1,0,0,0,0
