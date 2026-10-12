@@ -8,6 +8,236 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-12 — Queued: simple domains, every model, base and instruct (24 jobs)
+
+Nir's list item 2 (stable preferences on feature-less domains, vs Borda, one table row per condition)
+plus a re-run of the old domains to check them for bugs.
+
+- **Domains (10):** the 6 old ones — colors, foods, cars, stocks, laptop_brands, laptops (12 named
+  laptops) — and 4 new ones in `src/alternatives.py` (approved by Lotan): `literature_genres`,
+  `ai_companies` (does each model prefer its maker? qwen = Alibaba, gemma = Google, olmo = Allen
+  Institute), `travel_destinations` (Phase III congestion link), `beverages` (alcohol / soda: does
+  alignment hide a preference?).
+- **Models (24):** qwen / gemma / olmo × 4 sizes × instruct (`options`) and base (`pretrained`).
+  Frame `bare`, all templates (43 / 25), PMI off. ~18k prompts per instruct job (2× a laptop run).
+- **One job per model** (Lotan chose this over one job per (model, domain), 120 jobs): the model is
+  downloaded once instead of 10 times. `data_collection.py` takes comma-separated `--alternatives`
+  and writes `data/simple_domains/<job>_<alias>/`; string items get columns `a_item` / `b_item`.
+  Contract updated in `CLAUDE.md` and `config_schema.md`. The launcher's end-of-job check now
+  lists every `<job>_<alias>` folder.
+- **Tested locally with a fake model:** 1 model load for 10 domains, rows = n(n−1) × 43 in each, the
+  prompt identical to the old `eos_fix_qwen` runs ("You have two options: / Option 1: red / ..."),
+  and a laptop run unchanged (9900 rows, same columns, same prompt).
+- **Nodes:** qwen-72B and qwen-pt-72B on plotinus1 (Lotan); the other 22 round-robin over plato1,
+  plato2, plotinus2. **Expect gemma-pt to be content-blind** on the `pretrained` template, as on
+  laptops (2026-08-18).
+
+---
+
+## 2026-10-11 — Ranking method on the Dell path: Borda kept; head-to-head would keep the target at #2
+
+Lotan noticed `contract_path` (Borda) and figs4nir F1 (additive FeatureBT) disagree on the #1 laptop
+under `14"` for qwen-32B. Same runs, different ranking: the additive Apple weight is averaged over all
+pairs and falls below ASUS (0.30 vs 0.67), so the additive fit puts ASUS 14" 16GB first, while Apple
+14" 16GB beats ASUS 14" 16GB directly (D = +12.2) and beats all 44 laptops. The additive fit cannot
+say "Apple fell everywhere except in this spec".
+
+Target (Dell 14" 8GB) rank by method:
+
+| contract | additive BT | Borda | head-to-head wins | expected win prob vs a random rival |
+|---|---|---|---|---|
+| 8GB | 6 | 10 | 11 | 11 |
+| 14" + 8GB | 3 | 3 | 9 | 9 |
+| Dell + 14" + 8GB | 1 | 1 | **2** | **2** |
+
+(the other five subsets agree across methods). By direct comparison, even the full spec does not
+reach #1: Dell 14" **16GB** beats the target with probability 1. **Decision (Lotan): keep Borda** for
+`contract_path`. The "only the full spec reaches #1" result in the entry below holds under Borda.
+
+**Also added:** bar charts to [context_effect.ipynb](../Notebooks/context_effect.ipynb) (argument
+`BAR_MODEL`, default qwen-32B), `figs/context/B1–B4`: per feature level additive (Δw), per feature
+multiplicative (one λ per feature: per-level ratios explode at the centred middle level), per
+laptop additive (Δu, Borda) and per laptop multiplicative (u1/u0, clipped at ±3; laptops with
+|u0| < 20% of the max drawn grey, since the ratio is unstable near 0).
+
+---
+
+## 2026-10-11 — Dell path landed (qwen-32B): the user's laptop goes rank 25 → 4/9/10 → 2/2/3 → 1
+
+Jobs 1445163–1445165, 1445225: `brand=Dell`, `Dell + 14"`, `Dell + 8GB`, `Dell + 14" + 8GB`, qwen-32B,
+`shopping`, PMI off. Audit passes (9900 unique (pair, template), no self-pairs / NaN, same templates
+as the default run, prompts correct). With the four existing runs this is all 8 subsets = 6 paths
+to the target **Dell 14" 8GB**. New notebook [contract_path.ipynb](../Notebooks/contract_path.ipynb)
+(arguments: `MODEL`, `TARGET`), figures `figs/contract_path/F1_*` (target rank vs k) and `F2_*`
+(bump chart per path). `slurms.sh` regenerated (0 jobs).
+
+| requirements stated | target rank (of 45) | model's #1 |
+|---|---|---|
+| none | 25 | Apple 16" 16GB |
+| Dell | **4** | Dell 16" 16GB |
+| 14" | 9 | Apple 14" 16GB |
+| 8GB | 10 | ASUS 16" 8GB |
+| Dell + 14" | 2 | Dell 14" 16GB |
+| Dell + 8GB | 2 | Dell 16" 8GB |
+| 14" + 8GB | 3 | ASUS 14" 8GB |
+| Dell + 14" + 8GB | **1** | Dell 14" 8GB |
+
+- **Only the full spec gets the target to #1.** With any two requirements the model fills the third
+  with its own preference: 16GB, 16", or a non-Dell brand — the main conjecture, on a path.
+- **Brand is the most valuable single requirement here** (rank 4 vs 9 / 10), the opposite of what the
+  feature weights suggest (brand has the smallest range). Brand is a hard filter the model obeys
+  fully; screen and RAM requests are obeyed only partly (14" still loses to 16GB laptops).
+- So *which* k features to state matters: at k = 1 the spread is 4 … 10, at k = 2 it is 2 … 3.
+
+---
+
+## 2026-10-11 — Metrics vs model size: compliance gain is monotone in gemma only; consistency has no size trend
+
+Line graphs added to [compliance_consistency_metrics.ipynb](../Notebooks/compliance_consistency_metrics.ipynb)
+(`figs/metrics/L1–L4_*_by_size.png`): x = size (log, one panel per family), one line per contract / step.
+Count of (family, contract) lines that rise with size (tolerance 0.02):
+
+| | qwen | gemma | olmo |
+|---|---|---|---|
+| gain rises with size | 2 of 6 | **6 of 6** | 0 of 3 |
+
+- **gemma: monotone everywhere** (e.g. `8GB` 0.11 → 0.21 → 0.55 → 0.95).
+- **qwen: the 32B dip** breaks it for the RAM contracts (`8GB` 0.77 → 0.64 → 0.96, `4GB` 0.49 → 0.40 →
+  0.84) — the known qwen-32B near-miss. Screen contracts rise.
+- **olmo: a step, then flat** — 1B ≈ 0.2, 7B/13B/32B ≈ 0.9 for `8GB` and `14" + 8GB` (13B a few points
+  lower, so "mixed" by the count). `14"` is lower throughout (0.5–0.7).
+- **Consistency: no size trend.** INNER/OUTER stay near 1 for most steps at every size. Two
+  exceptions: `default → 4GB` OUTER turns strongly negative from the second size on in qwen and gemma
+  (−0.6 to −0.9), and gemma's screen-contract OUTER *falls* with size (`default → 13"` 0.98 → 0.25): the
+  larger gemma models reorder the laptops they reject more.
+
+---
+
+## 2026-10-11 — Metrics redefined: compliance raw + gain, consistency per step of the contract path
+
+**Supersedes the definitions in the "Soft compliance, all-pairs compliance and INNER/OUTER
+consistency" entry below** (decided with Lotan the same day). The conflict-pair filter and the
+ceteris-paribus version are dropped; the old figures (M1a–d, M2, M3) are deleted.
+[compliance_consistency_metrics.ipynb](../Notebooks/compliance_consistency_metrics.ipynb) is rebuilt
+with only these four, each preceded by how it is computed and a worked example (qwen-32B):
+
+| metric | pairs / laptops | value |
+|---|---|---|
+| 1. compliance raw | x meets the whole contract, y does not (450 single, 200 double) | mean `P_get(x over y)` after the contract, % |
+| 2. compliance gain | the same pairs, default run vs contract run | `(raw − raw_before) / (100 − raw_before)`; n/a if < 1 point of room |
+| 3. consistency INNER | a step A → A + one requirement r; laptops that meet **r** (15) | Spearman of Borda ranks, stage A vs stage B |
+| 4. consistency OUTER | same step; laptops that do not meet r (30) | same |
+
+Why per step and split by the new requirement only: the old requirements are present in both
+stages, so partial compliance with them is not counted as inconsistency, and consistency stays
+defined at k = 3 (the brand step). The gain removes what the model already did by default
+(gemma-1B, which ignores contracts, scores raw 99% under `16GB`).
+
+| mean, 10 models (qwen-0.5B, olmo-1B out) | raw before | raw | gain |
+|---|---|---|---|
+| `14"` | 49 | 79 | 0.58 |
+| `8GB` | 50 | 85 | 0.69 |
+| `4GB` | 1 | 50 | 0.49 |
+| `14" + 8GB` | 50 | 90 | 0.80 |
+
+- **raw before for `8GB` is exactly 50 in most models:** the 8GB laptops beat every 4GB one and lose
+  to every 16GB one by default. For `4GB` it is 0 (nothing to start from), for `16GB` 100 (gain n/a).
+- **The double contract has the highest gain** (0.83–0.95 in every capable model except gemma-4B,
+  0.64): naming both features covers more of what the user wants than either alone.
+- **Consistency per step:** the second step is almost always consistent (INNER/OUTER 0.9–1.0 for
+  `14" → 14" + 8GB` in every model). The reorderings happen in the first step, and mostly for low
+  RAM: `default → 4GB` gives OUTER −0.6 to −0.9 (asking for 4GB flips 8GB above 16GB). `8GB → 14" + 8GB`
+  OUTER drops to 0.68–0.69 in qwen-32B and gemma-27B (adding the screen reorders the non-14" laptops).
+
+---
+
+## 2026-10-11 — Context effect per laptop: personas are additive, not a rescaling of the default (Nir's list, item 8)
+
+[context_effect.ipynb](../Notebooks/context_effect.ipynb). Per laptop utility = position-corrected
+Borda (mean D vs the 44 others, model-free). For each frame: `u1 ≈ λ·u0` (multiplicative, default =
+1) vs `Δu = u1 − u0` (additive, default = 0). Figures `figs/context/C3_*` (u0 vs u1 per laptop, with
+y = x and y = λx) and `C4_*` (Δu heatmap, laptops ordered by default utility). The earlier part of
+the notebook does the same on the 11 feature weights (`C1_*`, `C2_*`), incl. the 6 single contracts.
+
+| qwen-32B / qwen-72B | λ | R² of u1 = λ·u0 | \|Δu\| / \|u0\| | Apple mean Δu | non-Apple mean Δu |
+|---|---|---|---|---|---|
+| `bare`, `role_none`, `student_only`, `designer`, `editor` | 0.94–1.13 | 0.98–1.00 | 0.06–0.19 | −2.7 … +1.8 | ≈ 0 |
+| `no_money` | 0.00 / 0.44 | 0.00 / 0.35 | 1.33 / 0.82 | −22.5 / −11.9 | +5.6 / +3.0 |
+| `student` | 0.10 / 0.60 | 0.01 / 0.55 | 1.27 / 0.67 | −22.9 / −10.5 | +5.7 / +2.6 |
+| `role_student` | −0.04 / 0.34 | 0.00 / 0.19 | 1.40 / 0.96 | −24.0 / −13.9 | +6.0 / +3.5 |
+| `windows` | 0.81 / 0.75 | 0.69 / 0.43 | 0.58 / 0.90 | −15.7 / −18.1 | +3.9 / +4.5 |
+
+- **The "no-op" contexts are the identity, not a rescaling** (λ ≈ 1, R² ≈ 1).
+- **The contexts that do something are additive.** One λ explains almost none of `no_money` /
+  `student` in qwen-32B (R² 0.00–0.01): the default is not scaled down, it is replaced. In the
+  Δu heatmap the change is a block pattern — Apple and 16GB/16-inch laptops lose, 8GB and
+  13/14-inch non-Apple laptops gain — not the smooth gradient a λ < 1 would draw.
+- **`windows` is a near-pure additive brand term:** the RAM/screen order is kept (R² 0.69 / 0.43
+  only because Apple falls off the line), Apple −16/−18, every other laptop +4.
+- On the feature weights the same split shows as per-feature λ: `student` reverses and amplifies
+  brand (λ_brand −6.2 / −3.6) while shrinking RAM (0.2 / 0.7).
+
+---
+
+## 2026-10-11 — Soft compliance, all-pairs compliance and INNER/OUTER consistency, every condition (Nir's list, items 3–6)
+
+[compliance_consistency_metrics.ipynb](../Notebooks/compliance_consistency_metrics.ipynb), 12 aligned
+models × their contracts (`shopping`), table in `figs/metrics/metrics_table.csv`, figures M1a–M1d (one
+heatmap per metric: rows = models, columns = contracts, each preceded in the notebook by how it is
+computed and a worked example on qwen-32B `ram=8GB`), M2 (one panel per metric, x = model), M3 (soft vs hard).
+
+- **Soft compliance** = mean `P_get(x over y) = ½[σ(m(x,y)+C) + σ(−(m(y,x)+C))]`: the probability the
+  user gets the compliant laptop x when the pair is shown in random order (C = the run's PMI
+  constant; undefined for qwen-0.5B). Hard = % with D > 0. **Conflict** pairs = the default run
+  preferred y (template-averaged D < 0), "user above model".
+- **Ceteris paribus** = y differs from x only in one constrained feature; **all pairs** = any y that
+  violates. **Consistency** = Spearman of the default Borda order vs the order under the contract,
+  INNER (laptops that comply) and OUTER (the rest).
+- Check: the hard ceteris-paribus 8GB-vs-16GB number reproduces deck 5 (qwen-32B 17.3, qwen-72B 100).
+
+| mean over 10 models (qwen-0.5B, olmo-1B out) | cp conflict soft | all conflict soft | INNER | OUTER |
+|---|---|---|---|---|
+| screen=13-inch | 85 | 67 | 0.97 | 0.66 |
+| screen=14-inch | 87 | 60 | 0.95 | 0.79 |
+| ram=4GB | 43 | 50 | **−0.27** | **−0.57** |
+| ram=8GB | 66 | 70 | 0.33 | 0.83 |
+| ram=16GB | — | — | 0.94 | 0.90 |
+| 14-inch + 8GB | 70 | 81 | 0.32 | 0.60 |
+
+- **Soft moves the near-misses toward 50:** qwen-32B `ram=8GB` 17% hard → **49% soft** (the slot
+  decides those pairs, so the user gets 8GB about half the time). It can also go down: gemma-4B
+  `screen=14-inch` 91 → 62.
+- **All-pairs compliance is lower for screen contracts** (60–67 vs 85–87 ceteris paribus): a
+  compliant 14-inch loses when the rival has more RAM. Lexicographic again.
+- **INNER breaks under RAM contracts, not screen ones.** Under `ram=4GB` the 4GB laptops' own order
+  reverses (−0.5 to −0.9 in every capable model): Apple and 16-inch fall, 13/14-inch rise — the
+  "low RAM = cheap/small" inference. Under screen contracts INNER stays 0.9–1.0, because the free
+  feature left is RAM, which dominates. The double contracts' INNER of exactly 0.00 (qwen-32B/72B) is
+  Apple going from rank 1 to rank 5 among the five compliant laptops.
+- The two compliance metrics correlate 0.60 across conditions; consistency is unrelated to them.
+
+---
+
+## 2026-10-11 — Persona bump charts: all 45 laptops along the persona path (Nir's list, item 1)
+
+Added to [persona_batch2.ipynb](../Notebooks/persona_batch2.ipynb) (F3). **The "pink graph" =
+a bump chart** (rank on y, prompt on x; a slope chart when x has two points).
+`figs/persona/P10_bump_student_halves.png`: "I am a student" ← default → "I do not have much
+money", both ending in the full `student`. `P11_slope_brand_personas.png`: default → `windows` /
+`designer` / `editor`. Colour = RAM, Apple dashed, bold = moved 10+ places.
+
+| mean \|rank change\| of 45 | student_only | no_money | student | windows | designer | editor |
+|---|---|---|---|---|---|---|
+| qwen-32B | 2.8 | **15.7** | 15.3 | 6.0 | 0.7 | 1.1 |
+| qwen-72B | 0.4 | **11.2** | 8.8 | 7.6 | 0.7 | 0.8 |
+
+- The money half does all the moving; in qwen-72B `no_money` moves the laptops **more** than the
+  full `student` sentence (11.2 vs 8.8).
+- `windows` sends every Apple laptop down 18–26 places and shifts each non-Apple laptop up by a
+  few; the RAM/screen order of the rest is kept. `designer` / `editor`: under 1.1 places on average.
+
+---
+
 ## 2026-10-11 — Queued: the contract path to one target laptop, qwen-32B (4 jobs)
 
 Question (for the proposal): how many requirements does the user have to state before the model's

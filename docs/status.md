@@ -207,12 +207,15 @@ the 10-07 audit); the old "missing" note here was stale. Doubles beyond `14-inch
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-11 (`slurms.sh`, 4 jobs): the contract path to one target laptop, qwen-32B.**
-Target = Dell 14-inch 8GB (all three features disagree with the default, Apple 16in 16GB).
-Jobs: `brand=Dell`, `Dell + 14-inch`, `Dell + 8GB`, `Dell + 14-inch + 8GB`, one per node
-(plato1/2, plotinus1/2), into `laptops_robustness`. With the four existing no-brand runs this gives
-all 8 subsets = all 6 paths. Plot: x = number of requirements, y = rank of Dell 14in 8GB of 45.
-**Next:** the same 4 on qwen-72B, gemma-27B, olmo-32B (12 jobs) once qwen-32B looks right.
+**Queued 2026-10-12 (`slurms.sh`, 24 jobs): simple domains** — 10 feature-less domains (6 old, re-run as a
+bug check, + literature genres, AI companies, travel destinations, beverages) × 24 models (3 families ×
+4 sizes × instruct/base), one job per model, into `data/simple_domains/<job>_<domain>/`. qwen-72B on
+plotinus1. Analysis plan: per-domain stability (templates), Borda vs BT, one table row per condition.
+
+**Landed 2026-10-11: the Dell contract path, qwen-32B** — all 8 subsets of {Dell, 14", 8GB}; analysed
+in [contract_path.ipynb](../Notebooks/contract_path.ipynb). Target rank 25 → 4 / 9 / 10 → 2 / 2 / 3 → 1:
+only the full spec reaches #1. **Next:** the same 4 brand jobs on qwen-72B, gemma-27B, olmo-32B (12
+jobs; OLMo also lacks nothing else on this path).
 
 **Landed 2026-10-10: the whole persona set, 16 runs** in `data/laptops_persona/` — qwen-32B and
 qwen-72B × {`student`, `editor`, `student_only`, `no_money`, `windows`, `designer`, `role_none`,
