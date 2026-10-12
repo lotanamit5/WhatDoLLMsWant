@@ -207,13 +207,13 @@ the 10-07 audit); the old "missing" note here was stale. Doubles beyond `14-inch
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-12 (`slurms.sh`, 2 jobs): the books PILOT** — qwen-7B on `books_small` (14 books, the 2
-most famous per tag), frame `reading`, `none` and `fantasy=yes`, into `data/books_pilot/`. A quick
-end-to-end check of the new domain before the big models. Analysis is ready:
-[books_pilot.ipynb](../Notebooks/books_pilot.ipynb) (tested on synthetic runs with known weights).
-Design: [books_domain_design.ipynb](../Notebooks/books_domain_design.ipynb), list `src/books/books.csv`
-built by `src/books/make_books.py`. **After the pilot:** the 4 no-contract jobs on the full 48 books
-(qwen-32B/72B, gemma-27B, olmo-32B; commented out in `create_slurms.py`), then tag contracts.
+**Landed and analysed 2026-10-12: the books PILOT** — qwen-7B, 14 books, `none` + `fantasy=yes`,
+[books_pilot.ipynb](../Notebooks/books_pilot.ipynb). Pipeline clean; preference follows the Goodreads
+rating (ρ = +0.67); fantasy contract 49% → 95%. 
+**Queued for the night of 2026-10-12 (`slurms.sh`, 20 jobs): books, full 48** — qwen-72B (all on plotinus1),
+qwen-32B, gemma-27B, olmo-32B (plato1/plato2; plotinus2 is down) × `none`, `fantasy=yes`,
+`mystery-thriller=yes`, `romance=yes`, `classics=yes`, into `data/books/`. Why these contracts: progress 2026-10-12.
+List: `src/books/books.csv`, built by `src/books/make_books.py`.
 
 **Queued 2026-10-12 (`slurms.sh`, 6 jobs): two more contract paths, qwen-32B** — targets
 Apple 14" 8GB (brand the model likes) and Dell 14" 4GB (RAM it dislikes), each one feature away from

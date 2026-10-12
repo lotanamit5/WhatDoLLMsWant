@@ -66,6 +66,40 @@ and `8GB` → `14" + 8GB`), so consistency is one row per step, not per contract
 
 ---
 
+## 2026-10-12 — Books pilot landed (qwen-7B, 14 books): pipeline clean, preference follows readers
+
+Jobs 1447314 (`none`) and 1447317 (`fantasy=yes`), `data/books_pilot/`, analysed in
+[books_pilot.ipynb](../Notebooks/books_pilot.ipynb). No bugs: 910 rows each, template agreement 0.95 / 0.96.
+
+| | none | fantasy=yes |
+|---|---|---|
+| Spearman with Goodreads avg rating | **+0.67** | +0.03 |
+| Spearman with ratings count | +0.31 | +0.48 |
+| Spearman with year | 0.00 | +0.48 |
+| fantasy wins, mixed pairs | 49% | **95%** |
+| tag BT R² | 0.20 | 0.78 |
+| γ (slot bias) | −0.59 | −3.48 |
+| winner saturated | 64% | 83% |
+
+- Top: Harry Potter (wins 98%). Bottom: **Twilight, 0% wins on all 5 templates**, D = −13.2.
+- Under "I prefer fantasy." Twilight goes 14th → 2nd (+21.7): the contract overrides the strongest dislike.
+- **Tags ≠ the model's genre:** The Alchemist (fantasy 23% of shelves) does not move (−1.2); The Hunger
+  Games (fantasy 11%, untagged) rises +4.4. Tags are the readers' labels, a proxy for the model's.
+- Tags explain little of the baseline (R² 0.20): the preference is about the book, not the genre.
+
+**Queued for the night (20 jobs, `data/books/`):** qwen-72B / qwen-32B / gemma-27B / olmo-32B × `none` +
+4 tag contracts. Since the pilot's ranking follows the readers' rating, a tag whose books readers rate
+low is a contract **against** the model's preference:
+
+| contract | books | their Goodreads avg (all 48: 4.06) | role |
+|---|---|---|---|
+| `fantasy=yes` | 10 | 4.12 | replicate the pilot |
+| `mystery-thriller=yes` | 8 | 3.96 | against the preference (Dan Brown 13th of 14 in the pilot) |
+| `romance=yes` | 8 | 3.98 | against; Fifty Shades 3.67, Eat Pray Love 3.51; Twilight untagged romance: does it rise? |
+| `classics=yes` | 26 | 4.06 | agrees with the default: control, expected small move (like `ram=16GB`) |
+
+---
+
 ## 2026-10-12 — Books domain designed: 48 famous Goodreads books, 8 hidden genre tags
 
 Second feature domain next to the laptops, planned with Lotan. Items are **real books**, the prompt

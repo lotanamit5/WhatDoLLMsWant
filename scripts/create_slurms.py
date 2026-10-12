@@ -50,27 +50,43 @@ BASELINE_FOUR = [
     'screen=14-inch,ram=8GB',
 ]
 
+# Books (2026-10-12 night): no contract + four tag contracts. See the batch below for why these four.
+BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'classics=yes']
+
 # One parameter dict per batch. Kept as a list because model family and size do not
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- 2026-10-12: BOOKS PILOT. 2 jobs, qwen-7B, 14 books (2 most famous per tag), no contract
-    # and `fantasy=yes`. A quick end-to-end check of the new domain (items, frame, contract sentence,
-    # scores.csv columns) before spending the big models. 14 x 13 x 5 = 910 rows per run.
-    # Analysis: Notebooks/books_pilot.ipynb.
-    # Nodes: plotinus1/2 only (Lotan, 2026-10-12 evening - the plato nodes are not available).
-    {'m': ['qwen'], 's': ['7'], 'a': ['books_small'], 'c': ['', 'fantasy=yes'], 'f': ['reading'],
-     'n': ['books_pilot'], 'w': [['plotinus1', 'plotinus2']]},
+    # --- 2026-10-12 NIGHT: BOOKS, full 48 books, 4 big models x (none + 4 tag contracts). 20 jobs.
+    # 48 famous Goodreads books, prompt = "<title> by <author> (<year>)", 8 hidden genre tags
+    # (src/books/books.csv). Frame `reading`. 48 x 47 x 5 templates = 11,280 rows per run.
+    # Contracts, chosen from the pilot (qwen-7B, progress.md 2026-10-12): the model's ranking follows
+    # the Goodreads rating (rho +0.67), so a tag whose books readers rate LOW is a contract against
+    # its preference.
+    #   fantasy=yes           replicates the pilot (49% -> 95%; Twilight 14th -> 2nd)
+    #   mystery-thriller=yes  AGAINST the preference: these 8 books average 3.96 vs 4.06; Dan Brown
+    #                         was 13th of 14 in the pilot
+    #   romance=yes           AGAINST, and a tags-vs-model test: includes the low-rated Fifty Shades
+    #                         (3.67) and Eat, Pray, Love (3.51); Twilight is NOT tagged romance - does it rise?
+    #   classics=yes          AGREES with the default (26 of 48 books): the control, expected to move
+    #                         little, like ram=16GB on the laptops
+    # Nodes (Lotan, night of 10-12): plotinus2 is down. Every qwen-72B job on plotinus1 (5 x 72B is
+    # about a night on its own); the other 15 split over plato1 / plato2. `none` first in every set,
+    # so each model's baseline lands before its contracts.
+    {'m': ['qwen'], 's': ['72'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+     'c': BOOK_CONTRACTS, 'w': [['plotinus1']]},
+    {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
+    {'m': ['gemma'], 's': ['27'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
+    {'m': ['olmo'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
 
-    # --- 2026-10-12: BOOKS, the second feature domain. First real batch: no contract, big models. 4 jobs.
-    # 48 famous Goodreads books, prompt = "<title> by <author> (<year>)", 8 hidden genre tags as
-    # features (src/books/books.csv, Notebooks/books_domain_design.ipynb). Frame `reading` is the
-    # books counterpart of `shopping`. 48 x 47 x 5 templates = 11,280 rows per run.
-    # Contracts come after this lands: -c "fantasy=yes" -> "I prefer fantasy."
-    # WAITING for the pilot above to come back clean.
-    # {'m': ['qwen'],  's': ['32', '72'], 'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
-    # {'m': ['gemma'], 's': ['27'],       'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
-    # {'m': ['olmo'],  's': ['32'],       'a': ['books'], 'c': [''], 'f': ['reading'], 'n': ['books']},
+    # --- 2026-10-12: BOOKS PILOT. qwen-7B, 14 books (2 most famous per tag), none + fantasy=yes.
+    # DONE 2026-10-12: landed as jobs 1447314 / 1447317 (910 rows each), analysed in
+    # Notebooks/books_pilot.ipynb. Do not re-run.
+    # {'m': ['qwen'], 's': ['7'], 'a': ['books_small'], 'c': ['', 'fantasy=yes'], 'f': ['reading'],
+    #  'n': ['books_pilot'], 'w': [['plotinus1', 'plotinus2']]},
 
     # --- 2026-10-12: two more contract PATHS on qwen-32B, next to the Dell 14in 8GB path. 6 jobs.
     # Each new target differs from Dell 14in 8GB in ONE feature, so half of each path exists already:
