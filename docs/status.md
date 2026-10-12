@@ -207,7 +207,25 @@ the 10-07 audit); the old "missing" note here was stale. Doubles beyond `14-inch
 
 ### A. Runs to collect (cluster) — Track 1
 
-**Queued 2026-10-12 (`slurms.sh`, 24 jobs): simple domains** — 10 feature-less domains (6 old, re-run as a
+**Designed 2026-10-12, not yet in code: the books domain** — 48 famous Goodreads books, prompt =
+title + author + year, 8 hidden genre tags as features ([books_domain_design.ipynb](../Notebooks/books_domain_design.ipynb),
+`figs/books/books_selected.csv`). Waiting on: `books` in `src/alternatives.py`, `reading` frame + tag
+constraint phrase in `data_collection.py`, then a first no-contract batch on qwen-32B/72B, gemma-27B,
+olmo-32B. See progress 2026-10-12.
+
+**Queued 2026-10-12 (`slurms.sh`, 6 jobs): two more contract paths, qwen-32B** — targets
+Apple 14" 8GB (brand the model likes) and Dell 14" 4GB (RAM it dislikes), each one feature away from
+the Dell 14" 8GB path, so only 4 + 2 subsets are new. After they land: three full paths on qwen-32B
+(contract_path.ipynb, and the tables below). See progress 2026-10-12.
+
+**Contract tables (2026-10-12):** [contract_tables.ipynb](../Notebooks/contract_tables.ipynb) writes
+`figs/metrics/table_compliance.csv` (one row per contract) and `table_consistency.csv` (one row per
+step), aligned + pretrained. Re-run it when new contract runs land.
+
+**qwen-72B Dell path (2026-10-12):** `Dell` and `Dell + 8GB` landed (1445296, 1445298);
+`Dell + 14"` and `Dell + 14" + 8GB` (1445303, 1445304) have `config.json` only — still running, or died.
+
+**Launched 2026-10-12 (24 jobs, out of `slurms.sh`): simple domains** — 10 feature-less domains (6 old, re-run as a
 bug check, + literature genres, AI companies, travel destinations, beverages) × 24 models (3 families ×
 4 sizes × instruct/base), one job per model, into `data/simple_domains/<job>_<domain>/`. qwen-72B on
 plotinus1. Analysis plan: per-domain stability (templates), Borda vs BT, one table row per condition.

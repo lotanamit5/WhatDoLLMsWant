@@ -8,6 +8,126 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-10-12 — Two more contract paths queued (Apple 14" 8GB, Dell 14" 4GB); contract tables as CSV
+
+**Decision.** Two new user types next to the Dell 14" 8GB path, on qwen-32B. Each target differs from
+Dell 14" 8GB in **one feature only**, so half of each path exists and the comparison changes one thing:
+
+| target | differs in | what it asks | subsets already run | new jobs |
+|---|---|---|---|---|
+| Apple 14" 8GB | brand | a user who agrees with the model's brand | none, 14", 8GB, 14"+8GB | 4 |
+| Dell 14" 4GB | RAM | a user who asks for the RAM the model dislikes most | none, Dell, 14", 4GB, Dell+14", 14"+4GB | 2 |
+
+6 jobs in `slurms.sh`. Extending to qwen-72B would be 6 more (once its Dell path is complete); any other
+model, 11.
+
+**Tables.** [contract_tables.ipynb](../Notebooks/contract_tables.ipynb): the 4 metrics of
+compliance_consistency_metrics as two CSVs, now with the pretrained models too. Compliance: 110
+contracts. Consistency: 139 steps — a double contract has two steps into it (e.g. `14"` → `14" + 8GB`
+and `8GB` → `14" + 8GB`), so consistency is one row per step, not per contract. Aligned values equal
+`compliance.csv` / `consistency_steps.csv`.
+
+---
+
+## 2026-10-12 — Books domain designed: 48 famous Goodreads books, 8 hidden genre tags
+
+Second feature domain next to the laptops, planned with Lotan. Items are **real books**, the prompt
+shows only `"<title> by <author> (<year>)"`; the features are **hidden**: the genre shelves Goodreads
+readers put the book on (goodbooks-10k, `external/goodbooks-10k/`, gitignored). Design notebook:
+[books_domain_design.ipynb](../Notebooks/books_domain_design.ipynb); the list is
+`figs/books/books_selected.csv`.
+
+- 8 genres, each 0/1 per book: a book has a genre if it is ≥ 12% of its genre shelvings
+  (shelf spellings merged, e.g. sci-fi / scifi / dystopian → science-fiction). `children` and `horror`
+  dropped: only 3 famous books each.
+- Pick: the 32 most-rated books first (fame), then every tag up to 8 books, then fill to 48. One book
+  per series (its first), max 2 per author. All 48 are within the 119 most-rated books on Goodreads.
+
+| tag | fantasy | sci-fi | romance | mystery | young-adult | classics | historical | nonfiction |
+|---|---|---|---|---|---|---|---|---|
+| books | 10 | 8 | 8 | 8 | 13 | 26 | 8 | 8 |
+
+Largest tag correlation +0.31 (fantasy–young-adult), so the 8 weights are separately identifiable.
+Per run: 48 × 47 × 5 templates = 11,280 rows.
+
+**Why hidden tags (Lotan):** if the prompt listed the tags, the model would choose by the tag words;
+with the title only, the choice comes from what the model knows about the book, and the tag weights
+say what that knowledge amounts to. Goodreads also gives a human baseline (average rating, ratings
+count) the laptops never had.
+
+**Still open:** add `books` to `src/alternatives.py` (read-only, needs Lotan's go), a `reading` frame
+and a tag `CONSTRAINT_PHRASE` in `data_collection.py`, then a first batch (no contract) on the big
+models. A tags-only variant (same books, no title) can be added later to split identity from features.
+
+---
+
+## 2026-10-12 — S1 now has every context we have for qwen-32B and qwen-72B
+
+Added the other single contracts (`13"`, `16"`, `16GB`), the two doubles and the Dell path (qwen-32B
+only) to S1; the context notebook now loads them (`MULTI`). RMS change of laptop utility, log-odds:
+
+| | 13" | 14" | 16" | 4GB | 8GB | 16GB | 14"+8GB | 14"+4GB | Dell | Dell+14" | Dell+8GB | Dell+14"+8GB |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| qwen-32B | 15.3 | 12.8 | 10.4 | 14.9 | 8.7 | **3.5** | 13.0 | 17.3 | 12.0 | 13.2 | 12.3 | 12.7 |
+| qwen-72B | 11.3 | 9.5 | 9.0 | 16.1 | 10.0 | **4.2** | 10.4 | 14.8 | – | – | – | – |
+
+- A contract that agrees with the default (`16GB`) moves the model least, as `designer` / `editor` do.
+- In qwen-32B the persona "I do not have much money" (19.3) moves the model **more than every
+  contract**, single or multiple; `role_student` (20.2) too.
+- Screen contracts also move RAM (`13"`: 4.4 of its 15.3 in qwen-32B); `Dell` moves RAM as well as brand.
+
+---
+
+## 2026-10-12 — Context: multiplicative view dropped; one summary figure (S1); gain vs INNER scatter (S2)
+
+**Multiplicative view dropped (Lotan).** BT identifies only differences between levels, so a weight
+or a utility has no natural zero and any ratio explodes near it. Removed from
+[context_effect.ipynb](../Notebooks/context_effect.ipynb): the λ and rescaling-share panels, C2, C3,
+B2, B4 and their CSVs. The notebook is now additive only (C1, C4, B1, B3, B5, S1).
+
+**S1** (`figs/context/S1_context_summary.png`), one figure for the proposal: bar = RMS change of the 45
+laptop utilities (from the feature weights), stacked by the share carried by brand / screen / RAM
+(the three parts are orthogonal in the full factorial, so the shares add up exactly). Personas and
+frames, then three explicit contracts for comparison.
+
+| RMS change, log-odds | no_money | student | role_student | windows | bare / student_only / role_none / designer / editor | contract 4GB / 8GB / 14" |
+|---|---|---|---|---|---|---|
+| qwen-32B | 19.3 | 18.4 | 20.2 | 8.1 | 1.0–1.9 | 14.9 / 8.7 / 12.8 |
+| qwen-72B | 8.6 | 7.0 | 10.0 | 9.0 | 0.7–2.0 | 16.1 / 10.0 / 9.5 |
+
+In qwen-32B "I do not have much money" moves the model **more than any explicit contract**, through
+all three features; `windows` moves it almost only through brand; an explicit contract moves almost
+only the feature it names.
+
+**S2** (`figs/metrics/S2_gain_vs_inner.png`): x = consistency INNER, y = compliance gain (common
+contracts), marker = family, colour = size, dashed ellipse = ±1 SD of each metric across the 5
+templates. Template SDs are small (gain 0.01–0.04, INNER 0.01–0.08; largest olmo-7B INNER). The small
+models sit bottom-right (consistent because they do not react); the large ones top, spread in INNER
+from 0.45 (qwen-7B) to 0.97 (olmo-13B). No trade-off line between the two metrics.
+
+---
+
+## 2026-10-12 — Metrics averaged per family; per-laptop context effect from the feature sum
+
+**Family averages** ([compliance_consistency_metrics.ipynb](../Notebooks/compliance_consistency_metrics.ipynb),
+`figs/metrics/A1_metrics_avg_by_family.png`): each metric averaged over the contracts every model has
+(`14"`, `8GB`, `14" + 8GB`; consistency over the 4 steps to them), one line per family vs size.
+
+| | qwen 0.5 / 7 / 32 / 72 | gemma 1 / 4 / 12 / 27 | olmo 1 / 7 / 13 / 32 |
+|---|---|---|---|
+| gain | – / 0.68 / 0.76 / 0.90 | 0.10 / 0.37 / 0.73 / 0.92 | 0.18 / 0.83 / 0.77 / 0.85 |
+| INNER | 0.93 / 0.45 / 0.93 / 0.65 | 0.95 / 0.93 / 0.63 / 0.83 | 0.92 / 0.81 / 0.97 / 0.80 |
+| OUTER | 0.86 / 0.84 / 0.82 / 0.85 | 0.97 / 0.93 / 0.83 / 0.73 | 0.92 / 0.90 / 0.95 / 0.84 |
+
+On the common contracts the qwen-32B dip disappears (it came from `4GB`): **compliance gain rises
+with size in all three families**, except olmo 7B → 13B (−0.06). Consistency has no size trend; the
+smallest models are the most consistent because they barely react.
+
+**B5** ([context_effect.ipynb](../Notebooks/context_effect.ipynb)): Δu per laptop as the sum of its
+three feature-weight changes (the additive model's view), next to B3 (Borda, model-free).
+
+---
+
 ## 2026-10-12 — Queued: simple domains, every model, base and instruct (24 jobs)
 
 Nir's list item 2 (stable preferences on feature-less domains, vs Borda, one table row per condition)
