@@ -1,0 +1,33 @@
+{
+  "alternatives": "laptops_robustness",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "brand": "Apple",
+    "ram": "8GB"
+  },
+  "constraints_id": "brand=Apple+ram=8GB",
+  "constraints_text": "I prefer a Apple laptop and 8 GB ram.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop.",
+    "voice": "user"
+  },
+  "git_commit": "f4e6420",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "qwen",
+  "model_size": "32",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a Apple laptop and 8 GB ram.",
+  "slurm_job_id": "1447248",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
+    "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
+  },
+  "timestamp": "20261012_201234"
+}
