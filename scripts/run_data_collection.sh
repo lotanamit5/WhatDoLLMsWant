@@ -135,9 +135,18 @@ echo "Running"
 STATUS=$?
 
 echo "model cache used: $(du -sh "$CACHE_ROOT" 2>/dev/null | cut -f1)"
-if [ -f "${EXP_DIR}/scores.csv" ]; then
-  echo "scores.csv rows: $(( $(wc -l < "${EXP_DIR}/scores.csv") - 1 ))"
-else
+# One run writes to EXP_DIR; a multi-domain run (-a "colors,foods,...") writes EXP_DIR_<alias>,
+# one folder per domain, and EXP_DIR itself keeps only this log.
+FOUND=0
+for D in "${EXP_DIR}" "${EXP_DIR}"_*; do
+  if [ -f "${D}/scores.csv" ]; then
+    echo "scores.csv rows: $(( $(wc -l < "${D}/scores.csv") - 1 ))  (${D##*/})"
+    FOUND=1
+  elif [ -f "${D}/config.json" ]; then
+    echo "WARNING: ${D##*/} has config.json but no scores.csv - incomplete."
+  fi
+done
+if [ "$FOUND" -eq 0 ]; then
   echo "WARNING: no scores.csv written - this run is incomplete."
 fi
 

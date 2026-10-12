@@ -64,6 +64,15 @@ def satisfies(row, constraints, side="a"):
 This is exactly the satisfies/violates split behind the 2026-08-10 finding. Today it is
 written by hand in the notebook and has to be rewritten for every new constraint.
 
+### Feature-less items and multi-domain jobs (2026-10-12)
+
+A plain string item (colors, foods, ai_companies, ...) is one feature called `item`: `scores.csv`
+has `a_item` / `b_item` and the prompt shows the string as is. A laptop dict keeps one column per
+feature. A job with several comma-separated `--alternatives` writes one complete run (its own
+`config.json` + `scores.csv`, `alternatives` = that one alias) per domain to
+`data/<exp_name>/<slurm_job_id>_<alias>/`; the plain `<slurm_job_id>/` folder holds only
+`output.log` and is skipped by every loader (no `config.json`).
+
 ### The other fields
 
 | field | why |

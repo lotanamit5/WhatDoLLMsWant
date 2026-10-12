@@ -109,6 +109,12 @@ data/<exp_name>/<slurm_job_id>/
     scores.csv     # template_idx, score_a, score_b, a_<feature>..., b_<feature>...
 ```
 
+**Multi-domain jobs** (2026-10-12, `simple_domains`): a job given several comma-separated
+`--alternatives` loads the model once and writes one run per domain to
+`data/<exp_name>/<slurm_job_id>_<alias>/`; the bare `<slurm_job_id>/` folder then holds only the log.
+Feature-less items (colors, foods, ...) have one feature called `item`: columns `a_item`, `b_item`.
+(The old pre-merge runs in `eos_fix_qwen` etc. use `option_a` / `option_b` instead.)
+
 Analysis code finds runs by **filtering `config.json`** (`load_scores_by_run` in [src/auxiliary.py](src/auxiliary.py)). Keep this contract and new runs appear in the notebooks automatically, with no code change.
 
 - **A run directory with `config.json` but no `scores.csv` is an INCOMPLETE run — every loader must skip it.** `config.json` is written *before* the scoring loop, so a job that dies (disk full, OOM, timeout) leaves the folder behind. Those dirs are never deleted (`data/` is append-only), so after a rerun there are two folders for the same key: the dead one and the good one. A loader that only checks `config.json` will either crash on the missing `scores.csv` or trip the uniqueness assert. Check both files exist, and ideally that the row count is the expected one.

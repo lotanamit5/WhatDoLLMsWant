@@ -22,6 +22,11 @@ QWEN = ['0.5', '7', '32', '72']
 GEMMA = ['1', '4', '12', '27']
 OLMO = ['1', '7', '13', '32']
 
+# Feature-less item sets (2026-10-12): the 6 old ones + 4 new. One string, comma-separated.
+SIMPLE_DOMAINS = ",".join(['colors', 'foods', 'cars', 'stocks', 'laptop_brands', 'laptops',
+                           'literature_genres', 'ai_companies', 'travel_destinations', 'beverages'])
+OTHER_NODES = ['plato1', 'plato2', 'plotinus2']     # all four servers except plotinus1 (qwen-72B)
+
 # Constraints are "feature=level" using the exact level strings from alternatives.py
 # ('13-inch'/'14-inch'/'16-inch', '4GB'/'8GB'/'16GB', and the brand names).
 # "" means no constraint.
@@ -49,6 +54,30 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-12: SIMPLE DOMAINS (no features), every model, base and instruct. 24 jobs.
+    # 6 old domains (re-run, to check the old results for bugs) + 4 new ones. ONE job per model:
+    # it loads the model once and writes one run per domain to data/simple_domains/<job>_<domain>/
+    # (comma-separated -a; see data_collection.collect_data). Frame `bare` (the shopping frame
+    # names a laptop), ALL templates (-t 0: 43 instruct / 25 pretrained), PMI off.
+    # Nodes: qwen-72B (instruct and base) on plotinus1 only (Lotan); everything else round-robin
+    # over the other three.
+    {'m': ['qwen'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['gemma'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['olmo'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['qwen-pt'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['gemma-pt'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['olmo-pt'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    {'m': ['qwen'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['options'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
+    {'m': ['qwen-pt'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
+
     # --- 2026-10-11: the contract PATH to one target laptop, qwen-32B first. 4 jobs.
     # Target (the user's ideal) = Dell 14-inch 8GB: all three features disagree with the model's
     # default (Apple 16-inch 16GB). The 8 subsets of {brand, screen, ram} give every path from no
@@ -57,10 +86,11 @@ parameter_sets = [
     # Plot: x = number of requirements, y = rank of Dell 14in 8GB among the 45 laptops.
     # 'w' = node pool for this batch only: one job per server, so all four run at once.
     # Next, if it works: the same four on qwen-72B, gemma-27B, olmo-32B.
-    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
-     'c': ['brand=Dell', 'brand=Dell,screen=14-inch', 'brand=Dell,ram=8GB',
-           'brand=Dell,screen=14-inch,ram=8GB'],
-     'n': ['laptops_robustness'], 'w': [['plato1', 'plato2', 'plotinus1', 'plotinus2']]},
+    # DONE 2026-10-11: landed as jobs 1445163-1445165, 1445225 (9900 rows each). Do not re-run.
+    # {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Dell', 'brand=Dell,screen=14-inch', 'brand=Dell,ram=8GB',
+    #        'brand=Dell,screen=14-inch,ram=8GB'],
+    #  'n': ['laptops_robustness'], 'w': [['plato1', 'plato2', 'plotinus1', 'plotinus2']]},
 
     # --- 2026-10-08, second persona batch: qwen 32B and 72B, no contract. 8 jobs.
     # The first batch showed `student` ("...and I do not have much money.") moves brand and screen

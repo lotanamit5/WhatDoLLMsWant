@@ -43,6 +43,11 @@ ALTERNATIVES_ALIASES = {
     'laptops_txt_ram_screen': src.alternatives.laptops_txt_ram_screen,
     'laptops_num_ram_screen': src.alternatives.laptops_num_ram_screen,
     'laptops_robustness': src.alternatives.laptops_robustness,
+    # 2026-10-12, feature-less domains added for the simple_domains batch
+    'literature_genres': src.alternatives.literature_genres,
+    'ai_companies': src.alternatives.ai_companies,
+    'travel_destinations': src.alternatives.travel_destinations,
+    'beverages': src.alternatives.beverages,
 }
 
 # Which prompt templates to use, and the answer strings whose last token gets scored.
@@ -186,9 +191,37 @@ def format_features_to_text(item_dict):
             f"laptop with {item_dict.get('ram', '')} RAM").strip()
 
 
-def collect_data(model_family, model_size, alternatives_alias, exp_dir,
+def item_text(item):
+    """What goes into the prompt: a plain string item (colors, foods, ...) as is, a laptop dict
+    through format_features_to_text."""
+    return item if isinstance(item, str) else format_features_to_text(item)
+
+
+def item_columns(prefix, item):
+    """scores.csv columns for one option: a string item is one feature called `item`
+    (a_item / b_item); a dict gives one column per feature (a_brand, a_screen, ...)."""
+    return {f"{prefix}item": item} if isinstance(item, str) else {f"{prefix}{k}": v for k, v in item.items()}
+
+
+def collect_data(model_family, model_size, alternatives, exp_dir,
                  constraints=None, frame='shopping', n_templates=5,
                  template_set='options'):
+    """`alternatives` is one alias, or several separated by commas. Several aliases share ONE
+    loaded model and write one run each to `<exp_dir>_<alias>` (2026-10-12, simple_domains):
+    the model is downloaded once per job instead of once per domain."""
+    aliases = alternatives.split(",")
+    for alias in aliases:                                   # fail before loading a model, not after
+        assert alias in ALTERNATIVES_ALIASES, f"unknown alternatives alias {alias!r}"
+    labels = TEMPLATE_SETS[template_set]['labels']
+    agent = agent_factory(model_family, model_size, labels)
+    for alias in aliases:
+        run_dir = exp_dir if len(aliases) == 1 else f"{exp_dir}_{alias}"
+        collect_one(agent, model_family, model_size, alias, run_dir, constraints, frame,
+                    n_templates, template_set)
+
+
+def collect_one(agent, model_family, model_size, alternatives_alias, exp_dir,
+                constraints=None, frame='shopping', n_templates=5, template_set='options'):
     items = ALTERNATIVES_ALIASES[alternatives_alias]
     constraints = constraints or {}
     validate_constraints(constraints, items)
@@ -202,7 +235,7 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
     con_text = constraints_text(constraints)
     prompt_prefix = " ".join(p for p in (frame_text, con_text) if p)
 
-    agent = agent_factory(model_family, model_size, labels)
+    print('=== alternatives:', alternatives_alias, '->', exp_dir)
     print('model_id:', agent.tokenizer.name_or_path)
     print('template_set:', template_set, '| labels:', labels or agent.labels)
     print('prompt_prefix:', repr(prompt_prefix), '| voice:', frame_voice(frame))
@@ -241,12 +274,11 @@ def collect_data(model_family, model_size, alternatives_alias, exp_dir,
     for idx, template in tqdm(enumerate(templates)):
         full_template = f"{prompt_prefix}\n{template}" if prompt_prefix else template
         for option_a, option_b in itertools.permutations(items, 2):
-            prompt = full_template.format(A=format_features_to_text(option_a),
-                                          B=format_features_to_text(option_b))
+            prompt = full_template.format(A=item_text(option_a), B=item_text(option_b))
             score_a, score_b = agent.query(prompt)
             record = {'template_idx': idx, 'score_a': score_a, 'score_b': score_b}
-            record.update({f"a_{k}": v for k, v in option_a.items()})
-            record.update({f"b_{k}": v for k, v in option_b.items()})
+            record.update(item_columns("a_", option_a))
+            record.update(item_columns("b_", option_b))
             records.append(record)
 
     pd.DataFrame(records).to_csv(os.path.join(exp_dir, "scores.csv"), index=False)
@@ -257,7 +289,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Collect pairwise preference scores")
     parser.add_argument("--model_family", type=str, required=True)
     parser.add_argument("--model_size", type=str, required=True)
-    parser.add_argument("--alternatives", type=str, required=True)
+    parser.add_argument("--alternatives", type=str, required=True,
+                        help="one alias, or several separated by commas (one run each, one model load)")
     parser.add_argument("--exp_dir", type=str, required=False)
     parser.add_argument("--constraints", type=str, default="",
                         help='"screen=14-inch,ram=8GB". Empty means no constraint.')
