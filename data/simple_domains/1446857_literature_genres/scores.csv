@@ -1,0 +1,1051 @@
+template_idx,score_a,score_b,a_item,b_item
+0,-1.8125,-0.185546875,Fantasy,Science fiction
+0,-2.03125,-0.16015625,Fantasy,Mystery
+0,-1.515625,-0.265625,Fantasy,Romance
+0,-1.8125,-0.1875,Fantasy,Historical fiction
+0,-1.8125,-0.1904296875,Fantasy,Horror
+0,-1.8125,-0.1875,Fantasy,Literary fiction
+0,-1.625,-0.251953125,Science fiction,Fantasy
+0,-1.578125,-0.328125,Science fiction,Mystery
+0,-1.2890625,-0.41015625,Science fiction,Romance
+0,-1.2890625,-0.416015625,Science fiction,Historical fiction
+0,-1.625,-0.2490234375,Science fiction,Horror
+0,-1.453125,-0.326171875,Science fiction,Literary fiction
+0,-2.03125,-0.1533203125,Mystery,Fantasy
+0,-1.7109375,-0.2080078125,Mystery,Science fiction
+0,-1.6171875,-0.23828125,Mystery,Romance
+0,-1.8125,-0.1875,Mystery,Historical fiction
+0,-1.921875,-0.1708984375,Mystery,Horror
+0,-1.921875,-0.1689453125,Mystery,Literary fiction
+0,-1.8203125,-0.1923828125,Romance,Fantasy
+0,-1.609375,-0.236328125,Romance,Science fiction
+0,-1.9296875,-0.1806640625,Romance,Mystery
+0,-1.5078125,-0.26171875,Romance,Historical fiction
+0,-1.7109375,-0.21484375,Romance,Horror
+0,-1.8125,-0.189453125,Romance,Literary fiction
+0,-1.65625,-0.27734375,Historical fiction,Fantasy
+0,-1.640625,-0.26171875,Historical fiction,Science fiction
+0,-1.8671875,-0.2431640625,Historical fiction,Mystery
+0,-1.21875,-0.46875,Historical fiction,Romance
+0,-1.4765625,-0.3515625,Historical fiction,Horror
+0,-1.7578125,-0.25390625,Historical fiction,Literary fiction
+0,-1.6328125,-0.25390625,Horror,Fantasy
+0,-1.2421875,-0.369140625,Horror,Science fiction
+0,-2.046875,-0.173828125,Horror,Mystery
+0,-1.109375,-0.484375,Horror,Romance
+0,-1.4296875,-0.302734375,Horror,Historical fiction
+0,-1.6171875,-0.2431640625,Horror,Literary fiction
+0,-1.7890625,-0.4140625,Literary fiction,Fantasy
+0,-1.890625,-0.39453125,Literary fiction,Science fiction
+0,-1.9765625,-0.35546875,Literary fiction,Mystery
+0,-1.6328125,-0.5078125,Literary fiction,Romance
+0,-1.6015625,-0.48046875,Literary fiction,Historical fiction
+0,-1.6328125,-0.384765625,Literary fiction,Horror
+1,-2.46875,-0.09716796875,Fantasy,Science fiction
+1,-2.578125,-0.0859375,Fantasy,Mystery
+1,-2.140625,-0.13671875,Fantasy,Romance
+1,-2.59375,-0.09033203125,Fantasy,Historical fiction
+1,-2.359375,-0.1083984375,Fantasy,Horror
+1,-2.8125,-0.0693359375,Fantasy,Literary fiction
+1,-2.484375,-0.10205078125,Science fiction,Fantasy
+1,-2.265625,-0.1337890625,Science fiction,Mystery
+1,-2.140625,-0.1455078125,Science fiction,Romance
+1,-2.140625,-0.14453125,Science fiction,Historical fiction
+1,-2.46875,-0.09814453125,Science fiction,Horror
+1,-2.703125,-0.0830078125,Science fiction,Literary fiction
+1,-2.703125,-0.0751953125,Mystery,Fantasy
+1,-3.171875,-0.047119140625,Mystery,Science fiction
+1,-2.703125,-0.07666015625,Mystery,Romance
+1,-3.171875,-0.050048828125,Mystery,Historical fiction
+1,-2.9375,-0.059326171875,Mystery,Horror
+1,-3.40625,-0.037841796875,Mystery,Literary fiction
+1,-2.359375,-0.10986328125,Romance,Fantasy
+1,-2.703125,-0.07763671875,Romance,Science fiction
+1,-2.703125,-0.0791015625,Romance,Mystery
+1,-2.59375,-0.091796875,Romance,Historical fiction
+1,-2.46875,-0.0986328125,Romance,Horror
+1,-3.0625,-0.05712890625,Romance,Literary fiction
+1,-2.03125,-0.162109375,Historical fiction,Fantasy
+1,-2.25,-0.125,Historical fiction,Science fiction
+1,-2.046875,-0.1748046875,Historical fiction,Mystery
+1,-1.734375,-0.2353515625,Historical fiction,Romance
+1,-2.265625,-0.1328125,Historical fiction,Horror
+1,-2.59375,-0.0966796875,Historical fiction,Literary fiction
+1,-2.140625,-0.140625,Horror,Fantasy
+1,-2.359375,-0.10791015625,Horror,Science fiction
+1,-2.59375,-0.08837890625,Horror,Mystery
+1,-2.25,-0.1298828125,Horror,Romance
+1,-2.59375,-0.0908203125,Horror,Historical fiction
+1,-2.703125,-0.080078125,Horror,Literary fiction
+1,-2.515625,-0.140625,Literary fiction,Fantasy
+1,-2.71875,-0.095703125,Literary fiction,Science fiction
+1,-2.515625,-0.1337890625,Literary fiction,Mystery
+1,-2.609375,-0.10791015625,Literary fiction,Romance
+1,-2.609375,-0.1044921875,Literary fiction,Historical fiction
+1,-2.609375,-0.11083984375,Literary fiction,Horror
+2,-1.7109375,-0.2080078125,Fantasy,Science fiction
+2,-1.7109375,-0.2099609375,Fantasy,Mystery
+2,-1.5234375,-0.271484375,Fantasy,Romance
+2,-1.8125,-0.19140625,Fantasy,Historical fiction
+2,-1.71875,-0.216796875,Fantasy,Horror
+2,-2.140625,-0.134765625,Fantasy,Literary fiction
+2,-2.140625,-0.14453125,Science fiction,Fantasy
+2,-2.0625,-0.1953125,Science fiction,Mystery
+2,-1.84375,-0.220703125,Science fiction,Romance
+2,-1.953125,-0.201171875,Science fiction,Historical fiction
+2,-2.046875,-0.16796875,Science fiction,Horror
+2,-2.046875,-0.1650390625,Science fiction,Literary fiction
+2,-1.7109375,-0.20703125,Mystery,Fantasy
+2,-2.015625,-0.1484375,Mystery,Science fiction
+2,-1.515625,-0.267578125,Mystery,Romance
+2,-2.25,-0.1201171875,Mystery,Historical fiction
+2,-1.7109375,-0.2099609375,Mystery,Horror
+2,-2.25,-0.12158203125,Mystery,Literary fiction
+2,-1.6171875,-0.2392578125,Romance,Fantasy
+2,-2.25,-0.123046875,Romance,Science fiction
+2,-1.8203125,-0.1982421875,Romance,Mystery
+2,-1.9296875,-0.1767578125,Romance,Historical fiction
+2,-1.921875,-0.173828125,Romance,Horror
+2,-2.046875,-0.166015625,Romance,Literary fiction
+2,-2.046875,-0.16796875,Historical fiction,Fantasy
+2,-2.375,-0.11865234375,Historical fiction,Science fiction
+2,-2.078125,-0.20703125,Historical fiction,Mystery
+2,-1.6484375,-0.2734375,Historical fiction,Romance
+2,-1.84375,-0.21484375,Historical fiction,Horror
+2,-2.15625,-0.1591796875,Historical fiction,Literary fiction
+2,-1.328125,-0.330078125,Horror,Fantasy
+2,-1.0703125,-0.44921875,Horror,Science fiction
+2,-0.99609375,-0.498046875,Horror,Mystery
+2,-1.0078125,-0.5078125,Horror,Romance
+2,-1.625,-0.2470703125,Horror,Historical fiction
+2,-1.6171875,-0.2412109375,Horror,Literary fiction
+2,-1.8671875,-0.2421875,Literary fiction,Fantasy
+2,-2.0625,-0.193359375,Literary fiction,Science fiction
+2,-2.125,-0.2451171875,Literary fiction,Mystery
+2,-1.578125,-0.328125,Literary fiction,Romance
+2,-1.9765625,-0.2236328125,Literary fiction,Historical fiction
+2,-1.5703125,-0.318359375,Literary fiction,Horror
+3,-1.921875,-0.1748046875,Fantasy,Science fiction
+3,-2.046875,-0.1708984375,Fantasy,Mystery
+3,-1.6328125,-0.25390625,Fantasy,Romance
+3,-2.15625,-0.1533203125,Fantasy,Historical fiction
+3,-1.6328125,-0.259765625,Fantasy,Horror
+3,-2.296875,-0.1787109375,Fantasy,Literary fiction
+3,-2.328125,-0.1982421875,Science fiction,Fantasy
+3,-2.34375,-0.33984375,Science fiction,Mystery
+3,-2.1875,-0.3125,Science fiction,Romance
+3,-1.984375,-0.36328125,Science fiction,Historical fiction
+3,-2.046875,-0.2890625,Science fiction,Horror
+3,-2.3125,-0.31640625,Science fiction,Literary fiction
+3,-2.140625,-0.1396484375,Mystery,Fantasy
+3,-2.265625,-0.138671875,Mystery,Science fiction
+3,-1.9375,-0.1884765625,Mystery,Romance
+3,-2.59375,-0.09814453125,Mystery,Historical fiction
+3,-1.828125,-0.2041015625,Mystery,Horror
+3,-2.75,-0.1171875,Mystery,Literary fiction
+3,-1.9375,-0.189453125,Romance,Fantasy
+3,-2.171875,-0.166015625,Romance,Science fiction
+3,-1.9765625,-0.2275390625,Romance,Mystery
+3,-2.0625,-0.185546875,Romance,Historical fiction
+3,-1.6640625,-0.2890625,Romance,Horror
+3,-2.625,-0.123046875,Romance,Literary fiction
+3,-2.703125,-0.2021484375,Historical fiction,Fantasy
+3,-2.671875,-0.1669921875,Historical fiction,Science fiction
+3,-2.65625,-0.283203125,Historical fiction,Mystery
+3,-2.484375,-0.2373046875,Historical fiction,Romance
+3,-2.296875,-0.294921875,Historical fiction,Horror
+3,-2.984375,-0.23828125,Historical fiction,Literary fiction
+3,-0.9375,-0.5625,Horror,Fantasy
+3,-0.46875,-1.09375,Horror,Science fiction
+3,-0.89453125,-0.64453125,Horror,Mystery
+3,-0.87890625,-0.75390625,Horror,Romance
+3,-0.875,-0.625,Horror,Historical fiction
+3,-0.94921875,-0.57421875,Horror,Literary fiction
+3,-2.609375,-0.609375,Literary fiction,Fantasy
+3,-2.609375,-0.61328125,Literary fiction,Science fiction
+3,-2.953125,-0.69921875,Literary fiction,Mystery
+3,-2.5,-0.625,Literary fiction,Romance
+3,-2.71875,-0.6015625,Literary fiction,Historical fiction
+3,-2.40625,-0.53515625,Literary fiction,Horror
+4,-1.5390625,-0.28515625,Fantasy,Science fiction
+4,-1.4296875,-0.3046875,Fantasy,Mystery
+4,-1.53125,-0.28125,Fantasy,Romance
+4,-1.453125,-0.330078125,Fantasy,Historical fiction
+4,-1.53125,-0.28515625,Fantasy,Horror
+4,-1.546875,-0.294921875,Fantasy,Literary fiction
+4,-1.5390625,-0.2890625,Science fiction,Fantasy
+4,-1.5546875,-0.306640625,Science fiction,Mystery
+4,-1.546875,-0.296875,Science fiction,Romance
+4,-1.4609375,-0.3359375,Science fiction,Historical fiction
+4,-1.5390625,-0.28515625,Science fiction,Horror
+4,-1.640625,-0.263671875,Science fiction,Literary fiction
+4,-1.421875,-0.298828125,Mystery,Fantasy
+4,-1.6171875,-0.2421875,Mystery,Science fiction
+4,-1.4296875,-0.302734375,Mystery,Romance
+4,-1.53125,-0.279296875,Mystery,Historical fiction
+4,-1.5234375,-0.271484375,Mystery,Horror
+4,-1.53125,-0.28125,Mystery,Literary fiction
+4,-1.625,-0.2470703125,Romance,Fantasy
+4,-1.7265625,-0.2236328125,Romance,Science fiction
+4,-1.71875,-0.2197265625,Romance,Mystery
+4,-1.6328125,-0.2578125,Romance,Historical fiction
+4,-1.625,-0.2470703125,Romance,Horror
+4,-1.6328125,-0.26171875,Romance,Literary fiction
+4,-1.5625,-0.314453125,Historical fiction,Fantasy
+4,-1.640625,-0.26953125,Historical fiction,Science fiction
+4,-1.4765625,-0.34765625,Historical fiction,Mystery
+4,-1.4765625,-0.349609375,Historical fiction,Romance
+4,-1.4765625,-0.3515625,Historical fiction,Horror
+4,-1.5546875,-0.306640625,Historical fiction,Literary fiction
+4,-1.5234375,-0.271484375,Horror,Fantasy
+4,-1.5234375,-0.27734375,Horror,Science fiction
+4,-1.421875,-0.298828125,Horror,Mystery
+4,-1.5234375,-0.2734375,Horror,Romance
+4,-1.53125,-0.28125,Horror,Historical fiction
+4,-1.4375,-0.314453125,Horror,Literary fiction
+4,-1.671875,-0.30078125,Literary fiction,Fantasy
+4,-1.5703125,-0.32421875,Literary fiction,Science fiction
+4,-1.59375,-0.341796875,Literary fiction,Mystery
+4,-1.5859375,-0.3359375,Literary fiction,Romance
+4,-1.65625,-0.28125,Literary fiction,Historical fiction
+4,-1.5,-0.37109375,Literary fiction,Horror
+5,-1.3203125,-0.3203125,Fantasy,Science fiction
+5,-1.234375,-0.361328125,Fantasy,Mystery
+5,-1.421875,-0.294921875,Fantasy,Romance
+5,-1.5078125,-0.26171875,Fantasy,Historical fiction
+5,-1.7109375,-0.208984375,Fantasy,Horror
+5,-1.8125,-0.1875,Fantasy,Literary fiction
+5,-2.140625,-0.1416015625,Science fiction,Fantasy
+5,-1.953125,-0.201171875,Science fiction,Mystery
+5,-1.8359375,-0.2080078125,Science fiction,Romance
+5,-2.03125,-0.1640625,Science fiction,Historical fiction
+5,-1.9296875,-0.17578125,Science fiction,Horror
+5,-2.03125,-0.16015625,Science fiction,Literary fiction
+5,-1.8125,-0.1875,Mystery,Fantasy
+5,-1.421875,-0.296875,Mystery,Science fiction
+5,-1.3359375,-0.33203125,Mystery,Romance
+5,-2.140625,-0.1337890625,Mystery,Historical fiction
+5,-1.609375,-0.2333984375,Mystery,Horror
+5,-2.25,-0.125,Mystery,Literary fiction
+5,-2.03125,-0.1533203125,Romance,Fantasy
+5,-2.03125,-0.158203125,Romance,Science fiction
+5,-1.7265625,-0.2265625,Romance,Mystery
+5,-2.140625,-0.138671875,Romance,Historical fiction
+5,-1.609375,-0.2373046875,Romance,Horror
+5,-2.359375,-0.11669921875,Romance,Literary fiction
+5,-2.375,-0.1201171875,Historical fiction,Fantasy
+5,-2.703125,-0.0830078125,Historical fiction,Science fiction
+5,-2.28125,-0.1591796875,Historical fiction,Mystery
+5,-2.046875,-0.1748046875,Historical fiction,Romance
+5,-2.15625,-0.1552734375,Historical fiction,Horror
+5,-2.484375,-0.115234375,Historical fiction,Literary fiction
+5,-0.91015625,-0.53515625,Horror,Fantasy
+5,-0.447265625,-1.0703125,Horror,Science fiction
+5,-0.4609375,-1.0859375,Horror,Mystery
+5,-0.55078125,-0.92578125,Horror,Romance
+5,-0.7734375,-0.6484375,Horror,Historical fiction
+5,-0.8515625,-0.6015625,Horror,Literary fiction
+5,-2.203125,-0.2001953125,Literary fiction,Fantasy
+5,-2.515625,-0.1484375,Literary fiction,Science fiction
+5,-2.359375,-0.2314453125,Literary fiction,Mystery
+5,-2.078125,-0.208984375,Literary fiction,Romance
+5,-2.171875,-0.171875,Literary fiction,Historical fiction
+5,-1.7578125,-0.255859375,Literary fiction,Horror
+6,-2.03125,-0.154296875,Fantasy,Science fiction
+6,-1.9296875,-0.1767578125,Fantasy,Mystery
+6,-1.7265625,-0.22265625,Fantasy,Romance
+6,-2.265625,-0.1435546875,Fantasy,Historical fiction
+6,-1.9296875,-0.17578125,Fantasy,Horror
+6,-2.375,-0.1240234375,Fantasy,Literary fiction
+6,-2.953125,-0.0751953125,Science fiction,Fantasy
+6,-3.0,-0.1279296875,Science fiction,Mystery
+6,-2.890625,-0.14453125,Science fiction,Romance
+6,-2.65625,-0.1591796875,Science fiction,Historical fiction
+6,-3.078125,-0.08447265625,Science fiction,Horror
+6,-3.203125,-0.08349609375,Science fiction,Literary fiction
+6,-2.46875,-0.09326171875,Mystery,Fantasy
+6,-2.03125,-0.1611328125,Mystery,Science fiction
+6,-1.9296875,-0.1787109375,Mystery,Romance
+6,-2.375,-0.125,Mystery,Historical fiction
+6,-2.140625,-0.140625,Mystery,Horror
+6,-2.9375,-0.0654296875,Mystery,Literary fiction
+6,-2.359375,-0.1123046875,Romance,Fantasy
+6,-2.84375,-0.0908203125,Romance,Science fiction
+6,-2.0625,-0.19140625,Romance,Mystery
+6,-2.5,-0.12158203125,Romance,Historical fiction
+6,-2.0625,-0.185546875,Romance,Horror
+6,-3.0625,-0.06298828125,Romance,Literary fiction
+6,-2.296875,-0.29296875,Historical fiction,Fantasy
+6,-2.546875,-0.166015625,Historical fiction,Science fiction
+6,-2.484375,-0.490234375,Historical fiction,Mystery
+6,-2.3125,-0.69140625,Historical fiction,Romance
+6,-2.046875,-0.67578125,Historical fiction,Horror
+6,-2.46875,-0.34765625,Historical fiction,Literary fiction
+6,-1.2421875,-0.3671875,Horror,Fantasy
+6,-1.0859375,-0.45703125,Horror,Science fiction
+6,-1.09375,-0.46484375,Horror,Mystery
+6,-1.046875,-0.92578125,Horror,Romance
+6,-1.1953125,-0.443359375,Horror,Historical fiction
+6,-1.0,-0.498046875,Horror,Literary fiction
+6,-2.421875,-0.6796875,Literary fiction,Fantasy
+6,-2.671875,-0.4296875,Literary fiction,Science fiction
+6,-3.078125,-0.9609375,Literary fiction,Mystery
+6,-2.59375,-0.8515625,Literary fiction,Romance
+6,-2.515625,-0.51953125,Literary fiction,Historical fiction
+6,-2.5625,-0.5703125,Literary fiction,Horror
+7,-1.921875,-0.171875,Fantasy,Science fiction
+7,-1.7109375,-0.2119140625,Fantasy,Mystery
+7,-1.328125,-0.328125,Fantasy,Romance
+7,-2.25,-0.1220703125,Fantasy,Historical fiction
+7,-1.71875,-0.21484375,Fantasy,Horror
+7,-2.359375,-0.10693359375,Fantasy,Literary fiction
+7,-2.359375,-0.111328125,Science fiction,Fantasy
+7,-2.265625,-0.1357421875,Science fiction,Mystery
+7,-2.140625,-0.1435546875,Science fiction,Romance
+7,-2.484375,-0.10205078125,Science fiction,Historical fiction
+7,-2.140625,-0.1396484375,Science fiction,Horror
+7,-2.59375,-0.08935546875,Science fiction,Literary fiction
+7,-2.125,-0.1328125,Mystery,Fantasy
+7,-2.703125,-0.07470703125,Mystery,Science fiction
+7,-1.8125,-0.185546875,Mystery,Romance
+7,-2.9375,-0.05859375,Mystery,Historical fiction
+7,-2.125,-0.1318359375,Mystery,Horror
+7,-2.9375,-0.0576171875,Mystery,Literary fiction
+7,-1.9296875,-0.1796875,Romance,Fantasy
+7,-2.484375,-0.1015625,Romance,Science fiction
+7,-1.8203125,-0.1982421875,Romance,Mystery
+7,-2.46875,-0.09765625,Romance,Historical fiction
+7,-1.921875,-0.1748046875,Romance,Horror
+7,-2.703125,-0.078125,Romance,Literary fiction
+7,-2.15625,-0.154296875,Historical fiction,Fantasy
+7,-2.59375,-0.0927734375,Historical fiction,Science fiction
+7,-2.265625,-0.1435546875,Historical fiction,Mystery
+7,-1.9375,-0.1904296875,Historical fiction,Romance
+7,-2.15625,-0.154296875,Historical fiction,Horror
+7,-2.71875,-0.08740234375,Historical fiction,Literary fiction
+7,-1.8203125,-0.1953125,Horror,Fantasy
+7,-1.921875,-0.1728515625,Horror,Science fiction
+7,-1.6171875,-0.23828125,Horror,Mystery
+7,-1.7109375,-0.2138671875,Horror,Romance
+7,-2.25,-0.12060546875,Horror,Historical fiction
+7,-2.359375,-0.10693359375,Horror,Literary fiction
+7,-2.15625,-0.1611328125,Literary fiction,Fantasy
+7,-2.265625,-0.1376953125,Literary fiction,Science fiction
+7,-2.171875,-0.169921875,Literary fiction,Mystery
+7,-1.9453125,-0.1943359375,Literary fiction,Romance
+7,-2.375,-0.119140625,Literary fiction,Historical fiction
+7,-1.9375,-0.189453125,Literary fiction,Horror
+8,-2.03125,-0.150390625,Fantasy,Science fiction
+8,-1.8125,-0.189453125,Fantasy,Mystery
+8,-1.515625,-0.265625,Fantasy,Romance
+8,-2.359375,-0.10693359375,Fantasy,Historical fiction
+8,-1.921875,-0.1689453125,Fantasy,Horror
+8,-2.359375,-0.10400390625,Fantasy,Literary fiction
+8,-1.7109375,-0.2138671875,Science fiction,Fantasy
+8,-1.71875,-0.2197265625,Science fiction,Mystery
+8,-1.515625,-0.26953125,Science fiction,Romance
+8,-1.8125,-0.19140625,Science fiction,Historical fiction
+8,-1.7109375,-0.2119140625,Science fiction,Horror
+8,-2.015625,-0.1484375,Science fiction,Literary fiction
+8,-1.9140625,-0.16796875,Mystery,Fantasy
+8,-2.25,-0.12060546875,Mystery,Science fiction
+8,-1.7109375,-0.2119140625,Mystery,Romance
+8,-2.8125,-0.0673828125,Mystery,Historical fiction
+8,-2.140625,-0.134765625,Mystery,Horror
+8,-2.578125,-0.0830078125,Mystery,Literary fiction
+8,-1.7109375,-0.212890625,Romance,Fantasy
+8,-2.25,-0.12109375,Romance,Science fiction
+8,-2.140625,-0.138671875,Romance,Mystery
+8,-2.25,-0.12255859375,Romance,Historical fiction
+8,-1.921875,-0.1708984375,Romance,Horror
+8,-2.578125,-0.0849609375,Romance,Literary fiction
+8,-1.5234375,-0.275390625,Historical fiction,Fantasy
+8,-2.140625,-0.1357421875,Historical fiction,Science fiction
+8,-1.625,-0.2470703125,Historical fiction,Mystery
+8,-1.5234375,-0.275390625,Historical fiction,Romance
+8,-1.5234375,-0.275390625,Historical fiction,Horror
+8,-2.140625,-0.1416015625,Historical fiction,Literary fiction
+8,-1.328125,-0.330078125,Horror,Fantasy
+8,-1.7109375,-0.2119140625,Horror,Science fiction
+8,-1.515625,-0.263671875,Horror,Mystery
+8,-1.0859375,-0.458984375,Horror,Romance
+8,-2.359375,-0.10693359375,Horror,Historical fiction
+8,-2.359375,-0.10498046875,Horror,Literary fiction
+8,-1.9296875,-0.177734375,Literary fiction,Fantasy
+8,-2.25,-0.12255859375,Literary fiction,Science fiction
+8,-2.046875,-0.1650390625,Literary fiction,Mystery
+8,-1.71875,-0.220703125,Literary fiction,Romance
+8,-2.25,-0.12158203125,Literary fiction,Historical fiction
+8,-1.625,-0.2470703125,Literary fiction,Horror
+9,-2.8125,-0.0654296875,Fantasy,Science fiction
+9,-2.46875,-0.09326171875,Fantasy,Mystery
+9,-2.234375,-0.1171875,Fantasy,Romance
+9,-3.171875,-0.048583984375,Fantasy,Historical fiction
+9,-2.359375,-0.1064453125,Fantasy,Horror
+9,-2.9375,-0.058837890625,Fantasy,Literary fiction
+9,-2.359375,-0.10888671875,Science fiction,Fantasy
+9,-2.484375,-0.1044921875,Science fiction,Mystery
+9,-2.359375,-0.1142578125,Science fiction,Romance
+9,-2.828125,-0.072265625,Science fiction,Historical fiction
+9,-2.46875,-0.09765625,Science fiction,Horror
+9,-3.0625,-0.055419921875,Science fiction,Literary fiction
+9,-2.46875,-0.09130859375,Mystery,Fantasy
+9,-3.296875,-0.039794921875,Mystery,Science fiction
+9,-2.359375,-0.1025390625,Mystery,Romance
+9,-3.890625,-0.02294921875,Mystery,Historical fiction
+9,-2.578125,-0.08154296875,Mystery,Horror
+9,-3.40625,-0.03564453125,Mystery,Literary fiction
+9,-2.25,-0.1201171875,Romance,Fantasy
+9,-3.046875,-0.0537109375,Romance,Science fiction
+9,-2.46875,-0.09765625,Romance,Mystery
+9,-3.0625,-0.05615234375,Romance,Historical fiction
+9,-2.25,-0.1201171875,Romance,Horror
+9,-3.046875,-0.05419921875,Romance,Literary fiction
+9,-2.375,-0.126953125,Historical fiction,Fantasy
+9,-3.171875,-0.05029296875,Historical fiction,Science fiction
+9,-2.609375,-0.10986328125,Historical fiction,Mystery
+9,-2.265625,-0.1455078125,Historical fiction,Romance
+9,-2.265625,-0.142578125,Historical fiction,Horror
+9,-2.953125,-0.07177734375,Historical fiction,Literary fiction
+9,-1.9140625,-0.1650390625,Horror,Fantasy
+9,-2.359375,-0.1044921875,Horror,Science fiction
+9,-2.25,-0.11767578125,Horror,Mystery
+9,-1.921875,-0.1728515625,Horror,Romance
+9,-2.9375,-0.060791015625,Horror,Historical fiction
+9,-2.8125,-0.06689453125,Horror,Literary fiction
+9,-2.328125,-0.197265625,Literary fiction,Fantasy
+9,-2.515625,-0.142578125,Literary fiction,Science fiction
+9,-2.453125,-0.1962890625,Literary fiction,Mystery
+9,-2.203125,-0.201171875,Literary fiction,Romance
+9,-2.609375,-0.1162109375,Literary fiction,Historical fiction
+9,-2.078125,-0.2080078125,Literary fiction,Horror
+10,-1.609375,-0.2373046875,Fantasy,Science fiction
+10,-1.5078125,-0.26171875,Fantasy,Mystery
+10,-1.421875,-0.294921875,Fantasy,Romance
+10,-1.9140625,-0.166015625,Fantasy,Historical fiction
+10,-1.4140625,-0.29296875,Fantasy,Horror
+10,-2.03125,-0.1552734375,Fantasy,Literary fiction
+10,-1.9453125,-0.1923828125,Science fiction,Fantasy
+10,-2.34375,-0.21484375,Science fiction,Mystery
+10,-2.203125,-0.20703125,Science fiction,Romance
+10,-2.171875,-0.17578125,Science fiction,Historical fiction
+10,-2.265625,-0.146484375,Science fiction,Horror
+10,-2.3125,-0.19140625,Science fiction,Literary fiction
+10,-1.4140625,-0.287109375,Mystery,Fantasy
+10,-2.359375,-0.1103515625,Mystery,Science fiction
+10,-1.6171875,-0.240234375,Mystery,Romance
+10,-2.703125,-0.076171875,Mystery,Historical fiction
+10,-1.7109375,-0.2080078125,Mystery,Horror
+10,-2.46875,-0.09716796875,Mystery,Literary fiction
+10,-1.7109375,-0.212890625,Romance,Fantasy
+10,-2.25,-0.1318359375,Romance,Science fiction
+10,-2.140625,-0.1474609375,Romance,Mystery
+10,-2.359375,-0.1142578125,Romance,Historical fiction
+10,-1.6171875,-0.2412109375,Romance,Horror
+10,-2.59375,-0.0947265625,Romance,Literary fiction
+10,-1.65625,-0.27734375,Historical fiction,Fantasy
+10,-2.171875,-0.16796875,Historical fiction,Science fiction
+10,-2.15625,-0.275390625,Historical fiction,Mystery
+10,-1.8828125,-0.259765625,Historical fiction,Romance
+10,-1.90625,-0.28125,Historical fiction,Horror
+10,-2.328125,-0.2080078125,Historical fiction,Literary fiction
+10,-0.84375,-0.59375,Horror,Fantasy
+10,-1.0703125,-0.44921875,Horror,Science fiction
+10,-1.0,-0.5,Horror,Mystery
+10,-1.03125,-0.52734375,Horror,Romance
+10,-1.515625,-0.265625,Horror,Historical fiction
+10,-1.3359375,-0.33203125,Horror,Literary fiction
+10,-1.984375,-0.359375,Literary fiction,Fantasy
+10,-2.09375,-0.34375,Literary fiction,Science fiction
+10,-2.453125,-0.451171875,Literary fiction,Mystery
+10,-1.859375,-0.359375,Literary fiction,Romance
+10,-2.25,-0.244140625,Literary fiction,Historical fiction
+10,-2.0,-0.251953125,Literary fiction,Horror
+11,-1.1640625,-0.4140625,Fantasy,Science fiction
+11,-0.80078125,-0.67578125,Fantasy,Mystery
+11,-0.92578125,-0.55078125,Fantasy,Romance
+11,-1.0,-0.50390625,Fantasy,Historical fiction
+11,-1.0078125,-0.51171875,Fantasy,Horror
+11,-0.91015625,-0.53515625,Fantasy,Literary fiction
+11,-0.84765625,-0.59765625,Science fiction,Fantasy
+11,-0.859375,-0.609375,Science fiction,Mystery
+11,-0.859375,-0.609375,Science fiction,Romance
+11,-0.77734375,-0.65234375,Science fiction,Historical fiction
+11,-0.84375,-0.59375,Science fiction,Horror
+11,-0.703125,-0.703125,Science fiction,Literary fiction
+11,-0.84765625,-0.59765625,Mystery,Fantasy
+11,-0.9921875,-0.4921875,Mystery,Science fiction
+11,-1.0078125,-0.5078125,Mystery,Romance
+11,-1.0703125,-0.447265625,Mystery,Historical fiction
+11,-1.1796875,-0.42578125,Mystery,Horror
+11,-0.8359375,-0.5859375,Mystery,Literary fiction
+11,-0.99609375,-0.494140625,Romance,Fantasy
+11,-0.91015625,-0.53515625,Romance,Science fiction
+11,-1.0859375,-0.458984375,Romance,Mystery
+11,-0.9140625,-0.5390625,Romance,Historical fiction
+11,-1.15625,-0.41015625,Romance,Horror
+11,-0.765625,-0.640625,Romance,Literary fiction
+11,-0.93359375,-0.55859375,Historical fiction,Fantasy
+11,-0.91015625,-0.53515625,Historical fiction,Science fiction
+11,-0.79296875,-0.66796875,Historical fiction,Mystery
+11,-0.93359375,-0.55859375,Historical fiction,Romance
+11,-0.84375,-0.59375,Historical fiction,Horror
+11,-0.7734375,-0.6484375,Historical fiction,Literary fiction
+11,-0.921875,-0.546875,Horror,Fantasy
+11,-0.91015625,-0.53515625,Horror,Science fiction
+11,-0.8515625,-0.6015625,Horror,Mystery
+11,-0.92578125,-0.55078125,Horror,Romance
+11,-0.91015625,-0.53515625,Horror,Historical fiction
+11,-0.90625,-0.53125,Horror,Literary fiction
+11,-0.85546875,-0.60546875,Literary fiction,Fantasy
+11,-0.9140625,-0.5390625,Literary fiction,Science fiction
+11,-0.8671875,-0.6171875,Literary fiction,Mystery
+11,-0.78515625,-0.66015625,Literary fiction,Romance
+11,-0.78515625,-0.66015625,Literary fiction,Historical fiction
+11,-0.84375,-0.59375,Literary fiction,Horror
+12,-1.4140625,-0.291015625,Fantasy,Science fiction
+12,-1.421875,-0.296875,Fantasy,Mystery
+12,-1.15625,-0.404296875,Fantasy,Romance
+12,-1.4296875,-0.30078125,Fantasy,Historical fiction
+12,-1.421875,-0.294921875,Fantasy,Horror
+12,-1.4296875,-0.306640625,Fantasy,Literary fiction
+12,-2.359375,-0.11328125,Science fiction,Fantasy
+12,-1.953125,-0.2041015625,Science fiction,Mystery
+12,-1.8359375,-0.2099609375,Science fiction,Romance
+12,-2.140625,-0.1484375,Science fiction,Historical fiction
+12,-2.25,-0.1240234375,Science fiction,Horror
+12,-2.140625,-0.1435546875,Science fiction,Literary fiction
+12,-1.7109375,-0.2080078125,Mystery,Fantasy
+12,-1.9140625,-0.1669921875,Mystery,Science fiction
+12,-1.5234375,-0.26953125,Mystery,Romance
+12,-2.140625,-0.138671875,Mystery,Historical fiction
+12,-1.7109375,-0.2138671875,Mystery,Horror
+12,-2.140625,-0.1416015625,Mystery,Literary fiction
+12,-1.5234375,-0.271484375,Romance,Fantasy
+12,-1.9296875,-0.181640625,Romance,Science fiction
+12,-1.7578125,-0.2578125,Romance,Mystery
+12,-1.6328125,-0.259765625,Romance,Historical fiction
+12,-1.4453125,-0.318359375,Romance,Horror
+12,-1.9453125,-0.197265625,Romance,Literary fiction
+12,-1.6640625,-0.28515625,Historical fiction,Fantasy
+12,-2.15625,-0.1591796875,Historical fiction,Science fiction
+12,-1.4453125,-0.443359375,Historical fiction,Mystery
+12,-1.2578125,-0.5078125,Historical fiction,Romance
+12,-1.40625,-0.404296875,Historical fiction,Horror
+12,-2.328125,-0.1953125,Historical fiction,Literary fiction
+12,-1.0859375,-0.458984375,Horror,Fantasy
+12,-0.796875,-0.671875,Horror,Science fiction
+12,-1.1328125,-0.5078125,Horror,Mystery
+12,-0.63671875,-1.015625,Horror,Romance
+12,-1.265625,-0.388671875,Horror,Historical fiction
+12,-1.2578125,-0.3828125,Horror,Literary fiction
+12,-2.109375,-0.236328125,Literary fiction,Fantasy
+12,-2.40625,-0.154296875,Literary fiction,Science fiction
+12,-1.984375,-0.359375,Literary fiction,Mystery
+12,-1.8125,-0.314453125,Literary fiction,Romance
+12,-2.0625,-0.1943359375,Literary fiction,Historical fiction
+12,-1.9921875,-0.2431640625,Literary fiction,Horror
+13,-2.03125,-0.1611328125,Fantasy,Science fiction
+13,-1.828125,-0.2021484375,Fantasy,Mystery
+13,-1.53125,-0.27734375,Fantasy,Romance
+13,-2.046875,-0.173828125,Fantasy,Historical fiction
+13,-1.625,-0.251953125,Fantasy,Horror
+13,-2.046875,-0.171875,Fantasy,Literary fiction
+13,-1.453125,-0.326171875,Science fiction,Fantasy
+13,-1.5703125,-0.3203125,Science fiction,Mystery
+13,-1.546875,-0.296875,Science fiction,Romance
+13,-1.5625,-0.310546875,Science fiction,Historical fiction
+13,-1.5390625,-0.287109375,Science fiction,Horror
+13,-1.6484375,-0.271484375,Science fiction,Literary fiction
+13,-1.8203125,-0.197265625,Mystery,Fantasy
+13,-2.46875,-0.09814453125,Mystery,Science fiction
+13,-1.828125,-0.2021484375,Mystery,Romance
+13,-2.375,-0.12255859375,Mystery,Historical fiction
+13,-1.9296875,-0.1796875,Mystery,Horror
+13,-2.15625,-0.15625,Mystery,Literary fiction
+13,-1.828125,-0.205078125,Romance,Fantasy
+13,-2.484375,-0.10595703125,Romance,Science fiction
+13,-1.9453125,-0.193359375,Romance,Mystery
+13,-2.046875,-0.177734375,Romance,Historical fiction
+13,-1.7265625,-0.2236328125,Romance,Horror
+13,-2.15625,-0.16015625,Romance,Literary fiction
+13,-1.7734375,-0.2734375,Historical fiction,Fantasy
+13,-2.265625,-0.146484375,Historical fiction,Science fiction
+13,-1.8046875,-0.30859375,Historical fiction,Mystery
+13,-1.7734375,-0.2734375,Historical fiction,Romance
+13,-1.7734375,-0.275390625,Historical fiction,Horror
+13,-2.078125,-0.2021484375,Historical fiction,Literary fiction
+13,-1.546875,-0.29296875,Horror,Fantasy
+13,-1.7265625,-0.224609375,Horror,Science fiction
+13,-1.953125,-0.2001953125,Horror,Mystery
+13,-1.3671875,-0.369140625,Horror,Romance
+13,-1.9375,-0.189453125,Horror,Historical fiction
+13,-1.734375,-0.236328125,Horror,Literary fiction
+13,-1.7109375,-0.33984375,Literary fiction,Fantasy
+13,-1.8984375,-0.2734375,Literary fiction,Science fiction
+13,-1.8671875,-0.365234375,Literary fiction,Mystery
+13,-1.703125,-0.326171875,Literary fiction,Romance
+13,-1.7890625,-0.291015625,Literary fiction,Historical fiction
+13,-1.6015625,-0.3515625,Literary fiction,Horror
+14,-2.234375,-0.1162109375,Fantasy,Science fiction
+14,-2.359375,-0.10400390625,Fantasy,Mystery
+14,-2.234375,-0.11572265625,Fantasy,Romance
+14,-2.46875,-0.09423828125,Fantasy,Historical fiction
+14,-2.359375,-0.10400390625,Fantasy,Horror
+14,-2.359375,-0.10400390625,Fantasy,Literary fiction
+14,-2.03125,-0.150390625,Science fiction,Fantasy
+14,-1.8203125,-0.193359375,Science fiction,Mystery
+14,-1.921875,-0.1689453125,Science fiction,Romance
+14,-1.921875,-0.171875,Science fiction,Historical fiction
+14,-1.921875,-0.1689453125,Science fiction,Horror
+14,-1.921875,-0.1689453125,Science fiction,Literary fiction
+14,-2.703125,-0.072265625,Mystery,Fantasy
+14,-2.46875,-0.0927734375,Mystery,Science fiction
+14,-2.46875,-0.09130859375,Mystery,Romance
+14,-2.9375,-0.05859375,Mystery,Historical fiction
+14,-2.578125,-0.08154296875,Mystery,Horror
+14,-2.578125,-0.08251953125,Mystery,Literary fiction
+14,-2.359375,-0.10302734375,Romance,Fantasy
+14,-2.359375,-0.10400390625,Romance,Science fiction
+14,-2.125,-0.130859375,Romance,Mystery
+14,-2.359375,-0.10498046875,Romance,Historical fiction
+14,-2.234375,-0.115234375,Romance,Horror
+14,-2.46875,-0.09228515625,Romance,Literary fiction
+14,-2.25,-0.1201171875,Historical fiction,Fantasy
+14,-2.25,-0.119140625,Historical fiction,Science fiction
+14,-1.921875,-0.1708984375,Historical fiction,Mystery
+14,-1.921875,-0.1689453125,Historical fiction,Romance
+14,-2.03125,-0.1533203125,Historical fiction,Horror
+14,-2.140625,-0.13671875,Historical fiction,Literary fiction
+14,-2.015625,-0.1455078125,Horror,Fantasy
+14,-1.703125,-0.205078125,Horror,Science fiction
+14,-1.9140625,-0.1650390625,Horror,Mystery
+14,-1.8046875,-0.1826171875,Horror,Romance
+14,-2.125,-0.1318359375,Horror,Historical fiction
+14,-2.125,-0.130859375,Horror,Literary fiction
+14,-2.140625,-0.14453125,Literary fiction,Fantasy
+14,-2.03125,-0.1630859375,Literary fiction,Science fiction
+14,-1.828125,-0.2041015625,Literary fiction,Mystery
+14,-2.03125,-0.16015625,Literary fiction,Romance
+14,-2.03125,-0.15625,Literary fiction,Historical fiction
+14,-1.8203125,-0.19921875,Literary fiction,Horror
+15,-2.8125,-0.064453125,Fantasy,Science fiction
+15,-2.703125,-0.0732421875,Fantasy,Mystery
+15,-2.578125,-0.08203125,Fantasy,Romance
+15,-2.703125,-0.07470703125,Fantasy,Historical fiction
+15,-2.703125,-0.07373046875,Fantasy,Horror
+15,-2.703125,-0.07421875,Fantasy,Literary fiction
+15,-2.578125,-0.08349609375,Science fiction,Fantasy
+15,-2.46875,-0.099609375,Science fiction,Mystery
+15,-2.703125,-0.07568359375,Science fiction,Romance
+15,-2.59375,-0.0859375,Science fiction,Historical fiction
+15,-2.578125,-0.08251953125,Science fiction,Horror
+15,-2.703125,-0.0751953125,Science fiction,Literary fiction
+15,-3.046875,-0.05029296875,Mystery,Fantasy
+15,-3.40625,-0.03564453125,Mystery,Science fiction
+15,-2.9375,-0.056884765625,Mystery,Romance
+15,-3.296875,-0.040283203125,Mystery,Historical fiction
+15,-3.046875,-0.05029296875,Mystery,Horror
+15,-3.40625,-0.0361328125,Mystery,Literary fiction
+15,-2.578125,-0.0849609375,Romance,Fantasy
+15,-3.171875,-0.04736328125,Romance,Science fiction
+15,-2.59375,-0.08642578125,Romance,Mystery
+15,-2.8125,-0.06640625,Romance,Historical fiction
+15,-2.578125,-0.083984375,Romance,Horror
+15,-3.046875,-0.053466796875,Romance,Literary fiction
+15,-2.46875,-0.099609375,Historical fiction,Fantasy
+15,-2.8125,-0.06787109375,Historical fiction,Science fiction
+15,-2.59375,-0.0966796875,Historical fiction,Mystery
+15,-2.46875,-0.0986328125,Historical fiction,Romance
+15,-2.359375,-0.11279296875,Historical fiction,Horror
+15,-2.703125,-0.07861328125,Historical fiction,Literary fiction
+15,-2.578125,-0.0849609375,Horror,Fantasy
+15,-2.9375,-0.060302734375,Horror,Science fiction
+15,-2.9375,-0.0615234375,Horror,Mystery
+15,-2.59375,-0.08642578125,Horror,Romance
+15,-2.8125,-0.068359375,Horror,Historical fiction
+15,-2.703125,-0.0771484375,Horror,Literary fiction
+15,-2.265625,-0.1416015625,Literary fiction,Fantasy
+15,-2.28125,-0.1494140625,Literary fiction,Science fiction
+15,-2.296875,-0.1650390625,Literary fiction,Mystery
+15,-2.265625,-0.1416015625,Literary fiction,Romance
+15,-2.484375,-0.10693359375,Literary fiction,Historical fiction
+15,-2.15625,-0.1494140625,Literary fiction,Horror
+16,-1.8203125,-0.193359375,Fantasy,Science fiction
+16,-1.5390625,-0.2890625,Fantasy,Mystery
+16,-1.5390625,-0.287109375,Fantasy,Romance
+16,-1.625,-0.251953125,Fantasy,Historical fiction
+16,-1.4296875,-0.306640625,Fantasy,Horror
+16,-1.9453125,-0.1962890625,Fantasy,Literary fiction
+16,-2.0625,-0.185546875,Science fiction,Fantasy
+16,-2.0,-0.248046875,Science fiction,Mystery
+16,-1.8828125,-0.2578125,Science fiction,Romance
+16,-1.859375,-0.2353515625,Science fiction,Historical fiction
+16,-1.9609375,-0.2080078125,Science fiction,Horror
+16,-2.0625,-0.19140625,Science fiction,Literary fiction
+16,-2.03125,-0.1611328125,Mystery,Fantasy
+16,-2.359375,-0.11279296875,Mystery,Science fiction
+16,-1.640625,-0.265625,Mystery,Romance
+16,-2.046875,-0.1650390625,Mystery,Historical fiction
+16,-1.7265625,-0.2236328125,Mystery,Horror
+16,-2.265625,-0.1474609375,Mystery,Literary fiction
+16,-2.046875,-0.1787109375,Romance,Fantasy
+16,-2.140625,-0.1474609375,Romance,Science fiction
+16,-1.859375,-0.2333984375,Romance,Mystery
+16,-1.84375,-0.220703125,Romance,Historical fiction
+16,-1.6328125,-0.255859375,Romance,Horror
+16,-2.390625,-0.1328125,Romance,Literary fiction
+16,-2.21875,-0.212890625,Historical fiction,Fantasy
+16,-2.84375,-0.0947265625,Historical fiction,Science fiction
+16,-2.265625,-0.265625,Historical fiction,Mystery
+16,-2.21875,-0.2255859375,Historical fiction,Romance
+16,-2.015625,-0.265625,Historical fiction,Horror
+16,-2.890625,-0.134765625,Historical fiction,Literary fiction
+16,-1.4609375,-0.33203125,Horror,Fantasy
+16,-1.3515625,-0.349609375,Horror,Science fiction
+16,-1.21875,-0.470703125,Horror,Mystery
+16,-1.03125,-0.66015625,Horror,Romance
+16,-1.453125,-0.32421875,Horror,Historical fiction
+16,-1.65625,-0.28125,Horror,Literary fiction
+16,-2.3125,-0.318359375,Literary fiction,Fantasy
+16,-2.453125,-0.2109375,Literary fiction,Science fiction
+16,-2.5,-0.380859375,Literary fiction,Mystery
+16,-2.296875,-0.30078125,Literary fiction,Romance
+16,-2.390625,-0.265625,Literary fiction,Historical fiction
+16,-2.03125,-0.27734375,Literary fiction,Horror
+17,-1.8125,-0.1865234375,Fantasy,Science fiction
+17,-1.7109375,-0.208984375,Fantasy,Mystery
+17,-1.5078125,-0.259765625,Fantasy,Romance
+17,-2.03125,-0.150390625,Fantasy,Historical fiction
+17,-1.7109375,-0.2109375,Fantasy,Horror
+17,-2.140625,-0.134765625,Fantasy,Literary fiction
+17,-1.71875,-0.2177734375,Science fiction,Fantasy
+17,-1.9296875,-0.1796875,Science fiction,Mystery
+17,-1.8203125,-0.1953125,Science fiction,Romance
+17,-1.8203125,-0.1962890625,Science fiction,Historical fiction
+17,-1.921875,-0.173828125,Science fiction,Horror
+17,-2.03125,-0.15625,Science fiction,Literary fiction
+17,-1.703125,-0.2060546875,Mystery,Fantasy
+17,-2.234375,-0.1171875,Mystery,Science fiction
+17,-1.703125,-0.2060546875,Mystery,Romance
+17,-2.46875,-0.09326171875,Mystery,Historical fiction
+17,-2.015625,-0.1474609375,Mystery,Horror
+17,-2.46875,-0.0947265625,Mystery,Literary fiction
+17,-1.8125,-0.189453125,Romance,Fantasy
+17,-2.25,-0.12060546875,Romance,Science fiction
+17,-2.03125,-0.150390625,Romance,Mystery
+17,-2.25,-0.11962890625,Romance,Historical fiction
+17,-2.03125,-0.1494140625,Romance,Horror
+17,-2.359375,-0.109375,Romance,Literary fiction
+17,-1.734375,-0.234375,Historical fiction,Fantasy
+17,-2.25,-0.1279296875,Historical fiction,Science fiction
+17,-1.9453125,-0.19140625,Historical fiction,Mystery
+17,-1.828125,-0.203125,Historical fiction,Romance
+17,-1.9375,-0.1904296875,Historical fiction,Horror
+17,-2.265625,-0.134765625,Historical fiction,Literary fiction
+17,-1.4296875,-0.30078125,Horror,Fantasy
+17,-1.921875,-0.1708984375,Horror,Science fiction
+17,-1.7109375,-0.212890625,Horror,Mystery
+17,-1.609375,-0.23828125,Horror,Romance
+17,-2.140625,-0.13671875,Horror,Historical fiction
+17,-2.03125,-0.15234375,Horror,Literary fiction
+17,-1.953125,-0.201171875,Literary fiction,Fantasy
+17,-2.15625,-0.15234375,Literary fiction,Science fiction
+17,-2.171875,-0.16796875,Literary fiction,Mystery
+17,-1.9453125,-0.1962890625,Literary fiction,Romance
+17,-2.15625,-0.1552734375,Literary fiction,Historical fiction
+17,-1.953125,-0.201171875,Literary fiction,Horror
+18,-2.140625,-0.1357421875,Fantasy,Science fiction
+18,-2.046875,-0.1650390625,Fantasy,Mystery
+18,-1.828125,-0.2041015625,Fantasy,Romance
+18,-2.140625,-0.1376953125,Fantasy,Historical fiction
+18,-1.9296875,-0.1826171875,Fantasy,Horror
+18,-2.03125,-0.158203125,Fantasy,Literary fiction
+18,-1.8359375,-0.2080078125,Science fiction,Fantasy
+18,-2.0625,-0.1845703125,Science fiction,Mystery
+18,-1.75,-0.248046875,Science fiction,Romance
+18,-1.953125,-0.2021484375,Science fiction,Historical fiction
+18,-1.84375,-0.21484375,Science fiction,Horror
+18,-1.953125,-0.2060546875,Science fiction,Literary fiction
+18,-1.71875,-0.220703125,Mystery,Fantasy
+18,-2.46875,-0.09619140625,Mystery,Science fiction
+18,-1.6328125,-0.259765625,Mystery,Romance
+18,-2.59375,-0.08642578125,Mystery,Historical fiction
+18,-2.03125,-0.1630859375,Mystery,Horror
+18,-2.359375,-0.111328125,Mystery,Literary fiction
+18,-1.9296875,-0.18359375,Romance,Fantasy
+18,-2.484375,-0.1025390625,Romance,Science fiction
+18,-2.484375,-0.1103515625,Romance,Mystery
+18,-2.46875,-0.1015625,Romance,Historical fiction
+18,-2.140625,-0.14453125,Romance,Horror
+18,-2.375,-0.1240234375,Romance,Literary fiction
+18,-1.8671875,-0.2421875,Historical fiction,Fantasy
+18,-2.15625,-0.1552734375,Historical fiction,Science fiction
+18,-2.203125,-0.201171875,Historical fiction,Mystery
+18,-1.59375,-0.34765625,Historical fiction,Romance
+18,-1.9296875,-0.306640625,Historical fiction,Horror
+18,-2.34375,-0.21875,Historical fiction,Literary fiction
+18,-1.4375,-0.3125,Horror,Fantasy
+18,-1.734375,-0.2314453125,Horror,Science fiction
+18,-1.734375,-0.2314453125,Horror,Mystery
+18,-1.21875,-0.47265625,Horror,Romance
+18,-1.8203125,-0.197265625,Horror,Historical fiction
+18,-1.828125,-0.203125,Horror,Literary fiction
+18,-1.7109375,-0.33203125,Literary fiction,Fantasy
+18,-1.890625,-0.26953125,Literary fiction,Science fiction
+18,-2.046875,-0.3046875,Literary fiction,Mystery
+18,-1.59375,-0.345703125,Literary fiction,Romance
+18,-1.8828125,-0.2578125,Literary fiction,Historical fiction
+18,-1.7109375,-0.33203125,Literary fiction,Horror
+19,-2.59375,-0.0908203125,Fantasy,Science fiction
+19,-2.140625,-0.1474609375,Fantasy,Mystery
+19,-2.265625,-0.1376953125,Fantasy,Romance
+19,-2.828125,-0.07763671875,Fantasy,Historical fiction
+19,-2.484375,-0.107421875,Fantasy,Horror
+19,-2.515625,-0.138671875,Fantasy,Literary fiction
+19,-2.265625,-0.1376953125,Science fiction,Fantasy
+19,-2.28125,-0.154296875,Science fiction,Mystery
+19,-2.265625,-0.1416015625,Science fiction,Romance
+19,-2.171875,-0.1669921875,Science fiction,Historical fiction
+19,-2.375,-0.1220703125,Science fiction,Horror
+19,-2.40625,-0.150390625,Science fiction,Literary fiction
+19,-2.46875,-0.09521484375,Mystery,Fantasy
+19,-2.578125,-0.08544921875,Mystery,Science fiction
+19,-2.359375,-0.111328125,Mystery,Romance
+19,-3.53125,-0.034912109375,Mystery,Historical fiction
+19,-2.828125,-0.07080078125,Mystery,Horror
+19,-3.0625,-0.061279296875,Mystery,Literary fiction
+19,-2.140625,-0.1435546875,Romance,Fantasy
+19,-2.59375,-0.0966796875,Romance,Science fiction
+19,-2.140625,-0.142578125,Romance,Mystery
+19,-2.484375,-0.10693359375,Romance,Historical fiction
+19,-2.25,-0.130859375,Romance,Horror
+19,-2.5,-0.12890625,Romance,Literary fiction
+19,-2.09375,-0.21875,Historical fiction,Fantasy
+19,-2.734375,-0.10400390625,Historical fiction,Science fiction
+19,-2.296875,-0.17578125,Historical fiction,Mystery
+19,-2.015625,-0.263671875,Historical fiction,Romance
+19,-2.21875,-0.2236328125,Historical fiction,Horror
+19,-2.65625,-0.1572265625,Historical fiction,Literary fiction
+19,-1.828125,-0.2001953125,Horror,Fantasy
+19,-1.2578125,-0.3828125,Horror,Science fiction
+19,-1.7265625,-0.2236328125,Horror,Mystery
+19,-1.7421875,-0.240234375,Horror,Romance
+19,-2.265625,-0.1435546875,Horror,Historical fiction
+19,-2.046875,-0.17578125,Horror,Literary fiction
+19,-2.03125,-0.40625,Literary fiction,Fantasy
+19,-2.40625,-0.28515625,Literary fiction,Science fiction
+19,-2.03125,-0.41015625,Literary fiction,Mystery
+19,-1.8828125,-0.380859375,Literary fiction,Romance
+19,-2.390625,-0.263671875,Literary fiction,Historical fiction
+19,-2.140625,-0.263671875,Literary fiction,Horror
+20,-0.8671875,-0.6171875,Fantasy,Science fiction
+20,-0.435546875,-1.1875,Fantasy,Mystery
+20,-1.171875,-0.423828125,Fantasy,Romance
+20,-0.95703125,-0.58203125,Fantasy,Historical fiction
+20,-1.09375,-0.470703125,Fantasy,Horror
+20,-1.3671875,-0.365234375,Fantasy,Literary fiction
+20,-1.9296875,-0.18359375,Science fiction,Fantasy
+20,-1.75,-0.25390625,Science fiction,Mystery
+20,-1.9453125,-0.1982421875,Science fiction,Romance
+20,-1.9453125,-0.193359375,Science fiction,Historical fiction
+20,-1.9375,-0.18359375,Science fiction,Horror
+20,-2.0625,-0.1845703125,Science fiction,Literary fiction
+20,-1.1640625,-0.41015625,Mystery,Fantasy
+20,-1.171875,-0.419921875,Mystery,Science fiction
+20,-1.3515625,-0.34765625,Mystery,Romance
+20,-1.4375,-0.31640625,Mystery,Historical fiction
+20,-1.1796875,-0.4296875,Mystery,Horror
+20,-1.9453125,-0.1923828125,Mystery,Literary fiction
+20,-1.7265625,-0.228515625,Romance,Fantasy
+20,-1.6328125,-0.2578125,Romance,Science fiction
+20,-1.1953125,-0.44921875,Romance,Mystery
+20,-1.7421875,-0.2451171875,Romance,Historical fiction
+20,-1.5390625,-0.2890625,Romance,Horror
+20,-2.265625,-0.146484375,Romance,Literary fiction
+20,-2.078125,-0.201171875,Historical fiction,Fantasy
+20,-2.15625,-0.1591796875,Historical fiction,Science fiction
+20,-1.7734375,-0.2734375,Historical fiction,Mystery
+20,-1.96875,-0.2177734375,Historical fiction,Romance
+20,-1.7734375,-0.2734375,Historical fiction,Horror
+20,-2.640625,-0.1337890625,Historical fiction,Literary fiction
+20,-0.609375,-0.984375,Horror,Fantasy
+20,-0.80859375,-0.68359375,Horror,Science fiction
+20,-0.38671875,-1.515625,Horror,Mystery
+20,-0.57421875,-1.203125,Horror,Romance
+20,-0.76953125,-0.76953125,Horror,Historical fiction
+20,-1.0546875,-0.55078125,Horror,Literary fiction
+20,-2.046875,-0.291015625,Literary fiction,Fantasy
+20,-2.203125,-0.2021484375,Literary fiction,Science fiction
+20,-2.28125,-0.275390625,Literary fiction,Mystery
+20,-2.125,-0.248046875,Literary fiction,Romance
+20,-2.203125,-0.201171875,Literary fiction,Historical fiction
+20,-1.8984375,-0.271484375,Literary fiction,Horror
+21,-2.9375,-0.06298828125,Fantasy,Science fiction
+21,-2.484375,-0.1064453125,Fantasy,Mystery
+21,-2.59375,-0.09228515625,Fantasy,Romance
+21,-2.484375,-0.10546875,Fantasy,Historical fiction
+21,-2.703125,-0.08447265625,Fantasy,Horror
+21,-2.46875,-0.10107421875,Fantasy,Literary fiction
+21,-2.15625,-0.150390625,Science fiction,Fantasy
+21,-1.875,-0.251953125,Science fiction,Mystery
+21,-1.9609375,-0.2080078125,Science fiction,Romance
+21,-2.171875,-0.169921875,Science fiction,Historical fiction
+21,-2.15625,-0.16015625,Science fiction,Horror
+21,-2.375,-0.125,Science fiction,Literary fiction
+21,-2.59375,-0.0869140625,Mystery,Fantasy
+21,-3.171875,-0.048583984375,Mystery,Science fiction
+21,-2.25,-0.1279296875,Mystery,Romance
+21,-2.828125,-0.07373046875,Mystery,Historical fiction
+21,-2.703125,-0.080078125,Mystery,Horror
+21,-2.828125,-0.07080078125,Mystery,Literary fiction
+21,-2.484375,-0.1044921875,Romance,Fantasy
+21,-3.0625,-0.059326171875,Romance,Science fiction
+21,-2.609375,-0.1025390625,Romance,Mystery
+21,-2.59375,-0.0966796875,Romance,Historical fiction
+21,-2.828125,-0.076171875,Romance,Horror
+21,-2.703125,-0.0830078125,Romance,Literary fiction
+21,-2.296875,-0.1689453125,Historical fiction,Fantasy
+21,-2.609375,-0.107421875,Historical fiction,Science fiction
+21,-2.421875,-0.1650390625,Historical fiction,Mystery
+21,-2.078125,-0.20703125,Historical fiction,Romance
+21,-2.296875,-0.1708984375,Historical fiction,Horror
+21,-2.515625,-0.134765625,Historical fiction,Literary fiction
+21,-2.46875,-0.1015625,Horror,Fantasy
+21,-2.703125,-0.08251953125,Horror,Science fiction
+21,-2.359375,-0.1171875,Horror,Mystery
+21,-2.265625,-0.1435546875,Horror,Romance
+21,-2.703125,-0.08349609375,Horror,Historical fiction
+21,-2.59375,-0.0927734375,Horror,Literary fiction
+21,-2.0,-0.25390625,Literary fiction,Fantasy
+21,-2.09375,-0.2177734375,Literary fiction,Science fiction
+21,-2.0625,-0.30859375,Literary fiction,Mystery
+21,-1.828125,-0.330078125,Literary fiction,Romance
+21,-2.1875,-0.1865234375,Literary fiction,Historical fiction
+21,-1.6953125,-0.32421875,Literary fiction,Horror
+22,-1.609375,-0.232421875,Fantasy,Science fiction
+22,-1.625,-0.25390625,Fantasy,Mystery
+22,-1.34375,-0.33984375,Fantasy,Romance
+22,-1.1484375,-0.400390625,Fantasy,Historical fiction
+22,-1.5234375,-0.2734375,Fantasy,Horror
+22,-1.515625,-0.26953125,Fantasy,Literary fiction
+22,-2.28125,-0.16015625,Science fiction,Fantasy
+22,-2.46875,-0.2236328125,Science fiction,Mystery
+22,-2.109375,-0.2275390625,Science fiction,Romance
+22,-2.078125,-0.208984375,Science fiction,Historical fiction
+22,-2.1875,-0.1923828125,Science fiction,Horror
+22,-2.078125,-0.20703125,Science fiction,Literary fiction
+22,-2.359375,-0.10986328125,Mystery,Fantasy
+22,-2.578125,-0.08544921875,Mystery,Science fiction
+22,-2.265625,-0.134765625,Mystery,Romance
+22,-2.140625,-0.13671875,Mystery,Historical fiction
+22,-2.140625,-0.142578125,Mystery,Horror
+22,-2.359375,-0.11572265625,Mystery,Literary fiction
+22,-2.265625,-0.1396484375,Romance,Fantasy
+22,-2.59375,-0.0908203125,Romance,Science fiction
+22,-2.40625,-0.1533203125,Romance,Mystery
+22,-1.9296875,-0.1806640625,Romance,Historical fiction
+22,-1.8359375,-0.2119140625,Romance,Horror
+22,-2.484375,-0.10546875,Romance,Literary fiction
+22,-2.21875,-0.21875,Historical fiction,Fantasy
+22,-3.078125,-0.0830078125,Historical fiction,Science fiction
+22,-2.640625,-0.259765625,Historical fiction,Mystery
+22,-2.25,-0.2431640625,Historical fiction,Romance
+22,-2.140625,-0.2734375,Historical fiction,Horror
+22,-2.890625,-0.1396484375,Historical fiction,Literary fiction
+22,-1.453125,-0.330078125,Horror,Fantasy
+22,-0.921875,-0.546875,Horror,Science fiction
+22,-1.3203125,-0.443359375,Horror,Mystery
+22,-0.96484375,-0.83984375,Horror,Romance
+22,-0.92578125,-0.55078125,Horror,Historical fiction
+22,-1.15625,-0.408203125,Horror,Literary fiction
+22,-2.703125,-0.326171875,Literary fiction,Fantasy
+22,-2.90625,-0.1591796875,Literary fiction,Science fiction
+22,-2.9375,-0.3125,Literary fiction,Mystery
+22,-2.3125,-0.3125,Literary fiction,Romance
+22,-2.59375,-0.22265625,Literary fiction,Historical fiction
+22,-2.359375,-0.23046875,Literary fiction,Horror
+23,-2.25,-0.12451171875,Fantasy,Science fiction
+23,-2.140625,-0.138671875,Fantasy,Mystery
+23,-1.625,-0.2470703125,Fantasy,Romance
+23,-2.140625,-0.1435546875,Fantasy,Historical fiction
+23,-1.921875,-0.1748046875,Fantasy,Horror
+23,-2.46875,-0.0966796875,Fantasy,Literary fiction
+23,-2.03125,-0.1630859375,Science fiction,Fantasy
+23,-2.15625,-0.1640625,Science fiction,Mystery
+23,-2.0625,-0.189453125,Science fiction,Romance
+23,-2.15625,-0.1533203125,Science fiction,Historical fiction
+23,-2.140625,-0.1455078125,Science fiction,Horror
+23,-2.59375,-0.09521484375,Science fiction,Literary fiction
+23,-2.25,-0.11767578125,Mystery,Fantasy
+23,-2.9375,-0.0595703125,Mystery,Science fiction
+23,-2.03125,-0.1533203125,Mystery,Romance
+23,-2.9375,-0.05908203125,Mystery,Historical fiction
+23,-2.125,-0.1328125,Mystery,Horror
+23,-3.296875,-0.041259765625,Mystery,Literary fiction
+23,-2.46875,-0.10009765625,Romance,Fantasy
+23,-3.171875,-0.05078125,Romance,Science fiction
+23,-2.59375,-0.09423828125,Romance,Mystery
+23,-2.9375,-0.06201171875,Romance,Historical fiction
+23,-2.359375,-0.1142578125,Romance,Horror
+23,-3.171875,-0.049072265625,Romance,Literary fiction
+23,-2.15625,-0.15234375,Historical fiction,Fantasy
+23,-2.59375,-0.09765625,Historical fiction,Science fiction
+23,-2.28125,-0.1591796875,Historical fiction,Mystery
+23,-2.0625,-0.193359375,Historical fiction,Romance
+23,-2.15625,-0.15625,Historical fiction,Horror
+23,-2.484375,-0.109375,Historical fiction,Literary fiction
+23,-1.5234375,-0.26953125,Horror,Fantasy
+23,-1.8203125,-0.193359375,Horror,Science fiction
+23,-1.71875,-0.2158203125,Horror,Mystery
+23,-1.3671875,-0.369140625,Horror,Romance
+23,-2.140625,-0.13671875,Horror,Historical fiction
+23,-2.359375,-0.10888671875,Horror,Literary fiction
+23,-2.296875,-0.177734375,Literary fiction,Fantasy
+23,-2.53125,-0.15625,Literary fiction,Science fiction
+23,-2.453125,-0.205078125,Literary fiction,Mystery
+23,-2.125,-0.2451171875,Literary fiction,Romance
+23,-2.515625,-0.140625,Literary fiction,Historical fiction
+23,-2.171875,-0.177734375,Literary fiction,Horror
+24,-2.375,-0.1279296875,Fantasy,Science fiction
+24,-2.25,-0.126953125,Fantasy,Mystery
+24,-2.140625,-0.1474609375,Fantasy,Romance
+24,-2.390625,-0.1376953125,Fantasy,Historical fiction
+24,-2.25,-0.130859375,Fantasy,Horror
+24,-2.390625,-0.138671875,Fantasy,Literary fiction
+24,-2.375,-0.12255859375,Science fiction,Fantasy
+24,-2.171875,-0.1748046875,Science fiction,Mystery
+24,-2.484375,-0.1142578125,Science fiction,Romance
+24,-2.5,-0.1240234375,Science fiction,Historical fiction
+24,-2.375,-0.11962890625,Science fiction,Horror
+24,-2.84375,-0.09033203125,Science fiction,Literary fiction
+24,-2.46875,-0.09814453125,Mystery,Fantasy
+24,-3.421875,-0.039306640625,Mystery,Science fiction
+24,-2.46875,-0.09814453125,Mystery,Romance
+24,-3.1875,-0.0576171875,Mystery,Historical fiction
+24,-2.59375,-0.0869140625,Mystery,Horror
+24,-2.953125,-0.076171875,Mystery,Literary fiction
+24,-2.484375,-0.10498046875,Romance,Fantasy
+24,-3.1875,-0.060791015625,Romance,Science fiction
+24,-2.59375,-0.09375,Romance,Mystery
+24,-2.71875,-0.10009765625,Romance,Historical fiction
+24,-2.375,-0.1171875,Romance,Horror
+24,-2.734375,-0.10205078125,Romance,Literary fiction
+24,-2.078125,-0.2060546875,Historical fiction,Fantasy
+24,-2.609375,-0.115234375,Historical fiction,Science fiction
+24,-2.078125,-0.20703125,Historical fiction,Mystery
+24,-1.9765625,-0.224609375,Historical fiction,Romance
+24,-1.9765625,-0.224609375,Historical fiction,Horror
+24,-2.40625,-0.1591796875,Historical fiction,Literary fiction
+24,-1.9375,-0.1875,Horror,Fantasy
+24,-2.484375,-0.11181640625,Horror,Science fiction
+24,-2.046875,-0.166015625,Horror,Mystery
+24,-2.265625,-0.1376953125,Horror,Romance
+24,-2.609375,-0.111328125,Horror,Historical fiction
+24,-2.390625,-0.142578125,Horror,Literary fiction
+24,-2.0625,-0.30859375,Literary fiction,Fantasy
+24,-2.46875,-0.2109375,Literary fiction,Science fiction
+24,-2.34375,-0.3359375,Literary fiction,Mystery
+24,-2.046875,-0.29296875,Literary fiction,Romance
+24,-2.203125,-0.2109375,Literary fiction,Historical fiction
+24,-2.03125,-0.27734375,Literary fiction,Horror

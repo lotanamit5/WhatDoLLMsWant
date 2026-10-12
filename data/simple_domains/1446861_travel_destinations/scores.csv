@@ -1,0 +1,1051 @@
+template_idx,score_a,score_b,a_item,b_item
+0,-1.0390625,-0.455078125,Paris,Tokyo
+0,-1.03125,-0.462890625,Paris,New York
+0,-1.21875,-0.3671875,Paris,Barcelona
+0,-1.0234375,-0.462890625,Paris,Bangkok
+0,-1.109375,-0.41796875,Paris,Cape Town
+0,-1.03125,-0.458984375,Paris,Rome
+0,-1.0234375,-0.46875,Tokyo,Paris
+0,-1.03125,-0.462890625,Tokyo,New York
+0,-1.140625,-0.400390625,Tokyo,Barcelona
+0,-0.97265625,-0.49609375,Tokyo,Bangkok
+0,-1.046875,-0.451171875,Tokyo,Cape Town
+0,-1.0,-0.478515625,Tokyo,Rome
+0,-1.03125,-0.46875,New York,Paris
+0,-0.99609375,-0.484375,New York,Tokyo
+0,-1.1328125,-0.408203125,New York,Barcelona
+0,-0.9921875,-0.48828125,New York,Bangkok
+0,-1.046875,-0.455078125,New York,Cape Town
+0,-1.015625,-0.474609375,New York,Rome
+0,-0.953125,-0.51171875,Barcelona,Paris
+0,-0.98046875,-0.490234375,Barcelona,Tokyo
+0,-0.9609375,-0.50390625,Barcelona,New York
+0,-0.9140625,-0.53125,Barcelona,Bangkok
+0,-0.953125,-0.5078125,Barcelona,Cape Town
+0,-0.94140625,-0.51171875,Barcelona,Rome
+0,-0.9765625,-0.494140625,Bangkok,Paris
+0,-0.9609375,-0.5,Bangkok,Tokyo
+0,-0.9375,-0.515625,Bangkok,New York
+0,-1.109375,-0.416015625,Bangkok,Barcelona
+0,-0.9765625,-0.490234375,Bangkok,Cape Town
+0,-0.953125,-0.50390625,Bangkok,Rome
+0,-0.9140625,-0.5390625,Cape Town,Paris
+0,-0.92578125,-0.5234375,Cape Town,Tokyo
+0,-0.9609375,-0.5078125,Cape Town,New York
+0,-0.9921875,-0.486328125,Cape Town,Barcelona
+0,-0.8671875,-0.5703125,Cape Town,Bangkok
+0,-0.92578125,-0.52734375,Cape Town,Rome
+0,-1.03125,-0.462890625,Rome,Paris
+0,-1.03125,-0.458984375,Rome,Tokyo
+0,-1.03125,-0.462890625,Rome,New York
+0,-1.1640625,-0.392578125,Rome,Barcelona
+0,-0.984375,-0.48828125,Rome,Bangkok
+0,-1.046875,-0.451171875,Rome,Cape Town
+1,-1.0078125,-0.466796875,Paris,Tokyo
+1,-1.03125,-0.453125,Paris,New York
+1,-1.109375,-0.416015625,Paris,Barcelona
+1,-0.99609375,-0.474609375,Paris,Bangkok
+1,-1.0703125,-0.43359375,Paris,Cape Town
+1,-0.98046875,-0.484375,Paris,Rome
+1,-0.96484375,-0.49609375,Tokyo,Paris
+1,-0.98046875,-0.482421875,Tokyo,New York
+1,-1.0859375,-0.427734375,Tokyo,Barcelona
+1,-0.93359375,-0.515625,Tokyo,Bangkok
+1,-1.0390625,-0.453125,Tokyo,Cape Town
+1,-0.94921875,-0.50390625,Tokyo,Rome
+1,-0.94140625,-0.51171875,New York,Paris
+1,-0.921875,-0.5234375,New York,Tokyo
+1,-1.03125,-0.453125,New York,Barcelona
+1,-0.9296875,-0.51953125,New York,Bangkok
+1,-0.95703125,-0.50390625,New York,Cape Town
+1,-0.91796875,-0.5234375,New York,Rome
+1,-0.8984375,-0.54296875,Barcelona,Paris
+1,-0.953125,-0.50390625,Barcelona,Tokyo
+1,-0.953125,-0.50390625,Barcelona,New York
+1,-0.8984375,-0.5390625,Barcelona,Bangkok
+1,-0.9453125,-0.5078125,Barcelona,Cape Town
+1,-0.90625,-0.53125,Barcelona,Rome
+1,-0.96484375,-0.4921875,Bangkok,Paris
+1,-0.9453125,-0.50390625,Bangkok,Tokyo
+1,-0.9765625,-0.482421875,Bangkok,New York
+1,-1.0625,-0.435546875,Bangkok,Barcelona
+1,-1.0,-0.470703125,Bangkok,Cape Town
+1,-0.95703125,-0.49609375,Bangkok,Rome
+1,-0.921875,-0.52734375,Cape Town,Paris
+1,-0.9609375,-0.49609375,Cape Town,Tokyo
+1,-0.94921875,-0.50390625,Cape Town,New York
+1,-0.96484375,-0.49609375,Cape Town,Barcelona
+1,-0.890625,-0.546875,Cape Town,Bangkok
+1,-0.89453125,-0.54296875,Cape Town,Rome
+1,-0.94921875,-0.5078125,Rome,Paris
+1,-0.9453125,-0.5078125,Rome,Tokyo
+1,-0.953125,-0.50390625,Rome,New York
+1,-1.03125,-0.453125,Rome,Barcelona
+1,-0.93359375,-0.515625,Rome,Bangkok
+1,-0.984375,-0.486328125,Rome,Cape Town
+2,-1.1875,-0.37109375,Paris,Tokyo
+2,-1.171875,-0.37890625,Paris,New York
+2,-1.3359375,-0.3125,Paris,Barcelona
+2,-1.1484375,-0.388671875,Paris,Bangkok
+2,-1.265625,-0.33984375,Paris,Cape Town
+2,-1.09375,-0.41796875,Paris,Rome
+2,-1.1640625,-0.3828125,Tokyo,Paris
+2,-1.171875,-0.376953125,Tokyo,New York
+2,-1.3203125,-0.31640625,Tokyo,Barcelona
+2,-1.109375,-0.40625,Tokyo,Bangkok
+2,-1.21875,-0.357421875,Tokyo,Cape Town
+2,-1.1484375,-0.390625,Tokyo,Rome
+2,-1.1484375,-0.392578125,New York,Paris
+2,-1.140625,-0.39453125,New York,Tokyo
+2,-1.2421875,-0.349609375,New York,Barcelona
+2,-1.125,-0.40234375,New York,Bangkok
+2,-1.15625,-0.388671875,New York,Cape Town
+2,-1.109375,-0.41015625,New York,Rome
+2,-1.0078125,-0.462890625,Barcelona,Paris
+2,-1.0859375,-0.41796875,Barcelona,Tokyo
+2,-1.078125,-0.423828125,Barcelona,New York
+2,-1.0,-0.46484375,Barcelona,Bangkok
+2,-1.046875,-0.44140625,Barcelona,Cape Town
+2,-1.0390625,-0.443359375,Barcelona,Rome
+2,-1.078125,-0.42578125,Bangkok,Paris
+2,-1.078125,-0.421875,Bangkok,Tokyo
+2,-1.09375,-0.416015625,Bangkok,New York
+2,-1.2109375,-0.359375,Bangkok,Barcelona
+2,-1.1015625,-0.412109375,Bangkok,Cape Town
+2,-1.0703125,-0.427734375,Bangkok,Rome
+2,-1.0,-0.470703125,Cape Town,Paris
+2,-1.0546875,-0.435546875,Cape Town,Tokyo
+2,-1.0546875,-0.4375,Cape Town,New York
+2,-1.0625,-0.43359375,Cape Town,Barcelona
+2,-0.94921875,-0.498046875,Cape Town,Bangkok
+2,-1.015625,-0.4609375,Cape Town,Rome
+2,-1.15625,-0.38671875,Rome,Paris
+2,-1.1875,-0.369140625,Rome,Tokyo
+2,-1.1796875,-0.375,Rome,New York
+2,-1.34375,-0.310546875,Rome,Barcelona
+2,-1.140625,-0.392578125,Rome,Bangkok
+2,-1.2109375,-0.36328125,Rome,Cape Town
+3,-1.5390625,-0.2490234375,Paris,Tokyo
+3,-1.5546875,-0.2431640625,Paris,New York
+3,-1.7265625,-0.203125,Paris,Barcelona
+3,-1.4609375,-0.271484375,Paris,Bangkok
+3,-1.546875,-0.24609375,Paris,Cape Town
+3,-1.4140625,-0.28515625,Paris,Rome
+3,-1.5078125,-0.255859375,Tokyo,Paris
+3,-1.4921875,-0.259765625,Tokyo,New York
+3,-1.671875,-0.2138671875,Tokyo,Barcelona
+3,-1.3671875,-0.30078125,Tokyo,Bangkok
+3,-1.515625,-0.25390625,Tokyo,Cape Town
+3,-1.4453125,-0.2734375,Tokyo,Rome
+3,-1.5625,-0.244140625,New York,Paris
+3,-1.484375,-0.263671875,New York,Tokyo
+3,-1.671875,-0.21484375,New York,Barcelona
+3,-1.40625,-0.2890625,New York,Bangkok
+3,-1.4453125,-0.275390625,New York,Cape Town
+3,-1.4296875,-0.279296875,New York,Rome
+3,-1.3515625,-0.30859375,Barcelona,Paris
+3,-1.515625,-0.25390625,Barcelona,Tokyo
+3,-1.46875,-0.267578125,Barcelona,New York
+3,-1.3046875,-0.322265625,Barcelona,Bangkok
+3,-1.3984375,-0.2890625,Barcelona,Cape Town
+3,-1.34375,-0.30859375,Barcelona,Rome
+3,-1.3984375,-0.2890625,Bangkok,Paris
+3,-1.40625,-0.28515625,Bangkok,Tokyo
+3,-1.4609375,-0.26953125,Bangkok,New York
+3,-1.6171875,-0.2265625,Bangkok,Barcelona
+3,-1.3984375,-0.287109375,Bangkok,Cape Town
+3,-1.3828125,-0.294921875,Bangkok,Rome
+3,-1.3671875,-0.30078125,Cape Town,Paris
+3,-1.4140625,-0.28515625,Cape Town,Tokyo
+3,-1.4296875,-0.279296875,Cape Town,New York
+3,-1.4375,-0.279296875,Cape Town,Barcelona
+3,-1.28125,-0.330078125,Cape Town,Bangkok
+3,-1.3046875,-0.32421875,Cape Town,Rome
+3,-1.453125,-0.2734375,Rome,Paris
+3,-1.5390625,-0.2470703125,Rome,Tokyo
+3,-1.4609375,-0.26953125,Rome,New York
+3,-1.6328125,-0.2236328125,Rome,Barcelona
+3,-1.421875,-0.283203125,Rome,Bangkok
+3,-1.4296875,-0.28125,Rome,Cape Town
+4,-1.2578125,-0.341796875,Paris,Tokyo
+4,-1.203125,-0.361328125,Paris,New York
+4,-1.46875,-0.265625,Paris,Barcelona
+4,-1.2421875,-0.345703125,Paris,Bangkok
+4,-1.34375,-0.30859375,Paris,Cape Town
+4,-1.09375,-0.4140625,Paris,Rome
+4,-1.1171875,-0.404296875,Tokyo,Paris
+4,-1.140625,-0.390625,Tokyo,New York
+4,-1.375,-0.294921875,Tokyo,Barcelona
+4,-1.125,-0.3984375,Tokyo,Bangkok
+4,-1.234375,-0.349609375,Tokyo,Cape Town
+4,-1.1171875,-0.400390625,Tokyo,Rome
+4,-1.1953125,-0.369140625,New York,Paris
+4,-1.1875,-0.37109375,New York,Tokyo
+4,-1.4140625,-0.28515625,New York,Barcelona
+4,-1.171875,-0.376953125,New York,Bangkok
+4,-1.2578125,-0.341796875,New York,Cape Town
+4,-1.1171875,-0.40234375,New York,Rome
+4,-1.1171875,-0.40234375,Barcelona,Paris
+4,-1.25,-0.34375,Barcelona,Tokyo
+4,-1.25,-0.34375,Barcelona,New York
+4,-1.140625,-0.390625,Barcelona,Bangkok
+4,-1.21875,-0.35546875,Barcelona,Cape Town
+4,-1.109375,-0.40625,Barcelona,Rome
+4,-1.0703125,-0.42578125,Bangkok,Paris
+4,-1.0546875,-0.431640625,Bangkok,Tokyo
+4,-1.078125,-0.419921875,Bangkok,New York
+4,-1.3125,-0.318359375,Bangkok,Barcelona
+4,-1.171875,-0.375,Bangkok,Cape Town
+4,-1.078125,-0.419921875,Bangkok,Rome
+4,-1.0234375,-0.451171875,Cape Town,Paris
+4,-1.1484375,-0.384765625,Cape Town,Tokyo
+4,-1.1171875,-0.404296875,Cape Town,New York
+4,-1.1328125,-0.39453125,Cape Town,Barcelona
+4,-1.03125,-0.447265625,Cape Town,Bangkok
+4,-0.98828125,-0.47265625,Cape Town,Rome
+4,-1.078125,-0.423828125,Rome,Paris
+4,-1.1796875,-0.369140625,Rome,Tokyo
+4,-1.1171875,-0.40234375,Rome,New York
+4,-1.3359375,-0.30859375,Rome,Barcelona
+4,-1.15625,-0.380859375,Rome,Bangkok
+4,-1.1796875,-0.373046875,Rome,Cape Town
+5,-1.21875,-0.369140625,Paris,Tokyo
+5,-1.21875,-0.37109375,Paris,New York
+5,-1.421875,-0.29296875,Paris,Barcelona
+5,-1.21875,-0.3671875,Paris,Bangkok
+5,-1.28125,-0.34375,Paris,Cape Town
+5,-1.140625,-0.40625,Paris,Rome
+5,-1.1484375,-0.404296875,Tokyo,Paris
+5,-1.1875,-0.3828125,Tokyo,New York
+5,-1.3125,-0.330078125,Tokyo,Barcelona
+5,-1.1328125,-0.404296875,Tokyo,Bangkok
+5,-1.203125,-0.375,Tokyo,Cape Town
+5,-1.140625,-0.404296875,Tokyo,Rome
+5,-1.1953125,-0.38671875,New York,Paris
+5,-1.2265625,-0.3671875,New York,Tokyo
+5,-1.296875,-0.3359375,New York,Barcelona
+5,-1.21875,-0.369140625,New York,Bangkok
+5,-1.2421875,-0.36328125,New York,Cape Town
+5,-1.1484375,-0.404296875,New York,Rome
+5,-1.0859375,-0.435546875,Barcelona,Paris
+5,-1.1640625,-0.392578125,Barcelona,Tokyo
+5,-1.1328125,-0.41015625,Barcelona,New York
+5,-1.0625,-0.44140625,Barcelona,Bangkok
+5,-1.1015625,-0.42578125,Barcelona,Cape Town
+5,-1.078125,-0.435546875,Barcelona,Rome
+5,-1.125,-0.412109375,Bangkok,Paris
+5,-1.15625,-0.39453125,Bangkok,Tokyo
+5,-1.1484375,-0.3984375,Bangkok,New York
+5,-1.2578125,-0.34765625,Bangkok,Barcelona
+5,-1.171875,-0.388671875,Bangkok,Cape Town
+5,-1.125,-0.40625,Bangkok,Rome
+5,-1.0,-0.48828125,Cape Town,Paris
+5,-1.078125,-0.435546875,Cape Town,Tokyo
+5,-1.0703125,-0.4453125,Cape Town,New York
+5,-1.046875,-0.45703125,Cape Town,Barcelona
+5,-1.0078125,-0.4765625,Cape Town,Bangkok
+5,-1.015625,-0.478515625,Cape Town,Rome
+5,-1.171875,-0.392578125,Rome,Paris
+5,-1.25,-0.353515625,Rome,Tokyo
+5,-1.203125,-0.380859375,Rome,New York
+5,-1.359375,-0.3125,Rome,Barcelona
+5,-1.203125,-0.375,Rome,Bangkok
+5,-1.234375,-0.365234375,Rome,Cape Town
+6,-1.2734375,-0.333984375,Paris,Tokyo
+6,-1.21875,-0.357421875,Paris,New York
+6,-1.40625,-0.287109375,Paris,Barcelona
+6,-1.15625,-0.38671875,Paris,Bangkok
+6,-1.25,-0.345703125,Paris,Cape Town
+6,-1.1484375,-0.390625,Paris,Rome
+6,-1.1875,-0.375,Tokyo,Paris
+6,-1.234375,-0.349609375,Tokyo,New York
+6,-1.40625,-0.287109375,Tokyo,Barcelona
+6,-1.125,-0.404296875,Tokyo,Bangkok
+6,-1.25,-0.345703125,Tokyo,Cape Town
+6,-1.21875,-0.357421875,Tokyo,Rome
+6,-1.1953125,-0.37109375,New York,Paris
+6,-1.234375,-0.353515625,New York,Tokyo
+6,-1.4375,-0.279296875,New York,Barcelona
+6,-1.1015625,-0.41796875,New York,Bangkok
+6,-1.21875,-0.359375,New York,Cape Town
+6,-1.140625,-0.392578125,New York,Rome
+6,-1.078125,-0.42578125,Barcelona,Paris
+6,-1.25,-0.34765625,Barcelona,Tokyo
+6,-1.203125,-0.361328125,Barcelona,New York
+6,-1.03125,-0.455078125,Barcelona,Bangkok
+6,-1.046875,-0.44140625,Barcelona,Cape Town
+6,-1.1015625,-0.41015625,Barcelona,Rome
+6,-1.0390625,-0.447265625,Bangkok,Paris
+6,-1.1015625,-0.4140625,Bangkok,Tokyo
+6,-1.1796875,-0.375,Bangkok,New York
+6,-1.25,-0.34765625,Bangkok,Barcelona
+6,-1.078125,-0.423828125,Bangkok,Cape Town
+6,-1.0859375,-0.419921875,Bangkok,Rome
+6,-1.0078125,-0.466796875,Cape Town,Paris
+6,-1.09375,-0.416015625,Cape Town,Tokyo
+6,-1.09375,-0.416015625,Cape Town,New York
+6,-1.0390625,-0.453125,Cape Town,Barcelona
+6,-0.9453125,-0.5078125,Cape Town,Bangkok
+6,-1.0,-0.46875,Cape Town,Rome
+6,-1.1171875,-0.40625,Rome,Paris
+6,-1.2265625,-0.35546875,Rome,Tokyo
+6,-1.1484375,-0.38671875,Rome,New York
+6,-1.328125,-0.31640625,Rome,Barcelona
+6,-1.0625,-0.4375,Rome,Bangkok
+6,-1.09375,-0.41796875,Rome,Cape Town
+7,-1.203125,-0.375,Paris,Tokyo
+7,-1.234375,-0.36328125,Paris,New York
+7,-1.4921875,-0.26953125,Paris,Barcelona
+7,-1.2265625,-0.361328125,Paris,Bangkok
+7,-1.34375,-0.318359375,Paris,Cape Town
+7,-1.140625,-0.40234375,Paris,Rome
+7,-1.1796875,-0.390625,Tokyo,Paris
+7,-1.203125,-0.376953125,Tokyo,New York
+7,-1.3984375,-0.296875,Tokyo,Barcelona
+7,-1.1640625,-0.390625,Tokyo,Bangkok
+7,-1.265625,-0.345703125,Tokyo,Cape Town
+7,-1.1875,-0.3828125,Tokyo,Rome
+7,-1.2265625,-0.373046875,New York,Paris
+7,-1.15625,-0.3984375,New York,Tokyo
+7,-1.4375,-0.28515625,New York,Barcelona
+7,-1.21875,-0.3671875,New York,Bangkok
+7,-1.2578125,-0.353515625,New York,Cape Town
+7,-1.1640625,-0.39453125,New York,Rome
+7,-1.15625,-0.3984375,Barcelona,Paris
+7,-1.234375,-0.359375,Barcelona,Tokyo
+7,-1.2421875,-0.357421875,Barcelona,New York
+7,-1.140625,-0.3984375,Barcelona,Bangkok
+7,-1.2265625,-0.361328125,Barcelona,Cape Town
+7,-1.125,-0.40625,Barcelona,Rome
+7,-1.1484375,-0.3984375,Bangkok,Paris
+7,-1.1015625,-0.421875,Bangkok,Tokyo
+7,-1.1796875,-0.380859375,Bangkok,New York
+7,-1.3828125,-0.30078125,Bangkok,Barcelona
+7,-1.2421875,-0.353515625,Bangkok,Cape Town
+7,-1.1484375,-0.39453125,Bangkok,Rome
+7,-1.1015625,-0.423828125,Cape Town,Paris
+7,-1.125,-0.41015625,Cape Town,Tokyo
+7,-1.171875,-0.388671875,Cape Town,New York
+7,-1.21875,-0.3671875,Cape Town,Barcelona
+7,-1.078125,-0.43359375,Cape Town,Bangkok
+7,-1.125,-0.412109375,Cape Town,Rome
+7,-1.21875,-0.369140625,Rome,Paris
+7,-1.21875,-0.365234375,Rome,Tokyo
+7,-1.2265625,-0.365234375,Rome,New York
+7,-1.4921875,-0.267578125,Rome,Barcelona
+7,-1.234375,-0.357421875,Rome,Bangkok
+7,-1.3046875,-0.330078125,Rome,Cape Town
+8,-0.92578125,-0.51953125,Paris,Tokyo
+8,-0.9375,-0.51171875,Paris,New York
+8,-1.0625,-0.439453125,Paris,Barcelona
+8,-0.9453125,-0.5078125,Paris,Bangkok
+8,-1.015625,-0.46484375,Paris,Cape Town
+8,-0.84765625,-0.57421875,Paris,Rome
+8,-0.890625,-0.54296875,Tokyo,Paris
+8,-0.91015625,-0.52734375,Tokyo,New York
+8,-1.0546875,-0.443359375,Tokyo,Barcelona
+8,-0.875,-0.5546875,Tokyo,Bangkok
+8,-0.9765625,-0.486328125,Tokyo,Cape Town
+8,-0.8828125,-0.546875,Tokyo,Rome
+8,-0.91796875,-0.52734375,New York,Paris
+8,-0.91015625,-0.52734375,New York,Tokyo
+8,-1.0546875,-0.44140625,New York,Barcelona
+8,-0.91796875,-0.5234375,New York,Bangkok
+8,-0.9453125,-0.5078125,New York,Cape Town
+8,-0.890625,-0.54296875,New York,Rome
+8,-0.8984375,-0.5390625,Barcelona,Paris
+8,-0.9765625,-0.48828125,Barcelona,Tokyo
+8,-0.98046875,-0.482421875,Barcelona,New York
+8,-0.921875,-0.51953125,Barcelona,Bangkok
+8,-0.9765625,-0.486328125,Barcelona,Cape Town
+8,-0.90625,-0.53125,Barcelona,Rome
+8,-0.8671875,-0.5625,Bangkok,Paris
+8,-0.8515625,-0.5703125,Bangkok,Tokyo
+8,-0.890625,-0.5390625,Bangkok,New York
+8,-1.0078125,-0.46484375,Bangkok,Barcelona
+8,-0.921875,-0.51953125,Bangkok,Cape Town
+8,-0.86328125,-0.5625,Bangkok,Rome
+8,-0.87109375,-0.5625,Cape Town,Paris
+8,-0.9140625,-0.52734375,Cape Town,Tokyo
+8,-0.8984375,-0.5390625,Cape Town,New York
+8,-0.94140625,-0.51171875,Cape Town,Barcelona
+8,-0.84765625,-0.57421875,Cape Town,Bangkok
+8,-0.859375,-0.5703125,Cape Town,Rome
+8,-0.88671875,-0.55078125,Rome,Paris
+8,-0.95703125,-0.498046875,Rome,Tokyo
+8,-0.91796875,-0.5234375,Rome,New York
+8,-1.0390625,-0.44921875,Rome,Barcelona
+8,-0.921875,-0.5234375,Rome,Bangkok
+8,-0.96875,-0.4921875,Rome,Cape Town
+9,-1.1796875,-0.388671875,Paris,Tokyo
+9,-1.1875,-0.384765625,Paris,New York
+9,-1.296875,-0.3359375,Paris,Barcelona
+9,-1.125,-0.412109375,Paris,Bangkok
+9,-1.1953125,-0.37890625,Paris,Cape Town
+9,-0.9921875,-0.486328125,Paris,Rome
+9,-1.1171875,-0.421875,Tokyo,Paris
+9,-1.234375,-0.359375,Tokyo,New York
+9,-1.3671875,-0.310546875,Tokyo,Barcelona
+9,-1.1328125,-0.408203125,Tokyo,Bangkok
+9,-1.265625,-0.34765625,Tokyo,Cape Town
+9,-1.140625,-0.40234375,Tokyo,Rome
+9,-1.2578125,-0.361328125,New York,Paris
+9,-1.328125,-0.328125,New York,Tokyo
+9,-1.4765625,-0.27734375,New York,Barcelona
+9,-1.234375,-0.365234375,New York,Bangkok
+9,-1.3125,-0.33203125,New York,Cape Town
+9,-1.1875,-0.384765625,New York,Rome
+9,-1.0390625,-0.46484375,Barcelona,Paris
+9,-1.2578125,-0.353515625,Barcelona,Tokyo
+9,-1.234375,-0.359375,Barcelona,New York
+9,-1.078125,-0.435546875,Barcelona,Bangkok
+9,-1.1328125,-0.40625,Barcelona,Cape Town
+9,-1.046875,-0.447265625,Barcelona,Rome
+9,-1.0390625,-0.455078125,Bangkok,Paris
+9,-1.0625,-0.4375,Bangkok,Tokyo
+9,-1.1640625,-0.388671875,Bangkok,New York
+9,-1.265625,-0.341796875,Bangkok,Barcelona
+9,-1.15625,-0.390625,Bangkok,Cape Town
+9,-1.015625,-0.462890625,Bangkok,Rome
+9,-0.97265625,-0.50390625,Cape Town,Paris
+9,-1.1171875,-0.416015625,Cape Town,Tokyo
+9,-1.109375,-0.419921875,Cape Town,New York
+9,-1.0703125,-0.439453125,Cape Town,Barcelona
+9,-0.9921875,-0.486328125,Cape Town,Bangkok
+9,-0.9140625,-0.53515625,Cape Town,Rome
+9,-1.0703125,-0.44140625,Rome,Paris
+9,-1.1796875,-0.384765625,Rome,Tokyo
+9,-1.1796875,-0.384765625,Rome,New York
+9,-1.328125,-0.3203125,Rome,Barcelona
+9,-1.1484375,-0.400390625,Rome,Bangkok
+9,-1.15625,-0.39453125,Rome,Cape Town
+10,-1.140625,-0.408203125,Paris,Tokyo
+10,-1.1328125,-0.40625,Paris,New York
+10,-1.3671875,-0.310546875,Paris,Barcelona
+10,-1.1875,-0.384765625,Paris,Bangkok
+10,-1.3046875,-0.333984375,Paris,Cape Town
+10,-1.1171875,-0.421875,Paris,Rome
+10,-1.0859375,-0.439453125,Tokyo,Paris
+10,-1.0859375,-0.431640625,Tokyo,New York
+10,-1.2734375,-0.34765625,Tokyo,Barcelona
+10,-1.0703125,-0.443359375,Tokyo,Bangkok
+10,-1.203125,-0.37890625,Tokyo,Cape Town
+10,-1.09375,-0.431640625,Tokyo,Rome
+10,-1.109375,-0.4296875,New York,Paris
+10,-1.0859375,-0.44140625,New York,Tokyo
+10,-1.3203125,-0.333984375,New York,Barcelona
+10,-1.1328125,-0.416015625,New York,Bangkok
+10,-1.171875,-0.3984375,New York,Cape Town
+10,-1.0703125,-0.4453125,New York,Rome
+10,-1.0703125,-0.44921875,Barcelona,Paris
+10,-1.125,-0.419921875,Barcelona,Tokyo
+10,-1.1484375,-0.400390625,Barcelona,New York
+10,-1.0703125,-0.443359375,Barcelona,Bangkok
+10,-1.15625,-0.400390625,Barcelona,Cape Town
+10,-1.0859375,-0.435546875,Barcelona,Rome
+10,-1.046875,-0.45703125,Bangkok,Paris
+10,-1.0234375,-0.466796875,Bangkok,Tokyo
+10,-1.0390625,-0.453125,Bangkok,New York
+10,-1.2421875,-0.357421875,Bangkok,Barcelona
+10,-1.1328125,-0.408203125,Bangkok,Cape Town
+10,-1.0703125,-0.44140625,Bangkok,Rome
+10,-1.0390625,-0.46875,Cape Town,Paris
+10,-1.0546875,-0.45703125,Cape Town,Tokyo
+10,-1.078125,-0.439453125,Cape Town,New York
+10,-1.15625,-0.404296875,Cape Town,Barcelona
+10,-1.046875,-0.45703125,Cape Town,Bangkok
+10,-1.046875,-0.46484375,Cape Town,Rome
+10,-1.1015625,-0.4296875,Rome,Paris
+10,-1.09375,-0.4296875,Rome,Tokyo
+10,-1.09375,-0.427734375,Rome,New York
+10,-1.2890625,-0.341796875,Rome,Barcelona
+10,-1.1328125,-0.408203125,Rome,Bangkok
+10,-1.1953125,-0.3828125,Rome,Cape Town
+11,-0.76171875,-0.65625,Paris,Tokyo
+11,-0.81640625,-0.609375,Paris,New York
+11,-0.8046875,-0.62109375,Paris,Barcelona
+11,-0.73046875,-0.6875,Paris,Bangkok
+11,-0.86328125,-0.578125,Paris,Cape Town
+11,-0.83984375,-0.6015625,Paris,Rome
+11,-0.7421875,-0.67578125,Tokyo,Paris
+11,-0.796875,-0.62109375,Tokyo,New York
+11,-0.8046875,-0.6171875,Tokyo,Barcelona
+11,-0.703125,-0.7109375,Tokyo,Bangkok
+11,-0.83984375,-0.59765625,Tokyo,Cape Town
+11,-0.86328125,-0.578125,Tokyo,Rome
+11,-0.81640625,-0.62109375,New York,Paris
+11,-0.7734375,-0.6484375,New York,Tokyo
+11,-0.83203125,-0.60546875,New York,Barcelona
+11,-0.76171875,-0.66015625,New York,Bangkok
+11,-0.86328125,-0.5859375,New York,Cape Town
+11,-0.9375,-0.5390625,New York,Rome
+11,-0.6171875,-0.80859375,Barcelona,Paris
+11,-0.66796875,-0.7421875,Barcelona,Tokyo
+11,-0.671875,-0.7421875,Barcelona,New York
+11,-0.59765625,-0.828125,Barcelona,Bangkok
+11,-0.6953125,-0.72265625,Barcelona,Cape Town
+11,-0.70703125,-0.71484375,Barcelona,Rome
+11,-0.7265625,-0.6875,Bangkok,Paris
+11,-0.71484375,-0.6953125,Bangkok,Tokyo
+11,-0.7421875,-0.6640625,Bangkok,New York
+11,-0.78125,-0.6328125,Bangkok,Barcelona
+11,-0.8125,-0.61328125,Bangkok,Cape Town
+11,-0.82421875,-0.6015625,Bangkok,Rome
+11,-0.7578125,-0.66796875,Cape Town,Paris
+11,-0.765625,-0.66015625,Cape Town,Tokyo
+11,-0.8046875,-0.625,Cape Town,New York
+11,-0.7578125,-0.671875,Cape Town,Barcelona
+11,-0.6953125,-0.72265625,Cape Town,Bangkok
+11,-0.90234375,-0.5546875,Cape Town,Rome
+11,-0.96875,-0.515625,Rome,Paris
+11,-0.9453125,-0.5234375,Rome,Tokyo
+11,-1.015625,-0.478515625,Rome,New York
+11,-0.9453125,-0.5234375,Rome,Barcelona
+11,-0.90625,-0.546875,Rome,Bangkok
+11,-1.046875,-0.46875,Rome,Cape Town
+12,-1.0546875,-0.453125,Paris,Tokyo
+12,-1.0625,-0.44921875,Paris,New York
+12,-1.2734375,-0.349609375,Paris,Barcelona
+12,-1.109375,-0.423828125,Paris,Bangkok
+12,-1.203125,-0.380859375,Paris,Cape Town
+12,-1.015625,-0.478515625,Paris,Rome
+12,-1.0234375,-0.478515625,Tokyo,Paris
+12,-1.0546875,-0.45703125,Tokyo,New York
+12,-1.2109375,-0.380859375,Tokyo,Barcelona
+12,-1.0234375,-0.4765625,Tokyo,Bangkok
+12,-1.1015625,-0.431640625,Tokyo,Cape Town
+12,-1.015625,-0.482421875,Tokyo,Rome
+12,-1.0625,-0.46484375,New York,Paris
+12,-1.046875,-0.466796875,New York,Tokyo
+12,-1.265625,-0.359375,New York,Barcelona
+12,-1.125,-0.4296875,New York,Bangkok
+12,-1.1484375,-0.412109375,New York,Cape Town
+12,-1.0390625,-0.47265625,New York,Rome
+12,-0.96484375,-0.515625,Barcelona,Paris
+12,-1.0234375,-0.47265625,Barcelona,Tokyo
+12,-1.0390625,-0.458984375,Barcelona,New York
+12,-1.0078125,-0.484375,Barcelona,Bangkok
+12,-1.03125,-0.470703125,Barcelona,Cape Town
+12,-0.984375,-0.4921875,Barcelona,Rome
+12,-1.0,-0.48828125,Bangkok,Paris
+12,-0.97265625,-0.498046875,Bangkok,Tokyo
+12,-0.9921875,-0.486328125,Bangkok,New York
+12,-1.171875,-0.39453125,Bangkok,Barcelona
+12,-1.0390625,-0.46484375,Bangkok,Cape Town
+12,-1.0,-0.484375,Bangkok,Rome
+12,-0.95703125,-0.5234375,Cape Town,Paris
+12,-0.98046875,-0.5,Cape Town,Tokyo
+12,-0.99609375,-0.490234375,Cape Town,New York
+12,-1.0390625,-0.470703125,Cape Town,Barcelona
+12,-0.9765625,-0.5078125,Cape Town,Bangkok
+12,-0.9609375,-0.51953125,Cape Town,Rome
+12,-1.03125,-0.470703125,Rome,Paris
+12,-1.0546875,-0.453125,Rome,Tokyo
+12,-1.0390625,-0.4609375,Rome,New York
+12,-1.2265625,-0.3671875,Rome,Barcelona
+12,-1.09375,-0.431640625,Rome,Bangkok
+12,-1.1015625,-0.427734375,Rome,Cape Town
+13,-0.97265625,-0.490234375,Paris,Tokyo
+13,-1.0,-0.470703125,Paris,New York
+13,-1.109375,-0.41015625,Paris,Barcelona
+13,-0.94921875,-0.5,Paris,Bangkok
+13,-1.015625,-0.458984375,Paris,Cape Town
+13,-0.8828125,-0.55078125,Paris,Rome
+13,-0.96875,-0.49609375,Tokyo,Paris
+13,-0.98046875,-0.486328125,Tokyo,New York
+13,-1.125,-0.404296875,Tokyo,Barcelona
+13,-0.91796875,-0.5234375,Tokyo,Bangkok
+13,-1.0078125,-0.46875,Tokyo,Cape Town
+13,-0.96484375,-0.494140625,Tokyo,Rome
+13,-1.0,-0.478515625,New York,Paris
+13,-0.95703125,-0.5,New York,Tokyo
+13,-1.1015625,-0.416015625,New York,Barcelona
+13,-0.93359375,-0.515625,New York,Bangkok
+13,-0.97265625,-0.48828125,New York,Cape Town
+13,-0.92578125,-0.51953125,New York,Rome
+13,-0.890625,-0.54296875,Barcelona,Paris
+13,-0.96484375,-0.4921875,Barcelona,Tokyo
+13,-0.9453125,-0.50390625,Barcelona,New York
+13,-0.8828125,-0.546875,Barcelona,Bangkok
+13,-0.91015625,-0.52734375,Barcelona,Cape Town
+13,-0.8671875,-0.55859375,Barcelona,Rome
+13,-0.9296875,-0.515625,Bangkok,Paris
+13,-0.90625,-0.53125,Bangkok,Tokyo
+13,-0.9453125,-0.50390625,Bangkok,New York
+13,-1.0859375,-0.419921875,Bangkok,Barcelona
+13,-0.96875,-0.48828125,Bangkok,Cape Town
+13,-0.91015625,-0.5234375,Bangkok,Rome
+13,-0.87109375,-0.5625,Cape Town,Paris
+13,-0.90625,-0.53125,Cape Town,Tokyo
+13,-0.91796875,-0.5234375,Cape Town,New York
+13,-0.890625,-0.54296875,Cape Town,Barcelona
+13,-0.83984375,-0.578125,Cape Town,Bangkok
+13,-0.82421875,-0.59375,Cape Town,Rome
+13,-0.93359375,-0.515625,Rome,Paris
+13,-0.98828125,-0.478515625,Rome,Tokyo
+13,-0.953125,-0.5,Rome,New York
+13,-1.1171875,-0.40625,Rome,Barcelona
+13,-0.9375,-0.5078125,Rome,Bangkok
+13,-0.953125,-0.5,Rome,Cape Town
+14,-1.1484375,-0.392578125,Paris,Tokyo
+14,-1.140625,-0.3984375,Paris,New York
+14,-1.3046875,-0.326171875,Paris,Barcelona
+14,-1.1484375,-0.392578125,Paris,Bangkok
+14,-1.2109375,-0.36328125,Paris,Cape Town
+14,-1.0859375,-0.42578125,Paris,Rome
+14,-1.078125,-0.42578125,Tokyo,Paris
+14,-1.1484375,-0.392578125,Tokyo,New York
+14,-1.296875,-0.328125,Tokyo,Barcelona
+14,-1.1015625,-0.4140625,Tokyo,Bangkok
+14,-1.1796875,-0.37890625,Tokyo,Cape Town
+14,-1.1171875,-0.40625,Tokyo,Rome
+14,-1.1015625,-0.41796875,New York,Paris
+14,-1.1328125,-0.400390625,New York,Tokyo
+14,-1.2421875,-0.353515625,New York,Barcelona
+14,-1.1328125,-0.40234375,New York,Bangkok
+14,-1.171875,-0.384765625,New York,Cape Town
+14,-1.1015625,-0.41796875,New York,Rome
+14,-1.015625,-0.46484375,Barcelona,Paris
+14,-1.1015625,-0.416015625,Barcelona,Tokyo
+14,-1.078125,-0.4296875,Barcelona,New York
+14,-1.0234375,-0.45703125,Barcelona,Bangkok
+14,-1.0625,-0.43359375,Barcelona,Cape Town
+14,-1.0546875,-0.439453125,Barcelona,Rome
+14,-1.0390625,-0.447265625,Bangkok,Paris
+14,-1.0703125,-0.427734375,Bangkok,Tokyo
+14,-1.078125,-0.427734375,Bangkok,New York
+14,-1.203125,-0.3671875,Bangkok,Barcelona
+14,-1.09375,-0.41796875,Bangkok,Cape Town
+14,-1.0546875,-0.4375,Bangkok,Rome
+14,-1.0078125,-0.466796875,Cape Town,Paris
+14,-1.0546875,-0.439453125,Cape Town,Tokyo
+14,-1.0546875,-0.443359375,Cape Town,New York
+14,-1.0703125,-0.435546875,Cape Town,Barcelona
+14,-0.98046875,-0.482421875,Cape Town,Bangkok
+14,-1.0078125,-0.470703125,Cape Town,Rome
+14,-1.1328125,-0.400390625,Rome,Paris
+14,-1.21875,-0.357421875,Rome,Tokyo
+14,-1.15625,-0.388671875,Rome,New York
+14,-1.34375,-0.310546875,Rome,Barcelona
+14,-1.1875,-0.375,Rome,Bangkok
+14,-1.1953125,-0.37109375,Rome,Cape Town
+15,-1.4453125,-0.283203125,Paris,Tokyo
+15,-1.4296875,-0.283203125,Paris,New York
+15,-1.59375,-0.23828125,Paris,Barcelona
+15,-1.4375,-0.28125,Paris,Bangkok
+15,-1.515625,-0.2578125,Paris,Cape Town
+15,-1.2890625,-0.333984375,Paris,Rome
+15,-1.3515625,-0.314453125,Tokyo,Paris
+15,-1.3671875,-0.3046875,Tokyo,New York
+15,-1.5703125,-0.244140625,Tokyo,Barcelona
+15,-1.3515625,-0.3125,Tokyo,Bangkok
+15,-1.46875,-0.2734375,Tokyo,Cape Town
+15,-1.34375,-0.3125,Tokyo,Rome
+15,-1.4296875,-0.287109375,New York,Paris
+15,-1.4765625,-0.26953125,New York,Tokyo
+15,-1.5546875,-0.2490234375,New York,Barcelona
+15,-1.453125,-0.27734375,New York,Bangkok
+15,-1.4375,-0.28125,New York,Cape Town
+15,-1.34375,-0.3125,New York,Rome
+15,-1.3203125,-0.32421875,Barcelona,Paris
+15,-1.53125,-0.255859375,Barcelona,Tokyo
+15,-1.421875,-0.28515625,Barcelona,New York
+15,-1.3828125,-0.298828125,Barcelona,Bangkok
+15,-1.390625,-0.296875,Barcelona,Cape Town
+15,-1.3359375,-0.3125,Barcelona,Rome
+15,-1.3515625,-0.310546875,Bangkok,Paris
+15,-1.3203125,-0.3203125,Bangkok,Tokyo
+15,-1.3359375,-0.3125,Bangkok,New York
+15,-1.5390625,-0.25,Bangkok,Barcelona
+15,-1.40625,-0.2890625,Bangkok,Cape Town
+15,-1.390625,-0.294921875,Bangkok,Rome
+15,-1.265625,-0.34375,Cape Town,Paris
+15,-1.3828125,-0.298828125,Cape Town,Tokyo
+15,-1.3125,-0.322265625,Cape Town,New York
+15,-1.375,-0.302734375,Cape Town,Barcelona
+15,-1.28125,-0.3359375,Cape Town,Bangkok
+15,-1.2734375,-0.33984375,Cape Town,Rome
+15,-1.2734375,-0.341796875,Rome,Paris
+15,-1.3671875,-0.306640625,Rome,Tokyo
+15,-1.265625,-0.341796875,Rome,New York
+15,-1.5078125,-0.259765625,Rome,Barcelona
+15,-1.375,-0.302734375,Rome,Bangkok
+15,-1.390625,-0.296875,Rome,Cape Town
+16,-0.99609375,-0.482421875,Paris,Tokyo
+16,-0.96875,-0.498046875,Paris,New York
+16,-1.1015625,-0.423828125,Paris,Barcelona
+16,-0.9765625,-0.49609375,Paris,Bangkok
+16,-1.0078125,-0.4765625,Paris,Cape Town
+16,-0.9609375,-0.50390625,Paris,Rome
+16,-0.98828125,-0.4921875,Tokyo,Paris
+16,-0.98828125,-0.48828125,Tokyo,New York
+16,-1.09375,-0.4296875,Tokyo,Barcelona
+16,-0.93359375,-0.52734375,Tokyo,Bangkok
+16,-0.984375,-0.490234375,Tokyo,Cape Town
+16,-0.95703125,-0.5078125,Tokyo,Rome
+16,-1.015625,-0.4765625,New York,Paris
+16,-1.015625,-0.4765625,New York,Tokyo
+16,-1.09375,-0.4296875,New York,Barcelona
+16,-1.0,-0.486328125,New York,Bangkok
+16,-1.015625,-0.474609375,New York,Cape Town
+16,-0.984375,-0.490234375,New York,Rome
+16,-0.90234375,-0.55078125,Barcelona,Paris
+16,-0.9296875,-0.5234375,Barcelona,Tokyo
+16,-0.93359375,-0.52734375,Barcelona,New York
+16,-0.8984375,-0.55078125,Barcelona,Bangkok
+16,-0.921875,-0.52734375,Barcelona,Cape Town
+16,-0.91015625,-0.53515625,Barcelona,Rome
+16,-0.89453125,-0.55078125,Bangkok,Paris
+16,-0.87109375,-0.5625,Bangkok,Tokyo
+16,-0.90625,-0.54296875,Bangkok,New York
+16,-1.015625,-0.474609375,Bangkok,Barcelona
+16,-0.89453125,-0.55078125,Bangkok,Cape Town
+16,-0.8828125,-0.5546875,Bangkok,Rome
+16,-0.890625,-0.5546875,Cape Town,Paris
+16,-0.8984375,-0.546875,Cape Town,Tokyo
+16,-0.921875,-0.53125,Cape Town,New York
+16,-0.94140625,-0.51953125,Cape Town,Barcelona
+16,-0.87109375,-0.57421875,Cape Town,Bangkok
+16,-0.86328125,-0.57421875,Cape Town,Rome
+16,-0.93359375,-0.52734375,Rome,Paris
+16,-0.98046875,-0.490234375,Rome,Tokyo
+16,-0.953125,-0.5078125,Rome,New York
+16,-1.046875,-0.453125,Rome,Barcelona
+16,-0.93359375,-0.51953125,Rome,Bangkok
+16,-0.9375,-0.515625,Rome,Cape Town
+17,-1.4609375,-0.287109375,Paris,Tokyo
+17,-1.4921875,-0.271484375,Paris,New York
+17,-1.6875,-0.2216796875,Paris,Barcelona
+17,-1.515625,-0.267578125,Paris,Bangkok
+17,-1.625,-0.2373046875,Paris,Cape Town
+17,-1.484375,-0.275390625,Paris,Rome
+17,-1.4453125,-0.29296875,Tokyo,Paris
+17,-1.390625,-0.306640625,Tokyo,New York
+17,-1.59375,-0.24609375,Tokyo,Barcelona
+17,-1.375,-0.3125,Tokyo,Bangkok
+17,-1.5,-0.271484375,Tokyo,Cape Town
+17,-1.3984375,-0.302734375,Tokyo,Rome
+17,-1.4765625,-0.279296875,New York,Paris
+17,-1.3828125,-0.306640625,New York,Tokyo
+17,-1.640625,-0.2314453125,New York,Barcelona
+17,-1.4453125,-0.287109375,New York,Bangkok
+17,-1.5,-0.271484375,New York,Cape Town
+17,-1.3828125,-0.306640625,New York,Rome
+17,-1.3125,-0.345703125,Barcelona,Paris
+17,-1.3203125,-0.337890625,Barcelona,Tokyo
+17,-1.34375,-0.326171875,Barcelona,New York
+17,-1.2421875,-0.365234375,Barcelona,Bangkok
+17,-1.3515625,-0.322265625,Barcelona,Cape Town
+17,-1.2890625,-0.34375,Barcelona,Rome
+17,-1.4765625,-0.28125,Bangkok,Paris
+17,-1.421875,-0.294921875,Bangkok,Tokyo
+17,-1.421875,-0.296875,Bangkok,New York
+17,-1.6015625,-0.2421875,Bangkok,Barcelona
+17,-1.4609375,-0.283203125,Bangkok,Cape Town
+17,-1.453125,-0.28125,Bangkok,Rome
+17,-1.3984375,-0.310546875,Cape Town,Paris
+17,-1.40625,-0.30078125,Cape Town,Tokyo
+17,-1.3828125,-0.30859375,Cape Town,New York
+17,-1.484375,-0.28125,Cape Town,Barcelona
+17,-1.3359375,-0.326171875,Cape Town,Bangkok
+17,-1.34375,-0.326171875,Cape Town,Rome
+17,-1.421875,-0.302734375,Rome,Paris
+17,-1.4375,-0.294921875,Rome,Tokyo
+17,-1.375,-0.31640625,Rome,New York
+17,-1.59375,-0.2490234375,Rome,Barcelona
+17,-1.40625,-0.3046875,Rome,Bangkok
+17,-1.484375,-0.27734375,Rome,Cape Town
+18,-1.1640625,-0.3828125,Paris,Tokyo
+18,-1.1796875,-0.375,Paris,New York
+18,-1.3203125,-0.318359375,Paris,Barcelona
+18,-1.1171875,-0.40234375,Paris,Bangkok
+18,-1.109375,-0.41015625,Paris,Cape Town
+18,-1.0390625,-0.4453125,Paris,Rome
+18,-1.1640625,-0.380859375,Tokyo,Paris
+18,-1.1953125,-0.369140625,Tokyo,New York
+18,-1.34375,-0.310546875,Tokyo,Barcelona
+18,-1.09375,-0.416015625,Tokyo,Bangkok
+18,-1.1171875,-0.40625,Tokyo,Cape Town
+18,-1.140625,-0.39453125,Tokyo,Rome
+18,-1.21875,-0.359375,New York,Paris
+18,-1.203125,-0.365234375,New York,Tokyo
+18,-1.3125,-0.322265625,New York,Barcelona
+18,-1.15625,-0.38671875,New York,Bangkok
+18,-1.125,-0.40234375,New York,Cape Town
+18,-1.125,-0.400390625,New York,Rome
+18,-1.03125,-0.44921875,Barcelona,Paris
+18,-1.09375,-0.41796875,Barcelona,Tokyo
+18,-1.09375,-0.41796875,Barcelona,New York
+18,-0.99609375,-0.470703125,Barcelona,Bangkok
+18,-1.0,-0.466796875,Barcelona,Cape Town
+18,-1.015625,-0.458984375,Barcelona,Rome
+18,-1.0859375,-0.419921875,Bangkok,Paris
+18,-1.046875,-0.439453125,Bangkok,Tokyo
+18,-1.078125,-0.423828125,Bangkok,New York
+18,-1.234375,-0.3515625,Bangkok,Barcelona
+18,-1.0234375,-0.453125,Bangkok,Cape Town
+18,-1.0078125,-0.4609375,Bangkok,Rome
+18,-0.99609375,-0.47265625,Cape Town,Paris
+18,-1.0078125,-0.4609375,Cape Town,Tokyo
+18,-1.03125,-0.453125,Cape Town,New York
+18,-1.046875,-0.4453125,Cape Town,Barcelona
+18,-0.95703125,-0.49609375,Cape Town,Bangkok
+18,-0.9375,-0.51171875,Cape Town,Rome
+18,-1.1171875,-0.404296875,Rome,Paris
+18,-1.15625,-0.384765625,Rome,Tokyo
+18,-1.1015625,-0.4140625,Rome,New York
+18,-1.2890625,-0.330078125,Rome,Barcelona
+18,-1.0859375,-0.421875,Rome,Bangkok
+18,-1.046875,-0.439453125,Rome,Cape Town
+19,-1.3515625,-0.337890625,Paris,Tokyo
+19,-1.375,-0.318359375,Paris,New York
+19,-1.640625,-0.25390625,Paris,Barcelona
+19,-1.3828125,-0.326171875,Paris,Bangkok
+19,-1.578125,-0.255859375,Paris,Cape Town
+19,-1.3125,-0.349609375,Paris,Rome
+19,-1.3515625,-0.3515625,Tokyo,Paris
+19,-1.3984375,-0.3125,Tokyo,New York
+19,-1.6015625,-0.27734375,Tokyo,Barcelona
+19,-1.328125,-0.37109375,Tokyo,Bangkok
+19,-1.5078125,-0.287109375,Tokyo,Cape Town
+19,-1.3359375,-0.3515625,Tokyo,Rome
+19,-1.4140625,-0.32421875,New York,Paris
+19,-1.3828125,-0.33984375,New York,Tokyo
+19,-1.65625,-0.259765625,New York,Barcelona
+19,-1.4296875,-0.328125,New York,Bangkok
+19,-1.546875,-0.28125,New York,Cape Town
+19,-1.40625,-0.318359375,New York,Rome
+19,-1.3125,-0.373046875,Barcelona,Paris
+19,-1.359375,-0.34765625,Barcelona,Tokyo
+19,-1.3984375,-0.310546875,Barcelona,New York
+19,-1.296875,-0.3828125,Barcelona,Bangkok
+19,-1.421875,-0.32421875,Barcelona,Cape Town
+19,-1.3046875,-0.35546875,Barcelona,Rome
+19,-1.3671875,-0.341796875,Bangkok,Paris
+19,-1.3046875,-0.365234375,Bangkok,Tokyo
+19,-1.4140625,-0.30078125,Bangkok,New York
+19,-1.5859375,-0.283203125,Bangkok,Barcelona
+19,-1.4765625,-0.294921875,Bangkok,Cape Town
+19,-1.34375,-0.337890625,Bangkok,Rome
+19,-1.3515625,-0.345703125,Cape Town,Paris
+19,-1.34375,-0.34765625,Cape Town,Tokyo
+19,-1.4375,-0.298828125,Cape Town,New York
+19,-1.5078125,-0.318359375,Cape Town,Barcelona
+19,-1.34375,-0.361328125,Cape Town,Bangkok
+19,-1.34375,-0.345703125,Cape Town,Rome
+19,-1.359375,-0.3359375,Rome,Paris
+19,-1.359375,-0.3359375,Rome,Tokyo
+19,-1.359375,-0.322265625,Rome,New York
+19,-1.6328125,-0.25390625,Rome,Barcelona
+19,-1.390625,-0.32421875,Rome,Bangkok
+19,-1.5546875,-0.265625,Rome,Cape Town
+20,-0.87890625,-0.5625,Paris,Tokyo
+20,-0.9453125,-0.515625,Paris,New York
+20,-0.9765625,-0.4921875,Paris,Barcelona
+20,-0.91015625,-0.53515625,Paris,Bangkok
+20,-0.99609375,-0.48046875,Paris,Cape Town
+20,-0.84765625,-0.58203125,Paris,Rome
+20,-0.87109375,-0.5703125,Tokyo,Paris
+20,-0.93359375,-0.5234375,Tokyo,New York
+20,-0.953125,-0.5078125,Tokyo,Barcelona
+20,-0.85546875,-0.578125,Tokyo,Bangkok
+20,-0.95703125,-0.50390625,Tokyo,Cape Town
+20,-0.8828125,-0.5546875,Tokyo,Rome
+20,-0.90625,-0.546875,New York,Paris
+20,-0.87890625,-0.5625,New York,Tokyo
+20,-0.94140625,-0.515625,New York,Barcelona
+20,-0.890625,-0.5546875,New York,Bangkok
+20,-0.9453125,-0.515625,New York,Cape Town
+20,-0.875,-0.5625,New York,Rome
+20,-0.76171875,-0.65625,Barcelona,Paris
+20,-0.8125,-0.609375,Barcelona,Tokyo
+20,-0.83203125,-0.59375,Barcelona,New York
+20,-0.7890625,-0.62890625,Barcelona,Bangkok
+20,-0.8359375,-0.58984375,Barcelona,Cape Town
+20,-0.78515625,-0.62890625,Barcelona,Rome
+20,-0.8203125,-0.6015625,Bangkok,Paris
+20,-0.796875,-0.62109375,Bangkok,Tokyo
+20,-0.89453125,-0.546875,Bangkok,New York
+20,-0.91796875,-0.52734375,Bangkok,Barcelona
+20,-0.87109375,-0.5625,Bangkok,Cape Town
+20,-0.81640625,-0.6015625,Bangkok,Rome
+20,-0.80078125,-0.62890625,Cape Town,Paris
+20,-0.828125,-0.59765625,Cape Town,Tokyo
+20,-0.8671875,-0.5703125,Cape Town,New York
+20,-0.80859375,-0.6171875,Cape Town,Barcelona
+20,-0.8046875,-0.6171875,Cape Town,Bangkok
+20,-0.7890625,-0.6328125,Cape Town,Rome
+20,-0.84375,-0.5859375,Rome,Paris
+20,-0.90234375,-0.5390625,Rome,Tokyo
+20,-0.90234375,-0.54296875,Rome,New York
+20,-0.9609375,-0.5,Rome,Barcelona
+20,-0.90234375,-0.5390625,Rome,Bangkok
+20,-0.9375,-0.515625,Rome,Cape Town
+21,-1.75,-0.2216796875,Paris,Tokyo
+21,-1.6953125,-0.2294921875,Paris,New York
+21,-2.0,-0.171875,Paris,Barcelona
+21,-1.765625,-0.2138671875,Paris,Bangkok
+21,-1.8828125,-0.1875,Paris,Cape Town
+21,-1.640625,-0.2470703125,Paris,Rome
+21,-1.671875,-0.2451171875,Tokyo,Paris
+21,-1.7109375,-0.2275390625,Tokyo,New York
+21,-1.9140625,-0.1875,Tokyo,Barcelona
+21,-1.6875,-0.2333984375,Tokyo,Bangkok
+21,-1.8203125,-0.2001953125,Tokyo,Cape Town
+21,-1.7265625,-0.2275390625,Tokyo,Rome
+21,-1.609375,-0.265625,New York,Paris
+21,-1.65625,-0.2490234375,New York,Tokyo
+21,-1.875,-0.197265625,New York,Barcelona
+21,-1.6640625,-0.2431640625,New York,Bangkok
+21,-1.7109375,-0.2275390625,New York,Cape Town
+21,-1.6015625,-0.259765625,New York,Rome
+21,-1.5859375,-0.26953125,Barcelona,Paris
+21,-1.7265625,-0.2265625,Barcelona,Tokyo
+21,-1.7109375,-0.2197265625,Barcelona,New York
+21,-1.5703125,-0.259765625,Barcelona,Bangkok
+21,-1.734375,-0.2197265625,Barcelona,Cape Town
+21,-1.6328125,-0.24609375,Barcelona,Rome
+21,-1.671875,-0.2421875,Bangkok,Paris
+21,-1.671875,-0.23828125,Bangkok,Tokyo
+21,-1.65625,-0.232421875,Bangkok,New York
+21,-1.921875,-0.1845703125,Bangkok,Barcelona
+21,-1.75,-0.2138671875,Bangkok,Cape Town
+21,-1.6875,-0.23046875,Bangkok,Rome
+21,-1.609375,-0.2578125,Cape Town,Paris
+21,-1.6796875,-0.2333984375,Cape Town,Tokyo
+21,-1.6484375,-0.236328125,Cape Town,New York
+21,-1.734375,-0.2265625,Cape Town,Barcelona
+21,-1.6171875,-0.25390625,Cape Town,Bangkok
+21,-1.578125,-0.263671875,Cape Town,Rome
+21,-1.6953125,-0.2431640625,Rome,Paris
+21,-1.71875,-0.2265625,Rome,Tokyo
+21,-1.671875,-0.236328125,Rome,New York
+21,-1.8671875,-0.1943359375,Rome,Barcelona
+21,-1.734375,-0.220703125,Rome,Bangkok
+21,-1.84375,-0.197265625,Rome,Cape Town
+22,-0.86328125,-0.5625,Paris,Tokyo
+22,-0.87109375,-0.5546875,Paris,New York
+22,-0.95703125,-0.49609375,Paris,Barcelona
+22,-0.82421875,-0.58984375,Paris,Bangkok
+22,-0.89453125,-0.53515625,Paris,Cape Town
+22,-0.78515625,-0.62109375,Paris,Rome
+22,-0.80078125,-0.61328125,Tokyo,Paris
+22,-0.8515625,-0.5703125,Tokyo,New York
+22,-0.921875,-0.5234375,Tokyo,Barcelona
+22,-0.78125,-0.62890625,Tokyo,Bangkok
+22,-0.875,-0.5546875,Tokyo,Cape Town
+22,-0.796875,-0.609375,Tokyo,Rome
+22,-0.8359375,-0.5859375,New York,Paris
+22,-0.8828125,-0.55078125,New York,Tokyo
+22,-0.9765625,-0.486328125,New York,Barcelona
+22,-0.86328125,-0.5625,New York,Bangkok
+22,-0.88671875,-0.54296875,New York,Cape Town
+22,-0.81640625,-0.59765625,New York,Rome
+22,-0.77734375,-0.62890625,Barcelona,Paris
+22,-0.86328125,-0.5625,Barcelona,Tokyo
+22,-0.85546875,-0.56640625,Barcelona,New York
+22,-0.7890625,-0.625,Barcelona,Bangkok
+22,-0.8203125,-0.59375,Barcelona,Cape Town
+22,-0.77734375,-0.62890625,Barcelona,Rome
+22,-0.765625,-0.640625,Bangkok,Paris
+22,-0.765625,-0.640625,Bangkok,Tokyo
+22,-0.796875,-0.61328125,Bangkok,New York
+22,-0.8828125,-0.546875,Bangkok,Barcelona
+22,-0.8046875,-0.60546875,Bangkok,Cape Town
+22,-0.75,-0.65234375,Bangkok,Rome
+22,-0.75,-0.65625,Cape Town,Paris
+22,-0.8046875,-0.609375,Cape Town,Tokyo
+22,-0.8046875,-0.609375,Cape Town,New York
+22,-0.8203125,-0.59765625,Cape Town,Barcelona
+22,-0.74609375,-0.66015625,Cape Town,Bangkok
+22,-0.7421875,-0.6640625,Cape Town,Rome
+22,-0.78515625,-0.625,Rome,Paris
+22,-0.82421875,-0.58984375,Rome,Tokyo
+22,-0.81640625,-0.59375,Rome,New York
+22,-0.9140625,-0.5234375,Rome,Barcelona
+22,-0.79296875,-0.6171875,Rome,Bangkok
+22,-0.8046875,-0.60546875,Rome,Cape Town
+23,-1.46875,-0.275390625,Paris,Tokyo
+23,-1.3828125,-0.30078125,Paris,New York
+23,-1.609375,-0.234375,Paris,Barcelona
+23,-1.4921875,-0.267578125,Paris,Bangkok
+23,-1.5546875,-0.25,Paris,Cape Town
+23,-1.3125,-0.326171875,Paris,Rome
+23,-1.296875,-0.3359375,Tokyo,Paris
+23,-1.3203125,-0.326171875,Tokyo,New York
+23,-1.59375,-0.23828125,Tokyo,Barcelona
+23,-1.3671875,-0.306640625,Tokyo,Bangkok
+23,-1.4921875,-0.267578125,Tokyo,Cape Town
+23,-1.34375,-0.3125,Tokyo,Rome
+23,-1.28125,-0.341796875,New York,Paris
+23,-1.3515625,-0.31640625,New York,Tokyo
+23,-1.53125,-0.25390625,New York,Barcelona
+23,-1.390625,-0.296875,New York,Bangkok
+23,-1.40625,-0.29296875,New York,Cape Town
+23,-1.265625,-0.34375,New York,Rome
+23,-1.1796875,-0.3828125,Barcelona,Paris
+23,-1.3828125,-0.302734375,Barcelona,Tokyo
+23,-1.3359375,-0.31640625,Barcelona,New York
+23,-1.265625,-0.34375,Barcelona,Bangkok
+23,-1.3046875,-0.328125,Barcelona,Cape Town
+23,-1.2265625,-0.357421875,Barcelona,Rome
+23,-1.328125,-0.318359375,Bangkok,Paris
+23,-1.359375,-0.30859375,Bangkok,Tokyo
+23,-1.3515625,-0.310546875,Bangkok,New York
+23,-1.546875,-0.2470703125,Bangkok,Barcelona
+23,-1.4296875,-0.28515625,Bangkok,Cape Town
+23,-1.375,-0.30078125,Bangkok,Rome
+23,-1.2265625,-0.365234375,Cape Town,Paris
+23,-1.359375,-0.310546875,Cape Town,Tokyo
+23,-1.265625,-0.34375,Cape Town,New York
+23,-1.3203125,-0.32421875,Cape Town,Barcelona
+23,-1.2421875,-0.35546875,Cape Town,Bangkok
+23,-1.1953125,-0.37890625,Cape Town,Rome
+23,-1.265625,-0.34765625,Rome,Paris
+23,-1.3984375,-0.296875,Rome,Tokyo
+23,-1.328125,-0.3203125,Rome,New York
+23,-1.5390625,-0.251953125,Rome,Barcelona
+23,-1.4453125,-0.28125,Rome,Bangkok
+23,-1.390625,-0.30078125,Rome,Cape Town
+24,-1.171875,-0.37890625,Paris,Tokyo
+24,-1.1875,-0.37109375,Paris,New York
+24,-1.3984375,-0.2890625,Paris,Barcelona
+24,-1.1875,-0.37109375,Paris,Bangkok
+24,-1.3046875,-0.32421875,Paris,Cape Town
+24,-1.1015625,-0.412109375,Paris,Rome
+24,-1.1328125,-0.400390625,Tokyo,Paris
+24,-1.1484375,-0.388671875,Tokyo,New York
+24,-1.359375,-0.3046875,Tokyo,Barcelona
+24,-1.09375,-0.416015625,Tokyo,Bangkok
+24,-1.2265625,-0.35546875,Tokyo,Cape Town
+24,-1.140625,-0.392578125,Tokyo,Rome
+24,-1.140625,-0.396484375,New York,Paris
+24,-1.109375,-0.412109375,New York,Tokyo
+24,-1.3515625,-0.30859375,New York,Barcelona
+24,-1.1015625,-0.4140625,New York,Bangkok
+24,-1.1796875,-0.37890625,New York,Cape Town
+24,-1.09375,-0.419921875,New York,Rome
+24,-1.125,-0.400390625,Barcelona,Paris
+24,-1.21875,-0.357421875,Barcelona,Tokyo
+24,-1.2421875,-0.34765625,Barcelona,New York
+24,-1.09375,-0.4140625,Barcelona,Bangkok
+24,-1.1953125,-0.369140625,Barcelona,Cape Town
+24,-1.15625,-0.384765625,Barcelona,Rome
+24,-1.09375,-0.4140625,Bangkok,Paris
+24,-1.046875,-0.439453125,Bangkok,Tokyo
+24,-1.09375,-0.412109375,Bangkok,New York
+24,-1.296875,-0.32421875,Bangkok,Barcelona
+24,-1.15625,-0.3828125,Bangkok,Cape Town
+24,-1.0859375,-0.41796875,Bangkok,Rome
+24,-1.046875,-0.443359375,Cape Town,Paris
+24,-1.0703125,-0.427734375,Cape Town,Tokyo
+24,-1.1015625,-0.4140625,Cape Town,New York
+24,-1.1328125,-0.396484375,Cape Town,Barcelona
+24,-0.9921875,-0.47265625,Cape Town,Bangkok
+24,-1.046875,-0.44140625,Cape Town,Rome
+24,-1.109375,-0.408203125,Rome,Paris
+24,-1.1640625,-0.380859375,Rome,Tokyo
+24,-1.125,-0.3984375,Rome,New York
+24,-1.3671875,-0.30078125,Rome,Barcelona
+24,-1.109375,-0.408203125,Rome,Bangkok
+24,-1.15625,-0.384765625,Rome,Cape Town

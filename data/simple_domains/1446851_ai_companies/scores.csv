@@ -1,0 +1,1807 @@
+template_idx,score_a,score_b,a_item,b_item
+0,-1.9550323486328125e-05,-10.875,OpenAI,Anthropic
+0,-0.0019378662109375,-6.25,OpenAI,Google
+0,-0.000919342041015625,-7.0,OpenAI,Meta
+0,-5.698204040527344e-05,-9.8125,OpenAI,Alibaba
+0,-0.00054168701171875,-7.53125,OpenAI,Allen Institute for AI
+0,-5.507469177246094e-05,-9.8125,OpenAI,DeepSeek
+0,-5.5625,-0.0038299560546875,Anthropic,OpenAI
+0,-6.8125,-0.0010986328125,Anthropic,Google
+0,-2.984375,-0.0517578125,Anthropic,Meta
+0,-0.97265625,-0.474609375,Anthropic,Alibaba
+0,-4.4375,-0.01177978515625,Anthropic,Allen Institute for AI
+0,-1.859375,-0.169921875,Anthropic,DeepSeek
+0,-6.1875,-0.0020599365234375,Google,OpenAI
+0,-0.01708984375,-4.09375,Google,Anthropic
+0,-0.16015625,-1.9140625,Google,Meta
+0,-0.054931640625,-2.9375,Google,Alibaba
+0,-1.265625,-0.330078125,Google,Allen Institute for AI
+0,-0.01214599609375,-4.40625,Google,DeepSeek
+0,-2.75,-0.06591796875,Meta,OpenAI
+0,-0.6328125,-0.7578125,Meta,Anthropic
+0,-2.078125,-0.134765625,Meta,Google
+0,-1.1796875,-0.3671875,Meta,Alibaba
+0,-1.859375,-0.169921875,Meta,Allen Institute for AI
+0,-0.86328125,-0.55078125,Meta,DeepSeek
+0,-2.515625,-0.083984375,Alibaba,OpenAI
+0,-0.0888671875,-2.46875,Alibaba,Anthropic
+0,-3.53125,-0.02978515625,Alibaba,Google
+0,-0.55078125,-0.86328125,Alibaba,Meta
+0,-0.82421875,-0.57421875,Alibaba,Allen Institute for AI
+0,-0.3671875,-1.1796875,Alibaba,DeepSeek
+0,-0.55078125,-0.86328125,Allen Institute for AI,OpenAI
+0,-0.02978515625,-3.53125,Allen Institute for AI,Anthropic
+0,-0.86328125,-0.55078125,Allen Institute for AI,Google
+0,-0.16015625,-1.9140625,Allen Institute for AI,Meta
+0,-0.017578125,-4.0625,Allen Institute for AI,Alibaba
+0,-0.048583984375,-3.046875,Allen Institute for AI,DeepSeek
+0,-4.1875,-0.01507568359375,DeepSeek,OpenAI
+0,-0.82421875,-0.57421875,DeepSeek,Anthropic
+0,-3.765625,-0.023193359375,DeepSeek,Google
+0,-2.984375,-0.0517578125,DeepSeek,Meta
+0,-1.453125,-0.265625,DeepSeek,Alibaba
+0,-3.625,-0.027099609375,DeepSeek,Allen Institute for AI
+1,-4.0531158447265625e-06,-12.4375,OpenAI,Anthropic
+1,-0.003082275390625,-5.78125,OpenAI,Google
+1,-0.00010585784912109375,-9.1875,OpenAI,Meta
+1,-1.2993812561035156e-05,-11.3125,OpenAI,Alibaba
+1,-0.00013256072998046875,-8.9375,OpenAI,Allen Institute for AI
+1,-2.1696090698242188e-05,-10.75,OpenAI,DeepSeek
+1,-5.15625,-0.0057373046875,Anthropic,OpenAI
+1,-6.75,-0.0011749267578125,Anthropic,Google
+1,-0.474609375,-0.97265625,Anthropic,Meta
+1,-0.00836181640625,-4.78125,Anthropic,Alibaba
+1,-3.34375,-0.035888671875,Anthropic,Allen Institute for AI
+1,-0.01214599609375,-4.40625,Anthropic,DeepSeek
+1,-4.28125,-0.01373291015625,Google,OpenAI
+1,-0.0003108978271484375,-8.0625,Google,Anthropic
+1,-0.0034942626953125,-5.65625,Google,Meta
+1,-0.0001163482666015625,-9.0625,Google,Alibaba
+1,-0.2255859375,-1.6015625,Google,Allen Institute for AI
+1,-0.0002346038818359375,-8.375,Google,DeepSeek
+1,-0.97265625,-0.474609375,Meta,OpenAI
+1,-0.01507568359375,-4.1875,Meta,Anthropic
+1,-1.140625,-0.38671875,Meta,Google
+1,-0.1064453125,-2.296875,Meta,Alibaba
+1,-0.6640625,-0.7265625,Meta,Allen Institute for AI
+1,-0.01141357421875,-4.46875,Meta,DeepSeek
+1,-0.212890625,-1.6484375,Alibaba,OpenAI
+1,-0.000911712646484375,-7.0,Alibaba,Anthropic
+1,-1.5,-0.251953125,Alibaba,Google
+1,-0.0791015625,-2.578125,Alibaba,Meta
+1,-0.55078125,-0.86328125,Alibaba,Allen Institute for AI
+1,-0.004608154296875,-5.375,Alibaba,DeepSeek
+1,-0.330078125,-1.265625,Allen Institute for AI,OpenAI
+1,-0.00836181640625,-4.78125,Allen Institute for AI,Anthropic
+1,-0.498046875,-0.9375,Allen Institute for AI,Google
+1,-0.06982421875,-2.6875,Allen Institute for AI,Meta
+1,-0.0031890869140625,-5.75,Allen Institute for AI,Alibaba
+1,-0.03369140625,-3.40625,Allen Institute for AI,DeepSeek
+1,-5.3125,-0.004913330078125,DeepSeek,OpenAI
+1,-0.0218505859375,-3.828125,DeepSeek,Anthropic
+1,-4.15625,-0.0159912109375,DeepSeek,Google
+1,-1.5546875,-0.23828125,DeepSeek,Meta
+1,-0.5234375,-0.8984375,DeepSeek,Alibaba
+1,-2.34375,-0.10009765625,DeepSeek,Allen Institute for AI
+2,-2.5987625122070312e-05,-10.625,OpenAI,Anthropic
+2,-0.0032196044921875,-5.75,OpenAI,Google
+2,-0.000820159912109375,-7.125,OpenAI,Meta
+2,-5.841255187988281e-05,-9.875,OpenAI,Alibaba
+2,-0.00060272216796875,-7.4375,OpenAI,Allen Institute for AI
+2,-6.29425048828125e-05,-9.75,OpenAI,DeepSeek
+2,-6.4375,-0.0016021728515625,Anthropic,OpenAI
+2,-7.53125,-0.000537872314453125,Anthropic,Google
+2,-3.46875,-0.03173828125,Anthropic,Meta
+2,-0.82421875,-0.57421875,Anthropic,Alibaba
+2,-4.875,-0.00762939453125,Anthropic,Allen Institute for AI
+2,-1.859375,-0.169921875,Anthropic,DeepSeek
+2,-7.125,-0.00081634521484375,Google,OpenAI
+2,-0.007171630859375,-4.9375,Google,Anthropic
+2,-0.0888671875,-2.46875,Google,Meta
+2,-0.0279541015625,-3.59375,Google,Alibaba
+2,-1.1796875,-0.3671875,Google,Allen Institute for AI
+2,-0.0089111328125,-4.71875,Google,DeepSeek
+2,-2.6875,-0.06982421875,Meta,OpenAI
+2,-0.69140625,-0.69140625,Meta,Anthropic
+2,-2.125,-0.126953125,Meta,Google
+2,-0.9375,-0.498046875,Meta,Alibaba
+2,-1.6484375,-0.212890625,Meta,Allen Institute for AI
+2,-0.79296875,-0.60546875,Meta,DeepSeek
+2,-2.6875,-0.06982421875,Alibaba,OpenAI
+2,-0.134765625,-2.078125,Alibaba,Anthropic
+2,-3.40625,-0.03369140625,Alibaba,Google
+2,-0.69140625,-0.69140625,Alibaba,Meta
+2,-0.97265625,-0.474609375,Alibaba,Allen Institute for AI
+2,-0.451171875,-1.015625,Alibaba,DeepSeek
+2,-0.55078125,-0.86328125,Allen Institute for AI,OpenAI
+2,-0.0380859375,-3.28125,Allen Institute for AI,Anthropic
+2,-0.8984375,-0.5234375,Allen Institute for AI,Google
+2,-0.169921875,-1.859375,Allen Institute for AI,Meta
+2,-0.0166015625,-4.125,Allen Institute for AI,Alibaba
+2,-0.09423828125,-2.40625,Allen Institute for AI,DeepSeek
+2,-4.21875,-0.0146484375,DeepSeek,OpenAI
+2,-0.82421875,-0.57421875,DeepSeek,Anthropic
+2,-3.171875,-0.04296875,DeepSeek,Google
+2,-2.515625,-0.083984375,DeepSeek,Meta
+2,-0.97265625,-0.474609375,DeepSeek,Alibaba
+2,-3.40625,-0.03369140625,DeepSeek,Allen Institute for AI
+3,-2.09808349609375e-05,-10.875,OpenAI,Anthropic
+3,-0.002899169921875,-5.84375,OpenAI,Google
+3,-0.000949859619140625,-6.96875,OpenAI,Meta
+3,-5.602836608886719e-05,-9.875,OpenAI,Alibaba
+3,-0.0003204345703125,-8.0625,OpenAI,Allen Institute for AI
+3,-4.9114227294921875e-05,-9.9375,OpenAI,DeepSeek
+3,-6.0,-0.0024871826171875,Anthropic,OpenAI
+3,-6.46875,-0.001556396484375,Anthropic,Google
+3,-2.9375,-0.054931640625,Anthropic,Meta
+3,-0.86328125,-0.55078125,Anthropic,Alibaba
+3,-4.5625,-0.0103759765625,Anthropic,Allen Institute for AI
+3,-1.703125,-0.201171875,Anthropic,DeepSeek
+3,-5.15625,-0.005767822265625,Google,OpenAI
+3,-0.012939453125,-4.34375,Google,Anthropic
+3,-0.11279296875,-2.234375,Google,Meta
+3,-0.023193359375,-3.765625,Google,Alibaba
+3,-1.015625,-0.451171875,Google,Allen Institute for AI
+3,-0.00811767578125,-4.8125,Google,DeepSeek
+3,-2.578125,-0.0791015625,Meta,OpenAI
+3,-0.427734375,-1.0546875,Meta,Anthropic
+3,-1.75,-0.1904296875,Meta,Google
+3,-1.09375,-0.408203125,Meta,Alibaba
+3,-1.75,-0.1904296875,Meta,Allen Institute for AI
+3,-0.60546875,-0.79296875,Meta,DeepSeek
+3,-1.703125,-0.201171875,Alibaba,OpenAI
+3,-0.06982421875,-2.6875,Alibaba,Anthropic
+3,-3.890625,-0.0205078125,Alibaba,Google
+3,-0.55078125,-0.86328125,Alibaba,Meta
+3,-0.60546875,-0.79296875,Alibaba,Allen Institute for AI
+3,-0.3125,-1.3125,Alibaba,DeepSeek
+3,-0.498046875,-0.9375,Allen Institute for AI,OpenAI
+3,-0.0247802734375,-3.71875,Allen Institute for AI,Anthropic
+3,-0.9375,-0.498046875,Allen Institute for AI,Google
+3,-0.126953125,-2.125,Allen Institute for AI,Meta
+3,-0.0159912109375,-4.15625,Allen Institute for AI,Alibaba
+3,-0.05322265625,-2.953125,Allen Institute for AI,DeepSeek
+3,-4.0625,-0.017578125,DeepSeek,OpenAI
+3,-0.7265625,-0.6640625,DeepSeek,Anthropic
+3,-3.46875,-0.03173828125,DeepSeek,Google
+3,-2.875,-0.058349609375,DeepSeek,Meta
+3,-1.359375,-0.296875,DeepSeek,Alibaba
+3,-3.140625,-0.04443359375,DeepSeek,Allen Institute for AI
+4,-2.0265579223632812e-05,-10.875,OpenAI,Anthropic
+4,-0.00089263916015625,-7.03125,OpenAI,Google
+4,-0.0003490447998046875,-7.96875,OpenAI,Meta
+4,-4.100799560546875e-05,-10.1875,OpenAI,Alibaba
+4,-0.0004367828369140625,-7.75,OpenAI,Allen Institute for AI
+4,-7.104873657226562e-05,-9.5625,OpenAI,DeepSeek
+4,-4.125,-0.0166015625,Anthropic,OpenAI
+4,-4.09375,-0.01708984375,Anthropic,Google
+4,-2.84375,-0.06005859375,Anthropic,Meta
+4,-0.408203125,-1.09375,Anthropic,Alibaba
+4,-4.09375,-0.01708984375,Anthropic,Allen Institute for AI
+4,-1.40625,-0.28125,Anthropic,DeepSeek
+4,-4.3125,-0.0133056640625,Google,OpenAI
+4,-0.0205078125,-3.890625,Google,Anthropic
+4,-0.1904296875,-1.75,Google,Meta
+4,-0.03369140625,-3.40625,Google,Alibaba
+4,-0.86328125,-0.55078125,Google,Allen Institute for AI
+4,-0.023193359375,-3.765625,Google,DeepSeek
+4,-1.6484375,-0.212890625,Meta,OpenAI
+4,-0.57421875,-0.82421875,Meta,Anthropic
+4,-1.5,-0.251953125,Meta,Google
+4,-1.015625,-0.451171875,Meta,Alibaba
+4,-1.703125,-0.201171875,Meta,Allen Institute for AI
+4,-0.9375,-0.498046875,Meta,DeepSeek
+4,-1.265625,-0.330078125,Alibaba,OpenAI
+4,-0.048583984375,-3.046875,Alibaba,Anthropic
+4,-2.640625,-0.07421875,Alibaba,Google
+4,-0.60546875,-0.79296875,Alibaba,Meta
+4,-0.38671875,-1.140625,Alibaba,Allen Institute for AI
+4,-0.23828125,-1.5546875,Alibaba,DeepSeek
+4,-0.3671875,-1.1796875,Allen Institute for AI,OpenAI
+4,-0.027099609375,-3.625,Allen Institute for AI,Anthropic
+4,-0.8984375,-0.5234375,Allen Institute for AI,Google
+4,-0.1064453125,-2.296875,Allen Institute for AI,Meta
+4,-0.00762939453125,-4.875,Allen Institute for AI,Alibaba
+4,-0.058349609375,-2.875,Allen Institute for AI,DeepSeek
+4,-2.875,-0.058349609375,DeepSeek,OpenAI
+4,-0.474609375,-0.97265625,DeepSeek,Anthropic
+4,-2.40625,-0.09423828125,DeepSeek,Google
+4,-2.640625,-0.07421875,DeepSeek,Meta
+4,-1.09375,-0.408203125,DeepSeek,Alibaba
+4,-2.6875,-0.06982421875,DeepSeek,Allen Institute for AI
+5,-4.649162292480469e-06,-12.3125,OpenAI,Anthropic
+5,-0.004608154296875,-5.375,OpenAI,Google
+5,-0.0002460479736328125,-8.3125,OpenAI,Meta
+5,-2.7418136596679688e-06,-12.8125,OpenAI,Alibaba
+5,-6.532669067382812e-05,-9.625,OpenAI,Allen Institute for AI
+5,-3.933906555175781e-05,-10.1875,OpenAI,DeepSeek
+5,-7.84375,-0.000392913818359375,Anthropic,OpenAI
+5,-7.25,-0.00070953369140625,Anthropic,Google
+5,-1.453125,-0.265625,Anthropic,Meta
+5,-0.6640625,-0.7265625,Anthropic,Alibaba
+5,-2.6875,-0.06982421875,Anthropic,Allen Institute for AI
+5,-1.265625,-0.330078125,Anthropic,DeepSeek
+5,-2.296875,-0.1064453125,Google,OpenAI
+5,-0.00057220458984375,-7.46875,Google,Anthropic
+5,-0.00811767578125,-4.8125,Google,Meta
+5,-0.00180816650390625,-6.3125,Google,Alibaba
+5,-0.019287109375,-3.953125,Google,Allen Institute for AI
+5,-0.00019073486328125,-8.5625,Google,DeepSeek
+5,-3.953125,-0.019287109375,Meta,OpenAI
+5,-0.201171875,-1.703125,Meta,Anthropic
+5,-4.03125,-0.0181884765625,Meta,Google
+5,-1.6015625,-0.2255859375,Meta,Alibaba
+5,-0.82421875,-0.57421875,Meta,Allen Institute for AI
+5,-0.82421875,-0.57421875,Meta,DeepSeek
+5,-0.86328125,-0.55078125,Alibaba,OpenAI
+5,-0.023193359375,-3.765625,Alibaba,Anthropic
+5,-3.171875,-0.04296875,Alibaba,Google
+5,-0.3125,-1.3125,Alibaba,Meta
+5,-0.134765625,-2.078125,Alibaba,Allen Institute for AI
+5,-0.10009765625,-2.34375,Alibaba,DeepSeek
+5,-0.38671875,-1.140625,Allen Institute for AI,OpenAI
+5,-0.004608154296875,-5.375,Allen Institute for AI,Anthropic
+5,-0.69140625,-0.69140625,Allen Institute for AI,Google
+5,-0.0888671875,-2.46875,Allen Institute for AI,Meta
+5,-0.00408935546875,-5.5,Allen Institute for AI,Alibaba
+5,-0.03173828125,-3.46875,Allen Institute for AI,DeepSeek
+5,-6.125,-0.0021820068359375,DeepSeek,OpenAI
+5,-0.1796875,-1.8046875,DeepSeek,Anthropic
+5,-5.3125,-0.004913330078125,DeepSeek,Google
+5,-2.8125,-0.06201171875,DeepSeek,Meta
+5,-0.82421875,-0.57421875,DeepSeek,Alibaba
+5,-1.265625,-0.330078125,DeepSeek,Allen Institute for AI
+6,-0.00012683868408203125,-9.0625,OpenAI,Anthropic
+6,-0.0079345703125,-4.84375,OpenAI,Google
+6,-0.000926971435546875,-7.0,OpenAI,Meta
+6,-9.1552734375e-05,-9.375,OpenAI,Alibaba
+6,-0.000698089599609375,-7.28125,OpenAI,Allen Institute for AI
+6,-9.632110595703125e-05,-9.3125,OpenAI,DeepSeek
+6,-5.4375,-0.004364013671875,Anthropic,OpenAI
+6,-5.75,-0.0031890869140625,Anthropic,Google
+6,-2.4375,-0.091796875,Anthropic,Meta
+6,-0.69140625,-0.69140625,Anthropic,Alibaba
+6,-3.828125,-0.0218505859375,Anthropic,Allen Institute for AI
+6,-1.265625,-0.330078125,Anthropic,DeepSeek
+6,-5.0625,-0.00634765625,Google,OpenAI
+6,-0.0263671875,-3.65625,Google,Anthropic
+6,-0.169921875,-1.859375,Google,Meta
+6,-0.0517578125,-2.984375,Google,Alibaba
+6,-0.97265625,-0.474609375,Google,Allen Institute for AI
+6,-0.0198974609375,-3.921875,Google,DeepSeek
+6,-2.125,-0.126953125,Meta,OpenAI
+6,-0.7578125,-0.6328125,Meta,Anthropic
+6,-1.9140625,-0.16015625,Meta,Google
+6,-1.015625,-0.451171875,Meta,Alibaba
+6,-1.703125,-0.201171875,Meta,Allen Institute for AI
+6,-0.6328125,-0.7578125,Meta,DeepSeek
+6,-1.6015625,-0.2255859375,Alibaba,OpenAI
+6,-0.1513671875,-1.9609375,Alibaba,Anthropic
+6,-2.75,-0.06591796875,Alibaba,Google
+6,-0.82421875,-0.57421875,Alibaba,Meta
+6,-0.9375,-0.498046875,Alibaba,Allen Institute for AI
+6,-0.498046875,-0.9375,Alibaba,DeepSeek
+6,-0.60546875,-0.79296875,Allen Institute for AI,OpenAI
+6,-0.056640625,-2.90625,Allen Institute for AI,Anthropic
+6,-1.1796875,-0.3671875,Allen Institute for AI,Google
+6,-0.2255859375,-1.6015625,Allen Institute for AI,Meta
+6,-0.035888671875,-3.34375,Allen Institute for AI,Alibaba
+6,-0.1064453125,-2.296875,Allen Institute for AI,DeepSeek
+6,-2.8125,-0.06201171875,DeepSeek,OpenAI
+6,-0.82421875,-0.57421875,DeepSeek,Anthropic
+6,-2.34375,-0.10009765625,DeepSeek,Google
+6,-2.078125,-0.134765625,DeepSeek,Meta
+6,-0.7265625,-0.6640625,DeepSeek,Alibaba
+6,-2.9375,-0.054931640625,DeepSeek,Allen Institute for AI
+7,-3.3855438232421875e-05,-10.3125,OpenAI,Anthropic
+7,-0.0031890869140625,-5.75,OpenAI,Google
+7,-0.0019989013671875,-6.21875,OpenAI,Meta
+7,-0.0001277923583984375,-9.0,OpenAI,Alibaba
+7,-0.00182342529296875,-6.3125,OpenAI,Allen Institute for AI
+7,-0.000408172607421875,-7.8125,OpenAI,DeepSeek
+7,-4.09375,-0.01708984375,Anthropic,OpenAI
+7,-4.03125,-0.0181884765625,Anthropic,Google
+7,-4.5625,-0.0103759765625,Anthropic,Meta
+7,-0.79296875,-0.60546875,Anthropic,Alibaba
+7,-3.5,-0.0306396484375,Anthropic,Allen Institute for AI
+7,-2.578125,-0.0791015625,Anthropic,DeepSeek
+7,-5.1875,-0.005584716796875,Google,OpenAI
+7,-0.11962890625,-2.1875,Google,Anthropic
+7,-0.2255859375,-1.6015625,Google,Meta
+7,-0.38671875,-1.140625,Google,Alibaba
+7,-2.578125,-0.0791015625,Google,Allen Institute for AI
+7,-0.296875,-1.359375,Google,DeepSeek
+7,-1.015625,-0.451171875,Meta,OpenAI
+7,-0.212890625,-1.6484375,Meta,Anthropic
+7,-0.5234375,-0.8984375,Meta,Google
+7,-0.7578125,-0.6328125,Meta,Alibaba
+7,-1.3125,-0.3125,Meta,Allen Institute for AI
+7,-0.8984375,-0.5234375,Meta,DeepSeek
+7,-1.6484375,-0.212890625,Alibaba,OpenAI
+7,-0.06982421875,-2.6875,Alibaba,Anthropic
+7,-1.6484375,-0.212890625,Alibaba,Google
+7,-0.57421875,-0.82421875,Alibaba,Meta
+7,-0.82421875,-0.57421875,Alibaba,Allen Institute for AI
+7,-0.6328125,-0.7578125,Alibaba,DeepSeek
+7,-0.330078125,-1.265625,Allen Institute for AI,OpenAI
+7,-0.019287109375,-3.953125,Allen Institute for AI,Anthropic
+7,-0.8984375,-0.5234375,Allen Institute for AI,Google
+7,-0.1513671875,-1.9609375,Allen Institute for AI,Meta
+7,-0.021240234375,-3.859375,Allen Institute for AI,Alibaba
+7,-0.06396484375,-2.78125,Allen Institute for AI,DeepSeek
+7,-2.75,-0.06591796875,DeepSeek,OpenAI
+7,-0.6328125,-0.7578125,DeepSeek,Anthropic
+7,-1.140625,-0.38671875,DeepSeek,Google
+7,-2.640625,-0.07421875,DeepSeek,Meta
+7,-1.015625,-0.451171875,DeepSeek,Alibaba
+7,-2.6875,-0.06982421875,DeepSeek,Allen Institute for AI
+8,-7.05718994140625e-05,-9.625,OpenAI,Anthropic
+8,-0.0225830078125,-3.796875,OpenAI,Google
+8,-0.0020599365234375,-6.1875,OpenAI,Meta
+8,-0.000171661376953125,-8.6875,OpenAI,Alibaba
+8,-0.00146484375,-6.53125,OpenAI,Allen Institute for AI
+8,-0.00016880035400390625,-8.75,OpenAI,DeepSeek
+8,-6.09375,-0.00225830078125,Anthropic,OpenAI
+8,-6.40625,-0.00165557861328125,Anthropic,Google
+8,-3.4375,-0.03271484375,Anthropic,Meta
+8,-1.2265625,-0.34765625,Anthropic,Alibaba
+8,-5.0,-0.0067138671875,Anthropic,Allen Institute for AI
+8,-2.125,-0.126953125,Anthropic,DeepSeek
+8,-4.59375,-0.01007080078125,Google,OpenAI
+8,-0.027099609375,-3.625,Google,Anthropic
+8,-0.1513671875,-1.9609375,Google,Meta
+8,-0.11962890625,-2.1875,Google,Alibaba
+8,-1.09375,-0.408203125,Google,Allen Institute for AI
+8,-0.0181884765625,-4.03125,Google,DeepSeek
+8,-2.984375,-0.0517578125,Meta,OpenAI
+8,-1.1796875,-0.3671875,Meta,Anthropic
+8,-2.125,-0.126953125,Meta,Google
+8,-1.40625,-0.28125,Meta,Alibaba
+8,-2.34375,-0.10009765625,Meta,Allen Institute for AI
+8,-1.0546875,-0.4296875,Meta,DeepSeek
+8,-1.9140625,-0.16015625,Alibaba,OpenAI
+8,-0.265625,-1.453125,Alibaba,Anthropic
+8,-2.6875,-0.06982421875,Alibaba,Google
+8,-0.86328125,-0.55078125,Alibaba,Meta
+8,-1.40625,-0.28125,Alibaba,Allen Institute for AI
+8,-0.6640625,-0.7265625,Alibaba,DeepSeek
+8,-0.7578125,-0.6328125,Allen Institute for AI,OpenAI
+8,-0.058349609375,-2.875,Allen Institute for AI,Anthropic
+8,-0.9375,-0.498046875,Allen Institute for AI,Google
+8,-0.265625,-1.453125,Allen Institute for AI,Meta
+8,-0.035888671875,-3.34375,Allen Institute for AI,Alibaba
+8,-0.126953125,-2.125,Allen Institute for AI,DeepSeek
+8,-3.28125,-0.0380859375,DeepSeek,OpenAI
+8,-0.97265625,-0.474609375,DeepSeek,Anthropic
+8,-2.515625,-0.083984375,DeepSeek,Google
+8,-2.75,-0.06591796875,DeepSeek,Meta
+8,-1.359375,-0.296875,DeepSeek,Alibaba
+8,-3.53125,-0.02978515625,DeepSeek,Allen Institute for AI
+9,-2.2649765014648438e-05,-10.75,OpenAI,Anthropic
+9,-0.00396728515625,-5.53125,OpenAI,Google
+9,-0.000423431396484375,-7.78125,OpenAI,Meta
+9,-3.3855438232421875e-05,-10.3125,OpenAI,Alibaba
+9,-0.0003490447998046875,-7.96875,OpenAI,Allen Institute for AI
+9,-2.1219253540039062e-05,-10.8125,OpenAI,DeepSeek
+9,-6.6875,-0.001251220703125,Anthropic,OpenAI
+9,-7.46875,-0.00057220458984375,Anthropic,Google
+9,-2.671875,-0.072265625,Anthropic,Meta
+9,-0.6328125,-0.7578125,Anthropic,Alibaba
+9,-4.5625,-0.0103759765625,Anthropic,Allen Institute for AI
+9,-1.265625,-0.330078125,Anthropic,DeepSeek
+9,-5.15625,-0.005767822265625,Google,OpenAI
+9,-0.005950927734375,-5.125,Google,Anthropic
+9,-0.1064453125,-2.296875,Google,Meta
+9,-0.058349609375,-2.875,Google,Alibaba
+9,-0.55078125,-0.86328125,Google,Allen Institute for AI
+9,-0.005401611328125,-5.21875,Google,DeepSeek
+9,-2.1875,-0.11962890625,Meta,OpenAI
+9,-0.55078125,-0.86328125,Meta,Anthropic
+9,-1.5546875,-0.23828125,Meta,Google
+9,-0.86328125,-0.55078125,Meta,Alibaba
+9,-1.40625,-0.28125,Meta,Allen Institute for AI
+9,-0.3671875,-1.1796875,Meta,DeepSeek
+9,-1.453125,-0.265625,Alibaba,OpenAI
+9,-0.1064453125,-2.296875,Alibaba,Anthropic
+9,-3.171875,-0.04296875,Alibaba,Google
+9,-0.451171875,-1.015625,Alibaba,Meta
+9,-0.7265625,-0.6640625,Alibaba,Allen Institute for AI
+9,-0.296875,-1.359375,Alibaba,DeepSeek
+9,-0.3125,-1.3125,Allen Institute for AI,OpenAI
+9,-0.0279541015625,-3.59375,Allen Institute for AI,Anthropic
+9,-0.79296875,-0.60546875,Allen Institute for AI,Google
+9,-0.1064453125,-2.296875,Allen Institute for AI,Meta
+9,-0.01214599609375,-4.40625,Allen Institute for AI,Alibaba
+9,-0.03271484375,-3.4375,Allen Institute for AI,DeepSeek
+9,-3.5,-0.0306396484375,DeepSeek,OpenAI
+9,-0.60546875,-0.79296875,DeepSeek,Anthropic
+9,-2.640625,-0.07421875,DeepSeek,Google
+9,-2.34375,-0.10009765625,DeepSeek,Meta
+9,-0.97265625,-0.474609375,DeepSeek,Alibaba
+9,-2.8125,-0.06201171875,DeepSeek,Allen Institute for AI
+10,-3.6716461181640625e-05,-10.3125,OpenAI,Anthropic
+10,-0.0026702880859375,-5.9375,OpenAI,Google
+10,-0.00052642822265625,-7.5625,OpenAI,Meta
+10,-7.009506225585938e-05,-9.6875,OpenAI,Alibaba
+10,-0.000682830810546875,-7.3125,OpenAI,Allen Institute for AI
+10,-9.918212890625e-05,-9.25,OpenAI,DeepSeek
+10,-4.59375,-0.01007080078125,Anthropic,OpenAI
+10,-6.5,-0.00150299072265625,Anthropic,Google
+10,-3.625,-0.027099609375,Anthropic,Meta
+10,-0.7265625,-0.6640625,Anthropic,Alibaba
+10,-4.15625,-0.01556396484375,Anthropic,Allen Institute for AI
+10,-2.125,-0.126953125,Anthropic,DeepSeek
+10,-5.25,-0.0052490234375,Google,OpenAI
+10,-0.01373291015625,-4.28125,Google,Anthropic
+10,-0.16015625,-1.9140625,Google,Meta
+10,-0.045654296875,-3.109375,Google,Alibaba
+10,-1.359375,-0.296875,Google,Allen Institute for AI
+10,-0.035888671875,-3.34375,Google,DeepSeek
+10,-1.703125,-0.201171875,Meta,OpenAI
+10,-0.498046875,-0.9375,Meta,Anthropic
+10,-1.265625,-0.330078125,Meta,Google
+10,-0.7265625,-0.6640625,Meta,Alibaba
+10,-1.703125,-0.201171875,Meta,Allen Institute for AI
+10,-0.7265625,-0.6640625,Meta,DeepSeek
+10,-2.078125,-0.134765625,Alibaba,OpenAI
+10,-0.126953125,-2.125,Alibaba,Anthropic
+10,-2.9375,-0.054931640625,Alibaba,Google
+10,-0.69140625,-0.69140625,Alibaba,Meta
+10,-0.6640625,-0.7265625,Alibaba,Allen Institute for AI
+10,-0.427734375,-1.0546875,Alibaba,DeepSeek
+10,-0.4296875,-1.0546875,Allen Institute for AI,OpenAI
+10,-0.045654296875,-3.109375,Allen Institute for AI,Anthropic
+10,-0.9375,-0.498046875,Allen Institute for AI,Google
+10,-0.16015625,-1.9140625,Allen Institute for AI,Meta
+10,-0.01251220703125,-4.375,Allen Institute for AI,Alibaba
+10,-0.083984375,-2.515625,Allen Institute for AI,DeepSeek
+10,-3.203125,-0.041748046875,DeepSeek,OpenAI
+10,-0.7265625,-0.6640625,DeepSeek,Anthropic
+10,-3.046875,-0.048583984375,DeepSeek,Google
+10,-2.6875,-0.06982421875,DeepSeek,Meta
+10,-0.79296875,-0.60546875,DeepSeek,Alibaba
+10,-2.8125,-0.06201171875,DeepSeek,Allen Institute for AI
+11,-1.811981201171875e-05,-11.0,OpenAI,Anthropic
+11,-0.000637054443359375,-7.375,OpenAI,Google
+11,-0.00017833709716796875,-8.6875,OpenAI,Meta
+11,-3.2901763916015625e-05,-10.4375,OpenAI,Alibaba
+11,-0.000244140625,-8.375,OpenAI,Allen Institute for AI
+11,-3.2901763916015625e-05,-10.375,OpenAI,DeepSeek
+11,-6.03125,-0.002410888671875,Anthropic,OpenAI
+11,-5.96875,-0.0025634765625,Anthropic,Google
+11,-3.265625,-0.039306640625,Anthropic,Meta
+11,-0.5234375,-0.8984375,Anthropic,Alibaba
+11,-3.375,-0.03466796875,Anthropic,Allen Institute for AI
+11,-1.6484375,-0.212890625,Anthropic,DeepSeek
+11,-5.5625,-0.00384521484375,Google,OpenAI
+11,-0.00494384765625,-5.3125,Google,Anthropic
+11,-0.0233154296875,-3.765625,Google,Meta
+11,-0.01104736328125,-4.5,Google,Alibaba
+11,-1.0546875,-0.4296875,Google,Allen Institute for AI
+11,-0.005767822265625,-5.15625,Google,DeepSeek
+11,-1.859375,-0.169921875,Meta,OpenAI
+11,-0.34765625,-1.2265625,Meta,Anthropic
+11,-1.015625,-0.451171875,Meta,Google
+11,-0.451171875,-1.015625,Meta,Alibaba
+11,-1.09375,-0.408203125,Meta,Allen Institute for AI
+11,-0.330078125,-1.265625,Meta,DeepSeek
+11,-1.2265625,-0.34765625,Alibaba,OpenAI
+11,-0.04296875,-3.171875,Alibaba,Anthropic
+11,-2.296875,-0.1064453125,Alibaba,Google
+11,-0.265625,-1.453125,Alibaba,Meta
+11,-0.5234375,-0.8984375,Alibaba,Allen Institute for AI
+11,-0.201171875,-1.703125,Alibaba,DeepSeek
+11,-0.251953125,-1.5,Allen Institute for AI,OpenAI
+11,-0.0233154296875,-3.765625,Allen Institute for AI,Anthropic
+11,-0.57421875,-0.82421875,Allen Institute for AI,Google
+11,-0.1064453125,-2.296875,Allen Institute for AI,Meta
+11,-0.00762939453125,-4.875,Allen Institute for AI,Alibaba
+11,-0.048583984375,-3.046875,Allen Institute for AI,DeepSeek
+11,-3.71875,-0.0247802734375,DeepSeek,OpenAI
+11,-0.6328125,-0.7578125,DeepSeek,Anthropic
+11,-1.9609375,-0.1513671875,DeepSeek,Google
+11,-2.296875,-0.1064453125,DeepSeek,Meta
+11,-0.408203125,-1.09375,DeepSeek,Alibaba
+11,-2.34375,-0.10009765625,DeepSeek,Allen Institute for AI
+12,-2.86102294921875e-05,-10.5625,OpenAI,Anthropic
+12,-0.00653076171875,-5.03125,OpenAI,Google
+12,-0.002899169921875,-5.84375,OpenAI,Meta
+12,-0.00010156631469726562,-9.25,OpenAI,Alibaba
+12,-0.0004100799560546875,-7.8125,OpenAI,Allen Institute for AI
+12,-5.9604644775390625e-05,-9.75,OpenAI,DeepSeek
+12,-5.625,-0.00360107421875,Anthropic,OpenAI
+12,-6.84375,-0.001068115234375,Anthropic,Google
+12,-3.4375,-0.03271484375,Anthropic,Meta
+12,-0.82421875,-0.57421875,Anthropic,Alibaba
+12,-4.9375,-0.00714111328125,Anthropic,Allen Institute for AI
+12,-2.984375,-0.0517578125,Anthropic,DeepSeek
+12,-5.5625,-0.00384521484375,Google,OpenAI
+12,-0.054931640625,-2.9375,Google,Anthropic
+12,-0.408203125,-1.09375,Google,Meta
+12,-0.0888671875,-2.46875,Google,Alibaba
+12,-1.75,-0.1904296875,Google,Allen Institute for AI
+12,-0.04052734375,-3.234375,Google,DeepSeek
+12,-2.34375,-0.10009765625,Meta,OpenAI
+12,-1.265625,-0.330078125,Meta,Anthropic
+12,-2.078125,-0.134765625,Meta,Google
+12,-1.140625,-0.38671875,Meta,Alibaba
+12,-1.9609375,-0.1513671875,Meta,Allen Institute for AI
+12,-1.265625,-0.330078125,Meta,DeepSeek
+12,-2.015625,-0.142578125,Alibaba,OpenAI
+12,-0.1513671875,-1.9609375,Alibaba,Anthropic
+12,-3.34375,-0.035888671875,Alibaba,Google
+12,-1.140625,-0.38671875,Alibaba,Meta
+12,-0.8984375,-0.5234375,Alibaba,Allen Institute for AI
+12,-0.79296875,-0.60546875,Alibaba,DeepSeek
+12,-0.6640625,-0.7265625,Allen Institute for AI,OpenAI
+12,-0.041748046875,-3.203125,Allen Institute for AI,Anthropic
+12,-1.703125,-0.201171875,Allen Institute for AI,Google
+12,-0.265625,-1.453125,Allen Institute for AI,Meta
+12,-0.03076171875,-3.5,Allen Institute for AI,Alibaba
+12,-0.11962890625,-2.1875,Allen Institute for AI,DeepSeek
+12,-3.953125,-0.019287109375,DeepSeek,OpenAI
+12,-1.1796875,-0.3671875,DeepSeek,Anthropic
+12,-3.953125,-0.019287109375,DeepSeek,Google
+12,-3.28125,-0.0380859375,DeepSeek,Meta
+12,-1.6015625,-0.2255859375,DeepSeek,Alibaba
+12,-3.6875,-0.0255126953125,DeepSeek,Allen Institute for AI
+13,-2.5033950805664062e-05,-10.6875,OpenAI,Anthropic
+13,-0.0018768310546875,-6.28125,OpenAI,Google
+13,-0.000919342041015625,-7.0,OpenAI,Meta
+13,-6.628036499023438e-05,-9.6875,OpenAI,Alibaba
+13,-0.000579833984375,-7.46875,OpenAI,Allen Institute for AI
+13,-8.058547973632812e-05,-9.4375,OpenAI,DeepSeek
+13,-4.9375,-0.00714111328125,Anthropic,OpenAI
+13,-5.96875,-0.0025634765625,Anthropic,Google
+13,-3.828125,-0.0218505859375,Anthropic,Meta
+13,-0.6640625,-0.7265625,Anthropic,Alibaba
+13,-3.953125,-0.019287109375,Anthropic,Allen Institute for AI
+13,-1.859375,-0.169921875,Anthropic,DeepSeek
+13,-4.34375,-0.012939453125,Google,OpenAI
+13,-0.02978515625,-3.53125,Google,Anthropic
+13,-0.2255859375,-1.6015625,Google,Meta
+13,-0.09423828125,-2.40625,Google,Alibaba
+13,-1.0546875,-0.4296875,Google,Allen Institute for AI
+13,-0.0233154296875,-3.765625,Google,DeepSeek
+13,-1.9140625,-0.16015625,Meta,OpenAI
+13,-0.34765625,-1.2265625,Meta,Anthropic
+13,-1.75,-0.1904296875,Meta,Google
+13,-0.8984375,-0.5234375,Meta,Alibaba
+13,-1.453125,-0.265625,Meta,Allen Institute for AI
+13,-0.82421875,-0.57421875,Meta,DeepSeek
+13,-1.5546875,-0.23828125,Alibaba,OpenAI
+13,-0.054931640625,-2.9375,Alibaba,Anthropic
+13,-3.109375,-0.045654296875,Alibaba,Google
+13,-0.55078125,-0.86328125,Alibaba,Meta
+13,-0.34765625,-1.2265625,Alibaba,Allen Institute for AI
+13,-0.265625,-1.453125,Alibaba,DeepSeek
+13,-0.4296875,-1.0546875,Allen Institute for AI,OpenAI
+13,-0.0279541015625,-3.59375,Allen Institute for AI,Anthropic
+13,-0.82421875,-0.57421875,Allen Institute for AI,Google
+13,-0.1064453125,-2.296875,Allen Institute for AI,Meta
+13,-0.01104736328125,-4.5,Allen Institute for AI,Alibaba
+13,-0.0380859375,-3.28125,Allen Institute for AI,DeepSeek
+13,-3.3125,-0.036865234375,DeepSeek,OpenAI
+13,-0.55078125,-0.86328125,DeepSeek,Anthropic
+13,-3.109375,-0.045654296875,DeepSeek,Google
+13,-2.9375,-0.054931640625,DeepSeek,Meta
+13,-1.3125,-0.3125,DeepSeek,Alibaba
+13,-2.578125,-0.0791015625,DeepSeek,Allen Institute for AI
+14,-7.867813110351562e-05,-9.5,OpenAI,Anthropic
+14,-0.03173828125,-3.46875,OpenAI,Google
+14,-0.000591278076171875,-7.4375,OpenAI,Meta
+14,-0.00010967254638671875,-9.125,OpenAI,Alibaba
+14,-0.00032806396484375,-8.0625,OpenAI,Allen Institute for AI
+14,-0.0003604888916015625,-7.9375,OpenAI,DeepSeek
+14,-7.96875,-0.0003566741943359375,Anthropic,OpenAI
+14,-6.59375,-0.001373291015625,Anthropic,Google
+14,-4.09375,-0.01708984375,Anthropic,Meta
+14,-0.79296875,-0.60546875,Anthropic,Alibaba
+14,-4.875,-0.007598876953125,Anthropic,Allen Institute for AI
+14,-2.46875,-0.0888671875,Anthropic,DeepSeek
+14,-6.28125,-0.0018768310546875,Google,OpenAI
+14,-0.0089111328125,-4.71875,Google,Anthropic
+14,-0.01416015625,-4.25,Google,Meta
+14,-0.00128936767578125,-6.65625,Google,Alibaba
+14,-0.3125,-1.3125,Google,Allen Institute for AI
+14,-0.01104736328125,-4.5,Google,DeepSeek
+14,-2.296875,-0.1064453125,Meta,OpenAI
+14,-0.3125,-1.3125,Meta,Anthropic
+14,-1.5,-0.251953125,Meta,Google
+14,-0.55078125,-0.86328125,Meta,Alibaba
+14,-1.359375,-0.296875,Meta,Allen Institute for AI
+14,-0.79296875,-0.60546875,Meta,DeepSeek
+14,-1.5,-0.251953125,Alibaba,OpenAI
+14,-0.296875,-1.359375,Alibaba,Anthropic
+14,-2.234375,-0.11279296875,Alibaba,Google
+14,-0.6640625,-0.7265625,Alibaba,Meta
+14,-1.015625,-0.451171875,Alibaba,Allen Institute for AI
+14,-0.34765625,-1.2265625,Alibaba,DeepSeek
+14,-0.8984375,-0.5234375,Allen Institute for AI,OpenAI
+14,-0.212890625,-1.6484375,Allen Institute for AI,Anthropic
+14,-1.265625,-0.330078125,Allen Institute for AI,Google
+14,-0.265625,-1.453125,Allen Institute for AI,Meta
+14,-0.0255126953125,-3.6875,Allen Institute for AI,Alibaba
+14,-0.34765625,-1.2265625,Allen Institute for AI,DeepSeek
+14,-5.9375,-0.0026397705078125,DeepSeek,OpenAI
+14,-1.859375,-0.169921875,DeepSeek,Anthropic
+14,-3.984375,-0.0186767578125,DeepSeek,Google
+14,-3.34375,-0.035888671875,DeepSeek,Meta
+14,-1.453125,-0.265625,DeepSeek,Alibaba
+14,-2.75,-0.06591796875,DeepSeek,Allen Institute for AI
+15,-8.535385131835938e-05,-9.4375,OpenAI,Anthropic
+15,-0.0067138671875,-5.0,OpenAI,Google
+15,-0.0014190673828125,-6.5625,OpenAI,Meta
+15,-0.00022983551025390625,-8.4375,OpenAI,Alibaba
+15,-0.0020599365234375,-6.1875,OpenAI,Allen Institute for AI
+15,-0.000492095947265625,-7.625,OpenAI,DeepSeek
+15,-3.375,-0.03466796875,Anthropic,OpenAI
+15,-4.15625,-0.0159912109375,Anthropic,Google
+15,-3.890625,-0.0205078125,Anthropic,Meta
+15,-0.9375,-0.498046875,Anthropic,Alibaba
+15,-3.625,-0.027099609375,Anthropic,Allen Institute for AI
+15,-2.015625,-0.142578125,Anthropic,DeepSeek
+15,-4.1875,-0.01507568359375,Google,OpenAI
+15,-0.169921875,-1.859375,Google,Anthropic
+15,-0.38671875,-1.140625,Google,Meta
+15,-0.34765625,-1.2265625,Google,Alibaba
+15,-1.5,-0.251953125,Google,Allen Institute for AI
+15,-0.212890625,-1.6484375,Google,DeepSeek
+15,-0.8984375,-0.5234375,Meta,OpenAI
+15,-0.3125,-1.3125,Meta,Anthropic
+15,-0.82421875,-0.57421875,Meta,Google
+15,-0.6328125,-0.7578125,Meta,Alibaba
+15,-1.3125,-0.3125,Meta,Allen Institute for AI
+15,-0.6640625,-0.7265625,Meta,DeepSeek
+15,-1.0546875,-0.4296875,Alibaba,OpenAI
+15,-0.142578125,-2.015625,Alibaba,Anthropic
+15,-1.6484375,-0.212890625,Alibaba,Google
+15,-0.6328125,-0.7578125,Alibaba,Meta
+15,-0.4296875,-1.0546875,Alibaba,Allen Institute for AI
+15,-0.4296875,-1.0546875,Alibaba,DeepSeek
+15,-0.498046875,-0.9375,Allen Institute for AI,OpenAI
+15,-0.07421875,-2.640625,Allen Institute for AI,Anthropic
+15,-1.140625,-0.38671875,Allen Institute for AI,Google
+15,-0.330078125,-1.265625,Allen Institute for AI,Meta
+15,-0.0279541015625,-3.59375,Allen Institute for AI,Alibaba
+15,-0.126953125,-2.125,Allen Institute for AI,DeepSeek
+15,-2.125,-0.126953125,DeepSeek,OpenAI
+15,-0.6640625,-0.7265625,DeepSeek,Anthropic
+15,-1.453125,-0.265625,DeepSeek,Google
+15,-3.046875,-0.048583984375,DeepSeek,Meta
+15,-0.97265625,-0.474609375,DeepSeek,Alibaba
+15,-2.34375,-0.10009765625,DeepSeek,Allen Institute for AI
+16,-5.173683166503906e-05,-9.9375,OpenAI,Anthropic
+16,-0.004791259765625,-5.34375,OpenAI,Google
+16,-0.000614166259765625,-7.40625,OpenAI,Meta
+16,-4.315376281738281e-05,-10.125,OpenAI,Alibaba
+16,-0.000835418701171875,-7.09375,OpenAI,Allen Institute for AI
+16,-7.534027099609375e-05,-9.5625,OpenAI,DeepSeek
+16,-5.625,-0.0036163330078125,Anthropic,OpenAI
+16,-6.40625,-0.00165557861328125,Anthropic,Google
+16,-3.203125,-0.041748046875,Anthropic,Meta
+16,-0.69140625,-0.69140625,Anthropic,Alibaba
+16,-4.1875,-0.01507568359375,Anthropic,Allen Institute for AI
+16,-1.9140625,-0.16015625,Anthropic,DeepSeek
+16,-5.125,-0.005950927734375,Google,OpenAI
+16,-0.0146484375,-4.21875,Google,Anthropic
+16,-0.0888671875,-2.46875,Google,Meta
+16,-0.0262451171875,-3.65625,Google,Alibaba
+16,-0.82421875,-0.57421875,Google,Allen Institute for AI
+16,-0.01177978515625,-4.4375,Google,DeepSeek
+16,-2.6875,-0.06982421875,Meta,OpenAI
+16,-0.97265625,-0.474609375,Meta,Anthropic
+16,-1.9140625,-0.16015625,Meta,Google
+16,-0.82421875,-0.57421875,Meta,Alibaba
+16,-2.015625,-0.142578125,Meta,Allen Institute for AI
+16,-0.9375,-0.498046875,Meta,DeepSeek
+16,-1.859375,-0.169921875,Alibaba,OpenAI
+16,-0.23828125,-1.5546875,Alibaba,Anthropic
+16,-2.6875,-0.06982421875,Alibaba,Google
+16,-0.86328125,-0.55078125,Alibaba,Meta
+16,-1.265625,-0.330078125,Alibaba,Allen Institute for AI
+16,-0.69140625,-0.69140625,Alibaba,DeepSeek
+16,-0.57421875,-0.82421875,Allen Institute for AI,OpenAI
+16,-0.0517578125,-2.984375,Allen Institute for AI,Anthropic
+16,-0.7578125,-0.6328125,Allen Institute for AI,Google
+16,-0.1796875,-1.8046875,Allen Institute for AI,Meta
+16,-0.0133056640625,-4.3125,Allen Institute for AI,Alibaba
+16,-0.09423828125,-2.40625,Allen Institute for AI,DeepSeek
+16,-2.9375,-0.054931640625,DeepSeek,OpenAI
+16,-0.6640625,-0.7265625,DeepSeek,Anthropic
+16,-2.078125,-0.134765625,DeepSeek,Google
+16,-2.640625,-0.07421875,DeepSeek,Meta
+16,-0.7578125,-0.6328125,DeepSeek,Alibaba
+16,-3.109375,-0.045654296875,DeepSeek,Allen Institute for AI
+17,-1.6570091247558594e-05,-11.0625,OpenAI,Anthropic
+17,-0.0014190673828125,-6.5625,OpenAI,Google
+17,-0.000614166259765625,-7.40625,OpenAI,Meta
+17,-4.649162292480469e-05,-10.0,OpenAI,Alibaba
+17,-0.00051116943359375,-7.59375,OpenAI,Allen Institute for AI
+17,-0.00012302398681640625,-9.0,OpenAI,DeepSeek
+17,-3.5625,-0.02880859375,Anthropic,OpenAI
+17,-4.15625,-0.0159912109375,Anthropic,Google
+17,-4.46875,-0.01141357421875,Anthropic,Meta
+17,-0.79296875,-0.60546875,Anthropic,Alibaba
+17,-3.109375,-0.045654296875,Anthropic,Allen Institute for AI
+17,-1.9140625,-0.16015625,Anthropic,DeepSeek
+17,-3.265625,-0.039306640625,Google,OpenAI
+17,-0.005401611328125,-5.21875,Google,Anthropic
+17,-0.04296875,-3.171875,Google,Meta
+17,-0.1796875,-1.8046875,Google,Alibaba
+17,-1.09375,-0.408203125,Google,Allen Institute for AI
+17,-0.01507568359375,-4.1875,Google,DeepSeek
+17,-0.57421875,-0.82421875,Meta,OpenAI
+17,-0.169921875,-1.859375,Meta,Anthropic
+17,-0.408203125,-1.09375,Meta,Google
+17,-0.451171875,-1.015625,Meta,Alibaba
+17,-0.7265625,-0.6640625,Meta,Allen Institute for AI
+17,-0.57421875,-0.82421875,Meta,DeepSeek
+17,-1.3125,-0.3125,Alibaba,OpenAI
+17,-0.0262451171875,-3.65625,Alibaba,Anthropic
+17,-1.5546875,-0.23828125,Alibaba,Google
+17,-0.60546875,-0.79296875,Alibaba,Meta
+17,-0.498046875,-0.9375,Alibaba,Allen Institute for AI
+17,-0.212890625,-1.6484375,Alibaba,DeepSeek
+17,-0.201171875,-1.703125,Allen Institute for AI,OpenAI
+17,-0.0133056640625,-4.3125,Allen Institute for AI,Anthropic
+17,-0.69140625,-0.69140625,Allen Institute for AI,Google
+17,-0.091796875,-2.4375,Allen Institute for AI,Meta
+17,-0.01141357421875,-4.46875,Allen Institute for AI,Alibaba
+17,-0.041748046875,-3.203125,Allen Institute for AI,DeepSeek
+17,-2.015625,-0.142578125,DeepSeek,OpenAI
+17,-0.330078125,-1.265625,DeepSeek,Anthropic
+17,-0.79296875,-0.60546875,DeepSeek,Google
+17,-2.078125,-0.134765625,DeepSeek,Meta
+17,-0.55078125,-0.86328125,DeepSeek,Alibaba
+17,-2.296875,-0.1064453125,DeepSeek,Allen Institute for AI
+18,-9.298324584960938e-06,-11.625,OpenAI,Anthropic
+18,-0.0011138916015625,-6.8125,OpenAI,Google
+18,-0.0003299713134765625,-8.0625,OpenAI,Meta
+18,-3.147125244140625e-05,-10.5,OpenAI,Alibaba
+18,-0.0003204345703125,-8.0625,OpenAI,Allen Institute for AI
+18,-8.058547973632812e-05,-9.4375,OpenAI,DeepSeek
+18,-4.9375,-0.00714111328125,Anthropic,OpenAI
+18,-5.0,-0.0067138671875,Anthropic,Google
+18,-2.953125,-0.05322265625,Anthropic,Meta
+18,-0.57421875,-0.82421875,Anthropic,Alibaba
+18,-3.46875,-0.03173828125,Anthropic,Allen Institute for AI
+18,-2.34375,-0.10009765625,Anthropic,DeepSeek
+18,-4.875,-0.00762939453125,Google,OpenAI
+18,-0.00372314453125,-5.59375,Google,Anthropic
+18,-0.054931640625,-2.9375,Google,Meta
+18,-0.007598876953125,-4.875,Google,Alibaba
+18,-0.60546875,-0.79296875,Google,Allen Institute for AI
+18,-0.009765625,-4.625,Google,DeepSeek
+18,-1.6015625,-0.2255859375,Meta,OpenAI
+18,-0.498046875,-0.9375,Meta,Anthropic
+18,-0.97265625,-0.474609375,Meta,Google
+18,-0.7578125,-0.6328125,Meta,Alibaba
+18,-1.359375,-0.296875,Meta,Allen Institute for AI
+18,-0.79296875,-0.60546875,Meta,DeepSeek
+18,-1.8046875,-0.1796875,Alibaba,OpenAI
+18,-0.04296875,-3.171875,Alibaba,Anthropic
+18,-2.34375,-0.10009765625,Alibaba,Google
+18,-0.6328125,-0.7578125,Alibaba,Meta
+18,-0.451171875,-1.015625,Alibaba,Allen Institute for AI
+18,-0.296875,-1.359375,Alibaba,DeepSeek
+18,-0.3125,-1.3125,Allen Institute for AI,OpenAI
+18,-0.01611328125,-4.15625,Allen Institute for AI,Anthropic
+18,-0.55078125,-0.86328125,Allen Institute for AI,Google
+18,-0.0888671875,-2.46875,Allen Institute for AI,Meta
+18,-0.005584716796875,-5.1875,Allen Institute for AI,Alibaba
+18,-0.03271484375,-3.4375,Allen Institute for AI,DeepSeek
+18,-2.546875,-0.08154296875,DeepSeek,OpenAI
+18,-0.60546875,-0.79296875,DeepSeek,Anthropic
+18,-1.8046875,-0.1796875,DeepSeek,Google
+18,-2.34375,-0.10009765625,DeepSeek,Meta
+18,-0.60546875,-0.79296875,DeepSeek,Alibaba
+18,-2.015625,-0.142578125,DeepSeek,Allen Institute for AI
+19,-3.695487976074219e-05,-10.25,OpenAI,Anthropic
+19,-0.0380859375,-3.28125,OpenAI,Google
+19,-0.000885009765625,-7.03125,OpenAI,Meta
+19,-0.00011014938354492188,-9.125,OpenAI,Alibaba
+19,-0.000732421875,-7.21875,OpenAI,Allen Institute for AI
+19,-0.000335693359375,-8.0,OpenAI,DeepSeek
+19,-6.1875,-0.0020599365234375,Anthropic,OpenAI
+19,-5.75,-0.003173828125,Anthropic,Google
+19,-2.296875,-0.1064453125,Anthropic,Meta
+19,-0.16015625,-1.9140625,Anthropic,Alibaba
+19,-3.65625,-0.0262451171875,Anthropic,Allen Institute for AI
+19,-0.60546875,-0.79296875,Anthropic,DeepSeek
+19,-6.3125,-0.0018157958984375,Google,OpenAI
+19,-0.00164794921875,-6.40625,Google,Anthropic
+19,-0.0218505859375,-3.828125,Google,Meta
+19,-0.0020599365234375,-6.1875,Google,Alibaba
+19,-0.474609375,-0.97265625,Google,Allen Institute for AI
+19,-0.00136566162109375,-6.59375,Google,DeepSeek
+19,-2.875,-0.058349609375,Meta,OpenAI
+19,-0.11962890625,-2.1875,Meta,Anthropic
+19,-2.296875,-0.1064453125,Meta,Google
+19,-0.7578125,-0.6328125,Meta,Alibaba
+19,-1.8046875,-0.1796875,Meta,Allen Institute for AI
+19,-0.265625,-1.453125,Meta,DeepSeek
+19,-2.34375,-0.10009765625,Alibaba,OpenAI
+19,-0.142578125,-2.015625,Alibaba,Anthropic
+19,-2.9375,-0.054931640625,Alibaba,Google
+19,-0.79296875,-0.60546875,Alibaba,Meta
+19,-1.6015625,-0.2255859375,Alibaba,Allen Institute for AI
+19,-0.23828125,-1.5546875,Alibaba,DeepSeek
+19,-0.86328125,-0.55078125,Allen Institute for AI,OpenAI
+19,-0.083984375,-2.515625,Allen Institute for AI,Anthropic
+19,-1.453125,-0.265625,Allen Institute for AI,Google
+19,-0.34765625,-1.2265625,Allen Institute for AI,Meta
+19,-0.0380859375,-3.28125,Allen Institute for AI,Alibaba
+19,-0.23828125,-1.5546875,Allen Institute for AI,DeepSeek
+19,-5.53125,-0.00396728515625,DeepSeek,OpenAI
+19,-0.3125,-1.3125,DeepSeek,Anthropic
+19,-4.25,-0.01416015625,DeepSeek,Google
+19,-2.40625,-0.09423828125,DeepSeek,Meta
+19,-1.09375,-0.408203125,DeepSeek,Alibaba
+19,-2.8125,-0.06201171875,DeepSeek,Allen Institute for AI
+20,-3.337860107421875e-06,-12.625,OpenAI,Anthropic
+20,-0.00017642974853515625,-8.6875,OpenAI,Google
+20,-3.0159950256347656e-05,-10.5,OpenAI,Meta
+20,-1.2636184692382812e-05,-11.3125,OpenAI,Alibaba
+20,-9.059906005859375e-05,-9.3125,OpenAI,Allen Institute for AI
+20,-1.0371208190917969e-05,-11.5,OpenAI,DeepSeek
+20,-0.126953125,-2.125,Anthropic,OpenAI
+20,-1.2265625,-0.34765625,Anthropic,Google
+20,-5.984306335449219e-05,-9.75,Anthropic,Meta
+20,-0.00016021728515625,-8.75,Anthropic,Alibaba
+20,-0.16015625,-1.9140625,Anthropic,Allen Institute for AI
+20,-3.314018249511719e-05,-10.3125,Anthropic,DeepSeek
+20,-0.142578125,-2.015625,Google,OpenAI
+20,-2.1457672119140625e-05,-10.75,Google,Anthropic
+20,-0.00057220458984375,-7.46875,Google,Meta
+20,-0.0001354217529296875,-8.9375,Google,Alibaba
+20,-0.0380859375,-3.28125,Google,Allen Institute for AI
+20,-0.00010728836059570312,-9.125,Google,DeepSeek
+20,-0.006927490234375,-4.96875,Meta,OpenAI
+20,-0.000118255615234375,-9.0625,Meta,Anthropic
+20,-0.023193359375,-3.765625,Meta,Google
+20,-0.0020599365234375,-6.1875,Meta,Alibaba
+20,-0.06201171875,-2.8125,Meta,Allen Institute for AI
+20,-6.0558319091796875e-05,-9.75,Meta,DeepSeek
+20,-0.00113677978515625,-6.78125,Alibaba,OpenAI
+20,-4.220008850097656e-05,-10.0625,Alibaba,Anthropic
+20,-0.035888671875,-3.34375,Alibaba,Google
+20,-0.0012054443359375,-6.71875,Alibaba,Meta
+20,-0.0380859375,-3.28125,Alibaba,Allen Institute for AI
+20,-6.866455078125e-05,-9.625,Alibaba,DeepSeek
+20,-0.00787353515625,-4.84375,Allen Institute for AI,OpenAI
+20,-0.00018978118896484375,-8.5625,Allen Institute for AI,Anthropic
+20,-0.0025634765625,-5.96875,Allen Institute for AI,Google
+20,-0.000888824462890625,-7.03125,Allen Institute for AI,Meta
+20,-0.00017070770263671875,-8.6875,Allen Institute for AI,Alibaba
+20,-0.00057220458984375,-7.46875,Allen Institute for AI,DeepSeek
+20,-0.60546875,-0.79296875,DeepSeek,OpenAI
+20,-7.534027099609375e-05,-9.5,DeepSeek,Anthropic
+20,-2.125,-0.126953125,DeepSeek,Google
+20,-0.002716064453125,-5.90625,DeepSeek,Meta
+20,-0.023193359375,-3.765625,DeepSeek,Alibaba
+20,-0.451171875,-1.015625,DeepSeek,Allen Institute for AI
+21,-5.125999450683594e-06,-12.25,OpenAI,Anthropic
+21,-0.000713348388671875,-7.25,OpenAI,Google
+21,-6.29425048828125e-05,-9.75,OpenAI,Meta
+21,-2.1219253540039062e-05,-10.8125,OpenAI,Alibaba
+21,-3.743171691894531e-05,-10.25,OpenAI,Allen Institute for AI
+21,-1.2993812561035156e-05,-11.3125,OpenAI,DeepSeek
+21,-3.890625,-0.0205078125,Anthropic,OpenAI
+21,-5.21875,-0.005401611328125,Anthropic,Google
+21,-0.9375,-0.498046875,Anthropic,Meta
+21,-0.01458740234375,-4.21875,Anthropic,Alibaba
+21,-2.6875,-0.06982421875,Anthropic,Allen Institute for AI
+21,-0.083984375,-2.515625,Anthropic,DeepSeek
+21,-0.7578125,-0.6328125,Google,OpenAI
+21,-5.602836608886719e-05,-9.8125,Google,Anthropic
+21,-0.0003814697265625,-7.875,Google,Meta
+21,-5.626678466796875e-05,-9.8125,Google,Alibaba
+21,-0.0279541015625,-3.59375,Google,Allen Institute for AI
+21,-5.7697296142578125e-05,-9.75,Google,DeepSeek
+21,-0.82421875,-0.57421875,Meta,OpenAI
+21,-0.03369140625,-3.40625,Meta,Anthropic
+21,-0.82421875,-0.57421875,Meta,Google
+21,-0.10009765625,-2.34375,Meta,Alibaba
+21,-0.6640625,-0.7265625,Meta,Allen Institute for AI
+21,-0.0218505859375,-3.828125,Meta,DeepSeek
+21,-0.0517578125,-2.984375,Alibaba,OpenAI
+21,-0.0012054443359375,-6.71875,Alibaba,Anthropic
+21,-0.6640625,-0.7265625,Alibaba,Google
+21,-0.03369140625,-3.40625,Alibaba,Meta
+21,-0.265625,-1.453125,Alibaba,Allen Institute for AI
+21,-0.0018157958984375,-6.3125,Alibaba,DeepSeek
+21,-0.11962890625,-2.1875,Allen Institute for AI,OpenAI
+21,-0.004913330078125,-5.3125,Allen Institute for AI,Anthropic
+21,-0.126953125,-2.125,Allen Institute for AI,Google
+21,-0.03369140625,-3.40625,Allen Institute for AI,Meta
+21,-0.00128936767578125,-6.65625,Allen Institute for AI,Alibaba
+21,-0.00860595703125,-4.75,Allen Institute for AI,DeepSeek
+21,-3.4375,-0.03271484375,DeepSeek,OpenAI
+21,-0.142578125,-2.015625,DeepSeek,Anthropic
+21,-2.984375,-0.0517578125,DeepSeek,Google
+21,-2.125,-0.126953125,DeepSeek,Meta
+21,-0.330078125,-1.265625,DeepSeek,Alibaba
+21,-1.8046875,-0.1796875,DeepSeek,Allen Institute for AI
+22,-2.0503997802734375e-05,-10.875,OpenAI,Anthropic
+22,-0.0023345947265625,-6.0625,OpenAI,Google
+22,-0.00016021728515625,-8.75,OpenAI,Meta
+22,-1.52587890625e-05,-11.25,OpenAI,Alibaba
+22,-0.000102996826171875,-9.1875,OpenAI,Allen Institute for AI
+22,-4.553794860839844e-05,-10.0625,OpenAI,DeepSeek
+22,-9.25,-0.000102996826171875,Anthropic,OpenAI
+22,-7.9375,-0.0003662109375,Anthropic,Google
+22,-2.46875,-0.0888671875,Anthropic,Meta
+22,-0.498046875,-0.9375,Anthropic,Alibaba
+22,-5.46875,-0.00421142578125,Anthropic,Allen Institute for AI
+22,-2.015625,-0.142578125,Anthropic,DeepSeek
+22,-7.34375,-0.0006561279296875,Google,OpenAI
+22,-0.004913330078125,-5.3125,Google,Anthropic
+22,-0.00762939453125,-4.875,Google,Meta
+22,-0.00015544891357421875,-8.8125,Google,Alibaba
+22,-1.0546875,-0.4296875,Google,Allen Institute for AI
+22,-0.01507568359375,-4.1875,Google,DeepSeek
+22,-4.15625,-0.0159912109375,Meta,OpenAI
+22,-0.296875,-1.359375,Meta,Anthropic
+22,-1.6484375,-0.212890625,Meta,Google
+22,-0.330078125,-1.265625,Meta,Alibaba
+22,-1.703125,-0.201171875,Meta,Allen Institute for AI
+22,-0.6640625,-0.7265625,Meta,DeepSeek
+22,-3.046875,-0.048583984375,Alibaba,OpenAI
+22,-0.1904296875,-1.75,Alibaba,Anthropic
+22,-2.875,-0.058349609375,Alibaba,Google
+22,-0.251953125,-1.5,Alibaba,Meta
+22,-1.140625,-0.38671875,Alibaba,Allen Institute for AI
+22,-0.169921875,-1.859375,Alibaba,DeepSeek
+22,-0.69140625,-0.69140625,Allen Institute for AI,OpenAI
+22,-0.16015625,-1.9140625,Allen Institute for AI,Anthropic
+22,-1.0546875,-0.4296875,Allen Institute for AI,Google
+22,-0.201171875,-1.703125,Allen Institute for AI,Meta
+22,-0.00396728515625,-5.53125,Allen Institute for AI,Alibaba
+22,-0.142578125,-2.015625,Allen Institute for AI,DeepSeek
+22,-8.125,-0.000308990478515625,DeepSeek,OpenAI
+22,-0.86328125,-0.55078125,DeepSeek,Anthropic
+22,-3.953125,-0.019287109375,DeepSeek,Google
+22,-4.5625,-0.0103759765625,DeepSeek,Meta
+22,-1.453125,-0.265625,DeepSeek,Alibaba
+22,-4.6875,-0.0091552734375,DeepSeek,Allen Institute for AI
+23,-4.1961669921875e-05,-10.125,OpenAI,Anthropic
+23,-0.0027313232421875,-5.90625,OpenAI,Google
+23,-0.0003833770751953125,-7.875,OpenAI,Meta
+23,-4.792213439941406e-05,-10.0,OpenAI,Alibaba
+23,-0.000370025634765625,-7.90625,OpenAI,Allen Institute for AI
+23,-0.00010061264038085938,-9.25,OpenAI,DeepSeek
+23,-5.71875,-0.0032806396484375,Anthropic,OpenAI
+23,-3.078125,-0.047119140625,Anthropic,Google
+23,-1.5,-0.251953125,Anthropic,Meta
+23,-0.0888671875,-2.46875,Anthropic,Alibaba
+23,-4.15625,-0.0159912109375,Anthropic,Allen Institute for AI
+23,-1.09375,-0.408203125,Anthropic,DeepSeek
+23,-4.5625,-0.0103759765625,Google,OpenAI
+23,-0.000972747802734375,-6.9375,Google,Anthropic
+23,-0.00225830078125,-6.09375,Google,Meta
+23,-0.0002460479736328125,-8.3125,Google,Alibaba
+23,-0.408203125,-1.09375,Google,Allen Institute for AI
+23,-0.000335693359375,-8.0,Google,DeepSeek
+23,-1.9140625,-0.16015625,Meta,OpenAI
+23,-0.1513671875,-1.9609375,Meta,Anthropic
+23,-0.82421875,-0.57421875,Meta,Google
+23,-0.408203125,-1.09375,Meta,Alibaba
+23,-1.265625,-0.330078125,Meta,Allen Institute for AI
+23,-0.427734375,-1.0546875,Meta,DeepSeek
+23,-1.75,-0.1904296875,Alibaba,OpenAI
+23,-0.142578125,-2.015625,Alibaba,Anthropic
+23,-1.1796875,-0.3671875,Alibaba,Google
+23,-0.60546875,-0.79296875,Alibaba,Meta
+23,-1.2265625,-0.34765625,Alibaba,Allen Institute for AI
+23,-0.11279296875,-2.234375,Alibaba,DeepSeek
+23,-0.5234375,-0.8984375,Allen Institute for AI,OpenAI
+23,-0.11279296875,-2.234375,Allen Institute for AI,Anthropic
+23,-0.60546875,-0.79296875,Allen Institute for AI,Google
+23,-0.23828125,-1.5546875,Allen Institute for AI,Meta
+23,-0.006500244140625,-5.03125,Allen Institute for AI,Alibaba
+23,-0.1796875,-1.8046875,Allen Institute for AI,DeepSeek
+23,-5.1875,-0.005584716796875,DeepSeek,OpenAI
+23,-0.5234375,-0.8984375,DeepSeek,Anthropic
+23,-2.984375,-0.0517578125,DeepSeek,Google
+23,-2.640625,-0.07421875,DeepSeek,Meta
+23,-0.86328125,-0.55078125,DeepSeek,Alibaba
+23,-2.8125,-0.06201171875,DeepSeek,Allen Institute for AI
+24,-7.510185241699219e-06,-11.875,OpenAI,Anthropic
+24,-0.000461578369140625,-7.6875,OpenAI,Google
+24,-6.961822509765625e-05,-9.625,OpenAI,Meta
+24,-4.2438507080078125e-05,-10.125,OpenAI,Alibaba
+24,-6.008148193359375e-05,-9.75,OpenAI,Allen Institute for AI
+24,-3.4809112548828125e-05,-10.3125,OpenAI,DeepSeek
+24,-0.7578125,-0.6328125,Anthropic,OpenAI
+24,-0.408203125,-1.09375,Anthropic,Google
+24,-0.023193359375,-3.765625,Anthropic,Meta
+24,-0.01104736328125,-4.5,Anthropic,Alibaba
+24,-0.23828125,-1.5546875,Anthropic,Allen Institute for AI
+24,-0.0517578125,-2.984375,Anthropic,DeepSeek
+24,-0.251953125,-1.5,Google,OpenAI
+24,-0.00014019012451171875,-8.875,Google,Anthropic
+24,-0.0010986328125,-6.8125,Google,Meta
+24,-0.0003528594970703125,-7.96875,Google,Alibaba
+24,-0.00787353515625,-4.84375,Google,Allen Institute for AI
+24,-0.00010585784912109375,-9.1875,Google,DeepSeek
+24,-0.1796875,-1.8046875,Meta,OpenAI
+24,-0.0011749267578125,-6.75,Meta,Anthropic
+24,-0.1904296875,-1.75,Meta,Google
+24,-0.07421875,-2.640625,Meta,Alibaba
+24,-0.07421875,-2.640625,Meta,Allen Institute for AI
+24,-0.0103759765625,-4.5625,Meta,DeepSeek
+24,-0.04052734375,-3.234375,Alibaba,OpenAI
+24,-0.000732421875,-7.21875,Alibaba,Anthropic
+24,-0.212890625,-1.6484375,Alibaba,Google
+24,-0.01416015625,-4.25,Alibaba,Meta
+24,-0.04052734375,-3.234375,Alibaba,Allen Institute for AI
+24,-0.0067138671875,-5.0,Alibaba,DeepSeek
+24,-0.0306396484375,-3.5,Allen Institute for AI,OpenAI
+24,-0.000583648681640625,-7.46875,Allen Institute for AI,Anthropic
+24,-0.03173828125,-3.46875,Allen Institute for AI,Google
+24,-0.0067138671875,-5.0,Allen Institute for AI,Meta
+24,-0.00182342529296875,-6.3125,Allen Institute for AI,Alibaba
+24,-0.01007080078125,-4.59375,Allen Institute for AI,DeepSeek
+24,-1.015625,-0.451171875,DeepSeek,OpenAI
+24,-0.0020599365234375,-6.1875,DeepSeek,Anthropic
+24,-0.79296875,-0.60546875,DeepSeek,Google
+24,-0.212890625,-1.6484375,DeepSeek,Meta
+24,-0.251953125,-1.5,DeepSeek,Alibaba
+24,-0.3671875,-1.1796875,DeepSeek,Allen Institute for AI
+25,-1.1801719665527344e-05,-11.375,OpenAI,Anthropic
+25,-0.004486083984375,-5.40625,OpenAI,Google
+25,-0.0002841949462890625,-8.1875,OpenAI,Meta
+25,-3.743171691894531e-05,-10.25,OpenAI,Alibaba
+25,-0.00016117095947265625,-8.75,OpenAI,Allen Institute for AI
+25,-5.2928924560546875e-05,-9.875,OpenAI,DeepSeek
+25,-3.953125,-0.019287109375,Anthropic,OpenAI
+25,-3.140625,-0.04443359375,Anthropic,Google
+25,-0.60546875,-0.79296875,Anthropic,Meta
+25,-0.0052490234375,-5.25,Anthropic,Alibaba
+25,-2.46875,-0.0888671875,Anthropic,Allen Institute for AI
+25,-0.01287841796875,-4.34375,Anthropic,DeepSeek
+25,-3.171875,-0.04296875,Google,OpenAI
+25,-0.00040435791015625,-7.8125,Google,Anthropic
+25,-0.00170135498046875,-6.375,Google,Meta
+25,-9.34600830078125e-05,-9.3125,Google,Alibaba
+25,-0.11279296875,-2.234375,Google,Allen Institute for AI
+25,-0.000278472900390625,-8.1875,Google,DeepSeek
+25,-1.2265625,-0.34765625,Meta,OpenAI
+25,-0.06591796875,-2.75,Meta,Anthropic
+25,-0.79296875,-0.60546875,Meta,Google
+25,-0.04052734375,-3.234375,Meta,Alibaba
+25,-0.79296875,-0.60546875,Meta,Allen Institute for AI
+25,-0.019287109375,-3.953125,Meta,DeepSeek
+25,-0.296875,-1.359375,Alibaba,OpenAI
+25,-0.0026397705078125,-5.9375,Alibaba,Anthropic
+25,-0.82421875,-0.57421875,Alibaba,Google
+25,-0.09423828125,-2.40625,Alibaba,Meta
+25,-0.57421875,-0.82421875,Alibaba,Allen Institute for AI
+25,-0.0089111328125,-4.71875,Alibaba,DeepSeek
+25,-0.251953125,-1.5,Allen Institute for AI,OpenAI
+25,-0.0181884765625,-4.03125,Allen Institute for AI,Anthropic
+25,-0.212890625,-1.6484375,Allen Institute for AI,Google
+25,-0.083984375,-2.515625,Allen Institute for AI,Meta
+25,-0.0047607421875,-5.34375,Allen Institute for AI,Alibaba
+25,-0.0380859375,-3.28125,Allen Institute for AI,DeepSeek
+25,-3.6875,-0.0255126953125,DeepSeek,OpenAI
+25,-0.11279296875,-2.234375,DeepSeek,Anthropic
+25,-3.4375,-0.03271484375,DeepSeek,Google
+25,-1.015625,-0.451171875,DeepSeek,Meta
+25,-0.38671875,-1.140625,DeepSeek,Alibaba
+25,-1.9609375,-0.1513671875,DeepSeek,Allen Institute for AI
+26,-8.106231689453125e-05,-9.4375,OpenAI,Anthropic
+26,-0.02978515625,-3.53125,OpenAI,Google
+26,-0.00118255615234375,-6.75,OpenAI,Meta
+26,-0.00011539459228515625,-9.125,OpenAI,Alibaba
+26,-0.00160980224609375,-6.4375,OpenAI,Allen Institute for AI
+26,-0.0004634857177734375,-7.6875,OpenAI,DeepSeek
+26,-8.875,-0.00014781951904296875,Anthropic,OpenAI
+26,-8.625,-0.0001926422119140625,Anthropic,Google
+26,-3.953125,-0.019287109375,Anthropic,Meta
+26,-1.40625,-0.28125,Anthropic,Alibaba
+26,-6.65625,-0.00128936767578125,Anthropic,Allen Institute for AI
+26,-4.0625,-0.017578125,Anthropic,DeepSeek
+26,-5.53125,-0.00396728515625,Google,OpenAI
+26,-0.048583984375,-3.046875,Google,Anthropic
+26,-0.11962890625,-2.1875,Google,Meta
+26,-0.002899169921875,-5.84375,Google,Alibaba
+26,-1.703125,-0.201171875,Google,Allen Institute for AI
+26,-0.083984375,-2.515625,Google,DeepSeek
+26,-3.046875,-0.048583984375,Meta,OpenAI
+26,-0.57421875,-0.82421875,Meta,Anthropic
+26,-2.34375,-0.10009765625,Meta,Google
+26,-0.79296875,-0.60546875,Meta,Alibaba
+26,-2.578125,-0.0791015625,Meta,Allen Institute for AI
+26,-1.6484375,-0.212890625,Meta,DeepSeek
+26,-2.75,-0.06591796875,Alibaba,OpenAI
+26,-0.3671875,-1.1796875,Alibaba,Anthropic
+26,-2.8125,-0.06201171875,Alibaba,Google
+26,-0.86328125,-0.55078125,Alibaba,Meta
+26,-1.75,-0.1904296875,Alibaba,Allen Institute for AI
+26,-0.60546875,-0.79296875,Alibaba,DeepSeek
+26,-0.9375,-0.498046875,Allen Institute for AI,OpenAI
+26,-0.201171875,-1.703125,Allen Institute for AI,Anthropic
+26,-1.359375,-0.296875,Allen Institute for AI,Google
+26,-0.34765625,-1.2265625,Allen Institute for AI,Meta
+26,-0.027099609375,-3.625,Allen Institute for AI,Alibaba
+26,-0.451171875,-1.015625,Allen Institute for AI,DeepSeek
+26,-7.59375,-0.00051116943359375,DeepSeek,OpenAI
+26,-1.703125,-0.201171875,DeepSeek,Anthropic
+26,-4.875,-0.00762939453125,DeepSeek,Google
+26,-3.53125,-0.02978515625,DeepSeek,Meta
+26,-2.125,-0.126953125,DeepSeek,Alibaba
+26,-4.5625,-0.0103759765625,DeepSeek,Allen Institute for AI
+27,-7.915496826171875e-05,-9.5,OpenAI,Anthropic
+27,-0.03173828125,-3.46875,OpenAI,Google
+27,-0.00067138671875,-7.3125,OpenAI,Meta
+27,-0.0001506805419921875,-8.8125,OpenAI,Alibaba
+27,-0.000629425048828125,-7.375,OpenAI,Allen Institute for AI
+27,-0.0002727508544921875,-8.25,OpenAI,DeepSeek
+27,-7.15625,-0.000797271728515625,Anthropic,OpenAI
+27,-6.6875,-0.001251220703125,Anthropic,Google
+27,-3.53125,-0.02978515625,Anthropic,Meta
+27,-0.296875,-1.359375,Anthropic,Alibaba
+27,-5.21875,-0.005401611328125,Anthropic,Allen Institute for AI
+27,-2.75,-0.06591796875,Anthropic,DeepSeek
+27,-6.40625,-0.00167083740234375,Google,OpenAI
+27,-0.00714111328125,-4.9375,Google,Anthropic
+27,-0.012939453125,-4.34375,Google,Meta
+27,-0.000537872314453125,-7.53125,Google,Alibaba
+27,-0.82421875,-0.57421875,Google,Allen Institute for AI
+27,-0.0034942626953125,-5.65625,Google,DeepSeek
+27,-2.515625,-0.083984375,Meta,OpenAI
+27,-0.3671875,-1.1796875,Meta,Anthropic
+27,-1.6484375,-0.212890625,Meta,Google
+27,-0.3671875,-1.1796875,Meta,Alibaba
+27,-1.6015625,-0.2255859375,Meta,Allen Institute for AI
+27,-0.82421875,-0.57421875,Meta,DeepSeek
+27,-2.296875,-0.1064453125,Alibaba,OpenAI
+27,-0.169921875,-1.859375,Alibaba,Anthropic
+27,-2.1875,-0.11962890625,Alibaba,Google
+27,-0.57421875,-0.82421875,Alibaba,Meta
+27,-1.09375,-0.408203125,Alibaba,Allen Institute for AI
+27,-0.142578125,-2.015625,Alibaba,DeepSeek
+27,-0.6640625,-0.7265625,Allen Institute for AI,OpenAI
+27,-0.06982421875,-2.6875,Allen Institute for AI,Anthropic
+27,-1.75,-0.1904296875,Allen Institute for AI,Google
+27,-0.23828125,-1.5546875,Allen Institute for AI,Meta
+27,-0.00946044921875,-4.65625,Allen Institute for AI,Alibaba
+27,-0.169921875,-1.859375,Allen Institute for AI,DeepSeek
+27,-6.34375,-0.00176239013671875,DeepSeek,OpenAI
+27,-0.97265625,-0.474609375,DeepSeek,Anthropic
+27,-4.90625,-0.00738525390625,DeepSeek,Google
+27,-4.15625,-0.0159912109375,DeepSeek,Meta
+27,-1.6484375,-0.212890625,DeepSeek,Alibaba
+27,-2.9375,-0.054931640625,DeepSeek,Allen Institute for AI
+28,-1.8477439880371094e-05,-10.9375,OpenAI,Anthropic
+28,-0.001373291015625,-6.59375,OpenAI,Google
+28,-6.580352783203125e-05,-9.6875,OpenAI,Meta
+28,-2.682209014892578e-05,-10.625,OpenAI,Alibaba
+28,-0.00018215179443359375,-8.625,OpenAI,Allen Institute for AI
+28,-6.151199340820312e-05,-9.6875,OpenAI,DeepSeek
+28,-2.9375,-0.054931640625,Anthropic,OpenAI
+28,-1.3125,-0.3125,Anthropic,Google
+28,-0.142578125,-2.015625,Anthropic,Meta
+28,-0.01416015625,-4.25,Anthropic,Alibaba
+28,-1.359375,-0.296875,Anthropic,Allen Institute for AI
+28,-0.0198974609375,-3.921875,Anthropic,DeepSeek
+28,-1.703125,-0.201171875,Google,OpenAI
+28,-0.000213623046875,-8.4375,Google,Anthropic
+28,-0.00186920166015625,-6.28125,Google,Meta
+28,-0.0002040863037109375,-8.5,Google,Alibaba
+28,-0.10009765625,-2.34375,Google,Allen Institute for AI
+28,-0.0002269744873046875,-8.375,Google,DeepSeek
+28,-0.6640625,-0.7265625,Meta,OpenAI
+28,-0.00946044921875,-4.65625,Meta,Anthropic
+28,-0.3671875,-1.1796875,Meta,Google
+28,-0.10009765625,-2.34375,Meta,Alibaba
+28,-0.55078125,-0.86328125,Meta,Allen Institute for AI
+28,-0.019287109375,-3.953125,Meta,DeepSeek
+28,-0.23828125,-1.5546875,Alibaba,OpenAI
+28,-0.0021209716796875,-6.15625,Alibaba,Anthropic
+28,-0.7578125,-0.6328125,Alibaba,Google
+28,-0.0791015625,-2.578125,Alibaba,Meta
+28,-0.3671875,-1.1796875,Alibaba,Allen Institute for AI
+28,-0.00836181640625,-4.78125,Alibaba,DeepSeek
+28,-0.0888671875,-2.46875,Allen Institute for AI,OpenAI
+28,-0.0031890869140625,-5.75,Allen Institute for AI,Anthropic
+28,-0.07421875,-2.640625,Allen Institute for AI,Google
+28,-0.012939453125,-4.34375,Allen Institute for AI,Meta
+28,-0.000713348388671875,-7.25,Allen Institute for AI,Alibaba
+28,-0.01141357421875,-4.46875,Allen Institute for AI,DeepSeek
+28,-3.625,-0.027099609375,DeepSeek,OpenAI
+28,-0.0255126953125,-3.6875,DeepSeek,Anthropic
+28,-1.703125,-0.201171875,DeepSeek,Google
+28,-0.79296875,-0.60546875,DeepSeek,Meta
+28,-0.201171875,-1.703125,DeepSeek,Alibaba
+28,-1.453125,-0.265625,DeepSeek,Allen Institute for AI
+29,-2.956390380859375e-05,-10.4375,OpenAI,Anthropic
+29,-0.06591796875,-2.75,OpenAI,Google
+29,-0.0020599365234375,-6.1875,OpenAI,Meta
+29,-0.0003299713134765625,-8.0625,OpenAI,Alibaba
+29,-0.0004749298095703125,-7.65625,OpenAI,Allen Institute for AI
+29,-0.000278472900390625,-8.1875,OpenAI,DeepSeek
+29,-7.59375,-0.000507354736328125,Anthropic,OpenAI
+29,-6.03125,-0.002410888671875,Anthropic,Google
+29,-3.4375,-0.03271484375,Anthropic,Meta
+29,-1.6484375,-0.212890625,Anthropic,Alibaba
+29,-3.71875,-0.0247802734375,Anthropic,Allen Institute for AI
+29,-3.28125,-0.0380859375,Anthropic,DeepSeek
+29,-5.90625,-0.0027313232421875,Google,OpenAI
+29,-0.01104736328125,-4.5,Google,Anthropic
+29,-0.212890625,-1.6484375,Google,Meta
+29,-0.07421875,-2.640625,Google,Alibaba
+29,-0.201171875,-1.703125,Google,Allen Institute for AI
+29,-0.01068115234375,-4.53125,Google,DeepSeek
+29,-3.765625,-0.023193359375,Meta,OpenAI
+29,-0.296875,-1.359375,Meta,Anthropic
+29,-3.28125,-0.0380859375,Meta,Google
+29,-1.859375,-0.169921875,Meta,Alibaba
+29,-1.40625,-0.28125,Meta,Allen Institute for AI
+29,-1.703125,-0.201171875,Meta,DeepSeek
+29,-3.890625,-0.0205078125,Alibaba,OpenAI
+29,-0.1796875,-1.8046875,Alibaba,Anthropic
+29,-3.890625,-0.0205078125,Alibaba,Google
+29,-1.0546875,-0.427734375,Alibaba,Meta
+29,-0.69140625,-0.69140625,Alibaba,Allen Institute for AI
+29,-0.82421875,-0.57421875,Alibaba,DeepSeek
+29,-1.09375,-0.408203125,Allen Institute for AI,OpenAI
+29,-0.0888671875,-2.46875,Allen Institute for AI,Anthropic
+29,-1.6484375,-0.212890625,Allen Institute for AI,Google
+29,-0.498046875,-0.9375,Allen Institute for AI,Meta
+29,-0.0888671875,-2.46875,Allen Institute for AI,Alibaba
+29,-0.251953125,-1.5,Allen Institute for AI,DeepSeek
+29,-5.46875,-0.00421142578125,DeepSeek,OpenAI
+29,-0.6640625,-0.7265625,DeepSeek,Anthropic
+29,-4.8125,-0.00811767578125,DeepSeek,Google
+29,-3.890625,-0.0205078125,DeepSeek,Meta
+29,-1.9609375,-0.1513671875,DeepSeek,Alibaba
+29,-2.9375,-0.054931640625,DeepSeek,Allen Institute for AI
+30,-1.0013580322265625e-05,-11.5625,OpenAI,Anthropic
+30,-0.00029754638671875,-8.125,OpenAI,Google
+30,-5.7697296142578125e-05,-9.8125,OpenAI,Meta
+30,-1.1682510375976562e-05,-11.4375,OpenAI,Alibaba
+30,-8.58306884765625e-05,-9.375,OpenAI,Allen Institute for AI
+30,-2.288818359375e-05,-10.6875,OpenAI,DeepSeek
+30,-4.25,-0.01416015625,Anthropic,OpenAI
+30,-3.265625,-0.039306640625,Anthropic,Google
+30,-0.60546875,-0.79296875,Anthropic,Meta
+30,-0.212890625,-1.6484375,Anthropic,Alibaba
+30,-3.40625,-0.03369140625,Anthropic,Allen Institute for AI
+30,-0.57421875,-0.82421875,Anthropic,DeepSeek
+30,-2.875,-0.058349609375,Google,OpenAI
+30,-0.000194549560546875,-8.5625,Google,Anthropic
+30,-0.0011749267578125,-6.75,Google,Meta
+30,-4.76837158203125e-05,-9.9375,Google,Alibaba
+30,-0.11962890625,-2.1875,Google,Allen Institute for AI
+30,-0.0003147125244140625,-8.0625,Google,DeepSeek
+30,-0.474609375,-0.97265625,Meta,OpenAI
+30,-0.0247802734375,-3.71875,Meta,Anthropic
+30,-0.57421875,-0.82421875,Meta,Google
+30,-0.134765625,-2.078125,Meta,Alibaba
+30,-0.5234375,-0.8984375,Meta,Allen Institute for AI
+30,-0.045654296875,-3.109375,Meta,DeepSeek
+30,-0.330078125,-1.265625,Alibaba,OpenAI
+30,-0.00787353515625,-4.84375,Alibaba,Anthropic
+30,-0.498046875,-0.9375,Alibaba,Google
+30,-0.11279296875,-2.234375,Alibaba,Meta
+30,-0.251953125,-1.5,Alibaba,Allen Institute for AI
+30,-0.00946044921875,-4.65625,Alibaba,DeepSeek
+30,-0.142578125,-2.015625,Allen Institute for AI,OpenAI
+30,-0.00860595703125,-4.75,Allen Institute for AI,Anthropic
+30,-0.2255859375,-1.6015625,Allen Institute for AI,Google
+30,-0.036865234375,-3.3125,Allen Institute for AI,Meta
+30,-0.00110626220703125,-6.8125,Allen Institute for AI,Alibaba
+30,-0.01708984375,-4.09375,Allen Institute for AI,DeepSeek
+30,-3.4375,-0.03271484375,DeepSeek,OpenAI
+30,-0.23828125,-1.5546875,DeepSeek,Anthropic
+30,-1.3125,-0.3125,DeepSeek,Google
+30,-2.46875,-0.0888671875,DeepSeek,Meta
+30,-0.7578125,-0.6328125,DeepSeek,Alibaba
+30,-2.296875,-0.1064453125,DeepSeek,Allen Institute for AI
+31,-4.673004150390625e-05,-10.0,OpenAI,Anthropic
+31,-0.006927490234375,-4.96875,OpenAI,Google
+31,-0.000591278076171875,-7.4375,OpenAI,Meta
+31,-4.029273986816406e-05,-10.125,OpenAI,Alibaba
+31,-0.000278472900390625,-8.1875,OpenAI,Allen Institute for AI
+31,-0.0001544952392578125,-8.8125,OpenAI,DeepSeek
+31,-6.21875,-0.0019989013671875,Anthropic,OpenAI
+31,-6.59375,-0.00136566162109375,Anthropic,Google
+31,-2.578125,-0.0791015625,Anthropic,Meta
+31,-0.126953125,-2.125,Anthropic,Alibaba
+31,-3.046875,-0.048583984375,Anthropic,Allen Institute for AI
+31,-0.6640625,-0.7265625,Anthropic,DeepSeek
+31,-4.8125,-0.00811767578125,Google,OpenAI
+31,-0.0021820068359375,-6.125,Google,Anthropic
+31,-0.00408935546875,-5.5,Google,Meta
+31,-0.0003261566162109375,-8.0625,Google,Alibaba
+31,-0.3671875,-1.1796875,Google,Allen Institute for AI
+31,-0.00116729736328125,-6.75,Google,DeepSeek
+31,-2.34375,-0.10009765625,Meta,OpenAI
+31,-0.1513671875,-1.9609375,Meta,Anthropic
+31,-1.8046875,-0.1796875,Meta,Google
+31,-0.7265625,-0.6640625,Meta,Alibaba
+31,-1.0546875,-0.427734375,Meta,Allen Institute for AI
+31,-0.2255859375,-1.6015625,Meta,DeepSeek
+31,-1.40625,-0.28125,Alibaba,OpenAI
+31,-0.0888671875,-2.46875,Alibaba,Anthropic
+31,-2.40625,-0.09423828125,Alibaba,Google
+31,-0.82421875,-0.57421875,Alibaba,Meta
+31,-1.359375,-0.296875,Alibaba,Allen Institute for AI
+31,-0.1796875,-1.8046875,Alibaba,DeepSeek
+31,-0.5234375,-0.8984375,Allen Institute for AI,OpenAI
+31,-0.126953125,-2.125,Allen Institute for AI,Anthropic
+31,-0.9375,-0.498046875,Allen Institute for AI,Google
+31,-0.28125,-1.40625,Allen Institute for AI,Meta
+31,-0.04052734375,-3.234375,Allen Institute for AI,Alibaba
+31,-0.2255859375,-1.6015625,Allen Institute for AI,DeepSeek
+31,-4.96875,-0.006927490234375,DeepSeek,OpenAI
+31,-0.427734375,-1.0546875,DeepSeek,Anthropic
+31,-4.3125,-0.0133056640625,DeepSeek,Google
+31,-3.046875,-0.048583984375,DeepSeek,Meta
+31,-1.0546875,-0.427734375,DeepSeek,Alibaba
+31,-2.34375,-0.10009765625,DeepSeek,Allen Institute for AI
+32,-5.984306335449219e-05,-9.75,OpenAI,Anthropic
+32,-0.0380859375,-3.28125,OpenAI,Google
+32,-0.0022735595703125,-6.09375,OpenAI,Meta
+32,-4.0531158447265625e-05,-10.1875,OpenAI,Alibaba
+32,-0.0004119873046875,-7.8125,OpenAI,Allen Institute for AI
+32,-0.00015354156494140625,-8.8125,OpenAI,DeepSeek
+32,-9.9375,-5.173683166503906e-05,Anthropic,OpenAI
+32,-9.75,-6.341934204101562e-05,Anthropic,Google
+32,-3.65625,-0.0263671875,Anthropic,Meta
+32,-1.015625,-0.451171875,Anthropic,Alibaba
+32,-7.15625,-0.000782012939453125,Anthropic,Allen Institute for AI
+32,-3.28125,-0.0380859375,Anthropic,DeepSeek
+32,-6.78125,-0.00116729736328125,Google,OpenAI
+32,-0.04296875,-3.171875,Google,Anthropic
+32,-0.28125,-1.40625,Google,Meta
+32,-0.00714111328125,-4.9375,Google,Alibaba
+32,-1.265625,-0.330078125,Google,Allen Institute for AI
+32,-0.035888671875,-3.34375,Google,DeepSeek
+32,-2.578125,-0.0791015625,Meta,OpenAI
+32,-0.201171875,-1.703125,Meta,Anthropic
+32,-1.5546875,-0.23828125,Meta,Google
+32,-0.34765625,-1.2265625,Meta,Alibaba
+32,-1.8046875,-0.1796875,Meta,Allen Institute for AI
+32,-0.7265625,-0.6640625,Meta,DeepSeek
+32,-2.578125,-0.0791015625,Alibaba,OpenAI
+32,-0.11279296875,-2.234375,Alibaba,Anthropic
+32,-1.859375,-0.169921875,Alibaba,Google
+32,-0.55078125,-0.86328125,Alibaba,Meta
+32,-1.3125,-0.3125,Alibaba,Allen Institute for AI
+32,-0.251953125,-1.5,Alibaba,DeepSeek
+32,-0.69140625,-0.69140625,Allen Institute for AI,OpenAI
+32,-0.09423828125,-2.40625,Allen Institute for AI,Anthropic
+32,-1.8046875,-0.1796875,Allen Institute for AI,Google
+32,-0.34765625,-1.2265625,Allen Institute for AI,Meta
+32,-0.0186767578125,-3.984375,Allen Institute for AI,Alibaba
+32,-0.201171875,-1.703125,Allen Institute for AI,DeepSeek
+32,-9.0625,-0.0001239776611328125,DeepSeek,OpenAI
+32,-1.359375,-0.296875,DeepSeek,Anthropic
+32,-5.375,-0.004638671875,DeepSeek,Google
+32,-4.09375,-0.01708984375,DeepSeek,Meta
+32,-2.125,-0.126953125,DeepSeek,Alibaba
+32,-5.21875,-0.005401611328125,DeepSeek,Allen Institute for AI
+33,-1.2278556823730469e-05,-11.375,OpenAI,Anthropic
+33,-0.0002346038818359375,-8.375,OpenAI,Google
+33,-8.440017700195312e-05,-9.4375,OpenAI,Meta
+33,-1.0609626770019531e-05,-11.5625,OpenAI,Alibaba
+33,-8.726119995117188e-05,-9.375,OpenAI,Allen Institute for AI
+33,-4.839897155761719e-05,-10.0,OpenAI,DeepSeek
+33,-5.5,-0.00408935546875,Anthropic,OpenAI
+33,-1.8046875,-0.1796875,Anthropic,Google
+33,-4.34375,-0.012939453125,Anthropic,Meta
+33,-0.142578125,-2.015625,Anthropic,Alibaba
+33,-4.25,-0.01416015625,Anthropic,Allen Institute for AI
+33,-2.40625,-0.09423828125,Anthropic,DeepSeek
+33,-5.1875,-0.005584716796875,Google,OpenAI
+33,-0.000885009765625,-7.03125,Google,Anthropic
+33,-0.0013275146484375,-6.625,Google,Meta
+33,-3.504753112792969e-05,-10.25,Google,Alibaba
+33,-0.048583984375,-3.046875,Google,Allen Institute for AI
+33,-0.00070953369140625,-7.25,Google,DeepSeek
+33,-0.9375,-0.498046875,Meta,OpenAI
+33,-0.000972747802734375,-6.9375,Meta,Anthropic
+33,-0.11962890625,-2.1875,Meta,Google
+33,-0.0517578125,-2.984375,Meta,Alibaba
+33,-0.408203125,-1.09375,Meta,Allen Institute for AI
+33,-0.0791015625,-2.578125,Meta,DeepSeek
+33,-1.5546875,-0.23828125,Alibaba,OpenAI
+33,-0.0023345947265625,-6.0625,Alibaba,Anthropic
+33,-0.3125,-1.3125,Alibaba,Google
+33,-0.045654296875,-3.109375,Alibaba,Meta
+33,-0.212890625,-1.6484375,Alibaba,Allen Institute for AI
+33,-0.0166015625,-4.125,Alibaba,DeepSeek
+33,-0.251953125,-1.5,Allen Institute for AI,OpenAI
+33,-0.01373291015625,-4.28125,Allen Institute for AI,Anthropic
+33,-0.212890625,-1.6484375,Allen Institute for AI,Google
+33,-0.035888671875,-3.34375,Allen Institute for AI,Meta
+33,-0.000461578369140625,-7.6875,Allen Institute for AI,Alibaba
+33,-0.048583984375,-3.046875,Allen Institute for AI,DeepSeek
+33,-5.0,-0.0067138671875,DeepSeek,OpenAI
+33,-0.0218505859375,-3.828125,DeepSeek,Anthropic
+33,-0.69140625,-0.69140625,DeepSeek,Google
+33,-2.296875,-0.1064453125,DeepSeek,Meta
+33,-0.212890625,-1.6484375,DeepSeek,Alibaba
+33,-1.75,-0.1904296875,DeepSeek,Allen Institute for AI
+34,-1.6689300537109375e-05,-11.0625,OpenAI,Anthropic
+34,-0.06201171875,-2.8125,OpenAI,Google
+34,-0.00101470947265625,-6.90625,OpenAI,Meta
+34,-4.935264587402344e-05,-10.0,OpenAI,Alibaba
+34,-0.00037384033203125,-7.90625,OpenAI,Allen Institute for AI
+34,-7.724761962890625e-05,-9.5,OpenAI,DeepSeek
+34,-10.875,-2.2411346435546875e-05,Anthropic,OpenAI
+34,-7.8125,-0.000408172607421875,Anthropic,Google
+34,-2.40625,-0.09423828125,Anthropic,Meta
+34,-0.1513671875,-1.9609375,Anthropic,Alibaba
+34,-5.78125,-0.003082275390625,Anthropic,Allen Institute for AI
+34,-0.7265625,-0.6640625,Anthropic,DeepSeek
+34,-6.875,-0.00103759765625,Google,OpenAI
+34,-0.00408935546875,-5.5,Google,Anthropic
+34,-0.0233154296875,-3.765625,Google,Meta
+34,-0.00372314453125,-5.59375,Google,Alibaba
+34,-0.60546875,-0.79296875,Google,Allen Institute for AI
+34,-0.00128936767578125,-6.65625,Google,DeepSeek
+34,-4.53125,-0.0107421875,Meta,OpenAI
+34,-0.06591796875,-2.75,Meta,Anthropic
+34,-3.171875,-0.04296875,Meta,Google
+34,-0.6328125,-0.7578125,Meta,Alibaba
+34,-1.6484375,-0.212890625,Meta,Allen Institute for AI
+34,-0.474609375,-0.97265625,Meta,DeepSeek
+34,-3.046875,-0.048583984375,Alibaba,OpenAI
+34,-0.012939453125,-4.34375,Alibaba,Anthropic
+34,-3.375,-0.03466796875,Alibaba,Google
+34,-0.451171875,-1.015625,Alibaba,Meta
+34,-0.97265625,-0.474609375,Alibaba,Allen Institute for AI
+34,-0.06982421875,-2.6875,Alibaba,DeepSeek
+34,-0.9375,-0.498046875,Allen Institute for AI,OpenAI
+34,-0.0186767578125,-3.984375,Allen Institute for AI,Anthropic
+34,-1.453125,-0.265625,Allen Institute for AI,Google
+34,-0.265625,-1.453125,Allen Institute for AI,Meta
+34,-0.004638671875,-5.375,Allen Institute for AI,Alibaba
+34,-0.06591796875,-2.75,Allen Institute for AI,DeepSeek
+34,-9.0,-0.00013065338134765625,DeepSeek,OpenAI
+34,-0.498046875,-0.9375,DeepSeek,Anthropic
+34,-5.25,-0.0052490234375,DeepSeek,Google
+34,-3.109375,-0.045654296875,DeepSeek,Meta
+34,-1.6484375,-0.212890625,DeepSeek,Alibaba
+34,-4.96875,-0.006927490234375,DeepSeek,Allen Institute for AI
+35,-5.4836273193359375e-06,-12.125,OpenAI,Anthropic
+35,-0.00010824203491210938,-9.1875,OpenAI,Google
+35,-3.552436828613281e-05,-10.3125,OpenAI,Meta
+35,-2.6226043701171875e-06,-12.9375,OpenAI,Alibaba
+35,-9.202957153320312e-05,-9.3125,OpenAI,Allen Institute for AI
+35,-3.552436828613281e-05,-10.3125,OpenAI,DeepSeek
+35,-3.5625,-0.02880859375,Anthropic,OpenAI
+35,-1.09375,-0.408203125,Anthropic,Google
+35,-0.427734375,-1.0546875,Anthropic,Meta
+35,-0.1796875,-1.8046875,Anthropic,Alibaba
+35,-2.46875,-0.0888671875,Anthropic,Allen Institute for AI
+35,-0.69140625,-0.69140625,Anthropic,DeepSeek
+35,-1.9609375,-0.1513671875,Google,OpenAI
+35,-0.000732421875,-7.21875,Google,Anthropic
+35,-0.00170135498046875,-6.375,Google,Meta
+35,-3.0517578125e-05,-10.4375,Google,Alibaba
+35,-0.03369140625,-3.40625,Google,Allen Institute for AI
+35,-0.000446319580078125,-7.71875,Google,DeepSeek
+35,-0.28125,-1.40625,Meta,OpenAI
+35,-0.00714111328125,-4.9375,Meta,Anthropic
+35,-0.0380859375,-3.28125,Meta,Google
+35,-0.004913330078125,-5.3125,Meta,Alibaba
+35,-0.1904296875,-1.75,Meta,Allen Institute for AI
+35,-0.019287109375,-3.953125,Meta,DeepSeek
+35,-0.134765625,-2.078125,Alibaba,OpenAI
+35,-0.00433349609375,-5.4375,Alibaba,Anthropic
+35,-0.11279296875,-2.234375,Alibaba,Google
+35,-0.003082275390625,-5.78125,Alibaba,Meta
+35,-0.16015625,-1.9140625,Alibaba,Allen Institute for AI
+35,-0.007598876953125,-4.875,Alibaba,DeepSeek
+35,-0.1513671875,-1.9609375,Allen Institute for AI,OpenAI
+35,-0.00946044921875,-4.65625,Allen Institute for AI,Anthropic
+35,-0.0166015625,-4.125,Allen Institute for AI,Google
+35,-0.00592041015625,-5.125,Allen Institute for AI,Meta
+35,-0.0001373291015625,-8.9375,Allen Institute for AI,Alibaba
+35,-0.045654296875,-3.109375,Allen Institute for AI,DeepSeek
+35,-1.859375,-0.169921875,DeepSeek,OpenAI
+35,-0.16015625,-1.9140625,DeepSeek,Anthropic
+35,-0.126953125,-2.125,DeepSeek,Google
+35,-0.97265625,-0.474609375,DeepSeek,Meta
+35,-0.03369140625,-3.40625,DeepSeek,Alibaba
+35,-0.79296875,-0.60546875,DeepSeek,Allen Institute for AI
+36,-0.0002193450927734375,-8.4375,OpenAI,Anthropic
+36,-0.0888671875,-2.46875,OpenAI,Google
+36,-0.00384521484375,-5.5625,OpenAI,Meta
+36,-0.000186920166015625,-8.625,OpenAI,Alibaba
+36,-0.00225830078125,-6.09375,OpenAI,Allen Institute for AI
+36,-0.00083160400390625,-7.09375,OpenAI,DeepSeek
+36,-8.4375,-0.00021839141845703125,Anthropic,OpenAI
+36,-7.59375,-0.000507354736328125,Anthropic,Google
+36,-3.34375,-0.035888671875,Anthropic,Meta
+36,-1.453125,-0.265625,Anthropic,Alibaba
+36,-6.40625,-0.00165557861328125,Anthropic,Allen Institute for AI
+36,-2.8125,-0.06201171875,Anthropic,DeepSeek
+36,-4.09375,-0.01708984375,Google,OpenAI
+36,-0.023193359375,-3.765625,Google,Anthropic
+36,-0.2255859375,-1.6015625,Google,Meta
+36,-0.00408935546875,-5.5,Google,Alibaba
+36,-1.359375,-0.296875,Google,Allen Institute for AI
+36,-0.16015625,-1.9140625,Google,DeepSeek
+36,-2.296875,-0.1064453125,Meta,OpenAI
+36,-0.86328125,-0.55078125,Meta,Anthropic
+36,-1.6015625,-0.2255859375,Meta,Google
+36,-0.6640625,-0.7265625,Meta,Alibaba
+36,-2.015625,-0.142578125,Meta,Allen Institute for AI
+36,-1.40625,-0.28125,Meta,DeepSeek
+36,-1.75,-0.1904296875,Alibaba,OpenAI
+36,-0.474609375,-0.97265625,Alibaba,Anthropic
+36,-2.984375,-0.0517578125,Alibaba,Google
+36,-0.7578125,-0.6328125,Alibaba,Meta
+36,-1.453125,-0.265625,Alibaba,Allen Institute for AI
+36,-0.57421875,-0.82421875,Alibaba,DeepSeek
+36,-1.015625,-0.451171875,Allen Institute for AI,OpenAI
+36,-0.296875,-1.359375,Allen Institute for AI,Anthropic
+36,-1.5,-0.251953125,Allen Institute for AI,Google
+36,-0.427734375,-1.0546875,Allen Institute for AI,Meta
+36,-0.048583984375,-3.046875,Allen Institute for AI,Alibaba
+36,-0.5234375,-0.8984375,Allen Institute for AI,DeepSeek
+36,-6.71875,-0.00121307373046875,DeepSeek,OpenAI
+36,-1.859375,-0.169921875,DeepSeek,Anthropic
+36,-3.34375,-0.035888671875,DeepSeek,Google
+36,-2.984375,-0.0517578125,DeepSeek,Meta
+36,-1.6484375,-0.212890625,DeepSeek,Alibaba
+36,-3.859375,-0.021240234375,DeepSeek,Allen Institute for AI
+37,-1.633167266845703e-05,-11.0625,OpenAI,Anthropic
+37,-0.000553131103515625,-7.5,OpenAI,Google
+37,-0.00011682510375976562,-9.0625,OpenAI,Meta
+37,-1.7762184143066406e-05,-11.0,OpenAI,Alibaba
+37,-0.000537872314453125,-7.53125,OpenAI,Allen Institute for AI
+37,-0.00011682510375976562,-9.0625,OpenAI,DeepSeek
+37,-10.5625,-3.147125244140625e-05,Anthropic,OpenAI
+37,-10.8125,-2.181529998779297e-05,Anthropic,Google
+37,-5.1875,-0.005584716796875,Anthropic,Meta
+37,-1.5546875,-0.23828125,Anthropic,Alibaba
+37,-8.8125,-0.0001544952392578125,Anthropic,Allen Institute for AI
+37,-4.34375,-0.01287841796875,Anthropic,DeepSeek
+37,-9.4375,-8.153915405273438e-05,Google,OpenAI
+37,-0.006500244140625,-5.03125,Google,Anthropic
+37,-0.000286102294921875,-8.1875,Google,Meta
+37,-0.000347137451171875,-7.96875,Google,Alibaba
+37,-0.82421875,-0.57421875,Google,Allen Institute for AI
+37,-0.0038299560546875,-5.5625,Google,DeepSeek
+37,-3.5,-0.0306396484375,Meta,OpenAI
+37,-0.451171875,-1.015625,Meta,Anthropic
+37,-0.28125,-1.40625,Meta,Google
+37,-0.28125,-1.40625,Meta,Alibaba
+37,-2.46875,-0.0888671875,Meta,Allen Institute for AI
+37,-0.498046875,-0.9375,Meta,DeepSeek
+37,-3.234375,-0.04052734375,Alibaba,OpenAI
+37,-0.296875,-1.359375,Alibaba,Anthropic
+37,-0.7578125,-0.6328125,Alibaba,Google
+37,-0.2255859375,-1.6015625,Alibaba,Meta
+37,-2.40625,-0.09423828125,Alibaba,Allen Institute for AI
+37,-0.34765625,-1.2265625,Alibaba,DeepSeek
+37,-0.9375,-0.498046875,Allen Institute for AI,OpenAI
+37,-0.34765625,-1.2265625,Allen Institute for AI,Anthropic
+37,-1.359375,-0.296875,Allen Institute for AI,Google
+37,-0.38671875,-1.140625,Allen Institute for AI,Meta
+37,-0.054931640625,-2.9375,Allen Institute for AI,Alibaba
+37,-0.427734375,-1.0546875,Allen Institute for AI,DeepSeek
+37,-7.65625,-0.000484466552734375,DeepSeek,OpenAI
+37,-2.578125,-0.0791015625,DeepSeek,Anthropic
+37,-4.875,-0.007598876953125,DeepSeek,Google
+37,-5.4375,-0.00433349609375,DeepSeek,Meta
+37,-1.40625,-0.28125,DeepSeek,Alibaba
+37,-4.1875,-0.01507568359375,DeepSeek,Allen Institute for AI
+38,-2.014636993408203e-05,-10.875,OpenAI,Anthropic
+38,-0.000919342041015625,-7.0,OpenAI,Google
+38,-0.00012159347534179688,-9.0625,OpenAI,Meta
+38,-2.0623207092285156e-05,-10.8125,OpenAI,Alibaba
+38,-0.0003108978271484375,-8.125,OpenAI,Allen Institute for AI
+38,-0.00010919570922851562,-9.125,OpenAI,DeepSeek
+38,-0.28125,-1.40625,Anthropic,OpenAI
+38,-0.57421875,-0.82421875,Anthropic,Google
+38,-0.212890625,-1.6484375,Anthropic,Meta
+38,-0.0019989013671875,-6.21875,Anthropic,Alibaba
+38,-0.16015625,-1.9140625,Anthropic,Allen Institute for AI
+38,-0.201171875,-1.703125,Anthropic,DeepSeek
+38,-2.9375,-0.054931640625,Google,OpenAI
+38,-0.06982421875,-2.6875,Google,Anthropic
+38,-0.01507568359375,-4.1875,Google,Meta
+38,-0.0003643035888671875,-7.9375,Google,Alibaba
+38,-1.09375,-0.408203125,Google,Allen Institute for AI
+38,-0.251953125,-1.5,Google,DeepSeek
+38,-0.38671875,-1.140625,Meta,OpenAI
+38,-0.3125,-1.3125,Meta,Anthropic
+38,-0.38671875,-1.140625,Meta,Google
+38,-0.023193359375,-3.765625,Meta,Alibaba
+38,-0.55078125,-0.86328125,Meta,Allen Institute for AI
+38,-0.3125,-1.3125,Meta,DeepSeek
+38,-1.3125,-0.3125,Alibaba,OpenAI
+38,-0.126953125,-2.125,Alibaba,Anthropic
+38,-0.5234375,-0.8984375,Alibaba,Google
+38,-0.142578125,-2.015625,Alibaba,Meta
+38,-0.79296875,-0.60546875,Alibaba,Allen Institute for AI
+38,-0.07421875,-2.640625,Alibaba,DeepSeek
+38,-0.0888671875,-2.46875,Allen Institute for AI,OpenAI
+38,-0.006317138671875,-5.0625,Allen Institute for AI,Anthropic
+38,-0.083984375,-2.515625,Allen Institute for AI,Google
+38,-0.01177978515625,-4.4375,Allen Institute for AI,Meta
+38,-0.000690460205078125,-7.28125,Allen Institute for AI,Alibaba
+38,-0.01416015625,-4.25,Allen Institute for AI,DeepSeek
+38,-1.453125,-0.265625,DeepSeek,OpenAI
+38,-0.427734375,-1.0546875,DeepSeek,Anthropic
+38,-0.330078125,-1.265625,DeepSeek,Google
+38,-0.79296875,-0.60546875,DeepSeek,Meta
+38,-0.03369140625,-3.40625,DeepSeek,Alibaba
+38,-1.2265625,-0.34765625,DeepSeek,Allen Institute for AI
+39,-2.753734588623047e-05,-10.5625,OpenAI,Anthropic
+39,-0.00089263916015625,-7.03125,OpenAI,Google
+39,-8.440017700195312e-05,-9.4375,OpenAI,Meta
+39,-1.3470649719238281e-05,-11.3125,OpenAI,Alibaba
+39,-0.00013446807861328125,-8.9375,OpenAI,Allen Institute for AI
+39,-4.1484832763671875e-05,-10.125,OpenAI,DeepSeek
+39,-4.40625,-0.01214599609375,Anthropic,OpenAI
+39,-3.71875,-0.0247802734375,Anthropic,Google
+39,-1.453125,-0.265625,Anthropic,Meta
+39,-0.03173828125,-3.46875,Anthropic,Alibaba
+39,-2.125,-0.126953125,Anthropic,Allen Institute for AI
+39,-1.1796875,-0.3671875,Anthropic,DeepSeek
+39,-3.796875,-0.0225830078125,Google,OpenAI
+39,-0.000431060791015625,-7.75,Google,Anthropic
+39,-0.00193023681640625,-6.25,Google,Meta
+39,-3.0994415283203125e-05,-10.375,Google,Alibaba
+39,-0.0888671875,-2.46875,Google,Allen Institute for AI
+39,-0.000347137451171875,-7.96875,Google,DeepSeek
+39,-1.1796875,-0.3671875,Meta,OpenAI
+39,-0.11962890625,-2.1875,Meta,Anthropic
+39,-0.5234375,-0.8984375,Meta,Google
+39,-0.058349609375,-2.875,Meta,Alibaba
+39,-0.60546875,-0.79296875,Meta,Allen Institute for AI
+39,-0.142578125,-2.015625,Meta,DeepSeek
+39,-2.46875,-0.0888671875,Alibaba,OpenAI
+39,-0.0380859375,-3.28125,Alibaba,Anthropic
+39,-1.75,-0.1904296875,Alibaba,Google
+39,-0.201171875,-1.703125,Alibaba,Meta
+39,-0.6640625,-0.7265625,Alibaba,Allen Institute for AI
+39,-0.07421875,-2.640625,Alibaba,DeepSeek
+39,-0.3125,-1.3125,Allen Institute for AI,OpenAI
+39,-0.0159912109375,-4.15625,Allen Institute for AI,Anthropic
+39,-0.330078125,-1.265625,Allen Institute for AI,Google
+39,-0.0380859375,-3.28125,Allen Institute for AI,Meta
+39,-0.000690460205078125,-7.28125,Allen Institute for AI,Alibaba
+39,-0.035888671875,-3.34375,Allen Institute for AI,DeepSeek
+39,-4.96875,-0.006927490234375,DeepSeek,OpenAI
+39,-0.5234375,-0.8984375,DeepSeek,Anthropic
+39,-2.078125,-0.134765625,DeepSeek,Google
+39,-2.578125,-0.0791015625,DeepSeek,Meta
+39,-0.474609375,-0.97265625,DeepSeek,Alibaba
+39,-2.34375,-0.10009765625,DeepSeek,Allen Institute for AI
+40,-5.7220458984375e-05,-9.8125,OpenAI,Anthropic
+40,-0.03369140625,-3.40625,OpenAI,Google
+40,-0.0011444091796875,-6.78125,OpenAI,Meta
+40,-6.389617919921875e-05,-9.75,OpenAI,Alibaba
+40,-0.00086212158203125,-7.0625,OpenAI,Allen Institute for AI
+40,-0.00021266937255859375,-8.5,OpenAI,DeepSeek
+40,-9.875,-5.3882598876953125e-05,Anthropic,OpenAI
+40,-9.6875,-6.628036499023438e-05,Anthropic,Google
+40,-4.03125,-0.0181884765625,Anthropic,Meta
+40,-2.578125,-0.0791015625,Anthropic,Alibaba
+40,-7.375,-0.000629425048828125,Anthropic,Allen Institute for AI
+40,-3.265625,-0.039306640625,Anthropic,DeepSeek
+40,-5.1875,-0.005584716796875,Google,OpenAI
+40,-0.0159912109375,-4.15625,Google,Anthropic
+40,-0.0380859375,-3.28125,Google,Meta
+40,-0.00064849853515625,-7.34375,Google,Alibaba
+40,-1.2265625,-0.34765625,Google,Allen Institute for AI
+40,-0.00787353515625,-4.84375,Google,DeepSeek
+40,-3.171875,-0.04296875,Meta,OpenAI
+40,-0.498046875,-0.9375,Meta,Anthropic
+40,-2.578125,-0.0791015625,Meta,Google
+40,-0.79296875,-0.60546875,Meta,Alibaba
+40,-2.640625,-0.07421875,Meta,Allen Institute for AI
+40,-1.09375,-0.408203125,Meta,DeepSeek
+40,-2.40625,-0.09423828125,Alibaba,OpenAI
+40,-0.251953125,-1.5,Alibaba,Anthropic
+40,-3.4375,-0.03271484375,Alibaba,Google
+40,-0.7265625,-0.6640625,Alibaba,Meta
+40,-1.40625,-0.28125,Alibaba,Allen Institute for AI
+40,-0.34765625,-1.2265625,Alibaba,DeepSeek
+40,-1.0546875,-0.4296875,Allen Institute for AI,OpenAI
+40,-0.1796875,-1.8046875,Allen Institute for AI,Anthropic
+40,-1.453125,-0.265625,Allen Institute for AI,Google
+40,-0.38671875,-1.140625,Allen Institute for AI,Meta
+40,-0.0205078125,-3.890625,Allen Institute for AI,Alibaba
+40,-0.3671875,-1.1796875,Allen Institute for AI,DeepSeek
+40,-7.84375,-0.000408172607421875,DeepSeek,OpenAI
+40,-1.9609375,-0.1513671875,DeepSeek,Anthropic
+40,-4.9375,-0.00714111328125,DeepSeek,Google
+40,-4.5,-0.01104736328125,DeepSeek,Meta
+40,-3.109375,-0.045654296875,DeepSeek,Alibaba
+40,-4.9375,-0.00714111328125,DeepSeek,Allen Institute for AI
+41,-1.2040138244628906e-05,-11.375,OpenAI,Anthropic
+41,-0.000408172607421875,-7.8125,OpenAI,Google
+41,-7.677078247070312e-05,-9.5,OpenAI,Meta
+41,-1.9311904907226562e-05,-10.9375,OpenAI,Alibaba
+41,-5.316734313964844e-05,-9.875,OpenAI,Allen Institute for AI
+41,-3.266334533691406e-05,-10.375,OpenAI,DeepSeek
+41,-2.8125,-0.06201171875,Anthropic,OpenAI
+41,-1.703125,-0.201171875,Anthropic,Google
+41,-0.134765625,-2.078125,Anthropic,Meta
+41,-0.0218505859375,-3.828125,Anthropic,Alibaba
+41,-0.8984375,-0.5234375,Anthropic,Allen Institute for AI
+41,-0.1904296875,-1.75,Anthropic,DeepSeek
+41,-1.140625,-0.38671875,Google,OpenAI
+41,-0.00014209747314453125,-8.875,Google,Anthropic
+41,-0.00154876708984375,-6.46875,Google,Meta
+41,-7.295608520507812e-05,-9.5625,Google,Alibaba
+41,-0.0279541015625,-3.59375,Google,Allen Institute for AI
+41,-0.000156402587890625,-8.75,Google,DeepSeek
+41,-0.212890625,-1.6484375,Meta,OpenAI
+41,-0.00075531005859375,-7.1875,Meta,Anthropic
+41,-0.11962890625,-2.1875,Meta,Google
+41,-0.03173828125,-3.46875,Meta,Alibaba
+41,-0.11279296875,-2.234375,Meta,Allen Institute for AI
+41,-0.01177978515625,-4.4375,Meta,DeepSeek
+41,-0.3125,-1.3125,Alibaba,OpenAI
+41,-0.00299072265625,-5.8125,Alibaba,Anthropic
+41,-0.474609375,-0.97265625,Alibaba,Google
+41,-0.06201171875,-2.8125,Alibaba,Meta
+41,-0.11279296875,-2.234375,Alibaba,Allen Institute for AI
+41,-0.01416015625,-4.25,Alibaba,DeepSeek
+41,-0.054931640625,-2.9375,Allen Institute for AI,OpenAI
+41,-0.005950927734375,-5.125,Allen Institute for AI,Anthropic
+41,-0.0517578125,-2.984375,Allen Institute for AI,Google
+41,-0.0107421875,-4.53125,Allen Institute for AI,Meta
+41,-0.0008087158203125,-7.125,Allen Institute for AI,Alibaba
+41,-0.0159912109375,-4.15625,Allen Institute for AI,DeepSeek
+41,-3.046875,-0.048583984375,DeepSeek,OpenAI
+41,-0.0218505859375,-3.828125,DeepSeek,Anthropic
+41,-1.1796875,-0.3671875,DeepSeek,Google
+41,-1.2265625,-0.34765625,DeepSeek,Meta
+41,-0.212890625,-1.6484375,DeepSeek,Alibaba
+41,-0.7265625,-0.6640625,DeepSeek,Allen Institute for AI
+42,-1.8358230590820312e-05,-10.9375,OpenAI,Anthropic
+42,-0.000919342041015625,-7.0,OpenAI,Google
+42,-0.00011730194091796875,-9.0625,OpenAI,Meta
+42,-1.5974044799804688e-05,-11.125,OpenAI,Alibaba
+42,-7.343292236328125e-05,-9.5625,OpenAI,Allen Institute for AI
+42,-3.266334533691406e-05,-10.375,OpenAI,DeepSeek
+42,-1.2265625,-0.34765625,Anthropic,OpenAI
+42,-1.1796875,-0.3671875,Anthropic,Google
+42,-0.8984375,-0.5234375,Anthropic,Meta
+42,-0.01214599609375,-4.40625,Anthropic,Alibaba
+42,-0.97265625,-0.474609375,Anthropic,Allen Institute for AI
+42,-0.04052734375,-3.234375,Anthropic,DeepSeek
+42,-0.330078125,-1.265625,Google,OpenAI
+42,-0.00035858154296875,-7.9375,Google,Anthropic
+42,-0.000667572021484375,-7.3125,Google,Meta
+42,-0.0001201629638671875,-9.0625,Google,Alibaba
+42,-0.0057373046875,-5.15625,Google,Allen Institute for AI
+42,-6.151199340820312e-05,-9.6875,Google,DeepSeek
+42,-0.1513671875,-1.9609375,Meta,OpenAI
+42,-0.0247802734375,-3.71875,Meta,Anthropic
+42,-0.2255859375,-1.6015625,Meta,Google
+42,-0.07421875,-2.640625,Meta,Alibaba
+42,-0.330078125,-1.265625,Meta,Allen Institute for AI
+42,-0.00396728515625,-5.53125,Meta,DeepSeek
+42,-0.045654296875,-3.109375,Alibaba,OpenAI
+42,-0.00099945068359375,-6.90625,Alibaba,Anthropic
+42,-0.498046875,-0.9375,Alibaba,Google
+42,-0.01141357421875,-4.46875,Alibaba,Meta
+42,-0.11962890625,-2.1875,Alibaba,Allen Institute for AI
+42,-0.00145721435546875,-6.53125,Alibaba,DeepSeek
+42,-0.11279296875,-2.234375,Allen Institute for AI,OpenAI
+42,-0.0057373046875,-5.15625,Allen Institute for AI,Anthropic
+42,-0.035888671875,-3.34375,Allen Institute for AI,Google
+42,-0.01556396484375,-4.15625,Allen Institute for AI,Meta
+42,-0.00069427490234375,-7.28125,Allen Institute for AI,Alibaba
+42,-0.00592041015625,-5.125,Allen Institute for AI,DeepSeek
+42,-1.8046875,-0.1796875,DeepSeek,OpenAI
+42,-0.0791015625,-2.578125,DeepSeek,Anthropic
+42,-1.09375,-0.408203125,DeepSeek,Google
+42,-1.3125,-0.3125,DeepSeek,Meta
+42,-0.28125,-1.40625,DeepSeek,Alibaba
+42,-0.7265625,-0.6640625,DeepSeek,Allen Institute for AI

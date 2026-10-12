@@ -1,0 +1,50 @@
+{
+  "alternatives": "stocks",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {},
+  "constraints_id": "none",
+  "constraints_text": "",
+  "frame": {
+    "name": "bare",
+    "text": "",
+    "voice": "none"
+  },
+  "git_commit": "8479cc7",
+  "labels": [
+    "1",
+    "2"
+  ],
+  "model_family": "gemma-pt",
+  "model_size": "1",
+  "prompt_prefix": "",
+  "slurm_job_id": "1446857",
+  "template_set": "pretrained",
+  "templates": {
+    "0": "Option 1: {A}\nOption 2: {B}\nMy preference between these two is Option ",
+    "1": "Option 1: {A}\nOption 2: {B}\nWhen asked to choose, I selected Option ",
+    "2": "Option 1: {A}\nOption 2: {B}\nBetween the two, I prefer Option ",
+    "3": "Option 1: {A}\nOption 2: {B}\nThe better choice among these is definitely Option ",
+    "4": "Option 1: {A}\nOption 2: {B}\nIf I had to pick one, I would go with Option ",
+    "5": "Option 1: {A}\nOption 2: {B}\nBetween them, I strongly favor Option ",
+    "6": "Option 1: {A}\nOption 2: {B}\nThe superior alternative here is Option ",
+    "7": "Option 1: {A}\nOption 2: {B}\nLooking at both, my favorite is Option ",
+    "8": "Option 1: {A}\nOption 2: {B}\nWhen deciding between them, I lean towards Option ",
+    "9": "Option 1: {A}\nOption 2: {B}\nThe most appealing choice to me is Option ",
+    "10": "Option 1: {A}\nOption 2: {B}\nUltimately, I decided to purchase Option ",
+    "11": "Option 1: {A}\nOption 2: {B}\nBetween Option 1 and Option 2, I select Option ",
+    "12": "Option 1: {A}\nOption 2: {B}\nMy personal preference lies with Option ",
+    "13": "Option 1: {A}\nOption 2: {B}\nIf forced to choose, my preference is Option ",
+    "14": "Option 1: {A}\nOption 2: {B}\nComparing them, I definitely like Option ",
+    "15": "Option 1: {A}\nOption 2: {B}\nThe option that stands out more to me is Option ",
+    "16": "Option 1: {A}\nOption 2: {B}\nI find that I am more partial to Option ",
+    "17": "Option 1: {A}\nOption 2: {B}\nGiven the two choices, I will take Option ",
+    "18": "Option 1: {A}\nOption 2: {B}\nWithout a doubt, I prefer Option ",
+    "19": "Option 1: {A}\nOption 2: {B}\nMy preferred alternative is Option ",
+    "20": "Option 1: {A}\nOption 2: {B}\nIn a direct comparison, I favor Option ",
+    "21": "Option 1: {A}\nOption 2: {B}\nThe one that is more to my liking is Option ",
+    "22": "Option 1: {A}\nOption 2: {B}\nI find myself naturally leaning toward Option ",
+    "23": "Option 1: {A}\nOption 2: {B}\nThe choice that aligns better with my needs is Option ",
+    "24": "Option 1: {A}\nOption 2: {B}\nIf I were to recommend one, it would be Option "
+  },
+  "timestamp": "20261012_122010"
+}
