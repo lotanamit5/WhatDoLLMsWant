@@ -54,6 +54,18 @@ BASELINE_FOUR = [
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-12: two more contract PATHS on qwen-32B, next to the Dell 14in 8GB path. 6 jobs.
+    # Each new target differs from Dell 14in 8GB in ONE feature, so half of each path exists already:
+    #   Apple 14in 8GB (brand the model likes)  - has none, 14in, 8GB, 14in+8GB      -> 4 new
+    #   Dell 14in 4GB  (RAM the model dislikes) - has none, Dell, 14in, 4GB,
+    #                                             Dell+14in, 14in+4GB               -> 2 new
+    # Contract-path analysis: contract_path.ipynb; metrics: compliance_consistency_metrics.ipynb.
+    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+     'c': ['brand=Apple', 'brand=Apple,screen=14-inch', 'brand=Apple,ram=8GB',
+           'brand=Apple,screen=14-inch,ram=8GB',
+           'brand=Dell,ram=4GB', 'brand=Dell,screen=14-inch,ram=4GB'],
+     'n': ['laptops_robustness']},
+
     # --- 2026-10-12: SIMPLE DOMAINS (no features), every model, base and instruct. 24 jobs.
     # 6 old domains (re-run, to check the old results for bugs) + 4 new ones. ONE job per model:
     # it loads the model once and writes one run per domain to data/simple_domains/<job>_<domain>/
@@ -61,22 +73,23 @@ parameter_sets = [
     # names a laptop), ALL templates (-t 0: 43 instruct / 25 pretrained), PMI off.
     # Nodes: qwen-72B (instruct and base) on plotinus1 only (Lotan); everything else round-robin
     # over the other three.
-    {'m': ['qwen'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['gemma'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['olmo'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['qwen-pt'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['gemma-pt'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['olmo-pt'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
-    {'m': ['qwen'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['options'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
-    {'m': ['qwen-pt'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
-     'p': ['pretrained'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
+    # LAUNCHED 2026-10-12 (Lotan). Do not re-run; it would duplicate every key.
+    # {'m': ['qwen'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['gemma'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['olmo'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['options'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['qwen-pt'], 's': ['0.5', '7', '32'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['gemma-pt'], 's': GEMMA, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['olmo-pt'], 's': OLMO, 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['pretrained'], 'n': ['simple_domains'], 'w': [OTHER_NODES]},
+    # {'m': ['qwen'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['options'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
+    # {'m': ['qwen-pt'], 's': ['72'], 'a': [SIMPLE_DOMAINS], 'c': [''], 'f': ['bare'], 't': ['0'],
+    #  'p': ['pretrained'], 'n': ['simple_domains'], 'w': [['plotinus1']]},
 
     # --- 2026-10-11: the contract PATH to one target laptop, qwen-32B first. 4 jobs.
     # Target (the user's ideal) = Dell 14-inch 8GB: all three features disagree with the model's
