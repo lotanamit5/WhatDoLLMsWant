@@ -1,0 +1,140 @@
+family,variant,size_B,before_brand,before_screen,before_ram,after_brand,after_screen,after_ram,contract_before,contract_after,new_feature,new_level,consistency_inner,n_inner,consistency_outer,n_outer
+gemma,aligned,1.0000,,,,,13,,default,"13""",screen,13,0.9857,15,0.9849,30
+gemma,aligned,1.0000,,,,,14,,default,"14""",screen,14,0.9929,15,0.9938,30
+gemma,aligned,1.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9607,15,0.9706,30
+gemma,aligned,1.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9893,15,0.9764,30
+gemma,aligned,1.0000,,,,,16,,default,"16""",screen,16,0.9857,15,0.9929,30
+gemma,aligned,1.0000,,,,,,16,default,16GB,ram,16,0.9071,15,0.9475,30
+gemma,aligned,1.0000,,,,,,4,default,4GB,ram,4,0.9214,15,0.9555,30
+gemma,aligned,1.0000,,,,,,8,default,8GB,ram,8,0.8714,15,0.9533,30
+gemma,aligned,4.0000,,,,,13,,default,"13""",screen,13,0.9857,15,0.8857,30
+gemma,aligned,4.0000,,,,,14,,default,"14""",screen,14,0.9500,15,0.9800,30
+gemma,aligned,4.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9643,15,0.9555,30
+gemma,aligned,4.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9714,15,0.8923,30
+gemma,aligned,4.0000,,,,,16,,default,"16""",screen,16,0.9607,15,0.9101,30
+gemma,aligned,4.0000,,,,,,16,default,16GB,ram,16,0.9714,15,0.9319,30
+gemma,aligned,4.0000,,,,,,4,default,4GB,ram,4,0.5607,15,-0.6338,30
+gemma,aligned,4.0000,,,,,,8,default,8GB,ram,8,0.8464,15,0.8750,30
+gemma,aligned,12.0000,,,,,13,,default,"13""",screen,13,0.9893,15,0.6156,30
+gemma,aligned,12.0000,,,,,14,,default,"14""",screen,14,0.9036,15,0.6534,30
+gemma,aligned,12.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9714,15,0.9301,30
+gemma,aligned,12.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9929,15,0.9809,30
+gemma,aligned,12.0000,,,,,16,,default,"16""",screen,16,0.9393,15,0.9626,30
+gemma,aligned,12.0000,,,,,,16,default,16GB,ram,16,0.9214,15,0.7780,30
+gemma,aligned,12.0000,,,,,,4,default,4GB,ram,4,-0.6964,15,-0.8180,30
+gemma,aligned,12.0000,,,,,,8,default,8GB,ram,8,-0.3393,15,0.7464,30
+gemma,aligned,27.0000,,,,,13,,default,"13""",screen,13,0.9821,15,0.2516,30
+gemma,aligned,27.0000,,,,,14,,default,"14""",screen,14,0.9500,15,0.3882,30
+gemma,aligned,27.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9893,15,0.9853,30
+gemma,aligned,27.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9679,15,0.6908,30
+gemma,aligned,27.0000,,,,,16,,default,"16""",screen,16,0.9393,15,0.8358,30
+gemma,aligned,27.0000,,,,,,16,default,16GB,ram,16,0.9429,15,0.8638,30
+gemma,aligned,27.0000,,,,,,4,default,4GB,ram,4,-0.5429,15,-0.9012,30
+gemma,aligned,27.0000,,,,,,8,default,8GB,ram,8,0.4214,15,0.8598,30
+olmo,aligned,1.0000,,,,,14,,default,"14""",screen,14,0.9964,15,0.9795,30
+olmo,aligned,1.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9429,15,0.9720,30
+olmo,aligned,1.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9893,15,0.7642,30
+olmo,aligned,1.0000,,,,,,8,default,8GB,ram,8,0.7643,15,0.9782,30
+olmo,aligned,7.0000,,,,,14,,default,"14""",screen,14,0.9893,15,0.7713,30
+olmo,aligned,7.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9500,15,0.9644,30
+olmo,aligned,7.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9857,15,0.9564,30
+olmo,aligned,7.0000,,,,,,8,default,8GB,ram,8,0.3143,15,0.8892,30
+olmo,aligned,13.0000,,,,,14,,default,"14""",screen,14,0.9929,15,0.9471,30
+olmo,aligned,13.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9821,15,0.9875,30
+olmo,aligned,13.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9607,15,0.9123,30
+olmo,aligned,13.0000,,,,,,8,default,8GB,ram,8,0.9536,15,0.9720,30
+olmo,aligned,32.0000,,,,,14,,default,"14""",screen,14,0.9786,15,0.6676,30
+olmo,aligned,32.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9786,15,0.9773,30
+olmo,aligned,32.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9714,15,0.9577,30
+olmo,aligned,32.0000,,,,,,8,default,8GB,ram,8,0.2821,15,0.7451,30
+qwen,aligned,0.5000,,,,,13,,default,"13""",screen,13,0.9750,15,0.7517,30
+qwen,aligned,0.5000,,,,,14,,default,"14""",screen,14,0.9571,15,0.9043,30
+qwen,aligned,0.5000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9250,15,0.9253,30
+qwen,aligned,0.5000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9643,15,0.8483,30
+qwen,aligned,0.5000,,,,,16,,default,"16""",screen,16,0.8321,15,0.8189,30
+qwen,aligned,0.5000,,,,,,16,default,16GB,ram,16,0.8464,15,0.6325,30
+qwen,aligned,0.5000,,,,,,4,default,4GB,ram,4,0.8821,15,0.6089,30
+qwen,aligned,0.5000,,,,,,8,default,8GB,ram,8,0.8643,15,0.7806,30
+qwen,aligned,7.0000,,,,,13,,default,"13""",screen,13,0.8857,15,0.6454,30
+qwen,aligned,7.0000,,,,,14,,default,"14""",screen,14,0.9036,15,0.9003,30
+qwen,aligned,7.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.6179,15,0.9533,30
+qwen,aligned,7.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.8929,15,0.8127,30
+qwen,aligned,7.0000,,,,,16,,default,"16""",screen,16,0.9536,15,0.9657,30
+qwen,aligned,7.0000,,,,,,16,default,16GB,ram,16,0.9750,15,0.9671,30
+qwen,aligned,7.0000,,,,,,4,default,4GB,ram,4,-0.8786,15,-0.8874,30
+qwen,aligned,7.0000,,,,,,8,default,8GB,ram,8,-0.6036,15,0.6863,30
+qwen,aligned,32.0000,,,,,13,,default,"13""",screen,13,0.9964,15,0.6036,30
+qwen,aligned,32.0000,,,,,14,,default,"14""",screen,14,0.9607,15,0.7535,30
+qwen,aligned,32.0000,,14,,,14,4,"14""","14"" + 4GB",ram,4,0.9821,15,0.8300,30
+qwen,aligned,32.0000,,,4,,14,4,4GB,"14"" + 4GB",screen,14,0.3964,15,0.8291,30
+qwen,aligned,32.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9643,15,0.9822,30
+qwen,aligned,32.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9571,15,0.6850,30
+qwen,aligned,32.0000,,,,,16,,default,"16""",screen,16,0.9929,15,0.9804,30
+qwen,aligned,32.0000,,,,,,16,default,16GB,ram,16,0.9536,15,0.8799,30
+qwen,aligned,32.0000,,,,,,4,default,4GB,ram,4,-0.6321,15,-0.8136,30
+qwen,aligned,32.0000,,,,,,8,default,8GB,ram,8,0.8214,15,0.8429,30
+qwen,aligned,32.0000,,,,Dell,,,default,Dell,brand,Dell,0.9333,9,0.9529,36
+qwen,aligned,32.0000,,14,,Dell,14,,"14""","Dell + 14""",brand,Dell,0.9667,9,0.9647,36
+qwen,aligned,32.0000,Dell,,,Dell,14,,Dell,"Dell + 14""",screen,14,0.9893,15,0.9039,30
+qwen,aligned,32.0000,,14,8,Dell,14,8,"14"" + 8GB","Dell + 14"" + 8GB",brand,Dell,0.9500,9,0.9601,36
+qwen,aligned,32.0000,Dell,14,,Dell,14,8,"Dell + 14""","Dell + 14"" + 8GB",ram,8,0.9893,15,0.9693,30
+qwen,aligned,32.0000,Dell,,8,Dell,14,8,Dell + 8GB,"Dell + 14"" + 8GB",screen,14,0.9750,15,0.8376,30
+qwen,aligned,32.0000,,,8,Dell,,8,8GB,Dell + 8GB,brand,Dell,0.9667,9,0.8844,36
+qwen,aligned,32.0000,Dell,,,Dell,,8,Dell,Dell + 8GB,ram,8,0.8679,15,0.8870,30
+qwen,aligned,72.0000,,,,,13,,default,"13""",screen,13,0.9714,15,0.6062,30
+qwen,aligned,72.0000,,,,,14,,default,"14""",screen,14,0.8893,15,0.8234,30
+qwen,aligned,72.0000,,14,,,14,4,"14""","14"" + 4GB",ram,4,0.9571,15,0.6574,30
+qwen,aligned,72.0000,,,4,,14,4,4GB,"14"" + 4GB",screen,14,0.8250,15,0.5929,30
+qwen,aligned,72.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9607,15,0.9755,30
+qwen,aligned,72.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9964,15,0.8403,30
+qwen,aligned,72.0000,,,,,16,,default,"16""",screen,16,0.9286,15,0.9675,30
+qwen,aligned,72.0000,,,,,,16,default,16GB,ram,16,0.9107,15,0.9110,30
+qwen,aligned,72.0000,,,,,,4,default,4GB,ram,4,-0.6286,15,-0.9075,30
+qwen,aligned,72.0000,,,,,,8,default,8GB,ram,8,-0.2429,15,0.7482,30
+qwen,aligned,72.0000,,,,Dell,,,default,Dell,brand,Dell,0.9667,9,0.8587,36
+qwen,aligned,72.0000,,,8,Dell,,8,8GB,Dell + 8GB,brand,Dell,0.9667,9,0.9815,36
+qwen,aligned,72.0000,Dell,,,Dell,,8,Dell,Dell + 8GB,ram,8,0.9071,15,0.9720,30
+gemma,pretrained,1.0000,,,,,14,,default,"14""",screen,14,0.8821,15,0.8598,30
+gemma,pretrained,1.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.8143,15,0.7717,30
+gemma,pretrained,1.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.6250,15,0.4358,30
+gemma,pretrained,1.0000,,,,,,8,default,8GB,ram,8,0.3107,15,0.2534,30
+gemma,pretrained,4.0000,,,,,14,,default,"14""",screen,14,0.8143,15,0.8848,30
+gemma,pretrained,4.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.7500,15,0.9720,30
+gemma,pretrained,4.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9321,15,0.9043,30
+gemma,pretrained,4.0000,,,,,,8,default,8GB,ram,8,-0.2286,15,0.7900,30
+gemma,pretrained,12.0000,,,,,14,,default,"14""",screen,14,0.3536,15,0.2614,30
+gemma,pretrained,12.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.8214,15,0.4576,30
+gemma,pretrained,12.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.1821,15,0.0118,30
+gemma,pretrained,12.0000,,,,,,8,default,8GB,ram,8,0.3143,15,0.5844,30
+gemma,pretrained,27.0000,,,,,14,,default,"14""",screen,14,0.6679,15,0.2654,30
+gemma,pretrained,27.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9000,15,0.6125,30
+gemma,pretrained,27.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.7107,15,0.8581,30
+gemma,pretrained,27.0000,,,,,,8,default,8GB,ram,8,0.5321,15,0.4349,30
+olmo,pretrained,1.0000,,,,,14,,default,"14""",screen,14,0.9143,15,0.8736,30
+olmo,pretrained,1.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.8857,15,0.9640,30
+olmo,pretrained,1.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9821,15,0.9386,30
+olmo,pretrained,1.0000,,,,,,8,default,8GB,ram,8,0.7321,15,0.9666,30
+olmo,pretrained,7.0000,,,,,14,,default,"14""",screen,14,0.9786,15,0.9373,30
+olmo,pretrained,7.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9714,15,0.9813,30
+olmo,pretrained,7.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9857,15,0.9648,30
+olmo,pretrained,7.0000,,,,,,8,default,8GB,ram,8,0.4714,15,0.9560,30
+olmo,pretrained,13.0000,,,,,14,,default,"14""",screen,14,0.9714,15,0.9853,30
+olmo,pretrained,13.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9964,15,0.9938,30
+olmo,pretrained,13.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9500,15,0.9528,30
+olmo,pretrained,13.0000,,,,,,8,default,8GB,ram,8,0.7964,15,0.9359,30
+olmo,pretrained,32.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.7143,15,0.5902,30
+olmo,pretrained,32.0000,,,,,,8,default,8GB,ram,8,0.8357,15,0.9528,30
+qwen,pretrained,0.5000,,,,,14,,default,"14""",screen,14,0.9821,15,0.9791,30
+qwen,pretrained,0.5000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9714,15,0.9586,30
+qwen,pretrained,0.5000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.7821,15,0.8180,30
+qwen,pretrained,0.5000,,,,,,8,default,8GB,ram,8,0.7286,15,0.9208,30
+qwen,pretrained,7.0000,,,,,14,,default,"14""",screen,14,0.9714,15,0.9551,30
+qwen,pretrained,7.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.8536,15,0.9715,30
+qwen,pretrained,7.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9500,15,0.9168,30
+qwen,pretrained,7.0000,,,,,,8,default,8GB,ram,8,-0.0571,15,0.9204,30
+qwen,pretrained,32.0000,,,,,14,,default,"14""",screen,14,0.9536,15,0.9070,30
+qwen,pretrained,32.0000,,14,,,14,8,"14""","14"" + 8GB",ram,8,0.9929,15,0.9991,30
+qwen,pretrained,32.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9750,15,0.6098,30
+qwen,pretrained,32.0000,,,,,,8,default,8GB,ram,8,0.3821,15,0.9239,30
+qwen,pretrained,72.0000,,,8,,14,8,8GB,"14"" + 8GB",screen,14,0.9929,15,0.7904,30
+qwen,pretrained,72.0000,,,,,,8,default,8GB,ram,8,0.3321,15,0.9057,30
