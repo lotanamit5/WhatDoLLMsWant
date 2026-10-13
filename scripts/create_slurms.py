@@ -57,7 +57,22 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-10-13: RERUN, 2 jobs. From squeue at 10:50 on 10-13:
+    #   1447467 olmo-32B fantasy   RUNNING on plato2 (1:46)  -> NOT rerun, it was mid-run when pushed
+    #   1447469 olmo-32B romance   PENDING (Resources)       -> NOT rerun, it is queued
+    #   1447457 qwen-32B fantasy   RUNNING on plato2 for 11:54 and still no config.json, where a 32B
+    #                              books run takes ~1.5 h -> hung. scancel it FIRST, then rerun here.
+    #   1447251 qwen-32B Dell 14in 4GB (laptops) not in the queue and not on disk -> died; rerun.
+    # plato2 is ReqNodeNotAvail, so neither goes there.
+    {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+     'c': ['fantasy=yes'], 'w': [['plato1']]},
+    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+     'c': ['brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness'], 'w': [['plotinus1']]},
+
     # --- 2026-10-12 NIGHT: BOOKS, full 48 books, 4 big models x (none + 4 tag contracts). 20 jobs.
+    # DONE 2026-10-13: 17 of 20 landed (jobs 1447451-1447470, 11,280 rows each). Not landed yet: olmo-32B
+    # fantasy (1447467, running) and romance (1447469, queued); qwen-32B fantasy (1447457, hung) is
+    # rerun above. Do not re-run this block.
     # 48 famous Goodreads books, prompt = "<title> by <author> (<year>)", 8 hidden genre tags
     # (src/books/books.csv). Frame `reading`. 48 x 47 x 5 templates = 11,280 rows per run.
     # Contracts, chosen from the pilot (qwen-7B, progress.md 2026-10-12): the model's ranking follows
@@ -73,14 +88,14 @@ parameter_sets = [
     # Nodes (Lotan, night of 10-12): plotinus2 is down. Every qwen-72B job on plotinus1 (5 x 72B is
     # about a night on its own); the other 15 split over plato1 / plato2. `none` first in every set,
     # so each model's baseline lands before its contracts.
-    {'m': ['qwen'], 's': ['72'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': BOOK_CONTRACTS, 'w': [['plotinus1']]},
-    {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
-    {'m': ['gemma'], 's': ['27'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
-    {'m': ['olmo'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
+    # {'m': ['qwen'], 's': ['72'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': BOOK_CONTRACTS, 'w': [['plotinus1']]},
+    # {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
+    # {'m': ['gemma'], 's': ['27'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
+    # {'m': ['olmo'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': BOOK_CONTRACTS, 'w': [['plato1', 'plato2']]},
 
     # --- 2026-10-12: BOOKS PILOT. qwen-7B, 14 books (2 most famous per tag), none + fantasy=yes.
     # DONE 2026-10-12: landed as jobs 1447314 / 1447317 (910 rows each), analysed in
