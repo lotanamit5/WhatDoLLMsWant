@@ -57,20 +57,22 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
-    # --- 2026-10-13: RERUN, 3 jobs. From squeue at 10:50 on 10-13:
+    # --- 2026-10-13: RERUN, 3 jobs. Launched. LANDED: qwen-32B books fantasy (1447757), qwen-32B Dell
+    # 14in 4GB (1447759). olmo-32B books romance is RUNNING as 1447796 (config only in git). Do not re-run.
+    # --- From squeue at 10:50 on 10-13:
     #   1447467 olmo-32B fantasy   RUNNING on plato2 (1:46)  -> NOT rerun, it was mid-run when pushed
     #   1447469 olmo-32B romance   PENDING (Resources)       -> cancelled by Lotan, rerun here on plato1
     #   1447457 qwen-32B fantasy   RUNNING on plato2 for 11:54 and still no config.json, where a 32B
     #                              books run takes ~1.5 h -> hung. scancel it FIRST, then rerun here.
     #   1447251 qwen-32B Dell 14in 4GB (laptops) not in the queue and not on disk -> died; rerun.
     # plato2 is ReqNodeNotAvail, so neither goes there.
-    {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': ['fantasy=yes'], 'w': [['plato1']]},
+    # {'m': ['qwen'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': ['fantasy=yes'], 'w': [['plato1']]},
     # 1447469 (olmo-32B romance) was cancelled by Lotan while still pending; moved here, plato1.
-    {'m': ['olmo'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
-     'c': ['romance=yes'], 'w': [['plato1']]},
-    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
-     'c': ['brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness'], 'w': [['plotinus1']]},
+    # {'m': ['olmo'], 's': ['32'], 'a': ['books'], 'f': ['reading'], 'n': ['books'],
+    #  'c': ['romance=yes'], 'w': [['plato1']]},
+    # {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness'], 'w': [['plotinus1']]},
 
     # --- 2026-10-12 NIGHT: BOOKS, full 48 books, 4 big models x (none + 4 tag contracts). 20 jobs.
     # DONE 2026-10-13: 17 of 20 landed (jobs 1447451-1447470, 11,280 rows each). Not landed yet: olmo-32B
