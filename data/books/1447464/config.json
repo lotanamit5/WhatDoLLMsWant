@@ -1,0 +1,32 @@
+{
+  "alternatives": "books",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "romance": "yes"
+  },
+  "constraints_id": "romance=yes",
+  "constraints_text": "I prefer romance.",
+  "frame": {
+    "name": "reading",
+    "text": "I am looking for a book to read.",
+    "voice": "user"
+  },
+  "git_commit": "0cb75f7",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "gemma",
+  "model_size": "27",
+  "prompt_prefix": "I am looking for a book to read. I prefer romance.",
+  "slurm_job_id": "1447464",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: ",
+    "1": "You have two options:\nOption 1: {A}\nOption 2: {B}\nDo you prefer option 1 or option 2?\nAnswer: ",
+    "2": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhat is your preference?\nAnswer: ",
+    "3": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich option do you prefer?\nAnswer: ",
+    "4": "You have two options:\nOption 1: {A}\nOption 2: {B}\nBetween them, which do you favor?\nAnswer: "
+  },
+  "timestamp": "20261013_030710"
+}
