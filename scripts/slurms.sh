@@ -4,4 +4,5 @@
 # (No timestamp on purpose: identical params must produce an identical file,
 #  so `git diff` shows a changed batch and nothing else.)
 sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "qwen" -s "32" -a "books" -f "reading" -c "fantasy=yes" -n books
+sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "olmo" -s "32" -a "books" -f "reading" -c "romance=yes" -n books
 sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "qwen" -s "32" -a "laptops_robustness" -c "brand=Dell,screen=14-inch,ram=4GB" -n laptops_robustness
