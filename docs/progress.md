@@ -8,6 +8,48 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-01 — Books vs laptops: the same figures, two domains
+
+[books_vs_laptops.ipynb](../Notebooks/books_vs_laptops.ipynb), figures in `figs/books_vs_laptops/` (G1–G5). Same 4
+instruct models (qwen-32B, qwen-72B, gemma-27B, olmo-32B); laptops `none`/`14-inch`/`8GB` (shopping), books `none`
++ 4 tag contracts (reading). Rank = position-corrected Borda in both; γ and saturation PMI-corrected per run.
+
+| no contract | laptops | books |
+|---|---|---|
+| features explain the item utility (R²) | 0.996–0.998 | 0.26–0.39 |
+| sharpness (mean tanh(\|D\|/2)) | 0.74–0.98 | 0.33–0.88 |
+| template agreement (ρ) | 0.993–0.999 | 0.968–0.988 |
+| 4 models agree (mean ρ) | 0.97 | 0.71 |
+| γ (slot 1 − slot 2) | −0.9 … −4.7 | +0.3 … +6.4 |
+| slot decides (same slot wins both orders) | 7–21% | 31–67% |
+
+| contract | laptops | books |
+|---|---|---|
+| obeyed (mixed pairs won) | 89–100% | 93–100% |
+| old order kept INSIDE (ρ) | `14-inch` 0.89–0.98; `8GB` −0.24 … 0.82 | `fantasy` 0.52–0.87; others −0.36 … 0.36 |
+| old order kept OUTSIDE (ρ) | 0.39–0.86 | −0.28 … 0.69 (`romance` < 0 in 4/4) |
+
+- **Laptops: the contract is a filter, the model fills it with its own taste. Books: the contract replaces the
+  taste.** The main conjecture holds in its clean form only on laptops.
+- **The `8GB` exception is Apple decay + screen.** Inside the 8GB laptops the default order is set by 16-inch and
+  Apple; under `8GB` both vanish (qwen-72B: 16-inch +2.1 → −0.1, Apple +1.9 → −1.7) and the 15 laptops bunch up
+  (10.5–14.9), so they reorder. RAM itself is untouched.
+- **Under a contract the books become more "by genre"**: feature R² 0.26–0.39 → 0.60–0.92.
+- **γ flips sign between domains in all 4 models** (option 2 on laptops, option 1 on books). In qwen-32B books
+  γ 6.4 > typical |D| 4.2, so 67% of single book queries are decided by the order. D removes it from every analysis.
+
+---
+
+## 2026-11-01 — books_48 notebook: data section, tables → figures
+
+[books_48.ipynb](../Notebooks/books_48.ipynb) now opens with the data (features, tag rule, prompt, contract
+sentences) and shows every result as a figure + bullets (S1, F0–F4b in `figs/books/`; old F2/F3 renamed F3a/F4b).
+No analysis changed. **One correction to 2026-10-13:** under `romance`, Twilight is not the book that rises
+most — Fifty Shades rises more (+33.6 vs +29.1, mean over models). Twilight is the biggest riser among
+**untagged** books.
+
+---
+
 ## 2026-10-12 — Simple domains landed (240 runs) and analysed; qwen-72B Dell path complete
 
 **Simple domains.** [simple_domains.ipynb](../Notebooks/simple_domains.ipynb), all 240 runs complete

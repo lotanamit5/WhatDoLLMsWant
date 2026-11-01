@@ -216,6 +216,11 @@ all 6 Apple/Dell path runs are in.
 olmo-32B `none` is quiet (winner saturated 8% vs 74–85% under its contracts, margin SD 1.3 vs 6–8)
 but stable (template agreement 0.97) and content-driven: a real low-confidence default, not a bug.
 List: `src/books/books.csv`, built by `src/books/make_books.py`.
+**Books vs laptops (2026-11-01):** [books_vs_laptops.ipynb](../Notebooks/books_vs_laptops.ipynb) redraws the
+figs4nir figures for both domains (same 4 models, one-requirement contracts). Headline (progress 11-01): on laptops
+the contract is a **filter** (old order kept inside, ρ 0.89–0.98 for `14-inch`); on books it **replaces the taste**
+(ρ −0.36 … 0.36 except `fantasy`). Open: is that about the domain, or about the preference sitting on the same
+features as the contract? A laptops contract on a feature the model barely cares about (brand) would tell.
 
 **Landed 2026-10-13: the three contract paths on qwen-32B** (Dell 14" 8GB, Apple 14" 8GB, Dell 14" 4GB — all 8
 subsets each), in [contract_path.ipynb](../Notebooks/contract_path.ipynb) (F1–F3, T1) and the slide figure in
