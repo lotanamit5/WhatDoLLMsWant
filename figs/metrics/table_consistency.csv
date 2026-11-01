@@ -92,6 +92,11 @@ qwen,aligned,72.0000,,,,,,16,default,16GB,ram,16,0.9107,15,0.9110,30
 qwen,aligned,72.0000,,,,,,4,default,4GB,ram,4,-0.6286,15,-0.9075,30
 qwen,aligned,72.0000,,,,,,8,default,8GB,ram,8,-0.2429,15,0.7482,30
 qwen,aligned,72.0000,,,,Dell,,,default,Dell,brand,Dell,0.9667,9,0.8587,36
+qwen,aligned,72.0000,,14,,Dell,14,,"14""","Dell + 14""",brand,Dell,0.9833,9,0.9405,36
+qwen,aligned,72.0000,Dell,,,Dell,14,,Dell,"Dell + 14""",screen,14,0.9857,15,0.9537,30
+qwen,aligned,72.0000,,14,8,Dell,14,8,"14"" + 8GB","Dell + 14"" + 8GB",brand,Dell,0.9500,9,0.9503,36
+qwen,aligned,72.0000,Dell,14,,Dell,14,8,"Dell + 14""","Dell + 14"" + 8GB",ram,8,0.9893,15,0.9978,30
+qwen,aligned,72.0000,Dell,,8,Dell,14,8,Dell + 8GB,"Dell + 14"" + 8GB",screen,14,0.9714,15,0.9826,30
 qwen,aligned,72.0000,,,8,Dell,,8,8GB,Dell + 8GB,brand,Dell,0.9667,9,0.9815,36
 qwen,aligned,72.0000,Dell,,,Dell,,8,Dell,Dell + 8GB,ram,8,0.9071,15,0.9720,30
 gemma,pretrained,1.0000,,,,,14,,default,"14""",screen,14,0.8821,15,0.8598,30
