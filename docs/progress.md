@@ -66,6 +66,121 @@ and `8GB` → `14" + 8GB`), so consistency is one row per step, not per contract
 
 ---
 
+## 2026-10-14 — Simple-domains summary metrics chosen; three contract paths; figures for Nir batch 2
+
+**Domain summary** ([simple_domains.ipynb](../Notebooks/simple_domains.ipynb) E–H; final figure in
+[figs4nir2.ipynb](../Notebooks/figs4nir2.ipynb) C). Three bars per domain, all 0–1:
+- **coherence** = Spearman(BT order, Borda order). Flat (0.93–0.99 everywhere, base = tuned); kept by choice.
+- **sharpness** = **intrinsic**: mean over pairs and templates of `|2σ(D) − 1| = tanh(|D|/2)`, D = (m(x,y) − m(y,x))/2.
+  Position-free: with m = γ + Δ, D = Δ (same assumption as Borda). Chosen over the candidates below.
+- **agreement** = Kendall's W across the models of a regime.
+- Domains: colors, travel, cars, beverages, books (literature genres), AI companies. Dropped: the two laptop
+  domains (own figures), foods and stocks (middle on every measure). All 12 models per regime.
+
+| all 12, 6 domains | coherence | sharpness (intrinsic) | agreement |
+|---|---|---|---|
+| tuned, per-domain range | 0.93–0.97 | 0.49–0.67 | 0.45–0.73 |
+| base / tuned, mean | 0.97 / 0.96 | 0.16 / 0.60 | 0.22 / 0.59 |
+
+Sharpness candidates rejected (tuned, 6 domains): even spacing of weights (1 − KS) — same in base and tuned (scale-free);
+"clear steps" — noisy (4–11 pairs); S_adj = mean(1 − H(σ(Δu_BT/τ))) — collapses (0.08 at τ = 1, 0.01 at τ = 5;
+the soft-BT gaps are compressed); KL(P ‖ ½) — same domain order as |2P − 1| (ρ 0.99). `1 − H(q)/log 2` is exactly
+KL(Bern(q) ‖ Bern(½)) in bits. Raw odds P/(1−P) unusable (mean up to 4·10⁸); |log odds| lets the loudest model
+carry 21–41% of a domain mean (|2P − 1|: 13–22%).
+
+**Effective vs intrinsic: the position bias hides the preference** (A1 = mean |2P − 1| on P = ½[σ(m(x,y)) + 1 − σ(m(y,x))]):
+
+| tuned, 6 domains | gemma-27B | qwen-32B | gemma-12B | qwen-72B | gemma-4B | olmo-32B | qwen-0.5B |
+|---|---|---|---|---|---|---|---|
+| effective (A1) | 0.74 | 0.58 | 0.65 | 0.51 | 0.23 | 0.33 | 0.10 |
+| intrinsic | 0.92 | 0.89 | 0.84 | 0.82 | 0.65 | 0.35 | 0.12 |
+| answers by slot, % of (pair, template) | 22 | 31 | 31 | 30 | 74 | 0 | 1 |
+
+qwen and gemma lose sharpness to position bias; olmo's low sharpness is genuine hedging (97% of olmo-32B's choices
+are neither decided nor slot-driven). Sharpness depends more on the model than on the domain: gemma jumps 4B → 12B,
+olmo *falls* after 7B (0.31 → 0.22 → 0.14 in KL units).
+
+**Agreement between models** (R1–R4, Spearman of item orders, mean over 10 domains): tuned same family 0.55,
+tuned different families 0.50, base 0.29 / 0.11, a tuned model vs its own base 0.30 vs another base 0.28. The shared
+taste comes from instruction tuning, not from the family. Exception: AI companies (same family 0.62, different 0.32).
+
+**Contract paths, qwen-32B** (rank of the target among 45; [contract_path.ipynb](../Notebooks/contract_path.ipynb)):
+
+| stated | Dell 14" 8GB | Apple 14" 8GB | Dell 14" 4GB |
+|---|---|---|---|
+| none | 25 | 16 | 40 |
+| brand / screen / ram | 4 / 9 / 10 | 4 / 7 / 5 | 7 / 18 / 22 |
+| brand+screen / brand+ram / screen+ram | 2 / 2 / 3 | 2 / 2 / 5 | 3 / **1** / 13 |
+| all three | 1 | 1 | **3** |
+
+- **Stating the full contract made the 4GB user worse off**: `Dell + 4GB` puts the target 1st; adding `14-inch`
+  drops it to 3rd behind Dell 14" 16GB and Dell 14" 8GB (both beat it in all 5 templates, D −18 … −28). Same
+  pattern as 2026-10-07 (adding 14" to 8GB brought the 16GB twin back).
+- Under `ram=4GB` alone the #1 is ASUS 14" **8GB** — not a 4GB laptop at all.
+- Optimal path, now unique: compare paths by (rank at k = 1, lead at k = 1, rank at k = 2, lead at k = 2), lead =
+  Borda(target) − best other. Before, ties at equal ranks marked two paths optimal.
+- qwen-72B, Dell 14" 8GB: `ram=8GB` alone already makes the target #1.
+
+**Persona weights for Nir** (figs4nir2 A): `student_only` vs `editor`, FeatureBT Δ vs default, one y scale. The
+editor's prompt is "professional **video** editor"; labelled so (not "graphic editor").
+
+---
+
+## 2026-10-13 — Books: olmo-32B `romance` landed (job 1447796), all 20 runs in; no conclusion changes
+
+olmo-32B under `romance`: tagged book wins 28% → 96% of mixed pairs, Fifty Shades 48th → 5th, Twilight 47th → 2nd.
+Updated ranges in [books_48.ipynb](../Notebooks/books_48.ipynb): `romance` default win rate 15–28% (was 15–23%);
+Fifty Shades → 4th–5th in all four models; among tagged books ρ(score, default) −0.36…+0.36 outside fantasy (was
++0.29); Twilight under `romance` +29.1 on average over the four models (the 10-13 entry's +35.5 was the mean of
+three, before OLMo's smaller scale entered). Typicality numbers unchanged (romance tagged 0.26, all-48 0.81).
+
+---
+
+## 2026-10-13 — Books, full 48: one shared taste; contracts obeyed; inside the contract, typicality replaces taste
+
+[books_48.ipynb](../Notebooks/books_48.ipynb), `figs/books/F1–F3`. 19 of 20 runs (olmo-32B `romance`, job 1447796,
+not landed). All clean: template agreement 0.95–1.00. Scores = position-corrected Borda (mean D vs the other 47).
+
+**Default (no contract).**
+
+| | qwen-32B | qwen-72B | gemma-27B | olmo-32B |
+|---|---|---|---|---|
+| ρ with Goodreads avg rating | 0.42 | 0.52 | 0.43 | 0.47 |
+| ρ with ratings count | 0.24 | 0.09 | −0.14 | 0.27 |
+| ρ with year | −0.32 | −0.33 | 0.01 | −0.01 |
+| romance, tagged − untagged | −6.0 | −5.6 | −10.2 | −0.9 |
+| tag-only BT R² | 0.27 | 0.34 | 0.24 | 0.22 |
+
+- The 4 models agree (ρ 0.59–0.83). **Same bottom three in all four**: Romeo and Juliet 46, Twilight 47,
+  Fifty Shades 48. Top: To Kill a Mockingbird, Hitchhiker's Guide, Harry Potter.
+- Taste follows readers' quality, not fame. Romance is the disliked genre. Tags explain ~¼ of the default.
+- olmo-32B `none` is quiet (8% saturated, spread 0.9 vs 4.5–8.7) but stable (0.97). In qwen the slot bias flips
+  sign under any contract (γ +2/+6 → −3…−7); gemma's stays +5.
+
+**Contracts** (mixed pairs = exactly one book tagged; share won by the tagged book):
+
+| | romance | mystery-thriller | fantasy | classics |
+|---|---|---|---|---|
+| none → contract | 15–23% → 94–96% | 29–45% → 97–100% | 51–67% → 93–96% | 60–70% → 95–98% |
+| RMS move of scores | 12.8–17.5 | 3.9–14.5 | 4.2–13.7 | 5.2–15.7 |
+
+Obeyed everywhere, including against the default: Fifty Shades 48th → 4th–5th under `romance`.
+
+**Inside the contract the model's taste is replaced by typicality** (typicality = the book's share of that
+genre among its Goodreads genre shelves). Among tagged books, ρ(score under contract, typicality) = 0.58–0.88
+(romance 0.02–0.55), ρ(score under contract, default score) = −0.36…+0.29 (fantasy 0.52–0.87, where the most
+typical book is also a favourite). Over all 48 books, ρ(move, typicality) = 0.57–0.90.
+- So `classics` is **not** a control: it moves scores as much as the others. Harry Potter (rank 1–7) → 28–34;
+  the classics-tagged Hitchhiker's Guide and Kite Runner fall; Pride and Prejudice rises.
+- The model's genre ≠ the readers' tags: Twilight (7% romance shelves) rises most under `romance` (+35.5, 47th →
+  3rd–7th); under `fantasy` the untagged dystopias rise (Divergent +12.3), the tagged Alchemist barely moves.
+
+Relevance to the main conjecture: here the model does **not** complete the contract with its own preference;
+it completes it with the genre's prototype. On the laptops the analogue is Apple losing rank even when compliant.
+**Next:** a contract naming the genre *and* quality ("I prefer good fantasy") would show whether the taste returns.
+
+---
+
 ## 2026-10-12 — Books pilot landed (qwen-7B, 14 books): pipeline clean, preference follows readers
 
 Jobs 1447314 (`none`) and 1447317 (`fantasy=yes`), `data/books_pilot/`, analysed in

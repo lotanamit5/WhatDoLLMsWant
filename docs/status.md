@@ -210,27 +210,35 @@ the 10-07 audit); the old "missing" note here was stale. Doubles beyond `14-inch
 **Landed and analysed 2026-10-12: the books PILOT** — qwen-7B, 14 books, `none` + `fantasy=yes`,
 [books_pilot.ipynb](../Notebooks/books_pilot.ipynb). Pipeline clean; preference follows the Goodreads
 rating (ρ = +0.67); fantasy contract 49% → 95%. 
-**Queued for the night of 2026-10-12 (`slurms.sh`, 20 jobs): books, full 48** — qwen-72B (all on plotinus1),
-qwen-32B, gemma-27B, olmo-32B (plato1/plato2; plotinus2 is down) × `none`, `fantasy=yes`,
-`mystery-thriller=yes`, `romance=yes`, `classics=yes`, into `data/books/`. Why these contracts: progress 2026-10-12.
+**Analysed 2026-10-13** in [books_48.ipynb](../Notebooks/books_48.ipynb) (progress 2026-10-13: one shared taste; contracts obeyed; inside the contract typicality replaces taste). **Landed 2026-10-13: books, full 48 — all 20 runs** (`data/books/`, 11,280 rows each, one run per key;
+reruns 1447757, 1447467, 1447796). Laptops: qwen-32B `brand=Dell+ram=4GB+screen=14-inch` landed (1447759), so
+all 6 Apple/Dell path runs are in.
+olmo-32B `none` is quiet (winner saturated 8% vs 74–85% under its contracts, margin SD 1.3 vs 6–8)
+but stable (template agreement 0.97) and content-driven: a real low-confidence default, not a bug.
 List: `src/books/books.csv`, built by `src/books/make_books.py`.
 
-**Queued 2026-10-12 (`slurms.sh`, 6 jobs): two more contract paths, qwen-32B** — targets
-Apple 14" 8GB (brand the model likes) and Dell 14" 4GB (RAM it dislikes), each one feature away from
-the Dell 14" 8GB path, so only 4 + 2 subsets are new. After they land: three full paths on qwen-32B
-(contract_path.ipynb, and the tables below). See progress 2026-10-12.
+**Landed 2026-10-13: the three contract paths on qwen-32B** (Dell 14" 8GB, Apple 14" 8GB, Dell 14" 4GB — all 8
+subsets each), in [contract_path.ipynb](../Notebooks/contract_path.ipynb) (F1–F3, T1) and the slide figure in
+[figs4nir2.ipynb](../Notebooks/figs4nir2.ipynb). qwen-72B has only the Dell 14" 8GB path. **Not queued yet, to
+complete qwen-72B:** `brand=Apple`, `brand=Apple,screen=14-inch`, `brand=Apple,ram=8GB`,
+`brand=Apple,screen=14-inch,ram=8GB`, `brand=Dell,ram=4GB`, `brand=Dell,screen=14-inch,ram=4GB` (6 jobs). See progress 2026-10-14.
 
 **Contract tables (2026-10-12):** [contract_tables.ipynb](../Notebooks/contract_tables.ipynb) writes
 `figs/metrics/table_compliance.csv` (one row per contract) and `table_consistency.csv` (one row per
 step), aligned + pretrained. Re-run it when new contract runs land.
 
-**Landed 2026-10-12: qwen-72B Dell path complete** (all 8 subsets) — in contract_path.ipynb,
-the metrics notebook and the tables. Still waiting: the 6 Apple 14" 8GB / Dell 14" 4GB jobs (qwen-32B).
+**Figures for Nir, batch 2 (2026-10-14):** [figs4nir2.ipynb](../Notebooks/figs4nir2.ipynb), PNG + PDF in
+`figs/figs4nir2/` — A: persona Δ weights (`student_only` vs `editor`), B: contract paths (User #1 qwen-72B + User #3
+qwen-32B), C: simple-domains summary (coherence / intrinsic sharpness / agreement, 6 domains, all 12 models). Open:
+the C title still says "effective" although sharpness is now position-free.
 
 **Landed and analysed 2026-10-12: simple domains** ([simple_domains.ipynb](../Notebooks/simple_domains.ipynb), progress 10-12) — 10 feature-less domains (6 old, re-run as a
 bug check, + literature genres, AI companies, travel destinations, beverages) × 24 models (3 families ×
 4 sizes × instruct/base), one job per model, into `data/simple_domains/<job>_<domain>/`. qwen-72B on
 plotinus1. Analysis plan: per-domain stability (templates), Borda vs BT, one table row per condition.
+Excel export of the BT results (one row per model × domain × item, 1,704 rows: bt, bt_norm, ranks, Borda,
+run-level W / position / BT-vs-Borda): cell after "Compute every measure" → `figs/simple_domains/simple_domains_bt.csv`,
+also copied to Windows `Downloads` (Excel can't always open files inside WSL).
 
 **Landed 2026-10-11: the Dell contract path, qwen-32B** — all 8 subsets of {Dell, 14", 8GB}; analysed
 in [contract_path.ipynb](../Notebooks/contract_path.ipynb). Target rank 25 → 4 / 9 / 10 → 2 / 2 / 3 → 1:
