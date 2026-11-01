@@ -1,8 +1,9 @@
 # GRUM for contracts — formalization
 
-Status: **proposed**, 2026-08-10. Replaces "one Bradley-Terry fit per phase" with one model
-fitted across phases, **which predicts contracts it was never shown**.
-Real numbers in [Notebooks/grum.ipynb](../Notebooks/grum.ipynb).
+Status: **proposed** 2026-08-10; **tested on Phases A–C 2026-11-02** (§12). Replaces "one Bradley-Terry fit per
+phase" with one model fitted across phases, **which predicts contracts it was never shown**.
+Real numbers in [Notebooks/grum.ipynb](../Notebooks/grum.ipynb) (Aug, 4 contracts) and
+[Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) (Nov, all 96 laptop runs).
 
 > **How to read this.** Part I (§1–§4) explains the model with one tiny made-up example — four
 > ice creams. No real data, no big tables. Part II (§5–§8) applies it to the laptops and gives the
@@ -610,12 +611,13 @@ row on $\delta$: **ram $-0.94$, screen $-0.54$**.
 
 **Open:**
 
-- [ ] **Is $\kappa$ level-independent?** The 18-parameter model rests on it. Phase A.
-- [ ] **Shape of the saturation** — $\lambda^{q-1}$ vs $q^{-\alpha}$. Phase C.
+- [x] **Is $\kappa$ level-independent?** Mostly yes — see §12 (2026-11-02).
+- [x] **Shape of the saturation** — $q^{-\alpha}$ fits the 4 triples better (§12); only qwen, 4 runs.
 - [ ] $\kappa$ on the **log-odds scale** and on the **ceteris-paribus win-rate scale** disagree
       for the screen contract ($0.54$ "halves it" vs $-4$ points "surgical"). Decide which the
       thesis reports, or report both and explain the difference.
-- [ ] The structured form assumes leakage is pure shrinkage along $-\delta$. The correction entry
+- [ ] *(partly answered §12: shrinkage = 87% of the brand change; the rest is an Apple-specific fall and a
+      "budget" turn of screen under `4GB`)* The structured form assumes leakage is pure shrinkage along $-\delta$. The correction entry
       shows re-ordering *on top of* the shrinkage under the ram contract; if that matters,
       $\kappa$ needs a second component orthogonal to $\delta$.
 - [ ] Put **model covariates** (family, $\log$ size) into $x$, so one GRUM covers all 8 models and
@@ -627,3 +629,37 @@ row on $\delta$: **ram $-0.94$, screen $-0.54$**.
       difference in how weak models handle contracts?
 - [ ] GRUM gives us a better-shaped $v$. It still does **not** give $\Delta W$ — that needs a user
       utility $u$, which the laptops set does not have.
+
+---
+
+## 12. Tested on the existing runs (2026-11-02)
+
+Notebooks: [GRUMish/](../Notebooks/GRUMish/00_README.ipynb). All numbers on **ceteris-paribus weights** (each
+feature measured on pairs that differ in it alone — the §10 fix, applied to every feature) and the position-corrected
+$D$. Score = pair accuracy; the ceiling (a run's own weights) is ≈ 0.92.
+
+**The model, as it now stands** (changes from §7.1 in bold):
+
+$$w_f(x) = (1-\sigma_f)\,a_f \cdot \textstyle\prod_{h \neq f}(1-\kappa_{h\to f}) \;+\; s_q\, \rho_f\, \mathbf{d}_\ell
+\qquad w_g(x) = \textstyle\prod_{f\,\text{named}} (1-\kappa_{f\to g})\, a_g$$
+
+- **$\sigma_f$, self-flattening, is new**: a request also erases the old taste on its own feature. Screen σ ≈ 1 (a
+  target), RAM σ ≈ 0.5.
+- **$\mathbf{d}_\ell$ is an ideal point** (minus the distance from the requested level) for ordered features, not a
+  single peak: after `13-inch` the order is 13 > 14 > 16. Brand keeps the peak.
+- **Shrinkages multiply** across named features; the push is diluted by $s_q$, with $s_2 \approx 0.75$, $s_3 \approx 0.65$
+  — closer to $q^{-0.41}$ than to $\lambda^{q-1}$.
+- **$\kappa$ is close to triangular**: high-priority requests flatten lower features, never the reverse
+  (brand→RAM 0.16–0.20).
+
+| claim | verdict |
+|---|---|
+| ρ, σ, κ belong to the feature, not the level | mostly yes: one (σ, ρ) per feature, R² 0.86–0.97; unseen level 0.83 (0.875 w/o `4GB`) vs ceiling 0.89 |
+| mirror vs ceiling (§2.5) | **mirror**: `16GB` (agreeing) still flattens brand (κ 0.77) |
+| compound = additive in x | **diluted sum**: 0.90 vs ceiling 0.91; no bonus for meeting all |
+| the base model predicts B | **no** (B drops out at x = 0); shrinkage predicts 87% of the brand change, not who pays for `4GB` |
+
+**Where it breaks:** the extreme request against a strong taste (`4GB`: pay or refuse is a model trait; the screen
+taste turns, κ > 1), and an Apple-specific fall beyond shrinkage. **Cost** for all 96 contracts: 21 numbers and ≈ 5
+runs per model (structured), vs 97 / 13 (free B) and 768 / 96 (independent).
+

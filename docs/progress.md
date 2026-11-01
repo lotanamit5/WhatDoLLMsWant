@@ -8,6 +8,46 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-02 — GRUMish: the structured GRUM tested on all existing laptop runs (Phases A–C, no new runs)
+
+New folder [Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) (00 README … 06), shared code `grumish.py`,
+figures `figs/GRUMish/`. 96 laptop runs, frame `shopping`. Everything on the position-corrected D; weights are
+**ceteris-paribus (CP)** — each feature measured on pairs differing in it alone (brand CP range 2.3–5.6× the all-pairs
+fit in qwen/gemma). Score = **pair accuracy** (share of the 990 pairs where predicted utilities pick the model's
+winner); ceiling ("oracle", the run's own CP weights) median 0.92.
+
+| task (predict a contract not used in the fit) | no change | GRUM | oracle |
+|---|---|---|---|
+| unseen level of screen/RAM (7 qwen/gemma × 6 levels) | 0.735 | **0.831** | 0.891 |
+| same, without `4GB` | 0.785 | **0.875** | 0.912 |
+| compound from singles, shrunk sum, λ leave-one-out (24 runs) | 0.642 | **0.898** | 0.913 |
+| `brand=Apple` ↔ `brand=Dell` (qwen-32B) | 0.794 | **0.881** | 0.903 |
+
+- **κ is (mostly) level-independent → mirror, not ceiling.** One push ρ and one self-flattening σ per feature fit all 3
+  levels (R² 0.86–0.97). Screen is a **target** (σ ≈ 1.0–1.2; requested screen ends +16 ahead whatever the start,
+  slope 0.12); RAM is **half push** (σ ≈ 0.4–0.67, slope 0.50).
+- **New: the push is an ideal point.** After `13-inch`, 13 > 14 > 16 (5/7); after `4GB`, compliant models 4 > 8 > 16.
+  Distance-shaped push beats single-peak for RAM in 6/7 models; transfer 0.80 → 0.83, hide-13-inch 0.85 → 0.91.
+- **Leakage into brand even when the contract agrees**: median κ_ram→brand 1.09 / 0.90 / **0.77** (4 / 8 / 16GB);
+  screen→brand 0.22 / 0.51 / 0.64 (13 / 14 / 16). The old "give-up" (ceiling) prediction is wrong.
+- **RAM→screen tracks the level** (0.16 / 0.64 / 1.07): under `4GB` the 16-inch edge vanishes (favourite 14-inch in 3/7).
+  Not pure shrinkage. Screen→RAM ≈ 0.1 at every level.
+- **Leakage is one-way down the priority order**: brand→RAM κ 0.16–0.20, brand→screen −0.18 … 0.45 (qwen-32B/72B).
+- **Compound contracts are a diluted sum**: best scale 0.75 (doubles), 0.65 (triples); power law q^−0.41 (→0.63) fits the
+  4 triples better than λ^(q−1) (→0.56). **No bonus** for the laptop meeting all requirements (−0.19 SD vs the shrunk sum).
+- **The no-contract fit identifies nothing about B** (theory: B drops out at x = 0; demo of 5 GRUMs with identical
+  base, ρ with real 0.10–0.84 under `8GB`). But shrinkage of the base taste explains **87%** of the brand change
+  (median per run); Apple is the biggest faller in 45/50 runs, plus an Apple-specific extra (−0.2 … −1.5, 10/11 models).
+- **Who pays for `4GB` is not predictable from the base**: 3 obey, 4 refuse at the same relative starting point.
+  ρ grows with the feature's scale (Spearman 0.64 / 0.75) but ρ/range is 0.55–1.26 for screen vs 0.08–0.43 for RAM.
+- **Sample efficiency**: feature model reaches 98% of its full accuracy at 256 of 990 pairs; 1 template = 5 templates.
+  Runs: qwen-32B 5 planned runs → 0.84 over all 18 contracts vs 0.74 independent; qwen-72B 6 → 0.91 vs 0.78. All 96
+  contracts: 21 numbers / 5 runs (structured) vs 97 / 13 (free B) vs 768 / 96 (independent).
+
+**Open:** brand results are qwen-only (2 models); 4 triples only, all qwen; OLMo has no Phase A; no repeat run.
+
+---
+
 ## 2026-11-01 — Books vs laptops: the same figures, two domains
 
 [books_vs_laptops.ipynb](../Notebooks/books_vs_laptops.ipynb), figures in `figs/books_vs_laptops/` (G1–G5). Same 4

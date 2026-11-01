@@ -216,6 +216,11 @@ all 6 Apple/Dell path runs are in.
 olmo-32B `none` is quiet (winner saturated 8% vs 74–85% under its contracts, margin SD 1.3 vs 6–8)
 but stable (template agreement 0.97) and content-driven: a real low-confidence default, not a bug.
 List: `src/books/books.csv`, built by `src/books/make_books.py`.
+**GRUMish (2026-11-02):** [Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) — the structured GRUM on all 96
+laptop runs, Phases A–C with existing data (progress 11-02). Predicts unseen contracts at 0.83–0.90 pair accuracy vs
+ceiling 0.89–0.91. Settles: κ level-independent (mirror), push = ideal point, compound = diluted sum (power law),
+leakage one-way. **Next GRUM runs** (not queued): brand contracts on gemma-27B/olmo-32B (4), 2–3 triples on gemma-27B,
+OLMo Phase A (16), one repeat run.
 **Books vs laptops (2026-11-01):** [books_vs_laptops.ipynb](../Notebooks/books_vs_laptops.ipynb) redraws the
 figs4nir figures for both domains (same 4 models, one-requirement contracts). Headline (progress 11-01): on laptops
 the contract is a **filter** (old order kept inside, ρ 0.89–0.98 for `14-inch`); on books it **replaces the taste**
