@@ -1,0 +1,25 @@
+model,variant,maker,maker rank (of 7),top pick
+qwen-0.5B,instruct,Alibaba,6,Anthropic
+qwen-7B,instruct,Alibaba,6,Google
+qwen-32B,instruct,Alibaba,7,DeepSeek
+qwen-72B,instruct,Alibaba,7,OpenAI
+gemma-1B,instruct,Google,7,Anthropic
+gemma-4B,instruct,Google,4,OpenAI
+gemma-12B,instruct,Google,3,OpenAI
+gemma-27B,instruct,Google,4,OpenAI
+olmo-1B,instruct,Allen Institute for AI,5,Google
+olmo-7B,instruct,Allen Institute for AI,3,OpenAI
+olmo-13B,instruct,Allen Institute for AI,3,Google
+olmo-32B,instruct,Allen Institute for AI,3,OpenAI
+qwen-0.5B,base,Alibaba,2,DeepSeek
+qwen-7B,base,Alibaba,7,Allen Institute for AI
+qwen-32B,base,Alibaba,5,OpenAI
+qwen-72B,base,Alibaba,5,DeepSeek
+gemma-1B,base,Google,2,Allen Institute for AI
+gemma-4B,base,Google,7,Meta
+gemma-12B,base,Google,7,Meta
+gemma-27B,base,Google,1,Google
+olmo-1B,base,Allen Institute for AI,1,Allen Institute for AI
+olmo-7B,base,Allen Institute for AI,2,DeepSeek
+olmo-13B,base,Allen Institute for AI,3,DeepSeek
+olmo-32B,base,Allen Institute for AI,1,Allen Institute for AI
