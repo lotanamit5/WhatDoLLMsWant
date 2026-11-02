@@ -57,6 +57,31 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-11-02: GRUM gap-fillers, from Notebooks/GRUMish (00_README "Open"). 25 jobs.
+    # Every result there on brand and on triples rests on qwen only; OLMo has no Phase A.
+    # Checked against data/ on 2026-11-02: none of these keys exists, so no collision.
+    # (1) Brand requests on two more families: is leakage one-way (RAM -> screen -> brand) there too,
+    #     and does one brand predict the other? 4 jobs.
+    {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
+     'c': ['brand=Apple', 'brand=Dell'], 'n': ['laptops_robustness']},
+    {'m': ['olmo'], 's': ['32'], 'a': ['laptops_robustness'],
+     'c': ['brand=Apple', 'brand=Dell'], 'p': ['options'], 'n': ['laptops_olmo']},
+    # (2) Triples on gemma-27B, the same three qwen-32B has, so the dilution shape (q^-0.41 vs
+    #     lambda^(q-1)) is no longer one family. Its singles are the brand runs above + Phase A. 3 jobs.
+    {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
+     'c': ['brand=Dell,screen=14-inch,ram=8GB', 'brand=Apple,screen=14-inch,ram=8GB',
+           'brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
+    # (3) OLMo Phase A: top and bottom level of each feature, all four sizes. 16 jobs.
+    {'m': ['olmo'], 's': OLMO, 'a': ['laptops_robustness'], 'c': PHASE_A,
+     'p': ['options'], 'n': ['laptops_olmo']},
+    # (4) Noise check. A plain repeat is useless: scoring is deterministic (log-probs, the first N
+    #     templates), so it would return the same numbers. Instead: ALL templates (-t 0, 43) on
+    #     qwen-32B, none and ram=4GB, so the 43 can be split into independent halves. Answers "is who
+    #     pays for 4GB stable?" and gives the noise floor. Own folder: the keys exist in
+    #     laptops_robustness (with 5 templates). ~9x the rows of a normal run. 2 jobs.
+    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'], 'c': ['', 'ram=4GB'], 't': ['0'],
+     'n': ['laptops_all_templates']},
+
     # --- 2026-10-13: RERUN, 3 jobs. Launched. LANDED: qwen-32B books fantasy (1447757), qwen-32B Dell
     # 14in 4GB (1447759). olmo-32B books romance is RUNNING as 1447796 (config only in git). Do not re-run.
     # --- From squeue at 10:50 on 10-13:
