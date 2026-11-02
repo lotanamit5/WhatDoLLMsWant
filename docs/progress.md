@@ -8,6 +8,47 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-03 — GRUMish redone on all-pairs weights (CP was the wrong choice for prediction)
+
+Lotan's question in the walk-through: why not plain BT weights? Tested: the **all-pairs** additive fit (FeatureBT
+shape, least squares on D) beats CP in every task. `Run.w` is now all-pairs, CP kept as `Run.wcp`. All 7 notebooks
+rerun; added a continuous score, **pair R²** (u(x) − u(y) vs D).
+
+| own run (88 runs, median) | pair acc | pair R² |
+|---|---|---|
+| CP | 0.922 | 0.75 |
+| all-pairs | **0.947** | **0.89** |
+| one free utility per laptop | 0.953 | 0.91 |
+
+| unseen contract, mean | weights | no change | GRUM | oracle | GRUM R² |
+|---|---|---|---|---|---|
+| unseen level (42) | CP → all-pairs | 0.735 → 0.752 | 0.831 → **0.842** | 0.891 → 0.921 | 0.36 → **0.64** |
+| compounds (24) | CP → all-pairs | 0.642 → 0.655 | 0.898 → **0.913** | 0.913 → 0.935 | 0.69 → **0.84** |
+| other brand (2) | CP → all-pairs | 0.794 → 0.803 | 0.881 → **0.940** | 0.903 → 0.980 | 0.34 → **0.83** |
+
+**Findings that changed:**
+- **Leakage is two-way, not triangular.** Brand request → RAM κ 0.48–0.51 (CP: 0.16–0.20). Inside each brand RAM still
+  matters (CP RAM range 38 → 31, qwen-32B), but RAM decides fewer pairs once brand leads by +20 (utility RAM range
+  35 → 18). A request moves its feature to the top of the **priority order**; it does not change the taste in a tie.
+- **RAM → brand κ > 1** (1.07 / 1.13 / 1.85 for 16 / 8 / 4GB): Apple goes 1st → 5th in 6 of 7 models under any RAM request.
+- **New: Apple's fall is an interaction** (05 §2b). `16GB`: among the 16GB laptops Apple still leads in 4 of 7; among
+  the ones that miss it, Apple drops below the others in 6 of 7 (miss-penalty). `4GB`: the Apple-4GB laptops fall hardest
+  (qwen-72B +2.0 → −6.9, gemma-27B +3.0 → −10.6; budget turn). Shrinkage explains 79% of the brand change (CP: 87%).
+- **Compound bonus exists**: laptops meeting all requirements sit +0.29 SD (doubles) / +0.63 SD (triples) above the
+  shrunk sum (CP: −0.19, "no bonus").
+- **Dilution**: s₂ 0.70, s₃ 0.50; λ^(q−1) predicts 0.48, the power law 0.56 — λ^(q−1) now fits (CP had the reverse).
+  4 triples, all qwen: not settled.
+- **Level transfer**: hiding `16GB` fails (no change 0.94, GRUM 0.80) — RAM → screen leakage is level-dependent
+  (−0.01 / 0.78 / 1.46 for 16 / 8 / 4GB) and does not transfer.
+
+**Unchanged:** one (σ, ρ) per feature (R² 0.85–0.96); ideal point (13 > 14 > 16 under `13-inch` in 6/7); B unidentified
+at x = 0; obedience 92% screen / 72% RAM; sample savings (qwen-32B 5 runs → 0.85 vs 0.76; 8 vs 17 runs for 0.91).
+
+**Open:** a non-additive term for meeting the request (miss-penalty, meets-all bonus) — the first place the feature
+GRUM is too simple on laptops.
+
+---
+
 ## 2026-11-02 — GRUMish: the structured GRUM tested on all existing laptop runs (Phases A–C, no new runs)
 
 New folder [Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) (00 README … 06), shared code `grumish.py`,

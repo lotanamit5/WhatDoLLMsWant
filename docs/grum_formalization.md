@@ -632,34 +632,38 @@ row on $\delta$: **ram $-0.94$, screen $-0.54$**.
 
 ---
 
-## 12. Tested on the existing runs (2026-11-02)
+## 12. Tested on the existing runs (2026-11-02, revised 2026-11-03)
 
-Notebooks: [GRUMish/](../Notebooks/GRUMish/00_README.ipynb). All numbers on **ceteris-paribus weights** (each
-feature measured on pairs that differ in it alone — the §10 fix, applied to every feature) and the position-corrected
-$D$. Score = pair accuracy; the ceiling (a run's own weights) is ≈ 0.92.
+Notebooks: [GRUMish/](../Notebooks/GRUMish/00_README.ipynb). Weights = the **all-pairs** additive fit (FeatureBT shape,
+least squares on the position-corrected $D$). The 11-02 version used ceteris-paribus weights (§10); they describe the
+taste in a tie but predict choices worse (own-run pair accuracy 0.922 vs 0.947, pair R² 0.75 vs 0.89), so §10's fix is
+for description only. Score = pair accuracy (and pair R²); the ceiling (a run's own weights) is ≈ 0.95.
 
 **The model, as it now stands** (changes from §7.1 in bold):
 
 $$w_f(x) = (1-\sigma_f)\,a_f \cdot \textstyle\prod_{h \neq f}(1-\kappa_{h\to f}) \;+\; s_q\, \rho_f\, \mathbf{d}_\ell
 \qquad w_g(x) = \textstyle\prod_{f\,\text{named}} (1-\kappa_{f\to g})\, a_g$$
 
-- **$\sigma_f$, self-flattening, is new**: a request also erases the old taste on its own feature. Screen σ ≈ 1 (a
+- **$\sigma_f$, self-flattening, is new**: a request also erases the old taste on its own feature. Screen σ ≥ 1 (a
   target), RAM σ ≈ 0.5.
 - **$\mathbf{d}_\ell$ is an ideal point** (minus the distance from the requested level) for ordered features, not a
-  single peak: after `13-inch` the order is 13 > 14 > 16. Brand keeps the peak.
-- **Shrinkages multiply** across named features; the push is diluted by $s_q$, with $s_2 \approx 0.75$, $s_3 \approx 0.65$
-  — closer to $q^{-0.41}$ than to $\lambda^{q-1}$.
-- **$\kappa$ is close to triangular**: high-priority requests flatten lower features, never the reverse
-  (brand→RAM 0.16–0.20).
+  single peak: after `13-inch` the order is 13 > 14 > 16 (6/7 models). Brand keeps the peak.
+- **κ can exceed 1** (the order turns): RAM → brand 1.07–1.85. **κ is not triangular**: brand → RAM 0.48–0.51. Read κ as a
+  shift in **priority** (the named feature decides more pairs, the others fewer), not as a flatter taste.
+- **Shrinkages multiply** across named features; the push is diluted by $s_q$, with $s_2 \approx 0.70$, $s_3 \approx 0.50$
+  — fits $\lambda^{q-1}$ (0.48) better than $q^{-\alpha}$ (0.56); 4 triples, all qwen.
 
 | claim | verdict |
 |---|---|
-| ρ, σ, κ belong to the feature, not the level | mostly yes: one (σ, ρ) per feature, R² 0.86–0.97; unseen level 0.83 (0.875 w/o `4GB`) vs ceiling 0.89 |
-| mirror vs ceiling (§2.5) | **mirror**: `16GB` (agreeing) still flattens brand (κ 0.77) |
-| compound = additive in x | **diluted sum**: 0.90 vs ceiling 0.91; no bonus for meeting all |
-| the base model predicts B | **no** (B drops out at x = 0); shrinkage predicts 87% of the brand change, not who pays for `4GB` |
+| ρ, σ, κ belong to the feature, not the level | mostly: one (σ, ρ) per feature, R² 0.85–0.96; unseen level 0.84 (0.88 w/o `4GB`) vs ceiling 0.92. RAM → screen κ is level-dependent (−0.01 / 0.78 / 1.46) |
+| mirror vs ceiling (§2.5) | **mirror** for brand (`16GB` still turns it, κ 1.07); ceiling for screen under `16GB` |
+| compound = additive in x | **diluted sum**: 0.91 vs ceiling 0.94, **plus a meets-all bonus** (+0.29 / +0.63 SD) |
+| the base model predicts B | **no** (B drops out at x = 0); shrinkage predicts 79% of the brand change, not who pays for `4GB` |
 
-**Where it breaks:** the extreme request against a strong taste (`4GB`: pay or refuse is a model trait; the screen
-taste turns, κ > 1), and an Apple-specific fall beyond shrinkage. **Cost** for all 96 contracts: 21 numbers and ≈ 5
-runs per model (structured), vs 97 / 13 (free B) and 768 / 96 (independent).
+**Where it breaks:** (1) **interactions with meeting the request** — an Apple that misses a RAM request is punished
+more than another brand (miss-penalty under `16GB`), Apple-4GB is punished hardest (budget turn), and the laptop meeting
+all requirements gets a bonus; no sum of feature weights shows these. Candidate fix: one term $\beta\cdot\mathbb{1}[z
+\text{ meets } x]$, possibly per brand. (2) the extreme request against a strong taste (`4GB`: pay or refuse is a
+model trait). **Cost** for all 96 contracts: 21 numbers and ≈ 5 runs per model (structured), vs 97 / 13 (free B) and
+768 / 96 (independent).
 

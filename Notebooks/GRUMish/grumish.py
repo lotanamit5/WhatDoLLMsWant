@@ -146,9 +146,13 @@ class Run:
         self.D = self.Dt.mean(0)                     # template-averaged
         self.u = utility(self.D)                     # full parametrization
         self.u_t = np.array([utility(x) for x in self.Dt])
-        self.w = cp_weights(self.D)                  # ceteris-paribus weights
-        self.w_t = pd.DataFrame({t: cp_weights(x) for t, x in enumerate(self.Dt)})
-        self.wa = additive_weights(self.u)           # additive projection of u (all pairs)
+        # MAIN weights (2026-11-03): the all-pairs additive fit = FeatureBT shape, least squares on D.
+        # It predicts choices better than CP in every task (oracle 0.947 vs 0.922; see 01 §2).
+        self.w = additive_weights(self.u)
+        self.w_t = pd.DataFrame({t: additive_weights(x) for t, x in enumerate(self.u_t)})
+        # ceteris-paribus weights: descriptive only ("how much does it like Apple when all else is equal")
+        self.wcp = cp_weights(self.D)
+        self.wcp_t = pd.DataFrame({t: cp_weights(x) for t, x in enumerate(self.Dt)})
 
 
 def load_all(models=MODELS):
@@ -165,6 +169,12 @@ def pair_accuracy(u_pred, D_obs):
     a, b = dp[IU], D_obs[IU]
     keep = b != 0
     return float((np.sign(a[keep]) == np.sign(b[keep])).mean())
+
+
+def pair_r2(u_pred, D_obs):
+    """Continuous version of pair_accuracy: R^2 of the predicted margin u(x) - u(y) against the observed D."""
+    dp = u_pred[:, None] - u_pred[None, :]
+    return r2(dp[IU], D_obs[IU])
 
 
 def r2(pred, obs):

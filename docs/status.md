@@ -217,9 +217,10 @@ olmo-32B `none` is quiet (winner saturated 8% vs 74–85% under its contracts, m
 but stable (template agreement 0.97) and content-driven: a real low-confidence default, not a bug.
 List: `src/books/books.csv`, built by `src/books/make_books.py`.
 **GRUMish (2026-11-02):** [Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) — the structured GRUM on all 96
-laptop runs, Phases A–C with existing data (progress 11-02). Predicts unseen contracts at 0.83–0.90 pair accuracy vs
-ceiling 0.89–0.91. Settles: κ level-independent (mirror), push = ideal point, compound = diluted sum (power law),
-leakage one-way. **Next GRUM runs QUEUED in `slurms.sh` (2026-11-02, 25 jobs, not launched yet):** `brand=Apple`/`brand=Dell`
+laptop runs, Phases A–C with existing data (progress 11-02; **redone 11-03 on all-pairs weights**, CP dropped for
+prediction). Predicts unseen contracts at 0.84–0.94 pair accuracy vs ceiling 0.92–0.98. Settles: mirror, push = ideal
+point, compound = diluted sum + meets-all bonus, leakage = priority shift (two-way). **Open:** a term for meeting the
+request (Apple miss-penalty / budget turn, 05 §2b). **Next GRUM runs QUEUED in `slurms.sh` (2026-11-02, 25 jobs, not launched yet):** `brand=Apple`/`brand=Dell`
 on gemma-27B and olmo-32B (4); 3 triples on gemma-27B, the same as qwen-32B's (3); OLMo Phase A, all 4 sizes (16);
 qwen-32B none + `ram=4GB` with all 43 templates in `data/laptops_all_templates/` (2) — the noise check (a plain repeat
 would return identical numbers: scoring is deterministic).
