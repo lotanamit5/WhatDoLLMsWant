@@ -8,6 +8,24 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-03 (later) — Correction: the Apple fall is in B; the interaction is only how it splits
+
+The 11-03 entry above says "Apple's fall is an interaction". Too strong. New heatmap
+[05 §2.1](../Notebooks/GRUMish/05_what_the_base_predicts.ipynb) (the brand block of B, Δ brand weight per spec request):
+Apple is the most negative cell in **41 of 42** rows (−0.7 … −7.2 under RAM requests, −0.2 … −3.9 under screen); every
+other brand rises a little, HP most (up to +2.6). Layers:
+
+| layer | size | where in the model |
+|---|---|---|
+| all brands shrink (κ), Apple was on top | 79% of the change | structured κ |
+| Apple falls a bit more than the shrinkage | −0.2 … −0.8 extra | free B row |
+| how the fall splits between Apple laptops that meet / miss the request | §2b | only a term quadratic in z (z_Apple · z_4GB) |
+
+Also noted: "meeting the request" alone is already in B (the diagonal = the push ρ, since xᵀz counts met requests); what
+B lacks is a product of two z entries — the same thing the compound meets-all bonus needs.
+
+---
+
 ## 2026-11-03 — GRUMish redone on all-pairs weights (CP was the wrong choice for prediction)
 
 Lotan's question in the walk-through: why not plain BT weights? Tested: the **all-pairs** additive fit (FeatureBT
