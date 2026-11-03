@@ -8,6 +8,29 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-03 — The 11-02 batch landed (24 of 25); B heatmap per model (GRUMish 07)
+
+Lotan's commit 73b6c17: all 23 laptop runs (brand on gemma-27B / olmo-32B, 3 gemma-27B triples, OLMo Phase A for all 4
+sizes) + qwen-32B `none` with all 43 templates. **Missing:** qwen-32B `ram=4GB` all-templates (1475823, config only).
+Now 119 runs. Notebooks 00–06 were last run **before** most of these landed — to be rerun.
+
+New [07_B_matrices](../Notebooks/GRUMish/07_B_matrices.ipynb): measured B vs the structured GRUM's B, every model (all
+119 runs). GRUM vs measured R² 0.82–0.95 (all cells), 0.71–0.96 (leakage cells); gemma-1B 0.43 and olmo-1B 0.71 barely
+react.
+
+| model | RAM range kept under a screen request | … under a brand request | Apple Δ under RAM requests | brand push |
+|---|---|---|---|---|
+| qwen-32B | 49% | 50% | −3.3 | +17.3 |
+| qwen-72B | 61% | 49% | −3.9 | +15.7 |
+| gemma-27B | 46% | **43%** (new) | −5.0 | **+17.3** (new) |
+| olmo-32B | 56% | **45%** (new) | −1.1 | **+6.4** (new) |
+
+- **The biggest leakage is into RAM, not brand**: any screen or brand request halves RAM's range (the priority shift).
+- **The brand result holds beyond qwen**: gemma-27B and olmo-32B show the same push and the same RAM halving.
+- OLMo: same structure, ~3× smaller scale; almost no Apple decay (no Apple taste to lose).
+
+---
+
 ## 2026-11-03 (later) — Correction: the Apple fall is in B; the interaction is only how it splits
 
 The 11-03 entry above says "Apple's fall is an interaction". Too strong. New heatmap

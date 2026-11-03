@@ -228,8 +228,8 @@ def push_vec(f, l, shape):
 
 def fit_struct(a, singles, self_shrink=True, shape="ideal"):
     """Fit the structured GRUM of ONE model from its single-requirement runs.
-    a       : CP weights with no contract
-    singles : list of (feature, level, CP weights under `feature=level`)
+    a       : weights with no contract
+    singles : list of (feature, level, weights under `feature=level`)
     Named feature f:   w_f = (1 - sigma_f) a_f + rho_f e_l      (sigma: old taste flattened, rho: push to l)
     Unnamed feature g: w_g = (1 - kappa_fg) a_g                 (kappa: leakage, as shrinkage)
     One sigma and one rho per feature and one kappa per ordered pair, shared by all levels.
@@ -254,7 +254,7 @@ def fit_struct(a, singles, self_shrink=True, shape="ideal"):
 
 
 def predict_struct(a, P, con, lam=1.0, shape="ideal"):
-    """CP weights under contract `con` ({feature: level}) from the structured GRUM. Shrinkage from several named
+    """Weights under contract `con` ({feature: level}) from the structured GRUM. Shrinkage from several named
     features multiplies; the push of each named feature is diluted by lam**(q-1), q = number of requirements."""
     q, w = len(con), a.copy()
     for g in FEATS:

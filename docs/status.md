@@ -220,7 +220,7 @@ List: `src/books/books.csv`, built by `src/books/make_books.py`.
 laptop runs, Phases A–C with existing data (progress 11-02; **redone 11-03 on all-pairs weights**, CP dropped for
 prediction). Predicts unseen contracts at 0.84–0.94 pair accuracy vs ceiling 0.92–0.98. Settles: mirror, push = ideal
 point, compound = diluted sum + meets-all bonus, leakage = priority shift (two-way). **Open:** a term for meeting the
-request (Apple miss-penalty / budget turn, 05 §2b). **Next GRUM runs QUEUED in `slurms.sh` (2026-11-02, 25 jobs, not launched yet):** `brand=Apple`/`brand=Dell`
+request (Apple miss-penalty / budget turn, 05 §2b). **The 11-02 batch LANDED 11-03 (24 of 25; qwen-32B `ram=4GB` all-templates missing). Notebooks 00–06 still to rerun on the 119 runs; 07 (B per model) already uses them.** The batch was: `brand=Apple`/`brand=Dell`
 on gemma-27B and olmo-32B (4); 3 triples on gemma-27B, the same as qwen-32B's (3); OLMo Phase A, all 4 sizes (16);
 qwen-32B none + `ram=4GB` with all 43 templates in `data/laptops_all_templates/` (2) — the noise check (a plain repeat
 would return identical numbers: scoring is deterministic).
