@@ -8,6 +8,159 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-12 — New domain "real laptops": stage 1 prepared, nothing run yet
+
+Real products instead of the synthetic grid, to test whether the trends hold. Standalone domain in
+`data/real_laptops/`; nothing in `src/` or the existing scripts changed.
+
+- **Source:** Kaggle "Laptop Price" (`design/laptop_price.csv`), 1,303 rows → 1,275 after dropping rows
+  identical on everything but `laptop_ID`.
+- **Items:** 60, seed 20261112, in `design/items.csv`: 24 core (3 per cell of Dell/HP × 14.0/15.6 × 4GB/8GB)
+  + 36 uniform from the rest. Shown as one line: name + specs + price.
+- **Contracts:** 27 = none + 6 singles + 12 pairs + 8 triples over brand {Dell, HP}, screen {14-inch,
+  15.6-inch}, RAM {4GB, 8GB}; existing wording. Items satisfying: singles 17–33, pairs 6–16, triples 3–6.
+- **Pairs:** none + singles get all 1,770 pairs × 2 orders; the 20 compounds share one fixed sample of 500
+  pairs × 2 orders. One template (template 0). 44,780 prompts per model; qwen-72, gemma-27, olmo-32.
+- **Scripts:** `real_laptops_prepare.py` (design files), `real_laptops_collect.py` (one job = one model, all
+  contracts, runs in `data/real_laptops/<job>_<constraints_id>/`), `run_real_laptops.sh`,
+  `real_laptops_slurm_sanity.sh` (1 job), `real_laptops_slurms.sh` (3 jobs).
+- **Open:** the template sanity check (200 pairs × 2 orders × 5 templates, gemma-27) needs the cluster; the
+  main runs wait for Lotan's approval.
+
+---
+
+## 2026-11-12 — GRUM first simple test: efficiency + unseen compound contracts (`scripts/grum_first_test.py`)
+
+qwen-72, gemma-27, olmo-32; shopping frame; 13 / 13 / 10 contracts. Arms, all min-norm OLS: BT-full (one β
+per item, per contract), BT-feat (one w per contract), GRUM (shared w + x·B, γ per contract; x one-hot over
+the 11 levels, compound = sum). Truth = D̄ on the 990 pairs of the contract's full data. Outputs in
+`figs/grum_first_test/`. Sanity: GRUM = BT-feat on {none + singles}, max |diff| ≤ 3e-13. Numbers only.
+
+**A. Efficiency** (mean over contracts; M = rows sampled from the whole pool, 20 seeds):
+
+| model | arm | acc / R² at full pool | acc at M = 100 / 200 / 500 / 1k / 2k | smallest M with acc ≥ 95% of BT-full's full-pool acc |
+|---|---|---|---|---|
+| qwen-72 | BT-full | 0.957 / 0.926 | 0.588 / 0.647 / 0.741 / 0.849 / 0.901 | 5000 |
+| | BT-feat | 0.954 / 0.916 | 0.751 / 0.846 / 0.911 / 0.928 / 0.939 | 500 |
+| | GRUM | 0.925 / 0.876 | 0.801 / 0.866 / 0.899 / 0.911 / 0.916 | 1000 |
+| gemma-27 | BT-full | 0.959 / 0.866 | 0.586 / 0.640 / 0.708 / 0.816 / 0.882 | 5000 |
+| | BT-feat | 0.952 / 0.856 | 0.723 / 0.808 / 0.895 / 0.914 / 0.928 | 1000 |
+| | GRUM | 0.931 / 0.804 | 0.719 / 0.832 / 0.889 / 0.902 / 0.912 | 2000 |
+| olmo-32 | BT-full | 0.957 / 0.958 | 0.609 / 0.681 / 0.797 / 0.881 / 0.910 | 2000 |
+| | BT-feat | 0.945 / 0.942 | 0.802 / 0.877 / 0.915 / 0.927 / 0.935 | 500 |
+| | GRUM | 0.931 / 0.936 | 0.802 / 0.878 / 0.909 / 0.918 / 0.925 | 1000 |
+
+**B. Unseen compound contracts** (GRUM trained on none + all singles, zero rows of the test contract):
+
+| model | test contract | zero-shot acc / R² | ref none acc | best single-component ref acc | smallest k: BT-full / BT-feat ≥ zero-shot acc |
+|---|---|---|---|---|---|
+| qwen-72 | Dell + 8GB | 0.876 / 0.590 | 0.558 | 0.836 | 100 / 20 |
+| qwen-72 | Dell + 14" + 8GB | 0.829 / −0.613 | 0.564 | 0.756 | 100 / 20 |
+| qwen-72 | Dell + 14" | 0.871 / 0.589 | 0.616 | 0.811 | 100 / 20 |
+| qwen-72 | 14" + 4GB | 0.829 / 0.089 | 0.407 | 0.725 | 100 / 20 |
+| qwen-72 | 14" + 8GB | 0.875 / 0.597 | 0.617 | 0.812 | 200 / 20 |
+| gemma-27 | Apple + 14" + 8GB | 0.706 / −1.382 | 0.665 | 0.769 | 50 / 10 |
+| gemma-27 | Dell + 14" + 4GB | 0.754 / −3.613 | 0.420 | 0.684 | 100 / 20 |
+| gemma-27 | Dell + 14" + 8GB | 0.733 / −1.199 | 0.589 | 0.762 | 50 / 20 |
+| gemma-27 | 14" + 8GB | 0.773 / 0.333 | 0.649 | 0.824 | 50 / 20 |
+| olmo-32 | 14" + 8GB | 0.888 / 0.676 | 0.599 | 0.872 | 100 / 20 |
+
+GRUM few-shot (k rows of the test contract added): accuracy at k = 10 equals zero-shot to ±0.002 and at
+k = all rows is 0.879–0.974 (BT-feat on the same rows 0.924–0.973, BT-full 0.935–0.966).
+
+---
+
+## 2026-11-12 — Residual noise of the OLS BT fit vs the four MSE assumptions (`scripts/residual_noise.py`)
+
+Full parameterization (γ + one u per item), per run. Residual = m_c (misfit, constant in the cell) +
+e_ct (template). Group 1 = the 189 five-template runs; group 2 = the 4 complete 43-template runs, never
+pooled. Outputs in `figs/residual_noise/` (per-run CSV, binned CSV, two summary CSVs, 4 figures).
+Clustered SEs are CR1 and match statsmodels. Numbers only, medians over a model's runs:
+
+| group 1 | ρ = var_m/(var_m+var_e) | R² | e skew / ex. kurtosis | Spearman sd_c vs \|Ȳ_c\| | SE ratio cell / pair | √(1+(T−1)ρ) |
+|---|---|---|---|---|---|---|
+| qwen-7 / 32 / 72 | 0.91 / 0.89 / 0.90 | 0.86 / 0.85 / 0.86 | −0.27, 3.1 / 0.81, 3.1 / 1.38, 4.6 | 0.04 / −0.39 / −0.27 | 2.14, 2.53 / 2.09, 2.54 / 2.12, 2.63 | 2.15 / 2.13 / 2.14 |
+| gemma-1 / 4 / 12 / 27 | 0.23 / 0.71 / 0.83 / 0.86 | 0.69 / 0.82 / 0.83 / 0.78 | 2.07, 4.7 / 2.24, 9.7 / −0.05, 7.6 / −0.25, 15.8 | −0.80 / −0.57 / −0.57 / −0.69 | 1.38, 1.38 / 1.96, 1.97 / 2.06, 2.23 / 2.07, 2.20 | 1.38 / 1.96 / 2.08 / 2.11 |
+| olmo-1 / 7 / 13 / 32 | 0.08 / 0.68 / 0.88 / 0.81 | 0.29 / 0.83 / 0.89 / 0.91 | 1.45, 0.5 / −0.96, 5.0 / −0.42, 0.4 / −0.41, 1.4 | 0.33 / −0.26 / −0.05 / −0.14 | 1.00, 0.56 / 1.84, 1.87 / 2.11, 2.59 / 1.94, 1.78 | 1.15 / 1.93 / 2.12 / 2.06 |
+| qwen-0.5 and the 12 base models | 0.00–0.31 | 0.04–0.72 | −0.80…0.69, −1.2…2.3 | −0.79…0.89 | 0.58–1.46, 0.26–1.66 | 1.00–1.49 |
+
+- **Group 2 (43 templates):** ρ 0.66–0.90, R² 0.81–0.93; SE ratio cell 5.2–6.2, pair 4.4–8.1, against
+  √(1+42ρ) = 5.4–6.2. Shapiro–Wilk inside a cell rejects in 45–67% of cells (5% expected); median per-cell
+  skew 0.03–0.37, excess kurtosis −0.91…0.62.
+- **m is not mean-zero along Ŷ.** No-contract shopping run, mean m per Ŷ decile: gemma-27 −11.2…+12.0
+  (SE ≤ 0.8), qwen-72 −7.1…+6.3 (SE ≤ 0.4), olmo-32 −1.2…+1.3 (SE ≤ 0.13).
+- m(a,b) vs m(b,a): r = −0.72 qwen-72, −0.72 gemma-27, −0.18 olmo-32 (same three runs).
+- Share of e beyond ±3 sd: 0.5–3.7% in the 11 aligned models above (0.27% under a normal).
+- On the probability scale, Spearman of sd(P) vs |P̄ − 0.5| is −0.96…−1.00 in those 11 models.
+
+---
+
+## 2026-11-08 — Shared γ vs γ per contract (`scripts/gamma_per_contract.py`)
+
+189 complete 5-template laptop runs, 24 models (3 dead OLMo dirs skipped; the 43-template runs left
+out). Margins corrected by each run's own C, so γ = β₀ + C as in `src/bt.py`. Outputs in
+`figs/gamma_per_contract/` (per-run table + summary rows, per-weight table, balance failures).
+
+- **Balance: 0 of 189 runs fail.** Every run has 990 pairs, both orders, same 5 templates, one row each.
+- **Weights: shared γ and γ-per-run give the same weights, max |diff| = 0.0** in all 24 models
+  (also equal to FeatureBT per run, to 5e-15).
+- **γ differs between runs in every model:** one-way ANOVA on S, p ≤ 4e-20 for all 24 (also with
+  the frame pinned to `shopping`). Fitting γ per run cuts residual variance by 1.01–1.19× in the
+  aligned qwen/olmo/gemma models, 1.46× qwen-0.5B, and 1.47–2.64× in gemma-pt. SEs scale by the
+  square root of the same ratio (1.003–1.63×).
+- **C differs between runs** within gemma-1 (10.25–10.50), gemma-12 (9.50–9.75), qwen-7 (5.86–6.00),
+  and is 0 vs >0 inside gemma-27 / qwen-32 / qwen-72 (PMI-off runs next to PMI-on ones).
+  qwen-0.5B: C unknown in all 9 runs, so its γ_i are β₀, not γ.
+
+| model | γ none | γ_i range | sign flips vs none | var ratio |
+|---|---|---|---|---|
+| gemma-1 / 4 / 12 / 27 | 3.31 / 1.99 / −0.77 / −2.84 | 0.77…6.94 / 0.36…5.98 / −4.36…1.44 / −6.14…4.02 | 0 / 0 / 3 of 9 / 3 of 14 | 1.06 / 1.05 / 1.06 / 1.08 |
+| qwen-7 / 32 / 72 | −3.05 / −4.73 / −3.95 | −5.22…−0.54 / −6.74…−2.75 / −6.30…−1.53 | 0 / 0 / 0 | 1.04 / 1.01 / 1.05 |
+| olmo-1 / 7 / 13 / 32 | 0.12 / 3.37 / −0.50 / −0.87 | 0.12…0.69 / 2.24…5.80 / −1.36…0.44 / −2.11…−0.87 | 0 / 0 / 5 of 8 / 0 | 1.07 / 1.19 / 1.04 / 1.05 |
+
+---
+
+## 2026-11-03 — GRUM foundations re-set (session with Lotan; no new numbers)
+
+Back to basics after the GRUMish night run drifted: §12 of the formalization is a 21-parameter bespoke
+model (products of (1−κ), σ, ideal points, s_q, a meets-all bonus), no longer a GRUM. Decisions:
+
+- **One GRUM per model.** $x$ = the contract only, one-hot per (feature, level), 0 = silent; prompt semantics
+  ignored for now (a learned prompt encoder is a future option). $\delta_j = a^\top z_j$.
+- **$\varepsilon$ is template noise + misspecification**, not taste noise. The margin is read directly as
+  $U_a - U_b$, so estimation is OLS. Sampling closed models would make it a real RUM again.
+- **Main goal = learning**: predict choices under contracts with fewer examples than one BT per contract.
+  Benchmark = per-contract BT on all pairs (the ceiling). Still to fix: the axis of "fewer" (contracts, not
+  pairs — recommended; 96 contracts and growing exponentially, 45 additive items are cheap), the metric (not
+  pair accuracy alone: 88–99% of pairs are decided by RAM/screen), and a **rule baseline** — no-contract BT +
+  "meets the request wins" — which the GRUM must beat to show it learned anything about contracts.
+- **The conjecture, in $B$:** *gaps are filled consistently with the model's own taste* ⇔ $w_g(x) = a_g$ on
+  every silent $g$ ⇔ **$B$ is block-diagonal**. **Leakage = the conjecture failing.** §2.4 of
+  `grum_formalization.md` had this backwards (called the leaky agent the conjecture); corrected today.
+  Measured softly: retention $1-\kappa$ (magnitude) and direction (cosine / rank corr of $w_g$ with $a_g$),
+  reported separately, because a contract can rescale the whole log-odds without changing the order.
+- **Nested test, which is also the learning ladder:** M0 ($a$ only, 8 params) ⊂ M1 (diagonal blocks only =
+  the conjecture) ⊂ M2 (full $B$, 8 + 88). Does M2 beat M1 on held-out contracts? The gap is how much the
+  gap-filling depends on the request. §12's structured model is parked until this is settled.
+- **Apple is an anomaly, not evidence.** Every brand-leakage number so far (κ ram→brand 0.94, screen→brand
+  0.54, brand corr 0.19 under `ram=8GB`) is Apple-driven. Recompute without Apple before reading them
+  against the conjecture.
+
+What the existing data already says about the conjecture, read this way:
+
+| silent feature | under | what survives | verdict |
+|---|---|---|---|
+| brand, 4 non-Apple | any spec request | order roughly kept (swing 0.079 → 0.020 once Apple is dropped) | holds |
+| RAM | screen or brand request | direction kept, range halved (46–61% kept, GRUMish 07) | partial |
+| brand, Apple | every request, 11/11 models | falls even among compliant laptops | anomaly |
+| books, inside the requested genre | genre tag | order follows typicality, not the `none` taste (ρ −0.36…0.36) | fails |
+
+**Next:** model-free first. On pairs where **both** laptops meet the contract and differ only in the silent
+feature, correlate position-corrected $D$ under the contract with $D$ under `none` (direction) and fit the
+slope (magnitude), per model, with and without Apple. New notebook.
+
+---
+
 ## 2026-11-03 — The 11-02 batch landed (24 of 25); B heatmap per model (GRUMish 07)
 
 Lotan's commit 73b6c17: all 23 laptop runs (brand on gemma-27B / olmo-32B, 3 gemma-27B triples, OLMo Phase A for all 4

@@ -162,6 +162,22 @@ survives a contract?
     About half is "the two laptops look alike"; the rest survives within brand-only pairs. Nir's
     "both bad → strong bias" does **not** hold: what matters is indifference, not violation.
     So BT's single γ is wrong for these models; `D` is unaffected.
+16. **γ is not one number per model — but that does not touch the weights** (2026-11-08,
+    `scripts/gamma_per_contract.py`). All 189 laptop runs are balanced, so shared γ vs γ per contract
+    changes the weights by exactly 0. γ_i differs between contracts in all 24 models (ANOVA p ≤ 4e-20)
+    and flips sign in gemma-12/27, olmo-13 and some base models. Only γ itself, residuals (1.01–2.6×)
+    and SEs change.
+17. **Residual noise measured against the four MSE assumptions** (2026-11-12, `scripts/residual_noise.py`,
+    numbers in progress 11-12). In the 11 aligned models with signal, 68–91% of the residual variance is
+    cell-level misfit (ρ; gemma-1 0.23), clustered SEs are 1.4–2.6× the plain ones (5–8× with 43 templates),
+    and the misfit is not mean-zero along the fitted value. No decision taken yet on what to do with it.
+18. **GRUM first simple test run** (2026-11-12, `scripts/grum_first_test.py`, numbers in progress 11-12):
+    sample efficiency vs per-contract BT (full and feature), and zero-shot on 10 compound contracts, for
+    qwen-72 / gemma-27 / olmo-32. Reported without interpretation; no decision taken.
+19. **Real laptops domain — stage 1 prepared, waiting** (2026-11-12, progress same date). 60 real laptops,
+    27 contracts, design in `data/real_laptops/design/`. **Next:** Lotan launches
+    `scripts/real_laptops_slurm_sanity.sh` (1 job), then approves `scripts/real_laptops_slurms.sh` (3 jobs).
+    Stage 3 analysis script not written yet.
 
 ---
 
@@ -216,6 +232,11 @@ all 6 Apple/Dell path runs are in.
 olmo-32B `none` is quiet (winner saturated 8% vs 74–85% under its contracts, margin SD 1.3 vs 6–8)
 but stable (template agreement 0.97) and content-driven: a real low-confidence default, not a bug.
 List: `src/books/books.csv`, built by `src/books/make_books.py`.
+**GRUM foundations re-set (2026-11-03, progress same date):** the conjecture is **B block-diagonal** (gaps are
+filled with the model's own taste); leakage is its *failure*, measured softly as retention 1−κ plus direction, with
+and without Apple (Apple = anomaly, not evidence). Main goal = learning vs per-contract BT; nested ladder M0 ⊂ M1
+(conjecture) ⊂ M2 (full B), plus a rule baseline. §12's 21-parameter model is **parked**. **First step:** model-free
+retention on both-compliant pairs. §2.4 of the formalization corrected (it had the conjecture backwards).
 **GRUMish (2026-11-02):** [Notebooks/GRUMish/](../Notebooks/GRUMish/00_README.ipynb) — the structured GRUM on all 96
 laptop runs, Phases A–C with existing data (progress 11-02; **redone 11-03 on all-pairs weights**, CP dropped for
 prediction). Predicts unseen contracts at 0.84–0.94 pair accuracy vs ceiling 0.92–0.98. Settles: mirror, push = ideal

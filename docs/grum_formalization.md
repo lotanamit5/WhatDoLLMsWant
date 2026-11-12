@@ -225,12 +225,33 @@ weight, so $B$'s second row were $(0, -5)$ instead of $(-3,-5)$. Then $w = (2,-2
 | 🍫S | $+1$ | $\mathbf{+4}$ ← would win |
 | 🍦S | $\mathbf{+3}$ ← wins | $0$ |
 
-**Both agents obey the contract — both pick a small one.** But the leaky agent hands you
-*vanilla*, and it was never told anything about flavour. It filled the silent part of the
-contract with a preference of its own, and that preference is not even the one it started with.
+**Both agents obey the contract — both pick a small one.** The agent **without** leakage hands you
+*chocolate*: it filled the silent part of the contract with the taste it had all along. The leaky
+agent hands you *vanilla*, and it was never told anything about flavour — its taste on the silent
+feature changed because of what was asked.
 
-That is the thesis conjecture, and it is testable as: **are the off-diagonal blocks of $B$ zero
-or not?**
+**The thesis conjecture is the first agent** (settled 2026-11-03; an earlier version of this
+section had it backwards and called the leaky agent the conjecture). *Given a partial contract,
+the model fills the gaps consistently, with its own taste.* In $B$ that is a structural restriction:
+
+$$\text{conjecture:}\quad w_g(x) = a_g \ \text{ for every feature } g \text{ the contract is silent on}
+\quad\Longleftrightarrow\quad \text{the off-diagonal blocks of } B \text{ are } 0.$$
+
+**Leakage is the conjecture failing, not confirming.** Nobody expects exact zeros, so the test is
+soft — how much of the taste survives:
+
+$$w_g(x) = (1-\kappa_g(x))\,a_g + r_g(x), \qquad \kappa = \text{share of the magnitude lost},
+\quad r \perp a_g = \text{re-ordering}.$$
+
+- $\kappa \approx 0$, $r \approx 0$: the taste is kept — the conjecture holds.
+- $\kappa \to 1$: the request erases the taste. $r$ large: the request replaces it with another.
+  Both are failures, of different kinds. Report **direction** (cosine or rank correlation of $w_g$
+  with $a_g$) separately from **magnitude** ($1-\kappa$): a contract can sharpen or flatten the whole
+  log-odds scale without changing what the model prefers.
+
+Two consequences for reading §7–§12: the $\kappa$ values there are *retention losses*, not support
+for the conjecture; and the Apple fall (§11) is an anomaly found on the way, not evidence either
+way — every brand-leakage number must be reported **with and without Apple**.
 
 ---
 
