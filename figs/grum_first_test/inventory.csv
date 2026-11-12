@@ -1,0 +1,37 @@
+model,contract,kind,x,x_levels,all_components_exist,missing_components,run
+qwen-72,none,none,00000000000,,,,data/laptops_robustness/1271581
+qwen-72,brand=Dell,single,00100000000,Dell,,,data/laptops_robustness/1445296
+qwen-72,ram=16GB,single,00000000100,16GB,,,data/laptops_robustness/1320496
+qwen-72,ram=4GB,single,00000000010,4GB,,,data/laptops_robustness/1293550
+qwen-72,ram=8GB,single,00000000001,8GB,,,data/laptops_robustness/68374671
+qwen-72,screen=13-inch,single,00000100000,13-inch,,,data/laptops_robustness/1320495
+qwen-72,screen=14-inch,single,00000010000,14-inch,,,data/laptops_robustness/68339920
+qwen-72,screen=16-inch,single,00000001000,16-inch,,,data/laptops_robustness/1293549
+qwen-72,brand=Dell+ram=8GB,compound,00100000001,Dell + 8GB,True,,data/laptops_robustness/1445298
+qwen-72,brand=Dell+ram=8GB+screen=14-inch,compound,00100010001,Dell + 14-inch + 8GB,True,,data/laptops_robustness/1445304
+qwen-72,brand=Dell+screen=14-inch,compound,00100010000,Dell + 14-inch,True,,data/laptops_robustness/1445303
+qwen-72,ram=4GB+screen=14-inch,compound,00000010010,14-inch + 4GB,True,,data/laptops_robustness/1441003
+qwen-72,ram=8GB+screen=14-inch,compound,00000010001,14-inch + 8GB,True,,data/laptops_robustness/68374672
+gemma-27,none,none,00000000000,,,,data/laptops_robustness_gemma/68378741
+gemma-27,brand=Apple,single,01000000000,Apple,,,data/laptops_robustness/1475799
+gemma-27,brand=Dell,single,00100000000,Dell,,,data/laptops_robustness/1475800
+gemma-27,ram=16GB,single,00000000100,16GB,,,data/laptops_robustness/1293567
+gemma-27,ram=4GB,single,00000000010,4GB,,,data/laptops_robustness/1293566
+gemma-27,ram=8GB,single,00000000001,8GB,,,data/laptops_robustness_gemma/68378314
+gemma-27,screen=13-inch,single,00000100000,13-inch,,,data/laptops_robustness/1293564
+gemma-27,screen=14-inch,single,00000010000,14-inch,,,data/laptops_robustness_gemma/68378313
+gemma-27,screen=16-inch,single,00000001000,16-inch,,,data/laptops_robustness/1293565
+gemma-27,brand=Apple+ram=8GB+screen=14-inch,compound,01000010001,Apple + 14-inch + 8GB,True,,data/laptops_robustness/1475804
+gemma-27,brand=Dell+ram=4GB+screen=14-inch,compound,00100010010,Dell + 14-inch + 4GB,True,,data/laptops_robustness/1475805
+gemma-27,brand=Dell+ram=8GB+screen=14-inch,compound,00100010001,Dell + 14-inch + 8GB,True,,data/laptops_robustness/1475803
+gemma-27,ram=8GB+screen=14-inch,compound,00000010001,14-inch + 8GB,True,,data/laptops_robustness_gemma/68378315
+olmo-32,none,none,00000000000,,,,data/laptops_olmo/1319097
+olmo-32,brand=Apple,single,01000000000,Apple,,,data/laptops_olmo/1475801
+olmo-32,brand=Dell,single,00100000000,Dell,,,data/laptops_olmo/1475802
+olmo-32,ram=16GB,single,00000000100,16GB,,,data/laptops_olmo/1475821
+olmo-32,ram=4GB,single,00000000010,4GB,,,data/laptops_olmo/1475820
+olmo-32,ram=8GB,single,00000000001,8GB,,,data/laptops_olmo/1320480
+olmo-32,screen=13-inch,single,00000100000,13-inch,,,data/laptops_olmo/1475818
+olmo-32,screen=14-inch,single,00000010000,14-inch,,,data/laptops_olmo/1320479
+olmo-32,screen=16-inch,single,00000001000,16-inch,,,data/laptops_olmo/1475819
+olmo-32,ram=8GB+screen=14-inch,compound,00000010001,14-inch + 8GB,True,,data/laptops_olmo/1320481
