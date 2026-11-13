@@ -204,6 +204,11 @@ survives a contract?
     **Next:** Lotan approves → 15 jobs on heraclitus (248,292 prompts per model). Needs a `--gres` key in
     `create_slurms.py` first (not added). Stage 3 analysis script not written yet.
     One GPU goes to one job (no sharing in SLURM); gemma-27 and olmo-32 take 1 GPU, qwen-72 takes 2.
+    **Pipeline test on Heraclitus passed** (progress 11-13 afternoon, 4): 3 models × 4 contracts × 400 rows,
+    all complete; 13.9 / 12.2 / 6.8 prompts/s (gemma-27 / olmo-32 / qwen-72), so ≈ 5 / 6 / 10 h per model.
+    **Careful: a `bml` job that does not fit in the free GPUs removes `public` jobs at once** (it happened
+    once on 11-13). The wrapper's default of 8 GPUs per job takes the whole server: 15 jobs one by one ≈ 21 h,
+    against ≈ 11 h with 2 + 1 GPUs. Which one is Lotan's call.
     `environment.yml` describes the new torch install (updated 11-13). Stage 1 approval is deferred until
     the env and the pipeline are settled.
 

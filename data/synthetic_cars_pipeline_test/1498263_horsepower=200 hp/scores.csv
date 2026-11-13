@@ -1,0 +1,401 @@
+template_idx,score_a,score_b,a_id,a_company,a_color,a_fuel,a_transmission,a_ownership,a_horsepower,b_id,b_company,b_color,b_fuel,b_transmission,b_ownership,b_horsepower
+0,-0.8515625,-0.5546875,1,BMW,black,diesel,automatic,ex-lease,200 hp,3,BMW,black,petrol,automatic,private third owner,200 hp
+0,-0.33984375,-1.2421875,3,BMW,black,petrol,automatic,private third owner,200 hp,1,BMW,black,diesel,automatic,ex-lease,200 hp
+0,-0.023193359375,-3.765625,1,BMW,black,diesel,automatic,ex-lease,200 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-7.15625,-0.00078582763671875,58,Mercedes,red,diesel,automatic,private first owner,150 hp,1,BMW,black,diesel,automatic,ex-lease,200 hp
+0,-0.0004329681396484375,-7.75,1,BMW,black,diesel,automatic,ex-lease,200 hp,70,Mercedes,blue,diesel,automatic,ex-rental,150 hp
+0,-8.9375,-0.0001354217529296875,70,Mercedes,blue,diesel,automatic,ex-rental,150 hp,1,BMW,black,diesel,automatic,ex-lease,200 hp
+0,-0.00011682510375976562,-9.0625,1,BMW,black,diesel,automatic,ex-lease,200 hp,93,Ford,red,petrol,automatic,ex-rental,100 hp
+0,-8.8125,-0.000156402587890625,93,Ford,red,petrol,automatic,ex-rental,100 hp,1,BMW,black,diesel,automatic,ex-lease,200 hp
+0,-0.1875,-1.765625,2,BMW,black,diesel,automatic,private second owner,200 hp,17,Honda,grey,petrol,manual,ex-lease,200 hp
+0,-0.86328125,-0.55078125,17,Honda,grey,petrol,manual,ex-lease,200 hp,2,BMW,black,diesel,automatic,private second owner,200 hp
+0,-0.00022983551025390625,-8.375,2,BMW,black,diesel,automatic,private second owner,200 hp,35,Toyota,black,diesel,automatic,private third owner,100 hp
+0,-9.1875,-0.00011110305786132812,35,Toyota,black,diesel,automatic,private third owner,100 hp,2,BMW,black,diesel,automatic,private second owner,200 hp
+0,-0.000965118408203125,-6.9375,2,BMW,black,diesel,automatic,private second owner,200 hp,87,Audi,grey,petrol,automatic,private third owner,150 hp
+0,-6.65625,-0.00128173828125,87,Audi,grey,petrol,automatic,private third owner,150 hp,2,BMW,black,diesel,automatic,private second owner,200 hp
+0,-0.0001468658447265625,-8.875,2,BMW,black,diesel,automatic,private second owner,200 hp,119,Honda,grey,diesel,automatic,private third owner,100 hp
+0,-8.875,-0.0001468658447265625,119,Honda,grey,diesel,automatic,private third owner,100 hp,2,BMW,black,diesel,automatic,private second owner,200 hp
+0,-0.001617431640625,-6.4375,3,BMW,black,petrol,automatic,private third owner,200 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-7.6875,-0.0004673004150390625,5,Honda,silver,petrol,manual,private second owner,100 hp,3,BMW,black,petrol,automatic,private third owner,200 hp
+0,-0.0002460479736328125,-8.3125,3,BMW,black,petrol,automatic,private third owner,200 hp,62,Ford,blue,petrol,manual,private third owner,100 hp
+0,-8.75,-0.000171661376953125,62,Ford,blue,petrol,manual,private third owner,100 hp,3,BMW,black,petrol,automatic,private third owner,200 hp
+0,-3.078125,-0.046875,3,BMW,black,petrol,automatic,private third owner,200 hp,84,BMW,blue,petrol,manual,private first owner,200 hp
+0,-0.048583984375,-3.046875,84,BMW,blue,petrol,manual,private first owner,200 hp,3,BMW,black,petrol,automatic,private third owner,200 hp
+0,-7.34375,-0.00067138671875,4,Honda,red,petrol,manual,private first owner,100 hp,8,Toyota,white,diesel,automatic,private first owner,200 hp
+0,-0.0010528564453125,-6.875,8,Toyota,white,diesel,automatic,private first owner,200 hp,4,Honda,red,petrol,manual,private first owner,100 hp
+0,-0.1552734375,-1.9375,4,Honda,red,petrol,manual,private first owner,100 hp,47,Toyota,black,diesel,manual,private third owner,100 hp
+0,-4.625,-0.0098876953125,47,Toyota,black,diesel,manual,private third owner,100 hp,4,Honda,red,petrol,manual,private first owner,100 hp
+0,-2.984375,-0.052001953125,5,Honda,silver,petrol,manual,private second owner,100 hp,55,Toyota,black,petrol,manual,ex-rental,150 hp
+0,-0.11474609375,-2.21875,55,Toyota,black,petrol,manual,ex-rental,150 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-0.7734375,-0.6171875,5,Honda,silver,petrol,manual,private second owner,100 hp,64,Toyota,blue,petrol,manual,ex-rental,100 hp
+0,-4.53125,-0.01068115234375,64,Toyota,blue,petrol,manual,ex-rental,100 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-8.6875,-0.00018787384033203125,5,Honda,silver,petrol,manual,private second owner,100 hp,105,Audi,blue,petrol,automatic,private second owner,200 hp
+0,-0.00021648406982421875,-8.5,105,Audi,blue,petrol,automatic,private second owner,200 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-7.34375,-0.0006561279296875,5,Honda,silver,petrol,manual,private second owner,100 hp,106,Audi,white,diesel,manual,private first owner,200 hp
+0,-0.0003337860107421875,-8.0,106,Audi,white,diesel,manual,private first owner,200 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-8.125,-0.000316619873046875,5,Honda,silver,petrol,manual,private second owner,100 hp,111,Toyota,grey,petrol,manual,ex-lease,200 hp
+0,-0.002410888671875,-6.03125,111,Toyota,grey,petrol,manual,ex-lease,200 hp,5,Honda,silver,petrol,manual,private second owner,100 hp
+0,-4.40625,-0.0123291015625,6,Honda,black,petrol,manual,ex-lease,100 hp,24,Mercedes,blue,petrol,automatic,private first owner,150 hp
+0,-0.0162353515625,-4.125,24,Mercedes,blue,petrol,automatic,private first owner,150 hp,6,Honda,black,petrol,manual,ex-lease,100 hp
+0,-0.45703125,-1.0,6,Honda,black,petrol,manual,ex-lease,100 hp,59,Honda,blue,diesel,automatic,private second owner,100 hp
+0,-2.5,-0.0859375,59,Honda,blue,diesel,automatic,private second owner,100 hp,6,Honda,black,petrol,manual,ex-lease,100 hp
+0,-1.4921875,-0.255859375,6,Honda,black,petrol,manual,ex-lease,100 hp,60,Mercedes,white,petrol,automatic,private second owner,100 hp
+0,-1.2890625,-0.322265625,60,Mercedes,white,petrol,automatic,private second owner,100 hp,6,Honda,black,petrol,manual,ex-lease,100 hp
+0,-5.1875,-0.005645751953125,6,Honda,black,petrol,manual,ex-lease,100 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-0.0247802734375,-3.71875,83,BMW,white,petrol,manual,private second owner,150 hp,6,Honda,black,petrol,manual,ex-lease,100 hp
+0,-3.859375,-0.021484375,7,Toyota,white,diesel,automatic,private first owner,150 hp,24,Mercedes,blue,petrol,automatic,private first owner,150 hp
+0,-1.0703125,-0.41796875,24,Mercedes,blue,petrol,automatic,private first owner,150 hp,7,Toyota,white,diesel,automatic,private first owner,150 hp
+0,-6.375,-0.0017242431640625,7,Toyota,white,diesel,automatic,private first owner,150 hp,61,Ford,red,petrol,manual,private first owner,200 hp
+0,-0.00092315673828125,-7.0,61,Ford,red,petrol,manual,private first owner,200 hp,7,Toyota,white,diesel,automatic,private first owner,150 hp
+0,-0.0263671875,-3.65625,7,Toyota,white,diesel,automatic,private first owner,150 hp,119,Honda,grey,diesel,automatic,private third owner,100 hp
+0,-5.09375,-0.00616455078125,119,Honda,grey,diesel,automatic,private third owner,100 hp,7,Toyota,white,diesel,automatic,private first owner,150 hp
+0,-0.000659942626953125,-7.34375,8,Toyota,white,diesel,automatic,private first owner,200 hp,50,Toyota,silver,diesel,automatic,ex-lease,100 hp
+0,-9.0,-0.00014400482177734375,50,Toyota,silver,diesel,automatic,ex-lease,100 hp,8,Toyota,white,diesel,automatic,private first owner,200 hp
+0,-0.006317138671875,-5.0625,8,Toyota,white,diesel,automatic,private first owner,200 hp,95,BMW,grey,diesel,automatic,private first owner,100 hp
+0,-9.5,-8.058547973632812e-05,95,BMW,grey,diesel,automatic,private first owner,100 hp,8,Toyota,white,diesel,automatic,private first owner,200 hp
+0,-0.2890625,-1.3828125,8,Toyota,white,diesel,automatic,private first owner,200 hp,98,Ford,black,petrol,manual,private first owner,200 hp
+0,-0.080078125,-2.5625,98,Ford,black,petrol,manual,private first owner,200 hp,8,Toyota,white,diesel,automatic,private first owner,200 hp
+0,-2.328125,-0.10302734375,9,Toyota,white,petrol,automatic,private first owner,100 hp,63,BMW,silver,petrol,manual,private third owner,150 hp
+0,-0.376953125,-1.15625,63,BMW,silver,petrol,manual,private third owner,150 hp,9,Toyota,white,petrol,automatic,private first owner,100 hp
+0,-3.34375,-0.0361328125,9,Toyota,white,petrol,automatic,private first owner,100 hp,91,Toyota,silver,petrol,automatic,private third owner,150 hp
+0,-0.30078125,-1.3515625,91,Toyota,silver,petrol,automatic,private third owner,150 hp,9,Toyota,white,petrol,automatic,private first owner,100 hp
+0,-5.6875,-0.003387451171875,10,Ford,blue,diesel,manual,ex-lease,150 hp,39,Honda,white,petrol,automatic,ex-rental,200 hp
+0,-0.00186920166015625,-6.28125,39,Honda,white,petrol,automatic,ex-rental,200 hp,10,Ford,blue,diesel,manual,ex-lease,150 hp
+0,-5.0625,-0.006317138671875,10,Ford,blue,diesel,manual,ex-lease,150 hp,69,Honda,red,petrol,manual,private first owner,150 hp
+0,-0.171875,-1.84375,69,Honda,red,petrol,manual,private first owner,150 hp,10,Ford,blue,diesel,manual,ex-lease,150 hp
+0,-0.1796875,-1.8046875,10,Ford,blue,diesel,manual,ex-lease,150 hp,95,BMW,grey,diesel,automatic,private first owner,100 hp
+0,-4.6875,-0.00927734375,95,BMW,grey,diesel,automatic,private first owner,100 hp,10,Ford,blue,diesel,manual,ex-lease,150 hp
+0,-6.46875,-0.00156402587890625,10,Ford,blue,diesel,manual,ex-lease,150 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-0.059326171875,-2.859375,107,Ford,grey,diesel,automatic,private third owner,200 hp,10,Ford,blue,diesel,manual,ex-lease,150 hp
+0,-0.109375,-2.265625,11,Ford,red,diesel,automatic,ex-lease,150 hp,22,Mercedes,red,diesel,automatic,private second owner,100 hp
+0,-6.125,-0.002197265625,22,Mercedes,red,diesel,automatic,private second owner,100 hp,11,Ford,red,diesel,automatic,ex-lease,150 hp
+0,-0.376953125,-1.15625,11,Ford,red,diesel,automatic,ex-lease,150 hp,45,BMW,blue,petrol,manual,ex-lease,100 hp
+0,-2.5625,-0.080078125,45,BMW,blue,petrol,manual,ex-lease,100 hp,11,Ford,red,diesel,automatic,ex-lease,150 hp
+0,-0.126953125,-2.125,11,Ford,red,diesel,automatic,ex-lease,150 hp,90,Audi,black,petrol,manual,private first owner,100 hp
+0,-2.0,-0.14453125,90,Audi,black,petrol,manual,private first owner,100 hp,11,Ford,red,diesel,automatic,ex-lease,150 hp
+0,-7.59375,-0.000518798828125,11,Ford,red,diesel,automatic,ex-lease,150 hp,99,Ford,grey,petrol,automatic,ex-rental,200 hp
+0,-0.00616455078125,-5.09375,99,Ford,grey,petrol,automatic,ex-rental,200 hp,11,Ford,red,diesel,automatic,ex-lease,150 hp
+0,-0.064453125,-2.78125,12,Ford,white,diesel,manual,ex-lease,150 hp,22,Mercedes,red,diesel,automatic,private second owner,100 hp
+0,-5.40625,-0.0045166015625,22,Mercedes,red,diesel,automatic,private second owner,100 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-0.046142578125,-3.09375,12,Ford,white,diesel,manual,ex-lease,150 hp,26,BMW,silver,diesel,manual,ex-rental,100 hp
+0,-4.625,-0.009765625,26,BMW,silver,diesel,manual,ex-rental,100 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-2.84375,-0.0595703125,12,Ford,white,diesel,manual,ex-lease,150 hp,28,Toyota,grey,petrol,automatic,ex-lease,150 hp
+0,-0.296875,-1.359375,28,Toyota,grey,petrol,automatic,ex-lease,150 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-3.796875,-0.0225830078125,12,Ford,white,diesel,manual,ex-lease,150 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-1.0625,-0.423828125,31,Audi,blue,diesel,manual,ex-lease,150 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-0.1552734375,-1.9375,12,Ford,white,diesel,manual,ex-lease,150 hp,59,Honda,blue,diesel,automatic,private second owner,100 hp
+0,-4.5625,-0.010498046875,59,Honda,blue,diesel,automatic,private second owner,100 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-9.375,-8.726119995117188e-05,12,Ford,white,diesel,manual,ex-lease,150 hp,106,Audi,white,diesel,manual,private first owner,200 hp
+0,-0.0003948211669921875,-7.84375,106,Audi,white,diesel,manual,private first owner,200 hp,12,Ford,white,diesel,manual,ex-lease,150 hp
+0,-0.000629425048828125,-7.375,13,Audi,silver,petrol,automatic,private second owner,200 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-9.125,-0.00011730194091796875,20,Ford,silver,petrol,automatic,ex-lease,150 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.000705718994140625,-7.28125,13,Audi,silver,petrol,automatic,private second owner,200 hp,25,Toyota,red,diesel,manual,private third owner,150 hp
+0,-7.15625,-0.000804901123046875,25,Toyota,red,diesel,manual,private third owner,150 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.00092315673828125,-7.0,13,Audi,silver,petrol,automatic,private second owner,200 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-7.5625,-0.00054168701171875,31,Audi,blue,diesel,manual,ex-lease,150 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.000881195068359375,-7.03125,13,Audi,silver,petrol,automatic,private second owner,200 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-8.75,-0.000171661376953125,32,Honda,blue,diesel,automatic,ex-lease,150 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.0003299713134765625,-8.0625,13,Audi,silver,petrol,automatic,private second owner,200 hp,45,BMW,blue,petrol,manual,ex-lease,100 hp
+0,-9.1875,-0.00011301040649414062,45,BMW,blue,petrol,manual,ex-lease,100 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.000438690185546875,-7.75,13,Audi,silver,petrol,automatic,private second owner,200 hp,96,Honda,grey,diesel,manual,private second owner,150 hp
+0,-6.96875,-0.00095367431640625,96,Honda,grey,diesel,manual,private second owner,150 hp,13,Audi,silver,petrol,automatic,private second owner,200 hp
+0,-0.357421875,-1.203125,14,BMW,white,petrol,automatic,private second owner,150 hp,25,Toyota,red,diesel,manual,private third owner,150 hp
+0,-4.0625,-0.0174560546875,25,Toyota,red,diesel,manual,private third owner,150 hp,14,BMW,white,petrol,automatic,private second owner,150 hp
+0,-0.051025390625,-3.0,14,BMW,white,petrol,automatic,private second owner,150 hp,41,Ford,silver,petrol,automatic,private first owner,100 hp
+0,-2.859375,-0.058837890625,41,Ford,silver,petrol,automatic,private first owner,100 hp,14,BMW,white,petrol,automatic,private second owner,150 hp
+0,-0.41796875,-1.078125,14,BMW,white,petrol,automatic,private second owner,150 hp,74,Toyota,grey,diesel,manual,private second owner,150 hp
+0,-4.03125,-0.0179443359375,74,Toyota,grey,diesel,manual,private second owner,150 hp,14,BMW,white,petrol,automatic,private second owner,150 hp
+0,-0.008544921875,-4.78125,14,BMW,white,petrol,automatic,private second owner,150 hp,97,Audi,white,petrol,manual,ex-lease,100 hp
+0,-4.625,-0.00982666015625,97,Audi,white,petrol,manual,ex-lease,100 hp,14,BMW,white,petrol,automatic,private second owner,150 hp
+0,-8.5,-0.0002079010009765625,15,BMW,white,petrol,manual,private third owner,100 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.00531005859375,-5.25,23,Mercedes,white,diesel,manual,ex-lease,200 hp,15,BMW,white,petrol,manual,private third owner,100 hp
+0,-4.40625,-0.01239013671875,15,BMW,white,petrol,manual,private third owner,100 hp,42,Ford,grey,petrol,manual,ex-rental,150 hp
+0,-0.07275390625,-2.65625,42,Ford,grey,petrol,manual,ex-rental,150 hp,15,BMW,white,petrol,manual,private third owner,100 hp
+0,-7.28125,-0.00069427490234375,15,BMW,white,petrol,manual,private third owner,100 hp,86,Honda,white,diesel,automatic,ex-rental,200 hp
+0,-0.044677734375,-3.125,86,Honda,white,diesel,automatic,ex-rental,200 hp,15,BMW,white,petrol,manual,private third owner,100 hp
+0,-4.4375,-0.0118408203125,15,BMW,white,petrol,manual,private third owner,100 hp,104,BMW,black,petrol,automatic,ex-lease,150 hp
+0,-0.009033203125,-4.71875,104,BMW,black,petrol,automatic,ex-lease,150 hp,15,BMW,white,petrol,manual,private third owner,100 hp
+0,-1.4453125,-0.26953125,16,Honda,white,petrol,automatic,ex-rental,150 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-0.9453125,-0.4921875,20,Ford,silver,petrol,automatic,ex-lease,150 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-6.90625,-0.0010223388671875,16,Honda,white,petrol,automatic,ex-rental,150 hp,43,Mercedes,grey,petrol,manual,ex-lease,200 hp
+0,-0.003021240234375,-5.8125,43,Mercedes,grey,petrol,manual,ex-lease,200 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-0.75,-0.640625,16,Honda,white,petrol,automatic,ex-rental,150 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-2.65625,-0.07275390625,57,Honda,silver,diesel,manual,private third owner,150 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-2.875,-0.058349609375,16,Honda,white,petrol,automatic,ex-rental,150 hp,70,Mercedes,blue,diesel,automatic,ex-rental,150 hp
+0,-4.21875,-0.0146484375,70,Mercedes,blue,diesel,automatic,ex-rental,150 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-8.3125,-0.00025177001953125,16,Honda,white,petrol,automatic,ex-rental,150 hp,94,Mercedes,red,petrol,automatic,private third owner,200 hp
+0,-0.01446533203125,-4.25,94,Mercedes,red,petrol,automatic,private third owner,200 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-10.25,-3.886222839355469e-05,16,Honda,white,petrol,automatic,ex-rental,150 hp,100,Audi,grey,petrol,automatic,private first owner,200 hp
+0,-3.4809112548828125e-05,-10.375,100,Audi,grey,petrol,automatic,private first owner,200 hp,16,Honda,white,petrol,automatic,ex-rental,150 hp
+0,-1.5234375,-0.2451171875,17,Honda,grey,petrol,manual,ex-lease,200 hp,67,Ford,red,petrol,manual,private second owner,200 hp
+0,-0.318359375,-1.3046875,67,Ford,red,petrol,manual,private second owner,200 hp,17,Honda,grey,petrol,manual,ex-lease,200 hp
+0,-0.0029754638671875,-5.8125,17,Honda,grey,petrol,manual,ex-lease,200 hp,82,BMW,red,diesel,automatic,ex-lease,100 hp
+0,-8.9375,-0.00014591217041015625,82,BMW,red,diesel,automatic,ex-lease,100 hp,17,Honda,grey,petrol,manual,ex-lease,200 hp
+0,-4.90625,-0.007476806640625,18,Honda,blue,petrol,automatic,private third owner,100 hp,28,Toyota,grey,petrol,automatic,ex-lease,150 hp
+0,-0.018798828125,-3.984375,28,Toyota,grey,petrol,automatic,ex-lease,150 hp,18,Honda,blue,petrol,automatic,private third owner,100 hp
+0,-1.3359375,-0.3046875,18,Honda,blue,petrol,automatic,private third owner,100 hp,68,Toyota,grey,diesel,automatic,ex-rental,100 hp
+0,-3.90625,-0.020263671875,68,Toyota,grey,diesel,automatic,ex-rental,100 hp,18,Honda,blue,petrol,automatic,private third owner,100 hp
+0,-8.9375,-0.00013637542724609375,18,Honda,blue,petrol,automatic,private third owner,100 hp,75,Audi,black,petrol,automatic,ex-rental,200 hp
+0,-0.00408935546875,-5.5,75,Audi,black,petrol,automatic,ex-rental,200 hp,18,Honda,blue,petrol,automatic,private third owner,100 hp
+0,-9.25,-0.0001010894775390625,18,Honda,blue,petrol,automatic,private third owner,100 hp,94,Mercedes,red,petrol,automatic,private third owner,200 hp
+0,-0.0010223388671875,-6.90625,94,Mercedes,red,petrol,automatic,private third owner,200 hp,18,Honda,blue,petrol,automatic,private third owner,100 hp
+0,-2.328125,-0.10302734375,18,Honda,blue,petrol,automatic,private third owner,100 hp,120,Mercedes,grey,petrol,manual,private third owner,100 hp
+0,-3.078125,-0.047119140625,120,Mercedes,grey,petrol,manual,private third owner,100 hp,18,Honda,blue,petrol,automatic,private third owner,100 hp
+0,-0.06591796875,-2.75,19,Honda,black,diesel,manual,ex-lease,200 hp,63,BMW,silver,petrol,manual,private third owner,150 hp
+0,-6.96875,-0.00095367431640625,63,BMW,silver,petrol,manual,private third owner,150 hp,19,Honda,black,diesel,manual,ex-lease,200 hp
+0,-0.027587890625,-3.609375,20,Ford,silver,petrol,automatic,ex-lease,150 hp,49,Audi,silver,diesel,manual,private first owner,100 hp
+0,-4.34375,-0.01318359375,49,Audi,silver,diesel,manual,private first owner,100 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-8.6875,-0.00017261505126953125,20,Ford,silver,petrol,automatic,ex-lease,150 hp,51,BMW,silver,diesel,automatic,private first owner,200 hp
+0,-0.0001926422119140625,-8.5625,51,BMW,silver,diesel,automatic,private first owner,200 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-0.0196533203125,-3.9375,20,Ford,silver,petrol,automatic,ex-lease,150 hp,93,Ford,red,petrol,automatic,ex-rental,100 hp
+0,-4.84375,-0.00787353515625,93,Ford,red,petrol,automatic,ex-rental,100 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-2.6875,-0.0703125,20,Ford,silver,petrol,automatic,ex-lease,150 hp,114,Mercedes,black,diesel,automatic,private second owner,150 hp
+0,-3.71875,-0.0245361328125,114,Mercedes,black,diesel,automatic,private second owner,150 hp,20,Ford,silver,petrol,automatic,ex-lease,150 hp
+0,-6.0625,-0.00238037109375,21,Ford,black,diesel,manual,private first owner,100 hp,54,Honda,silver,diesel,automatic,ex-rental,200 hp
+0,-0.03857421875,-3.265625,54,Honda,silver,diesel,automatic,ex-rental,200 hp,21,Ford,black,diesel,manual,private first owner,100 hp
+0,-0.396484375,-1.1171875,21,Ford,black,diesel,manual,private first owner,100 hp,68,Toyota,grey,diesel,automatic,ex-rental,100 hp
+0,-3.5625,-0.0286865234375,68,Toyota,grey,diesel,automatic,ex-rental,100 hp,21,Ford,black,diesel,manual,private first owner,100 hp
+0,-7.46875,-0.00058746337890625,21,Ford,black,diesel,manual,private first owner,100 hp,71,BMW,blue,diesel,manual,private third owner,200 hp
+0,-0.01458740234375,-4.21875,71,BMW,blue,diesel,manual,private third owner,200 hp,21,Ford,black,diesel,manual,private first owner,100 hp
+0,-3.90625,-0.0205078125,22,Mercedes,red,diesel,automatic,private second owner,100 hp,27,Mercedes,white,petrol,automatic,ex-lease,100 hp
+0,-0.8984375,-0.5234375,27,Mercedes,white,petrol,automatic,ex-lease,100 hp,22,Mercedes,red,diesel,automatic,private second owner,100 hp
+0,-6.125,-0.002227783203125,22,Mercedes,red,diesel,automatic,private second owner,100 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-0.0703125,-2.6875,32,Honda,blue,diesel,automatic,ex-lease,150 hp,22,Mercedes,red,diesel,automatic,private second owner,100 hp
+0,-2.421875,-0.09326171875,22,Mercedes,red,diesel,automatic,private second owner,100 hp,49,Audi,silver,diesel,manual,private first owner,100 hp
+0,-0.91796875,-0.51171875,49,Audi,silver,diesel,manual,private first owner,100 hp,22,Mercedes,red,diesel,automatic,private second owner,100 hp
+0,-0.00146484375,-6.53125,23,Mercedes,white,diesel,manual,ex-lease,200 hp,27,Mercedes,white,petrol,automatic,ex-lease,100 hp
+0,-7.9375,-0.000370025634765625,27,Mercedes,white,petrol,automatic,ex-lease,100 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.0008087158203125,-7.125,23,Mercedes,white,diesel,manual,ex-lease,200 hp,29,BMW,red,diesel,manual,ex-rental,100 hp
+0,-9.375,-9.1552734375e-05,29,BMW,red,diesel,manual,ex-rental,100 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.7421875,-0.6484375,23,Mercedes,white,diesel,manual,ex-lease,200 hp,94,Mercedes,red,petrol,automatic,private third owner,200 hp
+0,-0.201171875,-1.703125,94,Mercedes,red,petrol,automatic,private third owner,200 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.00115966796875,-6.78125,23,Mercedes,white,diesel,manual,ex-lease,200 hp,97,Audi,white,petrol,manual,ex-lease,100 hp
+0,-7.8125,-0.0004177093505859375,97,Audi,white,petrol,manual,ex-lease,100 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.2353515625,-1.5625,23,Mercedes,white,diesel,manual,ex-lease,200 hp,99,Ford,grey,petrol,automatic,ex-rental,200 hp
+0,-0.5703125,-0.8359375,99,Ford,grey,petrol,automatic,ex-rental,200 hp,23,Mercedes,white,diesel,manual,ex-lease,200 hp
+0,-0.01177978515625,-4.4375,24,Mercedes,blue,petrol,automatic,private first owner,150 hp,47,Toyota,black,diesel,manual,private third owner,100 hp
+0,-4.65625,-0.009521484375,47,Toyota,black,diesel,manual,private third owner,100 hp,24,Mercedes,blue,petrol,automatic,private first owner,150 hp
+0,-0.28515625,-1.390625,24,Mercedes,blue,petrol,automatic,private first owner,150 hp,110,Audi,red,diesel,automatic,private third owner,150 hp
+0,-4.84375,-0.00799560546875,110,Audi,red,diesel,automatic,private third owner,150 hp,24,Mercedes,blue,petrol,automatic,private first owner,150 hp
+0,-0.322265625,-1.2890625,25,Toyota,red,diesel,manual,private third owner,150 hp,97,Audi,white,petrol,manual,ex-lease,100 hp
+0,-3.875,-0.02099609375,97,Audi,white,petrol,manual,ex-lease,100 hp,25,Toyota,red,diesel,manual,private third owner,150 hp
+0,-0.640625,-0.75,25,Toyota,red,diesel,manual,private third owner,150 hp,120,Mercedes,grey,petrol,manual,private third owner,100 hp
+0,-3.90625,-0.0205078125,120,Mercedes,grey,petrol,manual,private third owner,100 hp,25,Toyota,red,diesel,manual,private third owner,150 hp
+0,-10.6875,-2.6702880859375e-05,26,BMW,silver,diesel,manual,ex-rental,100 hp,106,Audi,white,diesel,manual,private first owner,200 hp
+0,-5.459785461425781e-05,-9.875,106,Audi,white,diesel,manual,private first owner,200 hp,26,BMW,silver,diesel,manual,ex-rental,100 hp
+0,-2.96875,-0.052490234375,26,BMW,silver,diesel,manual,ex-rental,100 hp,120,Mercedes,grey,petrol,manual,private third owner,100 hp
+0,-2.21875,-0.11474609375,120,Mercedes,grey,petrol,manual,private third owner,100 hp,26,BMW,silver,diesel,manual,ex-rental,100 hp
+0,-0.01275634765625,-4.375,28,Toyota,grey,petrol,automatic,ex-lease,150 hp,36,Mercedes,white,diesel,manual,private third owner,100 hp
+0,-6.0,-0.002532958984375,36,Mercedes,white,diesel,manual,private third owner,100 hp,28,Toyota,grey,petrol,automatic,ex-lease,150 hp
+0,-0.0390625,-3.265625,28,Toyota,grey,petrol,automatic,ex-lease,150 hp,77,Honda,silver,diesel,automatic,private first owner,100 hp
+0,-4.6875,-0.00933837890625,77,Honda,silver,diesel,automatic,private first owner,100 hp,28,Toyota,grey,petrol,automatic,ex-lease,150 hp
+0,-1.46875,-0.26171875,28,Toyota,grey,petrol,automatic,ex-lease,150 hp,91,Toyota,silver,petrol,automatic,private third owner,150 hp
+0,-2.796875,-0.06298828125,91,Toyota,silver,petrol,automatic,private third owner,150 hp,28,Toyota,grey,petrol,automatic,ex-lease,150 hp
+0,-10.1875,-4.9114227294921875e-05,29,BMW,red,diesel,manual,ex-rental,100 hp,38,Toyota,red,petrol,manual,private second owner,200 hp
+0,-0.00104522705078125,-6.875,38,Toyota,red,petrol,manual,private second owner,200 hp,29,BMW,red,diesel,manual,ex-rental,100 hp
+0,-5.78125,-0.0030975341796875,29,BMW,red,diesel,manual,ex-rental,100 hp,40,Ford,silver,diesel,automatic,private second owner,150 hp
+0,-0.0233154296875,-3.765625,40,Ford,silver,diesel,automatic,private second owner,150 hp,29,BMW,red,diesel,manual,ex-rental,100 hp
+0,-7.40625,-0.0006256103515625,29,BMW,red,diesel,manual,ex-rental,100 hp,112,BMW,grey,petrol,manual,private first owner,150 hp
+0,-0.0020751953125,-6.1875,112,BMW,grey,petrol,manual,private first owner,150 hp,29,BMW,red,diesel,manual,ex-rental,100 hp
+0,-7.3125,-0.0006866455078125,30,Mercedes,grey,diesel,manual,private first owner,150 hp,100,Audi,grey,petrol,automatic,private first owner,200 hp
+0,-0.00023555755615234375,-8.375,100,Audi,grey,petrol,automatic,private first owner,200 hp,30,Mercedes,grey,diesel,manual,private first owner,150 hp
+0,-2.0625,-0.13671875,30,Mercedes,grey,diesel,manual,private first owner,150 hp,104,BMW,black,petrol,automatic,ex-lease,150 hp
+0,-0.765625,-0.625,104,BMW,black,petrol,automatic,ex-lease,150 hp,30,Mercedes,grey,diesel,manual,private first owner,150 hp
+0,-1.5859375,-0.228515625,31,Audi,blue,diesel,manual,ex-lease,150 hp,42,Ford,grey,petrol,manual,ex-rental,150 hp
+0,-1.953125,-0.1533203125,42,Ford,grey,petrol,manual,ex-rental,150 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-0.146484375,-1.9921875,31,Audi,blue,diesel,manual,ex-lease,150 hp,52,Mercedes,red,petrol,manual,private second owner,100 hp
+0,-4.09375,-0.0167236328125,52,Mercedes,red,petrol,manual,private second owner,100 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-6.59375,-0.00139617919921875,31,Audi,blue,diesel,manual,ex-lease,150 hp,72,Mercedes,blue,petrol,manual,ex-rental,200 hp
+0,-0.006378173828125,-5.0625,72,Mercedes,blue,petrol,manual,ex-rental,200 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-0.1328125,-2.078125,31,Audi,blue,diesel,manual,ex-lease,150 hp,115,Ford,black,diesel,manual,private second owner,100 hp
+0,-5.21875,-0.00543212890625,115,Ford,black,diesel,manual,private second owner,100 hp,31,Audi,blue,diesel,manual,ex-lease,150 hp
+0,-0.06787109375,-2.71875,32,Honda,blue,diesel,automatic,ex-lease,150 hp,52,Mercedes,red,petrol,manual,private second owner,100 hp
+0,-3.546875,-0.029052734375,52,Mercedes,red,petrol,manual,private second owner,100 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-0.1669921875,-1.8671875,32,Honda,blue,diesel,automatic,ex-lease,150 hp,60,Mercedes,white,petrol,automatic,private second owner,100 hp
+0,-4.71875,-0.00885009765625,60,Mercedes,white,petrol,automatic,private second owner,100 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-0.2314453125,-1.578125,32,Honda,blue,diesel,automatic,ex-lease,150 hp,95,BMW,grey,diesel,automatic,private first owner,100 hp
+0,-5.15625,-0.005859375,95,BMW,grey,diesel,automatic,private first owner,100 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-2.4375,-0.091796875,32,Honda,blue,diesel,automatic,ex-lease,150 hp,110,Audi,red,diesel,automatic,private third owner,150 hp
+0,-5.21875,-0.0054931640625,110,Audi,red,diesel,automatic,private third owner,150 hp,32,Honda,blue,diesel,automatic,ex-lease,150 hp
+0,-0.201171875,-1.703125,33,Audi,white,diesel,manual,private second owner,150 hp,50,Toyota,silver,diesel,automatic,ex-lease,100 hp
+0,-4.96875,-0.007080078125,50,Toyota,silver,diesel,automatic,ex-lease,100 hp,33,Audi,white,diesel,manual,private second owner,150 hp
+0,-1.125,-0.392578125,33,Audi,white,diesel,manual,private second owner,150 hp,110,Audi,red,diesel,automatic,private third owner,150 hp
+0,-2.5,-0.08642578125,110,Audi,red,diesel,automatic,private third owner,150 hp,33,Audi,white,diesel,manual,private second owner,150 hp
+0,-0.000621795654296875,-7.40625,34,Mercedes,silver,diesel,manual,ex-lease,200 hp,37,Ford,grey,diesel,automatic,ex-rental,100 hp
+0,-8.5625,-0.00019931793212890625,37,Ford,grey,diesel,automatic,ex-rental,100 hp,34,Mercedes,silver,diesel,manual,ex-lease,200 hp
+0,-2.28125,-0.10791015625,34,Mercedes,silver,diesel,manual,ex-lease,200 hp,65,Toyota,blue,petrol,automatic,private second owner,200 hp
+0,-0.08740234375,-2.484375,65,Toyota,blue,petrol,automatic,private second owner,200 hp,34,Mercedes,silver,diesel,manual,ex-lease,200 hp
+0,-9.125,-0.00011587142944335938,35,Toyota,black,diesel,automatic,private third owner,100 hp,53,BMW,grey,diesel,automatic,private second owner,200 hp
+0,-0.000209808349609375,-8.5,53,BMW,grey,diesel,automatic,private second owner,200 hp,35,Toyota,black,diesel,automatic,private third owner,100 hp
+0,-3.296875,-0.03759765625,35,Toyota,black,diesel,automatic,private third owner,100 hp,78,Audi,grey,diesel,manual,private second owner,100 hp
+0,-1.859375,-0.169921875,78,Audi,grey,diesel,manual,private second owner,100 hp,35,Toyota,black,diesel,automatic,private third owner,100 hp
+0,-5.75,-0.0032196044921875,35,Toyota,black,diesel,automatic,private third owner,100 hp,92,Honda,blue,petrol,automatic,private first owner,150 hp
+0,-0.01177978515625,-4.4375,92,Honda,blue,petrol,automatic,private first owner,150 hp,35,Toyota,black,diesel,automatic,private third owner,100 hp
+0,-8.6875,-0.0001811981201171875,35,Toyota,black,diesel,automatic,private third owner,100 hp,116,Ford,white,diesel,manual,private third owner,200 hp
+0,-0.005401611328125,-5.21875,116,Ford,white,diesel,manual,private third owner,200 hp,35,Toyota,black,diesel,automatic,private third owner,100 hp
+0,-9.25,-0.00010585784912109375,36,Mercedes,white,diesel,manual,private third owner,100 hp,38,Toyota,red,petrol,manual,private second owner,200 hp
+0,-0.0019378662109375,-6.25,38,Toyota,red,petrol,manual,private second owner,200 hp,36,Mercedes,white,diesel,manual,private third owner,100 hp
+0,-4.46875,-0.011474609375,36,Mercedes,white,diesel,manual,private third owner,100 hp,56,Audi,red,petrol,automatic,ex-lease,100 hp
+0,-0.169921875,-1.859375,56,Audi,red,petrol,automatic,ex-lease,100 hp,36,Mercedes,white,diesel,manual,private third owner,100 hp
+0,-5.21875,-0.005401611328125,36,Mercedes,white,diesel,manual,private third owner,100 hp,91,Toyota,silver,petrol,automatic,private third owner,150 hp
+0,-0.0986328125,-2.359375,91,Toyota,silver,petrol,automatic,private third owner,150 hp,36,Mercedes,white,diesel,manual,private third owner,100 hp
+0,-4.40625,-0.01220703125,37,Ford,grey,diesel,automatic,ex-rental,100 hp,81,BMW,white,diesel,manual,ex-rental,150 hp
+0,-0.07958984375,-2.578125,81,BMW,white,diesel,manual,ex-rental,150 hp,37,Ford,grey,diesel,automatic,ex-rental,100 hp
+0,-1.6640625,-0.2099609375,37,Ford,grey,diesel,automatic,ex-rental,100 hp,97,Audi,white,petrol,manual,ex-lease,100 hp
+0,-0.23828125,-1.5546875,97,Audi,white,petrol,manual,ex-lease,100 hp,37,Ford,grey,diesel,automatic,ex-rental,100 hp
+0,-0.0004024505615234375,-7.84375,38,Toyota,red,petrol,manual,private second owner,200 hp,93,Ford,red,petrol,automatic,ex-rental,100 hp
+0,-9.375,-0.00010395050048828125,93,Ford,red,petrol,automatic,ex-rental,100 hp,38,Toyota,red,petrol,manual,private second owner,200 hp
+0,-3.109375,-0.045654296875,39,Honda,white,petrol,automatic,ex-rental,200 hp,53,BMW,grey,diesel,automatic,private second owner,200 hp
+0,-0.04443359375,-3.140625,53,BMW,grey,diesel,automatic,private second owner,200 hp,39,Honda,white,petrol,automatic,ex-rental,200 hp
+0,-0.69140625,-0.69140625,39,Honda,white,petrol,automatic,ex-rental,200 hp,89,Mercedes,silver,diesel,manual,ex-rental,200 hp
+0,-2.09375,-0.130859375,89,Mercedes,silver,diesel,manual,ex-rental,200 hp,39,Honda,white,petrol,automatic,ex-rental,200 hp
+0,-0.7421875,-0.6484375,39,Honda,white,petrol,automatic,ex-rental,200 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-1.015625,-0.451171875,107,Ford,grey,diesel,automatic,private third owner,200 hp,39,Honda,white,petrol,automatic,ex-rental,200 hp
+0,-6.28125,-0.00188446044921875,42,Ford,grey,petrol,manual,ex-rental,150 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-0.01123046875,-4.5,76,Audi,blue,diesel,automatic,private third owner,200 hp,42,Ford,grey,petrol,manual,ex-rental,150 hp
+0,-0.0006256103515625,-7.40625,43,Mercedes,grey,petrol,manual,ex-lease,200 hp,45,BMW,blue,petrol,manual,ex-lease,100 hp
+0,-8.9375,-0.0001468658447265625,45,BMW,blue,petrol,manual,ex-lease,100 hp,43,Mercedes,grey,petrol,manual,ex-lease,200 hp
+0,-0.007049560546875,-4.96875,43,Mercedes,grey,petrol,manual,ex-lease,200 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-8.0625,-0.00031280517578125,57,Honda,silver,diesel,manual,private third owner,150 hp,43,Mercedes,grey,petrol,manual,ex-lease,200 hp
+0,-1.1796875,-0.3671875,43,Mercedes,grey,petrol,manual,ex-lease,200 hp,105,Audi,blue,petrol,automatic,private second owner,200 hp
+0,-0.1064453125,-2.296875,105,Audi,blue,petrol,automatic,private second owner,200 hp,43,Mercedes,grey,petrol,manual,ex-lease,200 hp
+0,-0.0028228759765625,-5.875,44,Ford,white,petrol,automatic,private third owner,200 hp,59,Honda,blue,diesel,automatic,private second owner,100 hp
+0,-8.9375,-0.00014019012451171875,59,Honda,blue,diesel,automatic,private second owner,100 hp,44,Ford,white,petrol,automatic,private third owner,200 hp
+0,-0.04638671875,-3.09375,44,Ford,white,petrol,automatic,private third owner,200 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-6.09375,-0.0022735595703125,83,BMW,white,petrol,manual,private second owner,150 hp,44,Ford,white,petrol,automatic,private third owner,200 hp
+0,-0.126953125,-2.125,44,Ford,white,petrol,automatic,private third owner,200 hp,99,Ford,grey,petrol,automatic,ex-rental,200 hp
+0,-3.09375,-0.046142578125,99,Ford,grey,petrol,automatic,ex-rental,200 hp,44,Ford,white,petrol,automatic,private third owner,200 hp
+0,-0.005615234375,-5.1875,44,Ford,white,petrol,automatic,private third owner,200 hp,113,Audi,silver,petrol,automatic,ex-lease,100 hp
+0,-9.125,-0.0001163482666015625,113,Audi,silver,petrol,automatic,ex-lease,100 hp,44,Ford,white,petrol,automatic,private third owner,200 hp
+0,-0.2041015625,-1.6875,45,BMW,blue,petrol,manual,ex-lease,100 hp,117,Mercedes,black,petrol,automatic,ex-rental,100 hp
+0,-2.421875,-0.09326171875,117,Mercedes,black,petrol,automatic,ex-rental,100 hp,45,BMW,blue,petrol,manual,ex-lease,100 hp
+0,-3.671875,-0.0257568359375,47,Toyota,black,diesel,manual,private third owner,100 hp,52,Mercedes,red,petrol,manual,private second owner,100 hp
+0,-1.390625,-0.28515625,52,Mercedes,red,petrol,manual,private second owner,100 hp,47,Toyota,black,diesel,manual,private third owner,100 hp
+0,-8.5625,-0.00020313262939453125,47,Toyota,black,diesel,manual,private third owner,100 hp,61,Ford,red,petrol,manual,private first owner,200 hp
+0,-0.000133514404296875,-9.0,61,Ford,red,petrol,manual,private first owner,200 hp,47,Toyota,black,diesel,manual,private third owner,100 hp
+0,-8.5625,-0.000194549560546875,47,Toyota,black,diesel,manual,private third owner,100 hp,75,Audi,black,petrol,automatic,ex-rental,200 hp
+0,-0.0034942626953125,-5.65625,75,Audi,black,petrol,automatic,ex-rental,200 hp,47,Toyota,black,diesel,manual,private third owner,100 hp
+0,-6.0625,-0.0023193359375,48,Mercedes,silver,petrol,manual,private third owner,150 hp,53,BMW,grey,diesel,automatic,private second owner,200 hp
+0,-0.00118255615234375,-6.75,53,BMW,grey,diesel,automatic,private second owner,200 hp,48,Mercedes,silver,petrol,manual,private third owner,150 hp
+0,-0.1748046875,-1.828125,48,Mercedes,silver,petrol,manual,private third owner,150 hp,60,Mercedes,white,petrol,automatic,private second owner,100 hp
+0,-3.234375,-0.040283203125,60,Mercedes,white,petrol,automatic,private second owner,100 hp,48,Mercedes,silver,petrol,manual,private third owner,150 hp
+0,-5.65625,-0.0034942626953125,48,Mercedes,silver,petrol,manual,private third owner,150 hp,86,Honda,white,diesel,automatic,ex-rental,200 hp
+0,-0.13671875,-2.0625,86,Honda,white,diesel,automatic,ex-rental,200 hp,48,Mercedes,silver,petrol,manual,private third owner,150 hp
+0,-7.125,-0.000812530517578125,48,Mercedes,silver,petrol,manual,private third owner,150 hp,105,Audi,blue,petrol,automatic,private second owner,200 hp
+0,-0.00128936767578125,-6.65625,105,Audi,blue,petrol,automatic,private second owner,200 hp,48,Mercedes,silver,petrol,manual,private third owner,150 hp
+0,-0.26953125,-1.4453125,48,Mercedes,silver,petrol,manual,private third owner,150 hp,115,Ford,black,diesel,manual,private second owner,100 hp
+0,-3.40625,-0.033935546875,115,Ford,black,diesel,manual,private second owner,100 hp,48,Mercedes,silver,petrol,manual,private third owner,150 hp
+0,-3.296875,-0.03759765625,49,Audi,silver,diesel,manual,private first owner,100 hp,91,Toyota,silver,petrol,automatic,private third owner,150 hp
+0,-0.2197265625,-1.625,91,Toyota,silver,petrol,automatic,private third owner,150 hp,49,Audi,silver,diesel,manual,private first owner,100 hp
+0,-1.828125,-0.1748046875,49,Audi,silver,diesel,manual,private first owner,100 hp,103,BMW,red,petrol,automatic,ex-rental,150 hp
+0,-0.01226806640625,-4.4375,103,BMW,red,petrol,automatic,ex-rental,150 hp,49,Audi,silver,diesel,manual,private first owner,100 hp
+0,-8.4375,-0.00022125244140625,49,Audi,silver,diesel,manual,private first owner,100 hp,111,Toyota,grey,petrol,manual,ex-lease,200 hp
+0,-0.005462646484375,-5.21875,111,Toyota,grey,petrol,manual,ex-lease,200 hp,49,Audi,silver,diesel,manual,private first owner,100 hp
+0,-6.3125,-0.00182342529296875,50,Toyota,silver,diesel,automatic,ex-lease,100 hp,109,Mercedes,black,diesel,automatic,private first owner,150 hp
+0,-0.0625,-2.796875,109,Mercedes,black,diesel,automatic,private first owner,150 hp,50,Toyota,silver,diesel,automatic,ex-lease,100 hp
+0,-0.000732421875,-7.25,51,BMW,silver,diesel,automatic,private first owner,200 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-5.0,-0.006744384765625,83,BMW,white,petrol,manual,private second owner,150 hp,51,BMW,silver,diesel,automatic,private first owner,200 hp
+0,-3.0159950256347656e-05,-10.5,51,BMW,silver,diesel,automatic,private first owner,200 hp,117,Mercedes,black,petrol,automatic,ex-rental,100 hp
+0,-10.5625,-3.147125244140625e-05,117,Mercedes,black,petrol,automatic,ex-rental,100 hp,51,BMW,silver,diesel,automatic,private first owner,200 hp
+0,-3.015625,-0.050048828125,52,Mercedes,red,petrol,manual,private second owner,100 hp,81,BMW,white,diesel,manual,ex-rental,150 hp
+0,-0.0986328125,-2.359375,81,BMW,white,diesel,manual,ex-rental,150 hp,52,Mercedes,red,petrol,manual,private second owner,100 hp
+0,-0.0002689361572265625,-8.25,53,BMW,grey,diesel,automatic,private second owner,200 hp,113,Audi,silver,petrol,automatic,ex-lease,100 hp
+0,-9.5,-8.296966552734375e-05,113,Audi,silver,petrol,automatic,ex-lease,100 hp,53,BMW,grey,diesel,automatic,private second owner,200 hp
+0,-0.30859375,-1.328125,54,Honda,silver,diesel,automatic,ex-rental,200 hp,63,BMW,silver,petrol,manual,private third owner,150 hp
+0,-5.09375,-0.006134033203125,63,BMW,silver,petrol,manual,private third owner,150 hp,54,Honda,silver,diesel,automatic,ex-rental,200 hp
+0,-0.1181640625,-2.203125,55,Toyota,black,petrol,manual,ex-rental,150 hp,64,Toyota,blue,petrol,manual,ex-rental,100 hp
+0,-4.8125,-0.00823974609375,64,Toyota,blue,petrol,manual,ex-rental,100 hp,55,Toyota,black,petrol,manual,ex-rental,150 hp
+0,-0.0576171875,-2.890625,55,Toyota,black,petrol,manual,ex-rental,150 hp,97,Audi,white,petrol,manual,ex-lease,100 hp
+0,-3.703125,-0.02490234375,97,Audi,white,petrol,manual,ex-lease,100 hp,55,Toyota,black,petrol,manual,ex-rental,150 hp
+0,-6.1875,-0.002044677734375,55,Toyota,black,petrol,manual,ex-rental,150 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-0.037841796875,-3.296875,107,Ford,grey,diesel,automatic,private third owner,200 hp,55,Toyota,black,petrol,manual,ex-rental,150 hp
+0,-7.5625,-0.000537872314453125,56,Audi,red,petrol,automatic,ex-lease,100 hp,72,Mercedes,blue,petrol,manual,ex-rental,200 hp
+0,-0.00148773193359375,-6.53125,72,Mercedes,blue,petrol,manual,ex-rental,200 hp,56,Audi,red,petrol,automatic,ex-lease,100 hp
+0,-1.6875,-0.2041015625,56,Audi,red,petrol,automatic,ex-lease,100 hp,80,Ford,blue,diesel,automatic,private second owner,100 hp
+0,-3.8125,-0.0223388671875,80,Ford,blue,diesel,automatic,private second owner,100 hp,56,Audi,red,petrol,automatic,ex-lease,100 hp
+0,-4.15625,-0.015625,56,Audi,red,petrol,automatic,ex-lease,100 hp,96,Honda,grey,diesel,manual,private second owner,150 hp
+0,-0.037109375,-3.3125,96,Honda,grey,diesel,manual,private second owner,150 hp,56,Audi,red,petrol,automatic,ex-lease,100 hp
+0,-0.251953125,-1.5,57,Honda,silver,diesel,manual,private third owner,150 hp,59,Honda,blue,diesel,automatic,private second owner,100 hp
+0,-3.65625,-0.0263671875,59,Honda,blue,diesel,automatic,private second owner,100 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-4.90625,-0.0074462890625,57,Honda,silver,diesel,manual,private third owner,150 hp,69,Honda,red,petrol,manual,private first owner,150 hp
+0,-0.126953125,-2.125,69,Honda,red,petrol,manual,private first owner,150 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-7.4375,-0.000606536865234375,57,Honda,silver,diesel,manual,private third owner,150 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-0.005615234375,-5.1875,76,Audi,blue,diesel,automatic,private third owner,200 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-0.330078125,-1.265625,57,Honda,silver,diesel,manual,private third owner,150 hp,80,Ford,blue,diesel,automatic,private second owner,100 hp
+0,-3.890625,-0.0206298828125,80,Ford,blue,diesel,automatic,private second owner,100 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-3.765625,-0.0233154296875,57,Honda,silver,diesel,manual,private third owner,150 hp,114,Mercedes,black,diesel,automatic,private second owner,150 hp
+0,-1.5234375,-0.2451171875,114,Mercedes,black,diesel,automatic,private second owner,150 hp,57,Honda,silver,diesel,manual,private third owner,150 hp
+0,-6.09375,-0.002288818359375,58,Mercedes,red,diesel,automatic,private first owner,150 hp,86,Honda,white,diesel,automatic,ex-rental,200 hp
+0,-0.81640625,-0.58203125,86,Honda,white,diesel,automatic,ex-rental,200 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-0.34375,-1.234375,58,Mercedes,red,diesel,automatic,private first owner,150 hp,90,Audi,black,petrol,manual,private first owner,100 hp
+0,-1.6875,-0.2041015625,90,Audi,black,petrol,manual,private first owner,100 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-3.546875,-0.029052734375,58,Mercedes,red,diesel,automatic,private first owner,150 hp,92,Honda,blue,petrol,automatic,private first owner,150 hp
+0,-2.109375,-0.12890625,92,Honda,blue,petrol,automatic,private first owner,150 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-7.875,-0.0003871917724609375,58,Mercedes,red,diesel,automatic,private first owner,150 hp,105,Audi,blue,petrol,automatic,private second owner,200 hp
+0,-0.00994873046875,-4.625,105,Audi,blue,petrol,automatic,private second owner,200 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-0.04345703125,-3.15625,58,Mercedes,red,diesel,automatic,private first owner,150 hp,117,Mercedes,black,petrol,automatic,ex-rental,100 hp
+0,-6.25,-0.001983642578125,117,Mercedes,black,petrol,automatic,ex-rental,100 hp,58,Mercedes,red,diesel,automatic,private first owner,150 hp
+0,-4.15625,-0.0159912109375,59,Honda,blue,diesel,automatic,private second owner,100 hp,114,Mercedes,black,diesel,automatic,private second owner,150 hp
+0,-0.11962890625,-2.1875,114,Mercedes,black,diesel,automatic,private second owner,150 hp,59,Honda,blue,diesel,automatic,private second owner,100 hp
+0,-0.00127410888671875,-6.6875,61,Ford,red,petrol,manual,private first owner,200 hp,66,Audi,black,petrol,automatic,private third owner,150 hp
+0,-7.21875,-0.000751495361328125,66,Audi,black,petrol,automatic,private third owner,150 hp,61,Ford,red,petrol,manual,private first owner,200 hp
+0,-5.84375,-0.0029296875,63,BMW,silver,petrol,manual,private third owner,150 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-0.0279541015625,-3.59375,76,Audi,blue,diesel,automatic,private third owner,200 hp,63,BMW,silver,petrol,manual,private third owner,150 hp
+0,-6.3125,-0.0018463134765625,64,Toyota,blue,petrol,manual,ex-rental,100 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-0.00982666015625,-4.625,83,BMW,white,petrol,manual,private second owner,150 hp,64,Toyota,blue,petrol,manual,ex-rental,100 hp
+0,-2.515625,-0.083984375,66,Audi,black,petrol,automatic,private third owner,150 hp,74,Toyota,grey,diesel,manual,private second owner,150 hp
+0,-2.15625,-0.123046875,74,Toyota,grey,diesel,manual,private second owner,150 hp,66,Audi,black,petrol,automatic,private third owner,150 hp
+0,-8.1875,-0.0003032684326171875,66,Audi,black,petrol,automatic,private third owner,150 hp,100,Audi,grey,petrol,automatic,private first owner,200 hp
+0,-0.00058746337890625,-7.46875,100,Audi,grey,petrol,automatic,private first owner,200 hp,66,Audi,black,petrol,automatic,private third owner,150 hp
+0,-7.46875,-0.000583648681640625,66,Audi,black,petrol,automatic,private third owner,150 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-0.042236328125,-3.1875,107,Ford,grey,diesel,automatic,private third owner,200 hp,66,Audi,black,petrol,automatic,private third owner,150 hp
+0,-0.193359375,-1.7421875,67,Ford,red,petrol,manual,private second owner,200 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-1.09375,-0.408203125,76,Audi,blue,diesel,automatic,private third owner,200 hp,67,Ford,red,petrol,manual,private second owner,200 hp
+0,-2.265625,-0.109375,71,BMW,blue,diesel,manual,private third owner,200 hp,111,Toyota,grey,petrol,manual,ex-lease,200 hp
+0,-0.58984375,-0.80859375,111,Toyota,grey,petrol,manual,ex-lease,200 hp,71,BMW,blue,diesel,manual,private third owner,200 hp
+0,-1.578125,-0.2314453125,72,Mercedes,blue,petrol,manual,ex-rental,200 hp,88,Honda,red,diesel,manual,private third owner,200 hp
+0,-0.90625,-0.515625,88,Honda,red,diesel,manual,private third owner,200 hp,72,Mercedes,blue,petrol,manual,ex-rental,200 hp
+0,-0.027099609375,-3.625,73,Toyota,red,diesel,automatic,ex-lease,200 hp,74,Toyota,grey,diesel,manual,private second owner,150 hp
+0,-6.59375,-0.00139617919921875,74,Toyota,grey,diesel,manual,private second owner,150 hp,73,Toyota,red,diesel,automatic,ex-lease,200 hp
+0,-0.91796875,-0.51171875,73,Toyota,red,diesel,automatic,ex-lease,200 hp,75,Audi,black,petrol,automatic,ex-rental,200 hp
+0,-0.79296875,-0.60546875,75,Audi,black,petrol,automatic,ex-rental,200 hp,73,Toyota,red,diesel,automatic,ex-lease,200 hp
+0,-0.0311279296875,-3.484375,73,Toyota,red,diesel,automatic,ex-lease,200 hp,87,Audi,grey,petrol,automatic,private third owner,150 hp
+0,-7.25,-0.0007171630859375,87,Audi,grey,petrol,automatic,private third owner,150 hp,73,Toyota,red,diesel,automatic,ex-lease,200 hp
+0,-3.84375,-0.021484375,73,Toyota,red,diesel,automatic,ex-lease,200 hp,100,Audi,grey,petrol,automatic,private first owner,200 hp
+0,-0.007110595703125,-4.9375,100,Audi,grey,petrol,automatic,private first owner,200 hp,73,Toyota,red,diesel,automatic,ex-lease,200 hp
+0,-0.0245361328125,-3.71875,76,Audi,blue,diesel,automatic,private third owner,200 hp,95,BMW,grey,diesel,automatic,private first owner,100 hp
+0,-8.625,-0.00018310546875,95,BMW,grey,diesel,automatic,private first owner,100 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-2.65625,-0.0732421875,76,Audi,blue,diesel,automatic,private third owner,200 hp,98,Ford,black,petrol,manual,private first owner,200 hp
+0,-0.030029296875,-3.515625,98,Ford,black,petrol,manual,private first owner,200 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-0.00131988525390625,-6.625,76,Audi,blue,diesel,automatic,private third owner,200 hp,120,Mercedes,grey,petrol,manual,private third owner,100 hp
+0,-8.375,-0.0002346038818359375,120,Mercedes,grey,petrol,manual,private third owner,100 hp,76,Audi,blue,diesel,automatic,private third owner,200 hp
+0,-0.0004329681396484375,-7.78125,79,Toyota,silver,petrol,manual,private second owner,200 hp,80,Ford,blue,diesel,automatic,private second owner,100 hp
+0,-9.1875,-0.0001125335693359375,80,Ford,blue,diesel,automatic,private second owner,100 hp,79,Toyota,silver,petrol,manual,private second owner,200 hp
+0,-4.21875,-0.01495361328125,80,Ford,blue,diesel,automatic,private second owner,100 hp,87,Audi,grey,petrol,automatic,private third owner,150 hp
+0,-0.1513671875,-1.9609375,87,Audi,grey,petrol,automatic,private third owner,150 hp,80,Ford,blue,diesel,automatic,private second owner,100 hp
+0,-8.5625,-0.00020503997802734375,81,BMW,white,diesel,manual,ex-rental,150 hp,84,BMW,blue,petrol,manual,private first owner,200 hp
+0,-8.821487426757812e-05,-9.4375,84,BMW,blue,petrol,manual,private first owner,200 hp,81,BMW,white,diesel,manual,ex-rental,150 hp
+0,-5.96875,-0.00262451171875,82,BMW,red,diesel,automatic,ex-lease,100 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-0.00897216796875,-4.71875,83,BMW,white,petrol,manual,private second owner,150 hp,82,BMW,red,diesel,automatic,ex-lease,100 hp
+0,-6.84375,-0.00109100341796875,83,BMW,white,petrol,manual,private second owner,150 hp,98,Ford,black,petrol,manual,private first owner,200 hp
+0,-0.003143310546875,-5.78125,98,Ford,black,petrol,manual,private first owner,200 hp,83,BMW,white,petrol,manual,private second owner,150 hp
+0,-3.234375,-0.040283203125,85,Toyota,silver,petrol,manual,ex-rental,150 hp,109,Mercedes,black,diesel,automatic,private first owner,150 hp
+0,-0.4921875,-0.9453125,109,Mercedes,black,diesel,automatic,private first owner,150 hp,85,Toyota,silver,petrol,manual,ex-rental,150 hp
+0,-8.75,-0.00017547607421875,93,Ford,red,petrol,automatic,ex-rental,100 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-0.0054931640625,-5.21875,107,Ford,grey,diesel,automatic,private third owner,200 hp,93,Ford,red,petrol,automatic,ex-rental,100 hp
+0,-0.004180908203125,-5.46875,94,Mercedes,red,petrol,automatic,private third owner,200 hp,118,Audi,red,diesel,manual,ex-rental,150 hp
+0,-7.1875,-0.000774383544921875,118,Audi,red,diesel,manual,ex-rental,150 hp,94,Mercedes,red,petrol,automatic,private third owner,200 hp
+0,-0.0003528594970703125,-7.96875,98,Ford,black,petrol,manual,private first owner,200 hp,103,BMW,red,petrol,automatic,ex-rental,150 hp
+0,-9.125,-0.00011777877807617188,103,BMW,red,petrol,automatic,ex-rental,150 hp,98,Ford,black,petrol,manual,private first owner,200 hp
+0,-0.0026702880859375,-5.9375,98,Ford,black,petrol,manual,private first owner,200 hp,109,Mercedes,black,diesel,automatic,private first owner,150 hp
+0,-7.90625,-0.00037384033203125,109,Mercedes,black,diesel,automatic,private first owner,150 hp,98,Ford,black,petrol,manual,private first owner,200 hp
+0,-1.3515625,-0.30078125,99,Ford,grey,petrol,automatic,ex-rental,200 hp,107,Ford,grey,diesel,automatic,private third owner,200 hp
+0,-0.53515625,-0.87890625,107,Ford,grey,diesel,automatic,private third owner,200 hp,99,Ford,grey,petrol,automatic,ex-rental,200 hp
+0,-5.34375,-0.00482177734375,102,Honda,black,petrol,manual,private second owner,150 hp,116,Ford,white,diesel,manual,private third owner,200 hp
+0,-0.171875,-1.84375,116,Ford,white,diesel,manual,private third owner,200 hp,102,Honda,black,petrol,manual,private second owner,150 hp
+0,-3.53125,-0.02978515625,104,BMW,black,petrol,automatic,ex-lease,150 hp,109,Mercedes,black,diesel,automatic,private first owner,150 hp
+0,-2.9375,-0.053955078125,109,Mercedes,black,diesel,automatic,private first owner,150 hp,104,BMW,black,petrol,automatic,ex-lease,150 hp
+0,-0.001556396484375,-6.46875,111,Toyota,grey,petrol,manual,ex-lease,200 hp,120,Mercedes,grey,petrol,manual,private third owner,100 hp
+0,-9.4375,-8.249282836914062e-05,120,Mercedes,grey,petrol,manual,private third owner,100 hp,111,Toyota,grey,petrol,manual,ex-lease,200 hp
+0,-0.65625,-0.734375,113,Audi,silver,petrol,automatic,ex-lease,100 hp,115,Ford,black,diesel,manual,private second owner,100 hp
+0,-3.640625,-0.0267333984375,115,Ford,black,diesel,manual,private second owner,100 hp,113,Audi,silver,petrol,automatic,ex-lease,100 hp

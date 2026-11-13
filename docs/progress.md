@@ -8,6 +8,51 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-13 (afternoon, 4) — Pipeline test on Heraclitus: passes for all three models. A `bml` job that does not fit removes `public` jobs
+
+Lotan: no GPU flag in the pipeline (`bml` has priority and may take all 8 GPUs); test that the jobs work
+on Heraclitus. Main run still not launched.
+
+- **Test:** one job per model through the normal wrapper, line format of `slurms.sh`, 4 contracts in one job
+  (`none`, `horsepower=200 hp`, `ownership=private first owner`, the 4-requirement luxury contract), the 200
+  sanity pairs × 2 orders, template 0 = 1,600 prompts per model. Output in
+  `data/synthetic_cars_pipeline_test/`, checked with `scripts/synthetic_cars_check_runs.py`.
+
+  | model | job | GPUs | runs complete | rows | bad rows | prompts/s | whole job |
+  |---|---|---|---|---|---|---|---|
+  | gemma-27 | 1498262 | 3 | 4 of 4 | 4 × 400 | 0 | 13.9 | 4 min |
+  | olmo-32 | 1498263 | 3 | 4 of 4 | 4 × 400 | 0 | 12.2 | 4 min |
+  | qwen-72 | 1498264 | 3 | 4 of 4 | 4 × 400 | 0 | 6.8 | 8 min |
+
+  - Folder names with spaces (`<job>_horsepower=200 hp`) work in the wrapper and the collector.
+  - gemma-27 `none` equals the template-check job 1498233 (1 GPU) on template 0 in 400 of 400 rows, exactly.
+  - The contract moves the answer. Pairs where exactly one car meets the contract, share where it wins,
+    before → under the contract: `200 hp` 96.6 / 93.1 / 96.6 → 100 (87 pairs); `private first owner`
+    74.0 / 86.0 / 74.0 → 100 (50 pairs); luxury-4 90 / 80 / 90 → 100 (10 pairs) (gemma / olmo / qwen).
+  - `config.json` records `git_commit 01350b5`; each job deleted its model cache (0 `hf_*` folders left).
+  - The five real job strings of the main run parse in `--dry_run`: 228,480 + 4,950 + 4,968 + 4,968 + 4,926 =
+    248,292 prompts.
+- **Run on 3 GPUs, not on the wrapper's default 8, on purpose.** `sbatch --test-only` for a default job on
+  heraclitus answers: starts at once, `Preempts: 1491381,1498230` — the two `public` jobs running there
+  (user A, 1 GPU, 3 days 22 h; user B, 4 GPUs). The cluster uses `preempt/partition_prio`: `bml`
+  is tier 100, `public` tier 1, mode REQUEUE.
+- **This already happened once, by mistake:** at 13:48 the three verification jobs of the entry below asked
+  for 4 GPUs with 3 free, and SLURM preempted job 1487542 (user B, 4 GPUs, running 4 days 23 h). It
+  was resubmitted at 13:51 and restarted at 13:54. The test jobs here were chained (`--dependency`) and
+  submitted only after counting 3 free GPUs; nothing was preempted (checked in `sacct`).
+- **Time for the main run, from these speeds** (248,292 prompts per model, plus 5 model loads):
+  gemma-27 ≈ 5.1 h, olmo-32 ≈ 5.8 h, qwen-72 ≈ 10.4 h.
+
+  | how the 15 jobs are sent | jobs at the same time | whole batch | other users' jobs on Heraclitus |
+  |---|---|---|---|
+  | as the wrapper is (8 GPUs per job) | 1 | ≈ 21 h | both removed, server full for the whole time |
+  | 2 GPUs for qwen, 1 for gemma then olmo | 2 | ≈ 11 h | none removed (3 GPUs are free) |
+
+  More GPUs per job do not make a job faster: gemma-27 ran 15 prompts/s on 1 GPU and 13.9 on 3.
+- **Open, Lotan's call:** which of the two rows. The second needs a GPU count on the `sbatch` line.
+
+---
+
 ## 2026-11-13 (afternoon, 3) — `environment.yml` matches the env again; on Heraclitus one GPU = one job
 
 - **`environment.yml` updated** (Lotan approved): the conda lines `pytorch`, `torchvision`, `torchaudio`,
