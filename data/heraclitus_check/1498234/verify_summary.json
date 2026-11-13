@@ -1,0 +1,14 @@
+{
+  "model": "gemma-27",
+  "reference_run": "data/laptops_robustness/1475800",
+  "n_prompts": 20,
+  "max_abs_diff_margin": 0.0,
+  "mean_abs_diff_margin": 0.0,
+  "max_abs_diff_score": 3.1252127621894665e-17,
+  "mean_abs_stored_margin": 18.28748924136162,
+  "same_sign": 20,
+  "pearson_r": 1.0,
+  "torch": "2.9.1+cu128",
+  "gpu": "8 x NVIDIA L4",
+  "host": "plotinus2"
+}

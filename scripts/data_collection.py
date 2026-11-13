@@ -70,6 +70,18 @@ def real_laptops():
 ALTERNATIVES_ALIASES['real_laptops'] = real_laptops
 
 
+def synthetic_cars():
+    """120 synthetic cars (2026-11-13), from the design file written by scripts/synthetic_cars_prepare.py.
+    `text` is the one line shown in the prompt (the six features, nothing else). `id` and the six
+    features go to scores.csv; `part` / `track` (which cars are targets) stay in the design file."""
+    df = pd.read_csv(os.path.join(ROOT, "data", "synthetic_cars", "design", "items.csv"))
+    return df[['id', 'company', 'color', 'fuel', 'transmission', 'ownership', 'horsepower',
+               'text']].to_dict('records')
+
+
+ALTERNATIVES_ALIASES['synthetic_cars'] = synthetic_cars
+
+
 def load_items(alias):
     items = ALTERNATIVES_ALIASES[alias]
     return items() if callable(items) else items
@@ -105,6 +117,8 @@ FRAMES = {
     'third_person': "A person is looking to buy a laptop.",
     # 2026-10-12: the books domain's counterpart of `shopping`. Same voice, same shape.
     'reading': "I am looking for a book to read.",
+    # 2026-11-13: the cars domain's counterpart of `shopping`. Same sentence, "car" for "laptop".
+    'car_shopping': "I am looking to buy a car.",
     # Personas (2026-10-08): a sentence about who the user is, then the `shopping` sentence
     # unchanged - so against `shopping` the persona is the only difference. Neither names a
     # spec: the model has to infer one (student -> cheap -> 4GB? editor -> 16GB?).
@@ -176,6 +190,24 @@ CONSTRAINT_PHRASE.update({tag: _book_tag_phrase(tag) for tag in BOOK_TAG_NOUN})
 # so insertion order does not survive a round trip and must not be load-bearing.
 # This order reproduces the historical strings ("a 14-inch screen and 8 GB ram").
 FEATURE_ORDER = ['brand', 'screen', 'ram'] + list(BOOK_TAG_NOUN)
+
+
+# Synthetic cars (2026-11-13). Same shape as the laptop phrases: one noun phrase per requirement,
+# joined by "and": "I prefer a BMW car and an automatic transmission and 200 hp."
+def _a(phrase):
+    return ("an " if phrase[0].lower() in "aeiou" else "a ") + phrase
+
+
+CONSTRAINT_PHRASE.update({
+    'company': lambda v: _a(f"{v} car"),                    # "a BMW car", "an Audi car"
+    'color': lambda v: _a(f"{v} color"),                    # "a black color"
+    'fuel': lambda v: _a(f"{v} engine"),                    # "a diesel engine"
+    'transmission': lambda v: _a(f"{v} transmission"),      # "an automatic transmission"
+    'horsepower': lambda v: v,                              # "200 hp"
+    # "a private first owner"; the two non-private levels need the noun: "an ex-lease car"
+    'ownership': lambda v: _a(v if v.startswith("private") else f"{v} car"),
+})
+FEATURE_ORDER += ['company', 'color', 'fuel', 'transmission', 'horsepower', 'ownership']
 
 
 def parse_constraints(spec):

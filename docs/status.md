@@ -180,14 +180,32 @@ survives a contract?
     [real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb): template 0 picks the
     same laptop as the other four in 200 of 200 pairs (r = 0.997); the order decides in 23 of 200; more RAM
     wins in 112 of 118. Checked on gemma only, no contract.
-    **Next:** Lotan approves, then launches `scripts/slurms.sh` (6 jobs = 3 models × 2: singles on all pairs,
-    compounds on the 500 pairs). Stage 3 analysis script not written yet.
+    **Launch attempt 2026-11-13 13:35 failed, nothing collected:** all 6 jobs (1498182–87) died on
+    `import torch` — PyTorch was removed from the conda env `whatdo-llms-want` at 13:31 the same day (progress
+    11-13 afternoon). **No longer blocked: PyTorch is back since 13:44 (torch 2.9.1+cu128, point 21); on
+    plotinus2 it reproduces stored gemma-27 margins exactly.** To relaunch: `bash scripts/slurms.sh` on `newton`
+    (6 jobs = 3 models × 2: singles on all pairs, compounds on the 500 pairs; SLURM picks among plato1/2, and
+    plotinus1/2 for qwen-72). Stage 3 analysis script not written yet.
+    **Also open:** ~2 TB of old model caches in `/tmp/hf_*` on plato1 / plato2 / plotinus2 — delete?
 20. **Pipeline: one path, live logs** (2026-11-13, two progress entries). Every experiment, real laptops
     included, goes `create_slurms.py` → `slurms.sh` → `run_data_collection.sh` → `data_collection.py`;
     `run_real_laptops.sh`, `real_laptops_collect.py` and its two launchers are gone. New in the collector:
     several contracts per job (`-c "a;b"`), a pairs file (`-q`), items from a file, `--dry_run`. Logs are live
     in `data/<exp>/<job>/output.log` + `error.log`: `tail -F data/<exp>/<job>/*.log`. Tested with a fake
     model only — the next real job is the first real test.
+21. **Synthetic cars domain — stage 1 done, main run waits for approval; Heraclitus usable** (2026-11-13,
+    progress 11-13 afternoon, 2). 120 cars × 6 features, 28 contracts (none + 15 singles + 12 compounds on
+    four tracks), design in `data/synthetic_cars/design/`, alias `synthetic_cars`, frame `car_shopping`.
+    **The env now has torch 2.9.1+cu128** (was 2.5.1 / CUDA 12.4, which cannot run Heraclitus's Blackwell
+    GPUs); it serves every server. 20-prompt re-runs on Heraclitus differ from stored margins by at most
+    0.50 / 0.16 / 0.77 (gemma-27 / olmo-32 / qwen-72), same winner 20 of 20; on plotinus2 the difference is 0.
+    Template check (job 1498233, gemma-27): ρ = 0.845 (BT-full) / 0.912 (BT-feat), template 0 agrees with the
+    other four in 198 of 200 pairs.
+    **Next:** Lotan approves → 15 jobs on heraclitus (248,292 prompts per model). Needs a `--gres` key in
+    `create_slurms.py` first (not added). Stage 3 analysis script not written yet.
+    One GPU goes to one job (no sharing in SLURM); gemma-27 and olmo-32 take 1 GPU, qwen-72 takes 2.
+    `environment.yml` describes the new torch install (updated 11-13). Stage 1 approval is deferred until
+    the env and the pipeline are settled.
 
 ---
 

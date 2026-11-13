@@ -1,0 +1,21 @@
+row,template_idx,a,b,stored_a,stored_b,new_a,new_b,stored_margin,new_margin,abs_diff
+135,0,14-inch ASUS laptop with 4GB RAM,14-inch ASUS laptop with 8GB RAM,-20.5,0.0,-20.875,0.0,-20.5,-20.875,0.375
+161,0,14-inch ASUS laptop with 4GB RAM,14-inch Dell laptop with 4GB RAM,-24.75,0.0,-24.875,0.0,-24.75,-24.875,0.125
+215,0,14-inch ASUS laptop with 8GB RAM,14-inch Apple laptop with 8GB RAM,-0.0002031326293945,-8.5,-0.0002613067626953125,-8.25,8.499796867370605,8.249738693237305,0.2500581741333008
+386,0,16-inch ASUS laptop with 16GB RAM,16-inch Dell laptop with 16GB RAM,-25.125,0.0,-25.0,0.0,-25.125,-25.0,0.125
+2088,1,13-inch ASUS laptop with 16GB RAM,14-inch HP laptop with 4GB RAM,0.0,-18.0,0.0,-18.25,18.0,18.25,0.25
+2693,1,16-inch Lenovo laptop with 8GB RAM,13-inch Lenovo laptop with 4GB RAM,0.0,-19.0,0.0,-19.25,19.0,19.25,0.25
+3574,1,13-inch Apple laptop with 4GB RAM,13-inch Lenovo laptop with 8GB RAM,-21.25,0.0,-21.125,0.0,-21.25,-21.125,0.125
+3739,1,14-inch Apple laptop with 4GB RAM,16-inch Apple laptop with 16GB RAM,-15.25,-2.384185791015625e-07,-15.25,-2.384185791015625e-07,-15.249999761581421,-15.249999761581421,0.0
+4846,2,13-inch HP laptop with 16GB RAM,16-inch ASUS laptop with 4GB RAM,0.0,-18.5,0.0,-18.625,18.5,18.625,0.125
+4908,2,14-inch HP laptop with 4GB RAM,16-inch HP laptop with 8GB RAM,-13.75,-1.0728836059570312e-06,-13.75,-1.0728836059570312e-06,-13.749998927116394,-13.749998927116394,0.0
+5422,2,16-inch Dell laptop with 4GB RAM,13-inch Lenovo laptop with 8GB RAM,0.0,-18.625,0.0,-18.875,18.625,18.875,0.25
+5649,2,13-inch Apple laptop with 16GB RAM,16-inch Lenovo laptop with 16GB RAM,-14.75,-3.5762786865234375e-07,-15.25,-2.384185791015625e-07,-14.749999642372131,-15.249999761581421,0.5000001192092896
+6052,3,13-inch ASUS laptop with 16GB RAM,16-inch HP laptop with 8GB RAM,-1.1920928955078125e-07,-16.0,-1.1920928955078125e-07,-16.0,15.99999988079071,15.99999988079071,0.0
+6237,3,16-inch ASUS laptop with 4GB RAM,16-inch Dell laptop with 8GB RAM,-26.0,0.0,-25.875,0.0,-26.0,-25.875,0.125
+7204,3,13-inch Dell laptop with 8GB RAM,16-inch Dell laptop with 4GB RAM,0.0,-18.5,0.0,-18.75,18.5,18.75,0.25
+7538,3,13-inch Apple laptop with 4GB RAM,14-inch Lenovo laptop with 16GB RAM,-16.5,-1.1920928955078125e-07,-16.5,-1.1920928955078125e-07,-16.49999988079071,-16.49999988079071,0.0
+8008,4,13-inch ASUS laptop with 16GB RAM,13-inch ASUS laptop with 4GB RAM,0.0,-18.875,0.0,-18.875,18.875,18.875,0.0
+9292,4,14-inch Dell laptop with 8GB RAM,16-inch ASUS laptop with 16GB RAM,0.0,-18.125,0.0,-18.0,18.125,18.0,0.125
+9354,4,14-inch Dell laptop with 16GB RAM,16-inch HP laptop with 16GB RAM,0.0,-22.25,0.0,-22.25,22.25,22.25,0.0
+9807,4,16-inch Apple laptop with 4GB RAM,14-inch Apple laptop with 4GB RAM,-1.0132789611816406e-05,-11.5,-7.867813110351562e-06,-11.75,11.499989867210388,11.74999213218689,0.25000226497650146

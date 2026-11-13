@@ -1,0 +1,14 @@
+{
+  "model": "olmo-32",
+  "reference_run": "data/laptops_olmo/1475802",
+  "n_prompts": 20,
+  "max_abs_diff_margin": 0.1600341796875,
+  "mean_abs_diff_margin": 0.0527195930480957,
+  "max_abs_diff_score": 0.15625,
+  "mean_abs_stored_margin": 4.258323669433594,
+  "same_sign": 20,
+  "pearson_r": 0.9999361786128199,
+  "torch": "2.9.1+cu128",
+  "gpu": "1 x NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "host": "heraclitus"
+}

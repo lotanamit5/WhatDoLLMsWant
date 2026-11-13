@@ -1,7 +1,5 @@
 name: whatdo-llms-want
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
   - defaults
 dependencies:
@@ -11,15 +9,19 @@ dependencies:
   - matplotlib
   - seaborn
   - scipy
-  
-  # --- PyTorch ecosystem moved to native Conda ---
-  - pytorch
-  - torchvision
-  - torchaudio
-  - pytorch-cuda=12.4
-  
+
   - pip
   - pip:
+      # --- PyTorch from the CUDA 12.8 wheels (2026-11-13) ---
+      # Heraclitus has RTX PRO 6000 Blackwell GPUs (sm_120). The conda packages used before
+      # (pytorch 2.5.1 + pytorch-cuda=12.4, channels pytorch / nvidia) stop at sm_90 and fail there
+      # with "CUDA error: no kernel image is available". These wheels run on every bml server
+      # (checked on heraclitus, plato2, plotinus2). Do not add the conda pytorch back next to them.
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.9.1+cu128
+      - torchvision==0.24.1+cu128
+      - torchaudio==2.9.1+cu128
+
       # --- Hugging Face & LLM packages kept exactly as before ---
       - transformers
       - tqdm

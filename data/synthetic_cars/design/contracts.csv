@@ -1,0 +1,29 @@
+spec,constraints_id,depth,set,track,step,n_items_satisfying,text
+,none,0,train,,0,120,
+transmission=automatic,transmission=automatic,1,train,,1,60,I prefer an automatic transmission.
+company=BMW,company=BMW,1,train,,1,20,I prefer a BMW car.
+horsepower=200 hp,horsepower=200 hp,1,train,,1,40,I prefer 200 hp.
+color=black,color=black,1,train,,1,20,I prefer a black color.
+fuel=petrol,fuel=petrol,1,train,,1,60,I prefer a petrol engine.
+transmission=manual,transmission=manual,1,train,,1,60,I prefer a manual transmission.
+horsepower=100 hp,horsepower=100 hp,1,train,,1,40,I prefer 100 hp.
+company=Honda,company=Honda,1,train,,1,20,I prefer a Honda car.
+ownership=private first owner,ownership=private first owner,1,train,,1,24,I prefer a private first owner.
+company=Toyota,company=Toyota,1,train,,1,20,I prefer a Toyota car.
+color=white,color=white,1,train,,1,20,I prefer a white color.
+fuel=diesel,fuel=diesel,1,train,,1,60,I prefer a diesel engine.
+horsepower=150 hp,horsepower=150 hp,1,train,,1,40,I prefer 150 hp.
+company=Ford,company=Ford,1,train,,1,20,I prefer a Ford car.
+ownership=ex-lease,ownership=ex-lease,1,train,,1,24,I prefer an ex-lease car.
+"transmission=automatic,company=BMW",company=BMW+transmission=automatic,2,compound,luxury,2,10,I prefer a BMW car and an automatic transmission.
+"transmission=automatic,company=BMW,horsepower=200 hp",company=BMW+horsepower=200 hp+transmission=automatic,3,compound,luxury,3,5,I prefer a BMW car and an automatic transmission and 200 hp.
+"transmission=automatic,company=BMW,horsepower=200 hp,color=black",color=black+company=BMW+horsepower=200 hp+transmission=automatic,4,compound,luxury,4,3,I prefer a BMW car and a black color and an automatic transmission and 200 hp.
+"fuel=petrol,transmission=manual",fuel=petrol+transmission=manual,2,compound,economy,2,30,I prefer a petrol engine and a manual transmission.
+"fuel=petrol,transmission=manual,horsepower=100 hp",fuel=petrol+horsepower=100 hp+transmission=manual,3,compound,economy,3,11,I prefer a petrol engine and a manual transmission and 100 hp.
+"fuel=petrol,transmission=manual,horsepower=100 hp,company=Honda",company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,compound,economy,4,3,I prefer a Honda car and a petrol engine and a manual transmission and 100 hp.
+"transmission=automatic,ownership=private first owner",ownership=private first owner+transmission=automatic,2,compound,family,2,12,I prefer an automatic transmission and a private first owner.
+"transmission=automatic,ownership=private first owner,company=Toyota",company=Toyota+ownership=private first owner+transmission=automatic,3,compound,family,3,3,I prefer a Toyota car and an automatic transmission and a private first owner.
+"transmission=automatic,ownership=private first owner,company=Toyota,color=white",color=white+company=Toyota+ownership=private first owner+transmission=automatic,4,compound,family,4,3,I prefer a Toyota car and a white color and an automatic transmission and a private first owner.
+"fuel=diesel,horsepower=150 hp",fuel=diesel+horsepower=150 hp,2,compound,work,2,20,I prefer a diesel engine and 150 hp.
+"fuel=diesel,horsepower=150 hp,company=Ford",company=Ford+fuel=diesel+horsepower=150 hp,3,compound,work,3,4,I prefer a Ford car and a diesel engine and 150 hp.
+"fuel=diesel,horsepower=150 hp,company=Ford,ownership=ex-lease",company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,4,compound,work,4,3,I prefer a Ford car and a diesel engine and 150 hp and an ex-lease car.

@@ -1,0 +1,14 @@
+{
+  "model": "qwen-72",
+  "reference_run": "data/laptops_robustness/1445296",
+  "n_prompts": 20,
+  "max_abs_diff_margin": 0.7698974609375,
+  "mean_abs_diff_margin": 0.21969081163406373,
+  "max_abs_diff_score": 0.75,
+  "mean_abs_stored_margin": 14.375708097219468,
+  "same_sign": 20,
+  "pearson_r": 0.9998697629450128,
+  "torch": "2.9.1+cu128",
+  "gpu": "2 x NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "host": "heraclitus"
+}

@@ -8,6 +8,143 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-13 (afternoon, 3) — `environment.yml` matches the env again; on Heraclitus one GPU = one job
+
+- **`environment.yml` updated** (Lotan approved): the conda lines `pytorch`, `torchvision`, `torchaudio`,
+  `pytorch-cuda=12.4` and the channels `pytorch` / `nvidia` are replaced by the pip wheels
+  `torch==2.9.1+cu128`, `torchvision==0.24.1+cu128`, `torchaudio==2.9.1+cu128` from
+  `https://download.pytorch.org/whl/cu128`. Closes the open point of the entry below.
+  Not in the file, before or now: `statsmodels` (it is installed in the env, and `src/bt.py` needs it).
+- **Can the 96 GB GPUs be split between jobs?** (Lotan's question.)
+
+  | model | weights in bfloat16 | GPUs per job on Heraclitus | GPUs per job on plato / plotinus |
+  |---|---|---|---|
+  | gemma-27 | 52 GB | 1 | 8 |
+  | olmo-32 | 61 GB | 1 | 8 |
+  | qwen-72 | 136 GB | 2 | 8 |
+
+  (Weights = the size of the model cache in the verification jobs.) By whole GPUs, yes: each job takes
+  only the GPUs in the table, and the jobs run side by side. Inside one GPU, no: SLURM on `newton` has
+  `GresTypes = gpu` only (no `shard`, no MPS), so a GPU goes to one job at a time, and no two of these
+  models fit together in 96 GB anyway. With all 8 GPUs free that is e.g. 2 qwen + 2 gemma + 2 olmo jobs at
+  once; on 2026-11-13 other users hold 5, so 3 are free: qwen-72 and one of the other two.
+- **Still needed for that:** `--gres=gpu:N` on the `sbatch` line (the wrapper's own default is 8 GPUs). The
+  stage-1 jobs passed it by hand. The key in `create_slurms.py` is not added; it waits for Lotan.
+- **Stage 1 approval is deferred** (Lotan: after the env and the pipeline are settled). Nothing is launched.
+
+---
+
+## 2026-11-13 (afternoon, 2) — Synthetic cars, stage 1 prepared; Heraclitus fixed (torch 2.9.1 in the env)
+
+Second domain on the synthetic design, to test whether the laptop-grid trends hold for another product.
+Stage 1 only: nothing of the main run is launched; it waits for Lotan's approval.
+
+**Corrects the entry below in one point: PyTorch is back in the env since 13:44.** The `conda remove` it found
+at 13:31 was the first half of this fix, run from the cars session; the six real-laptops jobs were launched
+in the 13 minutes between the removal and the reinstall. They can be relaunched as they are.
+
+- **Heraclitus: what was wrong.** Its GPUs are RTX PRO 6000 Blackwell (`sm_120`). The env had
+  `pytorch 2.5.1 / pytorch-cuda 12.4` (conda), whose GPU code stops at `sm_90`: the GPU is visible, every
+  operation fails with `CUDA error: no kernel image is available for execution on the device`.
+- **Fix, inside the env `whatdo-llms-want` only:** removed the conda `pytorch`, `torchvision`, `torchaudio`,
+  `torchtriton`, `pytorch-cuda`, `pytorch-mutex` and the 18 conda CUDA library packages (12.4); installed by pip
+  `torch 2.9.1+cu128`, `torchvision 0.24.1+cu128`, `torchaudio 2.9.1+cu128` (brings `triton 3.5.1`, the
+  `nvidia-*-cu12` 12.8 libraries, `sympy 1.13.1 → 1.14.0`). Nothing else changed (`pip check` clean,
+  transformers 5.8.0 as before). Package lists from before the change, for a rollback:
+  `~/claude_scratch/heraclitus/env_before/`. **`environment.yml` still describes the old install.**
+- **The same env serves every server.** GPU test passed on heraclitus, plato2 (A4000) and plotinus2 (L4).
+- **Verification** (`scripts/heraclitus_verify.py`, through the normal wrapper): 20 prompts of a stored
+  `brand=Dell` laptop run (4 per template), re-scored; margin = score_a − score_b. Outputs in
+  `data/heraclitus_check/<job>/verify.csv`.
+
+  | model | stored run (server) | re-run on | max abs diff | mean abs diff | mean abs stored margin | same winner | r |
+  |---|---|---|---|---|---|---|---|
+  | gemma-27 | laptops_robustness/1475800 (plotinus1, 8 × L4) | heraclitus, 1 GPU | 0.500 | 0.156 | 18.29 | 20 / 20 | 0.99995 |
+  | olmo-32 | laptops_olmo/1475802 (plato2, 8 × A4000) | heraclitus, 1 GPU | 0.160 | 0.053 | 4.26 | 20 / 20 | 0.99994 |
+  | qwen-72 | laptops_robustness/1445296 (plotinus1, 8 × L4) | heraclitus, 2 GPUs | 0.770 | 0.220 | 14.38 | 20 / 20 | 0.99987 |
+  | gemma-27 (control) | laptops_robustness/1475800 (plotinus1, 8 × L4) | plotinus2, 8 × L4, new torch | 0.000 | 0.000 | 18.29 | 20 / 20 | 1.00000 |
+
+  The control re-ran the same 20 prompts with the new torch on the old GPU type: identical to the stored
+  values. The differences on Heraclitus are in steps of 0.125 (bfloat16).
+- **The domain** (`scripts/synthetic_cars_prepare.py`, seed 20261113, files in `data/synthetic_cars/design/`):
+  6 features (company 6, color 6, fuel 2, transmission 2, ownership 5, horsepower 3; 2,160 possible cars),
+  120 cars = 12 targets (3 per track) + 108 found by a swap search. Every feature exactly balanced; all 15
+  feature pairs at the best possible balance (12 exact; company × color 3–4, company × horsepower and
+  color × horsepower 6–7, where 120 does not divide); no duplicates; largest |correlation| between one-hot
+  coordinates of different features 0.040.
+- **Contracts: 28** = none + 15 singles + 12 compounds (first 2 / 3 / 4 requirements of the tracks luxury,
+  economy, family, work). Cars satisfying: singles 20–60; depth 2: 10 / 30 / 12 / 20; depth 3: 5 / 11 / 3 / 4;
+  depth 4: 3 each (the targets only). Full table: `design/contracts.csv`.
+- **Prompt:** frame `car_shopping` ("I am looking to buy a car."), the `options` templates, template 0 only;
+  a car is one line, e.g. `BMW, black, diesel, automatic, 200 hp, private first owner`. Contract sentence in
+  the laptop shape: "I prefer a BMW car and a black color and an automatic transmission and 200 hp."
+- **Added to `data_collection.py`** (32 lines, nothing existing changed): alias `synthetic_cars` (reads
+  `design/items.csv`), frame `car_shopping`, the six contract phrases, six names appended to `FEATURE_ORDER`.
+- **Template check** (job 1498233, gemma-27 on heraclitus, no contract, 200 pairs × 2 orders × 5 templates =
+  2,000 rows, `data/synthetic_cars_template_check/`; `scripts/synthetic_cars_template_check.py`, same formulas
+  as `scripts/residual_noise.py`):
+
+  | fit | parameters | γ | var_e | var_m | ρ | R² |
+  |---|---|---|---|---|---|---|
+  | BT-full (as in `residual_noise.py`) | 117 | −3.02 | 5.97 | 32.5 | 0.845 | 0.877 |
+  | BT-feat | 19 | −3.02 | 5.97 | 61.6 | 0.912 | 0.784 |
+  | laptop grid, gemma-27, no contract (existing output, BT-full, all 990 pairs) | 45 | −2.84 | 3.00 | 86.5 | 0.966 | 0.796 |
+
+  BT-full has 117 parameters for 200 pairs here, so its var_m is not comparable with the laptop row.
+  Template 0 vs the mean of the other four: r = 0.997, same winner in 198 of 200 pairs; all five agree in 196.
+  Speed: 15 prompts/s (gemma-27, one GPU).
+- **Planned main run, not launched:** 248,292 prompts per model = 16 train contracts × 14,280 (all 7,140
+  pairs, both orders) + 12 compounds × about 1,650 (the 500 shared pairs + the 354 pairs with a target of the
+  track, both orders). 5 jobs per model (1 train + 1 per track, because each track has its own pairs file),
+  15 jobs, all on heraclitus.
+- **Open, needs Lotan:** (1) approve stage 1; (2) the wrapper asks for 8 GPUs and Heraclitus has 3 free, so
+  the launch needs `--gres` on the `sbatch` line — a new key in `create_slurms.py`, not added yet;
+  (3) `environment.yml` update; (4) the contract wording.
+
+---
+
+## 2026-11-13 (afternoon) — Real laptops main batch: launched, all 6 jobs died in seconds (no PyTorch in the env)
+
+Lotan asked for the launch. Nothing was collected and no GPU time was used.
+
+- **What happened.** 6 jobs submitted at 13:35 from `newton` (jobs 1498182–1498187, code at `cfbe2c6`). All six
+  stopped within seconds on `import torch`: `ModuleNotFoundError: No module named 'torch.nn.functional'`.
+- **Cause: the conda env `whatdo-llms-want` has no PyTorch since 13:31 the same day.** Its `conda-meta/history`
+  shows `conda remove -p .../whatdo-llms-want --force -y pytorch torchvision torchaudio torchtriton pytorch-cuda
+  pytorch-mutex cuda-...` at 13:31:38 (removed: pytorch 2.5.1 py3.11_cuda12.4_cudnn9.1.0, pytorch-cuda 12.4,
+  torchvision 0.20.1, torchaudio 2.5.1, the cuda libraries). The command ran under Lotan's account on
+  `protagoras`; it was not part of this work, and nothing was reinstalling PyTorch at 13:40.
+  **Until PyTorch is back in that env, no collection job can run.**
+- **Left on disk:** six folders `data/real_laptops/1498182 … 1498187` holding only `output.log` + `error.log`
+  (no `config.json`, so every loader skips them). `scripts/slurms.sh` still holds the 6 jobs: relaunch =
+  `bash scripts/slurms.sh` on `newton`, once the env works.
+- **The live logs worked on real jobs.** Each `output.log` existed within seconds with the server name, the
+  command and the free scratch space, and `error.log` held the traceback — the cause was read from them
+  directly.
+- **Where jobs are submitted from.** plato1/2 and plotinus1/2 belong to the SLURM cluster `newton` (login
+  `newton.cs.technion.ac.il`). The VS Code session runs on `protagoras`, cluster `darwin`, whose `sbatch`
+  does not know those servers. Same home directory on both.
+- **Servers for this batch (Lotan):** plato1/2 and plotinus1/2, qwen-72 on plotinus only. New `'any'` key in
+  `create_slurms.py`: SLURM picks whichever listed server has room (`sbatch -x <the other bml servers>`)
+  instead of pinning with `-w`. At 13:35 the six went to plotinus2 (2 × qwen-72), plato2 (2), plato1 (2).
+- **Found: old model caches were never deleted from the servers.** `SLURM_TMPDIR` is not set there, so each
+  job's cache stayed in `/tmp/hf_<job>` for good:
+
+  | server | old cache folders | their size | free on /tmp |
+  |---|---|---|---|
+  | plato1 | 45 | 1,457 GB | 217 GB of 1,757 GB |
+  | plato2 | 99 | 461 GB | 1,190 GB of 1,757 GB |
+  | plotinus2 | 5 | 98 GB | 1,649 GB of 1,784 GB |
+  | plotinus1 | not checked (no free CPU) | | |
+
+  **Fixed going forward:** the wrapper now deletes its own cache when the job ends (normal end, error, or
+  `scancel`; tested with the fake model, and the six failed jobs left nothing behind). **The old folders are
+  still there** — deleting them is Lotan's call.
+- **Rough run times to expect** (from the template check: gemma-27 at 105 prompts/min on these prompts, the
+  others scaled from the books runs): gemma ≈ 4 h + 3 h, olmo ≈ 5 h + 4 h, qwen-72 ≈ 10 h + 8 h.
+
+---
+
 ## 2026-11-13 — Real laptops, stage 1: one template is enough (gemma-27)
 
 [Notebooks/real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb), figure in

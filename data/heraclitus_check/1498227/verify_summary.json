@@ -1,0 +1,14 @@
+{
+  "model": "gemma-27",
+  "reference_run": "data/laptops_robustness/1475800",
+  "n_prompts": 20,
+  "max_abs_diff_margin": 0.5000001192092896,
+  "mean_abs_diff_margin": 0.15625302791595458,
+  "max_abs_diff_score": 0.5,
+  "mean_abs_stored_margin": 18.28748924136162,
+  "same_sign": 20,
+  "pearson_r": 0.9999480273749378,
+  "torch": "2.9.1+cu128",
+  "gpu": "1 x NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "host": "heraclitus"
+}
