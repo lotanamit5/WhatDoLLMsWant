@@ -3,28 +3,9 @@
 # Edit scripts/create_slurms.py and re-run it, then commit BOTH files together.
 # (No timestamp on purpose: identical params must produce an identical file,
 #  so `git diff` shows a changed batch and nothing else.)
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "gemma" -s "27" -a "laptops_robustness" -c "brand=Apple" -n laptops_robustness
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "gemma" -s "27" -a "laptops_robustness" -c "brand=Dell" -n laptops_robustness
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "brand=Apple" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "brand=Dell" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m "gemma" -s "27" -a "laptops_robustness" -c "brand=Dell,screen=14-inch,ram=8GB" -n laptops_robustness
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "gemma" -s "27" -a "laptops_robustness" -c "brand=Apple,screen=14-inch,ram=8GB" -n laptops_robustness
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "gemma" -s "27" -a "laptops_robustness" -c "brand=Dell,screen=14-inch,ram=4GB" -n laptops_robustness
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m "olmo" -s "1" -a "laptops_robustness" -c "screen=13-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "1" -a "laptops_robustness" -c "screen=16-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "olmo" -s "1" -a "laptops_robustness" -c "ram=4GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m "olmo" -s "1" -a "laptops_robustness" -c "ram=16GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "7" -a "laptops_robustness" -c "screen=13-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "olmo" -s "7" -a "laptops_robustness" -c "screen=16-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m "olmo" -s "7" -a "laptops_robustness" -c "ram=4GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "7" -a "laptops_robustness" -c "ram=16GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "olmo" -s "13" -a "laptops_robustness" -c "screen=13-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus2 scripts/run_data_collection.sh -m "olmo" -s "13" -a "laptops_robustness" -c "screen=16-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "13" -a "laptops_robustness" -c "ram=4GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plotinus1 scripts/run_data_collection.sh -m "olmo" -s "13" -a "laptops_robustness" -c "ram=16GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "screen=13-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "screen=16-inch" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "ram=4GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "olmo" -s "32" -a "laptops_robustness" -c "ram=16GB" -p "options" -n laptops_olmo
-sbatch -p bml -A bml -w plato1 scripts/run_data_collection.sh -m "qwen" -s "32" -a "laptops_robustness" -c "" -t "0" -n laptops_all_templates
-sbatch -p bml -A bml -w plato2 scripts/run_data_collection.sh -m "qwen" -s "32" -a "laptops_robustness" -c "ram=4GB" -t "0" -n laptops_all_templates
+sbatch -p bml -A bml -x heraclitus,plato1,plato2 scripts/run_data_collection.sh -m "qwen" -s "72" -a "real_laptops" -c "none;brand=Dell;brand=HP;ram=4GB;ram=8GB;screen=14-inch;screen=15.6-inch" -t "1" -n real_laptops
+sbatch -p bml -A bml -x heraclitus,plotinus1,plotinus2 scripts/run_data_collection.sh -m "gemma" -s "27" -a "real_laptops" -c "none;brand=Dell;brand=HP;ram=4GB;ram=8GB;screen=14-inch;screen=15.6-inch" -t "1" -n real_laptops
+sbatch -p bml -A bml -x heraclitus,plotinus1,plotinus2 scripts/run_data_collection.sh -m "olmo" -s "32" -a "real_laptops" -c "none;brand=Dell;brand=HP;ram=4GB;ram=8GB;screen=14-inch;screen=15.6-inch" -t "1" -n real_laptops
+sbatch -p bml -A bml -x heraclitus,plato1,plato2 scripts/run_data_collection.sh -m "qwen" -s "72" -a "real_laptops" -c "brand=Dell,ram=4GB;brand=Dell,ram=8GB;brand=Dell,screen=14-inch;brand=Dell,screen=15.6-inch;brand=HP,ram=4GB;brand=HP,ram=8GB;brand=HP,screen=14-inch;brand=HP,screen=15.6-inch;screen=14-inch,ram=4GB;screen=15.6-inch,ram=4GB;screen=14-inch,ram=8GB;screen=15.6-inch,ram=8GB;brand=Dell,screen=14-inch,ram=4GB;brand=Dell,screen=15.6-inch,ram=4GB;brand=Dell,screen=14-inch,ram=8GB;brand=Dell,screen=15.6-inch,ram=8GB;brand=HP,screen=14-inch,ram=4GB;brand=HP,screen=15.6-inch,ram=4GB;brand=HP,screen=14-inch,ram=8GB;brand=HP,screen=15.6-inch,ram=8GB" -t "1" -q "data/real_laptops/design/compound_pairs.csv" -n real_laptops
+sbatch -p bml -A bml -x heraclitus,plotinus1,plotinus2 scripts/run_data_collection.sh -m "gemma" -s "27" -a "real_laptops" -c "brand=Dell,ram=4GB;brand=Dell,ram=8GB;brand=Dell,screen=14-inch;brand=Dell,screen=15.6-inch;brand=HP,ram=4GB;brand=HP,ram=8GB;brand=HP,screen=14-inch;brand=HP,screen=15.6-inch;screen=14-inch,ram=4GB;screen=15.6-inch,ram=4GB;screen=14-inch,ram=8GB;screen=15.6-inch,ram=8GB;brand=Dell,screen=14-inch,ram=4GB;brand=Dell,screen=15.6-inch,ram=4GB;brand=Dell,screen=14-inch,ram=8GB;brand=Dell,screen=15.6-inch,ram=8GB;brand=HP,screen=14-inch,ram=4GB;brand=HP,screen=15.6-inch,ram=4GB;brand=HP,screen=14-inch,ram=8GB;brand=HP,screen=15.6-inch,ram=8GB" -t "1" -q "data/real_laptops/design/compound_pairs.csv" -n real_laptops
+sbatch -p bml -A bml -x heraclitus,plotinus1,plotinus2 scripts/run_data_collection.sh -m "olmo" -s "32" -a "real_laptops" -c "brand=Dell,ram=4GB;brand=Dell,ram=8GB;brand=Dell,screen=14-inch;brand=Dell,screen=15.6-inch;brand=HP,ram=4GB;brand=HP,ram=8GB;brand=HP,screen=14-inch;brand=HP,screen=15.6-inch;screen=14-inch,ram=4GB;screen=15.6-inch,ram=4GB;screen=14-inch,ram=8GB;screen=15.6-inch,ram=8GB;brand=Dell,screen=14-inch,ram=4GB;brand=Dell,screen=15.6-inch,ram=4GB;brand=Dell,screen=14-inch,ram=8GB;brand=Dell,screen=15.6-inch,ram=8GB;brand=HP,screen=14-inch,ram=4GB;brand=HP,screen=15.6-inch,ram=4GB;brand=HP,screen=14-inch,ram=8GB;brand=HP,screen=15.6-inch,ram=8GB" -t "1" -q "data/real_laptops/design/compound_pairs.csv" -n real_laptops

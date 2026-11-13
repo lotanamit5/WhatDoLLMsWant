@@ -71,7 +71,23 @@ has `a_item` / `b_item` and the prompt shows the string as is. A laptop dict kee
 feature. A job with several comma-separated `--alternatives` writes one complete run (its own
 `config.json` + `scores.csv`, `alternatives` = that one alias) per domain to
 `data/<exp_name>/<slurm_job_id>_<alias>/`; the plain `<slurm_job_id>/` folder holds only
-`output.log` and is skipped by every loader (no `config.json`).
+the logs (`output.log`, and since 2026-11-13 `error.log`) and is skipped by every loader (no `config.json`).
+
+### Several contracts in one job, pairs files, items from a file (2026-11-13)
+
+- A job given several contracts (`--constraints "none;ram=8GB;brand=Dell,ram=8GB"`: `;` between contracts,
+  `none` = no contract) loads the model once and writes one complete run per contract to
+  `data/<exp_name>/<slurm_job_id>_<constraints_id>/`. With several item sets as well, the folder is
+  `<slurm_job_id>_<alias>_<constraints_id>`. Each run's `config.json` holds its own single contract, so
+  loaders need no change.
+- `pairs`: `"all"` = every ordered pair of the items (every run before 2026-11-13, which has no such
+  field), or the path of a CSV of item-id pairs, each scored in both orders.
+- `n_rows`: the number of rows a complete `scores.csv` holds (templates × ordered pairs). A run whose
+  `scores.csv` is shorter, or missing, is incomplete.
+- `alternatives: "real_laptops"`: the items come from `data/real_laptops/design/items.csv`. `scores.csv`
+  has `a_id` / `b_id` (the dataset's `laptop_ID`) + brand, screen, ram; every other spec is in that file.
+  The one older run (job 1497200, the template check) was written by the removed
+  `real_laptops_collect.py`: it has `pairs: "sanity_200"`, `n_pairs`, `items_file` and no `n_rows`.
 
 ### The other fields
 

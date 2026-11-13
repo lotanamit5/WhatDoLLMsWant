@@ -16,8 +16,10 @@ and `prompt_prefix` in the config records that first line verbatim.
 import os
 import sys
 import json
+import time
 import argparse
 import itertools
+import contextlib
 import subprocess
 
 import pandas as pd
@@ -25,11 +27,13 @@ from datetime import datetime
 from tqdm.auto import tqdm
 
 # Add project root to sys.path to allow imports from src
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(ROOT)
+sys.path.append(os.path.join(ROOT, 'src'))
 import src.alternatives
 import src.prompts
-from src.agent import agent_factory
+# src.agent is imported inside collect_data: it pulls in torch, which --dry_run and the notebooks
+# that borrow the wording functions from this file do not need.
 
 
 ALTERNATIVES_ALIASES = {
@@ -52,6 +56,23 @@ ALTERNATIVES_ALIASES = {
     'books': src.alternatives.books,
     'books_small': src.alternatives.books_small,
 }
+
+
+def real_laptops():
+    """60 real laptops (2026-11-12), from the design file written by scripts/real_laptops_prepare.py.
+    `text` is the one line shown in the prompt. `id` (the dataset's laptop_ID) and the three contract
+    features go to scores.csv; every other spec of an item stays in the design file."""
+    df = pd.read_csv(os.path.join(ROOT, "data", "real_laptops", "design", "items.csv"))
+    return df[['id', 'brand', 'screen', 'ram', 'text']].to_dict('records')
+
+
+# A function, not a list: the file is read only when a job asks for these items.
+ALTERNATIVES_ALIASES['real_laptops'] = real_laptops
+
+
+def load_items(alias):
+    items = ALTERNATIVES_ALIASES[alias]
+    return items() if callable(items) else items
 
 # Which prompt templates to use, and the answer strings whose last token gets scored.
 # The two are bound together because they have to agree: a template ending
@@ -175,6 +196,13 @@ def parse_constraints(spec):
     return out
 
 
+def parse_contracts(spec):
+    """Several contracts for ONE job, separated by ';' - one run each, one model load:
+    'none;ram=8GB;brand=Dell,ram=8GB' -> [{}, {'ram': '8GB'}, {'brand': 'Dell', 'ram': '8GB'}].
+    'none' (or an empty part) is the no-contract run. A plain single spec gives a list of one."""
+    return [parse_constraints("" if part.strip() == "none" else part.strip()) for part in spec.split(";")]
+
+
 def constraints_text(constraints):
     if not constraints:
         return ""
@@ -230,37 +258,105 @@ def item_text(item):
     through format_book_to_text, a laptop dict through format_features_to_text."""
     if isinstance(item, str):
         return item
+    if 'text' in item:                     # the item brings its own line (real_laptops)
+        return item['text']
     return format_book_to_text(item) if 'title' in item else format_features_to_text(item)
 
 
 def item_columns(prefix, item):
     """scores.csv columns for one option: a string item is one feature called `item`
     (a_item / b_item); a dict gives one column per feature (a_brand, a_screen, ...)."""
-    return {f"{prefix}item": item} if isinstance(item, str) else {f"{prefix}{k}": v for k, v in item.items()}
+    if isinstance(item, str):
+        return {f"{prefix}item": item}
+    return {f"{prefix}{k}": v for k, v in item.items() if k != 'text'}      # `text` is prompt-only
+
+
+def ordered_pairs(items, pairs=''):
+    """What gets scored. Default: every ordered pair of items. With `pairs` (a CSV of two item-id
+    columns, path from the repo root): only those pairs, each in both orders. Needs items with `id`."""
+    if not pairs:
+        return list(itertools.permutations(items, 2))
+    by_id = {item['id']: item for item in items}
+    listed = pd.read_csv(os.path.join(ROOT, pairs)).itertuples(index=False, name=None)
+    return [(by_id[a], by_id[b]) for x, y in listed for a, b in ((x, y), (y, x))]
+
+
+_DEVNULL = open(os.devnull, "w")
+
+
+def query(agent, prompt, show=False):
+    """agent.query prints the whole prompt, its tokens and the scores on EVERY call: 114 MB of log
+    for one all-templates run, and the lines that matter are lost in it. Show the first prompt of a
+    run (to check the wording), mute the rest. The scores are untouched."""
+    if show:
+        return agent.query(prompt)
+    with contextlib.redirect_stdout(_DEVNULL):
+        return agent.query(prompt)
+
+
+class Progress:
+    """One log line a minute while scoring: rows done, speed, time left. Call tick() once per row."""
+
+    def __init__(self, total, every=60):
+        self.total, self.every, self.done = total, every, 0
+        self.t0 = self.last = time.time()
+
+    def tick(self):
+        self.done += 1
+        now = time.time()
+        if now - self.last >= self.every or self.done == self.total:
+            rate = self.done / max(now - self.t0, 1e-9)
+            print(f"[{datetime.now():%H:%M:%S}] {self.done}/{self.total} rows "
+                  f"({100 * self.done // self.total}%) | {rate:.1f} rows/s | "
+                  f"{(self.total - self.done) / rate / 60:.0f} min left", flush=True)
+            self.last = now
 
 
 def collect_data(model_family, model_size, alternatives, exp_dir,
                  constraints=None, frame='shopping', n_templates=5,
-                 template_set='options'):
-    """`alternatives` is one alias, or several separated by commas. Several aliases share ONE
-    loaded model and write one run each to `<exp_dir>_<alias>` (2026-10-12, simple_domains):
-    the model is downloaded once per job instead of once per domain."""
+                 template_set='options', pairs='', dry_run=False):
+    """One job = ONE model load = one run per (item set, contract).
+
+    `alternatives` is one alias, or several separated by commas (2026-10-12, simple_domains).
+    `constraints` is one contract dict, or a list of them (2026-11-13, real laptops).
+    A single run is written to `exp_dir`. Several get the part that varies appended:
+    `<exp_dir>_<alias>`, `<exp_dir>_<constraints_id>`, or `<exp_dir>_<alias>_<constraints_id>`.
+    `dry_run` prints the first prompt of every run and stops: no model, no files."""
     aliases = alternatives.split(",")
+    contracts = constraints if isinstance(constraints, list) else [constraints or {}]
+    cids = [constraints_id(c) for c in contracts]
+    assert len(set(cids)) == len(cids), f"the same contract twice: {cids}"
     for alias in aliases:                                   # fail before loading a model, not after
         assert alias in ALTERNATIVES_ALIASES, f"unknown alternatives alias {alias!r}"
-    labels = TEMPLATE_SETS[template_set]['labels']
-    agent = agent_factory(model_family, model_size, labels)
+        for con in contracts:
+            validate_constraints(con, load_items(alias))
+    if dry_run and not exp_dir:
+        exp_dir = "data/<exp_name>/<job_id>"
+
+    n_tmpl = len(TEMPLATE_SETS[template_set]['templates'][:n_templates or None])
+    progress = Progress(n_tmpl * len(contracts) *                       # the whole job, all its runs
+                        sum(len(ordered_pairs(load_items(a), pairs)) for a in aliases))
+    print(f"{model_family}-{model_size} | {len(aliases) * len(contracts)} runs | {progress.total} prompts",
+          flush=True)
+
+    agent = None
+    if not dry_run:
+        from src.agent import agent_factory
+        agent = agent_factory(model_family, model_size, TEMPLATE_SETS[template_set]['labels'])
     for alias in aliases:
-        run_dir = exp_dir if len(aliases) == 1 else f"{exp_dir}_{alias}"
-        collect_one(agent, model_family, model_size, alias, run_dir, constraints, frame,
-                    n_templates, template_set)
+        for i, (con, cid) in enumerate(zip(contracts, cids)):
+            parts = ([alias] if len(aliases) > 1 else []) + ([cid] if len(contracts) > 1 else [])
+            collect_one(agent, model_family, model_size, alias, "_".join([exp_dir] + parts), con, frame,
+                        n_templates, template_set, pairs, dry_run, progress, show_items=(i == 0))
 
 
 def collect_one(agent, model_family, model_size, alternatives_alias, exp_dir,
-                constraints=None, frame='shopping', n_templates=5, template_set='options'):
-    items = ALTERNATIVES_ALIASES[alternatives_alias]
+                constraints=None, frame='shopping', n_templates=5, template_set='options',
+                pairs='', dry_run=False, progress=None, show_items=True):
+    items = load_items(alternatives_alias)
     constraints = constraints or {}
     validate_constraints(constraints, items)
+    ordered = ordered_pairs(items, pairs)
 
     templates = TEMPLATE_SETS[template_set]['templates']
     labels = TEMPLATE_SETS[template_set]['labels']
@@ -271,14 +367,23 @@ def collect_one(agent, model_family, model_size, alternatives_alias, exp_dir,
     con_text = constraints_text(constraints)
     prompt_prefix = " ".join(p for p in (frame_text, con_text) if p)
 
-    print('=== alternatives:', alternatives_alias, '->', exp_dir)
+    if dry_run:
+        first = f"{prompt_prefix}\n{templates[0]}" if prompt_prefix else templates[0]
+        print(f"\n===== {alternatives_alias} | {constraints_id(constraints)} | "
+              f"{len(templates) * len(ordered)} prompts -> {exp_dir}")
+        print(first.format(A=item_text(ordered[0][0]), B=item_text(ordered[0][1])))
+        return
+
+    print('=== alternatives:', alternatives_alias, '| constraints:', constraints_id(constraints),
+          '|', len(templates) * len(ordered), 'prompts ->', exp_dir)
     print('model_id:', agent.tokenizer.name_or_path)
     print('template_set:', template_set, '| labels:', labels or agent.labels)
     print('prompt_prefix:', repr(prompt_prefix), '| voice:', frame_voice(frame))
     print('constraints:', constraints)
-    print('items:')
-    for item in items:
-        print('-', item)
+    if show_items:                         # once per item set, not once per contract
+        print('items:')
+        for item in items:
+            print('-', item)
     print('templates:')
     for template in templates:
         print('-', template)
@@ -293,6 +398,9 @@ def collect_one(agent, model_family, model_size, alternatives_alias, exp_dir,
         "constraints_text": con_text,
         "constraints_id": constraints_id(constraints),
         "prompt_prefix": prompt_prefix,
+        # "all" = every ordered pair of the items; otherwise the pairs file (each pair in both orders)
+        "pairs": pairs or "all",
+        "n_rows": len(templates) * len(ordered),     # what a COMPLETE scores.csv holds
 
         "timestamp": datetime.now().strftime("%Y%m%d_%H%M%S"),
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
@@ -307,18 +415,20 @@ def collect_one(agent, model_family, model_size, alternatives_alias, exp_dir,
         json.dump(config, f, indent=2, sort_keys=True)
 
     records = []
+    progress = progress or Progress(len(templates) * len(ordered))
     for idx, template in tqdm(enumerate(templates)):
         full_template = f"{prompt_prefix}\n{template}" if prompt_prefix else template
-        for option_a, option_b in itertools.permutations(items, 2):
+        for option_a, option_b in ordered:
             prompt = full_template.format(A=item_text(option_a), B=item_text(option_b))
-            score_a, score_b = agent.query(prompt)
+            score_a, score_b = query(agent, prompt, show=not records)
+            progress.tick()
             record = {'template_idx': idx, 'score_a': score_a, 'score_b': score_b}
             record.update(item_columns("a_", option_a))
             record.update(item_columns("b_", option_b))
             records.append(record)
 
     pd.DataFrame(records).to_csv(os.path.join(exp_dir, "scores.csv"), index=False)
-    print("Finished!")
+    print(f"Finished! {len(records)} rows -> {exp_dir}", flush=True)
 
 
 if __name__ == "__main__":
@@ -329,7 +439,13 @@ if __name__ == "__main__":
                         help="one alias, or several separated by commas (one run each, one model load)")
     parser.add_argument("--exp_dir", type=str, required=False)
     parser.add_argument("--constraints", type=str, default="",
-                        help='"screen=14-inch,ram=8GB". Empty means no constraint.')
+                        help='"screen=14-inch,ram=8GB". Empty means no constraint. Several contracts '
+                             'in one job: separate them with ";", and write "none" for no constraint.')
+    parser.add_argument("--pairs", type=str, default="",
+                        help="CSV of item-id pairs (path from the repo root), each scored in both "
+                             "orders. Empty means every ordered pair.")
+    parser.add_argument("--dry_run", action="store_true",
+                        help="print the first prompt of every run and stop. No model, no files.")
     parser.add_argument("--frame", type=str, default="shopping", choices=sorted(FRAMES),
                         help="the scene-setting sentence before any spec")
     parser.add_argument("--n_templates", type=int, default=5,
@@ -344,8 +460,10 @@ if __name__ == "__main__":
         args.model_size,
         args.alternatives,
         args.exp_dir,
-        constraints=parse_constraints(args.constraints),
+        constraints=parse_contracts(args.constraints),
         frame=args.frame,
         n_templates=args.n_templates,
         template_set=args.template_set,
+        pairs=args.pairs,
+        dry_run=args.dry_run,
     )

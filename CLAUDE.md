@@ -112,6 +112,8 @@ data/<exp_name>/<slurm_job_id>/
 **Multi-domain jobs** (2026-10-12, `simple_domains`): a job given several comma-separated
 `--alternatives` loads the model once and writes one run per domain to
 `data/<exp_name>/<slurm_job_id>_<alias>/`; the bare `<slurm_job_id>/` folder then holds only the log.
+**Multi-contract jobs** (2026-11-13, `real_laptops`): the same for several `;`-separated `--constraints` —
+one run per contract in `data/<exp_name>/<slurm_job_id>_<constraints_id>/`.
 Feature-less items (colors, foods, ...) have one feature called `item`: columns `a_item`, `b_item`.
 (The old pre-merge runs in `eos_fix_qwen` etc. use `option_a` / `option_b` instead.)
 

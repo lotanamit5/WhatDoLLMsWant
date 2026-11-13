@@ -174,10 +174,20 @@ survives a contract?
 18. **GRUM first simple test run** (2026-11-12, `scripts/grum_first_test.py`, numbers in progress 11-12):
     sample efficiency vs per-contract BT (full and feature), and zero-shot on 10 compound contracts, for
     qwen-72 / gemma-27 / olmo-32. Reported without interpretation; no decision taken.
-19. **Real laptops domain — stage 1 prepared, waiting** (2026-11-12, progress same date). 60 real laptops,
-    27 contracts, design in `data/real_laptops/design/`. **Next:** Lotan launches
-    `scripts/real_laptops_slurm_sanity.sh` (1 job), then approves `scripts/real_laptops_slurms.sh` (3 jobs).
-    Stage 3 analysis script not written yet.
+19. **Real laptops domain — stage 1 done, main runs queued, waiting for approval** (2026-11-13, progress
+    11-12 and 11-13). 60 real laptops, 27 contracts, design in `data/real_laptops/design/`. Template check
+    (job 1497200, gemma-27) reported in
+    [real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb): template 0 picks the
+    same laptop as the other four in 200 of 200 pairs (r = 0.997); the order decides in 23 of 200; more RAM
+    wins in 112 of 118. Checked on gemma only, no contract.
+    **Next:** Lotan approves, then launches `scripts/slurms.sh` (6 jobs = 3 models × 2: singles on all pairs,
+    compounds on the 500 pairs). Stage 3 analysis script not written yet.
+20. **Pipeline: one path, live logs** (2026-11-13, two progress entries). Every experiment, real laptops
+    included, goes `create_slurms.py` → `slurms.sh` → `run_data_collection.sh` → `data_collection.py`;
+    `run_real_laptops.sh`, `real_laptops_collect.py` and its two launchers are gone. New in the collector:
+    several contracts per job (`-c "a;b"`), a pairs file (`-q`), items from a file, `--dry_run`. Logs are live
+    in `data/<exp>/<job>/output.log` + `error.log`: `tail -F data/<exp>/<job>/*.log`. Tested with a fake
+    model only — the next real job is the first real test.
 
 ---
 
@@ -295,7 +305,9 @@ personas (`no_money`, `windows`) on gemma-27B and olmo-32B, 4 jobs, so it is not
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh`: 27 jobs.**
+**Queued now in `scripts/slurms.sh` (2026-11-13): the 6 real-laptops jobs** — see section 2 point 19.
+
+*Queued back then, landed since — 27 jobs:*
 
 - **OLMo stage 2, 24 jobs** — `olmo` and `olmo-pt`, all 4 sizes x the 3 contracts. The batch that
   matters: the only route to adherence, κ and a brand decay for a third family.

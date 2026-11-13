@@ -1,5 +1,6 @@
 import os
 import sys
+import csv
 import itertools
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -17,6 +18,11 @@ NODES_BY_SIZE = {
     '32': ['plato1', 'plato2'],
     '72': ['plotinus1', 'plotinus2'],
 }
+
+# Every server of the `bml` partition (sinfo on newton, 2026-11-13). Needed for 'any' below.
+BML_NODES = ['heraclitus', 'plato1', 'plato2', 'plotinus1', 'plotinus2']
+PLATO = ['plato1', 'plato2']            # 16 x A4000 (16 GB) each
+PLOTINUS = ['plotinus1', 'plotinus2']   # 16 x L4 (24 GB) each: the only ones that hold qwen-72B
 
 QWEN = ['0.5', '7', '32', '72']
 GEMMA = ['1', '4', '12', '27']
@@ -50,6 +56,17 @@ BASELINE_FOUR = [
     'screen=14-inch,ram=8GB',
 ]
 
+# Real laptops (2026-11-12): the 27 contracts, read from the design file so they are never typed
+# twice. One job runs a whole list with one model load: ";" between contracts, "none" = no contract.
+#   REAL_SINGLES    none + the 6 single requests, scored on every pair (the default)
+#   REAL_COMPOUNDS  the 20 doubles and triples, scored on the fixed 500 pairs (-q)
+with open("data/real_laptops/design/contracts.csv") as f:
+    _real = list(csv.DictReader(f))
+REAL_SINGLES = ";".join(r['spec'] or 'none' for r in _real if r['set'] == 'train')
+REAL_COMPOUNDS = ";".join(r['spec'] for r in _real if r['set'] == 'compound')
+REAL_COMPOUND_PAIRS = 'data/real_laptops/design/compound_pairs.csv'
+REAL_SANITY_PAIRS = 'data/real_laptops/design/sanity_pairs.csv'
+
 # Books (2026-10-12 night): no contract + four tag contracts. See the batch below for why these four.
 BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'classics=yes']
 
@@ -57,30 +74,70 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-11-13: REAL LAPTOPS, the main runs. 6 jobs = 3 models x 2 jobs.
+    # DO NOT LAUNCH before the stage-1 template check (job 1497200, landed 11-12 in
+    # data/real_laptops_template_check/) has been looked at and approved.
+    # 60 real laptops, template 0 only (-t 1), frame `shopping`. 44,780 prompts per model:
+    #   REAL_SINGLES    none + 6 singles, every pair in both orders     7 x 3,540 = 24,780
+    #   REAL_COMPOUNDS  20 compounds, the fixed 500 pairs in both orders 20 x 1,000 = 20,000
+    # Each job loads its model once and writes one run per contract to
+    # data/real_laptops/<job>_<constraints_id>/ (the bare <job>/ folder holds the logs).
+    # Two jobs per model because the two halves use different pairs. To rerun some contracts only:
+    # the same line with a shorter 'c' list.
+    # Servers (Lotan, 11-13): plato1/2 and plotinus1/2; qwen-72B on plotinus only (its size).
+    # 'any' = SLURM picks whichever of the listed servers has room first, instead of pinning a job
+    # to one. On 11-13 plato1 and plotinus1 had no free CPUs (other people's jobs, up to 5 more
+    # days), so a pinned job would have waited there while plato2 / plotinus2 stood idle.
+    # A server holds two of these jobs at once (16 GPUs, 8 per job). The singles come first.
+    {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+     'n': ['real_laptops'], 'any': [PLOTINUS]},
+    {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+     'n': ['real_laptops'], 'any': [PLATO]},
+    {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+     'n': ['real_laptops'], 'any': [PLATO]},
+    {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLOTINUS]},
+    {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLATO]},
+    {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLATO]},
+
+    # --- 2026-11-12: real laptops, stage 1, the template sanity check. 1 job.
+    # DONE 2026-11-12: landed as job 1497200 (2,000 rows), run by the old real_laptops_collect.py.
+    # Do not re-run. Kept as the recipe: no contract, the fixed 200 pairs, the first 5 templates.
+    # {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [''], 't': ['5'],
+    #  'q': [REAL_SANITY_PAIRS], 'n': ['real_laptops_template_check'], 'w': [['plato2']]},
+
     # --- 2026-11-02: GRUM gap-fillers, from Notebooks/GRUMish (00_README "Open"). 25 jobs.
+    # DONE 2026-11-03: 24 of 25 landed. Do not re-run. The one that did not: qwen-32B `ram=4GB` with
+    # all templates (job 1475823 left config.json and no scores.csv) - it is the last line of this
+    # block, on its own, un-comment that one to rerun it.
     # Every result there on brand and on triples rests on qwen only; OLMo has no Phase A.
     # Checked against data/ on 2026-11-02: none of these keys exists, so no collision.
     # (1) Brand requests on two more families: is leakage one-way (RAM -> screen -> brand) there too,
     #     and does one brand predict the other? 4 jobs.
-    {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
-     'c': ['brand=Apple', 'brand=Dell'], 'n': ['laptops_robustness']},
-    {'m': ['olmo'], 's': ['32'], 'a': ['laptops_robustness'],
-     'c': ['brand=Apple', 'brand=Dell'], 'p': ['options'], 'n': ['laptops_olmo']},
+    # {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Apple', 'brand=Dell'], 'n': ['laptops_robustness']},
+    # {'m': ['olmo'], 's': ['32'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Apple', 'brand=Dell'], 'p': ['options'], 'n': ['laptops_olmo']},
     # (2) Triples on gemma-27B, the same three qwen-32B has, so the dilution shape (q^-0.41 vs
     #     lambda^(q-1)) is no longer one family. Its singles are the brand runs above + Phase A. 3 jobs.
-    {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
-     'c': ['brand=Dell,screen=14-inch,ram=8GB', 'brand=Apple,screen=14-inch,ram=8GB',
-           'brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
+    # {'m': ['gemma'], 's': ['27'], 'a': ['laptops_robustness'],
+    #  'c': ['brand=Dell,screen=14-inch,ram=8GB', 'brand=Apple,screen=14-inch,ram=8GB',
+    #        'brand=Dell,screen=14-inch,ram=4GB'], 'n': ['laptops_robustness']},
     # (3) OLMo Phase A: top and bottom level of each feature, all four sizes. 16 jobs.
-    {'m': ['olmo'], 's': OLMO, 'a': ['laptops_robustness'], 'c': PHASE_A,
-     'p': ['options'], 'n': ['laptops_olmo']},
+    # {'m': ['olmo'], 's': OLMO, 'a': ['laptops_robustness'], 'c': PHASE_A,
+    #  'p': ['options'], 'n': ['laptops_olmo']},
     # (4) Noise check. A plain repeat is useless: scoring is deterministic (log-probs, the first N
     #     templates), so it would return the same numbers. Instead: ALL templates (-t 0, 43) on
     #     qwen-32B, none and ram=4GB, so the 43 can be split into independent halves. Answers "is who
     #     pays for 4GB stable?" and gives the noise floor. Own folder: the keys exist in
     #     laptops_robustness (with 5 templates). ~9x the rows of a normal run. 2 jobs.
-    {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'], 'c': ['', 'ram=4GB'], 't': ['0'],
-     'n': ['laptops_all_templates']},
+    # {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'], 'c': ['', 'ram=4GB'], 't': ['0'],
+    #  'n': ['laptops_all_templates']},
+    # NOT LANDED, the rerun of (4)'s second job:
+    # {'m': ['qwen'], 's': ['32'], 'a': ['laptops_robustness'], 'c': ['ram=4GB'], 't': ['0'],
+    #  'n': ['laptops_all_templates']},
 
     # --- 2026-10-13: RERUN, 3 jobs. Launched. LANDED: qwen-32B books fantasy (1447757), qwen-32B Dell
     # 14in 4GB (1447759). olmo-32B books romance is RUNNING as 1447796 (config only in git). Do not re-run.
@@ -355,7 +412,10 @@ with open(dst_path, 'w') as f:
     for parameters in parameter_sets:
         # optional per-batch node pool, overrides NODES_BY_SIZE; not a product dimension
         batch_pool = parameters.get('w', [None])[0]
-        parameters = {k: v for k, v in parameters.items() if k != 'w'}
+        # optional: 'any' = let SLURM pick among these servers (sbatch has no "one of" flag, so
+        # every OTHER server of the partition is excluded with -x). Overrides 'w'.
+        batch_any = parameters.get('any', [None])[0]
+        parameters = {k: v for k, v in parameters.items() if k not in ('w', 'any')}
         for combo in itertools.product(*parameters.values()):
             # Quote each value - an empty string (the no-constraint case) must
             # still produce a real, non-empty shell token ("" not nothing), or
@@ -370,10 +430,17 @@ with open(dst_path, 'w') as f:
             k = pool_i.get(tuple(pool), 0)
             node = pool[k % len(pool)]
             pool_i[tuple(pool)] = k + 1
-            cmd = f"{prefix} -w {node} {script_path} {flags} -n {name}"
+            where = f"-w {node}"
+            if batch_any:
+                where = "-x " + ",".join(n for n in BML_NODES if n not in batch_any)
+                node = "any of " + "/".join(batch_any)
+            cmd = f"{prefix} {where} {script_path} {flags} -n {name}"
             f.write(cmd + "\n")
+            con = kv.get('c', '') or 'none'
+            if ';' in con:                    # several contracts in one job
+                con = f"{con.count(';') + 1} contracts"
             lines.append((name, f"{kv['m']}-{kv['s']}B", kv.get('p', '-'), kv.get('f', 'shopping'),
-                          kv.get('c', '') or 'none', node))
+                          con, node))
             i += 1
 
 print(f"wrote {i} jobs to {dst_path}")

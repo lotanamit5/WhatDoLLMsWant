@@ -8,6 +8,111 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-13 — Real laptops, stage 1: one template is enough (gemma-27)
+
+[Notebooks/real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb), figure in
+`figs/real_laptops_template_check/`. Job 1497200: gemma-27, no contract, `shopping`, 200 pairs × 2 orders ×
+5 templates = 2,000 rows. Question: the main runs use template 0 only — is that safe?
+
+- **Template 0 vs the mean of the other four** (D per pair): r = **0.997**, same winner in **200 of 200**
+  pairs; strength |D| r = 0.976. All five templates pick the same laptop in 196 of 200. Lowest r between
+  any two templates: 0.981.
+
+  | template | first slot wins, % rows | saturated, % rows | order decides, % pairs | r with template 0 |
+  |---|---|---|---|---|
+  | 0 | 48.25 | 98.25 | 11.5 | 1.000 |
+  | 1 | 53.25 | 98.00 | 10.5 | 0.985 |
+  | 2 | 48.25 | 98.00 | 13.5 | 0.996 |
+  | 3 | 50.25 | 97.50 | 10.5 | 0.997 |
+  | 4 | 49.25 | 96.75 | 8.5 | 0.995 |
+
+- **The order decides in 23 of 200 pairs** on template 0 (second slot 15, first slot 8). In those pairs
+  median |D| = 3.5 and median |P| = 11.7; in the other 177, |D| = 17.7 and |P| = 1.2. Same picture as
+  settled point 15 (gemma's slot effect sits on the pairs it is indifferent about). Of the 23, 12 / 22 / 18 /
+  15 are also order-decided on templates 1–4.
+- **The answer follows the laptop:** more RAM wins in 112 of 118 pairs; the pricier laptop in 131 of 199.
+- **Limits:** one model (qwen-72 and olmo-32 not checked), no contract, 200 of the 1,770 pairs.
+- **Decision still open:** Lotan approves, then launches the 6 jobs in `scripts/slurms.sh`.
+
+---
+
+## 2026-11-13 (later) — Real laptops run through `data_collection.py`; one path for every experiment
+
+Corrects the entry below in one point: `real_laptops_collect.py` and the two hand-written launchers are
+**deleted**, so the wrapper's `-y` flag has no second collector to pick today (kept, one line).
+The path is now the same for everything: `create_slurms.py` → `slurms.sh` → `run_data_collection.sh` →
+`data_collection.py`.
+
+- **Three additions to `data_collection.py`** (each is general, none is laptop-specific):
+  1. **Items from a file.** Alias `real_laptops` reads `data/real_laptops/design/items.csv`. An item with a
+     `text` field shows that text in the prompt; `text` is not written to `scores.csv`.
+  2. **Several contracts in one job, one model load.** `-c "none;ram=8GB;brand=Dell,ram=8GB"` (`;` between
+     contracts, `none` = no contract) writes one run each to `<job>_<constraints_id>/`. One contract behaves
+     as before. Works for the synthetic laptops too: a 4-contract batch can be 1 job per model instead of 4.
+  3. **A pairs file.** `-q <csv of item-id pairs>` scores only those pairs, both orders. Default: every pair.
+  Also `--dry_run`: prints the first prompt of every run, no model and no files.
+- **`config.json` gains two fields** on every new run: `pairs` (`"all"` or the pairs file) and `n_rows` (the
+  row count of a complete `scores.csv`). The real-laptops-only fields `items_file` / `n_pairs` are gone.
+- **The main batch is 6 jobs, not 3:** per model one job for none + 6 singles (all pairs, 24,780 prompts) and
+  one for the 20 compounds (the 500 pairs, 20,000 prompts), because the two halves use different pairs. Same
+  44,780 prompts per model, same servers (qwen-72 plotinus1, gemma-27 plato2, olmo-32 plato1). Cost: one
+  extra model load per model.
+- **`slurms.sh` regenerated:** it now holds exactly these 6 jobs. The 11-02 batch is commented out in
+  `create_slurms.py` (24 of 25 landed; the missing one, qwen-32B `ram=4GB` all templates, is left as its own
+  commented line).
+- **Checked** with a fake model, old special collector vs the new general one, using the two gemma lines
+  exactly as `slurms.sh` launches them:
+
+  | check | result |
+  |---|---|
+  | contracts written | 27 old, 27 new, same set |
+  | `scores.csv`, same rows (row order aside) | 27 of 27 (44,780 rows) |
+  | `config.json`, same apart from the fields listed above | 27 of 27 |
+  | stage-1 sanity recipe (`-c "" -t 5 -q sanity_pairs.csv`) vs the old script | byte-identical, 2,000 rows |
+  | same recipe vs the REAL job 1497200: columns and the 2,000 item rows | identical, same order |
+  | old-style jobs on the new code (single, 2 domains, base + all templates, books) | 5 of 5 byte-identical |
+
+  Row order inside a none/single run differs from the old script (it now follows `itertools.permutations`,
+  like every other run); the set of rows is the same.
+- **Not checked:** a real GPU job. **Still gated:** the 6 jobs wait for the stage-1 template check (job
+  1497200 landed 11-12, 2,000 rows; no report written yet).
+
+---
+
+## 2026-11-13 — Pipeline: one SLURM wrapper, live logs
+
+No data touched; `scores.csv` and `config.json` come out the same as before (checked below).
+
+- **One wrapper.** `run_real_laptops.sh` is deleted. `run_data_collection.sh` runs any collector:
+  `-y <file in scripts/>` picks it (default `data_collection.py`), `-n` is the folder under `data/`, every
+  other flag is passed on under its long name, and every collector gets `--exp_dir data/<exp>/<job>`.
+  `real_laptops_collect.py` now takes `--exp_dir` (was `--exp_root` + `--job_id`) and writes
+  `<exp_dir>_<constraints_id>/`, the same convention as the multi-domain jobs. The flags `slurms.sh` uses
+  did not change, so `create_slurms.py` / `slurms.sh` are untouched; the two real-laptops launchers now
+  call the one wrapper.
+- **Why the log looked dead.** The log file was always created at job start, but stayed almost empty:
+  (1) Python holds prints in an 8 KB buffer when writing to a file; (2) the agent printed every prompt and
+  nothing else, so there was no progress line; (3) the download bar only moves when a whole file lands. In
+  job 1497200 (gemma-27 sanity, 92 min) the bar stood at 0% for 51 min and scoring (20 min) printed nothing.
+- **Now.** Two live files in `data/<exp>/<job>/`: `output.log` (progress) and `error.log` (warnings,
+  download bars, the traceback). Python is unbuffered. While the model loads: one line a minute with the
+  cache size (growing = downloading, flat = hung). While scoring: one line a minute — rows done, rows/s,
+  minutes left. The agent's per-prompt prints are muted after the first prompt of each run
+  (`query` / `Progress` in `data_collection.py`, used by both collectors).
+  Watch: `tail -F data/<exp>/<job>/*.log`, or a whole batch `tail -F data/<exp>/*/output.log`.
+- **Log size.** The 363 old logs take 3.8 GB (largest 114 MB, one all-templates run). Same run, fake
+  model: 14.8 MB → 7 KB.
+- **Checked** with a fake model (real wrapper, real collectors, old code vs new, same flags): `scores.csv`
+  byte-identical and `config.json` identical apart from the timestamp in 7 of 7 runs — single run (9,900
+  rows), 2 domains in one job, `pretrained` + all templates + a double contract (49,500), real laptops
+  `sanity` (2,000) and `main --only` (3,540 + 1,000). `--dry_run` prints the same 27 prompts.
+- **Not checked:** a real job on the GPU nodes. The first job launched is the real test of the live log.
+- **Open:** `slurms.sh` still holds the 11-02 batch (landed 11-03) and should be regenerated before the
+  next launch. The 3 real-laptops jobs could move into `create_slurms.py` (one parameter set with
+  `'y': ['real_laptops_collect.py']`), which would remove the two hand-written launchers.
+
+---
+
 ## 2026-11-12 — New domain "real laptops": stage 1 prepared, nothing run yet
 
 Real products instead of the synthetic grid, to test whether the trends hold. Standalone domain in
