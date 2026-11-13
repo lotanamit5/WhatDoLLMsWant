@@ -67,6 +67,29 @@ REAL_COMPOUNDS = ";".join(r['spec'] for r in _real if r['set'] == 'compound')
 REAL_COMPOUND_PAIRS = 'data/real_laptops/design/compound_pairs.csv'
 REAL_SANITY_PAIRS = 'data/real_laptops/design/sanity_pairs.csv'
 
+# Synthetic cars (2026-11-13): the 28 contracts, read from the design file like the real laptops.
+#   CARS_TRAIN      none + the 15 single requests, scored on every pair. Cut into 4 jobs of
+#                   4 contracts: they can run side by side when GPUs are free, and a job that dies
+#                   costs 4 runs, not 16.
+#   CARS_COMPOUNDS  per track, its 3 compounds (the first 2 / 3 / 4 requests), scored on the track's
+#                   own pairs file: the shared 500 pairs + every pair with one of its 3 target cars.
+with open("data/synthetic_cars/design/contracts.csv") as f:
+    _cars = list(csv.DictReader(f))
+_cars_train = [r['spec'] or 'none' for r in _cars if r['set'] == 'train']
+CARS_TRAIN = [";".join(_cars_train[i:i + 4]) for i in range(0, len(_cars_train), 4)]
+CARS_TRACKS = ['luxury', 'economy', 'family', 'work']
+CARS_COMPOUNDS = {t: ";".join(r['spec'] for r in _cars if r['set'] == 'compound' and r['track'] == t)
+                  for t in CARS_TRACKS}
+# One set per model for the train contracts (4 jobs) + one per track (1 job each) = 8 jobs a model.
+CARS_SETS = []
+for _m, _s in [('qwen', '72'), ('gemma', '27'), ('olmo', '32')]:
+    _base = {'m': [_m], 's': [_s], 'a': ['synthetic_cars'], 'f': ['car_shopping'], 't': ['1'],
+             'n': ['synthetic_cars'], 'w': [['heraclitus']]}
+    CARS_SETS.append({**_base, 'c': CARS_TRAIN})
+    for _t in CARS_TRACKS:
+        CARS_SETS.append({**_base, 'c': [CARS_COMPOUNDS[_t]],
+                          'q': [f'data/synthetic_cars/design/pairs_{_t}.csv']})
+
 # Books (2026-10-12 night): no contract + four tag contracts. See the batch below for why these four.
 BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'classics=yes']
 
@@ -74,6 +97,20 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-11-13: SYNTHETIC CARS, the main runs. 24 jobs = 3 models x 8 jobs, all on Heraclitus.
+    # DO NOT LAUNCH before Lotan approves stage 1 (the cars, the contracts, the wording).
+    # 120 cars, template 0 only (-t 1), frame `car_shopping`. 248,292 prompts per model:
+    #   CARS_TRAIN      none + 15 singles, every pair in both orders     16 x 14,280 = 228,480
+    #   CARS_COMPOUNDS  12 compounds, 3 per track, on the track's pairs  3 x (1,650 + 1,656 + 1,656 + 1,642)
+    # Runs land in data/synthetic_cars/<job>_<constraints_id>/.
+    # LAUNCH WITH `bash scripts/synthetic_cars_launch.sh`, NOT with `bash scripts/slurms.sh`.
+    # The lines below carry no GPU count, so sent as they are each job takes the wrapper's 8 GPUs =
+    # all of Heraclitus: one job at a time (about 21 h), and other people's jobs there are removed.
+    # The launcher sends these same lines with --gres (qwen-72B 2 GPUs, the others 1), -c 8 and a
+    # dependency chain per GPU slot. Measured on Heraclitus: gemma-27B 13.9, olmo-32B 12.2,
+    # qwen-72B 6.8 prompts/s. The other servers do not help: qwen-72B ran 1.3 prompts/s on plotinus1.
+    *CARS_SETS,
+
     # --- 2026-11-13: REAL LAPTOPS, the main runs. 6 jobs = 3 models x 2 jobs.
     # DO NOT LAUNCH before the stage-1 template check (job 1497200, landed 11-12 in
     # data/real_laptops_template_check/) has been looked at and approved.

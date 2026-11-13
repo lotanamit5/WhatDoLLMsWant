@@ -8,6 +8,54 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-13 (afternoon, 5) — Cars launch plan: right-sized jobs in chains on Heraclitus. The other servers do not help
+
+Lotan: "Use the servers however you want to improve run time." Main run still not launched — stage 1 is
+not approved yet.
+
+- **The other servers are too slow to add anything.** Old jobs of the same models, 9,900 prompts on 8 GPUs
+  (`sacct`), against Heraclitus:
+
+  | model | server | time | prompts/s there | prompts/s on Heraclitus |
+  |---|---|---|---|---|
+  | qwen-72 | plotinus1 (L4) | 2 h 05 | 1.3 | 7.0 |
+  | gemma-27 | plotinus1 (L4) | 51 min | 3.2 | 14.8 |
+  | olmo-32 | plato2 (A4000) | 3 h 30 | 0.8 | 13.3 |
+
+  They would also put two kinds of GPU inside one model's runs (margins differ by up to 0.77 between them,
+  entry "afternoon, 2"), and plato2 / plotinus2 now hold the real-laptops jobs. So every cars job stays on
+  Heraclitus, and the run time depends only on how many of its 8 GPUs we use.
+- **Batch:** 24 jobs = 3 models × 8 (the 16 train contracts in 4 jobs of 4; one job per track for its 3
+  compounds). Added to `create_slurms.py` as parameter sets only — the generator code is unchanged.
+  `slurms.sh` regenerated. All 24 lines pass `--dry_run`: 248,292 prompts and 28 runs per model.
+- **New `scripts/synthetic_cars_launch.sh`** sends those same lines with `--gres=gpu:N` (qwen-72 2 GPUs, the
+  others 1), `-c 8`, and a dependency chain per GPU slot; it writes `data/<exp>/launch_log.tsv`. The default
+  mode uses only the GPUs free at that moment and stops if SLURM says a job would remove another one
+  (`sbatch --test-only`); `all` takes the 8. **Do not launch the cars with `bash scripts/slurms.sh`** — each
+  line would take the wrapper's 8 GPUs.
+
+  | mode | GPUs | chains | estimate | other users' jobs |
+  |---|---|---|---|---|
+  | default | the free ones (3 on 11-13) | 1 qwen + 1 small | ≈ 10.5 h | none removed |
+  | `all` | 8 | 3 qwen + 2 small | ≈ 5.2 h | the `public` jobs on Heraclitus are removed |
+
+- **Launcher test** (default mode, 3 free GPUs; jobs 1498364, 1498365, 1498367–1498370; 2 contracts × 400
+  prompts per job; in `data/synthetic_cars_pipeline_test/`): 6 of 6 jobs COMPLETED, 12 of 12 runs complete,
+  0 bad rows, the car that meets the contract wins in 100% of the mixed pairs. Each chain ran its jobs back
+  to back. The two `public` jobs on Heraclitus (1491381, 1498230) kept running.
+
+  | model | GPUs | prompts/s | model load | whole job |
+  |---|---|---|---|---|
+  | qwen-72 | 2 | 7.0 | 5 min | 7.5 min |
+  | gemma-27 | 1 | 14.8 | 2 min | 3.5 min |
+  | olmo-32 | 1 | 13.3 | 2–3 min | 4 min |
+
+  Full run per model (248,292 prompts, 8 model loads): qwen-72 ≈ 10.5 h, gemma-27 ≈ 4.9 h, olmo-32 ≈ 5.5 h.
+- **Two sessions, one file:** the real-laptops session changed its own lines of `create_slurms.py` at the
+  same time (pinned to plato2 / plotinus2) and relaunched (jobs 1498397–1498402). The cars commit holds only
+  the cars lines.
+- **Open:** Lotan approves stage 1 → `bash scripts/synthetic_cars_launch.sh` on newton.
+
 ## 2026-11-13 (afternoon, 4) — Pipeline test on Heraclitus: passes for all three models. A `bml` job that does not fit removes `public` jobs
 
 Lotan: no GPU flag in the pipeline (`bml` has priority and may take all 8 GPUs); test that the jobs work

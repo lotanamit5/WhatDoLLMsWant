@@ -201,14 +201,18 @@ survives a contract?
     0.50 / 0.16 / 0.77 (gemma-27 / olmo-32 / qwen-72), same winner 20 of 20; on plotinus2 the difference is 0.
     Template check (job 1498233, gemma-27): ρ = 0.845 (BT-full) / 0.912 (BT-feat), template 0 agrees with the
     other four in 198 of 200 pairs.
-    **Next:** Lotan approves → 15 jobs on heraclitus (248,292 prompts per model). Needs a `--gres` key in
-    `create_slurms.py` first (not added). Stage 3 analysis script not written yet.
+    **Next:** Lotan approves stage 1 → `bash scripts/synthetic_cars_launch.sh` on newton. The batch is in
+    `slurms.sh`: 24 jobs = 3 models × 8, 248,292 prompts per model. **Not with `bash scripts/slurms.sh`** —
+    the launcher adds the GPU counts and the chains. ≈ 10.5 h on the 3 free GPUs with nobody removed;
+    ≈ 5.2 h with `all` (8 GPUs, removes the `public` jobs there). Launcher tested 11-13 (progress
+    afternoon, 5). Stage 3 analysis script not written yet.
     One GPU goes to one job (no sharing in SLURM); gemma-27 and olmo-32 take 1 GPU, qwen-72 takes 2.
     **Pipeline test on Heraclitus passed** (progress 11-13 afternoon, 4): 3 models × 4 contracts × 400 rows,
     all complete; 13.9 / 12.2 / 6.8 prompts/s (gemma-27 / olmo-32 / qwen-72), so ≈ 5 / 6 / 10 h per model.
     **Careful: a `bml` job that does not fit in the free GPUs removes `public` jobs at once** (it happened
-    once on 11-13). The wrapper's default of 8 GPUs per job takes the whole server: 15 jobs one by one ≈ 21 h,
-    against ≈ 11 h with 2 + 1 GPUs. Which one is Lotan's call.
+    once on 11-13). The wrapper's default of 8 GPUs per job takes the whole server, one job at a time ≈ 21 h.
+    Lotan (11-13): use the servers as needed for run time. plato / plotinus do not help: 4 to 16 times
+    slower per job. With the launcher's flags: 14.8 / 13.3 / 7.0 prompts/s on 1 / 1 / 2 GPUs.
     `environment.yml` describes the new torch install (updated 11-13). Stage 1 approval is deferred until
     the env and the pipeline are settled.
 
