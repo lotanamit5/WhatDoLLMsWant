@@ -201,11 +201,13 @@ survives a contract?
     0.50 / 0.16 / 0.77 (gemma-27 / olmo-32 / qwen-72), same winner 20 of 20; on plotinus2 the difference is 0.
     Template check (job 1498233, gemma-27): ρ = 0.845 (BT-full) / 0.912 (BT-feat), template 0 agrees with the
     other four in 198 of 200 pairs.
-    **Next:** Lotan approves stage 1 → `bash scripts/synthetic_cars_launch.sh` on newton. The batch is in
-    `slurms.sh`: 24 jobs = 3 models × 8, 248,292 prompts per model. **Not with `bash scripts/slurms.sh`** —
-    the launcher adds the GPU counts and the chains. ≈ 10.5 h on the 3 free GPUs with nobody removed;
-    ≈ 5.2 h with `all` (8 GPUs, removes the `public` jobs there). Launcher tested 11-13 (progress
-    afternoon, 5). Stage 3 analysis script not written yet.
+    **MAIN RUN IS RUNNING since 11-13 17:41** (progress 11-13 evening, 2): 24 jobs = 3 models × 8,
+    248,292 prompts per model, jobs 1498495–1498520, on 5 GPUs of Heraclitus, expected to end about 00:20.
+    Sent with `bash scripts/synthetic_cars_launch.sh` (**never `bash scripts/slurms.sh`** for the cars).
+    **The limit on Heraclitus is the 444 GB root disk that holds the model caches, not the GPUs**: at most
+    2 qwen-72 + 1 smaller job at once. A first attempt with the caches in `/dev/shm` lost all 24 jobs at
+    model load (job folders 1498452–1498475 hold logs only). Do not re-run the batch: check first with
+    `scripts/synthetic_cars_check_runs.py data/synthetic_cars`. Stage 3 analysis script not written yet.
     One GPU goes to one job (no sharing in SLURM); gemma-27 and olmo-32 take 1 GPU, qwen-72 takes 2.
     **Pipeline test on Heraclitus passed** (progress 11-13 afternoon, 4): 3 models × 4 contracts × 400 rows,
     all complete; 13.9 / 12.2 / 6.8 prompts/s (gemma-27 / olmo-32 / qwen-72), so ≈ 5 / 6 / 10 h per model.

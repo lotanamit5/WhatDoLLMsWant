@@ -8,6 +8,42 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-13 (evening, 2) — Cars main run launched (second attempt, running). First attempt: 24 of 24 jobs died, the RAM cache was wiped
+
+Lotan: "run the rest of the jobs, take the whole server."
+
+- **The disk, not the GPUs, limits Heraclitus.** Every job downloads its model into `/tmp/hf_<job>`:
+  qwen-72 139 GB, olmo-32 65 GB, gemma-27 55 GB. `/tmp` is the root disk: 444 GB, 416 GB free. Three
+  qwen-72 jobs at once fill it. `/data` (3.5 TB, local) is writable by root only.
+- **First attempt, 17:24 — failed. My decision, my mistake.** To use all 8 GPUs I moved the caches to RAM
+  (`SLURM_TMPDIR=/dev/shm`, the wrapper's own switch). A one-job test passed (1498444: 136 GB in RAM, 800 of
+  800 rows). With several jobs it breaks: whenever one of our jobs ENDS on the server, all our files in
+  `/dev/shm` are deleted, also those of the jobs still loading (it looks like systemd's `RemoveIPC`; not
+  confirmed). Jobs 1498452–1498475: 24 of 24 FAILED with `FileNotFoundError` at model load, within 11
+  minutes, each failure killing the next. No `config.json`, no `scores.csv`: only 24 log folders in
+  `data/synthetic_cars/`.
+- **Cost to others:** that launch removed both `public` jobs on Heraclitus — 1491381 (user A, 1 GPU,
+  after 4 days 1 h) and 1498230 (user B, 4 GPUs, after 3.5 h) — and then produced nothing.
+- `scancel` of my own failing jobs was refused by this session's permission rules. The chain could only
+  burn out by itself.
+- **Second attempt, 17:41 — running.** Caches in `/tmp`, never more than 2 qwen-72 + 1 gemma-27 job at once
+  (335 GB) = 5 GPUs. Nobody removed: 7 GPUs were free, and user B's new 1-GPU job 1498487 kept
+  running. Chains: `cars-q1`, `cars-q2` (qwen-72, 4 jobs each) and `cars-g1` (gemma-27, 8 jobs) from the
+  start; when a qwen chain ends, two olmo-32 chains (2 jobs each) start on its GPUs. Estimate ≈ 6 h 40 min,
+  so about 00:20.
+
+  | model | jobs |
+  |---|---|
+  | qwen-72 | 1498495–1498498, 1498500–1498503 |
+  | gemma-27 | 1498505–1498512 |
+  | olmo-32 | 1498513–1498520 |
+
+  At 17:46 the three first jobs were scoring (gemma-27 15 rows/s). All sent lines are in
+  `data/synthetic_cars/launch_log.tsv` (its first 24 lines are the failed attempt).
+- Launcher commits: `4fbecf9` (RAM caches — wrong), `df15bf7` (the fix; the header of
+  `scripts/synthetic_cars_launch.sh` says why not `/dev/shm`).
+- **Open:** wait for the 24 jobs → `scripts/synthetic_cars_check_runs.py data/synthetic_cars` → stage 3.
+
 ## 2026-11-13 (afternoon, 5) — Cars launch plan: right-sized jobs in chains on Heraclitus. The other servers do not help
 
 Lotan: "Use the servers however you want to improve run time." Main run still not launched — stage 1 is
