@@ -98,7 +98,10 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
     # --- 2026-11-13: SYNTHETIC CARS, the main runs. 24 jobs = 3 models x 8 jobs, all on Heraclitus.
-    # DO NOT LAUNCH before Lotan approves stage 1 (the cars, the contracts, the wording).
+    # DONE 2026-11-14: sent 11-13 17:37 with scripts/synthetic_cars_launch.sh as jobs 1498495-1498520, all 84
+    # runs landed (28 per model, data/synthetic_cars/). Do not re-run: it would duplicate every key.
+    # To rerun some contracts: un-comment the last line of this block with a shorter list, regenerate,
+    # and send with the launcher.
     # 120 cars, template 0 only (-t 1), frame `car_shopping`. 248,292 prompts per model:
     #   CARS_TRAIN      none + 15 singles, every pair in both orders     16 x 14,280 = 228,480
     #   CARS_COMPOUNDS  12 compounds, 3 per track, on the track's pairs  3 x (1,650 + 1,656 + 1,656 + 1,642)
@@ -109,11 +112,13 @@ parameter_sets = [
     # The launcher sends these same lines with --gres (qwen-72B 2 GPUs, the others 1), -c 8 and a
     # dependency chain per GPU slot. Measured on Heraclitus: gemma-27B 13.9, olmo-32B 12.2,
     # qwen-72B 6.8 prompts/s. The other servers do not help: qwen-72B ran 1.3 prompts/s on plotinus1.
-    *CARS_SETS,
+    # *CARS_SETS,
 
     # --- 2026-11-13: REAL LAPTOPS, the main runs. 6 jobs = 3 models x 2 jobs.
-    # DO NOT LAUNCH before the stage-1 template check (job 1497200, landed 11-12 in
-    # data/real_laptops_template_check/) has been looked at and approved.
+    # DONE 2026-11-14: launched 11-13 16:35 as jobs 1498397-1498402 (in the order below), all 81 runs
+    # landed and checked (scripts/real_laptops_check_runs.py). Commented out so that
+    # `bash scripts/slurms.sh` cannot send them a second time. To rerun one: uncomment its line.
+    # (The 13:35 launch, jobs 1498182-1498187, died in seconds: the env had no PyTorch then.)
     # 60 real laptops, template 0 only (-t 1), frame `shopping`. 44,780 prompts per model:
     #   REAL_SINGLES    none + 6 singles, every pair in both orders     7 x 3,540 = 24,780
     #   REAL_COMPOUNDS  20 compounds, the fixed 500 pairs in both orders 20 x 1,000 = 20,000
@@ -121,23 +126,28 @@ parameter_sets = [
     # data/real_laptops/<job>_<constraints_id>/ (the bare <job>/ folder holds the logs).
     # Two jobs per model because the two halves use different pairs. To rerun some contracts only:
     # the same line with a shorter 'c' list.
-    # Servers (Lotan, 11-13): plato1/2 and plotinus1/2; qwen-72B on plotinus only (its size).
-    # 'any' = SLURM picks whichever of the listed servers has room first, instead of pinning a job
-    # to one. On 11-13 plato1 and plotinus1 had no free CPUs (other people's jobs, up to 5 more
-    # days), so a pinned job would have waited there while plato2 / plotinus2 stood idle.
-    # A server holds two of these jobs at once (16 GPUs, 8 per job). The singles come first.
-    {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
-     'n': ['real_laptops'], 'any': [PLOTINUS]},
-    {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
-     'n': ['real_laptops'], 'any': [PLATO]},
-    {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
-     'n': ['real_laptops'], 'any': [PLATO]},
-    {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
-     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLOTINUS]},
-    {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
-     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLATO]},
-    {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
-     'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'any': [PLATO]},
+    # Servers (Lotan, 11-13): plato1/2 and plotinus1/2, not Heraclitus (the cars run there);
+    # qwen-72B on plotinus only (its size).
+    # Pinned to the two IDLE servers, plato2 and plotinus2. Not 'any': a `bml` job that does not
+    # fit never waits, SLURM removes a `public` job for it - and CPUs count, not only GPUs. The
+    # first launch (11-13 13:35, with 'any') put a job on plato1, which had 13 free GPUs but 22
+    # free CPUs (the wrapper asks for 32), and that removed job 1496080 of another user after
+    # 1 day 13 h. plato1 and plotinus1 are in the same state for up to 5 more days.
+    # A server holds two of these jobs at once (16 GPUs, 8 per job): on plato2 the two singles
+    # jobs run first and the two compounds jobs wait behind them. Nothing is lost - qwen-72B on
+    # plotinus2 is the slow one either way.
+    # {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+    #  'n': ['real_laptops'], 'w': [['plotinus2']]},                              # 1498397
+    # {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+    #  'n': ['real_laptops'], 'w': [['plato2']]},                                 # 1498398
+    # {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_SINGLES], 't': ['1'],
+    #  'n': ['real_laptops'], 'w': [['plato2']]},                                 # 1498399
+    # {'m': ['qwen'], 's': ['72'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+    #  'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'w': [['plotinus2']]},  # 1498400
+    # {'m': ['gemma'], 's': ['27'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+    #  'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'w': [['plato2']]},     # 1498401
+    # {'m': ['olmo'], 's': ['32'], 'a': ['real_laptops'], 'c': [REAL_COMPOUNDS], 't': ['1'],
+    #  'q': [REAL_COMPOUND_PAIRS], 'n': ['real_laptops'], 'w': [['plato2']]},     # 1498402
 
     # --- 2026-11-12: real laptops, stage 1, the template sanity check. 1 job.
     # DONE 2026-11-12: landed as job 1497200 (2,000 rows), run by the old real_laptops_collect.py.
