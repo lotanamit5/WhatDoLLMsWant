@@ -1,0 +1,37 @@
+model,track,rank,car_id,unmentioned_1,unmentioned_2,wins_vs_other_two,mean_dbar_vs_other_two,other_a,dbar_vs_a,other_b,dbar_vs_b
+qwen-72,luxury,1,2,fuel: diesel,ownership: private second owner,2,2.9038619995117188,1,2.5600318908691406,3,3.247692108154297
+qwen-72,luxury,2,3,fuel: petrol,ownership: private third owner,1,1.0029239654541016,1,5.2535400390625,2,-3.247692108154297
+qwen-72,luxury,3,1,fuel: diesel,ownership: ex-lease,0,-3.9067859649658203,2,-2.5600318908691406,3,-5.2535400390625
+qwen-72,economy,1,4,color: red,ownership: private first owner,2,12.218716382980347,5,12.87499463558197,6,11.562438130378723
+qwen-72,economy,2,5,color: silver,ownership: private second owner,1,-2.5627400279045105,4,-12.87499463558197,6,7.749514579772949
+qwen-72,economy,3,6,color: black,ownership: ex-lease,0,-9.655976355075836,4,-11.562438130378723,5,-7.749514579772949
+qwen-72,family,1,8,fuel: diesel,horsepower: 200 hp,2,10.591439872980118,7,15.124995529651642,9,6.057884216308594
+qwen-72,family,2,7,fuel: diesel,horsepower: 150 hp,1,-4.940442711114883,8,-15.124995529651642,9,5.244110107421875
+qwen-72,family,3,9,fuel: petrol,horsepower: 100 hp,0,-5.650997161865234,7,-5.244110107421875,8,-6.057884216308594
+qwen-72,work,1,11,color: red,transmission: automatic,2,2.314658045768738,10,1.5005545616149902,12,3.1287615299224854
+qwen-72,work,2,10,color: blue,transmission: manual,1,1.2170765399932861,11,-1.5005545616149902,12,3.9347076416015625
+qwen-72,work,3,12,color: white,transmission: manual,0,-3.531734585762024,10,-3.9347076416015625,11,-3.1287615299224854
+gemma-27,luxury,1,1,fuel: diesel,ownership: ex-lease,2,14.031237691640854,2,12.624977231025696,3,15.437498152256012
+gemma-27,luxury,2,2,fuel: diesel,ownership: private second owner,1,1.1250108182430267,1,-12.624977231025696,3,14.87499886751175
+gemma-27,luxury,3,3,fuel: petrol,ownership: private third owner,0,-15.15624850988388,1,-15.437498152256012,2,-14.87499886751175
+gemma-27,economy,1,4,color: red,ownership: private first owner,2,18.90624988079071,5,21.0625,6,16.74999976158142
+gemma-27,economy,2,5,color: silver,ownership: private second owner,1,-10.031247198581696,4,-21.0625,6,1.0000056028366089
+gemma-27,economy,3,6,color: black,ownership: ex-lease,0,-8.875002682209015,4,-16.74999976158142,5,-1.0000056028366089
+gemma-27,family,1,8,fuel: diesel,horsepower: 200 hp,2,15.562434643507004,7,19.125,9,11.999869287014008
+gemma-27,family,2,7,fuel: diesel,horsepower: 150 hp,1,-3.7501383125782013,8,-19.125,9,11.624723374843597
+gemma-27,family,3,9,fuel: petrol,horsepower: 100 hp,0,-11.812296330928802,7,-11.624723374843597,8,-11.999869287014008
+gemma-27,work,1,11,color: red,transmission: automatic,2,0.5625,10,0.8125,12,0.3125
+gemma-27,work,2,12,color: white,transmission: manual,0,-0.15625,10,0.0,11,-0.3125
+gemma-27,work,3,10,color: blue,transmission: manual,0,-0.40625,11,-0.8125,12,0.0
+olmo-32,luxury,1,3,fuel: petrol,ownership: private third owner,2,1.65380859375,1,2.16162109375,2,1.14599609375
+olmo-32,luxury,2,2,fuel: diesel,ownership: private second owner,1,0.4693603515625,1,2.084716796875,3,-1.14599609375
+olmo-32,luxury,3,1,fuel: diesel,ownership: ex-lease,0,-2.1231689453125,2,-2.084716796875,3,-2.16162109375
+olmo-32,economy,1,4,color: red,ownership: private first owner,2,3.548389434814453,5,2.6639404296875,6,4.432838439941406
+olmo-32,economy,2,5,color: silver,ownership: private second owner,1,-0.35406494140625,4,-2.6639404296875,6,1.955810546875
+olmo-32,economy,3,6,color: black,ownership: ex-lease,0,-3.194324493408203,4,-4.432838439941406,5,-1.955810546875
+olmo-32,family,1,9,fuel: petrol,horsepower: 100 hp,2,4.4727630615234375,7,4.415618896484375,8,4.5299072265625
+olmo-32,family,2,8,fuel: diesel,horsepower: 200 hp,1,-1.60015869140625,7,1.32958984375,9,-4.5299072265625
+olmo-32,family,3,7,fuel: diesel,horsepower: 150 hp,0,-2.8726043701171875,8,-1.32958984375,9,-4.415618896484375
+olmo-32,work,1,11,color: red,transmission: automatic,2,0.45343017578125,10,0.51416015625,12,0.3927001953125
+olmo-32,work,2,12,color: white,transmission: manual,1,-0.04913330078125,10,0.29443359375,11,-0.3927001953125
+olmo-32,work,3,10,color: blue,transmission: manual,0,-0.404296875,11,-0.51416015625,12,-0.29443359375

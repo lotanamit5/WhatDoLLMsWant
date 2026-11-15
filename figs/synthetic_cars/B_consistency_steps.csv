@@ -1,0 +1,94 @@
+model,contract_before,contract_after,n_requirements_after,new_feature,new_level,track_step,main_step,consistency_inner,n_inner,consistency_outer,n_outer
+qwen-72,none,transmission=automatic,1,transmission,automatic,True,True,0.9801611558766326,60,0.9045846068352321,60
+qwen-72,none,company=BMW,1,company,BMW,False,True,0.993984962406015,20,0.7716891689168917,100
+qwen-72,none,horsepower=200 hp,1,horsepower,200 hp,False,True,0.9457786116322702,40,0.9314111579934365,80
+qwen-72,none,color=black,1,color,black,False,True,0.9699248120300751,20,0.9201320132013199,100
+qwen-72,none,fuel=petrol,1,fuel,petrol,True,True,0.9883300916921369,60,0.9372047791053072,60
+qwen-72,none,transmission=manual,1,transmission,manual,False,True,0.980550152820228,60,0.9268685746040568,60
+qwen-72,none,horsepower=100 hp,1,horsepower,100 hp,False,True,0.9388367729831145,40,-0.046108766994842953,80
+qwen-72,none,company=Honda,1,company,Honda,False,True,0.7187969924812029,20,0.6786198619861985,100
+qwen-72,none,ownership=private first owner,1,ownership,private first owner,False,True,0.9539130434782607,24,0.6684888768312535,96
+qwen-72,none,company=Toyota,1,company,Toyota,False,True,0.9624060150375938,20,0.6568616861686168,100
+qwen-72,none,color=white,1,color,white,False,True,0.9263157894736842,20,0.8076567656765676,100
+qwen-72,none,fuel=diesel,1,fuel,diesel,True,True,0.9631564323423174,60,0.942261739372048,60
+qwen-72,none,horsepower=150 hp,1,horsepower,150 hp,False,True,0.9545966228893059,40,0.9769338959212379,80
+qwen-72,none,company=Ford,1,company,Ford,False,True,0.9879699248120299,20,0.9227242724272425,100
+qwen-72,none,ownership=ex-lease,1,ownership,ex-lease,False,True,0.8739130434782607,24,0.6435160065111232,96
+qwen-72,transmission=automatic,company=BMW+transmission=automatic,2,company,BMW,True,True,0.9142857142857143,20,0.8840204020402039,100
+qwen-72,company=BMW,company=BMW+transmission=automatic,2,transmission,automatic,False,False,0.845234787440956,60,0.713698249513754,60
+qwen-72,company=BMW+transmission=automatic,company=BMW+horsepower=200 hp+transmission=automatic,3,horsepower,200 hp,True,True,0.9632270168855536,40,0.9102203469292077,80
+qwen-72,company=BMW+horsepower=200 hp+transmission=automatic,color=black+company=BMW+horsepower=200 hp+transmission=automatic,4,color,black,True,True,0.9699248120300751,20,0.9756375637563756,100
+qwen-72,fuel=petrol,fuel=petrol+transmission=manual,2,transmission,manual,True,True,0.8819672131147542,60,0.6096137816060018,60
+qwen-72,transmission=manual,fuel=petrol+transmission=manual,2,fuel,petrol,False,False,0.850347318699639,60,0.6977493748263408,60
+qwen-72,fuel=petrol+transmission=manual,fuel=petrol+horsepower=100 hp+transmission=manual,3,horsepower,100 hp,True,True,0.9497185741088182,40,0.9575246132208158,80
+qwen-72,fuel=petrol+horsepower=100 hp+transmission=manual,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,company,Honda,True,True,0.9804511278195487,20,0.9548034803480346,100
+qwen-72,transmission=automatic,ownership=private first owner+transmission=automatic,2,ownership,private first owner,True,True,0.9304347826086956,24,0.8505154639175257,96
+qwen-72,ownership=private first owner,ownership=private first owner+transmission=automatic,2,transmission,automatic,False,False,0.8597943873298141,60,0.6672409002500697,60
+qwen-72,ownership=private first owner+transmission=automatic,company=Toyota+ownership=private first owner+transmission=automatic,3,company,Toyota,True,True,0.9518796992481202,20,0.907038703870387,100
+qwen-72,company=Toyota+ownership=private first owner+transmission=automatic,color=white+company=Toyota+ownership=private first owner+transmission=automatic,4,color,white,True,True,0.9789473684210527,20,0.9682928292829281,100
+qwen-72,fuel=diesel,fuel=diesel+horsepower=150 hp,2,horsepower,150 hp,True,True,0.8557223264540338,40,0.9165729020159401,80
+qwen-72,horsepower=150 hp,fuel=diesel+horsepower=150 hp,2,fuel,diesel,False,False,0.9455404278966381,60,0.7505973881633788,60
+qwen-72,fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp,3,company,Ford,True,True,0.9518796992481202,20,0.9716651665166515,100
+qwen-72,company=Ford+fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,4,ownership,ex-lease,True,True,0.9686956521739128,24,0.9681090613130765,96
+gemma-27,none,transmission=automatic,1,transmission,automatic,True,True,0.9900527924423453,60,0.8196721311475412,60
+gemma-27,none,company=BMW,1,company,BMW,False,True,0.9909774436090225,20,0.7206000600060005,100
+gemma-27,none,horsepower=200 hp,1,horsepower,200 hp,False,True,0.9046904315196999,40,0.8838959212376934,80
+gemma-27,none,color=black,1,color,black,False,True,0.9714285714285714,20,0.9124752475247524,100
+gemma-27,none,fuel=petrol,1,fuel,petrol,True,True,0.9859961100305642,60,0.8803556543484303,60
+gemma-27,none,transmission=manual,1,transmission,manual,False,True,0.9884968046679636,60,0.9125868296749099,60
+gemma-27,none,horsepower=100 hp,1,horsepower,100 hp,False,True,0.9217636022514072,40,-0.12297233942803565,80
+gemma-27,none,company=Honda,1,company,Honda,False,True,0.8646616541353382,20,0.7737773777377738,100
+gemma-27,none,ownership=private first owner,1,ownership,private first owner,False,True,0.9765217391304346,24,0.6401519262072707,96
+gemma-27,none,company=Toyota,1,company,Toyota,False,True,0.9909774436090225,20,0.6913051305130512,100
+gemma-27,none,color=white,1,color,white,False,True,0.9293233082706768,20,0.8964296429642963,100
+gemma-27,none,fuel=diesel,1,fuel,diesel,True,True,0.9891080855793276,60,0.8734648513475968,60
+gemma-27,none,horsepower=150 hp,1,horsepower,150 hp,False,True,0.9469043151969984,40,0.960126582278481,80
+gemma-27,none,company=Ford,1,company,Ford,False,True,0.9954887218045112,20,0.937089708970897,100
+gemma-27,none,ownership=ex-lease,1,ownership,ex-lease,False,True,0.9521739130434782,24,0.8871947911014649,96
+gemma-27,transmission=automatic,company=BMW+transmission=automatic,2,company,BMW,True,True,0.9533834586466164,20,0.8646744674467445,100
+gemma-27,company=BMW,company=BMW+transmission=automatic,2,transmission,automatic,False,False,0.8457904973603781,60,0.7378160600166714,60
+gemma-27,company=BMW+transmission=automatic,company=BMW+horsepower=200 hp+transmission=automatic,3,horsepower,200 hp,True,True,0.9279549718574109,40,0.9200890764181904,80
+gemma-27,company=BMW+horsepower=200 hp+transmission=automatic,color=black+company=BMW+horsepower=200 hp+transmission=automatic,4,color,black,True,True,0.9699248120300751,20,0.9743654365436543,100
+gemma-27,fuel=petrol,fuel=petrol+transmission=manual,2,transmission,manual,True,True,0.9131981105862741,60,0.739872186718533,60
+gemma-27,transmission=manual,fuel=petrol+transmission=manual,2,fuel,petrol,False,False,0.8954709641567103,60,0.8130591831064187,60
+gemma-27,fuel=petrol+transmission=manual,fuel=petrol+horsepower=100 hp+transmission=manual,3,horsepower,100 hp,True,True,0.9480300187617262,40,0.9422644163150493,80
+gemma-27,fuel=petrol+horsepower=100 hp+transmission=manual,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,company,Honda,True,True,0.9834586466165413,20,0.9604200420042003,100
+gemma-27,transmission=automatic,ownership=private first owner+transmission=automatic,2,ownership,private first owner,True,True,0.8782608695652172,24,0.868176885512751,96
+gemma-27,ownership=private first owner,ownership=private first owner+transmission=automatic,2,transmission,automatic,False,False,0.7624895804390109,60,0.6567379827729927,60
+gemma-27,ownership=private first owner+transmission=automatic,company=Toyota+ownership=private first owner+transmission=automatic,3,company,Toyota,True,True,0.9654135338345864,20,0.9457425742574257,100
+gemma-27,company=Toyota+ownership=private first owner+transmission=automatic,color=white+company=Toyota+ownership=private first owner+transmission=automatic,4,color,white,True,True,0.9308270676691727,20,0.9844584458445843,100
+gemma-27,fuel=diesel,fuel=diesel+horsepower=150 hp,2,horsepower,150 hp,True,True,0.9033771106941839,40,0.8686357243319269,80
+gemma-27,horsepower=150 hp,fuel=diesel+horsepower=150 hp,2,fuel,diesel,False,False,0.9269241455959991,60,0.8219505418171716,60
+gemma-27,fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp,3,company,Ford,True,True,0.9368421052631578,20,0.9475307530753074,100
+gemma-27,company=Ford+fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,4,ownership,ex-lease,True,True,0.9826086956521738,24,0.9434074877916441,96
+olmo-32,none,transmission=automatic,1,transmission,automatic,True,True,0.8998610725201446,60,0.7287579883300919,60
+olmo-32,none,company=BMW,1,company,BMW,False,True,0.993984962406015,20,0.6696189618961895,100
+olmo-32,none,horsepower=200 hp,1,horsepower,200 hp,False,True,0.9589118198874297,40,0.7785982184716362,80
+olmo-32,none,color=black,1,color,black,False,True,0.9503759398496241,20,0.8894689468946895,100
+olmo-32,none,fuel=petrol,1,fuel,petrol,True,True,0.983217560433454,60,0.9019727702139486,60
+olmo-32,none,transmission=manual,1,transmission,manual,False,True,0.9653237010280634,60,0.8792442345095861,60
+olmo-32,none,horsepower=100 hp,1,horsepower,100 hp,False,True,0.9416510318949344,40,0.22932489451476795,80
+olmo-32,none,company=Honda,1,company,Honda,False,True,0.8601503759398496,20,0.8284668466846683,100
+olmo-32,none,ownership=private first owner,1,ownership,private first owner,False,True,0.8947826086956522,24,0.7195333695062399,96
+olmo-32,none,company=Toyota,1,company,Toyota,False,True,0.9533834586466164,20,0.8022802280228021,100
+olmo-32,none,color=white,1,color,white,False,True,0.8872180451127819,20,0.8764116411641163,100
+olmo-32,none,fuel=diesel,1,fuel,diesel,True,True,0.8378994165045848,60,0.8346207279799945,60
+olmo-32,none,horsepower=150 hp,1,horsepower,150 hp,False,True,0.9744840525328332,40,0.4101265822784811,80
+olmo-32,none,company=Ford,1,company,Ford,False,True,0.9684210526315788,20,0.9132313231323133,100
+olmo-32,none,ownership=ex-lease,1,ownership,ex-lease,False,True,0.9782608695652173,24,0.8979381443298969,96
+olmo-32,transmission=automatic,company=BMW+transmission=automatic,2,company,BMW,True,True,0.9052631578947368,20,0.86012601260126,100
+olmo-32,company=BMW,company=BMW+transmission=automatic,2,transmission,automatic,False,False,0.8476243400944709,60,0.7031953320366771,60
+olmo-32,company=BMW+transmission=automatic,company=BMW+horsepower=200 hp+transmission=automatic,3,horsepower,200 hp,True,True,0.9763602251407131,40,0.9777074542897328,80
+olmo-32,company=BMW+horsepower=200 hp+transmission=automatic,color=black+company=BMW+horsepower=200 hp+transmission=automatic,4,color,black,True,True,0.9894736842105262,20,0.967152715271527,100
+olmo-32,fuel=petrol,fuel=petrol+transmission=manual,2,transmission,manual,True,True,0.8979160878021674,60,0.7587107529869409,60
+olmo-32,transmission=manual,fuel=petrol+transmission=manual,2,fuel,petrol,False,False,0.8995832175604336,60,0.799666574048347,60
+olmo-32,fuel=petrol+transmission=manual,fuel=petrol+horsepower=100 hp+transmission=manual,3,horsepower,100 hp,True,True,0.9697936210131334,40,0.9551101734646039,80
+olmo-32,fuel=petrol+horsepower=100 hp+transmission=manual,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,company,Honda,True,True,0.9894736842105262,20,0.9756615661566156,100
+olmo-32,transmission=automatic,ownership=private first owner+transmission=automatic,2,ownership,private first owner,True,True,0.9191304347826086,24,0.890965816603364,96
+olmo-32,ownership=private first owner,ownership=private first owner+transmission=automatic,2,transmission,automatic,False,False,0.8163378716310088,60,0.7358710752986943,60
+olmo-32,ownership=private first owner+transmission=automatic,company=Toyota+ownership=private first owner+transmission=automatic,3,company,Toyota,True,True,0.9037593984962405,20,0.9316051605160515,100
+olmo-32,company=Toyota+ownership=private first owner+transmission=automatic,color=white+company=Toyota+ownership=private first owner+transmission=automatic,4,color,white,True,True,0.8766917293233082,20,0.9297329732973295,100
+olmo-32,fuel=diesel,fuel=diesel+horsepower=150 hp,2,horsepower,150 hp,True,True,0.9317073170731708,40,0.8909751523675575,80
+olmo-32,horsepower=150 hp,fuel=diesel+horsepower=150 hp,2,fuel,diesel,False,False,0.8349541539316478,60,0.7733814948596834,60
+olmo-32,fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp,3,company,Ford,True,True,0.9398496240601503,20,0.9446864686468646,100
+olmo-32,company=Ford+fuel=diesel+horsepower=150 hp,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,4,ownership,ex-lease,True,True,0.9739130434782608,24,0.9744167118827998,96

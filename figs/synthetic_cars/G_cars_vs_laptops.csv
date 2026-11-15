@@ -1,0 +1,79 @@
+model,metric,cars,laptops
+qwen-72,"BT-feat R2 vs Dbar, no contract, full data",0.8557863335257235,0.8828292576315504
+qwen-72,"BT-feat R2 of the OLS fit on the rows, no contract",0.8098608164788921,
+qwen-72,"single contracts, n",15.0,7.0
+qwen-72,"compliance raw, mean over singles",99.96748271307746,94.54885714285714
+qwen-72,"compliance gain, mean over singles",0.9993298640467715,0.9004833333333333
+qwen-72,"consistency inner, mean over singles",0.9425756282288751,0.5421714285714285
+qwen-72,"consistency outer, mean over singles",0.7761896425703794,0.5724999999999999
+qwen-72,"compounds with 2 requirements, n",4.0,4.0
+qwen-72,"zero-shot accuracy, 2 requirements, feature-level",0.8735,0.8626262626262626
+qwen-72,"zero-shot R2, 2 requirements, feature-level",0.6115145766012592,0.46641698082627303
+qwen-72,"zero-shot accuracy, 2 requirements, item-level",0.8720000000000001,
+qwen-72,"zero-shot R2, 2 requirements, item-level",0.6094742248735769,
+qwen-72,"compounds with 3 requirements, n",4.0,1.0
+qwen-72,"zero-shot accuracy, 3 requirements, feature-level",0.823,0.8292929292929293
+qwen-72,"zero-shot R2, 3 requirements, feature-level",-0.6977928134453787,-0.6132764398019548
+qwen-72,"zero-shot accuracy, 3 requirements, item-level",0.829,
+qwen-72,"zero-shot R2, 3 requirements, item-level",-0.7258384606140103,
+qwen-72,"compounds with 4 requirements, n",4.0,0.0
+qwen-72,"zero-shot accuracy, 4 requirements, feature-level",0.797,
+qwen-72,"zero-shot R2, 4 requirements, feature-level",-3.896619596509355,
+qwen-72,"zero-shot accuracy, 4 requirements, item-level",0.7985,
+qwen-72,"zero-shot R2, 4 requirements, item-level",-3.9629610062643152,
+qwen-72,"train contracts in the pool, n",16.0,13.0
+qwen-72,rows in the full pool,228480.0,128700.0
+qwen-72,BT-full accuracy on the full pool,0.953265056022409,0.9574980574980574
+qwen-72,smallest M: BT-feat reaches 95% of BT-full full-pool accuracy,2000.0,500.0
+gemma-27,"BT-feat R2 vs Dbar, no contract, full data",0.8132306458579189,0.8216504772910135
+gemma-27,"BT-feat R2 of the OLS fit on the rows, no contract",0.7647135252828692,
+gemma-27,"single contracts, n",15.0,6.0
+gemma-27,"compliance raw, mean over singles",99.19233945573664,95.22023333333334
+gemma-27,"compliance gain, mean over singles",0.9853440072884905,0.9077999999999999
+gemma-27,"consistency inner, mean over singles",0.9599043291146241,0.6154666666666667
+gemma-27,"consistency outer, mean over singles",0.7777435677088081,0.383
+gemma-27,"compounds with 2 requirements, n",4.0,1.0
+gemma-27,"zero-shot accuracy, 2 requirements, feature-level",0.7929999999999999,0.7727272727272727
+gemma-27,"zero-shot R2, 2 requirements, feature-level",0.5569068107258845,0.3325109245543953
+gemma-27,"zero-shot accuracy, 2 requirements, item-level",0.8089999999999999,
+gemma-27,"zero-shot R2, 2 requirements, item-level",0.5366231567021248,
+gemma-27,"compounds with 3 requirements, n",4.0,3.0
+gemma-27,"zero-shot accuracy, 3 requirements, feature-level",0.744,0.730976430976431
+gemma-27,"zero-shot R2, 3 requirements, feature-level",-0.636150377292263,-2.0646956119326183
+gemma-27,"zero-shot accuracy, 3 requirements, item-level",0.748,
+gemma-27,"zero-shot R2, 3 requirements, item-level",-0.7180461858351082,
+gemma-27,"compounds with 4 requirements, n",4.0,0.0
+gemma-27,"zero-shot accuracy, 4 requirements, feature-level",0.6995,
+gemma-27,"zero-shot R2, 4 requirements, feature-level",-2.6828150732900546,
+gemma-27,"zero-shot accuracy, 4 requirements, item-level",0.7020000000000001,
+gemma-27,"zero-shot R2, 4 requirements, item-level",-2.82528351633201,
+gemma-27,"train contracts in the pool, n",16.0,13.0
+gemma-27,rows in the full pool,228480.0,128700.0
+gemma-27,BT-full accuracy on the full pool,0.9534576330532213,0.9586635586635588
+gemma-27,smallest M: BT-feat reaches 95% of BT-full full-pool accuracy,5000.0,1000.0
+olmo-32,"BT-feat R2 vs Dbar, no contract, full data",0.9202427520150367,0.946866327155437
+olmo-32,"BT-feat R2 of the OLS fit on the rows, no contract",0.8207821074414905,
+olmo-32,"single contracts, n",15.0,2.0
+olmo-32,"compliance raw, mean over singles",98.26296955768616,90.28630000000001
+olmo-32,"compliance gain, mean over singles",0.9660551729909234,0.8026500000000001
+olmo-32,"consistency inner, mean over singles",0.9365283978432518,0.63035
+olmo-32,"consistency outer, mean over singles",0.7573063251952948,0.70635
+olmo-32,"compounds with 2 requirements, n",4.0,1.0
+olmo-32,"zero-shot accuracy, 2 requirements, feature-level",0.912,0.8878787878787879
+olmo-32,"zero-shot R2, 2 requirements, feature-level",0.8120975328942737,0.6757064592569331
+olmo-32,"zero-shot accuracy, 2 requirements, item-level",0.9095,
+olmo-32,"zero-shot R2, 2 requirements, item-level",0.8149942100480491,
+olmo-32,"compounds with 3 requirements, n",4.0,0.0
+olmo-32,"zero-shot accuracy, 3 requirements, feature-level",0.896,
+olmo-32,"zero-shot R2, 3 requirements, feature-level",0.35052857114502467,
+olmo-32,"zero-shot accuracy, 3 requirements, item-level",0.8935,
+olmo-32,"zero-shot R2, 3 requirements, item-level",0.34312412118621827,
+olmo-32,"compounds with 4 requirements, n",4.0,0.0
+olmo-32,"zero-shot accuracy, 4 requirements, feature-level",0.8554999999999999,
+olmo-32,"zero-shot R2, 4 requirements, feature-level",-1.0802548841336337,
+olmo-32,"zero-shot accuracy, 4 requirements, item-level",0.8595,
+olmo-32,"zero-shot R2, 4 requirements, item-level",-1.1047920378519787,
+olmo-32,"train contracts in the pool, n",16.0,10.0
+olmo-32,rows in the full pool,228480.0,99000.0
+olmo-32,BT-full accuracy on the full pool,0.9503151260504201,0.9571717171717172
+olmo-32,smallest M: BT-feat reaches 95% of BT-full full-pool accuracy,2000.0,500.0

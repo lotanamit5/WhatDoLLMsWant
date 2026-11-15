@@ -1,0 +1,181 @@
+model,track,step,contract,car_id,car,win_rate,ties,mean_dbar
+qwen-72,luxury,0,none,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.8403361344537815,1,6.561034068340013
+qwen-72,luxury,0,none,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9327731092436975,0,9.680624259119273
+qwen-72,luxury,0,none,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.8487394957983193,1,6.799413792225493
+qwen-72,luxury,1,transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9159663865546218,0,17.06452529270108
+qwen-72,luxury,1,transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9495798319327731,0,18.10397349686182
+qwen-72,luxury,1,transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9327731092436975,0,17.838185047402103
+qwen-72,luxury,2,company=BMW+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9663865546218487,0,23.533161171344148
+qwen-72,luxury,2,company=BMW+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9915966386554622,0,24.317128937284487
+qwen-72,luxury,2,company=BMW+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9747899159663865,0,24.51008228394164
+qwen-72,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9663865546218487,0,23.783156046346456
+qwen-72,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9915966386554622,0,24.60553091163395
+qwen-72,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9831932773109243,0,25.858247452423353
+qwen-72,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9831932773109243,0,24.515747159469026
+qwen-72,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",1.0,0,25.510464053694943
+qwen-72,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9915966386554622,0,26.510553341953695
+qwen-72,economy,0,none,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.453781512605042,0,-0.32861889059804067
+qwen-72,economy,0,none,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.3025210084033613,0,-3.107283004191743
+qwen-72,economy,0,none,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.1092436974789916,0,-8.204205687306509
+qwen-72,economy,1,fuel=petrol,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.7058823529411765,1,11.829248667264185
+qwen-72,economy,1,fuel=petrol,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.6218487394957983,1,9.64324638923677
+qwen-72,economy,1,fuel=petrol,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.5210084033613446,0,6.604373814678993
+qwen-72,economy,2,fuel=petrol+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.8739495798319328,0,19.32721456609854
+qwen-72,economy,2,fuel=petrol+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.8319327731092437,0,18.085005431115125
+qwen-72,economy,2,fuel=petrol+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.773109243697479,0,15.414107469450526
+qwen-72,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,24.28357935152134
+qwen-72,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9831932773109243,0,23.530487298965454
+qwen-72,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9495798319327731,0,21.515735151387062
+qwen-72,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,26.6712176779739
+qwen-72,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9915966386554622,0,26.478462122568562
+qwen-72,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9831932773109243,0,24.427419606377097
+qwen-72,family,0,none,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.7647058823529411,0,7.125884733781093
+qwen-72,family,0,none,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9663865546218487,0,11.676080037565793
+qwen-72,family,0,none,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.5798319327731093,1,2.1296916789367417
+qwen-72,family,1,transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.7815126050420168,0,14.654786982456175
+qwen-72,family,1,transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9411764705882353,0,18.278673311241533
+qwen-72,family,1,transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.7058823529411765,0,12.060834868615414
+qwen-72,family,2,ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9411764705882353,0,21.49945217421075
+qwen-72,family,2,ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9831932773109243,0,23.05298847611211
+qwen-72,family,2,ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9327731092436975,0,21.12453572088931
+qwen-72,family,3,company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9915966386554622,0,25.565066070616748
+qwen-72,family,3,company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",1.0,0,26.10238918637027
+qwen-72,family,3,company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9831932773109243,0,25.990107651017293
+qwen-72,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9915966386554622,0,25.89648415361132
+qwen-72,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",1.0,0,26.30353260240635
+qwen-72,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9831932773109243,0,26.855130299299706
+qwen-72,work,0,none,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.3697478991596639,1,-2.5113351860968005
+qwen-72,work,0,none,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.4117647058823529,1,-1.3282297869690327
+qwen-72,work,0,none,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.35294117647058826,0,-3.043030517942765
+qwen-72,work,1,fuel=diesel,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.7142857142857143,0,11.422325768891502
+qwen-72,work,1,fuel=diesel,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.7142857142857143,0,11.282606415387963
+qwen-72,work,1,fuel=diesel,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.6890756302521008,1,10.952151634613005
+qwen-72,work,2,fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.8907563025210085,0,18.53046357180892
+qwen-72,work,2,fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.865546218487395,0,18.047711725996322
+qwen-72,work,2,fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.8823529411764706,0,18.099132024941323
+qwen-72,work,3,company=Ford+fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9915966386554622,0,24.11552146202376
+qwen-72,work,3,company=Ford+fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.9831932773109243,0,23.838352833475387
+qwen-72,work,3,company=Ford+fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9747899159663865,0,23.760460675764485
+qwen-72,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9915966386554622,0,25.35081219372629
+qwen-72,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",1.0,0,25.55780935788355
+qwen-72,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9831932773109243,0,25.156504439205683
+gemma-27,luxury,0,none,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9243697478991597,0,14.74995940072196
+gemma-27,luxury,0,none,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9159663865546218,1,14.796192936536645
+gemma-27,luxury,0,none,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.7563025210084033,0,7.6827764626310655
+gemma-27,luxury,1,transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9495798319327731,0,19.53357141358512
+gemma-27,luxury,1,transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9327731092436975,0,19.209638448322522
+gemma-27,luxury,1,transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.8907563025210085,0,16.65445151048548
+gemma-27,luxury,2,company=BMW+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9915966386554622,0,23.975840266512222
+gemma-27,luxury,2,company=BMW+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9831932773109243,0,23.737919106202966
+gemma-27,luxury,2,company=BMW+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9663865546218487,0,22.72478991346199
+gemma-27,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9915966386554622,0,25.099263253332186
+gemma-27,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9831932773109243,0,24.932241101224882
+gemma-27,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9663865546218487,0,24.424895030109823
+gemma-27,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",1.0,0,25.670693070447747
+gemma-27,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9915966386554622,0,25.36449598013854
+gemma-27,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9831932773109243,0,25.043592462018758
+gemma-27,economy,0,none,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.4369747899159664,0,-0.39255992003849577
+gemma-27,economy,0,none,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.2689075630252101,0,-8.312976545145531
+gemma-27,economy,0,none,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.18487394957983194,1,-8.533585195280924
+gemma-27,economy,1,fuel=petrol,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.7226890756302521,0,11.507344175787534
+gemma-27,economy,1,fuel=petrol,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.6722689075630253,0,8.039786200062567
+gemma-27,economy,1,fuel=petrol,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.5798319327731093,1,7.195232577684547
+gemma-27,economy,2,fuel=petrol+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.865546218487395,0,17.98794171990467
+gemma-27,economy,2,fuel=petrol+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.8487394957983193,0,16.342418819415467
+gemma-27,economy,2,fuel=petrol+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.7983193277310925,0,15.077184385612231
+gemma-27,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,23.467963225200396
+gemma-27,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9831932773109243,0,22.300870466132125
+gemma-27,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9663865546218487,0,21.34722195302739
+gemma-27,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,25.05777310724018
+gemma-27,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9915966386554622,0,24.27836138911608
+gemma-27,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9831932773109243,0,24.08350835377429
+gemma-27,family,0,none,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.8067226890756303,0,11.638586853231702
+gemma-27,family,0,none,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9747899159663865,0,18.788865435524148
+gemma-27,family,0,none,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.4957983193277311,1,0.4018265064023122
+gemma-27,family,1,transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.8571428571428571,0,16.209541388419495
+gemma-27,family,1,transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9831932773109243,0,20.74631893634796
+gemma-27,family,1,transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.7394957983193278,0,11.217481141330815
+gemma-27,family,2,ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9411764705882353,0,21.894444237737094
+gemma-27,family,2,ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9915966386554622,0,22.94173346948223
+gemma-27,family,2,ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9327731092436975,0,20.793111847228364
+gemma-27,family,3,company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9915966386554622,0,23.871323528910885
+gemma-27,family,3,company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",1.0,0,24.21323529411765
+gemma-27,family,3,company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9831932773109243,0,23.813550420668946
+gemma-27,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9915966386554622,0,23.99369515441045
+gemma-27,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",1.0,0,24.52415856543709
+gemma-27,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9831932773109243,0,24.368175691917163
+gemma-27,work,0,none,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.4789915966386555,0,0.38065720856690605
+gemma-27,work,0,none,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.5126050420168067,0,2.296176874337076
+gemma-27,work,0,none,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.47058823529411764,0,0.15695148556172347
+gemma-27,work,1,fuel=diesel,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.7310924369747899,1,11.714798772535405
+gemma-27,work,1,fuel=diesel,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.773109243697479,0,13.3391426110468
+gemma-27,work,1,fuel=diesel,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.7394957983193278,0,11.796238180469064
+gemma-27,work,2,fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.907563025210084,0,17.755703959144466
+gemma-27,work,2,fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.9327731092436975,0,18.172279201635792
+gemma-27,work,2,fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.8991596638655462,0,17.683731517871887
+gemma-27,work,3,company=Ford+fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9831932773109243,0,23.744747895152628
+gemma-27,work,3,company=Ford+fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",1.0,0,23.8550420829228
+gemma-27,work,3,company=Ford+fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9831932773109243,0,23.77415966086027
+gemma-27,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9831932773109243,1,25.142857142857142
+gemma-27,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",1.0,0,25.466911764705884
+gemma-27,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9831932773109243,1,25.227941176470587
+olmo-32,luxury,0,none,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.7563025210084033,0,1.1772073857924517
+olmo-32,luxury,0,none,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.8571428571428571,0,2.2007384981427873
+olmo-32,luxury,0,none,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.7815126050420168,0,1.6297123211772502
+olmo-32,luxury,1,transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.7563025210084033,0,5.473566358830748
+olmo-32,luxury,1,transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.8571428571428571,0,6.029902840361876
+olmo-32,luxury,1,transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.8991596638655462,0,6.371118564064763
+olmo-32,luxury,2,company=BMW+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.957983193277311,0,9.921117906810856
+olmo-32,luxury,2,company=BMW+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9831932773109243,0,10.191857722627015
+olmo-32,luxury,2,company=BMW+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9915966386554622,0,10.287087992960666
+olmo-32,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9663865546218487,0,10.142043947171764
+olmo-32,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9831932773109243,0,10.402464851110922
+olmo-32,luxury,3,company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",0.9915966386554622,0,10.613272065375032
+olmo-32,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,1,"BMW, black, diesel, automatic, 200 hp, ex-lease",0.9831932773109243,0,9.833920230384635
+olmo-32,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,2,"BMW, black, diesel, automatic, 200 hp, private second owner",0.9915966386554622,0,10.309900848304524
+olmo-32,luxury,4,color=black+company=BMW+horsepower=200 hp+transmission=automatic,3,"BMW, black, petrol, automatic, 200 hp, private third owner",1.0,0,10.346903826509203
+olmo-32,economy,0,none,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.7983193277310925,0,1.8208599010435473
+olmo-32,economy,0,none,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.5882352941176471,0,0.4008823042156316
+olmo-32,economy,0,none,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.4117647058823529,1,-0.6234066346112419
+olmo-32,economy,1,fuel=petrol,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.8487394957983193,0,5.789052980286734
+olmo-32,economy,1,fuel=petrol,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.7226890756302521,0,4.728901141330976
+olmo-32,economy,1,fuel=petrol,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.5966386554621849,0,4.024221056649665
+olmo-32,economy,2,fuel=petrol+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",0.9327731092436975,0,8.850923659921694
+olmo-32,economy,2,fuel=petrol+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.8907563025210085,0,8.041643613526801
+olmo-32,economy,2,fuel=petrol+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.8235294117647058,0,7.672493301018947
+olmo-32,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,10.792885678655962
+olmo-32,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9831932773109243,0,10.165719365873256
+olmo-32,economy,3,fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9747899159663865,0,9.981479874178142
+olmo-32,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,4,"Honda, red, petrol, manual, 100 hp, private first owner",1.0,0,10.619552526153436
+olmo-32,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,5,"Honda, silver, petrol, manual, 100 hp, private second owner",0.9915966386554622,0,10.151305403028216
+olmo-32,economy,4,company=Honda+fuel=petrol+horsepower=100 hp+transmission=manual,6,"Honda, black, petrol, manual, 100 hp, ex-lease",0.9831932773109243,0,10.056187216975108
+olmo-32,family,0,none,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.865546218487395,0,2.7833145085503075
+olmo-32,family,0,none,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9747899159663865,0,3.495344972410122
+olmo-32,family,0,none,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.8487394957983193,0,2.6623331118030706
+olmo-32,family,1,transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.8991596638655462,0,6.632891375978454
+olmo-32,family,1,transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9243697478991597,0,7.092218828802349
+olmo-32,family,1,transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9495798319327731,0,7.841473774248812
+olmo-32,family,2,ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9243697478991597,0,9.290315099624024
+olmo-32,family,2,ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9495798319327731,0,9.381671910025492
+olmo-32,family,2,ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",0.9663865546218487,0,10.160434736925012
+olmo-32,family,3,company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9831932773109243,0,10.934044224374434
+olmo-32,family,3,company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9915966386554622,0,10.890920308958583
+olmo-32,family,3,company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",1.0,0,11.557460282530103
+olmo-32,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,7,"Toyota, white, diesel, automatic, 150 hp, private first owner",0.9831932773109243,0,10.706151174397029
+olmo-32,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,8,"Toyota, white, diesel, automatic, 200 hp, private first owner",0.9915966386554622,0,10.539238887674669
+olmo-32,family,4,color=white+company=Toyota+ownership=private first owner+transmission=automatic,9,"Toyota, white, petrol, automatic, 100 hp, private first owner",1.0,0,11.70041150656067
+olmo-32,work,0,none,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.2605042016806723,0,-1.63460356447877
+olmo-32,work,0,none,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.2605042016806723,0,-1.334399567932642
+olmo-32,work,0,none,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.25210084033613445,0,-1.4937297596650965
+olmo-32,work,1,fuel=diesel,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.6554621848739496,1,3.7254205471327326
+olmo-32,work,1,fuel=diesel,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.6302521008403361,0,3.1504119824962458
+olmo-32,work,1,fuel=diesel,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.6554621848739496,0,3.6420169998617733
+olmo-32,work,2,fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.8823529411764706,0,6.458360190651998
+olmo-32,work,2,fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.865546218487395,0,5.972074842252651
+olmo-32,work,2,fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.8991596638655462,0,6.508556856828577
+olmo-32,work,3,company=Ford+fuel=diesel+horsepower=150 hp,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9747899159663865,0,9.708720935492956
+olmo-32,work,3,company=Ford+fuel=diesel+horsepower=150 hp,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",0.9915966386554622,0,9.545538896272163
+olmo-32,work,3,company=Ford+fuel=diesel+horsepower=150 hp,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9831932773109243,0,9.735114341022587
+olmo-32,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,10,"Ford, blue, diesel, manual, 150 hp, ex-lease",0.9831932773109243,0,9.876535343021906
+olmo-32,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,11,"Ford, red, diesel, automatic, 150 hp, ex-lease",1.0,0,9.782204932525378
+olmo-32,work,4,company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease,12,"Ford, white, diesel, manual, 150 hp, ex-lease",0.9915966386554622,0,9.9278873470651
