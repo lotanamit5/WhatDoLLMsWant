@@ -1,0 +1,30 @@
+{
+  "alternatives": "synthetic_cars",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "ownership": "ex-lease"
+  },
+  "constraints_id": "ownership=ex-lease",
+  "constraints_text": "I prefer an ex-lease car.",
+  "frame": {
+    "name": "car_shopping",
+    "text": "I am looking to buy a car.",
+    "voice": "user"
+  },
+  "git_commit": "624ff6a",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "qwen",
+  "model_size": "72",
+  "n_rows": 14280,
+  "pairs": "all",
+  "prompt_prefix": "I am looking to buy a car. I prefer an ex-lease car.",
+  "slurm_job_id": "1498501",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: "
+  },
+  "timestamp": "20261113_214725"
+}

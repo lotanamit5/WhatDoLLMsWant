@@ -1,0 +1,32 @@
+{
+  "alternatives": "synthetic_cars",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "company": "Toyota",
+    "ownership": "private first owner",
+    "transmission": "automatic"
+  },
+  "constraints_id": "company=Toyota+ownership=private first owner+transmission=automatic",
+  "constraints_text": "I prefer a Toyota car and an automatic transmission and a private first owner.",
+  "frame": {
+    "name": "car_shopping",
+    "text": "I am looking to buy a car.",
+    "voice": "user"
+  },
+  "git_commit": "624ff6a",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "olmo",
+  "model_size": "32",
+  "n_rows": 1656,
+  "pairs": "data/synthetic_cars/design/pairs_family.csv",
+  "prompt_prefix": "I am looking to buy a car. I prefer a Toyota car and an automatic transmission and a private first owner.",
+  "slurm_job_id": "1498518",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: "
+  },
+  "timestamp": "20261114_002110"
+}

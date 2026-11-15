@@ -1,0 +1,33 @@
+{
+  "alternatives": "synthetic_cars",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "company": "Ford",
+    "fuel": "diesel",
+    "horsepower": "150 hp",
+    "ownership": "ex-lease"
+  },
+  "constraints_id": "company=Ford+fuel=diesel+horsepower=150 hp+ownership=ex-lease",
+  "constraints_text": "I prefer a Ford car and a diesel engine and 150 hp and an ex-lease car.",
+  "frame": {
+    "name": "car_shopping",
+    "text": "I am looking to buy a car.",
+    "voice": "user"
+  },
+  "git_commit": "624ff6a",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "olmo",
+  "model_size": "32",
+  "n_rows": 1642,
+  "pairs": "data/synthetic_cars/design/pairs_work.csv",
+  "prompt_prefix": "I am looking to buy a car. I prefer a Ford car and a diesel engine and 150 hp and an ex-lease car.",
+  "slurm_job_id": "1498520",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: "
+  },
+  "timestamp": "20261114_002332"
+}
