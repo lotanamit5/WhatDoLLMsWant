@@ -1,0 +1,28 @@
+{
+  "alternatives": "real_laptops",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {},
+  "constraints_id": "none",
+  "constraints_text": "",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop.",
+    "voice": "user"
+  },
+  "git_commit": "f1958fb",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "qwen",
+  "model_size": "72",
+  "n_rows": 3540,
+  "pairs": "all",
+  "prompt_prefix": "I am looking to buy a laptop.",
+  "slurm_job_id": "1498397",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: "
+  },
+  "timestamp": "20261113_164340"
+}

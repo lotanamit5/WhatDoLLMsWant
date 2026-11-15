@@ -1,0 +1,31 @@
+{
+  "alternatives": "real_laptops",
+  "collection_script": "scripts/data_collection.py",
+  "constraints": {
+    "ram": "8GB",
+    "screen": "14-inch"
+  },
+  "constraints_id": "ram=8GB+screen=14-inch",
+  "constraints_text": "I prefer a 14-inch screen and 8 GB ram.",
+  "frame": {
+    "name": "shopping",
+    "text": "I am looking to buy a laptop.",
+    "voice": "user"
+  },
+  "git_commit": "624ff6a",
+  "labels": [
+    "Option 1",
+    "Option 2"
+  ],
+  "model_family": "olmo",
+  "model_size": "32",
+  "n_rows": 1000,
+  "pairs": "data/real_laptops/design/compound_pairs.csv",
+  "prompt_prefix": "I am looking to buy a laptop. I prefer a 14-inch screen and 8 GB ram.",
+  "slurm_job_id": "1498402",
+  "template_set": "options",
+  "templates": {
+    "0": "You have two options:\nOption 1: {A}\nOption 2: {B}\nWhich do you prefer?\nAnswer: "
+  },
+  "timestamp": "20261114_032501"
+}
