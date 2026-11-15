@@ -331,11 +331,15 @@ class Progress:
 
     def __init__(self, total, every=60):
         self.total, self.every, self.done = total, every, 0
-        self.t0 = self.last = time.time()
+        # The clock starts at the first row, not here: this object is made before the model loads,
+        # and loading can take hours (plato2, 2026-11-13), which made "min left" far too high.
+        self.t0 = self.last = None
 
     def tick(self):
         self.done += 1
         now = time.time()
+        if self.t0 is None:
+            self.t0 = self.last = now
         if now - self.last >= self.every or self.done == self.total:
             rate = self.done / max(now - self.t0, 1e-9)
             print(f"[{datetime.now():%H:%M:%S}] {self.done}/{self.total} rows "
