@@ -8,6 +8,360 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-15 — Synthetic cars: the starting weights (F12c) and what happens to the colour order (F13c). Figure A corrected
+
+Lotan: (1) the weights of every feature per model with no contract; (2) does the colour order of "no contract"
+survive under contracts that do not mention colour. Added to `Notebooks/synthetic_cars_trends.ipynb`, figures
+in `figs/synthetic_cars_trends/`.
+
+- **F12c — no contract (BT-feat, all pairs).** Range = best level minus worst level of a feature.
+
+  | model | company | color | fuel | transmission | ownership | horsepower | γ | R² |
+  |---|---|---|---|---|---|---|---|---|
+  | qwen-72 | 1.35 | 0.81 | 1.18 | 2.14 | 10.61 | 12.97 | 1.20 | 0.81 |
+  | gemma-27 | 3.20 | 0.76 | 0.47 | 1.46 | 16.35 | 21.31 | −3.75 | 0.76 |
+  | olmo-32 | 1.25 | 0.26 | 0.73 | 0.42 | 4.29 | 2.29 | 0.52 | 0.82 |
+
+  Colour is the weakest feature for qwen-72 and olmo-32 and the second weakest for gemma-27. Colour weights,
+  white / black / silver / red / blue / grey: qwen-72 −0.04 / 0.25 / 0.32 / −0.49 / 0.25 / −0.30; gemma-27
+  −0.41 / 0.28 / −0.19 / 0.04 / 0.35 / −0.07; olmo-32 0.01 / 0.11 / 0.07 / −0.15 / 0.00 / −0.04.
+- **F13c — colour order against "no contract"** (Spearman of the six colour weights; `F13c_color_weights.csv`).
+  The 4 contracts that ask for a colour are left out.
+
+  | model | 13 single requests, all pairs: median (min to max) | of 13 with ρ ≥ 0.5 | same top colour | same bottom colour | 10 compounds, 500 shared pairs: median (min to max) |
+  |---|---|---|---|---|---|
+  | qwen-72 | 0.60 (−0.49 to 1.00) | 9 | 4 | 6 | 0.43 (−0.66 to 0.60) |
+  | gemma-27 | 0.20 (−0.37 to 0.89) | 3 | 3 | 6 | 0.09 (−0.54 to 0.77) |
+  | olmo-32 | 0.77 (−0.09 to 0.83) | 8 | 6 | 8 | 0.43 (0.37 to 0.94) |
+
+  So the base colour order mostly survives a single request for qwen-72 and olmo-32, and mostly does not for
+  gemma-27. `manual` breaks it for all three (ρ −0.49 / 0.09 / 0.09); `petrol` for olmo-32 (−0.09).
+- **A trap in the compound runs, found here.** A compound run holds the 500 shared pairs AND every pair with
+  one of the track's 3 target cars (about 40% of its rows). The target cars win those pairs because they meet
+  the contract, and an additive fit on all rows credits their other features for it. Their colour is the clear
+  case: luxury targets are all black, family targets all white. qwen-72 `BMW + 200 hp + automatic`: colour range
+  3.54 with black on top on all rows, 1.09 on the shared pairs. **Rule: fit BT-feat on a compound run from the
+  500 shared pairs only.**
+  A second, smaller form: few cars meet a compound contract and their colours are not balanced (3 of the 30
+  petrol + manual cars are white), so the colours common among them look preferred. F13c's compound panel adds
+  one term to the fit, "how many of the contract's requests the car meets": white under `petrol + manual`,
+  qwen-72, goes from −2.65 to −0.69. The compound panel stays weaker evidence than the singles (1,000 rows,
+  a handful of cars per colour).
+- **Correction of 2026-11-14 (afternoon, 2), figure A of `figs4nir_cars`:** it was fitted on all rows of the
+  compound runs, so it had the bias above. Now both fits (contract and no contract) use the 500 shared pairs.
+  The requested levels look the same; bars of features that were not asked for changed (for example the colour
+  bars of the economy and work tracks are now near 0). The R² quoted in that entry (0.76–0.93) was for the old fit.
+- Not affected: stage 3 parts A, C, E (train contracts, all pairs), part D (zero rows from the compound; the
+  ceiling is BT-full, and it is scored on the shared pairs), part F, the rank graphs (per-car fit).
+
+## 2026-11-14 (afternoon, 3) — Synthetic cars: the ranking graphs of `real_laptops_trends`
+
+Lotan: also make the ranking graphs of `real_laptops_trends` on the cars. New notebook
+`Notebooks/synthetic_cars_trends.ipynb` (35 s, outputs stored), figures in `figs/synthetic_cars_trends/`.
+Same look and the same rank as the laptop notebook: one free utility per car, OLS on the margins.
+
+| laptops | cars | file |
+|---|---|---|
+| F1r: all laptops, named, one model, one path | all 120 cars, named, qwen-72, one figure per track | `F1c_rank_qwen-72B_<track>.png` |
+| F2r: all laptops, paths × models | all 120 cars, 4 tracks × 3 models | `F2c_rank_grid.png` |
+| F4r: mean rank per group | mean rank of the cars that meet 0 / 1 / 2 / 3 / 4 of the track's requests | `F4c_rank_by_group_grid.png`, `.csv` |
+
+- **What differs from the laptops:** a path is a track with 5 points (no contract + 4 requests), not 3.
+  The colour is the NUMBER of requests met, not which ones: purple = every request of the contract, three
+  blues = 1 / 2 / 3 but not all, gray = none.
+- **Ranks from the sampled pairs can be trusted.** On the 16 runs with all pairs, a fit on one track's pairs
+  only (about 825 of 7,140) against the fit on everything: Spearman 0.98 / 0.97 / 0.99 (qwen-72 / gemma-27 /
+  olmo-32); median rank error 3.3 / 4.2 / 2.5 places of 120; 90% of the cars within 11 / 13 / 8 places; the
+  target cars within 1.7 / 2.0 / 1.3.
+- **Mean rank of the 3 cars that meet all four requests, steps 0 → 4** (best possible 2.0):
+
+  | track | qwen-72 | gemma-27 | olmo-32 |
+  |---|---|---|---|
+  | luxury | 20.0 → 10.3 → 3.0 → 3.0 → 2.0 | 19.3 → 9.7 → 3.0 → 3.0 → 2.0 | 25.3 → 23.0 → 4.0 → 3.0 → 2.0 |
+  | economy | 82.0 → 44.7 → 20.7 → 2.7 → 2.0 | 80.7 → 36.3 → 18.0 → 3.0 → 2.0 | 48.0 → 31.7 → 15.7 → 2.7 → 2.0 |
+  | family | 24.3 → 20.0 → 6.7 → 2.0 → 2.0 | 29.0 → 17.0 → 7.0 → 2.0 → 2.0 | 9.7 → 8.3 → 6.3 → 2.0 → 2.0 |
+  | work | 75.7 → 32.0 → 16.0 → 3.0 → 2.0 | 57.7 → 29.3 → 13.3 → 3.0 → 2.0 | 94.3 → 38.0 → 12.3 → 3.0 → 2.0 |
+
+  All 3 are in the top 3 at step 4 in every track and model. Every group at every step: `F4c_rank_by_group.csv`.
+- qwen-72, mean rank at step 4 by requests met (none / 1 / 2 / 3 / 4): luxury 104.4 / 66.0 / 23.8 / 5.5 / 2.0;
+  economy 112.2 / 81.0 / 37.6 / 9.9 / 2.0; family 104.7 / 59.7 / 16.5 / — / 2.0 (no car meets exactly 3);
+  work 108.3 / 66.8 / 23.4 / 13.8 / 2.0.
+
+## 2026-11-14 (afternoon, 2) — Synthetic cars: the `figs4nir2` figures on the cars data
+
+Lotan: make figures like those in `figs/figs4nir2/` on the cars data. New notebook
+`Notebooks/figs4nir_cars.ipynb` (runs in 35 s, outputs stored), figures in `figs/figs4nir_cars/` (PNG + PDF).
+Same look as `figs4nir2`. Reads `data/synthetic_cars/` only; `src/` not touched.
+
+| figs4nir2 (laptops) | cars version | files |
+|---|---|---|
+| A: persona Δ weights | Δ weights under a track's full 4-request contract, per model (4 rows = 4 tracks) | `A_contract_delta_<model>` |
+| B: contract paths, all 6 orders | rank of the track's best target car after 0–4 requests; pale stubs = the track's other requests given alone as the first request | `B_contract_paths.png` (3 models × 4 tracks), `B_contract_paths_final_<model>`, `B_contract_paths.csv` |
+| C: coherence / sharpness / agreement by domain, base vs tuned | the same three by the feature asked for; no contract vs one request | `C_contract_summary`, `.csv` |
+
+- **Choices I made** (cars differ from laptops here): there are no persona runs, so A uses the tracks as the
+  "kinds of user". Only one order of requests per track was collected, so B has no optimal / sub-optimal
+  paths — only the four possible first requests. Cars have one domain and no base models, so C groups by the
+  feature asked for. Rank = 1 + the number of cars that beat the car head to head (exact at every step,
+  because every pair with a target car was scored); it differs from the Borda rank by a few places at most.
+- **B, rank of the best target car (of 120), requests 0 → 4:**
+
+  | track | qwen-72 | gemma-27 | olmo-32 |
+  |---|---|---|---|
+  | luxury | 9 → 7 → 2 → 2 → 1 | 10 → 7 → 2 → 2 → 1 | 18 → 13 → 2 → 2 → 1 |
+  | economy | 66 → 35 → 16 → 1 → 1 | 68 → 34 → 17 → 1 → 1 | 25 → 19 → 9 → 1 → 1 |
+  | family | 5 → 8 → 3 → 1 → 1 | 4 → 3 → 2 → 1 → 1 | 4 → 7 → 5 → 1 → 1 |
+  | work | 70 → 35 → 14 → 2 → 1 | 59 → 28 → 9 → 1 → 1 | 89 → 41 → 13 → 2 → 1 |
+
+  One request alone, rank of the best target (qwen-72 / gemma-27 / olmo-32): luxury — automatic 7 / 7 / 13,
+  BMW 3 / 3 / 3, 200 hp 11 / 19 / 10, black 1 / 2 / 1; economy — petrol 35 / 34 / 19, manual 28 / 32 / 10,
+  100 hp 1 / 2 / 3, Honda 10 / 10 / 4; family — automatic 8 / 3 / 7, first owner 5 / 3 / 6, Toyota 1 / 1 / 1,
+  white 1 / 1 / 3; work — diesel 35 / 28 / 41, 150 hp 35 / 22 / 33, Ford 10 / 8 / 12, ex-lease 13 / 13 / 21.
+- **C (mean of the 3 models; agreement = Kendall's W of the 3 models):** no contract — coherence 0.998,
+  sharpness 0.844, agreement 0.937. One request (15 contracts) — 0.996, 0.873, 0.943 (agreement 0.865–0.986).
+  The BT fit there is `fit_BT_soft` written with arrays (the original needs hours for 120 items); on 12 cars the
+  two differ by 5.5e-5.
+- **A:** the BT-feat fit on a compound's sampled rows has R² 0.76–0.93 (qwen-72 0.88–0.92, gemma-27 0.76–0.84,
+  olmo-32 0.87–0.93).
+- **Open:** which of the three Lotan wants to keep, and whether B should get more orders of requests (that
+  needs new runs: the compounds for the other orders).
+
+## 2026-11-14 (afternoon) — Real laptops: do the trends of the synthetic laptops hold? First pass
+
+New notebook [real_laptops_trends.ipynb](../Notebooks/real_laptops_trends.ipynb): the chosen figures of
+`figs4nir` and `figs4nir2`, rebuilt on the real-laptops batch. Each figure keeps its number plus an **r**
+(F2 → F2r); PNGs in `figs/real_laptops_trends/`. Numbers are qwen-72 / gemma-27 / olmo-32.
+
+| # | Trend on the synthetic laptops | On the real laptops | Holds? |
+|---|---|---|---|
+| 1 | A contract pulls the laptops that meet it to the top | The 10 laptops that are 14-inch + 8GB: mean rank 19.2 / 21.7 / 18.2 → 5.6 / 6.1 / 6.5 (best possible 5.5); 9 / 9 / 8 of the top 10 meet it | yes |
+| 2 | Inside the contract the model keeps its own taste | Under `14-inch` alone 9 of the top 10 are already the 8GB ones | yes |
+| 3 | Asking for the least-liked level (`4GB`) works | The 6 laptops 14-inch + 4GB: 51.7 / 47.8 / 46.7 → 5.2 / 9.0 / 7.3 (best possible 3.5); 5 / 4 / 4 in the top 10 | yes, weaker |
+| 4 | When obeying costs, the large models obey 100% | Conflict pairs won: 97.2 / 87.4 / 90.3% (1 request), 98.8 / 98.6 / 92.1% (3 requests); κ 1.8–3.4; free pairs 99.4–100%; lowest cell 61.9% (olmo, `brand=HP+ram=8GB`) | mostly |
+| 5 | RAM is the heaviest feature | Weight range RAM 11.3 / 24.6 / 6.2, screen 8.2 / 7.1 / 3.3, brand 4.1 / 6.7 / 1.0; more RAM wins 86.3 / 94.9 / 89.1% of 1,046 pairs | yes |
+| 6 | Additive fit explains the utility, R² 0.97–0.996 | R² 0.77 / 0.77 / 0.76 with no contract; 0.80–0.92 under `14-inch`, `8GB`, `14-inch + 8GB` | no (expected); better under a contract |
+| 7 | Borda rank = BT rank, ρ ≈ 0.99 | Per-laptop BT ρ 0.960–0.995; additive BT 0.773–0.906 | yes, per-laptop fit |
+| 8 | The slot decides 15–30% of comparisons | 29.4 / 10.7 / 26.7% with no contract; 12.3 / 12.3 / 13.3% with three requests | yes; falls with contract length |
+| 9 | The more the user says, the higher their laptop; order matters | Rank of the user's best laptop, mean of 8 users: 22.6 / 26.4 / 22.6 → 3.1 / 3.8 / 4.2 (best first attribute) vs 10.1 / 11.8 / 11.5 (worst) → 1.1 / 1.5 / 1.8 → 1.0 / 1.0 / 1.1 | yes |
+| 10 | Apple loses ground under any contract | No Apple in the set. Dell / HP / Lenovo / Asus move ≤ 1.8, "other" (5 laptops) falls 1.1–4.0 | cannot be tested |
+
+**Choices made** (in the notebook's first cell):
+- Rank = the laptop's own utility (one free number per laptop, OLS on the margins), not the additive fit:
+  two laptops with the same brand, screen and RAM are different products.
+- The additive fit uses binned levels: screen `<14 / 14 / 15.6 / >15.6`, RAM `≤4GB / 8GB / ≥12GB`, brand
+  `Dell / HP / Lenovo / Asus / other` (9 free numbers). With the 19 raw levels R² is 0.03–0.05 higher.
+- "Conflict pair" = exactly one laptop meets the contract and it loses with no contract.
+
+**Limits.**
+- Compound contracts have 500 pairs. Tested on the 7 full runs: ranks from those 500 vs all 1,770 pairs
+  have Spearman ≥ 0.985, a laptop moves 1.4–2.0 places on average (10 at most), but place 1 is the same
+  laptop in only 3 / 1 / 5 of 7 runs. So rank 1 vs 2 at two or three requests is inside the noise.
+- Real pairs are never all-else-equal, so row 4 is not the synthetic "ceteris paribus" number.
+- γ of qwen-72 is +2.8 here (first slot) and was −3.9 on the synthetic set. Not looked into.
+
+**Also seen** (no contract): Spearman of utility with RAM GB 0.68 / 0.80 / 0.73, with price 0.29 / 0.55 /
+0.45; at equal RAM the pricier laptop wins only 45 / 49 / 44% of the pairs.
+
+## 2026-11-14 — Synthetic cars: all 84 runs landed; stage 3 analysis run (numbers only)
+
+- **Stage 2 done.** 24 of 24 jobs COMPLETED (1498495–1498520, 11-13 17:37 → 11-14 00:25, 6 h 48 min, 5 GPUs of
+  Heraclitus). 84 of 84 runs complete: 28 per model, 248,292 prompts per model, 0 bad rows, every pair in both
+  orders (`scripts/synthetic_cars_check_runs.py data/synthetic_cars`). No failed or incomplete job in this
+  batch. The 24 folders 1498452–1498475 are the failed first attempt: logs only.
+  Speeds: qwen-72 7.1, gemma-27 14.9, olmo-32 13.5 prompts/s.
+- **Stage 3:** `scripts/synthetic_cars_analysis.py` → `figs/synthetic_cars/`: 11 CSV files (A–G) and
+  `fig1`–`fig5`. Its BT-feat equals `src/bt.py` `FeatureBT` on the real data (max weight difference 1e-14).
+  No interpretation was made, on Lotan's instruction; the numbers:
+
+**A. Fit on the full data (R² of the OLS fit on the rows; γ = position term)**
+
+| model | contract | R² BT-full | R² BT-feat | γ |
+|---|---|---|---|---|
+| qwen-72 | none | 0.820 | 0.810 | 1.20 |
+| qwen-72 | 15 singles, mean (min–max) | 0.893 (0.816–0.930) | 0.887 (0.809–0.918) | −0.93 (−3.00 to 0.64) |
+| gemma-27 | none | 0.774 | 0.765 | −3.75 |
+| gemma-27 | 15 singles | 0.769 (0.722–0.837) | 0.757 (0.719–0.829) | 0.40 (−6.22 to 5.73) |
+| olmo-32 | none | 0.830 | 0.821 | 0.52 |
+| olmo-32 | 15 singles | 0.906 (0.754–0.967) | 0.902 (0.743–0.964) | 0.15 (−1.33 to 1.76) |
+
+**B. Compliance and consistency, mean per number of requirements (15 / 4 / 4 / 4 contracts)**
+
+| model | requirements | compliance before → raw (%) | gain | consistency inner | outer |
+|---|---|---|---|---|---|
+| qwen-72 | 1 | 51.5 → 99.97 | 0.999 | 0.943 | 0.776 |
+| qwen-72 | 2 | 62.2 → 99.85 | 0.997 | 0.896 | 0.815 |
+| qwen-72 | 3 | 57.5 → 99.98 | 1.000 | 0.954 | 0.937 |
+| qwen-72 | 4 | 58.1 → 100.00 | 1.000 | 0.975 | 0.967 |
+| gemma-27 | 1 | 52.5 → 99.19 | 0.985 | 0.960 | 0.778 |
+| gemma-27 | 2 | 64.5 → 99.12 | 0.981 | 0.912 | 0.835 |
+| gemma-27 | 3 | 61.2 → 99.93 | 0.999 | 0.945 | 0.939 |
+| gemma-27 | 4 | 62.1 → 100.00 | 1.000 | 0.967 | 0.966 |
+| olmo-32 | 1 | 52.6 → 98.26 | 0.966 | 0.937 | 0.757 |
+| olmo-32 | 2 | 63.7 → 99.59 | 0.992 | 0.914 | 0.850 |
+| olmo-32 | 3 | 60.7 → 99.94 | 0.999 | 0.947 | 0.952 |
+| olmo-32 | 4 | 61.6 → 99.87 | 0.997 | 0.957 | 0.962 |
+
+**C. Shift table** (`C_shift_table.csv`, 15 × 24 per model). Summary of Δw = w_p − w_none:
+
+| model | the level asked for, mean (min–max) | other levels of the same feature, mean | other features, mean abs (max abs) |
+|---|---|---|---|
+| qwen-72 | 14.66 (10.19–19.08) | −6.41 | 0.91 (5.43) |
+| gemma-27 | 14.71 (5.95–23.22) | −6.30 | 1.42 (8.73) |
+| olmo-32 | 5.66 (2.63–9.06) | −2.44 | 0.23 (1.20) |
+
+**D. Additivity, zero rows from the compound, 500 shared pairs, mean over the 4 tracks** (accuracy / R²)
+
+| model | requirements | item-level sum | feature-level sum | no contract alone | one single alone | ceiling |
+|---|---|---|---|---|---|---|
+| qwen-72 | 2 | 0.872 / 0.609 | 0.874 / 0.612 | 0.636 / 0.020 | 0.798 / 0.350 | 0.964 / 0.946 |
+| qwen-72 | 3 | 0.829 / −0.726 | 0.823 / −0.698 | 0.608 / −0.157 | 0.721 / −0.144 | 0.945 / 0.942 |
+| qwen-72 | 4 | 0.798 / −3.963 | 0.797 / −3.897 | 0.585 / −0.438 | 0.683 / −0.576 | 0.946 / 0.936 |
+| gemma-27 | 2 | 0.809 / 0.537 | 0.793 / 0.557 | 0.662 / −0.151 | 0.797 / 0.404 | 0.937 / 0.873 |
+| gemma-27 | 3 | 0.748 / −0.718 | 0.744 / −0.636 | 0.615 / −0.361 | 0.729 / 0.154 | 0.939 / 0.865 |
+| gemma-27 | 4 | 0.702 / −2.825 | 0.700 / −2.683 | 0.602 / −0.560 | 0.695 / −0.028 | 0.931 / 0.850 |
+| olmo-32 | 2 | 0.909 / 0.815 | 0.912 / 0.812 | 0.634 / 0.068 | 0.781 / 0.425 | 0.958 / 0.942 |
+| olmo-32 | 3 | 0.893 / 0.343 | 0.896 / 0.351 | 0.611 / 0.058 | 0.715 / 0.201 | 0.950 / 0.919 |
+| olmo-32 | 4 | 0.860 / −1.105 | 0.856 / −1.080 | 0.620 / 0.024 | 0.691 / −0.102 | 0.944 / 0.922 |
+
+Spearman (item-level sum against the ceiling's scores), requirements 2 / 3 / 4: qwen-72 0.903 / 0.861 / 0.785;
+gemma-27 0.844 / 0.700 / 0.604; olmo-32 0.945 / 0.933 / 0.883.
+
+**E. Efficiency** (pool 228,480 rows, 16 contracts, 20 seeds; accuracy, mean over contracts)
+
+| M | qwen-72 full / feat | gemma-27 full / feat | olmo-32 full / feat |
+|---|---|---|---|
+| 100 | 0.528 / 0.678 | 0.530 / 0.669 | 0.529 / 0.683 |
+| 1,000 | 0.677 / 0.885 | 0.658 / 0.867 | 0.688 / 0.895 |
+| 10,000 | 0.905 / 0.938 | 0.892 / 0.934 | 0.917 / 0.937 |
+| 100,000 | 0.949 / 0.946 | 0.946 / 0.945 | 0.947 / 0.942 |
+| full | 0.953 / 0.947 | 0.953 / 0.947 | 0.950 / 0.943 |
+
+Smallest M reaching 95% of BT-full's full-pool accuracy, BT-full / BT-feat: qwen-72 20,000 / 2,000;
+gemma-27 20,000 / 5,000; olmo-32 10,000 / 2,000. Largest sd over seeds: 0.018.
+
+**F. Target cars, mean win rate of the 3 targets against the other 119 cars, steps 0 → 4**
+
+| model | luxury | economy | family | work |
+|---|---|---|---|---|
+| qwen-72 | .874 .933 .978 .980 .992 | .289 .616 .826 .978 .992 | .770 .810 .952 .992 .992 | .378 .706 .880 .983 .992 |
+| gemma-27 | .866 .924 .980 .980 .992 | .297 .658 .838 .983 .992 | .759 .860 .955 .992 .992 | .487 .748 .913 .989 .989 |
+| olmo-32 | .798 .838 .978 .980 .992 | .599 .723 .882 .986 .992 | .896 .924 .947 .992 .992 | .258 .647 .882 .983 .992 |
+
+Order of the three targets at step 4, with the two features never mentioned: `F_targets_step4_order.csv`.
+
+**G. Cars next to laptops** (laptop numbers from `figs/grum_first_test/` and `figs/metrics/`, not recomputed)
+
+| | qwen-72 cars / laptops | gemma-27 cars / laptops | olmo-32 cars / laptops |
+|---|---|---|---|
+| BT-feat R² against D̄, no contract | 0.856 / 0.883 | 0.813 / 0.822 | 0.920 / 0.947 |
+| singles, n | 15 / 7 | 15 / 6 | 15 / 2 |
+| compliance raw, singles (%) | 99.97 / 94.55 | 99.19 / 95.22 | 98.26 / 90.29 |
+| compliance gain, singles | 0.999 / 0.900 | 0.985 / 0.908 | 0.966 / 0.803 |
+| consistency inner, singles | 0.943 / 0.542 | 0.960 / 0.615 | 0.937 / 0.630 |
+| consistency outer, singles | 0.776 / 0.572 | 0.778 / 0.383 | 0.757 / 0.706 |
+| zero-shot, 2 requirements, feature-level (acc / R²) | 0.874 / 0.612 vs 0.863 / 0.466 (n 4 / 4) | 0.793 / 0.557 vs 0.773 / 0.333 (n 4 / 1) | 0.912 / 0.812 vs 0.888 / 0.676 (n 4 / 1) |
+| zero-shot, 3 requirements, feature-level (acc / R²) | 0.823 / −0.698 vs 0.829 / −0.613 (n 4 / 1) | 0.744 / −0.636 vs 0.731 / −2.065 (n 4 / 3) | 0.896 / 0.351 vs — (n 4 / 0) |
+| smallest M for BT-feat | 2,000 / 500 | 5,000 / 1,000 | 2,000 / 500 |
+| rows in the full pool | 228,480 / 128,700 | 228,480 / 128,700 | 228,480 / 99,000 |
+
+  Not comparable one to one, by construction: laptops have 5 templates, 45 items and all pairs for the
+  compounds; cars have 1 template, 120 items and 500 sampled pairs. Laptops have no item-level zero-shot and no
+  4-requirement compound in the existing outputs.
+- **Open:** Lotan reads the numbers. Results and docs of this entry are not committed yet.
+
+## 2026-11-14 — Real laptops main batch landed: 81 of 81 runs complete, data checked
+
+All six jobs ended with status 0. Nothing to rerun.
+
+| Job | Model | Contracts | Server | Ended | Took |
+|---|---|---|---|---|---|
+| 1498398 | gemma-27 | none + 6 singles | plato2 | 11-13 23:09 | 6 h 34 min |
+| 1498399 | olmo-32 | none + 6 singles | plato2 | 11-13 23:19 | 6 h 44 min |
+| 1498400 | qwen-72 | 20 compounds | plotinus2 | 11-14 00:06 | 7 h 30 min |
+| 1498397 | qwen-72 | none + 6 singles | plotinus2 | 11-14 01:43 | 9 h 08 min |
+| 1498401 | gemma-27 | 20 compounds | plato2 | 11-14 04:53 | 5 h 44 min |
+| 1498402 | olmo-32 | 20 compounds | plato2 | 11-14 05:08 | 5 h 49 min |
+
+**The check** — `scripts/real_laptops_check_runs.py` (new, reads only). Problems found: none.
+
+- 81 runs = 27 per model, each contract of `contracts.csv` exactly once per model. 44,780 rows per model.
+- Every run: rows = `n_rows`; the ordered pairs are exactly the design's (singles: all 3,540; compounds:
+  the 500 pairs in both orders); item features equal `items.csv`; no missing score; template 0; frame
+  `shopping`.
+- The two answers hold all the probability: lowest total in any row is 0.997.
+- The qwen-72 runs record four commits (`f1958fb`, `4fbecf9`, `3d99ef6`, `624ff6a`) — the other session
+  committed while they ran. `data_collection.py`, the wrapper and `src/` are identical in all four.
+
+**Scores.** Margin = score of option 1 − score of option 2.
+
+| | gemma-27 | olmo-32 | qwen-72 |
+|---|---|---|---|
+| mean size of the margin | 16.3 | 4.6 | 10.2 |
+| option 1 wins (all rows) | 52% | 57% | 58% |
+| exact ties (of 44,780 rows) | 46 | 63 | 136 |
+| no contract: pairs where the order decides (of 1,770) | 189 (11%) | 472 (27%) | 521 (29%) |
+
+"The order decides" = the same slot wins in both orders. gemma-27 agrees with stage 1 (23 of 200 = 11.5%).
+With no contract the three models rank the pairs alike: r = 0.87 to 0.90 on the order-corrected margin,
+same winner in 88–89% of the pairs.
+
+**The contract moves the choice.** Pairs where exactly one laptop meets the contract: share where it wins
+(order-corrected), mean over the contracts of that depth. In brackets, the same pairs with no contract.
+
+| Contract depth | gemma-27 | olmo-32 | qwen-72 |
+|---|---|---|---|
+| 1 request (6 contracts) | 93% (43%) | 96% (47%) | 99% (47%) |
+| 2 requests (12) | 95% (41%) | 94% (44%) | 98% (43%) |
+| 3 requests (8) | 99% (40%) | 95% (43%) | 99% (42%) |
+
+Lowest single cells: olmo-32 `brand=HP+ram=8GB` 83%; gemma-27 `ram=4GB+screen=14-inch` and
+`ram=4GB+screen=15.6-inch` 85%. Without a contract `ram=4GB` wins only 4–7% of its pairs, with it 95–98%.
+
+**Loader note.** `data/real_laptops/` also holds 12 folders with logs only (the six bare job folders, and
+1498182–1498187 from the failed 13:35 launch). They have no `config.json`, so loaders skip them.
+
+**Fixed the same day:** the `Progress` clock in `data_collection.py` now starts at the first row, not
+before the model loads (no job was running). The "min left" of these six logs is therefore too high.
+
+**Open:** stage 3 analysis (not written). Still open from 11-13: plato2's network card, the owner of job
+1496080, the old model caches.
+
+## 2026-11-13 (evening, 4) — gemma-27 on the new PyTorch gives the same answers as on the old one (plato2)
+
+The first gemma-27 run of the batch landed at 19:41 (`1498398_none`, 3,540 rows). Its 200 sanity pairs,
+both orders, template 0, were also scored by job 1497200 on 11-12 — same server, torch 2.5.1 then,
+torch 2.9.1 now.
+
+| 400 shared rows, margin = score_a − score_b | |
+|---|---|
+| correlation old vs new | r = 0.99988 |
+| same winner | 400 of 400 |
+| identical margin | 112 of 400 |
+| mean / max difference | 0.17 / 1.76 |
+| mean margin size (smallest) | 16.76 (2.24) |
+
+So not bit-identical, but the difference is 1% of a typical margin and flips no pair. The stage-1 template
+check still stands for the main batch.
+
+## 2026-11-13 (evening, 3) — Real laptops batch: all three models are scoring, measured speeds
+
+State at 19:14. Speeds are measured from the log lines (rows per minute), not the "rows/s" the log prints.
+
+| Job | What | Rows done | Speed | Ends (estimate) |
+|---|---|---|---|---|
+| 1498397 | qwen-72 singles, plotinus2 | 6,921 of 24,780 | 0.76 rows/s | 11-14 ≈ 01:45 |
+| 1498400 | qwen-72 compounds, plotinus2 | 6,873 of 20,000 | 0.76 rows/s | ≈ 00:00 |
+| 1498398 | gemma-27 singles, plato2 | 733 of 24,780 | 1.74 rows/s | ≈ 23:05 |
+| 1498399 | olmo-32 singles, plato2 | 409 of 24,780 | 1.70 rows/s | ≈ 23:15 |
+| 1498401 | gemma-27 compounds, plato2 | waiting | | 11-14 ≈ 04:35 |
+| 1498402 | olmo-32 compounds, plato2 | waiting | | 11-14 ≈ 05:00 |
+
+- Download on plato2 took 2 h 27 min (gemma-27, 51 GB) and 2 h 33 min (olmo-32, 60 GB), as predicted.
+  The two compounds jobs will pay about the same again.
+- No job failed. `error.log` holds 4 to 10 lines each (download bars and notes only).
+- A run's `scores.csv` is written when the run ends, not row by row: 7 runs are complete so far
+  (qwen-72: `none` and 6 compounds).
+
 ## 2026-11-13 (evening, 2) — Cars main run launched (second attempt, running). First attempt: 24 of 24 jobs died, the RAM cache was wiped
 
 Lotan: "run the rest of the jobs, take the whole server."
@@ -43,6 +397,87 @@ Lotan: "run the rest of the jobs, take the whole server."
 - Launcher commits: `4fbecf9` (RAM caches — wrong), `df15bf7` (the fix; the header of
   `scripts/synthetic_cars_launch.sh` says why not `/dev/shm`).
 - **Open:** wait for the 24 jobs → `scripts/synthetic_cars_check_runs.py data/synthetic_cars` → stage 3.
+
+## 2026-11-13 (evening) — Real laptops batch: qwen-72 is scoring. plato2 downloads through a 100 Mb/s network card
+
+State at 16:54. End times are estimates.
+
+| Job | What | State | Speed | Ends (estimate) |
+|---|---|---|---|---|
+| 1498397 | qwen-72 singles, plotinus2 | 474 of 24,780 rows | 0.78 rows/s | 11-14 ≈ 01:35 |
+| 1498400 | qwen-72 compounds, plotinus2 | 470 of 20,000 rows | 0.78 rows/s | ≈ 23:55 |
+| 1498398 | gemma-27 singles, plato2 | downloading, 5.6 of ≈ 51 GB | 6 MB/s | scores from ≈ 19:00, ends ≈ 23:10 |
+| 1498399 | olmo-32 singles, plato2 | downloading, 6.1 of ≈ 60 GB | 7 MB/s | scores from ≈ 19:10, ends ≈ 23:50 |
+| 1498401 | gemma-27 compounds, plato2 | waiting | | 11-14 ≈ 04:00 |
+| 1498402 | olmo-32 compounds, plato2 | waiting | | 11-14 ≈ 05:30 |
+
+gemma-27 speed taken from job 1497200 (1.67 rows/s on plato2); olmo-32 guessed at 0.88 of that (the ratio
+measured on Heraclitus).
+
+**plato2's network card runs at 100 Mb/s** (`cat /sys/class/net/eno1/speed`); plotinus2's runs at 10,000.
+The disk is fine (480 MB/s write). So plato2 downloads ≈ 13 MB/s in total, shared by the jobs downloading
+at that moment:
+
+| Server | Model | Size | Download time |
+|---|---|---|---|
+| plotinus2 | qwen-72 | 136 GB | 6 min |
+| plato2 | gemma-27 + olmo-32 together | ≈ 110 GB | ≈ 2.5 h |
+
+This also explains job 1497200 (plato2, 11-12), which stood 51 min at 0%. Each job downloads its own copy,
+so the two compounds jobs pay it again: the batch ends ≈ 05:30 instead of ≈ 01:35. Left as it is — moving
+the two waiting jobs behind qwen-72 on plotinus2 would not end earlier.
+
+**A bug in the progress line (mine).** `Progress` in `data_collection.py` starts its clock before the model
+loads, so "rows/s" and "min left" include the loading time. qwen-72 prints 0.4 rows/s and 920 min left;
+the real numbers are 0.78 rows/s and ≈ 520 min. On plato2 it will be much further off. Not fixed now: two
+batches read that file at every job start. Fix when they end (start the clock at the first row).
+
+**Open:** tell the system administrator about plato2's network card; fix `Progress`.
+
+## 2026-11-13 (afternoon, 6) — Real laptops main batch launched again, on plato2 + plotinus2. The 13:35 launch had removed another user's job
+
+**Launched 16:35.** Only the six `-n real_laptops` lines of `slurms.sh` were sent — not
+`bash scripts/slurms.sh`, which also holds the 24 cars jobs.
+
+| Job | Model | Contracts | Prompts | Server | At 16:36 |
+|---|---|---|---|---|---|
+| 1498397 | qwen-72 | none + 6 singles | 24,780 | plotinus2 | running |
+| 1498398 | gemma-27 | none + 6 singles | 24,780 | plato2 | running |
+| 1498399 | olmo-32 | none + 6 singles | 24,780 | plato2 | running |
+| 1498400 | qwen-72 | 20 compounds | 20,000 | plotinus2 | running |
+| 1498401 | gemma-27 | 20 compounds | 20,000 | plato2 | waiting for 8 GPUs |
+| 1498402 | olmo-32 | 20 compounds | 20,000 | plato2 | waiting for 8 GPUs |
+
+**Why two servers and not all four.** Checked right before sending:
+
+| Server | GPUs free | CPUs free | A job with 8 GPUs + 32 CPUs |
+|---|---|---|---|
+| plato2 | 16 of 16 | 128 of 128 | fits, twice |
+| plotinus2 | 16 of 16 | 128 of 128 | fits, twice |
+| plato1 | 13 | 22 | removes a `public` job (CPUs) |
+| plotinus1 | 15 | 0 | removes a `public` job (CPUs) |
+
+`sbatch --test-only` on the six lines: no `Preempts`. It costs no time: on plato2 two jobs run and two
+wait, and qwen-72 on plotinus2 is the slowest part either way.
+
+**What the 13:35 launch did** (found now, with `sacct`). `'any'` let SLURM put jobs 1498186 and 1498187 on
+plato1. That removed job 1496080 (user C, `public`, 96 CPUs + 1 GPU) after it had run
+1 day 13 h 35 min. SLURM put it back in the queue and it started again at 13:37. The cause was CPUs, not
+GPUs — entry (afternoon, 4) below counts only GPUs. **Look at `CPUS(A/I/O/T)` in `sinfo` too.**
+
+**The env.** torch 2.9.1+cu128 tested on one GPU of each server before the launch (bf16 attention):
+plato2 (A4000, driver 595.58.03) and plotinus2 (L4, driver 595.91.07) both fine. All four running jobs
+passed the imports and see 8 GPUs.
+
+**Launcher.** In `create_slurms.py` the block is pinned (`'w'`: plato2 / plotinus2 — no block uses `'any'`
+now) and commented out as LAUNCHED, with the job ids. `slurms.sh` regenerated: it holds only the 24 cars
+lines, unchanged. Not committed — the same two files carry the uncommitted cars block.
+
+**Open.**
+- Watch: `tail -F data/real_laptops/14983*/output.log data/real_laptops/14984*/output.log`.
+- A free check when gemma-27 `none` lands: its 200 sanity pairs on template 0 were also scored by job
+  1497200 under torch 2.5.1. The margins should match.
+- Whether to tell the owner of job 1496080 — Lotan's call.
 
 ## 2026-11-13 (afternoon, 5) — Cars launch plan: right-sized jobs in chains on Heraclitus. The other servers do not help
 

@@ -174,18 +174,34 @@ survives a contract?
 18. **GRUM first simple test run** (2026-11-12, `scripts/grum_first_test.py`, numbers in progress 11-12):
     sample efficiency vs per-contract BT (full and feature), and zero-shot on 10 compound contracts, for
     qwen-72 / gemma-27 / olmo-32. Reported without interpretation; no decision taken.
-19. **Real laptops domain — stage 1 done, main runs queued, waiting for approval** (2026-11-13, progress
-    11-12 and 11-13). 60 real laptops, 27 contracts, design in `data/real_laptops/design/`. Template check
-    (job 1497200, gemma-27) reported in
-    [real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb): template 0 picks the
-    same laptop as the other four in 200 of 200 pairs (r = 0.997); the order decides in 23 of 200; more RAM
-    wins in 112 of 118. Checked on gemma only, no contract.
-    **Launch attempt 2026-11-13 13:35 failed, nothing collected:** all 6 jobs (1498182–87) died on
-    `import torch` — PyTorch was removed from the conda env `whatdo-llms-want` at 13:31 the same day (progress
-    11-13 afternoon). **No longer blocked: PyTorch is back since 13:44 (torch 2.9.1+cu128, point 21); on
-    plotinus2 it reproduces stored gemma-27 margins exactly.** To relaunch: `bash scripts/slurms.sh` on `newton`
-    (6 jobs = 3 models × 2: singles on all pairs, compounds on the 500 pairs; SLURM picks among plato1/2, and
-    plotinus1/2 for qwen-72). Stage 3 analysis script not written yet.
+19. **Real laptops domain — main batch LANDED 2026-11-14, complete and checked; first analysis done**
+    (progress 11-12 to 11-14). 60 real laptops, 27 contracts: none + 6 singles on all 1,770 pairs, 20
+    compounds on a fixed 500 pairs; both orders, template 0, frame `shopping`. Design in
+    `data/real_laptops/design/`.
+    **Data: `data/real_laptops/`, jobs 1498397–1498402 — 81 runs = 27 per model (qwen-72, gemma-27,
+    olmo-32), 44,780 rows per model.** `scripts/real_laptops_check_runs.py` finds no problem (rows, pair
+    sets, item features, scores). The folder also holds 12 log-only folders (no `config.json`) — skip them.
+    First numbers: where exactly one laptop meets the contract it wins in 93–99% of the pairs (40–47% with
+    no contract), at every depth, lowest cell 83%. With no contract the order decides in 11% / 27% / 29% of
+    the pairs (gemma / olmo / qwen), and the models agree with each other at r = 0.87–0.90.
+    Template check (stage 1, job 1497200, gemma-27):
+    [real_laptops_template_check.ipynb](../Notebooks/real_laptops_template_check.ipynb) — template 0 picks
+    the same laptop as the other four in 200 of 200 pairs. It holds under the new torch 2.9.1 (r = 0.99988
+    on the 400 shared rows, same winner 400 of 400).
+    **First analysis (2026-11-14, progress 11-14 afternoon):**
+    [real_laptops_trends.ipynb](../Notebooks/real_laptops_trends.ipynb) rebuilds the chosen `figs4nir` /
+    `figs4nir2` figures on this data. **The trends hold**: a contract pulls the laptops that meet it to the
+    top (mean rank 18–22 → 6, best possible 5.5), also for the least-liked `4GB`; RAM is the heaviest
+    feature; the slot decides 11–29% of pairs; saying more attributes moves the user's laptop from rank
+    23–26 to 1, and the order of saying matters (3–4 vs 10–12 after one attribute). **Two differences:**
+    adherence in conflict is 87–97%, not 100%; the additive brand+screen+RAM fit explains 77% of a
+    laptop's utility (97–99.6% on the synthetic set), 80–92% under a contract. Not done yet: GRUM on this
+    data, and anything with price / CPU as features.
+    **Open:** from the launch day (progress 11-13): the 13:35 launch removed another
+    user's job on plato1 (1496080, had run 1 day 13 h) — tell them?; plato2's network card runs at
+    100 Mb/s (a model takes 2.5 h to download there, 6 min on plotinus2) — tell the system administrator.
+    Fixed 11-14: the "min left" in `output.log` was too high (`Progress` started its clock before the model
+    loaded); the clock now starts at the first row.
     **Also open:** ~2 TB of old model caches in `/tmp/hf_*` on plato1 / plato2 / plotinus2 — delete?
 20. **Pipeline: one path, live logs** (2026-11-13, two progress entries). Every experiment, real laptops
     included, goes `create_slurms.py` → `slurms.sh` → `run_data_collection.sh` → `data_collection.py`;
@@ -193,7 +209,7 @@ survives a contract?
     several contracts per job (`-c "a;b"`), a pairs file (`-q`), items from a file, `--dry_run`. Logs are live
     in `data/<exp>/<job>/output.log` + `error.log`: `tail -F data/<exp>/<job>/*.log`. Tested with a fake
     model only — the next real job is the first real test.
-21. **Synthetic cars domain — stage 1 done, main run waits for approval; Heraclitus usable** (2026-11-13,
+21. **Synthetic cars domain — data collected, stage 3 numbers out, not interpreted yet** (2026-11-13,
     progress 11-13 afternoon, 2). 120 cars × 6 features, 28 contracts (none + 15 singles + 12 compounds on
     four tracks), design in `data/synthetic_cars/design/`, alias `synthetic_cars`, frame `car_shopping`.
     **The env now has torch 2.9.1+cu128** (was 2.5.1 / CUDA 12.4, which cannot run Heraclitus's Blackwell
@@ -201,13 +217,16 @@ survives a contract?
     0.50 / 0.16 / 0.77 (gemma-27 / olmo-32 / qwen-72), same winner 20 of 20; on plotinus2 the difference is 0.
     Template check (job 1498233, gemma-27): ρ = 0.845 (BT-full) / 0.912 (BT-feat), template 0 agrees with the
     other four in 198 of 200 pairs.
-    **MAIN RUN IS RUNNING since 11-13 17:41** (progress 11-13 evening, 2): 24 jobs = 3 models × 8,
-    248,292 prompts per model, jobs 1498495–1498520, on 5 GPUs of Heraclitus, expected to end about 00:20.
-    Sent with `bash scripts/synthetic_cars_launch.sh` (**never `bash scripts/slurms.sh`** for the cars).
+    **MAIN RUN DONE 11-14 00:25, STAGE 3 RUN** (progress 2026-11-14): 84 of 84 runs complete in
+    `data/synthetic_cars/` (28 per model, 248,292 prompts each; jobs 1498495–1498520). Numbers of parts A–G
+    are in `figs/synthetic_cars/` (11 CSVs, `fig1`–`fig5`), made by `scripts/synthetic_cars_analysis.py`;
+    the summary tables are in the progress entry. **Nothing was interpreted yet — that is the next step,
+    with Lotan.** Do not re-run the batch (the keys exist; it is commented out in `create_slurms.py`, and
+    `slurms.sh` holds no jobs since 11-15). To launch cars again: un-comment `*CARS_SETS`, regenerate, then
+    `bash scripts/synthetic_cars_launch.sh`, never `bash scripts/slurms.sh`.
     **The limit on Heraclitus is the 444 GB root disk that holds the model caches, not the GPUs**: at most
-    2 qwen-72 + 1 smaller job at once. A first attempt with the caches in `/dev/shm` lost all 24 jobs at
-    model load (job folders 1498452–1498475 hold logs only). Do not re-run the batch: check first with
-    `scripts/synthetic_cars_check_runs.py data/synthetic_cars`. Stage 3 analysis script not written yet.
+    2 qwen-72 + 1 smaller job at once. Job folders 1498452–1498475 hold logs only (a failed first attempt
+    with the caches in `/dev/shm`).
     One GPU goes to one job (no sharing in SLURM); gemma-27 and olmo-32 take 1 GPU, qwen-72 takes 2.
     **Pipeline test on Heraclitus passed** (progress 11-13 afternoon, 4): 3 models × 4 contracts × 400 rows,
     all complete; 13.9 / 12.2 / 6.8 prompts/s (gemma-27 / olmo-32 / qwen-72), so ≈ 5 / 6 / 10 h per model.
@@ -300,6 +319,16 @@ complete qwen-72B:** `brand=Apple`, `brand=Apple,screen=14-inch`, `brand=Apple,r
 `figs/metrics/table_compliance.csv` (one row per contract) and `table_consistency.csv` (one row per
 step), aligned + pretrained. Re-run it when new contract runs land.
 
+**Figures for Nir on the cars data (2026-11-14):** [figs4nir_cars.ipynb](../Notebooks/figs4nir_cars.ipynb), PNG + PDF in
+`figs/figs4nir_cars/` — the three `figs4nir2` figures redone on `data/synthetic_cars/`: A: Δ weights under each
+track's full contract, B: contract paths (rank of the track's best target car after 0–4 requests), C: coherence /
+sharpness / agreement by the feature asked for. Mapping choices and numbers: progress 2026-11-14 (afternoon, 2).
+The ranking graphs of `real_laptops_trends` on the cars: [synthetic_cars_trends.ipynb](../Notebooks/synthetic_cars_trends.ipynb),
+`figs/synthetic_cars_trends/` (F1c, F2c, F4c; progress 2026-11-14 afternoon, 3; F12c feature weights with no
+contract and F13c colour order across contracts; progress 2026-11-15).
+**Careful with BT-feat on a compound cars run: use the 500 shared pairs only.** The rows with the target cars
+(40% of a compound run) make the fit credit the targets' other features, their colour above all (progress 2026-11-15).
+
 **Figures for Nir, batch 2 (2026-10-14):** [figs4nir2.ipynb](../Notebooks/figs4nir2.ipynb), PNG + PDF in
 `figs/figs4nir2/` — A: persona Δ weights (`student_only` vs `editor`), B: contract paths (User #1 qwen-72B + User #3
 qwen-32B), C: simple-domains summary (coherence / intrinsic sharpness / agreement, 6 domains, all 12 models). Open:
@@ -334,7 +363,8 @@ personas (`no_money`, `windows`) on gemma-27B and olmo-32B, 4 jobs, so it is not
 **The 28-job base-model batch has landed** (31 of 32 runs). `slurms.sh` still holds it and
 should be regenerated before the next launch.
 
-**Queued now in `scripts/slurms.sh` (2026-11-13): the 6 real-laptops jobs** — see section 2 point 19.
+**Landed 2026-11-14: the 6 real-laptops jobs (1498397–1498402), 81 of 81 runs** — see section 2 point 19.
+They are no longer in `scripts/slurms.sh`; it holds only the 24 synthetic-cars jobs (point 21).
 
 *Queued back then, landed since — 27 jobs:*
 
