@@ -1,0 +1,13 @@
+model,track,k=0,k=1,k=2,k=3,k=4,alone: automatic,alone: BMW,alone: 200 hp,alone: black,alone: petrol,alone: manual,alone: 100 hp,alone: Honda,alone: private first owner,alone: Toyota,alone: white,alone: diesel,alone: 150 hp,alone: Ford,alone: ex-lease
+qwen-72B,luxury,9,7,2,2,1,7.0,3.0,11.0,1.0,,,,,,,,,,,
+qwen-72B,economy,66,35,16,1,1,,,,,35.0,28.0,1.0,10.0,,,,,,,
+qwen-72B,family,5,8,3,1,1,8.0,,,,,,,,5.0,1.0,1.0,,,,
+qwen-72B,work,70,35,14,2,1,,,,,,,,,,,,35.0,35.0,10.0,13.0
+gemma-27B,luxury,10,7,2,2,1,7.0,3.0,19.0,2.0,,,,,,,,,,,
+gemma-27B,economy,68,34,17,1,1,,,,,34.0,32.0,2.0,10.0,,,,,,,
+gemma-27B,family,4,3,2,1,1,3.0,,,,,,,,3.0,1.0,1.0,,,,
+gemma-27B,work,59,28,9,1,1,,,,,,,,,,,,28.0,22.0,8.0,13.0
+olmo-32B,luxury,18,13,2,2,1,13.0,3.0,10.0,1.0,,,,,,,,,,,
+olmo-32B,economy,25,19,9,1,1,,,,,19.0,10.0,3.0,4.0,,,,,,,
+olmo-32B,family,4,7,5,1,1,7.0,,,,,,,,6.0,1.0,3.0,,,,
+olmo-32B,work,89,41,13,2,1,,,,,,,,,,,,41.0,33.0,12.0,21.0
