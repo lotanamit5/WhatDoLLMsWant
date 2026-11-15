@@ -8,6 +8,31 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-15 (2) — Commit ids changed before the push: how to read `git_commit` in `config.json`
+
+The GitHub repo is public. `docs/progress.md` held the cluster logins of three other users (their jobs were
+removed on 11-13) in commits that were not pushed yet. Lotan: replace the names, then push.
+
+- The 15 unpushed commits were rewritten. Only `docs/progress.md` differs: the logins now read user A / B / C.
+  The code and the data in every commit are the same as before.
+- **Their ids changed. `data/` was not touched, so `config.json` still holds the OLD ids**, and so do the
+  older entries of this file. Same commit, new id:
+
+  | id in `config.json` and in older entries | id on GitHub | commit | runs that record the old id |
+  |---|---|---|---|
+  | `eaf1c24` | `9203149` | cars: pipeline test on Heraclitus | 12 (`synthetic_cars_pipeline_test`) |
+  | `f1958fb` | `c525743` | cars: main batch and launcher | 3 `real_laptops`, 2 `synthetic_cars_pipeline_test` |
+  | `4fbecf9` | `5aa4891` | cars launcher: stacked plan, `/dev/shm` | 1 `real_laptops` |
+  | `df15bf7` | `6c61a92` | cars launcher: caches back in `/tmp` | 3 `synthetic_cars` |
+  | `3d99ef6` | `8994b3f` | docs: cars main run launched | 2 `real_laptops`, 1 `synthetic_cars` |
+  | `624ff6a` | `141a9fb` | cars: stage 3 analysis script | 80 `synthetic_cars`, 75 `real_laptops` |
+
+  Ids up to `01350b5` are unchanged. The nine commits made on 11-15 were rewritten too, but nothing refers to
+  their old ids.
+- **Rule from now on: no other person's login in the docs or in code comments.** Write "another user".
+- A local branch `local-backup-with-names-DO-NOT-PUSH` still holds the old commits. It must never be pushed;
+  delete it when it is no longer needed.
+
 ## 2026-11-15 — Synthetic cars: the starting weights (F12c) and what happens to the colour order (F13c). Figure A corrected
 
 Lotan: (1) the weights of every feature per model with no contract; (2) does the colour order of "no contract"

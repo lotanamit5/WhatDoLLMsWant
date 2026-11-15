@@ -224,6 +224,8 @@ survives a contract?
     with Lotan.** Do not re-run the batch (the keys exist; it is commented out in `create_slurms.py`, and
     `slurms.sh` holds no jobs since 11-15). To launch cars again: un-comment `*CARS_SETS`, regenerate, then
     `bash scripts/synthetic_cars_launch.sh`, never `bash scripts/slurms.sh`.
+    **`git_commit` in the `config.json` of these runs (and of the real laptops) holds ids that were rewritten
+    before the push on 11-15** (`624ff6a` is `141a9fb` on GitHub, and five more): table in progress 2026-11-15 (2).
     **The limit on Heraclitus is the 444 GB root disk that holds the model caches, not the GPUs**: at most
     2 qwen-72 + 1 smaller job at once. Job folders 1498452–1498475 hold logs only (a failed first attempt
     with the caches in `/dev/shm`).
