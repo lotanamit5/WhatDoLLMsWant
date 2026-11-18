@@ -82,6 +82,28 @@ def synthetic_cars():
 ALTERNATIVES_ALIASES['synthetic_cars'] = synthetic_cars
 
 
+def _real_laptops_45(named):
+    """45 real laptops, 9 per brand (2026-11-18), from Lotan's file data/real_laptops_45/design/real_laptops_45.csv,
+    used as it is. Two domains that differ ONLY in the prompt line:
+        named   "Dell Latitude 5480: 14-inch, 8GB RAM, 256GB SSD, Intel Core i5"
+        hidden  "Dell, 14-inch, 8GB RAM, 256GB SSD, Intel Core i5"
+    The screen is written as in the file (13.3-inch, 15.6-inch; 14.0 -> 14-inch). No price. The same columns
+    go to scores.csv in both (model_name included, so the two can be joined by id)."""
+    df = pd.read_csv(os.path.join(ROOT, "data", "real_laptops_45", "design", "real_laptops_45.csv"))
+    items = []
+    for r in df.itertuples():
+        screen = f"{r.screen_inches:g}-inch"
+        specs = f"{screen}, {r.ram} RAM, {r.storage}, {r.processor}"
+        text = f"{r.brand} {r.model_name}: {specs}" if named else f"{r.brand}, {specs}"
+        items.append({'id': r.item_id, 'brand': r.brand, 'model_name': r.model_name, 'screen': screen,
+                      'ram': r.ram, 'storage': r.storage, 'processor': r.processor, 'text': text})
+    return items
+
+
+ALTERNATIVES_ALIASES['real_laptops_45_named'] = lambda: _real_laptops_45(named=True)
+ALTERNATIVES_ALIASES['real_laptops_45_hidden'] = lambda: _real_laptops_45(named=False)
+
+
 def load_items(alias):
     items = ALTERNATIVES_ALIASES[alias]
     return items() if callable(items) else items

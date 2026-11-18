@@ -97,6 +97,17 @@ BOOK_CONTRACTS = ['', 'fantasy=yes', 'mystery-thriller=yes', 'romance=yes', 'cla
 # cross (qwen has no 1B, gemma has no 0.5B), and because the bare-frame batch varies
 # a different flag. Everything is a plain product inside each dict.
 parameter_sets = [
+    # --- 2026-11-18: REAL LAPTOPS 45, base preferences (no contract). 6 jobs = 3 models x 2 experiments.
+    # Lotan's 45 laptops (data/real_laptops_45/design/), 9 per brand, no price. Two separate domains and folders:
+    #   A real_laptops_45_named   "Dell Latitude 5480: 14-inch, 8GB RAM, 256GB SSD, Intel Core i5"
+    #   B real_laptops_45_hidden  "Dell, 14-inch, 8GB RAM, 256GB SSD, Intel Core i5"
+    # Same design as the no-contract run of the synthetic grid: frame `shopping`, all 1,980 ordered pairs,
+    # the first 5 templates = 9,900 prompts per run. All on Heraclitus, sent by hand with --gres
+    # (qwen-72 2 GPUs, the others 1) and -c 8, like the cars launcher.
+    *[{'m': [_m], 's': [_s], 'a': [_a], 'c': [''], 't': ['5'], 'n': [_a], 'w': [['heraclitus']]}
+      for _m, _s in [('qwen', '72'), ('gemma', '27'), ('olmo', '32')]
+      for _a in ['real_laptops_45_named', 'real_laptops_45_hidden']],
+
     # --- 2026-11-13: SYNTHETIC CARS, the main runs. 24 jobs = 3 models x 8 jobs, all on Heraclitus.
     # DONE 2026-11-14: sent 11-13 17:37 with scripts/synthetic_cars_launch.sh as jobs 1498495-1498520, all 84
     # runs landed (28 per model, data/synthetic_cars/). Do not re-run: it would duplicate every key.

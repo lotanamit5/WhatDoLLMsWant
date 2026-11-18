@@ -1,0 +1,46 @@
+item_id,brand,model_name,screen_inches,ram,storage,processor,source_laptop_id,source_product,source_cpu
+L01,ASUS,Zenbook Flip,13.3,16GB,512GB SSD,Intel Core i7,390,Zenbook Flip,Intel Core i7 7500U 2.7GHz
+L02,ASUS,ZenBook UX310UQ-GL026T,13.3,8GB,512GB SSD,Intel Core i5,857,ZenBook UX310UQ-GL026T,Intel Core i5 6200U 2.3GHz
+L03,ASUS,ZenBook UX430UN,14.0,16GB,512GB SSD,Intel Core i7,9,ZenBook UX430UN,Intel Core i7 8550U 1.8GHz
+L04,ASUS,VivoBook E403NA,14.0,4GB,32GB Flash Storage,Intel Celeron,384,VivoBook E403NA,Intel Celeron Dual Core N3350 1.1GHz
+L05,ASUS,Zenbook UX410UA-GV027T,14.0,8GB,256GB SSD,Intel Core i5,367,Zenbook UX410UA-GV027T,Intel Core i5 7200U 2.5GHz
+L06,ASUS,VivoBook S15,15.6,16GB,256GB SSD + 1TB HDD,Intel Core i7,113,VivoBook S15,Intel Core i7 8550U 1.8GHz
+L07,ASUS,X540SA-RBPDN09,15.6,4GB,1TB HDD,Intel Pentium,1243,X540SA-RBPDN09 (N3710/4GB/1TB/W10),Intel Pentium Quad Core N3710 1.6GHz
+L08,ASUS,Zenbook UX510UW-FI095T,15.6,8GB,256GB SSD + 1TB HDD,Intel Core i7,539,Zenbook UX510UW-FI095T,Intel Core i7 7500U 2.7GHz
+L09,ASUS,Rog Strix,17.3,16GB,256GB SSD + 1TB HDD,AMD Ryzen,378,Rog Strix,AMD Ryzen 1700 3GHz
+L10,Apple,MacBook Air,11.6,4GB,256GB Flash Storage,Intel Core i5,1252,MacBook Air,Intel Core i5 1.6GHz
+L11,Apple,"MacBook 12""",12.0,8GB,256GB Flash Storage,Intel Core M,1084,"MacBook 12""",Intel Core M 1.1GHz
+L12,Apple,"MacBook 12""",12.0,8GB,512GB Flash Storage,Intel Core M,1228,"MacBook 12""",Intel Core M 1.2GHz
+L13,Apple,"MacBook 12""",12.0,8GB,512GB SSD,Intel Core i5,83,"MacBook 12""",Intel Core i5 1.3GHz
+L14,Apple,MacBook Air,13.3,8GB,128GB Flash Storage,Intel Core i5,2,Macbook Air,Intel Core i5 1.8GHz
+L15,Apple,MacBook Pro,13.3,8GB,256GB SSD,Intel Core i5,46,MacBook Pro,Intel Core i5 2.0GHz
+L16,Apple,MacBook Pro,13.3,8GB,512GB SSD,Intel Core i5,254,MacBook Pro,Intel Core i5 3.1GHz
+L17,Apple,MacBook Pro,15.4,16GB,256GB Flash Storage,Intel Core i7,7,MacBook Pro,Intel Core i7 2.2GHz
+L18,Apple,MacBook Pro,15.4,16GB,512GB SSD,Intel Core i7,18,MacBook Pro,Intel Core i7 2.9GHz
+L19,Dell,Inspiron 5379,13.3,16GB,512GB SSD,Intel Core i7,224,Inspiron 5379,Intel Core i7 8550U 1.8GHz
+L20,Dell,Latitude 3380,13.3,4GB,500GB HDD,Intel Core i3,773,Latitude 3380,Intel Core i3 6006U 2GHz
+L21,Dell,Inspiron 5368,13.3,8GB,1TB HDD,Intel Core i5,869,Inspiron 5368,Intel Core i5 6200U 2.3GHz
+L22,Dell,Vostro 5468,14.0,4GB,128GB SSD,Intel Core i3,548,Vostro 5468,Intel Core i3 6006U 2GHz
+L23,Dell,Latitude 5480,14.0,8GB,256GB SSD,Intel Core i5,529,Latitude 5480,Intel Core i5 7300U 2.6GHz
+L24,Dell,Inspiron 7567,15.6,16GB,128GB SSD + 1TB HDD,Intel Core i7,932,Inspiron 7567,Intel Core i7 7700HQ 2.8GHz
+L25,Dell,Inspiron 3552,15.6,4GB,500GB HDD,Intel Pentium,1105,Inspiron 3552,Intel Pentium Quad Core N3700 1.6GHz
+L26,Dell,Precision 3520,15.6,8GB,64GB Flash Storage + 1TB HDD,Intel Xeon,454,Precision 3520,Intel Xeon E3-1505M V6 3GHz
+L27,Dell,Alienware 17,17.3,16GB,256GB SSD + 1TB HDD,Intel Core i7,229,Alienware 17,Intel Core i7 7700HQ 2.8GHz
+L28,HP,EliteBook 1030,13.3,16GB,512GB SSD,Intel Core M,569,EliteBook 1030,Intel Core M 6Y75 1.2GHz
+L29,HP,ProBook 430,13.3,4GB,500GB HDD,Intel Core i5,253,ProBook 430,Intel Core i5 8250U 1.6GHz
+L30,HP,Spectre X360,13.3,8GB,256GB SSD,Intel Core i7,528,Spectre X360,Intel Core i7 7500U 2.7GHz
+L31,HP,Stream 14-AX040wm,14.0,4GB,32GB SSD,Intel Celeron,69,Stream 14-AX040wm,Intel Celeron Dual Core N3060 1.6GHz
+L32,HP,EliteBook 840,14.0,8GB,1TB SSD,Intel Core i7,504,EliteBook 840,Intel Core i7 7600U 2.8GHz
+L33,HP,ProBook 450,15.6,16GB,512GB SSD,Intel Core i7,1189,ProBook 450,Intel Core i7 8550U 1.8GHz
+L34,HP,ProBook 440,15.6,4GB,128GB SSD,Intel Core i3,530,ProBook 440,Intel Core i3 6006U 2GHz
+L35,HP,EliteBook 850,15.6,8GB,256GB SSD + 500GB HDD,Intel Core i5,1059,EliteBook 850,Intel Core i5 6300U 2.4GHz
+L36,HP,Zbook 17,17.3,16GB,256GB SSD,Intel Xeon,758,Zbook 17,Intel Xeon E3-1535M v5 2.9GHz
+L37,Lenovo,Yoga 900-13ISK,13.3,16GB,1TB SSD,Intel Core i7,947,Yoga 900-13ISK,Intel Core i7 6560U 2.2GHz
+L38,Lenovo,Ideapad 510S-13IKB,13.3,4GB,128GB SSD,Intel Core i3,392,Ideapad 510S-13IKB,Intel Core i3 7100U 2.4GHz
+L39,Lenovo,ThinkPad Yoga,13.3,8GB,512GB SSD,Intel Core i7,603,ThinkPad Yoga,Intel Core i7 7500U 2.7GHz
+L40,Lenovo,Thinkpad Yoga,14.0,16GB,1TB SSD,Intel Core i7,194,Thinkpad Yoga,Intel Core i7 7500U 2.7GHz
+L41,Lenovo,IdeaPad 120S-14IAP,14.0,4GB,32GB Flash Storage,Intel Celeron,331,IdeaPad 120S-14IAP,Intel Celeron Dual Core N3350 1.1GHz
+L42,Lenovo,ThinkPad X1,14.0,8GB,256GB Flash Storage,Intel Core i5,833,ThinkPad X1,Intel Core i5 7200U 2.5GHz
+L43,Lenovo,IdeaPad Y700-15ACZ,15.6,16GB,512GB SSD + 1TB HDD,AMD FX,959,IdeaPad Y700-15ACZ,AMD FX 8800P 2.1GHz
+L44,Lenovo,IdeaPad 320-15IAP,15.6,4GB,1TB HDD,Intel Pentium,944,IdeaPad 320-15IAP,Intel Pentium Quad Core N4200 1.1GHz
+L45,Lenovo,Legion Y520-15IKBN,15.6,8GB,128GB SSD + 1TB HDD,Intel Core i5,1143,Legion Y520-15IKBN,Intel Core i5 7300HQ 2.5GHz
