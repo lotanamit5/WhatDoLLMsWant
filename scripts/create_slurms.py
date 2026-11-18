@@ -104,9 +104,10 @@ parameter_sets = [
     # Same design as the no-contract run of the synthetic grid: frame `shopping`, all 1,980 ordered pairs,
     # the first 5 templates = 9,900 prompts per run. All on Heraclitus, sent by hand with --gres
     # (qwen-72 2 GPUs, the others 1) and -c 8, like the cars launcher.
-    *[{'m': [_m], 's': [_s], 'a': [_a], 'c': [''], 't': ['5'], 'n': [_a], 'w': [['heraclitus']]}
-      for _m, _s in [('qwen', '72'), ('gemma', '27'), ('olmo', '32')]
-      for _a in ['real_laptops_45_named', 'real_laptops_45_hidden']],
+    # DONE 2026-11-18: jobs 1504140-1504145, all 6 runs landed. Do not re-run: it would duplicate every key.
+    # *[{'m': [_m], 's': [_s], 'a': [_a], 'c': [''], 't': ['5'], 'n': [_a], 'w': [['heraclitus']]}
+    #   for _m, _s in [('qwen', '72'), ('gemma', '27'), ('olmo', '32')]
+    #   for _a in ['real_laptops_45_named', 'real_laptops_45_hidden']],
 
     # --- 2026-11-13: SYNTHETIC CARS, the main runs. 24 jobs = 3 models x 8 jobs, all on Heraclitus.
     # DONE 2026-11-14: sent 11-13 17:37 with scripts/synthetic_cars_launch.sh as jobs 1498495-1498520, all 84
