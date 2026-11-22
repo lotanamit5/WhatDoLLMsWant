@@ -8,6 +8,107 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-17 (4) — Adherence figure: bar height = Δp, qwen-32B instead of qwen-72B
+
+Lotan: in `figs4deck5_big3` Fig 5.5 D, make Δp the bar height, swap qwen-72B for qwen-32B, drop the sizes from the
+panel titles. Now: grey = Δp on the agree pairs, coloured = Δp on the conflict pairs, red tick = Δp on the same
+conflict pairs with no contract; y from −1 to 1, dashed 0 = coin flip. The Apple figure is unchanged (still qwen-72B).
+qwen-32B's C = 2.25; its win rate / g / κ match `figs4deck5_fix` (RAM 17.33%, g₁ −2.56, κ 0.91).
+
+| | Δp before → under the contract, screen | same, RAM | Δp agree (screen / RAM) |
+|---|---|---|---|
+| qwen-32B | −0.66 → 1.00 | −1.00 → **−0.03** | 1.00 / 1.00 |
+| gemma-27B | −1.00 → 1.00 | −1.00 → 0.72 | 1.00 / 1.00 |
+| olmo-32B | −0.21 → 0.99 | −0.98 → 0.75 | 0.98 / 1.00 |
+
+- qwen-32B under the RAM contract is a **coin flip** (Δp −0.03): it moves all the way from −1.00 to 0 and stops there.
+  That is the near-miss of status point 2 seen in probability.
+
+## 2026-11-17 (3) — Laptops: obeying a RAM contract is less sure than a screen one (big three)
+
+Lotan: on the adherence figure, print the mean gap between P(contract laptop) and P(the laptop the model prefers),
+to see if RAM is harder to obey. Added to `Notebooks/figs4deck5_big3.ipynb` (Fig 5.5 D): two numbers above each
+conflict bar, and a `dp` column in the table.
+
+- **Δp** = mean over the 150 conflict prompts (75 pairs x both slot orders) of P(contract) − P(preferred), the two
+  answer probabilities normalised to sum to 1, PMI offset C added back (qwen-72 C = 5.62, gemma-27 5.24, olmo-32 0.00
+  — olmo was collected with PMI off). Per prompt, **not** position-corrected.
+- Position-corrected (from D) the probability gap is ~1.00 everywhere: saturated, useless. The per-prompt one is not.
+
+  | | Δp screen | Δp RAM | log-odds (g₁) screen | log-odds RAM |
+  |---|---|---|---|---|
+  | qwen-72B | 1.00 | 0.99 | 21.2 | 13.0 |
+  | gemma-27B | 1.00 | **0.72** | 22.8 | 12.1 |
+  | olmo-32B | 0.99 | **0.75** | 7.8 | 4.1 |
+
+- **RAM is harder in all three:** the log-odds margin under a RAM contract is about **half** the screen one
+  (0.61 / 0.53 / 0.52 of it). In probability it shows only for gemma-27 and olmo-32; qwen-72 stays saturated.
+- **The drop is all in one slot order.** With the contract laptop in slot A: Δp RAM = 0.44 (gemma-27), 0.49
+  (olmo-32), 0.99 (qwen-72); in slot B it is ≥ 0.997 for all. So the smaller RAM margin is small enough for the slot
+  bias to eat into it. On 21/150 prompts (gemma-27) and 3/150 (olmo-32) the model actually prefers the 16GB laptop —
+  the position-corrected win rate is still 100%, because the other order outweighs it.
+
+## 2026-11-17 (2) — Laptops: Apple decay + adherence split for the three big models
+
+Lotan: the deck-5 Apple-decay figure and the screen-vs-RAM adherence figure, as three panels for qwen-72B /
+gemma-27B / olmo-32B. Both come from `figs4deck5_fix` (Fig 6.2 `s06_brand_trajectories`, Fig 5.5 D
+`s05_adherence_D_split`); same code and style. New notebook `Notebooks/figs4deck5_big3.ipynb`, `figs/deck5_big3/`
+(PNG + PDF). Runs: none / `screen=14-inch` / `ram=8GB` / `ram=8GB+screen=14-inch`, frame `shopping`, 12 runs.
+qwen-72 and gemma-27 reproduce the `figs4deck5_fix` numbers exactly.
+
+- **The adherence image Lotan had is the old, wrong version** (pre-2026-08-12 `sign(margin)`, corrupted by PMI +
+  slot bias — e.g. qwen-72 RAM conflict 87%, free bars below 100). The new figure uses the corrected `D` code.
+- **Apple decay** (Apple brand weight none → 14in → 8GB → 14in+8GB, and rank among 5 brands):
+
+  | | weight | rank | swing |
+  |---|---|---|---|
+  | qwen-72B | 1.95 → −0.38 → −1.73 → −1.73 | 1 → 5 → 5 → 5 | 3.68 |
+  | gemma-27B | 2.74 → −0.52 → −1.36 → −1.87 | 1 → 4 → 5 → 5 | 4.60 |
+  | olmo-32B | −0.13 → −0.67 → −1.28 → −1.28 | 4 → 5 → 5 → 5 | 1.16 |
+
+- **Adherence (conflict direction):** all three models win **100%** of the 75 conflict pairs on both screen and RAM,
+  and 100% of the agree pairs. Before the contract: 0% everywhere, except olmo-32 screen 21.3%.
+  κ: qwen-72 3.72 / 1.64, gemma-27 2.34 / 1.53, olmo-32 15.87 / 1.79 (screen / RAM). olmo-32's screen κ is large only
+  because its no-contract screen gap is tiny (g₀ = −0.52), so it means little. **For the big three the bar figure is
+  flat — every bar is at 100; only κ separates them.**
+
+## 2026-11-17 — Laptops: the same weights figure for every contract of the three big models
+
+Lotan: the `baseline_weights_big3` figure, but for the contracts instead of "no contract", synthetic laptops only.
+New notebook `Notebooks/contract_weights_big3.ipynb`; `figs/contract_weights_big3/` (one `<constraints_id>.png` /
+`.pdf` per contract, `contract_weights.csv`). Same style; the asked-for levels are bold on the x-axis, and a model
+that never ran a contract gets an empty "not run" panel so each model keeps its slot.
+
+- Runs: frame `shopping`, 9,900 rows each, from `laptops_robustness`, `laptops_robustness_gemma` (gemma-27's
+  contracts are split over both) and `laptops_olmo`. **15 contracts, 33 runs**: qwen-72 12, gemma-27 12, olmo-32 9.
+  All three models ran only 8 of them: the 8 single-feature contracts except `brand=Apple` (no qwen-72), plus
+  `ram=8GB+screen=14-inch`.
+- **Check:** the asked-for level becomes the top level of its feature in **32 of 33** runs (every level of every
+  multi-feature contract too). The one exception: qwen-72 under `ram=4GB+screen=14-inch` — 14" is top, but **8GB stays
+  above 4GB**.
+- Under a single brand contract (Apple / Dell), the screen range falls to 15–32% of its no-contract value in
+  qwen-72 / gemma-27 (gemma-27 under Apple: 6.78 → 1.05), and the RAM range to 40–49% in all three models.
+
+## 2026-11-15 (4) — Laptops: the no-contract BT weights of the three big models, one figure
+
+Lotan: a bar plot of the baseline weights for the biggest model of each family, in the style of figure A of
+`figs4nir2`. New notebook `Notebooks/baseline_weights_big3.ipynb`; `figs/baseline_weights_big3/`
+(`baseline_weights_big3.png` / `.pdf`, `baseline_weights.csv`). No new finding, the numbers are the known ones.
+
+- Runs (no contract, frame `shopping`, 9,900 rows each): qwen-72 `laptops_robustness/1271581`, gemma-27
+  `laptops_robustness_gemma/68378741`, olmo-32 `laptops_olmo/1319097`.
+- Each panel has its own y-axis (the weight scale is not comparable between models, status point 10).
+
+  | | qwen-72B | gemma-27B | olmo-32B |
+  |---|---|---|---|
+  | ASUS / Apple / Dell / HP / Lenovo | −0.33 / 1.95 / 0.16 / −0.90 / −0.89 | 0.18 / 2.74 / −0.98 / −2.14 / 0.19 | 0.14 / −0.13 / 0.16 / −0.13 / −0.03 |
+  | 13" / 14" / 16" | −2.16 / 0.07 / 2.09 | −3.21 / −0.37 / 3.57 | −0.27 / 0.06 / 0.21 |
+  | 4GB / 8GB / 16GB | −13.10 / 0.82 / 12.29 | −15.75 / 0.57 / 15.18 | −4.68 / 0.86 / 3.82 |
+  | range brand / screen / ram | 2.84 / 4.26 / 25.39 | 4.88 / 6.78 / 30.93 | 0.29 / 0.49 / 8.49 |
+  | R² | 0.86 | 0.79 | 0.91 |
+
+- RAM is 73–92% of the total spread, so the brand and screen bars are small in the figure (almost flat for olmo-32).
+
 ## 2026-11-15 (3) — Synthetic cars: the company order across contracts (F14c)
 
 Lotan: the F13c figure for the car's company — maybe the order is more stable there. Added to

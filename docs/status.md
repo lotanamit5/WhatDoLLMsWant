@@ -321,6 +321,15 @@ complete qwen-72B:** `brand=Apple`, `brand=Apple,screen=14-inch`, `brand=Apple,r
 `figs/metrics/table_compliance.csv` (one row per contract) and `table_consistency.csv` (one row per
 step), aligned + pretrained. Re-run it when new contract runs land.
 
+**Baseline weights figure (2026-11-15):** [baseline_weights_big3.ipynb](../Notebooks/baseline_weights_big3.ipynb),
+`figs/baseline_weights_big3/` — the no-contract BT weights of qwen-72B / gemma-27B / olmo-32B on the 45 laptops,
+one panel per model, in the style of `figs4nir2` figure A (progress 2026-11-15 (4)).
+The same figure for every contract (15 contracts, 33 runs): [contract_weights_big3.ipynb](../Notebooks/contract_weights_big3.ipynb),
+`figs/contract_weights_big3/<constraints_id>.png` (progress 2026-11-17).
+Deck 5 Fig 6.2 (Apple decay; qwen-72B / gemma-27B / olmo-32B) and Fig 5.5 D (adherence split, bar height = Δp;
+qwen-32B / gemma-27B / olmo-32B), one panel per model:
+[figs4deck5_big3.ipynb](../Notebooks/figs4deck5_big3.ipynb), `figs/deck5_big3/` (progress 2026-11-17 (2)).
+
 **Figures for Nir on the cars data (2026-11-14):** [figs4nir_cars.ipynb](../Notebooks/figs4nir_cars.ipynb), PNG + PDF in
 `figs/figs4nir_cars/` — the three `figs4nir2` figures redone on `data/synthetic_cars/`: A: Δ weights under each
 track's full contract, B: contract paths (rank of the track's best target car after 0–4 requests), C: coherence /
