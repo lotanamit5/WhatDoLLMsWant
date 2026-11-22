@@ -8,6 +8,91 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-18 (4) — Cars: the company order along contract paths that never mention the company
+
+Lotan: part 2 of `synthetic_cars_big3` should show paths without a company request — is the model consistent with its
+own company order when conditioned on other features? Part 2 now uses the tracks cut before their company step:
+economy none → petrol → + manual → + 100 hp; family none → automatic → + 1st owner; work none → diesel → + 150 hp
+(luxury left out: only none → automatic, the start of family). Every point on the 500 shared pairs; under a contract
+the fit adds "how many requests the car meets" (as F14c), because the cars that meet a compound are unbalanced by
+company (2 of 30 petrol + manual cars are Audi). `figs/synthetic_cars_big3/company_lines/`, `company_lines.csv`.
+
+- **Spearman of the 6 company weights with the no-contract ones** (same pairs):
+
+  | contract | qwen-72 | gemma-27 | olmo-32 |
+  |---|---|---|---|
+  | petrol / + manual / + 100 hp | 0.77 / 0.31 / −0.26 | −0.20 / −0.43 / 0.09 | 0.77 / 0.43 / 0.31 |
+  | automatic / + 1st owner | 0.49 / 0.89 | 0.77 / 0.37 | 0.94 / 0.71 |
+  | diesel / + 150 hp | 0.43 / 0.37 | 0.03 / 0.09 | −0.14 / −0.37 |
+
+- Toyota is the top company with no contract in all three models; it stays on top at 1 / 1 / 3 of the 7 contract
+  points (qwen / gemma / olmo). Under `diesel` the top becomes Mercedes (qwen, gemma) or BMW (olmo).
+- Limits: the company range with no contract is small on these pairs (1.44 / 2.68 / 1.15 log-odds), each fit has
+  1,000 rows, and no interval was computed, so differences of a few tenths may be noise. F14c of
+  `synthetic_cars_trends` asks the same on all 11 company-free single contracts with all pairs.
+
+## 2026-11-18 (3) — The new-datasets notebook is cars only; a second real-laptops experiment was never run
+
+- Lotan asked whether we ran two real-laptops experiments (one with prices, one without prices and with Apple).
+  **Only one exists:** `data/real_laptops/` — the price is in every item's text, and none of the 60 laptops is an
+  Apple (the Kaggle table has 21 Apple of 1,275; the 36 random draws picked none). No design, script, data folder or
+  commit of a no-price / Apple version, on any branch. Added to `status.md` as open.
+- Lotan: take the laptops out of the notebook, keep the cars. `real_laptops_cars_big3.ipynb` → renamed
+  **`Notebooks/synthetic_cars_big3.ipynb`**, figures in `figs/synthetic_cars_big3/`; the old notebook and
+  `figs/real_laptops_cars_big3/` are deleted. The cars numbers are unchanged. The real-laptop numbers of 11-18 and
+  11-18 (2) stay in this log only. `scripts/goodness_of_fit.py` still covers both datasets; the notebook shows its
+  cars rows.
+
+## 2026-11-18 (2) — Real laptops: raw levels instead of bins (corrects the entry below)
+
+Lotan: why bin? Show the BT weights of the raw levels. Done in `real_laptops_cars_big3.ipynb` (parts 1 and 2) and
+in `scripts/goodness_of_fit.py` (M1); outputs overwritten. 19 raw levels. Tick labels carry the number of laptops
+with the level: 6 levels rest on one or two laptops (10.1", 13.3", 18.4", 2GB, 12GB, 32GB), so their weight is that
+laptop's whole preference. **The MSI GT80S is the only 18.4" and the only 32GB: the two columns are identical, the
+fit cannot split them** (pseudo-inverse gives each half); those bars are hatched. Brand lines now show MSI (3) and
+Acer (2) instead of "other".
+
+- New numbers (M1 only; M2, test (ii), adherence unchanged): additive R² on the rows, median over the 27 contracts,
+  0.81 / 0.76 / 0.79 (qwen / gemma / olmo; binned 0.79 / 0.73 / 0.75). Goodness of fit, laptop template-check run:
+  F (iii) 90.6 (was 103.5), F (i) 398.0 (was 461.6), R² cell M1 0.63 (was 0.57), misfit RMSE M1 10.7 (was 11.5),
+  ρ M1 0.95; still p < 0.001. Main laptop runs, median R² cell M1 0.81 / 0.76 / 0.79; (i) rejected 27/27 per model.
+- Visible in the figures: one-laptop levels sit out of order (12GB above 16GB), and MSI's weight swings with the
+  contract (gemma-27: +8.9 with no contract, −2.1 under `14-inch`; none of its 3 laptops is 14-inch).
+
+## 2026-11-18 — Real laptops + synthetic cars: weights, company lines, adherence Δp, goodness of fit
+
+Lotan: the big-3 figures (weights per contract, company lines, adherence Δp) on the two new datasets, and a
+goodness-of-fit table. New notebook `Notebooks/real_laptops_cars_big3.ipynb` (76 s, outputs stored),
+`figs/real_laptops_cars_big3/`; new standalone script `scripts/goodness_of_fit.py` → `figs/goodness_of_fit/`.
+
+- **Choices:** laptop levels binned as in `real_laptops_trends`; compound cars runs fitted on the 500 shared pairs;
+  every point of a company line fitted on the same 500 pairs. Adherence pairs = exactly one item meets the
+  contract, **conflict** = that item loses in the no-contract run (D₀ < 0), as F11r. Δp per prompt, both orders.
+  Check: single-contract win rates 97.2 / 87.4 / 90.3% on the laptops = F11r's 97 / 87 / 90.
+- **Adherence Δp** (mean over contracts; lowest cell):
+
+  | | laptops, singles | laptops, compounds | cars, singles | cars, compounds |
+  |---|---|---|---|---|
+  | qwen-72B | 0.90 (0.82) | 0.95 (0.79) | 1.00 (0.99) | 1.00 (0.98) |
+  | gemma-27B | 0.72 (0.57) | 0.87 (0.59) | 0.97 (0.87) | 0.99 (0.86) |
+  | olmo-32B | 0.72 (0.60) | 0.73 (**0.17**, HP + 8GB) | 0.94 (**0.47**, ex-lease) | 0.99 (0.96) |
+
+  Lowest cells: olmo-32 `HP + 8GB` Δp 0.17 (win 62%, 63 conflict pairs); olmo-32 `ex-lease` 0.47 (win 90%).
+- **Goodness of fit** — Lotan's spec (M1 feature BT, M2 full BT, M3 one mean per cell; nested F, bootstrap B = 1000,
+  Holm). The main runs have template 0 only (T = 1), so the full test runs only on the two **template-check runs**
+  (gemma-27, no contract, 200 pairs, T = 5); the 165 main runs get the effect sizes. M2 = `fit_full` to 1e-12,
+  M1 = `FeatureBT` to 1e-16. Numbers only:
+
+  | template-check run | F (ii) M2 vs M3 | df | p table / boot | F (iii) | F (i) | R² cell M1 / M2 | misfit RMSE M1 / M2 | noise sd | ρ M2 |
+  |---|---|---|---|---|---|---|---|---|---|
+  | real laptops | 50.9 | 340, 1600 | < 0.001 / < 0.001 | 103.5 | 461.6 | 0.57 / 0.82 | 11.5 / 7.6 | 2.57 | 0.89 |
+  | synthetic cars | 39.8 | 283, 1600 | < 0.001 / < 0.001 | 55.0 | 99.0 | 0.80 / 0.89 | 7.9 / 5.8 | 2.44 | 0.84 |
+
+  Neither run passes (ii) after Holm. Main runs, median over contracts — R² cell M1 / M2: laptops 0.79 / 0.89
+  (qwen), 0.73 / 0.82 (gemma), 0.75 / 0.91 (olmo); cars 0.90 / 0.93, 0.78 / 0.80, 0.91 / 0.92. Test (i) (vs the M2
+  residual) rejected after Holm in 27/27 laptop runs per model, cars 28 / 23 / 28 of 28. SE ratio cluster = pair
+  vs plain, median 0.93–1.27.
+
 ## 2026-11-17 (4) — Adherence figure: bar height = Δp, qwen-32B instead of qwen-72B
 
 Lotan: in `figs4deck5_big3` Fig 5.5 D, make Δp the bar height, swap qwen-72B for qwen-32B, drop the sizes from the

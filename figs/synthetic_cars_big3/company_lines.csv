@@ -1,0 +1,31 @@
+model,step,Honda,Toyota,Ford,BMW,Audi,Mercedes,spearman_vs_none,top,bottom,path
+qwen-72B,none,-0.46,0.98,-0.43,-0.09,-0.21,0.22,1.0,Toyota,Honda,economy
+qwen-72B,petrol,-1.4,0.45,0.22,0.51,-0.07,0.29,0.7714285714285715,BMW,Honda,economy
+qwen-72B,+ manual,-0.32,0.67,0.68,-0.3,-0.6,-0.14,0.3142857142857143,Ford,Audi,economy
+qwen-72B,+ 100 hp,0.73,0.47,-0.1,0.54,-1.14,-0.49,-0.2571428571428572,Honda,Audi,economy
+gemma-27B,none,-0.07,1.37,-1.31,0.12,-0.08,-0.04,1.0,Toyota,Ford,economy
+gemma-27B,petrol,-1.42,0.52,0.85,0.02,0.23,-0.19,-0.2,Ford,Honda,economy
+gemma-27B,+ manual,-0.25,0.25,0.91,-0.42,-0.18,-0.32,-0.4285714285714286,Ford,BMW,economy
+gemma-27B,+ 100 hp,0.61,0.11,-0.41,0.19,0.11,-0.61,0.08571428571428573,Honda,Mercedes,economy
+olmo-32B,none,0.24,0.56,-0.59,0.24,-0.16,-0.3,1.0,Toyota,Ford,economy
+olmo-32B,petrol,-0.11,0.21,-0.16,0.42,-0.16,-0.21,0.7714285714285715,BMW,Mercedes,economy
+olmo-32B,+ manual,0.08,0.5,0.38,-0.08,-0.43,-0.45,0.4285714285714286,Toyota,Mercedes,economy
+olmo-32B,+ 100 hp,0.73,0.61,0.71,-0.34,-0.79,-0.92,0.3142857142857143,Honda,Mercedes,economy
+qwen-72B,none,-0.46,0.98,-0.43,-0.09,-0.21,0.22,1.0,Toyota,Honda,family
+qwen-72B,automatic,-1.1,0.33,-0.79,0.62,0.49,0.45,0.48571428571428577,BMW,Honda,family
+qwen-72B,+ 1st owner,-0.55,0.59,-0.07,0.21,-0.29,0.1,0.8857142857142858,Toyota,Honda,family
+gemma-27B,none,-0.07,1.37,-1.31,0.12,-0.08,-0.04,1.0,Toyota,Ford,family
+gemma-27B,automatic,-0.41,0.69,-1.39,0.68,-0.28,0.71,0.7714285714285715,Mercedes,Ford,family
+gemma-27B,+ 1st owner,-0.13,0.96,-0.01,-0.04,-0.46,-0.32,0.3714285714285715,Toyota,Audi,family
+olmo-32B,none,0.24,0.56,-0.59,0.24,-0.16,-0.3,1.0,Toyota,Ford,family
+olmo-32B,automatic,0.47,0.61,-0.51,0.03,-0.45,-0.15,0.942857142857143,Toyota,Ford,family
+olmo-32B,+ 1st owner,0.02,0.6,-0.16,0.28,-0.44,-0.31,0.7142857142857143,Toyota,Audi,family
+qwen-72B,none,-0.46,0.98,-0.43,-0.09,-0.21,0.22,1.0,Toyota,Honda,work
+qwen-72B,diesel,-0.73,-0.28,-0.27,0.0,-0.03,1.31,0.4285714285714286,Mercedes,Honda,work
+qwen-72B,+ 150 hp,-0.75,-0.7,-0.09,0.66,-0.34,1.23,0.3714285714285715,Mercedes,Honda,work
+gemma-27B,none,-0.07,1.37,-1.31,0.12,-0.08,-0.04,1.0,Toyota,Ford,work
+gemma-27B,diesel,0.08,-0.82,-0.24,0.29,-0.49,1.18,0.028571428571428574,Mercedes,Toyota,work
+gemma-27B,+ 150 hp,-1.18,-1.15,0.24,1.73,-1.0,1.36,0.08571428571428573,BMW,Honda,work
+olmo-32B,none,0.24,0.56,-0.59,0.24,-0.16,-0.3,1.0,Toyota,Ford,work
+olmo-32B,diesel,-0.86,-0.04,-0.35,0.58,0.15,0.52,-0.14285714285714288,BMW,Honda,work
+olmo-32B,+ 150 hp,-0.82,-0.01,0.09,0.51,-0.01,0.25,-0.3714285714285715,BMW,Honda,work

@@ -329,6 +329,14 @@ The same figure for every contract (15 contracts, 33 runs): [contract_weights_bi
 Deck 5 Fig 6.2 (Apple decay; qwen-72B / gemma-27B / olmo-32B) and Fig 5.5 D (adherence split, bar height = Δp;
 qwen-32B / gemma-27B / olmo-32B), one panel per model:
 [figs4deck5_big3.ipynb](../Notebooks/figs4deck5_big3.ipynb), `figs/deck5_big3/` (progress 2026-11-17 (2)).
+The same three figures on the synthetic cars, plus a goodness-of-fit table:
+[synthetic_cars_big3.ipynb](../Notebooks/synthetic_cars_big3.ipynb), `figs/synthetic_cars_big3/` (progress 2026-11-18
+and 11-18 (3); the real laptops were taken out of it). Goodness of fit: `scripts/goodness_of_fit.py` →
+`figs/goodness_of_fit/` (both datasets) — the full test needs ≥ 2 templates, so it ran only on the two template-check
+runs (gemma-27); **open: whether to collect 5-template runs of the new datasets** so every model and contract can be
+tested.
+**Open (2026-11-18): a second real-laptops experiment — no prices in the text, Apple among the brands.** Lotan
+remembers it; it was never designed or run (only `data/real_laptops/` exists: prices in the text, no Apple).
 
 **Figures for Nir on the cars data (2026-11-14):** [figs4nir_cars.ipynb](../Notebooks/figs4nir_cars.ipynb), PNG + PDF in
 `figs/figs4nir_cars/` — the three `figs4nir2` figures redone on `data/synthetic_cars/`: A: Δ weights under each

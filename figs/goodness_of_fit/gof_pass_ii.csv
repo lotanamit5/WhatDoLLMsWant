@@ -1,0 +1,3 @@
+domain,run,model,constraints_id,F_ii,dfn_ii,dfd_ii,p_ii_table,p_ii_table_holm,p_ii_boot,p_ii_boot_holm,pass_ii_boot_holm,pass_ii_table_holm
+real_laptops,data/real_laptops_template_check/1497200_none,gemma-27,none,50.873330953659085,340.0,1600.0,0.0,0.0,0.0,0.0,False,False
+synthetic_cars,data/synthetic_cars_template_check/1498233,gemma-27,none,39.80247053663246,283.0,1600.0,0.0,0.0,0.0,0.0,False,False
