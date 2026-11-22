@@ -1,0 +1,3 @@
+2026-11-18 13:25:01	1504141	rl45-q	sbatch -p bml -A bml --gres=gpu:2 -c 8 -J rl45-q --dependency=afterany:1504140 -w heraclitus scripts/run_data_collection.sh -m "qwen" -s "72" -a "real_laptops_45_hidden" -c "" -t "5" -n real_laptops_45_hidden
+2026-11-18 13:25:01	1504143	rl45-s	sbatch -p bml -A bml --gres=gpu:1 -c 8 -J rl45-s --dependency=afterany:1504142 -w heraclitus scripts/run_data_collection.sh -m "gemma" -s "27" -a "real_laptops_45_hidden" -c "" -t "5" -n real_laptops_45_hidden
+2026-11-18 13:25:01	1504145	rl45-s	sbatch -p bml -A bml --gres=gpu:1 -c 8 -J rl45-s --dependency=afterany:1504144 -w heraclitus scripts/run_data_collection.sh -m "olmo" -s "32" -a "real_laptops_45_hidden" -c "" -t "5" -n real_laptops_45_hidden

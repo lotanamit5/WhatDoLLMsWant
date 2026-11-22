@@ -8,6 +8,37 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-18 (5) — Real laptops 45: base preferences, name shown (A) vs hidden (B), collected + stage 3
+
+Lotan's 45 laptops (`data/real_laptops_45/design/real_laptops_45.csv`, 9 per brand, no price), no contract, frame
+`shopping`, all 1,980 ordered pairs × 5 templates = 9,900 prompts per run — the design of the synthetic no-contract run.
+A line: `Dell Latitude 5480: 14-inch, 8GB RAM, 256GB SSD, Intel Core i5`; B: `Dell, 14-inch, ...` (aliases
+`real_laptops_45_named` / `_hidden`, folders `data/real_laptops_45_named/`, `data/real_laptops_45_hidden/`).
+6 jobs on Heraclitus, 1504140–1504145 (commit `04f2bf7`), all complete (9,900 rows, 1,980 cells × 5, no NaN).
+Each job downloads its model again (per-job cache): ~1 GB/min that day, so the batch took 13:24–16:15.
+Analysis: `scripts/real_laptops_45_analysis.py` → `figs/real_laptops_45/` (CSVs + 3 figures). BT-feat z = brand,
+screen (5 bins), RAM, storage type (SSD / HDD / SSD + HDD / small flash), log2 storage GB standardized, processor (7).
+Coding choices not in the request: L26 `64GB Flash + 1TB HDD` → SSD + HDD; L31 `32GB SSD` → SSD. Numbers only:
+
+| model | exp | R² full | R² feat | γ | var_e | var_m | ρ | F (i) df 24, 9855 | F (ii) df 1935, 7920 | boot p (ii) | cell R² full / feat |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| qwen-72 | A | 0.837 | 0.828 | −2.04 | 2.20 | 47.8 | 0.956 | 23.3 | 112.3 | <0.001 | 0.842 / 0.833 |
+| qwen-72 | B | 0.833 | 0.823 | −2.59 | 2.10 | 57.2 | 0.965 | 22.9 | 140.1 | <0.001 | 0.837 / 0.827 |
+| gemma-27 | A | 0.788 | 0.780 | −1.97 | 4.48 | 86.5 | 0.951 | 14.7 | 99.6 | <0.001 | 0.794 / 0.787 |
+| gemma-27 | B | 0.781 | 0.772 | −2.63 | 4.86 | 103.5 | 0.955 | 17.9 | 110.1 | <0.001 | 0.787 / 0.778 |
+| olmo-32 | A | 0.891 | 0.886 | 0.40 | 0.80 | 2.59 | 0.764 | 18.9 | 17.6 | <0.001 | 0.910 / 0.905 |
+| olmo-32 | B | 0.902 | 0.897 | 0.69 | 0.94 | 3.39 | 0.782 | 18.6 | 19.4 | <0.001 | 0.917 / 0.913 |
+
+All F p-values < 1e-58. Synthetic no-contract (same script; F (i) df 36): R² full 0.860 / 0.796 / 0.910, F (ii)
+48.1 / 148.3 / 35.6, boot p < 0.001 (qwen / gemma / olmo).
+- Spearman A vs B of the 45 item scores: qwen 0.993, gemma 0.986, olmo 0.991. Mean A − B per brand (ASUS / Apple /
+  Dell / HP / Lenovo): qwen −0.53 / 0.43 / −0.55 / 0.35 / 0.30; gemma −0.78 / −0.01 / −0.21 / 1.31 / −0.30;
+  olmo −0.38 / 0.43 / −0.06 / 0.12 / −0.11.
+- Spearman between models: A 0.944–0.973, B 0.971–0.983.
+- Brand weights, synthetic → A → B: Apple qwen 1.95 → 0.51 → −0.04, gemma 2.74 → 1.81 → 1.01, olmo −0.13 → −0.41 →
+  −0.46. RAM 16GB − 4GB: qwen 25.4 → 13.5 → 15.5, gemma 30.9 → 12.4 → 14.8, olmo 8.5 → 4.4 → 5.6.
+Not interpreted yet.
+
 ## 2026-11-18 (4) — Cars: the company order along contract paths that never mention the company
 
 Lotan: part 2 of `synthetic_cars_big3` should show paths without a company request — is the model consistent with its

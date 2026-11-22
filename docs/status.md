@@ -238,6 +238,13 @@ survives a contract?
     slower per job. With the launcher's flags: 14.8 / 13.3 / 7.0 prompts/s on 1 / 1 / 2 GPUs.
     `environment.yml` describes the new torch install (updated 11-13). Stage 1 approval is deferred until
     the env and the pipeline are settled.
+22. **Real laptops 45 — base preferences, name shown (A) vs hidden (B): collected and stage 3 numbers out,
+    not interpreted yet** (progress 2026-11-18 (5)). Lotan's 45 laptops (9 per brand, no price), no contract,
+    all 1,980 ordered pairs × 5 templates. **Data: `data/real_laptops_45_named/` (A) and
+    `data/real_laptops_45_hidden/` (B), jobs 1504140–1504145, 6 of 6 complete.** Design file
+    `data/real_laptops_45/design/`. Numbers: `scripts/real_laptops_45_analysis.py` → `figs/real_laptops_45/`.
+    Contracts for this set are to be chosen from these results (Lotan). The batch is commented out in
+    `create_slurms.py`; `slurms.sh` holds no jobs.
 
 ---
 
