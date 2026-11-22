@@ -8,6 +8,31 @@ Each entry: what changed, what we learned, what is still open.
 
 ---
 
+## 2026-11-15 (3) — Synthetic cars: the company order across contracts (F14c)
+
+Lotan: the F13c figure for the car's company — maybe the order is more stable there. Added to
+`Notebooks/synthetic_cars_trends.ipynb` (the F13c cell is now one function used for both features; F13c's
+numbers are unchanged, max difference 0.0). `figs/synthetic_cars_trends/F14c_company_weights.png`, `.csv`.
+
+- **Starting point (no contract, all pairs), Honda / Toyota / Ford / BMW / Audi / Mercedes:** qwen-72
+  0.17 / 0.55 / −0.80 / −0.10 / −0.04 / 0.22 (range 1.35); gemma-27 0.67 / 1.06 / −2.14 / 0.55 / −0.08 / −0.07
+  (3.20); olmo-32 0.36 / 0.55 / −0.70 / 0.26 / −0.16 / −0.30 (1.25). Toyota first and Ford last in all three.
+- **Company order against "no contract"** (Spearman of the six weights), next to colour:
+
+  | model | company, 11 single requests: median (min to max) | of 11 with ρ ≥ 0.5 | same top | Ford still last | colour, 13 single requests: median |
+  |---|---|---|---|---|---|
+  | qwen-72 | 0.14 (−0.09 to 0.94) | 1 | 1 | 5 | 0.60 |
+  | gemma-27 | 0.37 (−0.26 to 0.83) | 5 | 1 | 6 | 0.20 |
+  | olmo-32 | 0.71 (−0.14 to 0.94) | 8 | 4 | 5 | 0.77 |
+
+  So the company order is not more stable than the colour order: lower for qwen-72, a little higher for
+  gemma-27, about the same for olmo-32. `1st owner` keeps it best (0.94 / 0.60 / 0.94).
+- **Which company is on top under the 11 single requests:** qwen-72 Mercedes 4, BMW 3, Audi 2, Honda 1,
+  Toyota 1; gemma-27 BMW 5, Mercedes 3, Honda 2, Toyota 1; olmo-32 BMW 5, Toyota 4, Honda 2. With no contract
+  it is Toyota for all three.
+- Only 4 compound contracts do not name a company (economy 2, economy 3, family 2, work 2; 500 shared pairs):
+  median ρ 0.34 / 0.09 / 0.37.
+
 ## 2026-11-15 (2) — Commit ids changed before the push: how to read `git_commit` in `config.json`
 
 The GitHub repo is public. `docs/progress.md` held the cluster logins of three other users (their jobs were

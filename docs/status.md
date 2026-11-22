@@ -327,7 +327,7 @@ track's full contract, B: contract paths (rank of the track's best target car af
 sharpness / agreement by the feature asked for. Mapping choices and numbers: progress 2026-11-14 (afternoon, 2).
 The ranking graphs of `real_laptops_trends` on the cars: [synthetic_cars_trends.ipynb](../Notebooks/synthetic_cars_trends.ipynb),
 `figs/synthetic_cars_trends/` (F1c, F2c, F4c; progress 2026-11-14 afternoon, 3; F12c feature weights with no
-contract and F13c colour order across contracts; progress 2026-11-15).
+contract, F13c colour order and F14c company order across contracts; progress 2026-11-15 and 11-15 (3)).
 **Careful with BT-feat on a compound cars run: use the 500 shared pairs only.** The rows with the target cars
 (40% of a compound run) make the fit credit the targets' other features, their colour above all (progress 2026-11-15).
 
